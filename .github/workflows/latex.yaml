@@ -15,7 +15,7 @@ jobs:
     steps:
     # Checkout del codice dal repository
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     # Installa TeX Live per compilare LaTeX
     - name: Install TeX Live

@@ -21,7 +21,7 @@ jobs:
     - name: Install TeX Live
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-math-extra texlive-amsfonts texlive-amsthm texlive-pictures texlive-latex-recommended texlive-lang-italian texlive-fonts-extra texlive-latex-extra latexmk
+        sudo apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-pictures texlive-latex-recommended texlive-lang-italian texlive-fonts-extra texlive-latex-extra latexmk
 
     - name: Set up Git identity
       run: |

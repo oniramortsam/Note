@@ -27,6 +27,8 @@ jobs:
     - name: Compile LaTeX document
       run: |
         latexmk -pdf -interaction=nonstopmode -output-directory=Dispense Dispense/main.tex
+        git config --global user.name "oniramortsam"
+        git config --global user.email "mastromarino1997@libero.it"
         git add Dispense/main.pdf
         git commit -m "Add compiled PDF to repository"
         git push

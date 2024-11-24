@@ -27,10 +27,6 @@ jobs:
     - name: Compile LaTeX document
       run: |
         latexmk -pdf -interaction=nonstopmode -output-directory=Dispense Dispense/main.tex
-
-    # Salva l'output come artefatto
-    - name: Upload PDF artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: compiled-pdf
-        path: Dispense/main.pdf
+        git add Dispense/main.pdf
+        git commit -m "Add compiled PDF to repository"
+        git push

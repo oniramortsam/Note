@@ -49,8 +49,8 @@ Non si fa mai:
 <li>Composizione di funzioni dispari è pari.</li>
 <li>Composizione di una funzione pari e di una dispari è dispari.</li>
 <li>Composizione di una funzione dispari e di una pari è dispari.</li>
-<li>Se \(g\) è di periodo $$a$$, \(f \circ g\) è di periodo $$\rm T$$.</li>
-<li>Se \(f\) è di periodo $$a$$ e $$b$$, allora è di periodo $$c \cdot \gcd(a, b)$$.</li>
+<li>Se \(g\) è di periodo \(a\), \(f \circ g\) è di periodo \(\rm T\).</li>
+<li>Se \(f\) è di periodo \(a\) e \(b\), allora è di periodo $$c \cdot \gcd(a, b)$$.</li>
 <li>Una potenza con base positiva è positiva e monotona nella base e nell'esponente.</li>
 <li>Un logaritmo con base ed argomento positivi è monotono nella base e nell'argomento.</li>
 <li>Determina dominio ed immagine delle seguenti funzioni
@@ -61,16 +61,21 @@ a / x \qquad x^a \qquad a^x \qquad \sqrt[a]{x} \qquad \sqrt[x]{a} \qquad \log_a(
 <li>Determina poi se sono pari, dispari, periodiche, monotone, iniettive, surgettive.</li></ul>
 
 <h2>Condizioni di esistenza</h2>
-Data una espressione $$f(x)$$:
+Data una espressione \(f(x)\):
 <ul><li>è possibile determinare il dominio naturale di \(f\) imponendo le condizioni di esistenza.</li>
-<li>è possibile risolvere $$f(x) = y$$ per alcuni $$y$$, tali valori sono detti immagine di \(f\).</li>
-<li>si ottiene poi $$x = g(y)$$ se \(f\) è iniettiva, in tal caso \(g\) ha come dominio l'immagine di \(f\) e viceversa.</li>
-<li>altrimenti si può ottenere $$x \in \{g_0(y), \dots, g_k(y)\}$$. In tal caso:
-    <ul><li>si restringe il dominio di $$g_h$$ all'insieme delle $$y$$ per cui $$f (g_h (y)) = y$$</li>
-    <li>l'unione dei domini di $$g_0, \dots, g_k$$ è l'immagine di \(f\).</li>
-    <li>l'immagine di $$g_h$$ è $$x = g_h (f (x))$$ per \(x\) nel dominio di \(f\).</li>
-    <li>le immagini di $$g_0, \dots, g_k$$ sono una partizione del dominio di \(f\).</li>
-    <li>restringendo il dominio di \(f\) all'immagine di $$g_h$$, \(f\) risulta bigettiva sul dominio di $$g_h$$.</li></ul></li></ul>
+<li>è possibile risolvere
+$$f(x) = y$$
+per alcuni \(y\), tali valori sono detti immagine di \(f\).</li>
+<li>si ottiene poi come soluzione
+$$x = g(y)$$
+se \(f\) è iniettiva, in tal caso \(g\) ha come dominio l'immagine di \(f\) e viceversa.</li>
+<li>altrimenti si può ottenere
+$$x \in \{g_0(y), \dots, g_k(y)\}$$. In tal caso:
+<ul><li>si restringe il dominio di \(g_h\) all'insieme \(\{f (g_h (y)) = y\}\)</li>
+<li>l'unione dei domini di \(g_0, \dots, g_k\) è l'immagine di \(f\).</li>
+<li>l'immagine di \(g_h\) è \(\{x = g_h (f (x))\}\) per \(x\) nel dominio di \(f\).</li>
+<li>le immagini di \(g_0, \dots, g_k\) sono una partizione del dominio di \(f\).</li>
+<li>restringendo il dominio di \(f\) all'immagine di \(g_h\), \(f\) risulta bigettiva sul dominio di \(g_h\).</li></ul></li></ul>
 
 <h2>Esempio:</h2>
 $$f(x) = \sqrt{(x - a_0)(x - a_1)}$$ ha come dominio \((\infty, \min(a_0, a_1)] \cup [\max(a_0, a_1), \infty)\).
@@ -157,23 +162,18 @@ $$\begin{split}
 
 <h1>Derivate</h1>
 
-Si dice che una funzione \(f\) è derivabile in \(x\) se esiste il limite del rapporto incrementale
-
+<ul><li>Si dice che una funzione \(f\) è derivabile in \(x\) se esiste il limite del rapporto incrementale
 $$\begin{split}
 \frac{\partial f(y)}{\partial y}(x) = \lim_{y \rightarrow x} \frac{f(y) - f(x)}{y - x.}
-\end{split}$$
-
-Si dice che una funzione \(f\) è crescente se
-
+\end{split}$$</li>
+<li>Si dice che una funzione \(f\) è crescente se
 $$\begin{split}
 \forall x < y, \quad f(x) < f(y).
-\end{split}$$
-
-Si dice che una funzione \(f\) è convessa se
-
+\end{split}$$</li>
+<li>Si dice che una funzione \(f\) è convessa se
 $$\begin{split}
 \forall x < y < z, \quad f(y) < \left(\frac{z - y}{z - x}\right) \cdot f(x) + \left(\frac{y - x}{z - x}\right) \cdot f(z).
-\end{split}$$
+\end{split}$$</li></ul>
 
 <h2>Esercizi</h2>
 <ul><li>Mostra che una funzione \(f\) crescente se e solo se

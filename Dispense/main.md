@@ -247,8 +247,8 @@ p = a \cdot b &\longrightarrow (a^2 - 1) \cdot (b^2 - 1) = 0\\
 ### Definizione di gcd ed lcm
 
 $$\begin{split}
-\operatorname{gcd}(a, b) \% c = 0 &\longleftrightarrow (a \% c = 0) \land (b \% c = 0)\\
-c \% \operatorname{lcm}(a, b) = 0 &\longleftrightarrow (c \% a = 0) \land (c \% b = 0)
+{\rm gcd}(a, b) \% c = 0 &\longleftrightarrow (a \% c = 0) \land (b \% c = 0)\\
+c \% {\rm lcm}(a, b) = 0 &\longleftrightarrow (c \% a = 0) \land (c \% b = 0)
 \end{split}$$
 
 ### Se per ogni primo p
@@ -268,14 +268,14 @@ $$\begin{split}
 ### Mostra che: sia $p$ primo
 
 $$\begin{split}
-\max_{\operatorname{lcm}(a, b) \% p^d = 0}(d) &= \max\left(\max_{a \% p^d = 0}(d), \max_{b \% p^d = 0}(d)\right)\\
-\max_{\operatorname{gcd}(a, b) \% p^d = 0}(d) &= \min\left(\max_{a \% p^d = 0}(d), \max_{b \% p^d = 0}(d)\right)
+\max_{{\rm lcm}(a, b) \% p^d = 0}(d) &= \max\left(\max_{a \% p^d = 0}(d), \max_{b \% p^d = 0}(d)\right)\\
+\max_{{\rm gcd}(a, b) \% p^d = 0}(d) &= \min\left(\max_{a \% p^d = 0}(d), \max_{b \% p^d = 0}(d)\right)
 \end{split}$$
 
 ### Mostra che:
 
 $$\begin{split}
-\operatorname{lcm}(a, b) \cdot \operatorname{gcd}(a, b) = a \cdot b.
+{\rm lcm}(a, b) \cdot {\rm gcd}(a, b) = a \cdot b.
 \end{split}$$
 
 # Insiemi e logica

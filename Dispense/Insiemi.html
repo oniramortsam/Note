@@ -1,6 +1,17 @@
-# Insiemi e logica
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insiemi e Logica</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-## Tavole di verità
+<h1>Tavole di verità</h1>
 
 $$\begin{split}
 \lnot 0 = 1\\
@@ -11,8 +22,8 @@ $$\begin{split}
 0 \lor 1 = 1 \lor 0 = 1.
 \end{split}$$
 
-### Dimostra ciascuna delle seguenti utilizzando le altre
-
+<h2>Esercizi:</h2>
+<ul><li>Dimostra ciascuna delle seguenti utilizzando le altre
 $$\begin{split}
 a &= \lnot (\lnot a)\\
 a &= a \land a\\
@@ -21,9 +32,9 @@ a &= a \lor a\\
 \lnot (a \lor b) &= (\lnot a) \land (\lnot b)\\
 a \land (b \lor c) &= (a \land b) \lor (a \land c)\\
 a \lor (b \land c) &= (a \lor b) \land (a \lor c).
-\end{split}$$
+\end{split}$$</li></ul>
 
-## Insiemi
+<h1>Insiemi</h1>
 
 $$\begin{split}
 {\rm A} \setminus {\rm B} &= \{a: a \in {\rm A} \land a \notin {\rm B}\}\\
@@ -31,8 +42,8 @@ $$\begin{split}
 {\rm A} \cup {\rm B} &= \{a: a \in {\rm A} \lor a \in {\rm B}\}.
 \end{split}$$
 
-### Mostra che: valgono le seguenti
-
+<h2>Esercizi:</h2>
+<ul><li>Mostra che:
 $$\begin{split}
 (a \setminus b) \setminus c &= (a \setminus b) \cap (a \setminus c)\\
 a \setminus (b \cup c) &= (a \setminus b) \cap (a \setminus c)\\
@@ -42,9 +53,9 @@ a \setminus (b \setminus c) &= (a \cap c) \cup (a \setminus b)\\
 a \setminus (b \cap c) &= (a \setminus b) \cup (a \setminus b)\\
 (a \cup b) \setminus c &= (a \setminus c) \cup (a \setminus c)\\
 a \cup (b \setminus c) &= (a \cup b) \setminus (c \setminus a).
-\end{split}$$
+\end{split}$$</li></ul>
 
-## Massimi e Minimi
+<h1>Massimi e Minimi</h1>
 
 $$\begin{split}
 c \subseteq (a \cap b) &\longleftrightarrow (c \subseteq a) \land (c \subseteq b)\\
@@ -55,13 +66,15 @@ c \le \max(a, b) &\longleftrightarrow (c \le a) \lor (c \le b)\\
 \min(a, b) \le c&\longleftrightarrow (a \le c) \lor (b \le c)
 \end{split}$$
 
-### Esercizi:
-- Mostra che:
+<h2>Esercizi:</h2>
+Mostra che:
+<ul><li>
 $$\begin{split}
 a \subseteq b &\longrightarrow \min(a) > \min(b)\\
 a \subseteq b &\longrightarrow \max(a) < \max(b)
-\end{split}$$
-- Mostra che:
-$$\begin{split}
+\end{split}$$</li>
+<li>$$\begin{split}
 \max(a, b) + \min(a, b) = a + b
-\end{split}$$
+\end{split}$$</li></ul>
+
+</body>

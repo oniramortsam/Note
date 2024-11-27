@@ -1,1 +1,0 @@
-I numeri reali $\mathbb R$ sono uno degli <a href='Insiemi.md'>Insiemi</a> numerici che estende i <a href='Naturali.md'>Naturali</a> e su cui sono definite diverse <a href='Operazioni.md'>Operazioni</a>. La geometria <a href='Euclidea.md'>Euclidea</a> permette di definire le <a href=Funzioni.md>Funzioni</a> goniometriche.

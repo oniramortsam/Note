@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principio di Induzione</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<ul><li>Le proprietà delle <a href='Operazioni.html'>Operazioni</a> si possono dimostrare a partire dalle definizioni per ricorrenza:
+$$\begin{split}
+a + (b + 1) = (a + b) + 1\\
+a \cdot (b + 1) = (a \cdot b) + b\\
+a^{b + 1} = a^b \cdot b
+\end{split}$$</li>
+<li>Inoltre, dato \(\sigma\) un elemento del gruppo <a href='Simmetrico.html'>Simmetrico</a> la proprietà commutativa si estende a
+$$\begin{split}
+\sum_{k \in m} a_k + \sum_{k \in n - m} a_{m + j} = \sum_{j \in n} a_k\\
+\prod_{k \in m} a_k + \prod_{j \in n - m} a_{m + j} = \prod_{j \in n} a_k
+\end{split}$$</li>
+<li>Mentre la proprietà associativa si estende a
+$$\begin{split}
+\sum_{k \in m} \left(\sum_{h \in m_k} a_{h + \sum_{j \in k} m_j}\right) = \sum_{h \in \sum_{j \in m} m_j} a_h\\
+\prod_{k \in m} \left(\prod_{h \in m_k} a_{h + \sum_{j \in k} m_j}\right) = \prod_{h \in \sum_{j \in m} m_j} a_h
+\end{split}$$</li>
+<li>Mentre le altre proprietà si estendono a
+$$\begin{split}
+b \cdot \sum_{j \in n} a_k = \sum_{j \in n} b \cdot a_k\\
+b^{\sum_{k \in n} a_k} = \prod_{j \in n} b^{a_k}\\
+\prod_{k \in n} a_k^b = \left(\prod_{j \in n} a_k\right)^b\\
+\left(b^{\prod_{k \in n - 1} a_k}\right)^{a_n} = \left(b^{a_0}\right)^{\prod_{j \in n - 1} a_{j + 1}}
+\end{split}$$</li></ul>
+
+</body>

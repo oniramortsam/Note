@@ -29,15 +29,6 @@ $$f(- x) = f(x).$$</li>
 <li>Dispari se
 $$f(- x) = - f(x).$$</li></ul>
 
-Non si fa mai:
-<ul><li>Dividere per \(0\), fare il logaritmo in base \(1\), fare \(0^0\).</li>
-<li>Fare la radice pari di un numero negativo.</li>
-<li>Elevare ad un esponente denominatore pari un numero negativo.</li>
-<li>Elevare ad un esponente irrazionale un numero negativo.</li>
-<li>L'esponenziale con base negativa.</li>
-<li>Il logaritmo con base negativa.</li>
-<li>Il logaritmo con argomento negativo.</li></ul>
-
 <h2>Esercizi</h2>
 <ul><li>Composizione di funzioni surgettive è surgettiva.</li>
 <li>Composizione di funzioni iniettive è iniettiva.</li>
@@ -61,16 +52,35 @@ a / x \qquad x^a \qquad a^x \qquad \sqrt[a]{x} \qquad \sqrt[x]{a} \qquad \log_a(
 <li>Determina poi se sono pari, dispari, periodiche, monotone, iniettive, surgettive.</li></ul>
 
 <h2>Condizioni di esistenza</h2>
+
+Non si fa mai:
+<ul><li>Dividere per \(0\), fare il logaritmo in base \(1\), fare \(0^0\).</li>
+<li>Fare la radice pari di un numero negativo.</li>
+<li>Elevare ad un esponente denominatore pari un numero negativo.</li>
+<li>Elevare ad un esponente irrazionale un numero negativo.</li>
+<li>L'esponenziale con base negativa.</li>
+<li>Il logaritmo con base negativa.</li>
+<li>Il logaritmo con argomento negativo.</li></ul>
+
+<h2>Funzione inversa</h2>
+
 Data una espressione \(f(x)\):
 <ul><li>è possibile determinare il dominio naturale di \(f\) imponendo le condizioni di esistenza.</li>
 <li>è possibile risolvere
-$$f(x) = y$$
+$$\begin{split}
+f(x) = y
+\end{split}$$
 per alcuni \(y\), tali valori sono detti immagine di \(f\).</li>
 <li>si ottiene poi come soluzione
-$$x = g(y)$$
+$$\begin{split}
+x = g(y)
+\end{split}$$
 se \(f\) è iniettiva, in tal caso \(g\) ha come dominio l'immagine di \(f\) e viceversa.</li>
 <li>altrimenti si può ottenere
-$$x \in \{g_0(y), \dots, g_k(y)\}$$. In tal caso:
+$$\begin{split}
+x \in \{g_0(y), \dots, g_k(y)\}.
+\end{split}$$
+In tal caso:
 <ul><li>si restringe il dominio di \(g_h\) all'insieme \(\{f (g_h (y)) = y\}\)</li>
 <li>l'unione dei domini di \(g_0, \dots, g_k\) è l'immagine di \(f\).</li>
 <li>l'immagine di \(g_h\) è \(\{x = g_h (f (x))\}\) per \(x\) nel dominio di \(f\).</li>
@@ -78,7 +88,9 @@ $$x \in \{g_0(y), \dots, g_k(y)\}$$. In tal caso:
 <li>restringendo il dominio di \(f\) all'immagine di \(g_h\), \(f\) risulta bigettiva sul dominio di \(g_h\).</li></ul></li></ul>
 
 <h2>Esempio:</h2>
-$$f(x) = \sqrt{(x - a_0)(x - a_1)}$$
+$$\begin{split}
+f(x) = \sqrt{(x - a_0)(x - a_1)}
+\end{split}$$
 ha come dominio \((\infty, \min(a_0, a_1)] \cup [\max(a_0, a_1), \infty)\).
 $$\begin{split}
 x^2 - (a_0 + a_1) x + a_0 a_1 - y^2 = 0
@@ -92,7 +104,9 @@ g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2.}
 <li>L'immagine di \(g_0\) è \((\infty, \min(a_0, a_1)]\), mentre quella di \(g_1\) è \([\max(a_0, a_1), \infty)\).</li></ul>
 
 <h2>Esempio:</h2>
-$$f(x) = \sqrt{- (x - a_0)(x - a_1)}$$
+$$\begin{split}
+f(x) = \sqrt{- (x - a_0)(x - a_1)}
+\end{split}$$
 ha come dominio \([\min(a_0, a_1), \max(a_0, a_1)]\).
 $$\begin{split}
 x^2 - (a_0 + a_1) x + a_0 a_1 + y^2 = 0
@@ -118,15 +132,11 @@ g_1(y) = a + \sqrt{y^2 - b^2.}
 
 <h1>Limiti e continuità</h1>
 
-<ul><li>Si dice che
-$$\lim_{n \to \infty} a_n = x$$
-se
+<ul><li>Si dice che \(\lim_{n \to \infty} a_n = x \) se
 $$\begin{split}
 \forall \varepsilon > 0, \quad \exists n \in \mathbb N, \quad \forall m > n, \quad |a_n - x| < \varepsilon.
 \end{split}$$</li>
-<li>Si dice che
-$$\lim_{y \rightarrow x} f(y) = z$$
-se
+<li>Si dice che \(\lim_{y \rightarrow x} f(y) = z\) se
 $$\begin{split}
 \forall \lim_{n \rightarrow \infty} a_n = x, \quad \lim_{n \rightarrow \infty} f(a_n) = z.
 \end{split}$$</li></ul>

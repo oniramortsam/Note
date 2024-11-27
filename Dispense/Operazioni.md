@@ -56,8 +56,8 @@ a < b &\longleftrightarrow a \cdot c < b \cdot c.
 ## Proprietà delle potenze
 
 $$\begin{split}
-{\rm A}^{{\rm B} + {\rm C}} &= {\rm A}^{\rm B} \cdot {\rm A}^{\rm C}\\
-({\rm A}^{\rm B})^{\rm C} &= {\rm A}^{{\rm B} \cdot {\rm C}}\\
+{\rm A}^{({\rm B} + {\rm C})} &= {\rm A}^{\rm B} \cdot {\rm A}^{\rm C}\\
+({\rm A}^{\rm B})^{\rm C} &= {\rm A}^{({\rm B} \cdot {\rm C})}\\
 ({\rm A} \cdot {\rm B})^{\rm C} &= {\rm A}^{\rm C} \cdot {\rm B}^{\rm C}.
 \end{split}$$
 

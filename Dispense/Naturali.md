@@ -2,24 +2,34 @@
 
 ## Divisione Euclidea
 
+- Definiamo 
+$$\begin{split}
+a // b := \max_{d \cdot b < a}(d)
+a \% b := a - (a // b) \cdot b.
+\end{split}$$
+- Allora
 $$\begin{split}
 a = (a // b) \cdot b + a \% b\\
-a \% b < b\\
-(x < b \land a = x \cdot b + y) \rightarrow (x = a // b) \land (y = a \% b) 
+0 \le a \% b < b.
+\end{split}$$
+- Inoltre
+$$\begin{split}
+(x < b \land a = x \cdot b + y) \longrightarrow (x = a // b) \land (y = a \% b).
 \end{split}$$
 
 ### Esercizi:
 - Mostra che:
 $$\begin{split}
 ((b \% a) + (c \% a)) \% a &= (b + c) \% a\\
-((b \% a) \cdot (c \% a)) \% a &= (b \cdot c) \% a
+((b \% a) \cdot (c \% a)) \% a &= (b \cdot c) \% a.
 \end{split}$$
-- Mostra che se $a \% b = 0$
+- Mostra che se $a \% b = 0$, allora:
 $$\begin{split}
 (c \% a) \% b &= c \% b\\
 c // b &= (c // a) \cdot (a // b) + ((c \% a) // b)\\
 (y < a // b \land z < b \land c = x \cdot a + y \cdot b + z) &\rightarrow x, y, z = c // a, (c \% a) // b, c \% b
 \end{split}$$
+- Questa proprietà si estende per ricorrenza alla scrittura in una base.
 
 ## Fattorizzazione unica
 
@@ -36,21 +46,18 @@ $$\begin{split}
 {\rm gcd}(a, b) \% c = 0 &\longleftrightarrow (a \% c = 0) \land (b \% c = 0)\\
 c \% {\rm lcm}(a, b) = 0 &\longleftrightarrow (c \% a = 0) \land (c \% b = 0).
 \end{split}$$
-- La fattorizzazione unica si riduce alla seguente proprietà: se per qualunque primo $p$ vale
+- Definiamo 
 $$\begin{split}
-\max_{a \% p^d = 0}(d) = \max_{b \% p^d = 0}(d)
+a || b := \max_{a \% b^d = 0}(d)
 \end{split}$$
-allora $a = b$.
+- Fattorizzazione unica: se per qualunque primo $p$ vale $a || p = b || p$, allora $a = b$.
 
 ### Esercizi
-- Mostra che per $p$ primo
+- Mostra che per $p$ primo:
 $$\begin{split}
-\max_{(a \cdot b) \% p^d = 0}(d) &= \max_{a \% p^d = 0}(d) + \max_{b \% p^d = 0}(d)
-\end{split}$$
-- Mostra che per $p$ primo
-$$\begin{split}
-\max_{{\rm lcm}(a, b) \% p^d = 0}(d) &= \max\left(\max_{a \% p^d = 0}(d), \max_{b \% p^d = 0}(d)\right)\\
-\max_{{\rm gcd}(a, b) \% p^d = 0}(d) &= \min\left(\max_{a \% p^d = 0}(d), \max_{b \% p^d = 0}(d)\right).
+(a \cdot b) || p &= (a || p) + (b || p)\\
+{\rm lcm}(a, b) || p &= \max(a || p, b || p)\\
+{\rm gcd}(a, b) || p &= \min(a || p, b || p).
 \end{split}$$
 - Mostra che:
 $$\begin{split}

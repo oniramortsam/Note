@@ -21,11 +21,7 @@ Questo garantisce l'unicità di un insieme finito \(\{a_0, \dots, a_n\}\).
 
 $$\forall a, b, \quad \exists \{a, b\}$$
 
-Questo garantisce l'esistenza della coppia \((a, b) := \{\{a\}, \{a, b\}\}\) e della tupla
-
-$$(a_0, \dots, a_n) := \{(a_0, \dots, a_{n - 1}), \{\dots\{a_{n - 1}, a_n\}\dots\}\}$$
-
-dove \(\{\dots\{\) e \(\}\dots\}\) indicano la presenza di \(n\) parentesi.
+Questo garantisce l'esistenza della coppia \((a, b) := \{\{a\}, \{a, b\}\}\) e, per <a href="Ricorrenza.html">Ricorrenza</a>, della tupla \((a_0, \dots, a_n)\).
 
 <h1>Principio delle Parti</h1>
 
@@ -58,13 +54,16 @@ Questo garantisce l'esistenza di un insieme finito \(\{a_0, \dots, a_n\}\).
 <h1>Principio di Separazione e Rimpiazzamento</h1>
 
 $$\begin{split}
-\exists \{f(a): a \in {\rm A}, p(a)\}
+\exists \{{\cal E}(a): a \in {\rm A}, {\cal C}(a)\}
 \end{split}$$
 
-dove \(p\) indica un predicato ed \(f\) una espressione. Questo garantisce l'esistenza del prodotto cartesiano \({\rm A}_0 \times \dots \times {\rm A}_n\), di \({\rm A}^{\rm B}\) e di
+dove \({\cal C}\) indica un predicato ed \({\cal E}\) una espressione. Questo garantisce l'esistenza di
 
 $$\begin{split}
-\prod_{a \in {\rm A}} f(a) \qquad \sum_{a \in {\rm A}} f(a).
+{\rm A} \times {\rm B} = \{c \in {\cal P} ({\cal P} ({\rm A} \cup {\rm B})\dots): \exists a \in {\rm A}, b \in {\rm B}, c = (a, b)\}\\
+\({\rm B}^{\rm A}\) = \{f \in {\cal P} ({\rm A} \times {\rm B}): \forall a \in {\rm A}, \exists b \in {\rm B}, \quad \{b\} = \{c \in {\rm B}: (a, c) \in f\}\}\\
+\prod_{a \in {\rm A}} {\cal E}(a) = \{f \in \left(\bigcup_{a \in {\rm A}} {\cal E}(a)\right)^{\rm A}: \forall a in {\rm A}, f(a) \in {\cal E} (a)\}\\
+\sum_{a \in {\rm A}} {\cal E}(a) = \bigcup_{a \in {\rm A}} (\{a\} \times {\cal E}(a)).
 \end{split}$$
 
 Se \({\rm B} \subseteq {\rm A}\), sono ben definite la proiezione e l'immersione canoniche

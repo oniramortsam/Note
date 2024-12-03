@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funzioni e Limiti</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Derivate</h1>
+
+    <ul>
+        <li>
+            Si dice che una funzione \(f\) è derivabile in \(x\) se esiste il limite del rapporto incrementale
+            $$\begin{split}
+            \frac{\partial f(y)}{\partial y}(x) = \lim_{y \rightarrow x} \frac{f(y) - f(x)}{y - x.}
+            \end{split}$$
+        </li>
+        <li>
+            Si dice che una funzione \(f\) è crescente se
+            $$\begin{split}
+            \forall x < y, \quad f(x) < f(y).
+            \end{split}$$
+        </li>
+        <li>
+            Si dice che una funzione \(f\) è convessa se
+            $$\begin{split}
+            \forall x < y < z, \quad f(y) < \left(\frac{z - y}{z - x}\right) \cdot f(x) + \left(\frac{y - x}{z - x}\right) \cdot f(z).
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h2>Esercizi</h2>
+    <ul>
+        <li>
+            Mostra che una funzione \(f\) crescente se e solo se
+            $$\begin{split}
+            \forall x < y, \quad \frac{f(y) - f(x)}{y - x} > 0.
+            \end{split}$$
+        </li>
+        <li>
+            Mostra che una funzione è crescente se e solo se il suo rapporto incrementale è positivo.
+        </li>
+        <li>
+            Mostra che una funzione è crescente se e solo se la sua derivata è positiva.
+        </li>
+        <li>
+            Mostra che una funzione \(f\) è convessa se e solo se
+            $$\begin{split}
+            \forall x < y < z, \quad \frac{f(y) - f(x)}{y - x} < \frac{f(z) - f(y)}{z - y.}
+            \end{split}$$
+        </li>
+        <li>
+            Mostra che una funzione è convessa se e solo se la sua derivata è crescente.
+        </li>
+        <li>
+            Mostra che una funzione è convessa se e solo se il suo rapporto incrementale è monotono.
+        </li>
+        <li>
+            Mostra che:
+            $$\begin{split}
+            \partial (f \cdot g) &= (\partial f) \cdot g + f \cdot (\partial g)\\
+            \partial (f \circ g) &= ((\partial f) \circ g) \cdot \partial g\\
+            \partial (f^{- 1}) &= 1 / ((\partial f) \circ (f^{- 1})).
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h1>Limiti notevoli</h1>
+
+    <ul>
+        <li>
+            Si riesce a calcolare che:
+            $$\begin{split}
+            \lim_{x \rightarrow 0}\frac{\sin(x)}{x} &= 1\\
+            \lim_{x \rightarrow 0}\frac{\cos(x) - 1}{x^2} &= \frac{1}{2}\\
+            \lim_{x \rightarrow 0}\frac{\exp(x) - 1}{x} &= 1\\
+            \lim_{x \rightarrow 0}\frac{\log(x + 1)}{x} &= 1
+            \end{split}$$
+        </li>
+        <li>
+            Si riesce a calcolare che:
+            $$\begin{split}
+            \frac{\partial \sin(y)}{\partial y}(x) &= \cos(x)\\
+            \frac{\partial \cos(y)}{\partial y}(x) &= - \sin(x)\\
+            \frac{\partial \exp(y)}{\partial y}(x) &= \exp(x)\\
+            \frac{\partial \log(y)}{\partial y}(x) &= \frac{1}{x}\\
+            \frac{\partial y^a}{\partial y}(x) &= a \cdot x^{a - 1}.
+            \end{split}$$
+        </li>
+        <li>
+            Si definiscono:
+            $$\begin{split}
+            \tan(x) &= \frac{\sin(x)}{\cos(x)}\\
+            \cot(x) &= \frac{\cos(x)}{\sin(x).}
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h2>Esercizi</h2>
+    <ul>
+        <li>
+            Mostra che sono bigettive:
+            $$\begin{split}
+            \cos:& [0, \pi] \rightarrow [- 1, 1]\\
+            \sin:& \left[- \frac{\pi}{2}, \frac{\pi}{2}\right] \rightarrow [- 1, 1]\\
+            \tan:& \left(- \frac{\pi}{2}, \frac{\pi}{2}\right) \rightarrow {\mathbb R}\\
+            \cot:& (0, \pi) \rightarrow {\mathbb R}
+            \end{split}$$
+        </li>
+        <li>
+            Determina poi se sono pari, dispari, periodiche, monotone.
+        </li>
+        <li>
+            Determina poi se le loro inverse sono pari, dispari, periodiche, monotone.
+        </li>
+    </ul>
+
+    <h1>Funzioni iperboliche</h1>
+
+    <ul>
+        <li>
+            Si definiscono:
+            $$\begin{split}
+            \cosh(x) &= \frac{\exp(x) + \exp(- x)}{2}\\
+            \sinh(x) &= \frac{\exp(x) - \exp(- x)}{2.}
+            \end{split}$$
+        </li>
+        <li>
+            Si definiscono:
+            $$\begin{split}
+            \tanh(x) &= \frac{\sinh(x)}{\cosh(x)}\\
+            \coth(x) &= \frac{\cosh(x)}{\sinh(x).}
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h2>Esercizi</h2>
+    <ul>
+        <li>
+            Mostra che sono bigettive:
+            $$\begin{split}
+            \cosh:& {\mathbb R} \rightarrow {\mathbb R}_+\\
+            \sinh:& {\mathbb R} \rightarrow {\mathbb R}\\
+            \tanh:& {\mathbb R} \rightarrow [- 1, 1]\\
+            \coth:& {\mathbb R} \setminus \{0\} \rightarrow {\mathbb R} \setminus [-1, 1].
+            \end{split}$$
+        </li>
+        <li>
+            Determina poi se sono pari, dispari, periodiche, monotone.
+        </li>
+        <li>
+            Calcola le loro inverse e determina se sono pari, dispari, periodiche, monotone.
+        </li>
+    </ul>
+
+</body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Numeri Naturali</title>
+    <title>Algebra Lineare</title>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
@@ -11,6 +11,49 @@
 </head>
 <body>
 
+    <h1>Matrici Simmetriche</h1>
+
+    Consideriamo una matrice simmetrica e semidefinita positiva \(\rm S\) e definiamo per ricorrenza
+
+    $$\begin{split}
+    \lambda_{k, n} x_{k, n} = {\rm S} \cdot x_{k, n - 1} - \sum_{h \in k} (x_{k, n - 1}^\star \cdot {\rm S} \cdot x_{h, n}) x_{h, n}\\
+    \end{split}$$
+
+    con \(|x_{k, n}| = 1\), allora
     
+    $$\begin{split}
+    {\rm S} = \sum_{k \in d} \lambda_k (x_k \cdot x_k^\star)
+    \end{split}$$
+
+    <h1>Matrici Ortogonali</h1>
+
+    La riflessione \(\sigma_v\) rispetto al vettore \(v\) con \(|v| = 1\) è \(1_{\mathbb V} - 2 (v \cdot v^\star)\).
+    Una isometria si può scrivere come composizione di \(d\) o \(d - 1\) riflessioni.
+    La composizione di \(k\) riflessioni stabilizza almeno uno spazio di dimensione \(d - k\).    
+
+    <h1>Determinante</h1>
+
+    Consideriamo invece una mappa lineare \(\rm A\) e
+
+    $$\begin{split}
+    {\rm A}^\star \cdot {\rm A} = \sum_{k \in d} \lambda_k^2 (x_k \cdot x_k^\star)\\
+    {\rm A} \cdot {\rm A}^\star = \sum_{k \in d} \lambda_k^2 (y_k \cdot y_k^\star)
+    \end{split}$$
+
+    allora possiamo scegliere \(y_k\) di modo che \(\lambda_k > 0\)
+
+    $$\begin{split}
+    ({\rm A} \cdot {\rm A}^\star)^{- \frac{1}{2}} \cdot {\rm A} = \sum_{k \in d} (y_k \cdot x_k^\star) = {\rm H}\\
+    {\rm A} \cdot ({\rm A}^\star \cdot {\rm A})^{- \frac{1}{2}} = \sum_{k \in d} (y_k \cdot x_k^\star) = {\rm H}.
+    \end{split}$$
+
+    Il determinante di una mappa è il volume dell'immagine di un insieme di volume unitario \(\prod_{k \in d} \lambda_k\) , ma con segno negativo se \({\rm H}\) si scrive come un numero dispari di riflessioni.
+
+    $$\begin{split}
+    {\rm det} (\sigma_v) = - 1
+    {\rm det} ({\rm A} \cdot {\rm B}) = {\rm det} ({\rm A}) {\rm det} ({\rm B})
+    \end{split}$$
+
+    Per il principio di cavalieri il determinante di una matrice triangolare è il prodotto degli elementi sulla diagonale. Come conseguenza, il metodo di Gauss preserva il determinante. In termini di forme differenziali si possono ricavare la formula di Laplace e di Lebesgue (COME ?).
 
 </body>

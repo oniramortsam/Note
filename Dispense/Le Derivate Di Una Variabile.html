@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Derivate Di Una Variabile</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Derivate</h1>
+
+    <ul>
+        <li>
+            Si dice che una funzione \(f\) è derivabile in \(x\) se esiste il limite del rapporto incrementale
+            $$\begin{split}
+            \frac{\partial f(y)}{\partial y}(x) = \lim_{y \rightarrow x} \frac{f(y) - f(x)}{y - x.}
+            \end{split}$$
+        </li>
+        <li>
+            Si può mostrare che:
+            $$\begin{split}
+            \partial (f g) &= (\partial f) g + f (\partial g)\\
+            \partial (f \circ g) &= ((\partial f) \circ g) \partial g\\
+            \partial (f^{- 1}) &= 1 / ((\partial f) \circ (f^{- 1})).
+            \end{split}$$
+        </li>
+        <li>
+            Si dice che una funzione \(f\) è crescente se
+            $$\begin{split}
+            \forall x < y, \quad f(x) < f(y).
+            \end{split}$$
+        </li>
+        <li>
+            Si dice che una funzione \(f\) è convessa se
+            $$\begin{split}
+            \forall x < y < z, \quad f(y) < \left(\frac{z - y}{z - x}\right) f(x) + \left(\frac{y - x}{z - x}\right) f(z).
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h2>Esercizi</h2>
+    <ul>
+        <li>
+            Mostra che una funzione \(f\) crescente se e solo se
+            $$\begin{split}
+            \forall x < y, \quad \frac{f(y) - f(x)}{y - x} > 0.
+            \end{split}$$
+        </li>
+        <li>
+            Mostra che una funzione è crescente se e solo se il suo rapporto incrementale è positivo.
+        </li>
+        <li>
+            Mostra che una funzione è crescente se e solo se la sua derivata è positiva.
+        </li>
+        <li>
+            Mostra che una funzione \(f\) è convessa se e solo se
+            $$\begin{split}
+            \forall x < y < z, \quad \frac{f(y) - f(x)}{y - x} < \frac{f(z) - f(y)}{z - y.}
+            \end{split}$$
+        </li>
+        <li>
+            Mostra che una funzione è convessa se e solo se la sua derivata è crescente.
+        </li>
+        <li>
+            Mostra che una funzione è convessa se e solo se il suo rapporto incrementale è monotono.
+        </li>
+    </ul>
+
+</body>

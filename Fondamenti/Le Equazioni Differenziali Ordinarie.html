@@ -13,7 +13,32 @@
 
     <h1>Teorema Di Esistenza Di Picard</h1>
 
-    <h1>Stabilità E Funzioni Di Lyapunov</h1>
+    Il problema di Cauchy
+    $$\begin{cases}
+    x (0) = a\\
+    \partial x = f \circ x
+    \end{cases}$$
+    si riduce alla forma di Volterra
+    $$\begin{split}
+    x(t) = a + \int_0^t x(s) d s.
+    \end{split}$$
+    Questa identifica un metodo iterativo
+    $$\begin{split}
+    x_{n + 1}(t) = a + \int_0^t f(x_n(s)) d s.
+    \end{split}$$
+    Tale metodo è convergente se la funzione \(f\) è Lipshitziana, infatti
+    $$\begin{split}
+    \int_0^t e^{({\rm L} + \varepsilon) (t - s)} |u_{n + 1} (s) - v_{n + 1} (s)| d s \le \frac{\rm L}{{\rm L} + \varepsilon} \int_0^t \left(e^{{\rm L} (t - s)} - 1\right) |u_n (s) - v_n (s)| d s,
+    \end{split}$$
+    quindi, per il teorema delle contrazioni, \(x_n\) converge in norma \({\cal L}_1\) all'unica soluzione del problema di Cauchy.
+
+    <h1>Funzioni Di Lyapunov</h1>
+
+    Consideriamo una funzione \(\lambda\) che soddisfi \(\nabla \lambda (x) \cdot f (x) \le 0\). Allora Gli spazi del tipo \(\{x: \lambda (x) \le c\}\) al variare di \(c\), sono invarianti per il sistema. Similmente supponiamo che valga
+    $$\begin{split}
+    \mu (x) \ge \nu (y) \rightarrow \nabla \mu (x) \cdot f (x) \le \nabla \nu (y) \cdot g (y),
+    \end{split}$$
+    allora \(\mu (x (0)) \le \nu (y(0)) \rightarrow \mu (x (t)) \le \nu (y(t))\).
 
     <h1>Biforcazioni</h1>
 

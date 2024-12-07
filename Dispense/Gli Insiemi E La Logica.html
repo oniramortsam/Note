@@ -7,7 +7,7 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -62,6 +62,25 @@
             \end{split}$$
         </li>
     </ul>
+
+    <h1>Quantificatori</h1>
+
+    <ul>
+        <li>
+            Si scrive \(\forall x, {\cal C} (x)\) e si dice che per ogni \(x\) si ha \({\cal C} (x)\).
+        </li>
+        <li>
+            Si scrive \(\exists x: {\cal C} (x)\) e si dice che esiste \(x\) tale che \({\cal C} (x)\).
+        </li>
+        <li>
+            Si possono scrivere i quantificatori l'uno in termini dell'altro come segue:
+            $$\begin{split}
+            (\exists x: {\cal C}(x)) &\longleftrightarrow \lnot (\forall x, \lnot {\cal C} (x))\\
+            (\forall x, {\cal C}(x)) &\longleftrightarrow \lnot (\exists x: \lnot {\cal C} (x))
+            \end{split}$$
+        </li>
+    </ul>
+
 
     <h1>Massimi e Minimi</h1>
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Rotazioni Del Piano Euclideo</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <ul>
+        <li>
+            Dati due vettori \(u, v\) di stesso modulo, esiste un solo angolo \(\alpha\) per cui \(v = r_\alpha (u)\). Cioè detta \({\rm O}\) l'origine e \({\rm U} = {\rm O} + u, {\rm V} = {\rm O} + v\), una rotazione attorno ad \(\rm O\) di angolo \(\alpha = \hat{{\rm U}{\rm O}{\rm V}}\) manda \(\rm U\) in \(\rm V\).
+        </li>
+        <li>
+            Diciamo \(\pi\) l'angolo formato da tre punti allineati, cioè tale che \(r_\pi (u) = - u\).
+        </li>
+        <li>
+            Dati due vettori \(u, v\), esistono unici \(a, b\) tali che
+            $$\begin{split}
+            v = a \cdot u + b \cdot r_\frac{\pi}{2} (u).
+            \end{split}$$
+        </li>
+        <li>
+            $$\begin{split}
+            ({\rm A} + u) + v &= {\rm A} + (u + v)\\
+            r_\alpha (r_\beta (u)) &= r_{\alpha + \beta} (u)\\
+            x \cdot (y \cdot u) &= (y \cdot x) \cdot u\\
+            r_\alpha (x \cdot u) &= x \cdot (r_\alpha (u))\\
+            r_\alpha (u + v) &= r_\alpha (u) + r_\alpha (v)\\
+            x \cdot (u + v) &= x \cdot u + x \cdot v\\
+            (x + y) \cdot u &= x \cdot u + y \cdot u\\
+            |x \cdot u| &= |x| \cdot |u|.
+            \end{split}$$
+        </li>
+    </ul>
+    
+    <h2>Esercizi:</h2>
+
+    Mostra che:
+    <ul>
+        <li>
+            Una traslazione composta una rotazione è una rotazione composta una traslazione.
+        </li>
+        <li>
+            Una traslazione composta una dilatazione è una dilatazione composta una traslazione.
+        </li>
+        <li>
+            Le traslazioni mandano rette in rette parallele.
+        </li>
+        <li>
+            Le traslazioni conservano le distanze.
+        </li>
+        <li>
+            Le rotazioni conservano gli angoli.
+        </li>
+        <li>
+            Le rotazioni conservano le distanze.
+        </li>
+        <li>
+            Le dilatazioni mandano rette in rette parallele.
+        </li>
+        <li>
+            Le dilatazioni moltiplicano le distanze per una costante.
+        </li>
+        <li>
+            Dati due segmenti orientati esiste una unica trasformazione conforme che manda l'uno nell'altro.
+        </li>
+    </ul>
+    
+    <h1>Prodotto scalare e vettoriale</h1>
+    
+    Siano
+    $$\begin{split}
+    v = a \cdot u + b \cdot r_\frac{\pi}{2} \cdot u:
+    \end{split}$$
+
+    <ul>
+        <li>
+            Si dice prodotto scalare \(u^\star \cdot v = a \cdot |u|^2\).
+        </li>
+        <li>
+            Si dice prodotto vettoriale \(u \times v = b \cdot |u|^2\).
+        </li>
+    </ul>
+    
+    <h2>Esercizi:</h2>
+
+    Mostra che:
+    <ul>
+        <li>
+            $$\begin{split}
+            u \cdot u = |u|^2 &\qquad u \times u = 0\\
+            u \cdot v = v \cdot u &\qquad u \times v + v \times u = 0\\
+            u \cdot (r_\frac{\pi}{2} \cdot u) = 0 &\qquad u \times (r_\frac{\pi}{2} \cdot u) = |u|^2\\
+            (r_\alpha \cdot u) \cdot (r_\alpha \cdot v) = u \cdot v &\qquad (r_\alpha \cdot u) \times (r_\alpha \cdot v) = u \times v\\
+            u \cdot (x \cdot v + w) = x \cdot (u \cdot v) + (u \cdot w) &\qquad u \times (x \cdot v + w) = x \cdot (u \times v) + (u \times w).
+            \end{split}$$
+        </li>
+        <li>
+            $$\begin{split}
+            u \times v &= (r_\frac{\pi}{2} \cdot u) \cdot v\\
+            |u \cdot v|^2 + |u \times v|^2 &= |u|^2 \cdot |v|^2.    
+            \end{split}$$
+        </li>
+    </ul>
+    
+</body>

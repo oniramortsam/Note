@@ -7,122 +7,279 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
     <h1>Proprietà associativa</h1>
 
+    Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
     $$\begin{split}
     {\rm A} + ({\rm B} + {\rm C}) &= ({\rm A} + {\rm B}) + {\rm C}\\
     {\rm A} \cdot ({\rm B} \cdot {\rm C}) &= ({\rm A} \cdot {\rm B}) \cdot {\rm C}.
     \end{split}$$
 
     <h2>Esercizi:</h2>
-    <ul><li>Mostra che sono uguali:
-    $$\begin{split}
-    a + (b + (c + d)) = (a + b) + (c + d) = ((a + b) + c) + d = (a + (b + c)) + d = a + ((b + c) + d).
-    \end{split}$$</li>
-    <li>Mostra che sono uguali:
-    $$\begin{split}
-    a \cdot (b \cdot (c \cdot d)) = (a \cdot b) \cdot (c \cdot d) = ((a \cdot b) \cdot c) \cdot d = (a \cdot (b \cdot c)) \cdot d = a \cdot ((b \cdot c) \cdot d).
-    \end{split}$$</li></ul>
+    <ul>
+        <li>
+            Mostra che sono uguali:
+            $$\begin{split}
+            a + (b + (c + d)) &= (a + b) + (c + d)\\
+            (a + b) + (c + d) &= ((a + b) + c) + d\\
+            ((a + b) + c) + d &= (a + (b + c)) + d\\
+            (a + (b + c)) + d &= a + ((b + c) + d)\\
+            a + ((b + c) + d) &= a + (b + (c + d)).
+            \end{split}$$
+            <div class="dropdown">
+                Soluzione: <button class="dropdown-btn">basta applicare la proprietà associativa con</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    {\rm A}, {\rm B}, {\rm C} &= a, b, c + d\\
+                    {\rm A}, {\rm B}, {\rm C} &= a + b, c, d\\
+                    {\rm A}, {\rm B}, {\rm C} &= a, b, c\\
+                    {\rm A}, {\rm B}, {\rm C} &= a, b + c, d\\
+                    {\rm A}, {\rm B}, {\rm C} &= b, c, d.
+                    \end{split}$$        
+                </div>
+            </div>
+        </li>
+        <li>
+            Mostra che sono uguali:
+            $$\begin{split}
+            a \cdot (b \cdot (c \cdot d)) &= (a \cdot b) \cdot (c \cdot d)\\
+            (a \cdot b) \cdot (c \cdot d) &= ((a \cdot b) \cdot c) \cdot d\\
+            ((a \cdot b) \cdot c) \cdot d &= (a \cdot (b \cdot c)) \cdot d\\
+            (a \cdot (b \cdot c)) \cdot d &= a \cdot ((b \cdot c) \cdot d)\\
+            a \cdot ((b \cdot c) \cdot d) &= a \cdot (b \cdot (c \cdot d)).
+            \end{split}$$
+            <div class="dropdown">
+                Soluzione: <button class="dropdown-btn">basta applicare la proprietà associativa con</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    {\rm A}, {\rm B}, {\rm C} &= a, b, c \cdot d\\
+                    {\rm A}, {\rm B}, {\rm C} &= a \cdot b, c, d\\
+                    {\rm A}, {\rm B}, {\rm C} &= a, b, c\\
+                    {\rm A}, {\rm B}, {\rm C} &= a, b \cdot c, d\\
+                    {\rm A}, {\rm B}, {\rm C} &= b, c, d.
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+    </ul>
 
     <h1>Proprietà commutativa</h1>
 
+    Dati due numeri \({\rm A}, {\rm B}\) (che siano o meno interi)
     $$\begin{split}
     {\rm A} + {\rm B} &= {\rm B} + {\rm A}\\
     {\rm A} \cdot {\rm B} &= {\rm B} \cdot {\rm A}.
     \end{split}$$
 
     <h2>Esercizi:</h2>
-    <ul><li>Mostra che sono uguali:
-    $$\begin{split}
-    a + b + c = a + c + b = c + a + b = c + b + a = b + c + a = b + a + c.
-    \end{split}$$</li>
-    <li>Mostra che sono uguali:
-    $$\begin{split}
-    a \cdot b \cdot c = a \cdot c \cdot b = c \cdot a \cdot b = c \cdot b \cdot a = b \cdot c \cdot a = b \cdot a \cdot c.
-    \end{split}$$</li></ul>
+    <ul>
+        <li>
+            Mostra che sono uguali:
+            $$\begin{split}
+            a + b + c &= a + c + b\\
+            a + b + c &= b + a + c\\
+            a + b + c &= b + c + a\\
+            a + b + c &= c + a + b.
+            \end{split}$$
+            <div class="dropdown">
+                Soluzione: <button class="dropdown-btn">basta applicare la proprietà commutativa con</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    {\rm A}, {\rm B} &= b, c\\
+                    {\rm A}, {\rm B} &= a, b\\
+                    {\rm A}, {\rm B} &= a, b + c\\
+                    {\rm A}, {\rm B} &= a + b, c.
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            Mostra che sono uguali:
+            $$\begin{split}
+            a \cdot b \cdot c &= a \cdot c \cdot b\\
+            a \cdot b \cdot c &= c \cdot a \cdot b\\
+            a \cdot b \cdot c &= b \cdot a \cdot c\\
+            a \cdot b \cdot c &= b \cdot c \cdot a.
+            \end{split}$$
+            <div class="dropdown">
+                Soluzione: <button class="dropdown-btn">basta applicare la proprietà commutativa con</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    {\rm A}, {\rm B} &= b, c\\
+                    {\rm A}, {\rm B} &= a, b\\
+                    {\rm A}, {\rm B} &= a, b \cdot c\\
+                    {\rm A}, {\rm B} &= a \cdot b, c.
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+    </ul>
 
     <h1>Proprietà distributiva</h1>
 
+    Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
     $$\begin{split}
     {\rm A} \cdot ({\rm B} + {\rm C}) &= {\rm A} \cdot {\rm B} + {\rm A} \cdot {\rm C}.
     \end{split}$$
 
     <h2>Esercizi:</h2>
-    <ul><li>Mostra che:
-    $$\begin{split}
-    a \cdot (b + c + d) &= a \cdot b + a \cdot c + a \cdot d.
-    \end{split}$$</li>
-    <li>Correggi l'errore:
-    $$\begin{split}
-    a = b &\longleftrightarrow a + c = b + c\\
-    a = b &\longleftrightarrow a \cdot c = b \cdot c\\
-    a < b &\longleftrightarrow a + c < b + c\\
-    a < b &\longleftrightarrow a \cdot c < b \cdot c.
-    \end{split}$$</li></ul>
+    <ul>
+        <li>
+            Mostra che:
+            $$\begin{split}
+            a \cdot (b + c + d) &= a \cdot b + a \cdot c + a \cdot d.
+            \end{split}$$
+        </li>
+        <li>
+            Correggi l'errore:
+            $$\begin{split}
+            a = b &\longleftrightarrow a + c = b + c\\
+            a = b &\longleftrightarrow a \cdot c = b \cdot c\\
+            a < b &\longleftrightarrow a + c < b + c\\
+            a < b &\longleftrightarrow a \cdot c < b \cdot c.
+            \end{split}$$
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>
+                            La seconda vale se \(c \ne 0\).
+                        </li>
+                        <li>
+                            La quarta vale se \(c > 0\).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
 
     <h1>Proprietà delle potenze</h1>
 
+    Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
     $$\begin{split}
     {\rm A}^{{\rm B} + {\rm C}} &= {\rm A}^{\rm B} \cdot {\rm A}^{\rm C}\\
-    ({\rm A}^{\rm B})^{\rm C} &= {\rm A}^{{\rm B} \cdot {\rm C}}\\
+    \left({\rm A}^{\rm B}\right)^{\rm C} &= {\rm A}^{{\rm B} \cdot {\rm C}}\\
     ({\rm A} \cdot {\rm B})^{\rm C} &= {\rm A}^{\rm C} \cdot {\rm B}^{\rm C}.
     \end{split}$$
 
     <h2>Esercizi:</h2>
-    <ul><li>Mostra che:
-    $$\begin{split}
-    a^{b + c + d} &= a^b \cdot a^c \cdot a^d\\
-    ((a^b)^c)^d &= a^{b \cdot c \cdot d}\\
-    (a \cdot b \cdot c)^d &= a^d \cdot b^d \cdot c^d.
-    \end{split}$$</li>
-    <li>Correggi l'errore:
-    $$\begin{split}
-    a = b &\longleftrightarrow a^c = b^c\\
-    a = b &\longleftrightarrow c^a = c^b\\
-    a < b &\longleftrightarrow a^c < b^c\\
-    a < b &\longleftrightarrow c^a < c^b.
-    \end{split}$$</li></ul>
+    <ul>
+        <li>
+            Mostra che:
+            $$\begin{split}
+            a^{b + c + d} &= a^b \cdot a^c \cdot a^d\\
+            \left(\left(a^b\right)^c\right)^d &= a^{b \cdot c \cdot d}\\
+            (a \cdot b \cdot c)^d &= a^d \cdot b^d \cdot c^d.
+            \end{split}$$
+        </li>
+        <li>
+            Correggi l'errore:
+            $$\begin{split}
+            a = b &\longleftrightarrow a^c = b^c\\
+            a = b &\longleftrightarrow c^a = c^b\\
+            a < b &\longleftrightarrow a^c < b^c\\
+            a < b &\longleftrightarrow c^a < c^b.
+            \end{split}$$
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>
+                            La prima vale se \(c \ne 0\).
+                        </li>
+                        <li>
+                            La seconda vale se \(c \ne 1\).
+                        </li>
+                        <li>
+                            La terza vale se \(c > 0\).
+                        </li>
+                        <li>
+                            La quarta vale se \(c > 1\).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
 
     <h1>Differenza e Divisione</h1>
 
+    La differenza e la divisione sono le inverse di somma e moltiplicazione, per cui sono definite come segue:
     $$\begin{split}
-    a - b = c &\longleftrightarrow a = b + c\\
-    a / b = c &\longleftrightarrow a = b \cdot c
+    {\rm A} - {\rm B} = {\rm C} &\longleftrightarrow {\rm A} = {\rm B} + {\rm C}\\
+    {\rm A} / {\rm B} = {\rm C} &\longleftrightarrow {\rm A} = {\rm B} \cdot {\rm C}.
+    \end{split}$$
+    Per cui, ad esempio
+    $$\begin{split}
+    {\rm A} = {\rm B} + ({\rm A} - {\rm B}) &\qquad {\rm C} = ({\rm B} + {\rm C}) - {\rm B}\\
+    {\rm A} = {\rm B} \cdot ({\rm A} / {\rm B}) &\qquad {\rm C} = ({\rm B} \cdot {\rm C}) / {\rm B}.
     \end{split}$$
 
     <h2>Esercizi:</h2>
-    <ul><li>Mostra che:
-    $$\begin{split}
-    (a - c) + b = (a + b) - c\\ 
-    a + (b - c) = (a + b) - c\\
-    a - (c - b) = (a + b) - c\\
-    (a - b) - c = a - (b + c)\\
-    (a / c) \cdot b = (a \cdot b) / c\\ 
-    a \cdot (b / c) = (a \cdot b) / c\\
-    a / (c / b) = (a \cdot b) / c\\
-    (a / b) / c = a / (b \cdot c)\\
-    (a - b) \cdot c = a \cdot c - b \cdot c\\
-    (a + b) / c = (a / c) + (b / c)\\
-    (a - b) / c = (a / c) - (b / c).
-    \end{split}$$</li>
-    <li>Correggi l'errore:
-    $$\begin{split}
-    a = b &\longleftrightarrow a - c = b - c\\
-    a = b &\longleftrightarrow c - a = c - b\\
-    a < b &\longleftrightarrow a - c < b - c\\
-    a < b &\longleftrightarrow c - a < c - b.
-    \end{split}$$</li>
-    <li>Correggi l'errore:
-    $$\begin{split}
-    a = b &\longleftrightarrow a / c = b / c\\
-    a = b &\longleftrightarrow c / a = c / b\\
-    a < b &\longleftrightarrow a / c < b / c\\
-    a < b &\longleftrightarrow c / a < c / b.
-    \end{split}$$</li></ul>
+    <ul>
+        <li>
+            Mostra che:
+            $$\begin{split}
+            (a - c) + b = (a + b) - c\\ 
+            a + (b - c) = (a + b) - c\\
+            a - (c - b) = (a + b) - c\\
+            (a - b) - c = a - (b + c)\\
+            (a / c) \cdot b = (a \cdot b) / c\\ 
+            a \cdot (b / c) = (a \cdot b) / c\\
+            a / (c / b) = (a \cdot b) / c\\
+            (a / b) / c = a / (b \cdot c)\\
+            (a - b) \cdot c = a \cdot c - b \cdot c\\
+            (a + b) / c = (a / c) + (b / c)\\
+            (a - b) / c = (a / c) - (b / c).
+            \end{split}$$
+        </li>
+        <li>
+            Correggi l'errore:
+            $$\begin{split}
+            a = b &\longleftrightarrow a - c = b - c\\
+            a = b &\longleftrightarrow c - a = c - b\\
+            a < b &\longleftrightarrow a - c < b - c\\
+            a < b &\longleftrightarrow c - a < c - b.
+            \end{split}$$
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>
+                            La quarta vale al contrario.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li>
+            Correggi l'errore:
+            $$\begin{split}
+            a = b &\longleftrightarrow a / c = b / c\\
+            a = b &\longleftrightarrow c / a = c / b\\
+            a < b &\longleftrightarrow a / c < b / c\\
+            a < b &\longleftrightarrow c / a < c / b.
+            \end{split}$$
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>
+                            La terza vale per \(c > 0\).
+                        </li>
+                        <li>
+                            La quarta vale per \(c < 0\).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
 
     <h1>Radicali e Logaritmi</h1>
 
@@ -132,50 +289,89 @@
     \end{split}$$
 
     <h2>Esercizi:</h2>
-    <ul><li>Mostra che:
-    $$\begin{split}
-    a^{b - c} = a^b / a^c\\
-    a^{b / c} = \sqrt[c]{(a^b)}\\
-    a^{b / c} = (\sqrt[c]{a})^b\\
-    \sqrt[c]{a \cdot b} = \sqrt[c]{a} \cdot \sqrt[c]{b}\\
-    (a / b)^c = a^c / b^c\\
-    \sqrt[c]{(a / b)} = \sqrt[c]{a} / \sqrt[c]{b.}
-    \end{split}$$</li>
-    <li>Mostra che:
-    $$\begin{split}
-    \log_a(b \cdot c) = \log_a(b) + \log_a(c)\\
-    \log_a(b / c) = \log_a(b) - \log_a(c)\\
-    \log_a(b^c) = c \cdot \log_a(b)\\
-    \log_a(\sqrt[c]{b}) = \log_a(b) / c\\
-    \log_a(b) \cdot \log_b(c) = \log_a(c)\\
-    \log_a(b) = \log_c(b) / \log_c(a)
-    \end{split}$$</li>
-    <li>Correggi l'errore:
-    $$\begin{split}
-    a = b &\longleftrightarrow \sqrt[c]{a} = \sqrt[c]{b}\\
-    a = b &\longleftrightarrow \sqrt[a]{c} = \sqrt[b]{c}\\
-    a < b &\longleftrightarrow \sqrt[c]{a} < \sqrt[c]{b}\\
-    a < b &\longleftrightarrow \sqrt[a]{c} < \sqrt[b]{c}
-    \end{split}$$</li>
-    <li>Correggi l'errore:
-    $$\begin{split}
-    a = b &\longleftrightarrow \log_c(a) = \log_c(b)\\
-    a = b &\longleftrightarrow \log_a(c) = \log_b(c)\\
-    a < b &\longleftrightarrow \log_c(a) < \log_c(b)\\
-    a < b &\longleftrightarrow \log_a(c) < \log_b(c)
-    \end{split}$$</li></ul>
+    <ul>
+        <li>
+            Mostra che:
+            $$\begin{split}
+            a^{b - c} = a^b / a^c\\
+            a^{b / c} = \sqrt[c]{(a^b)}\\
+            a^{b / c} = (\sqrt[c]{a})^b\\
+            \sqrt[c]{a \cdot b} = \sqrt[c]{a} \cdot \sqrt[c]{b}\\
+            (a / b)^c = a^c / b^c\\
+            \sqrt[c]{(a / b)} = \sqrt[c]{a} / \sqrt[c]{b.}
+            \end{split}$$
+        </li>
+        <li>
+            Mostra che:
+            $$\begin{split}
+            \log_a(b \cdot c) = \log_a(b) + \log_a(c)\\
+            \log_a(b / c) = \log_a(b) - \log_a(c)\\
+            \log_a(b^c) = c \cdot \log_a(b)\\
+            \log_a(\sqrt[c]{b}) = \log_a(b) / c\\
+            \log_a(b) \cdot \log_b(c) = \log_a(c)\\
+            \log_a(b) = \log_c(b) / \log_c(a)
+            \end{split}$$
+        </li>
+        <li>
+            Correggi l'errore:
+            $$\begin{split}
+            a = b &\longleftrightarrow \sqrt[c]{a} = \sqrt[c]{b}\\
+            a = b &\longleftrightarrow \sqrt[a]{c} = \sqrt[b]{c}\\
+            a < b &\longleftrightarrow \sqrt[c]{a} < \sqrt[c]{b}\\
+            a < b &\longleftrightarrow \sqrt[a]{c} < \sqrt[b]{c}
+            \end{split}$$
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>
+                            La seconda vale per \(c \ne 1\).
+                        </li>
+                        <li>
+                            La quarta vale per \(c > 1\).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li>
+            Correggi l'errore:
+            $$\begin{split}
+            a = b &\longleftrightarrow \log_c(a) = \log_c(b)\\
+            a = b &\longleftrightarrow \log_a(c) = \log_b(c)\\
+            a < b &\longleftrightarrow \log_c(a) < \log_c(b)\\
+            a < b &\longleftrightarrow \log_a(c) < \log_b(c)
+            \end{split}$$
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>
+                            La seconda vale per \(c \ne 1\).
+                        </li>
+                        <li>
+                            La terza vale per \(c > 1\).
+                        </li>
+                        <li>
+                            La quarta vale per \(c < 1\).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
 
     <h1>Approfondimento</h1>
 
     <ul>
         <li>
-            <a ref="Il Principio Di Induzione.html">Il Principio Di Induzione</a>.
+            <a href="I Numeri Naturali.html">I Numeri Naturali</a>.
         </li>
         <li>
-            <a ref="I Numeri Naturali.html">I Numeri Naturali</a>.
+            <a href="../Fondamenti/Il Principio Di Induzione.html">Il Principio Di Induzione</a>.
         </li>
         <li>
-            <a ref="I Polinomi Di Una Variabile.html">I Polinomi Di Una Variabile</a>.
+            <a href="I Polinomi Di Una Variabile.html">I Polinomi Di Una Variabile</a>.
         </li>
     </ul>
 

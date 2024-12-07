@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Gruppi Finiti</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <h1>Teoremi di Sylow</h1>
+
+    Sia \(\rm G\) un gruppo finito di cardinalità \(n\), allora la cardinalità di ogni suo sottogruppo divide \(n\).
+    Sia \(p\) un primo che divide \(n\). Allora esiste almeno un elemento ordine \(p\). Infatti facendo agire \(\rm G\) per coniugio su sé stesso si hanno tre possibilità:
+    <ul>
+        <li>
+            Il gruppo è commutativo ed il suo ordine divide il prodotto dell'ordine dei suoi generatori.
+        </li>
+        <li>
+            Il suo centralizzatore ha cardinalità multipla di \(p\) ed è proprio. Per induzione su \(n\), si ha la tesi.
+        </li>
+        <li>
+            Lo stabilizzatore di un elemento ha cardinalità multipla di \(p\) ed è proprio. Per induzione su \(n\), si ha la tesi.
+        </li>
+    </ul>
+    Sia \(n = p^r m\) con \(p\) che non divide \(m\). Sia \(\rm H\) un sottogruppo di cadinalità \(p^k\) con \(k < r\). Allora esiste almeno un sottogruppo di cardinalità \(p^{k + 1}\) che contiene \(\rm H\). Infatti facendo agire \(\rm G\) per coniugio sui coniugati di \(\rm H\) si hanno tre possibilità:
+    <ul>
+        <li>
+            \(p^r\) divide la cardinalità di \(\rm N\), il normalizzatore di \(\rm H\). Senza perdita di generalità \(\rm H\) è normale e ci si riduce a \(k = 0\).
+        </li>
+        <li>
+            \(p\) divide la cardinalità dell'orbita di \(\rm H\), allora visto che \(\rm H\) normalizza sé stesso, deve normalizzare almeno altri \(p - 1\) suoi coniugati. Per automorfismo allora, \(\frac{\rm N}{\rm H}\) avrebbe un elemento di ordine positivo che divide \(p^k\), cioè \(p^{k + 1}\) deve dividere la cardinalità di \(\rm N\).
+        </li>
+    </ul>
+    Sia \(\rm S\), un sottogruppo di ordine \(p^r\). Allora facendo agire \(\rm S\) per coniugio sui suoi coniugati, notiamo che questi sono in numero congrui a \(1\) modulo \(p\). Similmente facendo agire \(\rm S\) per coniugio sui coniugati di un altro sottogruppo dello stesso ordine, si nota che \(\rm S\) deve essere tra questi. Quindi i sottogruppi di ordine \(p^r\) sono coniugati tra loro.
+
+</body>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Rette Del Piano Euclideo</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <ul>
+        <li>
+            Dati due punti \({\rm A} = (x_{\rm A}, y_{\rm A})\) e \({\rm B} = (x_{\rm B}, y_{\rm B})\), esiste un solo vettore
+            $$\begin{split}
+            u = (x_{\rm B} - x_{\rm A}, y_{\rm B} - y_{\rm A})
+            \end{split}$$
+            tale che \({\rm A} + u = {\rm B}\).
+        </li>
+        <li>
+            <div class="container">
+                <div>
+                    Il teorema di pitagora afferma che, dato un triangolo rettangolo di cateti ed ipotenusa \(x, y, z\)
+                    $$\begin{split}
+                    4 x y + (x - y)^2 &= 2 x y + z^2
+                    \end{split}$$
+                    da cui
+                    $$\begin{split}
+                    z^2 &= x^2 + y^2
+                    \end{split}$$
+                    applicando tale principio ad un vettore \(u = (x_u, y_u)\), il modulo
+                    $$\begin{split}
+                    |u| = \sqrt{x_u^2 + y_u^2}
+                    \end{split}$$
+                    è la distanza tra i punti \(\rm A\) e \(\rm B\).
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+                    <polygon points="40,0 0,0 0,30" stroke="red", fill="none"/>
+                    <polygon points="40,0 0,0 0,30 40,30" stroke="red", fill="none"/>
+                    <polygon points="0,30 0,70 30,70" stroke="red", fill="none"/>
+                    <polygon points="0,30 0,70 30,70 30,30" stroke="red", fill="none"/>
+                    <polygon points="30,70 70,70 70,40" stroke="red", fill="none"/>
+                    <polygon points="30,70 70,70 70,40 30,40" stroke="red", fill="none"/>
+                    <polygon points="70,40 70,0 40,0" stroke="red", fill="none"/>
+                    <polygon points="70,40 70,0 40,0 40,40" stroke="red", fill="none"/>
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="container">
+                <div>
+                    Dati due punti \({\rm A} = (x_{\rm A}, y_{\rm A})\) e \({\rm B} = (x_{\rm B}, y_{\rm B})\), questi identificano la retta formata dai punti
+                    $$\begin{split}
+                    {\rm A} + t u = ((1 - t) x_{\rm A} + t x_{\rm B}, (1 - t) y_{\rm A} + t y_{\rm B}) = {\rm B} + (1 - t) u
+                    \end{split}$$
+                    al variare di \(t\).
+                    L'equazione che identifica tale retta è una qualunque di:
+                    $$\begin{split}
+                    (x - x_{\rm A})(y_{\rm A} - y_{\rm B}) &= (x_{\rm A} - x_{\rm B})(y - y_{\rm A})\\
+                    (x - x_{\rm A})(y - y_{\rm B}) &= (x - x_{\rm B})(y - y_{\rm A})\\
+                    (x - x_{\rm B})(y_{\rm A} - y_{\rm B}) &= (x_{\rm A} - x_{\rm B})(y - y_{\rm B})
+                    \end{split}$$
+                    Che sarebbe a dire
+                    $$\begin{split}
+                    x (y_{\rm A} - y_{\rm B}) + (x_{\rm B} - x_{\rm A}) y + (x_{\rm A} y_{\rm B} - x_{\rm B} y_{\rm A}) = 0.
+                    \end{split}$$
+                    In tal caso si ha
+                    $$\begin{split}
+                    \frac{x - x_{\rm A}}{x_{\rm B} - x_{\rm A}} = t = \frac{y - y_{\rm A}}{y_{\rm B} - y_{\rm A}} \qquad \frac{x - x_{\rm B}}{x_{\rm B} - x_{\rm A}} = t - 1 = \frac{y - y_{\rm B}}{y_{\rm B} - y_{\rm A}}
+                    \end{split}$$
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 140">
+                    <polygon points="0,20 0,60 30,60" stroke="red", fill="none"/>
+                    <polygon points="0,20 0,140 90,140" stroke="red", fill="none"/>
+                    <polygon points="30,60 30,140 90,140" stroke="red", fill="none"/>
+                    <text x="2" y="18" font-size="18" fill="black">A</text>
+                    <text x="32" y="58" font-size="18" fill="black">B</text>
+                    <text x="92" y="138" font-size="18" fill="black">C</text>
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="container">
+                <div heigth="auto">
+                    Date due rette di coefficienti angolari \(m_0, m_1\), queste sono parallele se \(m_0 = m_1\) e sono ortogonali se \(m_0 m_1 + 1 = 0\). In particolare, data una retta
+                    $$\begin{split}
+                    a x + b y + c = 0
+                    \end{split}$$
+                    ed un punto \(\rm A\), la retta ortogonale passante per \(\rm A\) ha equazione
+                    $$\begin{split}
+                    b x - a y = b x_{\rm A} - a y_{\rm A}
+                    \end{split}$$
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 250">
+                    <polygon points="0,90 120,90 120,250" stroke="red", fill="none"/>
+                    <polygon points="0,90 120,90 120,0" stroke="red", fill="none"/>
+                    <text x="124" y="54" font-size="18" fill="black">m0</text>
+                    <text x="124" y="179" font-size="18" fill="black">m1</text>
+                </svg>
+            </div>
+        </li>
+
+
+        <li>
+            Dati due vettori \(u, v\) di stesso modulo, esiste un solo angolo \(\alpha\) per cui \(v = r_\alpha (u)\). Cioè detta \({\rm O}\) l'origine e \({\rm U} = {\rm O} + u, {\rm V} = {\rm O} + v\), una rotazione attorno ad \(\rm O\) di angolo \(\alpha = \hat{{\rm U}{\rm O}{\rm V}}\) manda \(\rm U\) in \(\rm V\).
+        </li>
+        <li>
+            Diciamo \(\pi\) l'angolo formato da tre punti allineati, cioè tale che \(r_\pi (u) = - u\).
+        </li>
+        <li>
+            Dati due vettori \(u, v\), esistono unici \(a, b\) tali che
+            $$\begin{split}
+            v = a \cdot u + b \cdot r_\frac{\pi}{2} (u).
+            \end{split}$$
+        </li>
+        <li>
+            $$\begin{split}
+            ({\rm A} + u) + v &= {\rm A} + (u + v)\\
+            r_\alpha (r_\beta (u)) &= r_{\alpha + \beta} (u)\\
+            x \cdot (y \cdot u) &= (y \cdot x) \cdot u\\
+            r_\alpha (x \cdot u) &= x \cdot (r_\alpha (u))\\
+            r_\alpha (u + v) &= r_\alpha (u) + r_\alpha (v)\\
+            x \cdot (u + v) &= x \cdot u + x \cdot v\\
+            (x + y) \cdot u &= x \cdot u + y \cdot u\\
+            |x \cdot u| &= |x| \cdot |u|.
+            \end{split}$$
+        </li>
+    </ul>
+    
+    <h2>Esercizi:</h2>
+
+    Mostra che:
+    <ul>
+        <li>
+            Una traslazione composta una rotazione è una rotazione composta una traslazione.
+        </li>
+        <li>
+            Una traslazione composta una dilatazione è una dilatazione composta una traslazione.
+        </li>
+        <li>
+            Le traslazioni mandano rette in rette parallele.
+        </li>
+        <li>
+            Le traslazioni conservano le distanze.
+        </li>
+        <li>
+            Le rotazioni conservano gli angoli.
+        </li>
+        <li>
+            Le rotazioni conservano le distanze.
+        </li>
+        <li>
+            Le dilatazioni mandano rette in rette parallele.
+        </li>
+        <li>
+            Le dilatazioni moltiplicano le distanze per una costante.
+        </li>
+        <li>
+            Dati due segmenti orientati esiste una unica trasformazione conforme che manda l'uno nell'altro.
+        </li>
+    </ul>
+    
+    <h1>Prodotto scalare e vettoriale</h1>
+    
+    Siano
+    $$\begin{split}
+    v = a \cdot u + b \cdot r_\frac{\pi}{2} \cdot u:
+    \end{split}$$
+
+    <ul>
+        <li>
+            Si dice prodotto scalare \(u^\star \cdot v = a \cdot |u|^2\).
+        </li>
+        <li>
+            Si dice prodotto vettoriale \(u \times v = b \cdot |u|^2\).
+        </li>
+    </ul>
+    
+    <h2>Esercizi:</h2>
+
+    Mostra che:
+    <ul>
+        <li>
+            $$\begin{split}
+            u \cdot u = |u|^2 &\qquad u \times u = 0\\
+            u \cdot v = v \cdot u &\qquad u \times v + v \times u = 0\\
+            u \cdot (r_\frac{\pi}{2} \cdot u) = 0 &\qquad u \times (r_\frac{\pi}{2} \cdot u) = |u|^2\\
+            (r_\alpha \cdot u) \cdot (r_\alpha \cdot v) = u \cdot v &\qquad (r_\alpha \cdot u) \times (r_\alpha \cdot v) = u \times v\\
+            u \cdot (x \cdot v + w) = x \cdot (u \cdot v) + (u \cdot w) &\qquad u \times (x \cdot v + w) = x \cdot (u \times v) + (u \times w).
+            \end{split}$$
+        </li>
+        <li>
+            $$\begin{split}
+            u \times v &= (r_\frac{\pi}{2} \cdot u) \cdot v\\
+            |u \cdot v|^2 + |u \times v|^2 &= |u|^2 \cdot |v|^2.    
+            \end{split}$$
+        </li>
+    </ul>
+    
+</body>

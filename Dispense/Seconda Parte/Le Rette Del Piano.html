@@ -7,9 +7,15 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
+
+    <div class="navbar">
+        <button onclick="location.href='../Prima Parte/I Polinomi Di Una Variabile.html'">Lezione Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Le Rotazioni Del Piano.html'">Prossima Lezione</button>
+    </div>
 
     <ul>
         <li>
@@ -20,7 +26,7 @@
             tale che \({\rm A} + u = {\rm B}\).
         </li>
         <li>
-            <div class="container">
+            <div class="divrow">
                 <div>
                     Il teorema di pitagora afferma che, dato un triangolo rettangolo di cateti ed ipotenusa \(x, y, z\)
                     $$\begin{split}
@@ -34,9 +40,9 @@
                     $$\begin{split}
                     |u| = \sqrt{x_u^2 + y_u^2}
                     \end{split}$$
-                    è la distanza tra i punti \(\rm A\) e \(\rm B\).
+                    è la distanza tra i punti \({\rm A}\) e \(\rm B\).
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70"  style="width: 256px; flex-shrink: 0;">
                     <polygon points="40,0 0,0 0,30" stroke="red", fill="none"/>
                     <polygon points="40,0 0,0 0,30 40,30" stroke="red", fill="none"/>
                     <polygon points="0,30 0,70 30,70" stroke="red", fill="none"/>
@@ -49,7 +55,7 @@
             </div>
         </li>
         <li>
-            <div class="container">
+            <div class="divrow">
                 <div>
                     Dati due punti \({\rm A} = (x_{\rm A}, y_{\rm A})\) e \({\rm B} = (x_{\rm B}, y_{\rm B})\), questi identificano la retta formata dai punti
                     $$\begin{split}
@@ -71,7 +77,7 @@
                     \frac{x - x_{\rm A}}{x_{\rm B} - x_{\rm A}} = t = \frac{y - y_{\rm A}}{y_{\rm B} - y_{\rm A}} \qquad \frac{x - x_{\rm B}}{x_{\rm B} - x_{\rm A}} = t - 1 = \frac{y - y_{\rm B}}{y_{\rm B} - y_{\rm A}}
                     \end{split}$$
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 140">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 140" style="width: 256px; flex-shrink: 0;">
                     <polygon points="0,20 0,60 30,60" stroke="red", fill="none"/>
                     <polygon points="0,20 0,140 90,140" stroke="red", fill="none"/>
                     <polygon points="30,60 30,140 90,140" stroke="red", fill="none"/>
@@ -82,18 +88,26 @@
             </div>
         </li>
         <li>
-            <div class="container">
-                <div heigth="auto">
+            <div class="divrow">
+                <div>
                     Date due rette di coefficienti angolari \(m_0, m_1\), queste sono parallele se \(m_0 = m_1\) e sono ortogonali se \(m_0 m_1 + 1 = 0\). In particolare, data una retta
                     $$\begin{split}
                     a x + b y + c = 0
                     \end{split}$$
-                    ed un punto \(\rm A\), la retta ortogonale passante per \(\rm A\) ha equazione
+                    ed un punto \({\rm A}\), la retta ortogonale passante per \({\rm A}\) ha equazione
                     $$\begin{split}
-                    b x - a y = b x_{\rm A} - a y_{\rm A}
+                    b x - a y = b x_{\rm A} - a y_{\rm A}.
+                    \end{split}$$
+                    L'intersezione di queste rette è quindi
+                    $$\begin{split}
+                    \left(\frac{b^2 x_{\rm A} - a b y_{\rm A} - a c}{a^2 + b^2}, \frac{a^2 y_{\rm A} - a b x_{\rm A} - b c}{a^2 + b^2}\right).
+                    \end{split}$$
+                    La distanza della retta da \({\rm A}\) è dunque (QUALCOSA è SBAGLIATO)
+                    $$\begin{split}
+                    \sqrt{\left(\frac{a^2 x_{\rm A} + a b y_{\rm A} + a c}{a^2 + b^2}\right)^2 + \left(\frac{b^2 y_{\rm A} + a b x_{\rm A} + b c}{a^2 + b^2}\right)^2}.
                     \end{split}$$
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 250">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 250" style="width: 256px; flex-shrink: 0;">
                     <polygon points="0,90 120,90 120,250" stroke="red", fill="none"/>
                     <polygon points="0,90 120,90 120,0" stroke="red", fill="none"/>
                     <text x="124" y="54" font-size="18" fill="black">m0</text>
@@ -101,8 +115,6 @@
                 </svg>
             </div>
         </li>
-
-
         <li>
             Dati due vettori \(u, v\) di stesso modulo, esiste un solo angolo \(\alpha\) per cui \(v = r_\alpha (u)\). Cioè detta \({\rm O}\) l'origine e \({\rm U} = {\rm O} + u, {\rm V} = {\rm O} + v\), una rotazione attorno ad \(\rm O\) di angolo \(\alpha = \hat{{\rm U}{\rm O}{\rm V}}\) manda \(\rm U\) in \(\rm V\).
         </li>

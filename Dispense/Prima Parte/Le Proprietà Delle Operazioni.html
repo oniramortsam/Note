@@ -11,6 +11,17 @@
 </head>
 <body>
 
+    <script>
+        function toggleTesto(SECTION) {
+          var testo = document.getElementById(SECTION);
+          if (testo.style.display === "none") {
+            testo.style.display = "block";
+          } else {
+            testo.style.display = "none";
+          }
+        }
+    </script>
+  
     <div class="navbar">
         <button onclick="location.href='Gli Insiemi E La Logica.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
@@ -36,9 +47,10 @@
             (a + (b + c)) + d &= a + ((b + c) + d)\\
             a + ((b + c) + d) &= a + (b + (c + d)).
             \end{split}$$
-            <div class="dropdown">
-                Soluzione: <button class="dropdown-btn">basta applicare la proprietà associativa con</button>
-                <div class="dropdown-content">
+            <div class="divrow">
+                <button onclick="toggleTesto('associativaplus')">Soluzione:</button>
+                <div id="associativaplus" class="hidden">
+                    Basta applicare la proprietà associativa con:
                     $$\begin{split}
                     {\rm A}, {\rm B}, {\rm C} &= a, b, c + d\\
                     {\rm A}, {\rm B}, {\rm C} &= a + b, c, d\\
@@ -58,9 +70,10 @@
             (a \cdot (b \cdot c)) \cdot d &= a \cdot ((b \cdot c) \cdot d)\\
             a \cdot ((b \cdot c) \cdot d) &= a \cdot (b \cdot (c \cdot d)).
             \end{split}$$
-            <div class="dropdown">
-                Soluzione: <button class="dropdown-btn">basta applicare la proprietà associativa con</button>
-                <div class="dropdown-content">
+            <div class="divrow">
+                <button onclick="toggleTesto('associativacdot')">Soluzione:</button>
+                <div id="associativacdot" class="hidden">
+                    Basta applicare la proprietà associativa con:
                     $$\begin{split}
                     {\rm A}, {\rm B}, {\rm C} &= a, b, c \cdot d\\
                     {\rm A}, {\rm B}, {\rm C} &= a \cdot b, c, d\\
@@ -91,9 +104,10 @@
             a + b + c &= b + c + a\\
             a + b + c &= c + a + b.
             \end{split}$$
-            <div class="dropdown">
-                Soluzione: <button class="dropdown-btn">basta applicare la proprietà commutativa con</button>
-                <div class="dropdown-content">
+            <div class="divrow">
+                <button onclick="toggleTesto('commutativaplus')">Soluzione:</button>
+                <div id="commutativaplus" class="hidden">
+                    Basta applicare la proprietà commutativa con:
                     $$\begin{split}
                     {\rm A}, {\rm B} &= b, c\\
                     {\rm A}, {\rm B} &= a, b\\
@@ -111,9 +125,10 @@
             a \cdot b \cdot c &= b \cdot a \cdot c\\
             a \cdot b \cdot c &= b \cdot c \cdot a.
             \end{split}$$
-            <div class="dropdown">
-                Soluzione: <button class="dropdown-btn">basta applicare la proprietà commutativa con</button>
-                <div class="dropdown-content">
+            <div class="divrow">
+                <button onclick="toggleTesto('commutativacdot')">Soluzione:</button>
+                <div id="commutativacdot" class="hidden">
+                    Basta applicare la proprietà commutativa con:
                     $$\begin{split}
                     {\rm A}, {\rm B} &= b, c\\
                     {\rm A}, {\rm B} &= a, b\\
@@ -148,17 +163,15 @@
             a < b &\longleftrightarrow a + c < b + c\\
             a < b &\longleftrightarrow a \cdot c < b \cdot c.
             \end{split}$$
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione</button>
-                <div class="dropdown-content">
-                    <ul>
-                        <li>
-                            La seconda vale se \(c \ne 0\).
-                        </li>
-                        <li>
-                            La quarta vale se \(c > 0\).
-                        </li>
-                    </ul>
+            <div class="divrow">
+                <button onclick="toggleTesto('distributiva')">Soluzione:</button>
+                <div id="distributiva" class="hidden">
+                    <p>
+                        La seconda vale se \(c \ne 0\).
+                    </p>
+                    <p>
+                        La quarta vale se \(c > 0\).
+                    </p>
                 </div>
             </div>
         </li>
@@ -191,23 +204,21 @@
             a < b &\longleftrightarrow a^c < b^c\\
             a < b &\longleftrightarrow c^a < c^b.
             \end{split}$$
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione</button>
-                <div class="dropdown-content">
-                    <ul>
-                        <li>
-                            La prima vale se \(c \ne 0\).
-                        </li>
-                        <li>
-                            La seconda vale se \(c \ne 1\).
-                        </li>
-                        <li>
-                            La terza vale se \(c > 0\).
-                        </li>
-                        <li>
-                            La quarta vale se \(c > 1\).
-                        </li>
-                    </ul>
+            <div class="divrow">
+                <button onclick="toggleTesto('potenze')">Soluzione:</button>
+                <div id="potenze" class="hidden">
+                    <p>
+                        La prima vale se \(c \ne 0\).
+                    </p>
+                    <p>
+                        La seconda vale se \(c \ne 1\).
+                    </p>
+                    <p>
+                        La terza vale se \(c > 0\).
+                    </p>
+                    <p>
+                        La quarta vale se \(c > 1\).
+                    </p>
                 </div>
             </div>
         </li>
@@ -252,14 +263,12 @@
             a < b &\longleftrightarrow a - c < b - c\\
             a < b &\longleftrightarrow c - a < c - b.
             \end{split}$$
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione</button>
-                <div class="dropdown-content">
-                    <ul>
-                        <li>
-                            La quarta vale al contrario.
-                        </li>
-                    </ul>
+            <div class="divrow">
+                <button onclick="toggleTesto('sottrazione')">Soluzione:</button>
+                <div id="sottrazione" class="hidden">
+                    <p>
+                        La quarta vale al contrario.
+                    </p>
                 </div>
             </div>
         </li>
@@ -271,17 +280,15 @@
             a < b &\longleftrightarrow a / c < b / c\\
             a < b &\longleftrightarrow c / a < c / b.
             \end{split}$$
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione</button>
-                <div class="dropdown-content">
-                    <ul>
-                        <li>
-                            La terza vale per \(c > 0\).
-                        </li>
-                        <li>
-                            La quarta vale per \(c < 0\).
-                        </li>
-                    </ul>
+            <div class="divrow">
+                <button onclick="toggleTesto('divisione')">Soluzione:</button>
+                <div id="divisione" class="hidden">
+                    <p>
+                        La terza vale per \(c > 0\).
+                    </p>
+                    <p>
+                        La quarta vale per \(c < 0\).
+                    </p>
                 </div>
             </div>
         </li>
@@ -290,8 +297,14 @@
     <h1>Radicali e Logaritmi</h1>
 
     $$\begin{split}
-    \sqrt[b]{a} = c &\longleftrightarrow a = c^b\\
-    \log_b{a} = c &\longleftrightarrow a = b^c.
+    \sqrt[{\rm B}]{\rm A} = {\rm C} &\longleftrightarrow {\rm A} = {\rm C}^{\rm B}\\
+    \log_{\rm B}({\rm A}) = {\rm C} &\longleftrightarrow {\rm A} = {\rm B}^{\rm C}.
+    \end{split}$$
+
+    Per cui, ad esempio
+    $$\begin{split}
+    {\rm A} = \left(\sqrt[{\rm B}]{\rm A}\right)^{\rm B} &\qquad {\rm C} = \sqrt[{\rm B}]{{\rm C}^{\rm B}}\\
+    {\rm A} = {\rm B}^{\log_{\rm B}({\rm A})} &\qquad {\rm C} = \log_{\rm B}\left({\rm B}^{\rm C}\right).
     \end{split}$$
 
     <h2>Esercizi:</h2>
@@ -326,17 +339,15 @@
             a < b &\longleftrightarrow \sqrt[c]{a} < \sqrt[c]{b}\\
             a < b &\longleftrightarrow \sqrt[a]{c} < \sqrt[b]{c}
             \end{split}$$
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione</button>
-                <div class="dropdown-content">
-                    <ul>
-                        <li>
-                            La seconda vale per \(c \ne 1\).
-                        </li>
-                        <li>
-                            La quarta vale per \(c > 1\).
-                        </li>
-                    </ul>
+            <div class="divrow">
+                <button onclick="toggleTesto('radici')">Soluzione:</button>
+                <div id="radici" class="hidden">
+                    <p>
+                        La seconda vale per \(c \ne 1\).
+                    </p>
+                    <p>
+                        La quarta vale per \(c > 1\).
+                    </p>
                 </div>
             </div>
         </li>
@@ -348,20 +359,18 @@
             a < b &\longleftrightarrow \log_c(a) < \log_c(b)\\
             a < b &\longleftrightarrow \log_a(c) < \log_b(c)
             \end{split}$$
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione</button>
-                <div class="dropdown-content">
-                    <ul>
-                        <li>
-                            La seconda vale per \(c \ne 1\).
-                        </li>
-                        <li>
-                            La terza vale per \(c > 1\).
-                        </li>
-                        <li>
-                            La quarta vale per \(c < 1\).
-                        </li>
-                    </ul>
+            <div class="divrow">
+                <button onclick="toggleTesto('logaritmi')">Soluzione:</button>
+                <div id="logaritmi" class="hidden">
+                    <p>
+                        La seconda vale per \(c \ne 1\).
+                    </p>
+                    <p>
+                        La terza vale per \(c > 1\).
+                    </p>
+                    <p>
+                        La quarta vale per \(c < 1\).
+                    </p>
                 </div>
             </div>
         </li>

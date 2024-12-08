@@ -11,6 +11,17 @@
 </head>
 <body>
 
+    <script>
+        function toggleTesto(SECTION) {
+          var testo = document.getElementById(SECTION);
+          if (testo.style.display === "none") {
+            testo.style.display = "block";
+          } else {
+            testo.style.display = "none";
+          }
+        }
+    </script>
+    
     <div class="navbar">
         <button onclick="location.href='Le Proprietà Delle Operazioni.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
@@ -155,39 +166,48 @@
             c | \operatorname{gcd}(a, b) &\longleftrightarrow c | a \land c | b\\
             \operatorname{lcm}(a, b) | c &\longleftrightarrow a | c \land b | c.
             \end{split}$$
-            <div class="dropdown">
-                <button class="dropdown-btn">Dimostrazione della prima</button>
-                <div class="dropdown-content">
-                    Dimostriamo quindi l'identità di Bézout. Notare che, se \(c | a\), allora
-                    $$\begin{split}
-                    c | b \longleftrightarrow c | (b % a).
-                    \end{split}$$
-                    Senza perdita di generalità \(a \le b\), per induzione si può scrivere
-                    $$\begin{split}
-                    \operatorname{gcd}(a, b) = \operatorname{gcd}(a, b \% a) = x \cdot a + y \cdot (b \% a) = (x - b /\!/ a) \cdot a + (y + 1) \cdot b.
-                    \end{split}$$
-                    Da cui, se
-                    $$\begin{split}
-                    \alpha \cdot c = a\\
-                    \beta \cdot c = b.
-                    \operatorname{gcd}(a, b) = x \cdot a + y \cdot b = (x \cdot \alpha + y \cdot \beta) \cdot c.
-                    \end{split}$$
+            <div class="divcol">
+                <div class="divrow">
+                    <button onclick="toggleTesto('prima')">Dimostrazione della prima</button>
+                    <div id="prima" class="hidden">
+                        Dimostriamo qui l'identità di Bézout. Notare che, se \(c | a\), allora
+                        $$\begin{split}
+                        c | b \longleftrightarrow c | (b % a).
+                        \end{split}$$
+                        Senza perdita di generalità \(a \le b\), per induzione si può scrivere
+                        $$\begin{split}
+                        \operatorname{gcd}(a, b) &= \operatorname{gcd}(a, b \% a)\\
+                        &= x \cdot a + y \cdot (b \% a)\\
+                        &= (x - b /\!/ a) \cdot a + (y + 1) \cdot b.
+                        \end{split}$$
+                        Da cui, se
+                        $$\begin{split}
+                        \alpha \cdot c = a\\
+                        \beta \cdot c = b,
+                        \end{split}$$
+                        allora
+                        $$\begin{split}
+                        \operatorname{gcd}(a, b) = x \cdot a + y \cdot b = (x \cdot \alpha + y \cdot \beta) \cdot c.
+                        \end{split}$$
+                    </div>
                 </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropdown-btn">Dimostrazione della seconda</button>
-                <div class="dropdown-content">
-                    Siano
-                    $$\begin{split}
-                    \alpha \cdot a = \operatorname{lcm}(a, b) = \beta \cdot b\\
-                    x \cdot a = c = y \cdot b,
-                    \end{split}$$
-                    allora si ha che
-                    $$\begin{split}
-                    c \% \operatorname{lcm}(a, b) &= (x \% \alpha) \cdot a\\
-                    c \% \operatorname{lcm}(a, b) &= (x \% \beta) \cdot b,
-                    \end{split}$$
-                    il che ne fa un multiplo comune di \(a, b\), minore di \(\operatorname{lcm}(a, b)\), cioè \(0\).
+                <div class="divrow">
+                    <button onclick="toggleTesto('seconda')">Dimostrazione della seconda</button>
+                    <div id="seconda" class="hidden">
+                        Siano
+                        $$\begin{split}
+                        \alpha \cdot a &= \operatorname{lcm}(a, b)\\
+                        \beta \cdot b &= \operatorname{lcm}(a, b)\\
+                        x \cdot a &= c\\
+                        y \cdot b &= c,
+                        \end{split}$$
+                        allora si ha che
+                        $$\begin{split}
+                        c \% \operatorname{lcm}(a, b) &= (x \% \alpha) \cdot a\\
+                        c \% \operatorname{lcm}(a, b) &= (x \% \beta) \cdot b,
+                        \end{split}$$
+                        il che ne fa un multiplo comune di \(a, b\), minore di \(\operatorname{lcm}(a, b)\), cioè \(0\).
+                    </div>
                 </div>
             </div>
         </li>
@@ -199,9 +219,9 @@
         </li>
         <li>
             Fattorizzazione unica: se per qualunque primo \(p\) vale \(a \| p = b \| p\), allora \(a = b\).
-            <div class="dropdown">
-                <button class="dropdown-btn">Dimostrazione</button>
-                <div class="dropdown-content">
+            <div class="divrow">
+                <button onclick="toggleTesto('terza')">Dimostrazione</button>
+                <div id="terza" class="hidden">
                     Dimostriamo che se \(p\) è irriducibile, allora è anche primo. Questo perchè se \(p\) è irriducibile e non divide \(a, b\), allora
                     $$\begin{split}
                     x \cdot p + u \cdot a = 1\\
@@ -227,9 +247,9 @@
             \operatorname{lcm}(a, b) \| p &= \max(a \| p, b \| p)\\
             \operatorname{gcd}(a, b) \| p &= \min(a \| p, b \| p).
             \end{split}$$
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione</button>
-                <div class="dropdown-content">
+            <div class="divrow">
+                <button onclick="toggleTesto('quarta')">Soluzione</button>
+                <div id="quarta" class="hidden">
                     Scriviamo
                     $$\begin{split}
                     a = p^{a \| p} \cdot \alpha\\

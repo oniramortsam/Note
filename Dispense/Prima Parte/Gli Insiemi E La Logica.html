@@ -72,76 +72,141 @@
         a &= a \lor a\\
         \lnot ((\lnot a) \lor (\lnot b)) &= a \land b\\
         \lnot ((\lnot a) \land (\lnot b)) &= a \lor b\\
+        a \land (b \land c) &= (a \land b) \land c\\
+        a \lor (b \lor c) &= (a \lor b) \lor c\\
         a \land (b \lor c) &= (a \land b) \lor (a \land c)\\
         a \lor (b \land c) &= (a \lor b) \land (a \lor c).
         \end{split}$$
         <li>
+            Soluzione della prima:
             <div class="dropdown">
-                <button class="dropdown-btn">Soluzione della prima</button>
+                <button class="dropdown-btn">con la quarta</button>
                 <div class="dropdown-content">
+                    Usando la terza si ha
                     $$\begin{split}
-                    \lnot (\lnot a) = \lnot ((\lnot a) \land (\lnot a)) = a \lor a = a\\
-                    \lnot (\lnot a) = \lnot ((\lnot a) \lor (\lnot a)) = a \land a = a
+                    \lnot a = (\lnot a) \lor (\lnot a),
+                    \end{split}$$
+                    mentre usando la quarta,
+                    $$\begin{split}
+                    \lnot ((\lnot a) \lor (\lnot a)) = a \land a,
+                    \end{split}$$
+                    usando la seconda si conclude.
+                </div>
+            </div>
+            e
+            <div class="dropdown">
+                <button class="dropdown-btn">con la quinta</button>
+                <div class="dropdown-content">
+                    Usando la seconda si ha
+                    $$\begin{split}
+                    \lnot a = (\lnot a) \land (\lnot a),
+                    \end{split}$$
+                    mentre usando la quinta,
+                    $$\begin{split}
+                    \lnot ((\lnot a) \land (\lnot a)) = a \lor a,
+                    \end{split}$$
+                    usando la terza si conclude.
+                </div>
+            </div>
+        </li>
+        <li>
+            Soluzione:
+            <div class="dropdown">
+                <button class="dropdown-btn">della seconda</button>
+                <div class="dropdown-content">
+                    Usando la prima
+                    $$\begin{split}
+                    a \land a = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a)))),
+                    \end{split}$$
+                    mentre usando la quinta e poi la terza,
+                    $$\begin{split}
+                    \lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a))) = (\lnot a) \lor (\lnot a) = \lnot a.
+                    \end{split}$$
+                    Infine, usando la prima si conclude.
+                </div>
+            </div>
+            e
+            <div class="dropdown">
+                <button class="dropdown-btn">della terza</button>
+                <div class="dropdown-content">
+                    Usando la prima
+                    $$\begin{split}
+                    a \lor a = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a)))),
+                    \end{split}$$
+                    mentre usando la quarta e poi la seconda,
+                    $$\begin{split}
+                    \lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a))) = (\lnot a) \land (\lnot a) = \lnot a.
+                    \end{split}$$
+                    Infine, usando la prima, si conclude.
+                </div>
+            </div>
+        </li>
+        <li>
+            Soluzione:
+            <div class="dropdown">
+                <button class="dropdown-btn">della quarta</button>
+                <div class="dropdown-content">
+                    Usando la prima
+                    $$\begin{split}
+                    a \land b = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b)))),
+                    \end{split}$$
+                    mentre usando la quinta,
+                    $$\begin{split}
+                    \lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b))) = (\lnot a) \lor (\lnot b).
+                    \end{split}$$
+                </div>
+            </div>
+            e
+            <div class="dropdown">
+                <button class="dropdown-btn">della quinta</button>
+                <div class="dropdown-content">
+                    Usando la prima
+                    $$\begin{split}
+                    a \lor b = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b)))),
+                    \end{split}$$
+                    mentre usando la quarta,
+                    $$\begin{split}
+                    \lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b))) = (\lnot a) \land (\lnot b).
                     \end{split}$$
                 </div>
             </div>
         </li>
         <li>
+            Soluzione:
             <div class="dropdown">
-                <button class="dropdown-btn">Soluzione della seconda</button>
+                <button class="dropdown-btn">della sesta</button>
                 <div class="dropdown-content">
                     $$\begin{split}
-                    a \land a = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a)))) = \lnot((\lnot a) \lor (\lnot a)) = \lnot((\lnot a)) = a
+                    a \land (b \land c) = \lnot ((\lnot a) \lor (\lnot (b \land c))) = \lnot ((\lnot a) \lor ((\lnot b) \lor (\lnot c))) = \lnot (((\lnot a) \lor (\lnot b)) \lor (\lnot c)) = \lnot ((\lnot (a \land b)) \lor (\lnot c)) = (a \land b) \land c
+                    \end{split}$$
+                </div>
+            </div>
+            e
+            <div class="dropdown">
+                <button class="dropdown-btn">della settima</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    a \lor (b \lor c) = \lnot ((\lnot a) \land (\lnot (b \lor c))) = \lnot ((\lnot a) \land ((\lnot b) \land (\lnot c))) = \lnot (((\lnot a) \land (\lnot b)) \land (\lnot c)) = \lnot ((\lnot (a \lor b)) \land (\lnot c)) = (a \lor b) \lor c
                     \end{split}$$
                 </div>
             </div>
         </li>
         <li>
+            Soluzione:
             <div class="dropdown">
-                <button class="dropdown-btn">Soluzione della terza</button>
+                <button class="dropdown-btn">dell'ottava</button>
                 <div class="dropdown-content">
                     $$\begin{split}
-                    a \lor a = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a)))) = \lnot((\lnot a) \land (\lnot a)) = \lnot((\lnot a)) = a
+                    a \land (b \lor c) = \lnot ((\lnot a) \lor (\lnot (b \lor c))) = \lnot ((\lnot a) \lor ((\lnot b) \land (\lnot c))) = \lnot (((\lnot a) \lor (\lnot b)) \land ((\lnot a) \lor (\lnot c))) = (\lnot ((\lnot a) \lor (\lnot b))) \lor (\lnot ((\lnot a) \lor (\lnot c))) = (a \land b) \lor (a \land c)
                     \end{split}$$
                 </div>
             </div>
-        </li>
-        <li>
+            e
             <div class="dropdown">
-                <button class="dropdown-btn">Soluzione della quarta</button>
+                <button class="dropdown-btn">della nona</button>
                 <div class="dropdown-content">
                     $$\begin{split}
-                    a \land b = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b)))) = \lnot((\lnot a) \lor (\lnot b))
-                    \end{split}$$
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione della quinta</button>
-                <div class="dropdown-content">
-                    $$\begin{split}
-                    a \lor b = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b)))) = \lnot((\lnot a) \land (\lnot b))
-                    \end{split}$$
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione della sesta</button>
-                <div class="dropdown-content">
-                    $$\begin{split}
-                    a \land (b \lor c) = \lnot ((\lnot a) \lor (\lnot (b \lor c))) = \lnot ((\lnot a) \lor ((\lnot b) \land (\lnot c))) = \lnot (((\lnot a) \lor (\lnot b)) \land ((\lnot a) \lor (\lnot c))) = (a \land b) \lor (a \land c)
-                    \end{split}$$
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="dropdown">
-                <button class="dropdown-btn">Soluzione della settima</button>
-                <div class="dropdown-content">
-                    $$\begin{split}
-                    a \lor (b \land c) = \lnot ((\lnot a) \land (\lnot (b \land c))) = \lnot ((\lnot a) \land ((\lnot b) \lor (\lnot c))) = \lnot (((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land (\lnot c))) = (a \lor b) \land (a \lor c)
+                    a \lor (b \land c) = \lnot ((\lnot a) \land (\lnot (b \land c))) = \lnot ((\lnot a) \land ((\lnot b) \lor (\lnot c))) = \lnot (((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land (\lnot c))) = (\lnot ((\lnot a) \land (\lnot b))) \land (\lnot ((\lnot a) \land (\lnot c))) = (a \lor b) \land (a \lor c)
                     \end{split}$$
                 </div>
             </div>
@@ -152,21 +217,21 @@
 
     <ul>
         <li>
-            Se \({\cal C}\) è un predicato, si scrive \(\forall x, {\cal C} (x)\) per dire che per ogni \(x\) si ha \({\cal C} (x)\).
+            Se \({\cal C}\) è un predicato, si scrive \(\forall x, {\cal C} (x)\) per dire "per ogni \(x\) si ha \({\cal C} (x)\)".
         </li>
         <li>
-            Se \({\cal C}\) è un predicato, si scrive \(\exists x: {\cal C} (x)\) per dire che esiste \(x\) tale che \({\cal C} (x)\).
+            Se \({\cal C}\) è un predicato, si scrive \(\exists x: {\cal C} (x)\) per dire "esiste \(x\) tale che \({\cal C} (x)\)".
         </li>
     </ul>
     <ul>
         <li>
-            Si scrive \(a \longrightarrow b\) per dire che se \(a\), allora \(b\).
+            Si scrive \(a \longrightarrow b\) per dire "se \(a\), allora \(b\)".
         </li>
         <li>
-            Si scrive \(a \longleftarrow b\) per dire che se \(a\), solo se \(b\).
+            Si scrive \(a \longleftarrow b\) per dire "\(a\), solo se \(b\)".
         </li>
         <li>
-            Si scrive \(a \longleftrightarrow b\) per dire che \(a\) se e solo se \(b\).
+            Si scrive \(a \longleftrightarrow b\) per dire "\(a\) se e solo se \(b\)".
         </li>
     </ul>
     <ul>

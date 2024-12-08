@@ -78,19 +78,7 @@ ul {
     flex-direction: column;
     gap: 10px;
     padding: 20px;
-  }
-
-  ul li {
-    word-wrap: break-word;  /* Permette di andare a capo quando necessario */
-    overflow-wrap: break-word; /* Per una gestione migliore dei casi di overflow */
-    white-space: normal; /* Assicura che non si forzi l'uso di una sola riga */
-}
-
-/* Opzionale: Impedire che il contenuto esca dai limiti del contenitore */
-ul li math {
-    max-width: 100%; /* Limita la larghezza del contenuto matematico */
-    overflow: hidden; /* Nasconde l'overflow se necessario */
-    display: inline-block; /* Mantiene il contenuto all'interno del contenitore */
+    width: auto;
 }
 
 li {

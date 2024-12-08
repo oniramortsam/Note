@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli Insiemi E La Logica</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Le Proprietà Delle Operazioni.html'">Prossima Lezione</button>
+    </div>
+
+    <h1>Tavole di verità</h1>
+
+    <ul>
+        <li>
+            Scriviamo \(\lnot\) per intendere la negazione "non".
+        </li>
+        <li>
+            Scriviamo \(\land\) per intendere la congiunzione "e".
+        </li>
+        <li>
+            Scriviamo \(\lor\) per intendere la disgiunzione "o".
+        </li>
+        <li>
+            Di seguito scriviamo \(0\) per intendere "falso".
+        </li>
+        <li>
+            Di seguito scriviamo \(1\) per intendere "vero".
+        </li>
+    </ul>
+    <ul>
+        <li>
+            La negazione di una frase è vera se la frase è falsa e viceversa:
+            $$\begin{split}
+            \lnot 0 &= 1\\
+            \lnot 1 &= 0.
+            \end{split}$$
+        </li>
+        <li>
+            La congiunzione di due frasi è vera solo se lo sono entrambe:
+            $$\begin{split}
+            1 \land 1 &= 1\\
+            1 \land 0 &= 0\\
+            0 \land 1 &= 0\\
+            0 \land 0 &= 0.
+            \end{split}$$
+        </li>
+        <li>
+            La disgiunzione di due frasi è vera se almeno una delle due lo è:
+            $$\begin{split}
+            1 \lor 1 &= 1\\
+            1 \lor 0 &= 1\\
+            0 \lor 1 &= 1\\
+            0 \lor 0 &= 0.
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h2>Esercizi:</h2>
+    <ul>
+        Dimostra ciascuna delle seguenti utilizzando le altre
+        $$\begin{split}
+        a &= \lnot (\lnot a)\\
+        a &= a \land a\\
+        a &= a \lor a\\
+        \lnot ((\lnot a) \lor (\lnot b)) &= a \land b\\
+        \lnot ((\lnot a) \land (\lnot b)) &= a \lor b\\
+        a \land (b \lor c) &= (a \land b) \lor (a \land c)\\
+        a \lor (b \land c) &= (a \lor b) \land (a \lor c).
+        \end{split}$$
+        <li>
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione della prima</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    \lnot (\lnot a) = \lnot ((\lnot a) \land (\lnot a)) = a \lor a = a\\
+                    \lnot (\lnot a) = \lnot ((\lnot a) \lor (\lnot a)) = a \land a = a
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione della seconda</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    a \land a = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a)))) = \lnot((\lnot a) \lor (\lnot a)) = \lnot((\lnot a)) = a
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione della terza</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    a \lor a = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a)))) = \lnot((\lnot a) \land (\lnot a)) = \lnot((\lnot a)) = a
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione della quarta</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    a \land b = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b)))) = \lnot((\lnot a) \lor (\lnot b))
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione della quinta</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    a \lor b = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b)))) = \lnot((\lnot a) \land (\lnot b))
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione della sesta</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    a \land (b \lor c) = \lnot ((\lnot a) \lor (\lnot (b \lor c))) = \lnot ((\lnot a) \lor ((\lnot b) \land (\lnot c))) = \lnot (((\lnot a) \lor (\lnot b)) \land ((\lnot a) \lor (\lnot c))) = (a \land b) \lor (a \land c)
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione della settima</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    a \lor (b \land c) = \lnot ((\lnot a) \land (\lnot (b \land c))) = \lnot ((\lnot a) \land ((\lnot b) \lor (\lnot c))) = \lnot (((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land (\lnot c))) = (a \lor b) \land (a \lor c)
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Quantificatori</h1>
+
+    <ul>
+        <li>
+            Se \({\cal C}\) è un predicato, si scrive \(\forall x, {\cal C} (x)\) per dire che per ogni \(x\) si ha \({\cal C} (x)\).
+        </li>
+        <li>
+            Se \({\cal C}\) è un predicato, si scrive \(\exists x: {\cal C} (x)\) per dire che esiste \(x\) tale che \({\cal C} (x)\).
+        </li>
+    </ul>
+    <ul>
+        <li>
+            Si scrive \(a \longrightarrow b\) per dire che se \(a\), allora \(b\).
+        </li>
+        <li>
+            Si scrive \(a \longleftarrow b\) per dire che se \(a\), solo se \(b\).
+        </li>
+        <li>
+            Si scrive \(a \longleftrightarrow b\) per dire che \(a\) se e solo se \(b\).
+        </li>
+    </ul>
+    <ul>
+        <li>
+            Si possono scrivere i quantificatori l'uno in termini dell'altro come segue:
+            $$\begin{split}
+            (\exists x\!: {\cal C}(x)) &\longleftrightarrow \lnot (\forall x\,, \lnot {\cal C} (x))\\
+            (\forall x\,, {\cal C}(x)) &\longleftrightarrow \lnot (\exists x\!: \lnot {\cal C} (x))
+            \end{split}$$
+        </li>
+        <li>
+            Notiamo che se \({\cal A}, {\cal B}\) sono predicati,
+            $$\begin{split}
+            (\forall x\,, {\cal A}(x) \land {\cal B}(x)) &\longleftrightarrow (\forall x\,, {\cal A}(x)) \land (\forall x\,, {\cal B}(x))\\
+            (\exists x\!: {\cal A}(x) \lor {\cal B}(x)) &\longleftrightarrow (\exists x\!: {\cal A}(x)) \lor (\exists x\!: {\cal B}(x)).
+            \end{split}$$
+            Cioè \(\forall\) è come un'enorme congiunzione, mentre \(\exists\) è come un'enorme disgiunzione.
+        </li>
+        <li>
+            Valgono inoltre le proprietà:
+            $$\begin{split}
+            (\exists x\!: {\cal A}(x) \land {\cal B}(x)) &\longleftarrow (\exists x\!: {\cal A}(x)) \land (\forall x\,, {\cal B}(x))\\
+            (\forall x\,, {\cal A}(x) \lor {\cal B}(x)) &\longrightarrow (\forall x\,, {\cal A}(x)) \lor (\exists x\!: {\cal B}(x)).
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h1>Insiemi</h1>
+
+    Siano \({\rm A}, {\rm B}\) due insiemi, definiamo:
+    <ul>
+        <li>
+            Differenza, intersezione, unione, rispettivamente:
+            $$\begin{split}
+            {\rm A} \setminus {\rm B} &= \{a: a \in {\rm A} \land a \notin {\rm B}\}\\
+            {\rm A} \cap {\rm B} &= \{a: a \in {\rm A} \land a \in {\rm B}\}\\
+            {\rm A} \cup {\rm B} &= \{a: a \in {\rm A} \lor a \in {\rm B}\}.
+            \end{split}$$
+        </li>
+        <li>
+            Diciamo che \({\rm A} \subseteq {\rm B}\) se \(\forall a \in {\rm A}\,, a \in {\rm B}\), che è equivalente a ciascuna delle seguenti:
+            $$\begin{split}
+            {\rm A} \setminus {\rm B} = \emptyset\\
+            {\rm A} \cap {\rm B} = {\rm A}\\
+            {\rm A} \cup {\rm B} = {\rm B}.
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h2>Esercizi:</h2>
+    <ul>
+        <li>
+            Mostra che:
+            $$\begin{split}
+            (a \setminus b) \setminus c &= (a \setminus b) \cap (a \setminus c)\\
+            a \setminus (b \cup c) &= (a \setminus b) \cap (a \setminus c)\\
+            a \cap (b \setminus c) &= (a \cap b) \setminus (a \cap c)\\
+            (a \cap b) \setminus c &= (a \cap b) \setminus (a \cap c)\\
+            a \setminus (b \setminus c) &= (a \cap c) \cup (a \setminus b)\\
+            a \setminus (b \cap c) &= (a \setminus b) \cup (a \setminus c)\\
+            (a \cup b) \setminus c &= (a \setminus c) \cup (b \setminus c)\\
+            a \cup (b \setminus c) &= (a \cup b) \setminus (c \setminus a).
+            \end{split}$$
+            <div class="dropdown">
+                <button class="dropdown-btn">Soluzione</button>
+                <div class="dropdown-content">
+                    $$\begin{split}
+                    (a \land (\lnot b)) \land (\lnot c) &= (a \land (\lnot b)) \land (a \land (\lnot c))\\
+                    (a \land (\lnot (b \lor c))) &= (a \land (\lnot b)) \land (a \land (\lnot c))\\
+                    (a \land (b \land (\lnot c))) &= (a \land b) \land (a \land (\lnot c))\\
+                    (a \land b) \land (\lnot c) &= (a \land b) \land (a \land (\lnot c))\\
+                    (a \land (\lnot (b \land (\lnot c)))) &= (a \land c) \lor (a \land (\lnot b))\\
+                    (a \land (\lnot (b \land c))) &= (a \land (\lnot c)) \lor (a \land (\lnot b))\\
+                    (a \lor b) \land (\lnot c) &= (a \land (\lnot c)) \lor (b \land (\lnot c))\\
+                    a \lor (b \land (\lnot c)) &= (a \lor b) \land (\lnot (c \land (\lnot a))).
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            Mostra che se \(a \subseteq b\), allora:
+            $$\begin{split}
+            a \cap c &\subseteq b \cap c\\
+            a \cup c &\subseteq b \cup c\\
+            a \setminus c &\subseteq b \setminus c\\
+            c \setminus b &\subseteq c \setminus a\\
+            \end{split}$$
+        </li>
+        <li>
+            Mostra che
+            $$\begin{split}
+            c \subseteq (a \cap b) &\longleftrightarrow (c \subseteq a) \land (c \subseteq b)\\
+            (a \cup b) \subseteq c &\longleftrightarrow (a \subseteq c) \land (b \subseteq c)\\
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h1>Approfondimento</h1>
+
+    <ul>
+        <li>
+            <a href='../../Fondamenti/Gli Assiomi Di Zermelo-Fraenkel.html'>Gli Assiomi Di Zermelo-Fraenkel</a>.
+        </li>
+    </ul>
+
+</body>

@@ -11,7 +11,39 @@
 </head>
 <body>
 
-    <h1>Argomento Diagonale di Cantor</h1>
+    <h1>Relazioni d'Ordine</h1>
+    <ul>
+        <li>
+            Una relazione d'ordine è un predicato \({\cal R}\) tale per cui
+            $$\begin{split}
+            {\cal R}(a, b) \land {\cal R}(b, c) &\longrightarrow {\cal R}(a, c)\\
+            {\cal R}(a, b) \land {\cal R}(b, a) &\longrightarrow  a = b.
+            \end{split}$$
+        </li>
+        <li>
+            Si dice che un insieme \({\rm A}\) ammette minimo o massimo, se
+            $$\begin{split}
+            \exists \min_{\cal R}({\rm A}) \in {\rm A}\!: \forall a \in {\rm A}\,, {\cal R} (\min_{\cal R}({\rm A}), a)\\
+            \exists \max_{\cal R}({\rm A}) \in {\rm A}\!: \forall a \in {\rm A}\,, {\cal R} (a, \max_{\cal R}({\rm A})).
+            \end{split}$$
+        </li>
+        <li>
+            Vale che se \(a \subseteq b\):
+            $$\begin{split}
+            {\cal R}(\min_{\cal R}(b), \min_{\cal R}(a))\\
+            {\cal R}(\min_{\cal R}(a), \min_{\cal R}(b)).
+            \end{split}$$
+        </li>
+        <li>
+            Si dice che \({\cal R}\) è totale su un'insieme \({\rm A}\) se
+            $$\begin{split}
+            \forall a, b \in {\rm A}\,, {\cal R} (a, b) \lor a = b \lor {\cal R} (b, a).
+            \end{split}$$
+            Si dice che \({\cal R}\) è ben fondata su un'insieme \({\rm A}\) se ogni \({\rm B} \subseteq {\rm A}\) ammette un elemento minimale.
+        </li>
+    </ul>
+
+    <h1>Argomento diagonale di Cantor</h1>
 
     Sia \(f \in {\cal P} ({\rm A})^{\rm A}\), consideriamo che l'insieme
     $$\begin{split}
@@ -19,7 +51,7 @@
     \end{split}$$
     Da cui \(|{\rm A}| < |{\cal P} ({\rm A})|\).
     
-    <h1>Principio di Ordinabilità di Zermelo</h1>
+    <h1>Principio di ordinabilità di Zermelo</h1>
     
     Un Ordinale è un insieme \(\alpha\) per cui:
     <ul>
@@ -51,11 +83,11 @@
             Se \(\alpha\) non è il successivo di un'altro ordinale, allora è l'unione di tutti i suoi elementi.
         </li>
     </ul>
-    Per ogni \(\rm A\) esiste un ordinale \(\alpha\) tale che \(|\alpha| = |{\rm A}|\).
+    Per ogni \({\rm A}\) esiste un ordinale \(\alpha\) tale che \(|\alpha| = |{\rm A}|\).
     
     <h1>Lemma di Zorn e Assioma di Scelta</h1>
     
-    Sia \({\rm A}\) un insieme e sia \(\cal R\) una relazione transitiva, antisimmetrica e tale che per ogni \({\rm B} \subseteq {\rm A}\) tale per cui \(\cal R\) è totale su \(\rm B\)
+    Sia \({\rm A}\) un insieme e sia \({\cal R}\) una relazione d'ordine tale che per ogni \({\rm B} \subseteq {\rm A}\) tale per cui \({\cal R}\) è totale su \(\rm B\)
     $$\begin{split}
     \exists a \in {\rm A}: \forall b \in {\rm B}, (a, b) \in {\cal R} \cup \{(a, a)\}.
     \end{split}$$
@@ -73,9 +105,9 @@
     \end{split}$$
     Allora $\pi_{{\rm A}_0} (g)$ e $\pi_{{\rm B}_0} (f)$ sono inverse l'una dell'altra. Invece $\pi_{{\rm A} \setminus {\rm A}_0} (g)$ e $\pi_{{\rm B} \setminus {\rm B}_0} (f)$ sono iniettive. Dal Lemma di Zorn si conclude \(|{\rm A}| = |{\rm B}|\).
     
-    <h1>Gerarchia degli insiemi di von Neumann</h1>
+    <h1>Gerarchia degli insiemi di Von Neumann</h1>
     
-    Definendo \({\cal V}_{\alpha \cup \{\alpha\}} = {\cal P} ({\cal V}_\alpha)\) si ottiene una successione crescente di insiemi tale che per ogni \(\rm A\) esiste \(\alpha\) per cui \({\rm A} \in \alpha\). Questo perché?
+    Definendo \({\cal V}_{\alpha \cup \{\alpha\}} = {\cal P} ({\cal V}_\alpha)\) si ottiene una successione crescente di insiemi tale che per ogni \({\rm A}\) esiste \(\alpha\) per cui \({\rm A} \in \alpha\). Questo perché?
     Un grande cardinale \(k\) soddisfa \(|{\cal V}_k| = k\) e tale che se \(k = \bigcup_{\alpha \in {\rm A}} \alpha\), allora \(k \in \alpha\). In tal caso si ha \({\cal V}_k\) come possibile modello della teoria degli insiemi.
 
 </body>    

@@ -11,6 +11,17 @@
 </head>
 <body>
 
+    <script>
+      function toggleTesto(SECTION) {
+        var testo = document.getElementById(SECTION);
+        if (testo.style.display === "none") {
+          testo.style.display = "block";
+        } else {
+          testo.style.display = "none";
+        }
+      }
+    </script>
+  
     <div class="navbar">
         <button onclick="location.href='../main.html'">Indice</button>
         <button onclick="location.href='Le Proprietà Delle Operazioni.html'">Prossima Lezione</button>
@@ -78,138 +89,121 @@
         a \lor (b \land c) &= (a \lor b) \land (a \lor c).
         \end{split}$$
         <li>
-            Soluzione della prima:
-            <div class="dropdown">
-                <button class="dropdown-btn">con la quarta</button>
-                <div class="dropdown-content">
-                    Usando la terza si ha
-                    $$\begin{split}
-                    \lnot a = (\lnot a) \lor (\lnot a),
-                    \end{split}$$
-                    mentre usando la quarta,
-                    $$\begin{split}
-                    \lnot ((\lnot a) \lor (\lnot a)) = a \land a,
-                    \end{split}$$
-                    usando la seconda si conclude.
-                </div>
-            </div>
-            e
-            <div class="dropdown">
-                <button class="dropdown-btn">con la quinta</button>
-                <div class="dropdown-content">
-                    Usando la seconda si ha
-                    $$\begin{split}
-                    \lnot a = (\lnot a) \land (\lnot a),
-                    \end{split}$$
-                    mentre usando la quinta,
-                    $$\begin{split}
-                    \lnot ((\lnot a) \land (\lnot a)) = a \lor a,
-                    \end{split}$$
-                    usando la terza si conclude.
-                </div>
-            </div>
-        </li>
-        <li>
             Soluzione:
-            <div class="dropdown">
-                <button class="dropdown-btn">della seconda</button>
-                <div class="dropdown-content">
-                    Usando la prima
-                    $$\begin{split}
-                    a \land a = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a)))),
-                    \end{split}$$
-                    mentre usando la quinta e poi la terza,
-                    $$\begin{split}
-                    \lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a))) = (\lnot a) \lor (\lnot a) = \lnot a.
-                    \end{split}$$
-                    Infine, usando la prima si conclude.
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('conlaquarta')" style="width: 100px;">della prima con la quarta</button>
+                    <div id="conlaquarta" style="display: none; padding: 10px;">
+                        Usando la terza si ha
+                        $$\begin{split}
+                        \lnot a = (\lnot a) \lor (\lnot a),
+                        \end{split}$$
+                        mentre usando la quarta,
+                        $$\begin{split}
+                        \lnot ((\lnot a) \lor (\lnot a)) = a \land a,
+                        \end{split}$$
+                        usando la seconda si conclude.
+                    </div>
                 </div>
-            </div>
-            e
-            <div class="dropdown">
-                <button class="dropdown-btn">della terza</button>
-                <div class="dropdown-content">
-                    Usando la prima
-                    $$\begin{split}
-                    a \lor a = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a)))),
-                    \end{split}$$
-                    mentre usando la quarta e poi la seconda,
-                    $$\begin{split}
-                    \lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a))) = (\lnot a) \land (\lnot a) = \lnot a.
-                    \end{split}$$
-                    Infine, usando la prima, si conclude.
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('conlaquinta')" style="width: 100px;">della prima con la quinta</button>
+                    <div id="conlaquinta" style="display: none; padding: 10px;">
+                        Usando la seconda si ha
+                        $$\begin{split}
+                        \lnot a = (\lnot a) \land (\lnot a),
+                        \end{split}$$
+                        mentre usando la quinta,
+                        $$\begin{split}
+                        \lnot ((\lnot a) \land (\lnot a)) = a \lor a,
+                        \end{split}$$
+                        usando la terza si conclude.
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            Soluzione:
-            <div class="dropdown">
-                <button class="dropdown-btn">della quarta</button>
-                <div class="dropdown-content">
-                    Usando la prima
-                    $$\begin{split}
-                    a \land b = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b)))),
-                    \end{split}$$
-                    mentre usando la quinta,
-                    $$\begin{split}
-                    \lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b))) = (\lnot a) \lor (\lnot b).
-                    \end{split}$$
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('dellaseconda')" style="width: 100px;">della seconda</button>
+                    <div id="dellaseconda" style="display: none; padding: 10px;">
+                        Usando la prima
+                        $$\begin{split}
+                        a \land a = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a)))),
+                        \end{split}$$
+                        mentre usando la quinta e poi la terza,
+                        $$\begin{split}
+                        \lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a))) = (\lnot a) \lor (\lnot a) = \lnot a.
+                        \end{split}$$
+                        Infine, usando la prima si conclude.
+                    </div>
                 </div>
-            </div>
-            e
-            <div class="dropdown">
-                <button class="dropdown-btn">della quinta</button>
-                <div class="dropdown-content">
-                    Usando la prima
-                    $$\begin{split}
-                    a \lor b = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b)))),
-                    \end{split}$$
-                    mentre usando la quarta,
-                    $$\begin{split}
-                    \lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b))) = (\lnot a) \land (\lnot b).
-                    \end{split}$$
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('dellaterza')" style="width: 100px;">della terza</button>
+                    <div id="dellaterza" style="display: none; padding: 10px;">
+                        Usando la prima
+                        $$\begin{split}
+                        a \lor a = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a)))),
+                        \end{split}$$
+                        mentre usando la quarta e poi la seconda,
+                        $$\begin{split}
+                        \lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a))) = (\lnot a) \land (\lnot a) = \lnot a.
+                        \end{split}$$
+                        Infine, usando la prima, si conclude.
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            Soluzione:
-            <div class="dropdown">
-                <button class="dropdown-btn">della sesta</button>
-                <div class="dropdown-content">
-                    $$\begin{split}
-                    a \land (b \land c) = \lnot ((\lnot a) \lor (\lnot (b \land c))) = \lnot ((\lnot a) \lor ((\lnot b) \lor (\lnot c))) = \lnot (((\lnot a) \lor (\lnot b)) \lor (\lnot c)) = \lnot ((\lnot (a \land b)) \lor (\lnot c)) = (a \land b) \land c
-                    \end{split}$$
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('dellaquarta')" style="width: 100px;">della quarta</button>
+                    <div id="dellaquarta" style="display: none; padding: 10px;">
+                        Usando la prima
+                        $$\begin{split}
+                        a \land b = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b)))),
+                        \end{split}$$
+                        mentre usando la quinta,
+                        $$\begin{split}
+                        \lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b))) = (\lnot a) \lor (\lnot b).
+                        \end{split}$$
+                    </div>
                 </div>
-            </div>
-            e
-            <div class="dropdown">
-                <button class="dropdown-btn">della settima</button>
-                <div class="dropdown-content">
-                    $$\begin{split}
-                    a \lor (b \lor c) = \lnot ((\lnot a) \land (\lnot (b \lor c))) = \lnot ((\lnot a) \land ((\lnot b) \land (\lnot c))) = \lnot (((\lnot a) \land (\lnot b)) \land (\lnot c)) = \lnot ((\lnot (a \lor b)) \land (\lnot c)) = (a \lor b) \lor c
-                    \end{split}$$
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('dellaquinta')" style="width: 100px;">della quinta</button>
+                    <div id="dellaquinta" style="display: none; padding: 10px;">
+                        Usando la prima
+                        $$\begin{split}
+                        a \lor b = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b)))),
+                        \end{split}$$
+                        mentre usando la quarta,
+                        $$\begin{split}
+                        \lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b))) = (\lnot a) \land (\lnot b).
+                        \end{split}$$
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li>
-            Soluzione:
-            <div class="dropdown">
-                <button class="dropdown-btn">dell'ottava</button>
-                <div class="dropdown-content">
-                    $$\begin{split}
-                    a \land (b \lor c) = \lnot ((\lnot a) \lor (\lnot (b \lor c))) = \lnot ((\lnot a) \lor ((\lnot b) \land (\lnot c))) = \lnot (((\lnot a) \lor (\lnot b)) \land ((\lnot a) \lor (\lnot c))) = (\lnot ((\lnot a) \lor (\lnot b))) \lor (\lnot ((\lnot a) \lor (\lnot c))) = (a \land b) \lor (a \land c)
-                    \end{split}$$
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('dellasesta')" style="width: 100px;">della sesta</button>
+                    <div id="dellasesta" style="display: none; padding: 10px;">
+                        $$\begin{split}
+                        a \land (b \land c) = \lnot ((\lnot a) \lor (\lnot (b \land c))) = \lnot ((\lnot a) \lor ((\lnot b) \lor (\lnot c))) = \lnot (((\lnot a) \lor (\lnot b)) \lor (\lnot c)) = \lnot ((\lnot (a \land b)) \lor (\lnot c)) = (a \land b) \land c
+                        \end{split}$$
+                    </div>
                 </div>
-            </div>
-            e
-            <div class="dropdown">
-                <button class="dropdown-btn">della nona</button>
-                <div class="dropdown-content">
-                    $$\begin{split}
-                    a \lor (b \land c) = \lnot ((\lnot a) \land (\lnot (b \land c))) = \lnot ((\lnot a) \land ((\lnot b) \lor (\lnot c))) = \lnot (((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land (\lnot c))) = (\lnot ((\lnot a) \land (\lnot b))) \land (\lnot ((\lnot a) \land (\lnot c))) = (a \lor b) \land (a \lor c)
-                    \end{split}$$
+                <div style="overflow-x: auto; display: flex; padding: 10px">
+                    <button onclick="toggleTesto('dellasettima')" style="width: 100px;">della settima</button>
+                    <div id="dellasettima" style="display: none; padding: 10px;">
+                        $$\begin{split}
+                        a \lor (b \lor c) = \lnot ((\lnot a) \land (\lnot (b \lor c))) = \lnot ((\lnot a) \land ((\lnot b) \land (\lnot c))) = \lnot (((\lnot a) \land (\lnot b)) \land (\lnot c)) = \lnot ((\lnot (a \lor b)) \land (\lnot c)) = (a \lor b) \lor c
+                        \end{split}$$
+                    </div>
                 </div>
-            </div>
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('dellaottava')" style="width: 100px;">della ottava</button>
+                    <div id="dellaottava" style="display: none; padding: 10px;">
+                        $$\begin{split}
+                        a \land (b \lor c) = \lnot ((\lnot a) \lor (\lnot (b \lor c))) = \lnot ((\lnot a) \lor ((\lnot b) \land (\lnot c))) = \lnot (((\lnot a) \lor (\lnot b)) \land ((\lnot a) \lor (\lnot c))) = (\lnot ((\lnot a) \lor (\lnot b))) \lor (\lnot ((\lnot a) \lor (\lnot c))) = (a \land b) \lor (a \land c)
+                        \end{split}$$
+                    </div>
+                </div>
+                <div style="overflow-x: auto; display: flex; padding: 10px;">
+                    <button onclick="toggleTesto('dellanona')" style="width: 100px;">della nona</button>
+                    <div id="dellanona" style="display: none; padding: 10px;">
+                        $$\begin{split}
+                        a \lor (b \land c) = \lnot ((\lnot a) \land (\lnot (b \land c))) = \lnot ((\lnot a) \land ((\lnot b) \lor (\lnot c))) = \lnot (((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land (\lnot c))) = (\lnot ((\lnot a) \land (\lnot b))) \land (\lnot ((\lnot a) \land (\lnot c))) = (a \lor b) \land (a \lor c)
+                        \end{split}$$
+                    </div>
+                </div>
         </li>
     </ul>
 

@@ -364,14 +364,14 @@
         <li>
             Mostra che:
             $$\begin{split}
-            (a \setminus b) \setminus c &= (a \setminus b) \cap (a \setminus c)\\
-            a \setminus (b \cup c) &= (a \setminus b) \cap (a \setminus c)\\
-            a \cap (b \setminus c) &= (a \cap b) \setminus (a \cap c)\\
-            (a \cap b) \setminus c &= (a \cap b) \setminus (a \cap c)\\
-            a \setminus (b \setminus c) &= (a \cap c) \cup (a \setminus b)\\
-            a \setminus (b \cap c) &= (a \setminus b) \cup (a \setminus c)\\
-            (a \cup b) \setminus c &= (a \setminus c) \cup (b \setminus c)\\
-            a \cup (b \setminus c) &= (a \cup b) \setminus (c \setminus a).
+            ({\rm A} \setminus {\rm B}) \setminus {\rm C} &= ({\rm A} \setminus {\rm B}) \cap ({\rm A} \setminus {\rm C})\\
+            {\rm A} \setminus ({\rm B} \cup {\rm C}) &= ({\rm A} \setminus {\rm B}) \cap ({\rm A} \setminus {\rm C})\\
+            {\rm A} \cap ({\rm B} \setminus {\rm C}) &= ({\rm A} \cap {\rm B}) \setminus ({\rm A} \cap {\rm C})\\
+            ({\rm A} \cap {\rm B}) \setminus {\rm C} &= ({\rm A} \cap {\rm B}) \setminus ({\rm A} \cap {\rm C})\\
+            {\rm A} \setminus ({\rm B} \setminus {\rm C}) &= ({\rm A} \cap {\rm C}) \cup ({\rm A} \setminus {\rm B})\\
+            {\rm A} \setminus ({\rm B} \cap {\rm C}) &= ({\rm A} \setminus {\rm B}) \cup ({\rm A} \setminus {\rm C})\\
+            ({\rm A} \cup {\rm B}) \setminus {\rm C} &= ({\rm A} \setminus {\rm C}) \cup ({\rm B} \setminus {\rm C})\\
+            {\rm A} \cup ({\rm B} \setminus {\rm C}) &= ({\rm A} \cup {\rm B}) \setminus (c \setminus a).
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('demorgan')">Soluzione:</button>
@@ -391,26 +391,39 @@
             </div>
         </li>
         <li>
-            Mostra che se \(a \subseteq b\), allora:
-            $$\begin{split}
-            a \cap c &\subseteq b \cap c\\
-            a \cup c &\subseteq b \cup c\\
-            a \setminus c &\subseteq b \setminus c\\
-            c \setminus b &\subseteq c \setminus a\\
-            \end{split}$$
-        </li>
-        <li>
             Mostra che
             $$\begin{split}
-            c \subseteq (a \cap b) &\longleftrightarrow (c \subseteq a) \land (c \subseteq b)\\
-            (a \cup b) \subseteq c &\longleftrightarrow (a \subseteq c) \land (b \subseteq c)\\
+            {\rm A} \subseteq ({\rm B} \cap {\rm C}) &\longleftrightarrow ({\rm A} \subseteq {\rm B}) \land ({\rm A} \subseteq {\rm C})\\
+            ({\rm A} \cup {\rm B}) \subseteq {\rm C} &\longleftrightarrow ({\rm A} \subseteq {\rm C}) \land ({\rm B} \subseteq {\rm C})\\
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('capcup')">Soluzione:</button>
                 <div id="capcup" class="hidden">
+                    Come prima, il problema si riduce a:
                     $$\begin{split}
-                    ``(x \notin c) \lor (x \in (a \cap b))" = ``(x \notin c) \lor ((x \in a) \land (x \in b))" = ``((x \notin c) \lor (x \in a)) \land ((x \notin c) \lor (x \in b))"\\
-                    ``(x \notin (a \cup b)) \lor (x \in c)" = ``((x \notin a) \land (x \notin b)) \lor (x \in c)" = ``((x \notin a) \lor (x \in c)) \land ((x \notin b) \lor (x \in c))".
+                    (\lnot a) \lor (b \land c) &\longleftrightarrow ((\lnot a) \lor b) \land ((\lnot a) \lor c)\\
+                    (\lnot (a \lor b)) \lor c &\longleftrightarrow ((\lnot a) \lor c) \land ((\lnot b) \lor c).
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            Mostra che se \({\rm A} \subseteq {\rm B}\), allora:
+            $$\begin{split}
+            {\rm A} \cap {\rm C} &\subseteq {\rm B} \cap {\rm C}\\
+            {\rm A} \cup {\rm C} &\subseteq {\rm B} \cup {\rm C}\\
+            {\rm A} \setminus {\rm C} &\subseteq {\rm B} \setminus {\rm C}\\
+            {\rm C} \setminus {\rm B} &\subseteq {\rm C} \setminus {\rm A}.
+            \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('monotonia')">Soluzione:</button>
+                <div id="monotonia" class="hidden">
+                    Basta notare che
+                    $$\begin{split}
+                    ({\rm A} \cap {\rm C}) \cup ({\rm B} \cap {\rm C}) &= ({\rm A} \cup {\rm B}) \cap {\rm C} = {\rm B} \cap {\rm C}\\
+                    ({\rm A} \cup {\rm C}) \cap ({\rm B} \cup {\rm C}) &= ({\rm A} \cap {\rm B}) \cup {\rm C} = {\rm A} \cap {\rm C}\\
+                    ({\rm A} \setminus {\rm C}) \cup ({\rm B} \setminus {\rm C}) &= ({\rm A} \cup {\rm B}) \setminus {\rm C} = {\rm B} \setminus {\rm C}\\
+                    ({\rm C} \setminus {\rm B}) \cap ({\rm C} \setminus {\rm A}) &= {\rm C} \setminus ({\rm A} \cup {\rm B}) = {\rm C} \setminus {\rm B}.
                     \end{split}$$
                 </div>
             </div>

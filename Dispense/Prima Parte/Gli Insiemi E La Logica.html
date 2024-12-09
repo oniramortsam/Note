@@ -90,7 +90,7 @@
         \end{split}$$
         <li>
             <div class="divcol">
-                <button onclick="toggleTesto('logica')">Soluzioni</button>
+                <button onclick="toggleTesto('logica')">Soluzioni:</button>
                 <div id="logica" class="hidden">
                     <div class="divrow">
                         <button onclick="toggleTesto('con la quarta')">della prima con la quarta</button>
@@ -249,10 +249,10 @@
 
     <ul>
         <li>
-            Se \({\mathcal C}\) è un predicato, si scrive \(\forall x, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
+            Se \({\mathcal C}\) è un predicato, si scrive \(\forall x\,, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
         </li>
         <li>
-            Se \({\mathcal C}\) è un predicato, si scrive \(\exists x: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
+            Se \({\mathcal C}\) è un predicato, si scrive \(\exists x\!: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
         </li>
     </ul>
     <ul>
@@ -260,10 +260,10 @@
             Si scrive \(a \longrightarrow b\) per dire "se \(a\), allora \(b\)".
         </li>
         <li>
-            Si scrive \(a \longleftarrow b\) per dire "\(a\), solo se \(b\)".
+            Si scrive \(a \longleftarrow b\) per dire "se \(b\), allora \(b\)".
         </li>
         <li>
-            Si scrive \(a \longleftrightarrow b\) per dire "\(a\) se e solo se \(b\)".
+            Si scrive \(a \longleftrightarrow b\) per dire che sono equivalenti: \(``a" = ``b"\).
         </li>
     </ul>
     <ul>
@@ -280,7 +280,26 @@
             (\forall x\,, {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftrightarrow (\forall x\,, {\mathcal A}(x)) \land (\forall x\,, {\mathcal B}(x))\\
             (\exists x\!: {\mathcal A}(x) \lor {\mathcal B}(x)) &\longleftrightarrow (\exists x\!: {\mathcal A}(x)) \lor (\exists x\!: {\mathcal B}(x)).
             \end{split}$$
-            Cioè \(\forall\) è come un'enorme congiunzione, mentre \(\exists\) è come un'enorme disgiunzione.
+            In un certo senso \(\forall\) è come una congiunzione, mentre \(\exists\) è come una disgiunzione:
+            $$\begin{split}
+            (\forall x \in {\rm A} \cup {\rm B}\,, {\mathcal C}(x)) &\longleftrightarrow (\forall x \in {\rm A}\,, {\mathcal C}(x)) \land (\forall x \in {\rm B}\,, {\mathcal C}(x))\\
+            (\exists x \in {\rm A} \cup {\rm B}\!: {\mathcal C}(x)) &\longleftrightarrow (\exists x \in {\rm A}\!: {\mathcal C}(x)) \lor (\exists x \in {\rm B}\!: {\mathcal C}(x)).
+            \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('quantificatori')">Dimostrazione:</button>
+                <div id="quantificatori" class="hidden">
+                    Per la prima usare
+                    $$\begin{split}
+                    {\mathcal A} (x) &= ``x \notin {\rm A} \lor {\mathcal C} (x)"\\
+                    {\mathcal B} (x) &= ``x \notin {\rm B} \lor {\mathcal C} (x)".
+                    \end{split}$$
+                    Per la seconda usare
+                    $$\begin{split}
+                    {\mathcal A} (x) &= ``x \in {\rm A} \land {\mathcal C} (x)"\\
+                    {\mathcal B} (x) &= ``x \in {\rm B} \land {\mathcal C} (x)".
+                    \end{split}$$
+                </div>
+            </div>
         </li>
         <li>
             Valgono inoltre le proprietà:
@@ -318,6 +337,33 @@
         <li>
             Mostra che:
             $$\begin{split}
+            {\rm A} \cap ({\rm B} \cap {\rm C}) &= ({\rm A} \cap {\rm B}) \cap {\rm C}\\
+            {\rm A} \cup ({\rm B} \cup {\rm C}) &= ({\rm A} \cup {\rm B}) \cup {\rm C}\\
+            {\rm A} \cap ({\rm B} \cup {\rm C}) &= ({\rm A} \cap {\rm B}) \cup ({\rm A} \cap {\rm C})\\
+            {\rm A} \cup ({\rm B} \cap {\rm C}) &= ({\rm A} \cup {\rm B}) \cap ({\rm A} \cup {\rm C}).
+            \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('insiemi')">Soluzione:</button>
+                <div id="insiemi" class="hidden">
+                    Bsata dire
+                    $$\begin{split}
+                    a = ``x \in {\rm A}"\\
+                    b = ``x \in {\rm B}"\\
+                    c = ``x \in {\rm C}".
+                    \end{split}$$
+                    Il problema si riduce a:
+                    $$\begin{split}
+                    a \land (b \land c) &\longleftrightarrow (a \land b) \land c\\
+                    a \lor (b \lor c) &\longleftrightarrow (a \lor b) \lor c\\
+                    a \land (b \lor c) &\longleftrightarrow (a \land b) \lor (a \land c)\\
+                    a \lor (b \land c) &\longleftrightarrow (a \lor b) \land (a \lor c).
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            Mostra che:
+            $$\begin{split}
             (a \setminus b) \setminus c &= (a \setminus b) \cap (a \setminus c)\\
             a \setminus (b \cup c) &= (a \setminus b) \cap (a \setminus c)\\
             a \cap (b \setminus c) &= (a \cap b) \setminus (a \cap c)\\
@@ -328,17 +374,18 @@
             a \cup (b \setminus c) &= (a \cup b) \setminus (c \setminus a).
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('insiemi')">Soluzione</button>
-                <div id="insiemi" class="hidden">
+                <button onclick="toggleTesto('demorgan')">Soluzione:</button>
+                <div id="demorgan" class="hidden">
+                    Come prima, il problema si riduce a:
                     $$\begin{split}
-                    (a \land (\lnot b)) \land (\lnot c) &= (a \land (\lnot b)) \land (a \land (\lnot c))\\
-                    (a \land (\lnot (b \lor c))) &= (a \land (\lnot b)) \land (a \land (\lnot c))\\
-                    (a \land (b \land (\lnot c))) &= (a \land b) \land (a \land (\lnot c))\\
-                    (a \land b) \land (\lnot c) &= (a \land b) \land (a \land (\lnot c))\\
-                    (a \land (\lnot (b \land (\lnot c)))) &= (a \land c) \lor (a \land (\lnot b))\\
-                    (a \land (\lnot (b \land c))) &= (a \land (\lnot c)) \lor (a \land (\lnot b))\\
-                    (a \lor b) \land (\lnot c) &= (a \land (\lnot c)) \lor (b \land (\lnot c))\\
-                    a \lor (b \land (\lnot c)) &= (a \lor b) \land (\lnot (c \land (\lnot a))).
+                    (a \land (\lnot b)) \land (\lnot c) &\longleftrightarrow (a \land (\lnot b)) \land (a \land (\lnot c))\\
+                    a \land (\lnot (b \lor c)) &\longleftrightarrow (a \land (\lnot b)) \land (a \land (\lnot c))\\
+                    a \land (b \land (\lnot c)) &\longleftrightarrow (a \land b) \land (a \land (\lnot c))\\
+                    (a \land b) \land (\lnot c) &\longleftrightarrow (a \land b) \land (a \land (\lnot c))\\
+                    a \land (\lnot (b \land (\lnot c))) &\longleftrightarrow (a \land c) \lor (a \land (\lnot b))\\
+                    a \land (\lnot (b \land c)) &\longleftrightarrow (a \land (\lnot c)) \lor (a \land (\lnot b))\\
+                    (a \lor b) \land (\lnot c) &\longleftrightarrow (a \land (\lnot c)) \lor (b \land (\lnot c))\\
+                    a \lor (b \land (\lnot c)) &\longleftrightarrow (a \lor b) \land (\lnot (c \land (\lnot a))).
                     \end{split}$$
                 </div>
             </div>
@@ -358,6 +405,15 @@
             c \subseteq (a \cap b) &\longleftrightarrow (c \subseteq a) \land (c \subseteq b)\\
             (a \cup b) \subseteq c &\longleftrightarrow (a \subseteq c) \land (b \subseteq c)\\
             \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('capcup')">Soluzione:</button>
+                <div id="capcup" class="hidden">
+                    $$\begin{split}
+                    ``(x \notin c) \lor (x \in (a \cap b))" = ``(x \notin c) \lor ((x \in a) \land (x \in b))" = ``((x \notin c) \lor (x \in a)) \land ((x \notin c) \lor (x \in b))"\\
+                    ``(x \notin (a \cup b)) \lor (x \in c)" = ``((x \notin a) \land (x \notin b)) \lor (x \in c)" = ``((x \notin a) \lor (x \in c)) \land ((x \notin b) \lor (x \in c))".
+                    \end{split}$$
+                </div>
+            </div>
         </li>
     </ul>
 

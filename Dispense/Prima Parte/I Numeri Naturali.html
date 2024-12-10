@@ -13,12 +13,12 @@
 
     <script>
         function toggleTesto(SECTION) {
-          var testo = document.getElementById(SECTION);
-          if (testo.style.display === "none") {
-            testo.style.display = "block";
-          } else {
-            testo.style.display = "none";
-          }
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
         }
     </script>
     
@@ -30,23 +30,29 @@
 
     <h1>Massimi e Minimi</h1>
 
-    $$\begin{split}
-    c \le \min(a, b) &\longleftrightarrow (c \le a) \land (c \le b)\\
-    \max(a, b) \le c &\longleftrightarrow (a \le c) \land (b \le c)\\
-    c \le \max(a, b) &\longleftrightarrow (c \le a) \lor (c \le b)\\
-    \min(a, b) \le c&\longleftrightarrow (a \le c) \lor (b \le c)
-    \end{split}$$
-
-    <h2>Esercizi:</h2>
-    Mostra che:
     <ul>
         <li>
+            $$\begin{split}
+            c \le \min(a, b) &\longleftrightarrow (c \le a) \land (c \le b)\\
+            \max(a, b) \le c &\longleftrightarrow (a \le c) \land (b \le c)\\
+            c \le \max(a, b) &\longleftrightarrow (c \le a) \lor (c \le b)\\
+            \min(a, b) \le c&\longleftrightarrow (a \le c) \lor (b \le c)
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h2>Esercizi:</h2>
+
+    <ul>
+        <li>
+            Mostra che:
             $$\begin{split}
             a \subseteq b &\longrightarrow \min(a) > \min(b)\\
             a \subseteq b &\longrightarrow \max(a) < \max(b)
             \end{split}$$
         </li>
         <li>
+            Mostra che:
             $$\begin{split}
             \max(a, b) + \min(a, b) = a + b
             \end{split}$$
@@ -134,7 +140,7 @@
             \end{split}\right.$$
         </li>
         <li>
-            Questa proprietà si estende per induzione alla scrittura in una base: vedi <a href="../../Fondamenti/Il Principio Di Induzione.html">Il Principio Di Induzione</a>
+            Questa proprietà si estende per induzione alla scrittura in una base (vedi <a href="../../Fondamenti/Il Principio Di Induzione.html">Il Principio Di Induzione</a>).
         </li>
     </ul>
     
@@ -231,7 +237,17 @@
                     $$\begin{split}
                     \operatorname{gcd}(p, a \cdot b) | (x \cdot y \cdot p + u \cdot a \cdot y + v \cdot b \cdot x) \cdot p + (u \cdot v) \cdot a \cdot b = 1.
                     \end{split}$$
-                    Se \(a \| p = 0\) per ogni \(p < a\) primo, allora \(a\) deve essere primo, se altrimenti fosse \(b | a\) allora sarebbe \(b = a\), oppure per induzione \(b\) primo o multiplo di un primo o \(b = 1\). Da cui \(a\) è irriducibile.
+                    <ul>
+                        <li>
+                            Se \(a \| p = 0\) per ogni \(p < a\) primo, allora \(a\) deve essere primo:
+                        </li>
+                        <li>
+                            Se altrimenti fosse \(b | a\) allora sarebbe \(b = a\), oppure per induzione \(b\) primo o multiplo di un primo o \(b = 1\).
+                        </li>
+                        <li>
+                            Da cui \(a\) è irriducibile, quindi è primo.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </li>
@@ -289,9 +305,36 @@
         </li>
     </ul>
 
+    <h1>I Numeri Razionali</h1>
+
+    <ul>
+        <p>
+            Vedi anche: <a href="Le Proprietà Delle Operazioni.html">Le Proprietà Delle Operazioni</a>.
+        </p>
+        <li>
+            Si osserva che, sia \({\rm D} = 2^{{\rm D} \| 2} \cdot 5^{{\rm D} \| 5} \cdot m\), poiché \(\{10^k \% m\!: k = 0, \dots, m - 1\}\) è un insieme di cardinalità \(< m\), quindi per il teorema dei piccioni (QUAL'è?) deve esserci una ridondanza
+            $$\begin{split}
+            \exists k_0 < k_1 < m\!: 10^k \% m = 10^h % m.
+            \end{split}$$
+            Allora scegliendo \(k = \max ({\rm D} \| 2, {\rm D} \| 5)\) ed \(h = k_1 - k_0\) si ottiene
+            $$\begin{split}
+            \frac{\rm N}{\rm D} = ({\rm N} /\!/ {\rm D}) + \frac{({\rm N} \% {\rm D}) \cdot (10^k \cdot (10^h - 1) /\!/ {\rm D})}{10^k \cdot (10^h - 1)}
+            \end{split}$$
+            che scrivendo
+            $$\begin{split}
+            a &= ({\rm N} /\!/ {\rm D})\\
+            b &= (({\rm N} \% {\rm D}) \cdot (10^k \cdot (10^h - 1) /\!/ {\rm D})) /\!/ (10^h - 1)\\
+            c &= (({\rm N} \% {\rm D}) \cdot (10^k \cdot (10^h - 1) /\!/ {\rm D})) \% (10^h - 1)
+            \end{split}$$
+        </li>
+    </ul>
+    
     <h1>Approfondimento</h1>
 
     <ul>
+        <li>
+            <a href="../../Fondamenti/Teoria degli Insiemi/Il Principio Di Induzione.html">Il Principio Di Induzione</a>.
+        </li>
         <li>
             <a href="../../Fondamenti/Teoria dei Gruppi/I Gruppi E Gli Anelli.html">I Gruppi E Gli Anelli</a>.
         </li>

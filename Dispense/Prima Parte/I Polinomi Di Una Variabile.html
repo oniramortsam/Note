@@ -11,21 +11,72 @@
 </head>
 <body>
 
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+  
     <div class="navbar">
         <button onclick="location.href='I Numeri Naturali.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
         <button onclick="location.href='../Seconda Parte/Le Rette Del Piano Euclideo.html'">Prossima Lezione</button>
     </div>
 
+    <ul>
+        <li>
+            Un polinomio è una espressione del tipo
+            $$\begin{split}
+            a (x) = a_n \cdot x^n + \dots + a_k \cdot x^k + \dots + a_0,
+            \end{split}$$
+            con tutti i coefficienti \(a_n, \dots, a_k, \dots, a_0\) costanti.
+        </li>
+        <li>
+            Se \(a_n = 0\) si può scrivere
+            $$\begin{split}
+            a (x) = a_{n - 1} \cdot x^{n - 1} + \dots + a_k \cdot x^k + \dots + a_0,
+            \end{split}$$
+            altrimenti si dice che \(n = \deg (a)\) è il grado del polinomio.
+        </li>
+        <li>
+            Se \(a, b\) sono due polinomi, si può sempre scrivere \(a = q \cdot b + r\) con \(\deg (r) < \deg (b)\).
+            <div class="divrow">
+                <button onclick="toggleTesto('divisione')">Dimostrazione:</button>
+                <div id="divisione" class="hidden">
+                    Basta notare che, se \(\deg (b) \le \deg (a)\), detto
+                    $$\begin{split}
+                    c (x) = a (x) - \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}} \cdot b (x),
+                    \end{split}$$
+                    si ha \(\deg (c) < \deg (a)\) e quindi, per induzione
+                    $$\begin{split}
+                    a (x) &= c (x) + \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}} \cdot b (x)\\
+                    &= \left(q (x) + \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}}\right) \cdot b (x) + r (x).
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            Il teorema di Ruffini afferma che un polinomio \(p\) è multiplo di \(x - \alpha\) se e solo se \(p (\alpha) = 0\).
+            <div class="divrow">
+                <button onclick="toggleTesto('ruffini')">Dimostrazione:</button>
+                <div id="ruffini" class="hidden">
+                    Infatti si può scrivere \(p (x) = q (x) \cdot (x - \alpha) + p (\alpha)\). 
+                </div>
+            </div>
+            Questa osservazione si può generalizzare a gradi più alti usando l'algebra lineare (vedi <a href="../../Fondamenti/Algebra Lineare/La Matrice Di Vandermonde.html">La Matrice Di Vandermonde</a>).
+        </li>
+    </ul>
+
     <h1>Serie geometrica</h1>
 
     $$\begin{split}
-    (x^n + \dots + 1) \cdot (x - 1) = x^{n + 1} - 1
+    (x^n + \dots + x^k + \dots + 1) \cdot (x - 1) = x^{n + 1} - 1
     \end{split}$$
-
-    <h1>Ruffini</h1>
-
-    Un polinomio \(p\) è multiplo di \(x - a\) se e solo se \(p (a) = 0\).
 
     <h1>Fattoriale</h1>
 
@@ -41,6 +92,19 @@
             $$\begin{split}
             \frac{(a + b - 1)!}{(a - 1)! \cdot b!} + \frac{(a + b - 1)!}{a! \cdot (b - 1)!} = \frac{(a + b)!}{a! \cdot b!}
             \end{split}$$
+            Mostra che:
+            $$\begin{split}
+            (x + 1)^n = x^n + n \cdot x^{n - 1} + \dots + \frac{n!}{(n - n)! \cdot k!} \cdot x^k + \dots + n \cdot x + 1
+            \end{split}$$
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <a href="../../Fondamenti/Formulario/Alcune Identità Notevoli.html">Alcune Identità Notevoli</a>.
+        </li>
+        <li>
+            <a href="../../Fondamenti/Teoria dei Gruppi/I Gruppi E Gli Anelli.html">I Gruppi E Gli Anelli</a>.
         </li>
     </ul>
 

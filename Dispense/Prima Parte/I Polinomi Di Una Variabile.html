@@ -37,11 +37,13 @@
             con tutti i coefficienti \(a_n, \dots, a_k, \dots, a_0\) costanti.
         </li>
         <li>
-            Se \(a_n = 0\) si può scrivere
-            $$\begin{split}
-            a (x) = a_{n - 1} \cdot x^{n - 1} + \dots + a_k \cdot x^k + \dots + a_0,
-            \end{split}$$
-            altrimenti si dice che \(n = \deg (a)\) è il grado del polinomio.
+            <p>
+                Se \(a_n = 0\) si può scrivere
+                $$\begin{split}
+                a (x) = a_{n - 1} \cdot x^{n - 1} + \dots + a_k \cdot x^k + \dots + a_0,
+                \end{split}$$
+                altrimenti si dice che \(n = \deg (a)\) è il grado del polinomio.
+            </p>
         </li>
         <li>
             Se \(a, b\) sono due polinomi, si può sempre scrivere \(a = q \cdot b + r\) con \(\deg (r) < \deg (b)\).
@@ -61,14 +63,18 @@
             </div>
         </li>
         <li>
-            Il teorema di Ruffini afferma che un polinomio \(p\) è multiplo di \(x - \alpha\) se e solo se \(p (\alpha) = 0\).
+            <p>
+                Il teorema di Ruffini afferma che un polinomio \(p\) è multiplo di \(x - \alpha\) se e solo se \(p (\alpha) = 0\).
+            </p>
             <div class="divrow">
                 <button onclick="toggleTesto('ruffini')">Dimostrazione:</button>
                 <div id="ruffini" class="hidden">
                     Infatti si può scrivere \(p (x) = q (x) \cdot (x - \alpha) + p (\alpha)\). 
                 </div>
             </div>
-            Questa osservazione si può generalizzare a gradi più alti usando l'algebra lineare (vedi <a href="../../Fondamenti/Algebra Lineare/La Matrice Di Vandermonde.html">La Matrice Di Vandermonde</a>).
+            <p>
+                Questa osservazione si può generalizzare a gradi più alti usando l'algebra lineare (vedi <a href="../../Fondamenti/Algebra Lineare/La Matrice Di Vandermonde.html">La Matrice Di Vandermonde</a>).
+            </p>    
         </li>
     </ul>
 

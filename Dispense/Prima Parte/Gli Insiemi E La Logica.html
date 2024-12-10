@@ -483,14 +483,29 @@
         <li>
             Ad esempio 
             $$\begin{split}
-            \{``a", ``b"\} = \{``b", ``a"\} = \{``a", ``a", ``b"\} = \{``a", ``b", ``a"\} = \{``b", ``a", ``a"\} = \{``a", ``b", ``b"\} = \{``b", ``a", ``b"\} = \{``b", ``b", ``a"\}
+            \{0, 1\} = \{1, 0\} = \{0, 0, 1\} = \{0, 1, 0\} = \{1, 0, 0\} = \{0, 1, 1\} = \{1, 0, 1\} = \{1, 1, 0\}
             \end{split}$$
-            è un insieme di due elementi formato dai caratteri \(``a"\) e \(``b"\) e può essere rappresentato, senza ridondanza, in due modi. Notare l'uso delle virgolette per evitare che \(a\) e \(b\) siano interpretate come variabili.
+            è un insieme di due elementi formato dai caratteri \(0\) e \(1\) e può essere rappresentato, senza ridondanza, in due modi.
         </li>
         <li>
-            I numeri narurali sono le possibili cardinalità degli insiemi finiti. Ad esempio: \(0 = |\{\}|, 1 = |\{0\}|, 2 = |\{0, 1\}|\), eccetera.
+            I numeri narurali sono le possibili cardinalità degli insiemi finiti. Ad esempio: \(0 = |\{\}|\) la cardinalità dell'insieme vuoto, \(1 = |\{0\}|\), la cardinalità di un singoletto, \(2 = |\{0, 1\}|\), eccetera.
         </li>
     </ul>
+
+    <h2>Esercizi:</h2>
+
+    <ul>
+        <li>
+            Qual'è la cardinalità dell'insieme \(\{a, b\}\)?
+        </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('cardinalità')">Soluzione:</button>
+            <div id="cardinalità" class="hidden">
+                Gli elementi dell'insieme sono le variabili \(a, b\) (e non gli omonimi caratteri alfabetici). Per cui la cardinalità è \(2\) se \(a \ne b\), ma è \(1\) se \(a = b\).
+            </div>
+        </div>
+    </ul>
+
 
     <h1>Approfondimento</h1>
 

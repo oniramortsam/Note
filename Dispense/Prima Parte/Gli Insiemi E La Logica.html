@@ -76,18 +76,20 @@
 
     <h2>Esercizi:</h2>
     <ul>
-        Dimostra ciascuna delle seguenti utilizzando le altre
-        $$\begin{split}
-        a &= \lnot (\lnot a)\\
-        a &= a \land a\\
-        a &= a \lor a\\
-        \lnot ((\lnot a) \lor (\lnot b)) &= a \land b\\
-        \lnot ((\lnot a) \land (\lnot b)) &= a \lor b\\
-        a \land (b \land c) &= (a \land b) \land c\\
-        a \lor (b \lor c) &= (a \lor b) \lor c\\
-        a \land (b \lor c) &= (a \land b) \lor (a \land c)\\
-        a \lor (b \land c) &= (a \lor b) \land (a \lor c).
-        \end{split}$$
+        <li>
+            Dimostra ciascuna delle seguenti utilizzando le altre
+            $$\begin{split}
+            a &= \lnot (\lnot a)\\
+            a &= a \land a\\
+            a &= a \lor a\\
+            \lnot ((\lnot a) \lor (\lnot b)) &= a \land b\\
+            \lnot ((\lnot a) \land (\lnot b)) &= a \lor b\\
+            a \land (b \land c) &= (a \land b) \land c\\
+            a \lor (b \lor c) &= (a \lor b) \lor c\\
+            a \land (b \lor c) &= (a \land b) \lor (a \land c)\\
+            a \lor (b \land c) &= (a \lor b) \land (a \lor c).
+            \end{split}$$
+        </li>
         <li>
             <div class="divcol">
                 <button onclick="toggleTesto('logica')">Soluzioni:</button>
@@ -249,7 +251,13 @@
 
     <ul>
         <li>
-            Se \({\mathcal C}\) è un predicato, si scrive \(\forall x\,, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
+            Un predicato è una frase che può assumere significati diversi, cioè essere vera o falsa, a seconda del valore che assumono le sue variabili.
+        </li>
+        <li>
+            Ad esempio la veridicità della frase "il giorno \(x\) nevica" dipende da \(x\) e la verifica di tale veridicità è disponibile solo per alcuni valori di \(x\).
+        </li>
+        <li>
+            Se \({\mathcal C} (x)\) è un predicato, si scrive \(\forall x\,, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
         </li>
         <li>
             Se \({\mathcal C}\) è un predicato, si scrive \(\exists x\!: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
@@ -257,13 +265,13 @@
     </ul>
     <ul>
         <li>
-            Si scrive \(a \longrightarrow b\) per dire "se \(a\), allora \(b\)".
+            Si scrive \({\mathcal A} \longrightarrow {\mathcal B}\) per dire "se \({\mathcal A}\), allora \({\mathcal B}\)".
         </li>
         <li>
-            Si scrive \(a \longleftarrow b\) per dire "se \(b\), allora \(b\)".
+            Si scrive \({\mathcal A} \longleftarrow {\mathcal B}\) per dire "se \({\mathcal B}\), allora \({\mathcal A}\)".
         </li>
         <li>
-            Si scrive \(a \longleftrightarrow b\) per dire che sono equivalenti: \(``a" = ``b"\).
+            Si scrive \({\mathcal A} \longleftrightarrow {\mathcal B}\) per dire che \({\mathcal A}\) e \({\mathcal B}\) sono equivalenti.
         </li>
     </ul>
     <ul>
@@ -312,23 +320,57 @@
 
     <h1>Insiemi</h1>
 
-    Si scrive \(a \in {\rm A}\) per dire che \(a\) appartiene ad \({\rm A}\) ed \(a \notin {\rm A}\) per dire che non vi appartiene. Siano \({\rm A}, {\rm B}\) due insiemi,
     <ul>
         <li>
-            Definiamo rispettivamente differenza "\(\setminus\)", intersezione "\(\cap\)", unione "\(\cup\)", come segue:
-            $$\begin{split}
-            {\rm A} \setminus {\rm B} &= \{a: a \in {\rm A} \land a \notin {\rm B}\}\\
-            {\rm A} \cap {\rm B} &= \{a: a \in {\rm A} \land a \in {\rm B}\}\\
-            {\rm A} \cup {\rm B} &= \{a: a \in {\rm A} \lor a \in {\rm B}\}.
-            \end{split}$$
+            Si scrive \(a \in {\rm A}\) per dire che \(a\) appartiene ad \({\rm A}\) ed \(a \notin {\rm A}\) per dire che non vi appartiene.
         </li>
         <li>
-            Scriviamo \({\rm A} \subseteq {\rm B}\) e diciamo che "\({\rm A}\) è contenuto in \({\rm B}\)" se \(\forall a \in {\rm A}\,, a \in {\rm B}\), cioè che ogni elemento di \({\rm A}\) appartiene a \({\rm B}\), che è equivalente a ciascuna delle seguenti:
-            $$\begin{split}
-            {\rm A} \setminus {\rm B} &= \emptyset\\
-            {\rm A} \cap {\rm B} &= {\rm A}\\
-            {\rm A} \cup {\rm B} &= {\rm B}.
-            \end{split}$$
+            <div class="divrow">
+                <div>
+                    Siano \({\rm A}, {\rm B}\) due insiemi. Definiamo rispettivamente differenza "\(\setminus\)", intersezione "\(\cap\)", unione "\(\cup\)", come segue:
+                    $$\begin{split}
+                    {\rm A} \setminus {\rm B} &= \{a: a \in {\rm A} \land a \notin {\rm B}\}\\
+                    {\rm A} \cap {\rm B} &= \{a: a \in {\rm A} \land a \in {\rm B}\}\\
+                    {\rm A} \cup {\rm B} &= \{a: a \in {\rm A} \lor a \in {\rm B}\}.
+                    \end{split}$$
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 242 162">
+                    <circle cx="80" cy="80" r="80" stroke="red" fill="none"/>
+                    <circle cx="180" cy="100" r="60" stroke="red" fill="none"/>
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="divrow">
+                <div>
+                    Scriviamo \({\rm A} \subseteq {\rm B}\) e diciamo che "\({\rm A}\) è contenuto in \({\rm B}\)" se \(\forall x \in {\rm A}\,, x \in {\rm B}\), cioè che ogni elemento di \({\rm A}\) appartiene a \({\rm B}\), che è equivalente a ciascuna delle seguenti:
+                    $$\begin{split}
+                    {\rm A} \setminus {\rm B} &= \emptyset\\
+                    {\rm A} \cap {\rm B} &= {\rm A}\\
+                    {\rm A} \cup {\rm B} &= {\rm B}.
+                    \end{split}$$
+                    <div class="divrow">
+                        <button onclick="toggleTesto('contenuto')">Dimostrazione:</button>
+                        <div id="contenuto" class="hidden">
+                            Dobbiamo dire che sono equivalenti:
+                            $$\begin{split}
+                            (x \in {\rm A}) &\longrightarrow (x \in {\rm B})\\
+                            (x \in {\rm A}) \land (x \in {\rm B}) &\longleftrightarrow (x \in {\rm A})\\
+                            (x \in {\rm A}) \lor (x \in {\rm B}) &\longleftrightarrow (x \in {\rm B}).
+                            \end{split}$$
+                            E che a loro volta questi sono equivalenti a
+                            $$\begin{split}
+                            (x \notin {\rm A}) &\lor (x \in {\rm B})\\
+                            \lnot ((x \in {\rm A}) &\land (x \notin {\rm B})).
+                            \end{split}$$
+                        </div>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 162 162">
+                    <circle cx="80" cy="80" r="80" stroke="red" fill="none"/>
+                    <circle cx="100" cy="100" r="30" stroke="red" fill="none"/>
+                </svg>
+            </div>
         </li>
     </ul>
 
@@ -427,6 +469,24 @@
                     \end{split}$$
                 </div>
             </div>
+        </li>
+    </ul>
+
+    <h1>I Naturali</h1>
+
+    <ul>
+        <li>
+            Un insieme finito può essere rapprsentato elencando, eventualmente con ridondanza, gli elementi che vi appartengono.
+        </li>
+        <li>
+            Ad esempio 
+            $$\begin{split}
+            \{``a", ``b"\} = \{``b", ``a"\} = \{``a", ``a", ``b"\} = \{``a", ``b", ``a"\} = \{``b", ``a", ``a"\} = \{``a", ``b", ``b"\} = \{``b", ``a", ``b"\} = \{``b", ``b", ``a"\}
+            \end{split}$$
+            è un insieme di due elementi formato dai caratteri \(``a"\) e \(``b"\) e può essere rappresentato, senza ridondanza, in due modi. Notare l'uso delle virgolette per evitare che \(a\) e \(b\) siano interpretate come variabili.
+        </li>
+        <li>
+            I numeri narurali sono le possibili cardinalità degli insiemi finiti. Ad esempio: \(0 = |\{\}|, 1 = |\{0\}|, 2 = |\{0, 1\}|\), eccetera.
         </li>
     </ul>
 

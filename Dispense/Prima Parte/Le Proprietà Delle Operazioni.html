@@ -28,13 +28,44 @@
         <button onclick="location.href='I Numeri Naturali.html'">Prossima Lezione</button>
     </div>
 
+    <h1>I Numeri Interi e Razionali</h1>
+
+    <ul>
+        <li>
+            I numeri interi \(x \in {\mathbb Z}\) si possono scrivere come \(x = \pm a\) concatenando come stringhe: il segno \(\pm\) ed il modulo naturale \(a \in {\mathbb N}\). Si conviene che \(\pm 0 = 0\).
+        </li>
+        <li>
+            I numeri razionali \(x \in {\mathbb Q}\) si possono scrivere come \(x = \pm a.b\bar{c}\) concatenando come stringhe: il segno \(\pm\), la parte intera \(a\) naturale, la mantissa non periodica \(b < 10^k\) e la mantissa periodica \(c < 10^h\).
+        </li>
+        <li>
+            I numeri \(k, h\) sono il numero di cifre di \(b, c\), questi devono essere specificati per esprimere \(b, c \in {\mathbb N}\) come stringhe aggiungendo gli zeri a sinistra.
+        </li>
+        <li>
+            Si conviene che se la mantissa periodica è la ripetizione della stessa sequenza di cifre, può essere sostituita con tale sequenza.
+        </li>
+        <li>
+            Si conviene che se la mantissa periodica è \(9\), questa si rimuove e si aggiunge \(1\) alla mantissa non periodica.
+        </li>
+        <li>
+            Si può scrivere un numero razionale come frazione \(\pm \frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali (vedi <a href="I Polinomi Di Una Variabile.html">I Polinomi Di Una Variabile</a>):
+            $$\begin{split}
+            x = a + \frac{b \cdot (10^{k_c} - 1) + c}{10^{k_b} \cdot (10^{k_c} - 1)}
+            \end{split}$$
+            I fatto che ogni frazione del tipo \(\pm \frac{\rm N}{\rm D}\) possa essere scritta in questo modo dipende da un risultato di aritmetica (vedi <a href="I Numeri Naturali.html">I Numeri Naturali</a>).
+        </li>
+    </ul>
+
     <h1>Proprietà associativa</h1>
 
-    Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
-    $$\begin{split}
-    {\rm A} + ({\rm B} + {\rm C}) &= ({\rm A} + {\rm B}) + {\rm C}\\
-    {\rm A} \cdot ({\rm B} \cdot {\rm C}) &= ({\rm A} \cdot {\rm B}) \cdot {\rm C}.
-    \end{split}$$
+    <ul>
+        <li>
+            Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
+            $$\begin{split}
+            {\rm A} + ({\rm B} + {\rm C}) &= ({\rm A} + {\rm B}) + {\rm C}\\
+            {\rm A} \cdot ({\rm B} \cdot {\rm C}) &= ({\rm A} \cdot {\rm B}) \cdot {\rm C}.
+            \end{split}$$
+        </li>
+    </ul>
 
     <h2>Esercizi:</h2>
     <ul>
@@ -88,11 +119,15 @@
 
     <h1>Proprietà commutativa</h1>
 
-    Dati due numeri \({\rm A}, {\rm B}\) (che siano o meno interi)
-    $$\begin{split}
-    {\rm A} + {\rm B} &= {\rm B} + {\rm A}\\
-    {\rm A} \cdot {\rm B} &= {\rm B} \cdot {\rm A}.
-    \end{split}$$
+    <ul>
+        <li>
+        Dati due numeri \({\rm A}, {\rm B}\) (che siano o meno interi)
+        $$\begin{split}
+        {\rm A} + {\rm B} &= {\rm B} + {\rm A}\\
+        {\rm A} \cdot {\rm B} &= {\rm B} \cdot {\rm A}.
+        \end{split}$$
+        </li>
+    </ul>
 
     <h2>Esercizi:</h2>
     <ul>
@@ -142,10 +177,14 @@
 
     <h1>Proprietà distributiva</h1>
 
-    Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
-    $$\begin{split}
-    {\rm A} \cdot ({\rm B} + {\rm C}) &= {\rm A} \cdot {\rm B} + {\rm A} \cdot {\rm C}.
-    \end{split}$$
+    <ul>
+        <li>
+            Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
+            $$\begin{split}
+            {\rm A} \cdot ({\rm B} + {\rm C}) &= {\rm A} \cdot {\rm B} + {\rm A} \cdot {\rm C}.
+            \end{split}$$
+        </li>
+    </ul>
 
     <h2>Esercizi:</h2>
     <ul>
@@ -179,12 +218,16 @@
 
     <h1>Proprietà delle potenze</h1>
 
-    Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
-    $$\begin{split}
-    {\rm A}^{{\rm B} + {\rm C}} &= {\rm A}^{\rm B} \cdot {\rm A}^{\rm C}\\
-    \left({\rm A}^{\rm B}\right)^{\rm C} &= {\rm A}^{{\rm B} \cdot {\rm C}}\\
-    ({\rm A} \cdot {\rm B})^{\rm C} &= {\rm A}^{\rm C} \cdot {\rm B}^{\rm C}.
-    \end{split}$$
+    <ul>
+        <li>
+            Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi) (ATTENZIONE ALLE CONDIZIONI DI ESISTENZA)
+            $$\begin{split}
+            {\rm A}^{{\rm B} + {\rm C}} &= {\rm A}^{\rm B} \cdot {\rm A}^{\rm C}\\
+            \left({\rm A}^{\rm B}\right)^{\rm C} &= {\rm A}^{{\rm B} \cdot {\rm C}}\\
+            ({\rm A} \cdot {\rm B})^{\rm C} &= {\rm A}^{\rm C} \cdot {\rm B}^{\rm C}.
+            \end{split}$$
+        </li>
+    </ul>
 
     <h2>Esercizi:</h2>
     <ul>
@@ -226,16 +269,22 @@
 
     <h1>Differenza e Divisione</h1>
 
-    La differenza e la divisione sono le inverse di somma e moltiplicazione, per cui sono definite come segue:
-    $$\begin{split}
-    {\rm A} - {\rm B} = {\rm C} &\longleftrightarrow {\rm A} = {\rm B} + {\rm C}\\
-    {\rm A} / {\rm B} = {\rm C} &\longleftrightarrow {\rm A} = {\rm B} \cdot {\rm C}.
-    \end{split}$$
-    Per cui, ad esempio
-    $$\begin{split}
-    {\rm A} = {\rm B} + ({\rm A} - {\rm B}) &\qquad {\rm C} = ({\rm B} + {\rm C}) - {\rm B}\\
-    {\rm A} = {\rm B} \cdot ({\rm A} / {\rm B}) &\qquad {\rm C} = ({\rm B} \cdot {\rm C}) / {\rm B}.
-    \end{split}$$
+    <ul>
+        <li>
+            La differenza e la divisione sono le inverse di somma e moltiplicazione, per cui sono definite come segue:
+            $$\begin{split}
+            {\rm A} - {\rm B} = {\rm C} &\longleftrightarrow {\rm A} = {\rm B} + {\rm C}\\
+            {\rm A} / {\rm B} = {\rm C} &\longleftrightarrow {\rm A} = {\rm B} \cdot {\rm C}.
+            \end{split}$$
+        </li>
+        <li>
+            Per cui, ad esempio:
+            $$\begin{split}
+            {\rm A} = {\rm B} + ({\rm A} - {\rm B}) &\qquad {\rm C} = ({\rm B} + {\rm C}) - {\rm B}\\
+            {\rm A} = {\rm B} \cdot ({\rm A} / {\rm B}) &\qquad {\rm C} = ({\rm B} \cdot {\rm C}) / {\rm B}.
+            \end{split}$$
+        </li>
+    </ul>
 
     <h2>Esercizi:</h2>
     <ul>
@@ -296,16 +345,20 @@
 
     <h1>Radicali e Logaritmi</h1>
 
-    $$\begin{split}
-    \sqrt[{\rm B}]{\rm A} = {\rm C} &\longleftrightarrow {\rm A} = {\rm C}^{\rm B}\\
-    \log_{\rm B}({\rm A}) = {\rm C} &\longleftrightarrow {\rm A} = {\rm B}^{\rm C}.
-    \end{split}$$
-
-    Per cui, ad esempio
-    $$\begin{split}
-    {\rm A} = \left(\sqrt[{\rm B}]{\rm A}\right)^{\rm B} &\qquad {\rm C} = \sqrt[{\rm B}]{{\rm C}^{\rm B}}\\
-    {\rm A} = {\rm B}^{\log_{\rm B}({\rm A})} &\qquad {\rm C} = \log_{\rm B}\left({\rm B}^{\rm C}\right).
-    \end{split}$$
+    <ul>
+        <li>
+            Invece radicali e logaritmi sono le inverse di potenza ed esponenziale, per cui sono definite come segue:
+            $$\begin{split}
+            \sqrt[{\rm B}]{\rm A} = {\rm C} &\longleftrightarrow {\rm A} = {\rm C}^{\rm B}\\
+            \log_{\rm B}({\rm A}) = {\rm C} &\longleftrightarrow {\rm A} = {\rm B}^{\rm C}.
+            \end{split}$$
+            Per cui, ad esempio:
+            $$\begin{split}
+            {\rm A} = \left(\sqrt[{\rm B}]{\rm A}\right)^{\rm B} &\qquad {\rm C} = \sqrt[{\rm B}]{{\rm C}^{\rm B}}\\
+            {\rm A} = {\rm B}^{\log_{\rm B}({\rm A})} &\qquad {\rm C} = \log_{\rm B}\left({\rm B}^{\rm C}\right).
+            \end{split}$$
+        </li>
+    </ul>
 
     <h2>Esercizi:</h2>
     <ul>

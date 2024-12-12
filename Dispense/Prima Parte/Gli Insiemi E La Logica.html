@@ -79,6 +79,7 @@
 
     <ul>
         <li>
+            <h3>Leggi di De Morgan:</h3>
             Dimostra ciascuna delle seguenti utilizzando le altre
             $$\begin{split}
             a &= \lnot (\lnot a)\\
@@ -86,19 +87,13 @@
             a &= a \lor a\\
             \lnot ((\lnot a) \lor (\lnot b)) &= a \land b\\
             \lnot ((\lnot a) \land (\lnot b)) &= a \lor b\\
-            a \land (b \land c) &= (a \land b) \land c\\
-            a \lor (b \lor c) &= (a \lor b) \lor c\\
-            a \land (b \lor c) &= (a \land b) \lor (a \land c)\\
-            a \lor (b \land c) &= (a \lor b) \land (a \lor c).
             \end{split}$$
-        </li>
-        <li>
             <div class="divcol">
-                <button onclick="toggleTesto('logica')">Soluzioni:</button>
-                <div id="logica" class="hidden">
+                <button onclick="toggleTesto('bottone0')">Soluzioni:</button>
+                <div id="bottone0" class="hidden">
                     <div class="divrow">
-                        <button onclick="toggleTesto('con la quarta')">della prima con la quarta</button>
-                        <div id="con la quarta" class="hidden">
+                        <button onclick="toggleTesto('bottone00')">della prima con la quarta</button>
+                        <div id="bottone00" class="hidden">
                             Usando la terza si ha
                             $$\begin{split}
                             \lnot a = (\lnot a) \lor (\lnot a),
@@ -111,8 +106,8 @@
                         </div>
                     </div>
                     <div class="divrow">
-                        <button onclick="toggleTesto('con la quinta')">della prima con la quinta</button>
-                        <div id="con la quinta" class="hidden">
+                        <button onclick="toggleTesto('bottone01')">della prima con la quinta</button>
+                        <div id="bottone01" class="hidden">
                             Usando la seconda si ha
                             $$\begin{split}
                             \lnot a = (\lnot a) \land (\lnot a),
@@ -125,8 +120,8 @@
                         </div>
                     </div>
                     <div class="divrow">
-                        <button onclick="toggleTesto('della seconda')">della seconda con la terza</button>
-                        <div id="della seconda" class="hidden">
+                        <button onclick="toggleTesto('bottone02')">della seconda con la terza</button>
+                        <div id="bottone02" class="hidden">
                             Usando la prima
                             $$\begin{split}
                             a \land a = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a)))),
@@ -139,8 +134,8 @@
                         </div>
                     </div>
                     <div class="divrow">
-                        <button onclick="toggleTesto('della terza')">della terza con la seconda</button>
-                        <div id="della terza" class="hidden">
+                        <button onclick="toggleTesto('bottone03')">della terza con la seconda</button>
+                        <div id="bottone03" class="hidden">
                             Usando la prima
                             $$\begin{split}
                             a \lor a = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a)))),
@@ -153,8 +148,8 @@
                         </div>
                     </div>
                     <div class="divrow">
-                        <button onclick="toggleTesto('della quarta')">della quarta con la quinta</button>
-                        <div id="della quarta" class="hidden">
+                        <button onclick="toggleTesto('bottone04')">della quarta con la quinta</button>
+                        <div id="bottone04" class="hidden">
                             Usando la prima
                             $$\begin{split}
                             a \land b = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b)))),
@@ -166,8 +161,8 @@
                         </div>
                     </div>
                     <div class="divrow">
-                        <button onclick="toggleTesto('della quinta')">della quinta con la quarta</button>
-                        <div id="della quinta" class="hidden">
+                        <button onclick="toggleTesto('bottone05')">della quinta con la quarta</button>
+                        <div id="bottone05" class="hidden">
                             Usando la prima
                             $$\begin{split}
                             a \lor b = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b)))),
@@ -178,42 +173,57 @@
                             \end{split}$$
                         </div>
                     </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <h3>Associatività e transitività:</h3>
+            Dimostra ciascuna delle seguenti utilizzando le altre
+            $$\begin{split}
+            a \land (b \land c) &= (a \land b) \land c\\
+            a \lor (b \lor c) &= (a \lor b) \lor c\\
+            a \land (b \lor c) &= (a \land b) \lor (a \land c)\\
+            a \lor (b \land c) &= (a \lor b) \land (a \lor c).
+            \end{split}$$
+            <div class="divcol">
+                <button onclick="toggleTesto('bottone1')">Soluzioni:</button>
+                <div id="bottone1" class="hidden">
                     <div class="divrow">
-                        <button onclick="toggleTesto('della sesta')">della sesta con la settima</button>
-                        <div id="della sesta" class="hidden">
-                            Usando la prima, la quarta e la quinta
+                        <button onclick="toggleTesto('bottone10')">della prima con la seconda</button>
+                        <div id="bottone10" class="hidden">
+                            Usando De Morgan
                             $$\begin{split}
                             a \land (b \land c) = \lnot ((\lnot a) \lor (\lnot (b \land c)))\\
                             \lnot (b \land c) = (\lnot b) \lor (\lnot c)\\
                             \lnot ((\lnot (a \land b)) \lor (\lnot c)) = (a \land b) \land c\\
                             (\lnot a) \lor (\lnot b) = \lnot (a \land b).
                             \end{split}$$
-                            invece usando la settima
+                            invece usando la seconda
                             $$\begin{split}
                             (\lnot a) \lor ((\lnot b) \lor (\lnot c)) = ((\lnot a) \lor (\lnot b)) \lor (\lnot c).
                             \end{split}$$
                         </div>
                     </div>
                     <div class="divrow">
-                        <button onclick="toggleTesto('della settima')">della settima con la sesta</button>
-                        <div id="della settima" class="hidden">
-                            Usando la prima, la quarta e la quinta
+                        <button onclick="toggleTesto('bottone11')">della seconda con la prima</button>
+                        <div id="bottone11" class="hidden">
+                            Usando De Morgan
                             $$\begin{split}
                             a \lor (b \lor c) = \lnot ((\lnot a) \land (\lnot (b \lor c)))\\
                             \lnot (b \lor c) = (\lnot b) \land (\lnot c)\\
                             \lnot ((\lnot (a \lor b)) \land (\lnot c)) = (a \lor b) \lor c\\
                             (\lnot a) \land (\lnot b) = \lnot (a \lor b).
                             \end{split}$$
-                            invece usando la sesta
+                            invece usando la prima
                             $$\begin{split}
                             (\lnot a) \land ((\lnot b) \land (\lnot c)) = ((\lnot a) \land (\lnot b)) \land (\lnot c).
                             \end{split}$$
                         </div>
                     </div>
                     <div class="divrow">
-                        <button onclick="toggleTesto('della ottava')">della ottava con la nona</button>
-                        <div id="della ottava" class="hidden">
-                            Usando la prima, la quarta e la quinta
+                        <button onclick="toggleTesto('bottone12')">della terza con la quarta</button>
+                        <div id="bottone12" class="hidden">
+                            Usando De Morgan
                             $$\begin{split}
                             a \land (b \lor c) = \lnot ((\lnot a) \lor (\lnot (b \lor c)))\\
                             \lnot ((\lnot (a \land b)) \land (\lnot (a \land c))) = (a \land b) \lor (a \land c)\\
@@ -221,16 +231,16 @@
                             (\lnot a) \lor (\lnot b) = \lnot (a \land b)\\
                             (\lnot a) \lor (\lnot c) = \lnot (a \land c).
                             \end{split}$$
-                            Invece usando la nona
+                            Invece usando la quarta
                             $$\begin{split}
                             (\lnot a) \lor ((\lnot b) \land (\lnot c)) = ((\lnot a) \lor (\lnot b)) \land ((\lnot a) \lor (\lnot c)).
                             \end{split}$$
                         </div>
                     </div>
                     <div class="divrow">
-                        <button onclick="toggleTesto('della nona')">della nona con la ottava</button>
-                        <div id="della nona" class="hidden">
-                            Usando la prima, la quarta e la quinta
+                        <button onclick="toggleTesto('bottone13')">della quarta con la terza</button>
+                        <div id="bottone13" class="hidden">
+                            Usando De Morgan
                             $$\begin{split}
                             a \lor (b \land c) = \lnot ((\lnot a) \land (\lnot (b \land c)))\\
                             \lnot ((\lnot (a \lor b)) \lor (\lnot (a \lor c))) = (a \lor b) \land (a \lor c)\\
@@ -238,12 +248,170 @@
                             (\lnot a) \land (\lnot b) = \lnot (a \lor b)\\
                             (\lnot a) \land (\lnot c) = \lnot (a \lor c).
                             \end{split}$$
-                            Invece usando la ottava
+                            Invece usando la terza
                             $$\begin{split}
                             (\lnot a) \land ((\lnot b) \lor (\lnot c)) = ((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land (\lnot c)).
                             \end{split}$$
                         </div>
                     </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <h3>Tautologie:</h3>
+            Dimostra ciascuna delle seguenti utilizzando le altre:
+            $$\begin{split}
+            a \land ((\lnot b) \lor b) &= a\\
+            a \lor ((\lnot b) \land b) &= a\\
+            a \land (a \lor b) &= a\\
+            a \lor (a \land b) &= a\\
+            a \land b &= a \land ((\lnot a) \lor b)\\
+            a \lor b &= a \lor ((\lnot a) \land b).
+            \end{split}$$
+            <div class="divcol">
+                <button onclick="toggleTesto('bottone2')">Soluzioni:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="divrow">
+                        <button onclick="toggleTesto('bottone20')">della prima con la seconda</button>
+                        <div id="bottone20" class="hidden">
+                            Usando De Morgan
+                            $$\begin{split}
+                            a \land ((\lnot b) \lor b) = \lnot ((\lnot a) \lor ((\lnot b) \land b))
+                            \end{split}$$
+                            Invece usando la seconda
+                            $$\begin{split}
+                            (\lnot a) \lor ((\lnot b) \land b) = \lnot a.
+                            \end{split}$$
+                        </div>
+                    </div>
+                    <div class="divrow">
+                        <button onclick="toggleTesto('bottone21')">della seconda con la prima</button>
+                        <div id="bottone21" class="hidden">
+                            Usando De Morgan
+                            $$\begin{split}
+                            a \lor ((\lnot b) \land b) = \lnot ((\lnot a) \land ((\lnot b) \lor b))
+                            \end{split}$$
+                            Invece usando la prima
+                            $$\begin{split}
+                            (\lnot a) \land ((\lnot b) \lor b) = \lnot a.
+                            \end{split}$$
+                        </div>
+                    </div>
+                    <div class="divrow">
+                        <button onclick="toggleTesto('bottone22')">della terza con la quarta</button>
+                        <div id="bottone22" class="hidden">
+                            Usando De Morgan
+                            $$\begin{split}
+                            a \land (a \lor b) = \lnot ((\lnot a) \lor ((\lnot a) \land (\lnot a)))
+                            \end{split}$$
+                            Invece usando la quarta
+                            $$\begin{split}
+                            (\lnot a) \lor ((\lnot a) \land (\lnot a)) = \lnot a.
+                            \end{split}$$
+                        </div>
+                    </div>
+                    <div class="divrow">
+                        <button onclick="toggleTesto('bottone23')">della quarta con la terza</button>
+                        <div id="bottone23" class="hidden">
+                            Usando De Morgan
+                            $$\begin{split}
+                            a \lor (a \land b) = \lnot ((\lnot a) \land ((\lnot a) \lor (\lnot a)))
+                            \end{split}$$
+                            Invece usando la terza
+                            $$\begin{split}
+                            (\lnot a) \land ((\lnot a) \lor (\lnot a)) = \lnot a.
+                            \end{split}$$
+                        </div>
+                    </div>
+                    <div class="divrow">
+                        <button onclick="toggleTesto('bottone24')">della quinta</button>
+                        <div id="bottone23" class="hidden">
+                        </div>
+                    </div>
+                    <div class="divrow">
+                        <button onclick="toggleTesto('bottone25')">della sesta</button>
+                        <div id="bottone23" class="hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Implicazioni</h1>
+
+    <ul>
+        <li>
+            Si scrive \({\mathcal A} \longrightarrow {\mathcal B}\) per dire "se \({\mathcal A}\), allora \({\mathcal B}\)".
+        </li>
+        <li>
+            Si scrive \({\mathcal A} \longleftarrow {\mathcal B}\) per dire "se \({\mathcal B}\), allora \({\mathcal A}\)".
+        </li>
+        <li>
+            Se \({\mathcal A} \longrightarrow {\mathcal B}\) si può dire che \((\lnot {\mathcal B}) \longrightarrow (\lnot {\mathcal A})\) e viceversa.
+        </li>
+        <li>
+            Se \({\mathcal A} \longrightarrow {\mathcal B} \longrightarrow {\mathcal A}\) si può dire che \({\mathcal A} \longleftrightarrow {\mathcal B}\) oppure \({\mathcal A} = {\mathcal B}\) come fatto fino ad ora.
+        </li>
+        <li>
+            Valgono sempre le tautologie:
+            $$\begin{split}
+            {\rm A} \land {\rm B} \longrightarrow {\rm A} \longrightarrow {\rm A} \lor {\rm B}
+            \end{split}$$
+        </li>
+        <li>
+            Le seguenti sono equivalenti:
+            $$\begin{split}
+            {\rm A} &\longrightarrow {\rm B}\\
+            {\rm A} \lor {\rm B} &= {\rm B}\\
+            {\rm A} \land {\rm B} &= {\rm A}\\
+            {\rm A} \lor {\rm B} &\longrightarrow {\rm B}\\
+            {\rm A} &\longrightarrow {\rm A} \land {\rm B}.
+            \end{split}$$
+        </li>
+        <li>
+            Per dimostrare che \({\mathcal A} \longrightarrow {\mathcal B}\) si parte generalmente dall'ipotesi \(\mathcal A\) e si arriva alla tesi \(\mathcal B\). Questo procedimento richiede la transitività dell'implicazione che noi vedremo tra poco.
+        </li>
+        <li>
+            Negli esercisi useremo uno strumento diverso, cioè riduciamo l'implicazione ad un connettivo logico \(({\rm A} \longrightarrow {\rm B}) = (\lnot (\rm A)) \lor {\rm B}\).
+        </li>
+    </ul>
+
+    <h2>Esercizi:</h2>
+    <ul>
+        <li>
+            Se \(a \longrightarrow b\) si può dire che, qualunque sia \(c\):
+            $$\begin{split}
+            a \land c &\longrightarrow b \land c\\
+            a \lor c &\longrightarrow b \lor c\\
+            c &\longrightarrow (\lnot a) \lor b\\
+            a \land (\lnot b) &\longrightarrow c.
+            \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone30')">Soluzione:</button>
+                <div id="bottone30" class="hidden">
+                    Come anticipato:
+                    $$\begin{split}
+                    (\lnot (a \land c)) \lor (b \land c) = (\lnot a) \lor (\lnot c) \lor (b \land c) = (\lnot a) \lor (\lnot c) \lor b &\longleftarrow (\lnot a) \lor b\\
+                    (\lnot (a \lor c)) \lor (b \lor c) = ((\lnot a) \land (\lnot c)) \lor b \lor c = (\lnot a) \lor b \lor c &\longleftarrow (\lnot a) \lor b\\
+                    (\lnot c) \lor ((\lnot a) \lor b) &\longleftarrow (\lnot a) \lor b\\
+                    (\lnot (a \land (\lnot b))) \lor c = ((\lnot a) \lor b) \lor c &\longleftarrow (\lnot a) \lor b.
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
+            Se anche \(a \longrightarrow b \longrightarrow c\) si può dire che \(a \longrightarrow c\).
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone31')">Soluzione:</button>
+                <div id="bottone31" class="hidden">
+                    Usando anche le proprietà dimostrate nell'esercizio precedente:
+                    $$\begin{split}
+                    ((\lnot a) \lor b) \land ((\lnot b) \lor c) &= ((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land c) \lor (b \land c)\\
+                    &= (((\lnot a) \lor b) \land ((\lnot a) \lor c) \land ((\lnot b) \lor c)) \lor ((\lnot a) \land c)\\
+                    &\longrightarrow ((\lnot a) \lor c) \lor ((\lnot a) \land c)\\
+                    &= ((\lnot a) \lor c) \land ((\lnot a) \lor c) = ((\lnot a) \lor c).
+                    \end{split}$$
                 </div>
             </div>
         </li>
@@ -265,17 +433,8 @@
             Se \({\mathcal C}\) è un predicato, si scrive \(\exists x\!: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
         </li>
     </ul>
-    <ul>
-        <li>
-            Si scrive \({\mathcal A} \longrightarrow {\mathcal B}\) per dire "se \({\mathcal A}\), allora \({\mathcal B}\)".
-        </li>
-        <li>
-            Si scrive \({\mathcal A} \longleftarrow {\mathcal B}\) per dire "se \({\mathcal B}\), allora \({\mathcal A}\)".
-        </li>
-        <li>
-            Si scrive \({\mathcal A} \longleftrightarrow {\mathcal B}\) per dire che \({\mathcal A}\) e \({\mathcal B}\) sono equivalenti.
-        </li>
-    </ul>
+
+    <h2>Esercizi:</h2>
     <ul>
         <li>
             Si possono scrivere i quantificatori l'uno in termini dell'altro come segue:
@@ -283,6 +442,12 @@
             (\exists x\!: {\mathcal C}(x)) &\longleftrightarrow \lnot (\forall x\,, \lnot {\mathcal C} (x))\\
             (\forall x\,, {\mathcal C}(x)) &\longleftrightarrow \lnot (\exists x\!: \lnot {\mathcal C} (x))
             \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone32')">Dimostrazione:</button>
+                <div id="bottone32" class="hidden">
+                    NON LO SO.
+                </div>
+            </div>
         </li>
         <li>
             Notiamo che se \({\mathcal A}, {\mathcal B}\) sono predicati,
@@ -290,14 +455,22 @@
             (\forall x\,, {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftrightarrow (\forall x\,, {\mathcal A}(x)) \land (\forall x\,, {\mathcal B}(x))\\
             (\exists x\!: {\mathcal A}(x) \lor {\mathcal B}(x)) &\longleftrightarrow (\exists x\!: {\mathcal A}(x)) \lor (\exists x\!: {\mathcal B}(x)).
             \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone33')">Dimostrazione:</button>
+                <div id="bottone33" class="hidden">
+                    NON LO SO.
+                </div>
+            </div>
+        </li>
+        <li>
             In un certo senso \(\forall\) è come una congiunzione, mentre \(\exists\) è come una disgiunzione:
             $$\begin{split}
             (\forall x \in {\rm A} \cup {\rm B}\,, {\mathcal C}(x)) &\longleftrightarrow (\forall x \in {\rm A}\,, {\mathcal C}(x)) \land (\forall x \in {\rm B}\,, {\mathcal C}(x))\\
             (\exists x \in {\rm A} \cup {\rm B}\!: {\mathcal C}(x)) &\longleftrightarrow (\exists x \in {\rm A}\!: {\mathcal C}(x)) \lor (\exists x \in {\rm B}\!: {\mathcal C}(x)).
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('quantificatori')">Dimostrazione:</button>
-                <div id="quantificatori" class="hidden">
+                <button onclick="toggleTesto('bottone34')">Dimostrazione:</button>
+                <div id="bottone34" class="hidden">
                     Per la prima usare
                     $$\begin{split}
                     {\mathcal A} (x) &= ``x \notin {\rm A} \lor {\mathcal C} (x)"\\
@@ -317,6 +490,12 @@
             (\exists x\!: {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftarrow (\exists x\!: {\mathcal A}(x)) \land (\forall x\,, {\mathcal B}(x))\\
             (\forall x\,, {\mathcal A}(x) \lor {\mathcal B}(x)) &\longrightarrow (\forall x\,, {\mathcal A}(x)) \lor (\exists x\!: {\mathcal B}(x)).
             \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone35')">Dimostrazione:</button>
+                <div id="bottone35" class="hidden">
+                    NON LO SO.
+                </div>
+            </div>
         </li>
     </ul>
 
@@ -335,39 +514,12 @@
                     {\rm A} \cap {\rm B} &= \{a: a \in {\rm A} \land a \in {\rm B}\}\\
                     {\rm A} \cup {\rm B} &= \{a: a \in {\rm A} \lor a \in {\rm B}\}.
                     \end{split}$$
+                    Scriviamo \({\rm A} \subseteq {\rm B}\) e diciamo che "\({\rm A}\) è contenuto in \({\rm B}\)" se \(\forall x \in {\rm A}\,, x \in {\rm B}\), cioè che ogni elemento di \({\rm A}\) appartiene a \({\rm B}\).
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 242 162">
                     <circle cx="80" cy="80" r="80" stroke="red" fill="none"/>
                     <circle cx="180" cy="100" r="60" stroke="red" fill="none"/>
                 </svg>
-            </div>
-        </li>
-        <li>
-            <div class="divrow">
-                <div>
-                    Scriviamo \({\rm A} \subseteq {\rm B}\) e diciamo che "\({\rm A}\) è contenuto in \({\rm B}\)" se \(\forall x \in {\rm A}\,, x \in {\rm B}\), cioè che ogni elemento di \({\rm A}\) appartiene a \({\rm B}\), che è equivalente a ciascuna delle seguenti:
-                    $$\begin{split}
-                    {\rm A} \setminus {\rm B} &= \emptyset\\
-                    {\rm A} \cap {\rm B} &= {\rm A}\\
-                    {\rm A} \cup {\rm B} &= {\rm B}.
-                    \end{split}$$
-                    <div class="divrow">
-                        <button onclick="toggleTesto('contenuto')">Dimostrazione:</button>
-                        <div id="contenuto" class="hidden">
-                            Dobbiamo dire che sono equivalenti:
-                            $$\begin{split}
-                            (x \in {\rm A}) &\longrightarrow (x \in {\rm B})\\
-                            (x \in {\rm A}) \land (x \in {\rm B}) &\longleftrightarrow (x \in {\rm A})\\
-                            (x \in {\rm A}) \lor (x \in {\rm B}) &\longleftrightarrow (x \in {\rm B}).
-                            \end{split}$$
-                            E che a loro volta questi sono equivalenti a
-                            $$\begin{split}
-                            (x \notin {\rm A}) &\lor (x \in {\rm B})\\
-                            \lnot ((x \in {\rm A}) &\land (x \notin {\rm B})).
-                            \end{split}$$
-                        </div>
-                    </div>
-                </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 162 162">
                     <circle cx="80" cy="80" r="80" stroke="red" fill="none"/>
                     <circle cx="100" cy="100" r="30" stroke="red" fill="none"/>
@@ -379,6 +531,31 @@
     <h2>Esercizi:</h2>
     <ul>
         <li>
+            Mostra che sono equivalenti:
+            $$\begin{split}
+            {\rm A} &\subseteq {\rm B}\\
+            {\rm A} \setminus {\rm B} &= \emptyset\\
+            {\rm A} \cap {\rm B} &= {\rm A}\\
+            {\rm A} \cup {\rm B} &= {\rm B}.
+            \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone40')">Dimostrazione:</button>
+                <div id="bottone40" class="hidden">
+                    Dobbiamo dire che sono equivalenti:
+                    $$\begin{split}
+                    (x \in {\rm A}) &\longrightarrow (x \in {\rm B})\\
+                    \lnot ((x \in {\rm A}) &\land (x \notin {\rm B}))\\
+                    (x \in {\rm A}) \land (x \in {\rm B}) &\longleftrightarrow (x \in {\rm A})\\
+                    (x \in {\rm A}) \lor (x \in {\rm B}) &\longleftrightarrow (x \in {\rm B}).
+                    \end{split}$$
+                    Infatti a loro volta, questi sono equivalenti a
+                    $$\begin{split}
+                    (x \notin {\rm A}) &\lor (x \in {\rm B})
+                    \end{split}$$
+                </div>
+            </div>
+        </li>
+        <li>
             Mostra che:
             $$\begin{split}
             {\rm A} \cap ({\rm B} \cap {\rm C}) &= ({\rm A} \cap {\rm B}) \cap {\rm C}\\
@@ -387,8 +564,8 @@
             {\rm A} \cup ({\rm B} \cap {\rm C}) &= ({\rm A} \cup {\rm B}) \cap ({\rm A} \cup {\rm C}).
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('insiemi')">Soluzione:</button>
-                <div id="insiemi" class="hidden">
+                <button onclick="toggleTesto('bottone41')">Soluzione:</button>
+                <div id="bottone41" class="hidden">
                     Bsata dire
                     $$\begin{split}
                     a = ``x \in {\rm A}"\\
@@ -418,8 +595,8 @@
             {\rm A} \cup ({\rm B} \setminus {\rm C}) &= ({\rm A} \cup {\rm B}) \setminus (c \setminus a).
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('demorgan')">Soluzione:</button>
-                <div id="demorgan" class="hidden">
+                <button onclick="toggleTesto('bottone42')">Soluzione:</button>
+                <div id="bottone42" class="hidden">
                     Come prima, il problema si riduce a:
                     $$\begin{split}
                     (a \land (\lnot b)) \land (\lnot c) &\longleftrightarrow (a \land (\lnot b)) \land (a \land (\lnot c))\\
@@ -441,8 +618,8 @@
             ({\rm A} \cup {\rm B}) \subseteq {\rm C} &\longleftrightarrow ({\rm A} \subseteq {\rm C}) \land ({\rm B} \subseteq {\rm C})\\
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('capcup')">Soluzione:</button>
-                <div id="capcup" class="hidden">
+                <button onclick="toggleTesto('bottone43')">Soluzione:</button>
+                <div id="bottone43" class="hidden">
                     Come prima, il problema si riduce a:
                     $$\begin{split}
                     (\lnot a) \lor (b \land c) &\longleftrightarrow ((\lnot a) \lor b) \land ((\lnot a) \lor c)\\
@@ -460,8 +637,8 @@
             {\rm C} \setminus {\rm B} &\subseteq {\rm C} \setminus {\rm A}.
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('monotonia')">Soluzione:</button>
-                <div id="monotonia" class="hidden">
+                <button onclick="toggleTesto('bottone44')">Soluzione:</button>
+                <div id="bottone44" class="hidden">
                     Basta notare che
                     $$\begin{split}
                     ({\rm A} \cap {\rm C}) \cup ({\rm B} \cap {\rm C}) &= ({\rm A} \cup {\rm B}) \cap {\rm C} = {\rm B} \cap {\rm C}\\
@@ -499,8 +676,8 @@
             Qual'è la cardinalità dell'insieme \(\{a, b\}\)?
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('cardinalità')">Soluzione:</button>
-            <div id="cardinalità" class="hidden">
+            <button onclick="toggleTesto('bottone5')">Soluzione:</button>
+            <div id="bottone5" class="hidden">
                 Gli elementi dell'insieme sono le variabili \(a, b\) (e non gli omonimi caratteri alfabetici). Per cui la cardinalità è \(2\) se \(a \ne b\), ma è \(1\) se \(a = b\).
             </div>
         </div>

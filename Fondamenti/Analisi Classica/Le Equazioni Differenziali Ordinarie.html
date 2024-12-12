@@ -7,9 +7,24 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='../main.html'">Indice</button>
+    </div>
 
     <h1>Teorema Di Esistenza Di Picard</h1>
 
@@ -39,6 +54,8 @@
     \mu (x) \ge \nu (y) \rightarrow \nabla \mu (x) \cdot f (x) \le \nabla \nu (y) \cdot g (y),
     \end{split}$$
     allora \(\mu (x (0)) \le \nu (y(0)) \rightarrow \mu (x (t)) \le \nu (y(t))\).
+
+    <h1>Il Problema Lineare</h1>
 
     <h1>Biforcazioni</h1>
 

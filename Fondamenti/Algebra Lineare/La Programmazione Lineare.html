@@ -5,9 +5,24 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='../main.html'">Indice</button>
+    </div>
 
     Il problema \(\max(c^\star x)\) soggetto ai vincoli \({\rm A} \cdot x \le b, x \ge 0\) ed il problema \(\min(b^\star y)\) soggetto ai vincoli \({\rm A}^\star \cdot y \ge c, y \ge 0\) sono detti duali.
     Dai vincoli imposti segue \(c^\star x \le y\)

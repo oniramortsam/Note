@@ -32,11 +32,28 @@
 
     <ul>
         <li>
+            Scriviamo \({\rm A} < {\rm B}\) e diciamo che "\({\rm A}\) è minore di \({\rm B}\)".
+        </li>
+        <li>
+            Scriviamo \({\rm A} \le {\rm B}\) e diciamo che "\({\rm A}\) è minore o uguale a \({\rm B}\)".
+        </li>
+        <li>
+            Insomma
             $$\begin{split}
-            c \le \min(a, b) &\longleftrightarrow (c \le a) \land (c \le b)\\
-            \max(a, b) \le c &\longleftrightarrow (a \le c) \land (b \le c)\\
-            c \le \max(a, b) &\longleftrightarrow (c \le a) \lor (c \le b)\\
-            \min(a, b) \le c&\longleftrightarrow (a \le c) \lor (b \le c)
+            {\rm A} \le {\rm B} &\longleftrightarrow ({\rm A} < {\rm B}) \lor ({\rm A} = {\rm B})\\
+            {\rm A} < {\rm B} &\longleftrightarrow ({\rm A} \le {\rm B}) \land ({\rm A} \ne {\rm B}).
+            \end{split}$$
+        </li>
+        <li>
+            Scriviamo \(\min ({\rm A}, {\rm B})\) per intendere il "minimo" dell'insieme \(\{{\rm A}, {\rm B}\}\).
+        </li>
+        <li>
+            Scriviamo \(\max ({\rm A}, {\rm B})\) per intendere il "massimo" dell'insieme \(\{{\rm A}, {\rm B}\}\).
+        </li>
+        <li>
+            Insomma
+            $$\begin{split}
+            \min ({\rm A}, {\rm B}) = {\rm A} \longleftrightarrow {\rm A} \le {\rm B} \longleftrightarrow \max ({\rm A}, {\rm B}) = {\rm B}
             \end{split}$$
         </li>
     </ul>
@@ -47,14 +64,23 @@
         <li>
             Mostra che:
             $$\begin{split}
-            a \subseteq b &\longrightarrow \min(a) > \min(b)\\
-            a \subseteq b &\longrightarrow \max(a) < \max(b)
+            c \le \min(a, b) &\longleftrightarrow (c \le a) \land (c \le b)\\
+            \max(a, b) \le c &\longleftrightarrow (a \le c) \land (b \le c)\\
+            c \le \max(a, b) &\longleftrightarrow (c \le a) \lor (c \le b)\\
+            \min(a, b) \le c&\longleftrightarrow (a \le c) \lor (b \le c).
             \end{split}$$
         </li>
         <li>
             Mostra che:
             $$\begin{split}
-            \max(a, b) + \min(a, b) = a + b
+            a \subseteq b &\longrightarrow \min(a) > \min(b)\\
+            a \subseteq b &\longrightarrow \max(a) < \max(b).
+            \end{split}$$
+        </li>
+        <li>
+            Mostra che:
+            $$\begin{split}
+            \max(a, b) + \min(a, b) = a + b.
             \end{split}$$
         </li>
     </ul>
@@ -79,8 +105,8 @@
         <li>
             Allora
             $$\left\{\begin{split}
-            a &= (a /\!/ b) \cdot b + a \% b\\
-            a \% b &< b.
+            a \% b &< b\\
+            a &= (a /\!/ b) \cdot b + a \% b.
             \end{split}\right.$$
             Viceversa, se per una coppia \(x \in {\mathbb N}, y \in {\mathbb Z}\) vale
             $$\left\{\begin{split}
@@ -326,6 +352,7 @@
             b &= (({\rm N} \% {\rm D}) \cdot (10^k \cdot (10^h - 1) /\!/ {\rm D})) /\!/ (10^h - 1)\\
             c &= (({\rm N} \% {\rm D}) \cdot (10^k \cdot (10^h - 1) /\!/ {\rm D})) \% (10^h - 1)
             \end{split}$$
+            permette la scrittura decimale di \(\frac{\rm D}{\rm N}\)
         </li>
     </ul>
     

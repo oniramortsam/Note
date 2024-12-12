@@ -61,8 +61,10 @@
     <h2>Esercizi:</h2>
 
     <ul>
-        <li>
+        <p>
             Mostra che:
+        </p>
+        <li>
             $$\begin{split}
             c \le \min(a, b) &\longleftrightarrow (c \le a) \land (c \le b)\\
             \max(a, b) \le c &\longleftrightarrow (a \le c) \land (b \le c)\\
@@ -71,14 +73,12 @@
             \end{split}$$
         </li>
         <li>
-            Mostra che:
             $$\begin{split}
             a \subseteq b &\longrightarrow \min(a) > \min(b)\\
             a \subseteq b &\longrightarrow \max(a) < \max(b).
             \end{split}$$
         </li>
         <li>
-            Mostra che:
             $$\begin{split}
             \max(a, b) + \min(a, b) = a + b.
             \end{split}$$
@@ -88,14 +88,14 @@
     <h1>Divisione Euclidea</h1>
 
     <ul>
-        <li>
+        <p>
             Definiamo per due numeri interi (\(\forall a, b \in {\mathbb Z}\))
             $$\begin{split}
             a /\!/ b &:= \max(d: d \cdot b \le a)\\
             a \% b &:= a - (a /\!/ b) \cdot b.
             \end{split}$$
             Cioè \((a /\!/ b) \cdot b\) è il più grande multiplo di \(b\) che non superi \(a\).
-        </li>
+        </p>
         <li>
             Si dice \(a /\!/ b \in {\mathbb Z}\) la divisione intera di \(a\) per \(b\).
         </li>
@@ -137,8 +137,10 @@
     <h2>Esercizi:</h2>
 
     <ul>
-        <li>
+        <p>
             Mostra che:
+        </p>
+        <li>
             $$\begin{split}
             ((b \% a) + (c \% a)) \% a &= (b + c) \% a\\
             ((b \% a) \cdot (c \% a)) \% a &= (b \cdot c) \% a\\
@@ -147,7 +149,7 @@
             \end{split}$$
         </li>
         <li>
-            Mostra che, se \(b | a\), allora:
+            Se \(b | a\), allora:
             $$\begin{split}
             (c \% a) \% b &= c \% b\\
             c /\!/ b &= (c /\!/ a) \cdot (a /\!/ b) + ((c \% a) /\!/ b).
@@ -165,9 +167,9 @@
             z &= c \% b.
             \end{split}\right.$$
         </li>
-        <li>
+        <p>
             Questa proprietà si estende per induzione alla scrittura in una base (vedi <a href="../../Fondamenti/Il Principio Di Induzione.html">Il Principio Di Induzione</a>).
-        </li>
+        </p>
     </ul>
     
     <h1>Fattorizzazione unica</h1>
@@ -282,8 +284,11 @@
     <h2>Esercizi:</h2>
 
     <ul>
+        <p>
+            Mostra che:
+        </p>
         <li>
-            Mostra che per \(p\) primo:
+            Per \(p\) primo:
             $$\begin{split}
             (a \cdot b) \| p &= (a \| p) + (b \| p)\\
             \operatorname{lcm}(a, b) \| p &= \max(a \| p, b \| p)\\
@@ -324,7 +329,6 @@
             </div>
         </li>
         <li>
-            Mostra che:
             $$\begin{split}
             \operatorname{lcm}(a, b) \cdot \operatorname{gcd}(a, b) = a \cdot b.
             \end{split}$$

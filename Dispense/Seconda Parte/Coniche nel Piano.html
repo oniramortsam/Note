@@ -11,6 +11,17 @@
 </head>
 <body>
 
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
     <div class="navbar">
         <button onclick="location.href='Rotazioni del Piano.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>

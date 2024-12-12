@@ -11,11 +11,24 @@
 </head>
 <body>
 
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
     <div class="navbar">
         <button onclick="location.href='Rette nel piano.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
         <button onclick="location.href='Coniche nel piano.html'">Prossima Lezione</button>
     </div>
+
+    <h1>Vettori e rotazioni</h1>
 
     <ul>
         <li>
@@ -53,8 +66,10 @@
     
     <h2>Esercizi:</h2>
 
-    Mostra che:
     <ul>
+        <p>
+            Mostra che:
+        </p>
         <li>
             Una traslazione composta una rotazione è una rotazione composta una traslazione.
         </li>
@@ -86,12 +101,13 @@
     
     <h1>Prodotto scalare e vettoriale</h1>
     
-    Siano
-    $$\begin{split}
-    v = a \cdot u + b \cdot r_\frac{\pi}{2} \cdot u:
-    \end{split}$$
-
     <ul>
+        <p>
+            Siano
+            $$\begin{split}
+            v = a \cdot u + b \cdot r_\frac{\pi}{2} \cdot u:
+            \end{split}$$
+        </p>
         <li>
             Si dice prodotto scalare \(u^\star \cdot v = a \cdot |u|^2\).
         </li>
@@ -102,8 +118,10 @@
     
     <h2>Esercizi:</h2>
 
-    Mostra che:
     <ul>
+        <p>
+            Mostra che:
+        </p>
         <li>
             $$\begin{split}
             u \cdot u = |u|^2 &\qquad u \times u = 0\\

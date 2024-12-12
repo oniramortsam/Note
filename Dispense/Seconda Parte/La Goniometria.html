@@ -11,9 +11,21 @@
 </head>
 <body>
 
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
     <div class="navbar">
         <button onclick="location.href='Coniche nel piano.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='../Terza Parte/Grafici e funzioni inverse.html'">Prossima Lezione</button>
     </div>
 
     <h1>Seno e Coseno</h1>

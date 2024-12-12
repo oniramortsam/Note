@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Rette Del Piano Euclideo</title>
+    <title>Rette nel piano</title>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
@@ -12,19 +12,14 @@
 <body>
 
     <div class="navbar">
-        <button onclick="location.href='../Prima Parte/I Polinomi Di Una Variabile.html'">Lezione Precedente</button>
+        <button onclick="location.href='../Prima Parte/Polinomi in una variabile.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
         <button onclick="location.href='Le Rotazioni Del Piano.html'">Prossima Lezione</button>
     </div>
 
+    <h1>Le Rette</h1>
+
     <ul>
-        <li>
-            Dati due punti \({\rm A} = (x_{\rm A}, y_{\rm A})\) e \({\rm B} = (x_{\rm B}, y_{\rm B})\), esiste un solo vettore
-            $$\begin{split}
-            u = (x_{\rm B} - x_{\rm A}, y_{\rm B} - y_{\rm A})
-            \end{split}$$
-            tale che \({\rm A} + u = {\rm B}\).
-        </li>
         <li>
             <div class="divrow">
                 <div>
@@ -61,8 +56,12 @@
                     $$\begin{split}
                     {\rm A} + t u = ((1 - t) x_{\rm A} + t x_{\rm B}, (1 - t) y_{\rm A} + t y_{\rm B}) = {\rm B} + (1 - t) u
                     \end{split}$$
-                    al variare di \(t\).
-                    L'equazione che identifica tale retta è una qualunque di:
+                    al variare di \(t\). Cioè quella che chiamiamo retta parametrica
+                    $$\begin{split}
+                    x (t) &= (1 - t) x_{\rm A} + t x_{\rm B}\\
+                    y (t) &= (1 - t) y_{\rm A} + t y_{\rm B}.
+                    \end{split}$$
+                    L'equazione cartesiana che identifica tale retta è una qualunque di:
                     $$\begin{split}
                     (x - x_{\rm A})(y_{\rm A} - y_{\rm B}) &= (x_{\rm A} - x_{\rm B})(y - y_{\rm A})\\
                     (x - x_{\rm A})(y - y_{\rm B}) &= (x - x_{\rm B})(y - y_{\rm A})\\
@@ -74,7 +73,7 @@
                     \end{split}$$
                     In tal caso si ha
                     $$\begin{split}
-                    \frac{x - x_{\rm A}}{x_{\rm B} - x_{\rm A}} = t = \frac{y - y_{\rm A}}{y_{\rm B} - y_{\rm A}} \qquad \frac{x - x_{\rm B}}{x_{\rm B} - x_{\rm A}} = t - 1 = \frac{y - y_{\rm B}}{y_{\rm B} - y_{\rm A}}
+                    \frac{x - x_{\rm A}}{x_{\rm B} - x_{\rm A}} = t = \frac{y - y_{\rm A}}{y_{\rm B} - y_{\rm A}} \qquad \frac{x - x_{\rm B}}{x_{\rm B} - x_{\rm A}} = t - 1 = \frac{y - y_{\rm B}}{y_{\rm B} - y_{\rm A}.}
                     \end{split}$$
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 140" style="width: 256px; flex-shrink: 0;">
@@ -86,6 +85,12 @@
                     <text x="92" y="138" font-size="18" fill="black">C</text>
                 </svg>
             </div>
+        </li>
+        <li>
+            Si dice coefficiente angolare \(m\) il valore \(-\frac{b}{a.}\)
+        </li>
+        <li>
+            Si dice intercetta sull'asse \(m\) \(y\) il valore \(-\frac{c}{a.}\)
         </li>
         <li>
             <div class="divrow">
@@ -102,9 +107,9 @@
                     $$\begin{split}
                     \left(\frac{b^2 x_{\rm A} - a b y_{\rm A} - a c}{a^2 + b^2}, \frac{a^2 y_{\rm A} - a b x_{\rm A} - b c}{a^2 + b^2}\right).
                     \end{split}$$
-                    La distanza della retta da \({\rm A}\) è dunque (QUALCOSA è SBAGLIATO)
+                    La distanza della retta da \({\rm A}\) è dunque
                     $$\begin{split}
-                    \sqrt{\left(\frac{a^2 x_{\rm A} + a b y_{\rm A} + a c}{a^2 + b^2}\right)^2 + \left(\frac{b^2 y_{\rm A} + a b x_{\rm A} + b c}{a^2 + b^2}\right)^2}.
+                    \sqrt{\left(\frac{a^2 x_{\rm A} + a b y_{\rm A} + a c}{a^2 + b^2}\right)^2 + \left(\frac{b^2 y_{\rm A} + a b x_{\rm A} + b c}{a^2 + b^2}\right)^2} = \frac{|a x_{\rm A} + b y_{\rm A} + c|}{\sqrt{a^2 + b^2.}}
                     \end{split}$$
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 250" style="width: 256px; flex-shrink: 0;">
@@ -116,99 +121,118 @@
             </div>
         </li>
         <li>
-            Dati due vettori \(u, v\) di stesso modulo, esiste un solo angolo \(\alpha\) per cui \(v = r_\alpha (u)\). Cioè detta \({\rm O}\) l'origine e \({\rm U} = {\rm O} + u, {\rm V} = {\rm O} + v\), una rotazione attorno ad \(\rm O\) di angolo \(\alpha = \hat{{\rm U}{\rm O}{\rm V}}\) manda \(\rm U\) in \(\rm V\).
-        </li>
-        <li>
-            Diciamo \(\pi\) l'angolo formato da tre punti allineati, cioè tale che \(r_\pi (u) = - u\).
-        </li>
-        <li>
-            Dati due vettori \(u, v\), esistono unici \(a, b\) tali che
+            Si dice bisettrice il luogo dei punti equidistanti da due rette, questa è l'unione di
             $$\begin{split}
-            v = a \cdot u + b \cdot r_\frac{\pi}{2} (u).
+            \frac{a_0 x + b_0 y + c_0}{\sqrt{a_0^2 + b_0^2}} - \frac{a_1 x + b_1 y + c_1}{\sqrt{a_1^2 + b_1^2}} &= 0\\
+            \frac{a_0 x + b_0 y + c_0}{\sqrt{a_0^2 + b_0^2}} + \frac{a_1 x + b_1 y + c_1}{\sqrt{a_1^2 + b_1^2}} &= 0.
+            \end{split}$$
+            Insomma due rette concorrenti con le rette date, di coefficienti angolari
+            $$\begin{split}
+            m_- = - \frac{a_0 \sqrt{a_1^2 + b_1^2} - a_1 \sqrt{a_0^2 + b_0^2}}{b_0 \sqrt{a_1^2 + b_1^2} - b_1 \sqrt{a_0^2 + b_0^2}} \qquad m_+ = - \frac{a_0 \sqrt{a_1^2 + b_1^2} + a_1 \sqrt{a_0^2 + b_0^2}}{b_0 \sqrt{a_1^2 + b_1^2} + b_1 \sqrt{a_0^2 + b_0^2.}}
             \end{split}$$
         </li>
         <li>
+            Si dice mediana il luogo dei punti equidistanti da due punti dati, questa è ortogonale alla retta passante per i punti in questione e passa per il loro punto medio.
             $$\begin{split}
-            ({\rm A} + u) + v &= {\rm A} + (u + v)\\
-            r_\alpha (r_\beta (u)) &= r_{\alpha + \beta} (u)\\
-            x \cdot (y \cdot u) &= (y \cdot x) \cdot u\\
-            r_\alpha (x \cdot u) &= x \cdot (r_\alpha (u))\\
-            r_\alpha (u + v) &= r_\alpha (u) + r_\alpha (v)\\
-            x \cdot (u + v) &= x \cdot u + x \cdot v\\
-            (x + y) \cdot u &= x \cdot u + y \cdot u\\
-            |x \cdot u| &= |x| \cdot |u|.
+            (x - x_0)^2 + (y - y_0)^2 = (x - x_1)^2 + (y - y_1)^2\\
+            2 (x_0 - x_1) x + 2 (y_0 - y_1) y = x_0^2 + y_0^2 - x_1^2 - y_1^2.
             \end{split}$$
+            Come previsto \(m = - \frac{x_0 - x_1}{y_0 - y_1.}\)
         </li>
     </ul>
-    
-    <h2>Esercizi:</h2>
 
-    Mostra che:
-    <ul>
-        <li>
-            Una traslazione composta una rotazione è una rotazione composta una traslazione.
-        </li>
-        <li>
-            Una traslazione composta una dilatazione è una dilatazione composta una traslazione.
-        </li>
-        <li>
-            Le traslazioni mandano rette in rette parallele.
-        </li>
-        <li>
-            Le traslazioni conservano le distanze.
-        </li>
-        <li>
-            Le rotazioni conservano gli angoli.
-        </li>
-        <li>
-            Le rotazioni conservano le distanze.
-        </li>
-        <li>
-            Le dilatazioni mandano rette in rette parallele.
-        </li>
-        <li>
-            Le dilatazioni moltiplicano le distanze per una costante.
-        </li>
-        <li>
-            Dati due segmenti orientati esiste una unica trasformazione conforme che manda l'uno nell'altro.
-        </li>
-    </ul>
-    
-    <h1>Prodotto scalare e vettoriale</h1>
-    
-    Siano
-    $$\begin{split}
-    v = a \cdot u + b \cdot r_\frac{\pi}{2} \cdot u:
-    \end{split}$$
+    <h1>Le trasformazioni</h1>
 
     <ul>
         <li>
-            Si dice prodotto scalare \(u^\star \cdot v = a \cdot |u|^2\).
+            Consideriamo una trasformazione
+            $$\begin{split}
+            u (x, y) = a_u x + b_u y + c_u\\
+            v (x, y) = a_v x + b_v y + c_v,
+            \end{split}$$
+            Questa identifica un cambio di variabili
+            $$\begin{split}
+            x &= x (u, v)\\
+            y &= y (u, v),
+            \end{split}$$
+            dove:
+            $$\begin{split}
+            u &= a_u x (u, v) + b_u y (u, v) + c_u\\
+            v &= a_v x (u, v) + b_v y (u, v) + c_v.
+            \end{split}$$
+            Per risolvere scriviamo
+            $$\begin{split}
+            a_v u &= a_v a_u x (u, v) + a_v b_u y (u, v) + a_v c_u\\
+            b_v u &= b_v a_u x (u, v) + b_v b_u y (u, v) + b_v c_u\\
+            a_u v &= a_u a_v x (u, v) + a_u b_v y (u, v) + a_u c_v\\
+            b_u v &= b_u a_v x (u, v) + b_u b_v y (u, v) + b_u c_v,
+            \end{split}$$
+            e semplifichiamo i termini uguali
+            $$\begin{split}
+            b_v u - b_u v &= b_v a_u x (u, v) + b_v c_u -  b_u a_v x (u, v) - b_u c_v\\
+            a_v u - a_u v &= a_v b_u y (u, v) + a_v c_u - a_u b_v y (u, v) - a_u c_v,
+            \end{split}$$
+            che sarebbe
+            $$\begin{split}
+            x (u, v) &= \left(\frac{b_v}{b_v a_u -  b_u a_v}\right) u - \left(\frac{b_u}{b_v a_u -  b_u a_v}\right) v + \left(\frac{b_u c_v - b_v c_u}{b_v a_u -  b_u a_v}\right)\\
+            y (u, v) &= \left(\frac{a_u}{b_v a_u -  b_u a_v}\right) v - \left(\frac{a_v}{b_v a_u -  b_u a_v}\right) u + \left(\frac{a_v c_u - a_u c_v}{b_v a_u -  b_u a_v}\right).
+            \end{split}$$
         </li>
         <li>
-            Si dice prodotto vettoriale \(u \times v = b \cdot |u|^2\).
+            Data una retta di equazione
+            $$\begin{split}
+            a x + b y + c = 0.
+            \end{split}$$
+            nelle variabili \(x, y\), si dice il push-forward della retta il luogo geometrico identificato dall'equazione:
+            $$\begin{split}
+            a x (u, v) + b y (u, v) + c = 0
+            \end{split}$$
+            nelle variabili \(u, v\).
+        </li>
+        <li>
+            Data una retta di equazione
+            $$\begin{split}
+            a u + b v + c = 0,
+            \end{split}$$
+            nelle variabili \(u, v\), si dice il pull-back della retta il luogo geometrico identificato dall'equazione:
+            $$\begin{split}
+            a u (x, y) + b v (x, y) + c = 0
+            \end{split}$$
+            nelle variabili \(x, y\).
+        </li>
+        <li>
+            Data invece una retta parametrica
+            $$\begin{split}
+            x (t) &= a t + x_0\\
+            y (t) &= b t + y_0,
+            \end{split}$$
+            il suo push-forward è
+            $$\begin{split}
+            u (t) &= u (a t + x_0, b t + y_0)\\
+            v (t) &= v (a t + x_0, b t + y_0).
+            \end{split}$$
+        </li>
+        <li>
+            Data invece una retta parametrica
+            $$\begin{split}
+            u (t) &= a t + u_0\\
+            v (t) &= b t + v_0,
+            \end{split}$$
+            il suo pull-back è
+            $$\begin{split}
+            x (t) &= x (a t + u_0, b t + v_0)\\
+            y (t) &= y (a t + u_0, b t + v_0).
+            \end{split}$$
         </li>
     </ul>
-    
-    <h2>Esercizi:</h2>
 
-    Mostra che:
     <ul>
         <li>
-            $$\begin{split}
-            u \cdot u = |u|^2 &\qquad u \times u = 0\\
-            u \cdot v = v \cdot u &\qquad u \times v + v \times u = 0\\
-            u \cdot (r_\frac{\pi}{2} \cdot u) = 0 &\qquad u \times (r_\frac{\pi}{2} \cdot u) = |u|^2\\
-            (r_\alpha \cdot u) \cdot (r_\alpha \cdot v) = u \cdot v &\qquad (r_\alpha \cdot u) \times (r_\alpha \cdot v) = u \times v\\
-            u \cdot (x \cdot v + w) = x \cdot (u \cdot v) + (u \cdot w) &\qquad u \times (x \cdot v + w) = x \cdot (u \times v) + (u \times w).
-            \end{split}$$
+            <a href="../../Fondamenti/Algebra Lineare/Gli spazi vettoriali.html">Gli spazi vettoriali</a>.
         </li>
         <li>
-            $$\begin{split}
-            u \times v &= (r_\frac{\pi}{2} \cdot u) \cdot v\\
-            |u \cdot v|^2 + |u \times v|^2 &= |u|^2 \cdot |v|^2.    
-            \end{split}$$
+            <a href="../../Fondamenti/Algebra Lineare/La geometria proiettiva.html">La geometria proiettiva</a>.
         </li>
     </ul>
-    
+
 </body>

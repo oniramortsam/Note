@@ -50,8 +50,8 @@
         <li>
             Se \(a, b\) sono due polinomi, si può sempre scrivere \(a = q \cdot b + r\) con \(\deg (r) < \deg (b)\).
             <div class="divrow">
-                <button onclick="toggleTesto('divisione')">Dimostrazione:</button>
-                <div id="divisione" class="hidden">
+                <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+                <div id="bottone0" class="hidden">
                     Basta notare che, se \(\deg (b) \le \deg (a)\), detto
                     $$\begin{split}
                     c (x) = a (x) - \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}} \cdot b (x),
@@ -69,59 +69,170 @@
                 Il teorema di Ruffini afferma che un polinomio \(p\) è multiplo di \(x - \alpha\) se e solo se \(p (\alpha) = 0\).
             </p>
             <div class="divrow">
-                <button onclick="toggleTesto('ruffini')">Dimostrazione:</button>
-                <div id="ruffini" class="hidden">
+                <button onclick="toggleTesto('bottone1')">Dimostrazione:</button>
+                <div id="bottone1" class="hidden">
                     Infatti si può scrivere \(p (x) = q (x) \cdot (x - \alpha) + p (\alpha)\). 
                 </div>
             </div>
         </li>
     </ul>
 
-    <h1>Serie geometrica</h1>
-
-    <ul>
-        <p>
-            Vedi anche: <a href="Le Proprietà Delle Operazioni.html">Le Proprietà Delle Operazioni</a>.
-        </p>
-        <li>
-            $$\begin{split}
-            (x^n + \dots + x^k + \dots + 1) \cdot (x - 1) = x^{n + 1} - 1
-            \end{split}$$
-            Come conseguenza, per \(x = 10^{-k}\) (ABUSO DI NOTAZIONE)
-        </li>
-    </ul>
-
     <h1>Fattoriale</h1>
 
-    $$\begin{split}
-    (n + 1)! = (n + 1) \cdot n!
-    \end{split}$$
-    
-    <h2>Esercizi:</h2>
-
     <ul>
         <p>
-            Mostra che:
+            Si dice fattoriale di un numero naturale \(n\) il prodotto dei numeri minori o uguali ad \(n\):
+            $$\begin{split}
+            (n + 1)! = (n + 1) \cdot \dots \cdot k \cdot \dots \cdot 1
+            \end{split}$$
         </p>
         <li>
             $$\begin{split}
             \frac{(a + b - 1)!}{(a - 1)! \cdot b!} + \frac{(a + b - 1)!}{a! \cdot (b - 1)!} = \frac{(a + b)!}{a! \cdot b!}
             \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone2')">Dimostrazione:</button>
+                <div id="bottone2" class="hidden">
+                </div>
+            </div>
         </li>
         <li>
             $$\begin{split}
-            (x + 1)^n = x^n + n \cdot x^{n - 1} + \dots + \frac{n!}{(n - n)! \cdot k!} \cdot x^k + \dots + n \cdot x + 1
+            (x + 1)^n = x^n + \dots + \frac{n!}{(n - k)! \cdot k!} \cdot x^k + \dots + 1
             \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone3')">Dimostrazione:</button>
+                <div id="bottone3" class="hidden">
+                </div>
+            </div>
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento0')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento0" class="hidden">
+                $$\begin{split}
+                \frac{(n + m)!}{n! \cdot m!} &= \frac{(n + m - 1)!}{(n - 1)! \cdot m!} + \frac{(n + m - 1)!}{n! \cdot (m - 1)!}\\
+                &= 1 + \dots + \frac{(k + m - 1)!}{k! \cdot (m - 1)!} + \dots + \frac{(n + m - 1)!}{n! \cdot (m - 1)!}\\
+                &= \frac{(n + d - 1)!}{n! \cdot (d - 1)!} + \dots + \frac{(k + m - d)!}{k! \cdot (m - d)!} \cdot \frac{(n - k + d - 1)!}{(n - k)! \cdot (d - 1)!} + \dots + \frac{(n + m - d)!}{n! \cdot (m - d)!}\\
+                \end{split}$$        
+                <div class="divrow">
+                    <button onclick="toggleTesto('bottone4')">Dimostrazione:</button>
+                    <div id="bottone4" class="hidden">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <li>
+            $$\begin{split}
+            (x^n + \dots + x^k + \dots + 1) \cdot (x - 1) = x^{n + 1} - 1
+            \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone5')">Dimostrazione:</button>
+                <div id="bottone5" class="hidden">
+                </div>
+            </div>
+        </li>
+            <div class="divrow">
+                <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento1" class="hidden">
+                    $$\begin{split}
+                    (x^n + \dots + x^k + \dots + 1) \cdot (1 - x) + x^{n + 1} &= 1\\
+                    \left(\frac{(n + m)!}{n! \cdot m!} \cdot x^n + \dots + \frac{(k + m)!}{k! \cdot m!} \cdot x^k + \dots + 1\right) \cdot (1 - x)^{d + 1} + x^{n + 1} \left(\frac{(n + m)!}{n! \cdot m!} (1 - x)^d + \dots + \frac{(n + k)!}{n! \cdot k!} (1 - x)^{k + d - m} + \dots + \frac{(n + m - d)!}{n! \cdot (m - d)!}\right) &= 1\\
+                    \left(\frac{(n + m)!}{n! \cdot m!} \cdot x^n + \dots + \frac{(k + m)!}{k! \cdot m!} \cdot x^k + \dots + 1\right) \cdot (1 - x)^{m + 1} + x^{n + 1} \left(\frac{(n + m)!}{n! \cdot m!} (1 - x)^m + \dots + \frac{(n + k)!}{n! \cdot k!} (1 - x)^k + \dots + 1\right) &= 1.
+                    \end{split}$$
+                    <div class="divrow">
+                        <button onclick="toggleTesto('bottone6')">Dimostrazione:</button>
+                        <div id="bottone6" class="hidden">
+                        </div>
+                    </div>
+                </div>
+            </div>
     </ul>
 
+    <h1>Fattorizazione</h1>
+
     <ul>
+        <p>
+            Come conseguenza del teorema di Ruffini, la fattorizazione un polinomio \(p\) è collegata alla ricerca delle soluzioni dell'equazione \(p (x) = 0\).
+        </p>
         <li>
-            <a href="../../Fondamenti/Algebra Lineare/La geometria proiettiva.html">La geometria proiettiva</a>.
+            Supponiamo di avere \(p_{\deg (p)} = 1\) (altrimenti raccogliamo \(p_{\deg (p)}\)) e facciamo la sostituzione
+            $$\begin{split}
+            x &= u - \frac{p_{\deg (p) - 1}}{\deg (p)}\\
+            p (x) &= q (u),
+            \end{split}$$
+            e otteniamo
+            $$\begin{split}
+            \deg(q) &= \deg(p)\\
+            q_{\deg(q)} &= 1\\
+            q_{\deg(q) - 1} &= 0.
+            \end{split}$$
         </li>
         <li>
-            <a href="../../Fondamenti/Teoria dei Gruppi/I Gruppi E Gli Anelli.html">I Gruppi E Gli Anelli</a>.
+            Nel caso \(\deg (p) = 2\) questo si riduce a:
+            $$\begin{split}
+            q_0 &= \left(\frac{p_1}{2 p_2}\right) - \frac{p_1}{p_2} \left(\frac{p_1}{2 p_2}\right) + \frac{p_0}{p_2}\\
+            &= \frac{p_1^2 - 4 p_2 p_o}{4 p_2^2}\\
+            u &= \pm \sqrt{q_0} = \pm \frac{\sqrt{p_1^2 - 4 p_2 p_0}}{2 p_2}\\
+            x &= \frac{- p_1 \pm \sqrt{p_1^2 - 4 p_2 p_0}}{2 p_2.}
+            \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento2')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento2" class="hidden">
+                Nel caso \(\deg (p) = 3\), sostituiamo:
+                $$\begin{split}
+                u &= \alpha + \beta\\
+                u^3 &= \alpha^3 + \beta^3 + 3 \cdot \alpha \cdot \beta \cdot u\\
+                u^3 + q_1 u + q_0 &= (\alpha^3 + \beta^3 + q_0) + (3 \cdot \alpha \cdot \beta + q_1) \cdot u.
+                \end{split}$$
+                Ci si riduce così a risolvere
+                $$\begin{split}
+                \alpha^3 + \beta^3 + q_0 &= 0\\
+                3 \cdot \alpha \cdot \beta + q_1 &= 0,
+                \end{split}$$
+                e questa equivale a
+                $$\begin{split}
+                \alpha^6 + q_0 \cdot \alpha^3 - \left(\frac{q_1}{3}\right)^3 &= 0\\
+                \beta^6 + q_0 \cdot \beta^3 - \left(\frac{q_1}{3}\right)^3 &= 0.
+                \end{split}$$
+                Infine
+                $$\begin{split}
+                \alpha = - \sqrt[3]{\frac{q_0 - \sqrt{q_0^2 + \frac{4}{27} \cdot q_1^3}}{2}}\\
+                \beta = - \sqrt[3]{\frac{q_0 + \sqrt{q_0^2 + \frac{4}{27} \cdot q_1^3}}{2.}}
+                \end{split}$$
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento3')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento3" class="hidden">
+                Nel caso \(\deg (p) = 4\), risolviamo:
+                $$\begin{split}
+                q (u) = (u^2 - \gamma \cdot u + \alpha) \cdot (u^2 + \gamma \cdot u + \beta),
+                \end{split}$$
+                che sarebbe:
+                $$\begin{split}
+                p_2 &= (\alpha + \beta) - \gamma^2\\
+                p_1 &= (\alpha - \beta) \cdot \gamma\\
+                p_0 &= \alpha \cdot \beta.
+                \end{split}$$
+                Allora otteniamo
+                $$\begin{split}
+                \alpha &= \frac{1}{2} \cdot \left(p_2 + \gamma^2 + \frac{p_1}{\gamma}\right)\\
+                \beta &= \frac{1}{2} \cdot \left(p_2 + \gamma^2 - \frac{p_1}{\gamma}\right)\\
+                4 \cdot p_0 &= (p_2 + \gamma^2)^2 - \frac{p_1^2}{\gamma^2,}
+                \end{split}$$
+                che si riduce a
+                $$\begin{split}
+                \gamma^6 + 2 \cdot p_2 \cdot \gamma^4 + (p_2^2 - 4 \cdot p_0) \cdot \gamma^2 - p_1^2 = 0.
+                \end{split}$$
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento4')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento4" class="hidden">
+            Dal caso \(\deg (p) = 5\) non c'è una formula risolutiva (vedi <a href="../../Fondamenti/Teoria dei Gruppi/La Teoria Di Galois.html">La Teoria Di Galois</a>).
+            </div>
+        </div>
     </ul>
 
 </body>

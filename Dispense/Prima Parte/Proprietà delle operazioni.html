@@ -32,33 +32,74 @@
 
     <ul>
         <li>
-            I numeri interi \(x \in {\mathbb Z}\) si possono scrivere come \(x = \pm a\) (cioè \(+ a\) o \(- a\)), concatenando: il segno \(\pm\) ed il modulo naturale \(a \in {\mathbb N}\).
+            I numeri interi \(x \in {\mathbb Z}\) si possono scrivere come \(x = \pm a\) (cioè \(+ a\) o \(- a\)), concatenando: il segno \(\pm\) ed il modulo naturale \(a \in {\mathbb N}\). Si conviene che \(+ 0 = - 0\), mentre se il modulo \(a > 0\) è non nullo, vale la diseguaglianza \(- a < 0 < + a\).
         </li>
         <li>
-            Si conviene che \(+ 0 = - 0\), mentre se il modulo \(a > 0\) è non nullo, vale la diseguaglianza \(- a < 0 < + a\).
+            I numeri razionali \(x \in {\mathbb Q}\) si possono scrivere come \(x = \pm a.b\overline{c}\) concatenando: il segno \(\pm\), la parte intera \(a\) naturale, la mantissa non periodica \(b\) (una sequenza di \(\beta\) cifre) e la mantissa periodica \(c\) (una sequenza di \(\gamma\) cifre).
         </li>
         <li>
-            I numeri razionali \(x \in {\mathbb Q}\) si possono scrivere come \(x = \pm a.b\overline{c}\) concatenando: il segno \(\pm\), la parte intera \(a\) naturale, la mantissa non periodica \(b\) (una sequenza di \(k\) cifre) e la mantissa periodica \(c\) (una sequenza di \(h\) cifre).
+            Si conviene che se la mantissa periodica è la ripetizione della stessa sequenza di cifre, può essere sostituita con tale sequenza (ad esempio \(0.\overline{66} = 0.\overline{6}\)). Inoltre se la mantissa periodica è sottosequenza terminale della mantissa non periodica, quest'ultima può essere ignorata (ad esempio \(0.6\overline{6} = 0.\overline{6}\)). Si conviene che se la mantissa periodica è \(9\), questa si rimuove e si aggiunge \(1\) alla mantissa non periodica se presente, altrimenti alla parte intera (ad esempio \(0.\overline{9} = 1\)).
         </li>
         <li>
-            Se si considerano le mantisse \(b, c\) come numeri naturali \(b, c \in {\mathbb N}\) bisogna specificare il numero di cifre ed aggiungere eventualmente gli zeri a sinistra (ad esempio \(1\) scritto con due cifre è \(``01"\), mentre \(10\) non può essere scritto con una sola cifra).
+            Se si considerano le mantisse \(b, c\) come numeri naturali \(b, c \in {\mathbb N}\) bisogna specificare il numero di cifre \(\beta, \gamma\) ed aggiungere eventualmente gli zeri a sinistra (ad esempio \(``01"\) è \(1\), ma scritto con due cifre, mentre \(10\) è il primo naturale che non può essere scritto con una sola cifra, cioè per qualunque sequenza di cifre si avrà \(b < 10^\beta\) e \(c < 10^\gamma\)).
         </li>
-        <li>
-            Si conviene che se la mantissa periodica è la ripetizione della stessa sequenza di cifre, può essere sostituita con tale sequenza (ad esempio \(0.\overline{666} = 0.\overline{6}\)).
-        </li>
-        <li>
-            Inoltre se la mantissa periodica è sottosequenza terminale della mantissa non periodica, quest'ultima può essere ignorata (ad esempio \(0.6\overline{6} = 0.\overline{6}\)).
-        </li>
-        <li>
-            Si conviene che se la mantissa periodica è \(9\), questa si rimuove e si aggiunge \(1\) alla mantissa non periodica se presente, altrimenti alla parte intera (ad esempio \(0.\overline{9} = 1\)).
-        </li>
-        <li>
-            Si può scrivere un numero razionale come frazione \(\pm \frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali (vedi <a href="I Polinomi Di Una Variabile.html">I Polinomi Di Una Variabile</a>):
-            $$\begin{split}
-            x = a + \frac{b \cdot (10^h - 1) + c}{10^k \cdot (10^h - 1).}
-            \end{split}$$
-            I fatto che ogni frazione del tipo \(\pm \frac{\rm N}{\rm D}\) possa essere scritta in questo modo dipende da un risultato di aritmetica (vedi <a href="I Numeri Naturali.html">I Numeri Naturali</a>).
-        </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento0')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento0" class="hidden">
+                <ul>
+                    <li>
+                        Si può scrivere un numero razionale come frazione \(\pm \frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
+                    </li>
+                    <li>
+                        Per dimostralo usiamo un risultato da <a href="Polinomi in una variabile.html">Polinomi in una variabile</a>:
+                    </li>
+                </ul>
+                $$\begin{split}
+                (x^n + \dots + x^k + \dots + 1) \cdot (x - 1) = x^{n + 1} - 1.
+                \end{split}$$
+                Come conseguenza, per \(x = 10^{-\gamma}\)
+                $$\begin{split}
+                (c \cdot 10^{- \beta - \gamma} + \dots + c \cdot 10^{- \beta - k \cdot \gamma} + \dots) \cdot (1 - 10^{- \gamma}) = c \cdot 10^{- \beta - \gamma}.
+                \end{split}$$
+                Da cui,
+                $$\begin{split}
+                a.b\overline{c} &= a + \frac{b}{10^\beta} + c \cdot 10^{- \beta - \gamma} + \dots + c \cdot 10^{- \beta - k \cdot \gamma} + \dots\\
+                &= a + \frac{b}{10^\beta} + \frac{c \cdot 10^{- \beta - \gamma}}{1 - 10^{- \gamma}}\\
+                &= a + \frac{b \cdot (10^\gamma - 1) + c}{10^\beta \cdot (10^\gamma - 1).}
+                \end{split}$$
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento1" class="hidden">
+                <ul>
+                    <li>
+                        Viceversa si può scrivere in forma decimale una frazione \(\pm \frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
+                    </li>
+                    <li>
+                        Per dimostralo usiamo un risultato da <a href="Numeri naturali.html">Numeri naturali</a>: Sia \({\rm D} = 2^{{\rm D} \| 2} \cdot 5^{{\rm D} \| 5} \cdot m\). Poiché
+                    </li>
+                </ul>
+                $$\begin{split}
+                \{10^k \% m\!: k = 0, \dots, m - 1\} \subseteq \{1, \dots, m - 1\}
+                \end{split}$$
+                è un insieme di cardinalità \(< m\), quindi per il teorema dei piccioni (QUAL'è?) deve esserci una ridondanza
+                $$\begin{split}
+                \exists k_0 < k_1 < m\!: 10^k_0 \% m = 10^k_1 % m.
+                \end{split}$$
+                Allora scegliendo \(\beta = \max ({\rm D} \| 2, {\rm D} \| 5)\) ed \(\gamma = k_1 - k_0\) si ottiene
+                $$\begin{split}
+                \frac{\rm N}{\rm D} = ({\rm N} /\!/ {\rm D}) + \frac{({\rm N} \% {\rm D}) \cdot (10^\beta \cdot (10^\gamma - 1) /\!/ {\rm D})}{10^\beta \cdot (10^\gamma - 1)}
+                \end{split}$$
+                che scrivendo
+                $$\begin{split}
+                a &= ({\rm N} /\!/ {\rm D})\\
+                b &= (({\rm N} \% {\rm D}) \cdot (10^\beta \cdot (10^\gamma - 1) /\!/ {\rm D})) /\!/ (10^\gamma - 1)\\
+                c &= (({\rm N} \% {\rm D}) \cdot (10^\beta \cdot (10^\gamma - 1) /\!/ {\rm D})) \% (10^\gamma - 1)
+                \end{split}$$
+                permette la scrittura decimale di \(\frac{\rm D}{\rm N}\).
+            </div>
+        </div>
     </ul>
 
     <h1>Proprietà associativa</h1>

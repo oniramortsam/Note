@@ -24,39 +24,24 @@
   
     <div class="navbar">
         <button onclick="location.href='../main.html'">Indice</button>
-        <button onclick="location.href='Proprietà delle operazioni.html'">Prossima Lezione</button>
+        <button onclick="location.href='Insiemi e funzioni.html'">Prossima Lezione</button>
     </div>
-
-    <ul>
-        <li>
-            Scriviamo \(\lnot\) per intendere la negazione "non".
-        </li>
-        <li>
-            Scriviamo \(\land\) per intendere la congiunzione "e".
-        </li>
-        <li>
-            Scriviamo \(\lor\) per intendere la disgiunzione "o".
-        </li>
-        <li>
-            Di seguito scriviamo \(0\) per intendere "falso".
-        </li>
-        <li>
-            Di seguito scriviamo \(1\) per intendere "vero".
-        </li>
-    </ul>
 
     <h1>I Connettivi Logici</h1>
 
     <ul>
+        <p>
+            Di seguito scriviamo \(0\) per intendere "falso" ed \(1\) per intendere "vero".
+        </p>
         <li>
-            La negazione di una frase è vera se la frase è falsa e viceversa:
+            Scriviamo \(\lnot\) per intendere la negazione "non". La negazione di una frase è vera se la frase è falsa e viceversa:
             $$\begin{split}
             \lnot 0 &= 1\\
             \lnot 1 &= 0.
             \end{split}$$
         </li>
         <li>
-            La congiunzione di due frasi è vera solo se lo sono entrambe:
+            Scriviamo \(\land\) per intendere la congiunzione "e". La congiunzione di due frasi è vera solo se lo sono entrambe:
             $$\begin{split}
             1 \land 1 &= 1\\
             1 \land 0 &= 0\\
@@ -65,7 +50,7 @@
             \end{split}$$
         </li>
         <li>
-            La disgiunzione di due frasi è vera se almeno una delle due lo è:
+            Scriviamo \(\lor\) per intendere la disgiunzione "o". La disgiunzione di due frasi è vera se almeno una delle due lo è:
             $$\begin{split}
             1 \lor 1 &= 1\\
             1 \lor 0 &= 1\\
@@ -73,13 +58,13 @@
             0 \lor 0 &= 0.
             \end{split}$$
         </li>
-    </ul>
-
-    <h2>Esercizi:</h2>
-
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
-            <h3>Leggi di De Morgan:</h3>
+            <h3>
+                Leggi di De Morgan:
+            </h3>
             Dimostra ciascuna delle seguenti utilizzando le altre
             $$\begin{split}
             a &= \lnot (\lnot a)\\
@@ -177,7 +162,9 @@
             </div>
         </li>
         <li>
-            <h3>Associatività e transitività:</h3>
+            <h3>
+                Associatività e transitività:
+            </h3>
             Dimostra ciascuna delle seguenti utilizzando le altre
             $$\begin{split}
             a \land (b \land c) &= (a \land b) \land c\\
@@ -258,7 +245,9 @@
             </div>
         </li>
         <li>
-            <h3>Tautologie:</h3>
+            <h3>
+                Tautologie:
+            </h3>
             Dimostra ciascuna delle seguenti utilizzando le altre
             $$\begin{split}
             a \land ((\lnot b) \lor b) &= a\\
@@ -360,7 +349,7 @@
             \end{split}$$
         </li>
         <li>
-            Le seguenti sono equivalenti:
+            Sono fatti equivalenti:
             $$\begin{split}
             {\rm A} &\longrightarrow {\rm B}\\
             {\rm A} \lor {\rm B} &= {\rm B}\\
@@ -375,10 +364,9 @@
         <li>
             Negli esercisi useremo uno strumento diverso, cioè riduciamo l'implicazione ad un connettivo logico \(({\rm A} \longrightarrow {\rm B}) = (\lnot (\rm A)) \lor {\rm B}\).
         </li>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
             Se \(a \longrightarrow b\) si può dire che, qualunque sia \(c\):
             $$\begin{split}
@@ -427,15 +415,14 @@
             Ad esempio la veridicità della frase "il giorno \(x\) nevica" dipende da \(x\) e la verifica di tale veridicità è disponibile solo per alcuni valori di \(x\).
         </li>
         <li>
-            Se \({\mathcal C} (x)\) è un predicato, si scrive \(\forall x\,, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
+            Se \({\mathcal C} (x)\) è un predicato nella variabile \(x\), si scrive \(\forall x\,, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
         </li>
         <li>
-            Se \({\mathcal C}\) è un predicato, si scrive \(\exists x\!: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
+            Se \({\mathcal C}\) è un predicato nella variabile \(x\), si scrive \(\exists x\!: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
         </li>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
             Si possono scrivere i quantificatori l'uno in termini dell'altro come segue:
             $$\begin{split}
@@ -496,202 +483,6 @@
                     NON LO SO.
                 </div>
             </div>
-        </li>
-    </ul>
-
-    <h1>Insiemi</h1>
-
-    <ul>
-        <li>
-            Si scrive \(a \in {\rm A}\) per dire che \(a\) appartiene ad \({\rm A}\) ed \(a \notin {\rm A}\) per dire che non vi appartiene.
-        </li>
-        <li>
-            <div class="divrow">
-                <div>
-                    Siano \({\rm A}, {\rm B}\) due insiemi. Definiamo rispettivamente differenza "\(\setminus\)", intersezione "\(\cap\)", unione "\(\cup\)", come segue:
-                    $$\begin{split}
-                    {\rm A} \setminus {\rm B} &= \{a: a \in {\rm A} \land a \notin {\rm B}\}\\
-                    {\rm A} \cap {\rm B} &= \{a: a \in {\rm A} \land a \in {\rm B}\}\\
-                    {\rm A} \cup {\rm B} &= \{a: a \in {\rm A} \lor a \in {\rm B}\}.
-                    \end{split}$$
-                    Scriviamo \({\rm A} \subseteq {\rm B}\) e diciamo che "\({\rm A}\) è contenuto in \({\rm B}\)" se \(\forall x \in {\rm A}\,, x \in {\rm B}\), cioè che ogni elemento di \({\rm A}\) appartiene a \({\rm B}\).
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 242 162">
-                    <circle cx="80" cy="80" r="80" stroke="red" fill="none"/>
-                    <circle cx="180" cy="100" r="60" stroke="red" fill="none"/>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 162 162">
-                    <circle cx="80" cy="80" r="80" stroke="red" fill="none"/>
-                    <circle cx="100" cy="100" r="30" stroke="red" fill="none"/>
-                </svg>
-            </div>
-        </li>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
-        <li>
-            Mostra che sono equivalenti:
-            $$\begin{split}
-            {\rm A} &\subseteq {\rm B}\\
-            {\rm A} \setminus {\rm B} &= \emptyset\\
-            {\rm A} \cap {\rm B} &= {\rm A}\\
-            {\rm A} \cup {\rm B} &= {\rm B}.
-            \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone40')">Dimostrazione:</button>
-                <div id="bottone40" class="hidden">
-                    Dobbiamo dire che sono equivalenti:
-                    $$\begin{split}
-                    (x \in {\rm A}) &\longrightarrow (x \in {\rm B})\\
-                    \lnot ((x \in {\rm A}) &\land (x \notin {\rm B}))\\
-                    (x \in {\rm A}) \land (x \in {\rm B}) &\longleftrightarrow (x \in {\rm A})\\
-                    (x \in {\rm A}) \lor (x \in {\rm B}) &\longleftrightarrow (x \in {\rm B}).
-                    \end{split}$$
-                    Infatti a loro volta, questi sono equivalenti a
-                    $$\begin{split}
-                    (x \notin {\rm A}) &\lor (x \in {\rm B})
-                    \end{split}$$
-                </div>
-            </div>
-        </li>
-        <li>
-            Mostra che:
-            $$\begin{split}
-            {\rm A} \cap ({\rm B} \cap {\rm C}) &= ({\rm A} \cap {\rm B}) \cap {\rm C}\\
-            {\rm A} \cup ({\rm B} \cup {\rm C}) &= ({\rm A} \cup {\rm B}) \cup {\rm C}\\
-            {\rm A} \cap ({\rm B} \cup {\rm C}) &= ({\rm A} \cap {\rm B}) \cup ({\rm A} \cap {\rm C})\\
-            {\rm A} \cup ({\rm B} \cap {\rm C}) &= ({\rm A} \cup {\rm B}) \cap ({\rm A} \cup {\rm C}).
-            \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone41')">Soluzione:</button>
-                <div id="bottone41" class="hidden">
-                    Bsata dire
-                    $$\begin{split}
-                    a = ``x \in {\rm A}"\\
-                    b = ``x \in {\rm B}"\\
-                    c = ``x \in {\rm C}".
-                    \end{split}$$
-                    Il problema si riduce a:
-                    $$\begin{split}
-                    a \land (b \land c) &\longleftrightarrow (a \land b) \land c\\
-                    a \lor (b \lor c) &\longleftrightarrow (a \lor b) \lor c\\
-                    a \land (b \lor c) &\longleftrightarrow (a \land b) \lor (a \land c)\\
-                    a \lor (b \land c) &\longleftrightarrow (a \lor b) \land (a \lor c).
-                    \end{split}$$
-                </div>
-            </div>
-        </li>
-        <li>
-            Mostra che:
-            $$\begin{split}
-            ({\rm A} \setminus {\rm B}) \setminus {\rm C} &= ({\rm A} \setminus {\rm B}) \cap ({\rm A} \setminus {\rm C})\\
-            {\rm A} \setminus ({\rm B} \cup {\rm C}) &= ({\rm A} \setminus {\rm B}) \cap ({\rm A} \setminus {\rm C})\\
-            {\rm A} \cap ({\rm B} \setminus {\rm C}) &= ({\rm A} \cap {\rm B}) \setminus ({\rm A} \cap {\rm C})\\
-            ({\rm A} \cap {\rm B}) \setminus {\rm C} &= ({\rm A} \cap {\rm B}) \setminus ({\rm A} \cap {\rm C})\\
-            {\rm A} \setminus ({\rm B} \setminus {\rm C}) &= ({\rm A} \cap {\rm C}) \cup ({\rm A} \setminus {\rm B})\\
-            {\rm A} \setminus ({\rm B} \cap {\rm C}) &= ({\rm A} \setminus {\rm B}) \cup ({\rm A} \setminus {\rm C})\\
-            ({\rm A} \cup {\rm B}) \setminus {\rm C} &= ({\rm A} \setminus {\rm C}) \cup ({\rm B} \setminus {\rm C})\\
-            {\rm A} \cup ({\rm B} \setminus {\rm C}) &= ({\rm A} \cup {\rm B}) \setminus (c \setminus a).
-            \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone42')">Soluzione:</button>
-                <div id="bottone42" class="hidden">
-                    Come prima, il problema si riduce a:
-                    $$\begin{split}
-                    (a \land (\lnot b)) \land (\lnot c) &\longleftrightarrow (a \land (\lnot b)) \land (a \land (\lnot c))\\
-                    a \land (\lnot (b \lor c)) &\longleftrightarrow (a \land (\lnot b)) \land (a \land (\lnot c))\\
-                    a \land (b \land (\lnot c)) &\longleftrightarrow (a \land b) \land (a \land (\lnot c))\\
-                    (a \land b) \land (\lnot c) &\longleftrightarrow (a \land b) \land (a \land (\lnot c))\\
-                    a \land (\lnot (b \land (\lnot c))) &\longleftrightarrow (a \land c) \lor (a \land (\lnot b))\\
-                    a \land (\lnot (b \land c)) &\longleftrightarrow (a \land (\lnot c)) \lor (a \land (\lnot b))\\
-                    (a \lor b) \land (\lnot c) &\longleftrightarrow (a \land (\lnot c)) \lor (b \land (\lnot c))\\
-                    a \lor (b \land (\lnot c)) &\longleftrightarrow (a \lor b) \land (\lnot (c \land (\lnot a))).
-                    \end{split}$$
-                </div>
-            </div>
-        </li>
-        <li>
-            Mostra che
-            $$\begin{split}
-            {\rm A} \subseteq ({\rm B} \cap {\rm C}) &\longleftrightarrow ({\rm A} \subseteq {\rm B}) \land ({\rm A} \subseteq {\rm C})\\
-            ({\rm A} \cup {\rm B}) \subseteq {\rm C} &\longleftrightarrow ({\rm A} \subseteq {\rm C}) \land ({\rm B} \subseteq {\rm C})\\
-            \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone43')">Soluzione:</button>
-                <div id="bottone43" class="hidden">
-                    Come prima, il problema si riduce a:
-                    $$\begin{split}
-                    (\lnot a) \lor (b \land c) &\longleftrightarrow ((\lnot a) \lor b) \land ((\lnot a) \lor c)\\
-                    (\lnot (a \lor b)) \lor c &\longleftrightarrow ((\lnot a) \lor c) \land ((\lnot b) \lor c).
-                    \end{split}$$
-                </div>
-            </div>
-        </li>
-        <li>
-            Mostra che se \({\rm A} \subseteq {\rm B}\), allora:
-            $$\begin{split}
-            {\rm A} \cap {\rm C} &\subseteq {\rm B} \cap {\rm C}\\
-            {\rm A} \cup {\rm C} &\subseteq {\rm B} \cup {\rm C}\\
-            {\rm A} \setminus {\rm C} &\subseteq {\rm B} \setminus {\rm C}\\
-            {\rm C} \setminus {\rm B} &\subseteq {\rm C} \setminus {\rm A}.
-            \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone44')">Soluzione:</button>
-                <div id="bottone44" class="hidden">
-                    Basta notare che
-                    $$\begin{split}
-                    ({\rm A} \cap {\rm C}) \cup ({\rm B} \cap {\rm C}) &= ({\rm A} \cup {\rm B}) \cap {\rm C} = {\rm B} \cap {\rm C}\\
-                    ({\rm A} \cup {\rm C}) \cap ({\rm B} \cup {\rm C}) &= ({\rm A} \cap {\rm B}) \cup {\rm C} = {\rm A} \cap {\rm C}\\
-                    ({\rm A} \setminus {\rm C}) \cup ({\rm B} \setminus {\rm C}) &= ({\rm A} \cup {\rm B}) \setminus {\rm C} = {\rm B} \setminus {\rm C}\\
-                    ({\rm C} \setminus {\rm B}) \cap ({\rm C} \setminus {\rm A}) &= {\rm C} \setminus ({\rm A} \cup {\rm B}) = {\rm C} \setminus {\rm B}.
-                    \end{split}$$
-                </div>
-            </div>
-        </li>
-    </ul>
-
-    <h1>I Numeri Naturali</h1>
-
-    <ul>
-        <li>
-            Un insieme finito può essere rapprsentato elencando, eventualmente con ridondanza, gli elementi che vi appartengono.
-        </li>
-        <li>
-            Ad esempio 
-            $$\begin{split}
-            \{0, 1\} = \{1, 0\} = \{0, 0, 1\} = \{0, 1, 0\} = \{1, 0, 0\} = \{0, 1, 1\} = \{1, 0, 1\} = \{1, 1, 0\}
-            \end{split}$$
-            è un insieme di due elementi formato dai caratteri \(0\) e \(1\) e può essere rappresentato, senza ridondanza, in due modi.
-        </li>
-        <li>
-            I numeri narurali sono le possibili cardinalità degli insiemi finiti. Ad esempio: \(0 = |\{\}|\) la cardinalità dell'insieme vuoto, \(1 = |\{0\}|\), la cardinalità di un singoletto, \(2 = |\{0, 1\}|\), eccetera.
-        </li>
-    </ul>
-
-    <h2>Esercizi:</h2>
-
-    <ul>
-        <li>
-            Qual'è la cardinalità dell'insieme \(\{a, b\}\)?
-        </li>
-        <div class="divrow">
-            <button onclick="toggleTesto('bottone5')">Soluzione:</button>
-            <div id="bottone5" class="hidden">
-                Gli elementi dell'insieme sono le variabili \(a, b\) (e non gli omonimi caratteri alfabetici). Per cui la cardinalità è \(2\) se \(a \ne b\), ma è \(1\) se \(a = b\).
-            </div>
-        </div>
-    </ul>
-
-
-    <h1>Approfondimento</h1>
-
-    <ul>
-        <li>
-            <a href='../../Fondamenti/Teoria degli Insiemi/Gli Assiomi Di Zermelo-Fraenkel.html'>Gli Assiomi Di Zermelo-Fraenkel</a>.
-        </li>
-        <li>
-            <a href='../../Fondamenti/Teoria degli Insiemi/Gli Ordinali E I Cardinali.html'>Gli Ordinali E I Cardinali</a>.
         </li>
     </ul>
 

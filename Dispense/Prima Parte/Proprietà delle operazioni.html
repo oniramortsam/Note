@@ -23,7 +23,7 @@
     </script>
   
     <div class="navbar">
-        <button onclick="location.href='Insiemi e logica.html'">Lezione Precedente</button>
+        <button onclick="location.href='Insiemi e funzioni.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
         <button onclick="location.href='Numeri naturali.html'">Prossima Lezione</button>
     </div>
@@ -44,8 +44,8 @@
             Se si considerano le mantisse \(b, c\) come numeri naturali \(b, c \in {\mathbb N}\) bisogna specificare il numero di cifre \(\beta, \gamma\) ed aggiungere eventualmente gli zeri a sinistra (ad esempio \(``01"\) è \(1\), ma scritto con due cifre, mentre \(10\) è il primo naturale che non può essere scritto con una sola cifra, cioè per qualunque sequenza di cifre si avrà \(b < 10^\beta\) e \(c < 10^\gamma\)).
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento0')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento0" class="hidden">
+            <button onclick="toggleTesto('approfondimento1')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento1" class="hidden">
                 <ul>
                     <li>
                         Si può scrivere un numero razionale come frazione \(\pm \frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
@@ -70,8 +70,8 @@
             </div>
         </div>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento1" class="hidden">
+            <button onclick="toggleTesto('approfondimento2')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento2" class="hidden">
                 <ul>
                     <li>
                         Viceversa si può scrivere in forma decimale una frazione \(\pm \frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
@@ -101,8 +101,8 @@
             </div>
         </div>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento2')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento2" class="hidden">
+            <button onclick="toggleTesto('approfondimento3')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento3" class="hidden">
                 Si possono dimostrare le proprietà delle operazioni a partire dalle definizioni per ricorrenza:
                 $$\begin{split}
                 a + (b + 1) &= (a + b) + 1\\
@@ -123,10 +123,9 @@
             {\rm A} \cdot ({\rm B} \cdot {\rm C}) &= ({\rm A} \cdot {\rm B}) \cdot {\rm C}.
             \end{split}$$
         </p>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <p>
             Mostra che sono uguali:
         </p>
@@ -139,8 +138,8 @@
             a + ((b + c) + d) &= a + (b + (c + d)).
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
-                <div id="bottone0" class="hidden">
+                <button onclick="toggleTesto('bottone00')">Soluzione:</button>
+                <div id="bottone00" class="hidden">
                     Basta applicare la proprietà associativa con:
                     $$\begin{split}
                     {\rm A}, {\rm B}, {\rm C} &= a, b, c + d\\
@@ -161,8 +160,8 @@
             a \cdot ((b \cdot c) \cdot d) &= a \cdot (b \cdot (c \cdot d)).
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
-                <div id="bottone1" class="hidden">
+                <button onclick="toggleTesto('bottone01')">Soluzione:</button>
+                <div id="bottone01" class="hidden">
                     Basta applicare la proprietà associativa con:
                     $$\begin{split}
                     {\rm A}, {\rm B}, {\rm C} &= a, b, c \cdot d\\
@@ -175,8 +174,8 @@
             </div>
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento3')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento3" class="hidden">
+            <button onclick="toggleTesto('approfondimento4')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento4" class="hidden">
                 La proprietà associativa si estende per induzione a:
                 $$\begin{split}
                 \sum_{k \in m} \left(\sum_{h \in m_k} a_{h + \sum_{j \in k} m_j}\right) = \sum_{h \in \sum_{j \in m} m_j} a_h\\
@@ -196,10 +195,9 @@
         {\rm A} \cdot {\rm B} &= {\rm B} \cdot {\rm A}.
         \end{split}$$
         </p>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <p>
             Mostra che sono uguali:
         </p>
@@ -211,8 +209,8 @@
             a + b + c &= c + a + b.
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
-                <div id="bottone2" class="hidden">
+                <button onclick="toggleTesto('bottone02')">Soluzione:</button>
+                <div id="bottone02" class="hidden">
                     Basta applicare la proprietà commutativa con:
                     $$\begin{split}
                     {\rm A}, {\rm B} &= b, c\\
@@ -231,8 +229,8 @@
             a \cdot b \cdot c &= b \cdot c \cdot a.
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone3')">Soluzione:</button>
-                <div id="bottone3" class="hidden">
+                <button onclick="toggleTesto('bottone03')">Soluzione:</button>
+                <div id="bottone03" class="hidden">
                     Basta applicare la proprietà commutativa con:
                     $$\begin{split}
                     {\rm A}, {\rm B} &= b, c\\
@@ -244,8 +242,8 @@
             </div>
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento4')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento4" class="hidden">
+            <button onclick="toggleTesto('approfondimento5')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento5" class="hidden">
                 Dato \(\sigma\) un elemento de <a href="Il Gruppo Simmetrico.html">Il Gruppo Simmetrico</a>, la proprietà commutativa si estende per induzione a:
                 $$\begin{split}
                 \sum_{k \in n} a_k = \sum_{k \in n} a_{\sigma (k)}\\
@@ -264,10 +262,9 @@
             {\rm A} \cdot ({\rm B} + {\rm C}) &= {\rm A} \cdot {\rm B} + {\rm A} \cdot {\rm C}.
             \end{split}$$
         </p>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
             Mostra che:
             $$\begin{split}
@@ -283,8 +280,8 @@
             a < b &\longleftrightarrow a \cdot c < b \cdot c.
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone4')">Soluzione:</button>
-                <div id="bottone4" class="hidden">
+                <button onclick="toggleTesto('bottone04')">Soluzione:</button>
+                <div id="bottone04" class="hidden">
                     <p>
                         La seconda vale se \(c \ne 0\).
                     </p>
@@ -295,8 +292,8 @@
             </div>
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento5')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento5" class="hidden">
+            <button onclick="toggleTesto('approfondimento6')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento6" class="hidden">
                 La proprietà distributiva si estende per induzione a:
                 $$\begin{split}
                 b \cdot \sum_{j \in n} a_k &= \sum_{j \in n} b \cdot a_k\\
@@ -318,10 +315,9 @@
             ({\rm A} \cdot {\rm B})^{\rm C} &= {\rm A}^{\rm C} \cdot {\rm B}^{\rm C}.
             \end{split}$$
         </p>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
             Mostra che:
             $$\begin{split}
@@ -339,8 +335,8 @@
             a < b &\longleftrightarrow c^a < c^b.
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone5')">Soluzione:</button>
-                <div id="bottone5" class="hidden">
+                <button onclick="toggleTesto('bottone05')">Soluzione:</button>
+                <div id="bottone05" class="hidden">
                     <p>
                         La prima vale se \(c \ne 0\).
                     </p>
@@ -375,10 +371,9 @@
             {\rm A} = {\rm B} \cdot ({\rm A} / {\rm B}) &\qquad {\rm C} = ({\rm B} \cdot {\rm C}) / {\rm B}.
             \end{split}$$
         </li>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
             Mostra che:
             $$\begin{split}
@@ -406,8 +401,8 @@
             a < b &\longleftrightarrow c - a < c - b.
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone6')">Soluzione:</button>
-                <div id="bottone6" class="hidden">
+                <button onclick="toggleTesto('bottone10')">Soluzione:</button>
+                <div id="bottone10" class="hidden">
                     <p>
                         La quarta vale al contrario.
                     </p>
@@ -422,8 +417,8 @@
             a < b &\longleftrightarrow c / a < c / b.
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone7')">Soluzione:</button>
-                <div id="bottone7" class="hidden">
+                <button onclick="toggleTesto('bottone11')">Soluzione:</button>
+                <div id="bottone11" class="hidden">
                     <p>
                         La terza vale per \(c > 0\).
                     </p>
@@ -452,10 +447,9 @@
             {\rm A} = {\rm B}^{\log_{\rm B}({\rm A})} &\qquad {\rm C} = \log_{\rm B}\left({\rm B}^{\rm C}\right).
             \end{split}$$
         </li>
-    </ul>
-
-    <h2>Esercizi:</h2>
-    <ul>
+        <h2>
+            Esercizi:
+        </h2>
         <p>
             Mostra che:
         </p>
@@ -490,8 +484,8 @@
             a < b &\longleftrightarrow \sqrt[a]{c} < \sqrt[b]{c}
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone8')">Soluzione:</button>
-                <div id="bottone8" class="hidden">
+                <button onclick="toggleTesto('bottone12')">Soluzione:</button>
+                <div id="bottone12" class="hidden">
                     <p>
                         La seconda vale per \(c \ne 1\).
                     </p>
@@ -509,8 +503,8 @@
             a < b &\longleftrightarrow \log_a(c) < \log_b(c)
             \end{split}$$
             <div class="divrow">
-                <button onclick="toggleTesto('bottone9')">Soluzione:</button>
-                <div id="bottone9" class="hidden">
+                <button onclick="toggleTesto('bottone13')">Soluzione:</button>
+                <div id="bottone13" class="hidden">
                     <p>
                         La seconda vale per \(c \ne 1\).
                     </p>

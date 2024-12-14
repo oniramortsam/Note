@@ -23,25 +23,19 @@
     </script>
 
     <div class="navbar">
-        <button onclick="location.href='../Seconda Parte/La goniometria.html'">Lezione Precedente</button>
+        <button onclick="location.href='../Seconda Parte/Coniche nel piano.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
         <button onclick="location.href='Limiti e continuità.html'">Prossima Lezione</button>
     </div>
 
     <h1>Funzioni</h1>
 
-    Una funzione
-    $$f: {\rm A} \rightarrow {\rm B}$$
-    si dice:
     <ul>
-        <li>
-            Sugettiva, se
-            $$\{f(a): a \in {\rm A}\} = {\rm B}.$$
-        </li>
-        <li>
-            Iniettiva, se
-            $$f(a) = f(b) \longrightarrow a = b.$$
-        </li>
+        <p>
+            Una funzione
+            $$f: {\rm A} \rightarrow {\rm B}$$
+            si dice:
+        </p>
         <li>
             Di periodo \(a\), se
             $$f(x + a) = f(x).$$
@@ -54,28 +48,9 @@
             Dispari se
             $$f(- x) = - f(x).$$
         </li>
-    </ul>
-    
-    <h2>Esercizi</h2>
-    <ul>
-        <li>
-            Composizione di funzioni surgettive è surgettiva.
-        </li>
-        <li>
-            Composizione di funzioni iniettive è iniettiva.
-        </li>
-        <li>
-            Se \(f \circ g\) è surgettiva, \(f\) è sugettiva.
-        </li>
-        <li>
-            Se \(f \circ g\) è iniettiva, \(g\) è iniettiva.
-        </li>
-        <li>
-            Se \(f \circ g\) è surgettiva ed \(f\) è iniettiva, \(g\) è surgettiva.
-        </li>
-        <li>
-            Se \(f \circ g\) è iniettiva e \(g\) è surgettiva, \(f\) è iniettiva.
-        </li>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
             Composizione di funzioni pari è pari.
         </li>
@@ -110,12 +85,12 @@
         <li>
             Determina poi se sono pari, dispari, periodiche, monotone, iniettive, surgettive.
         </li>
-    </ul>
-    
-    <h2>Condizioni di esistenza</h2>
-    
-    Non si fa mai:
-    <ul>
+        <h3>
+            Condizioni di esistenza:
+        </h3>
+        <p>
+            Non si fa mai:
+        </p>
         <li>
             Dividere per \(0\), fare il logaritmo in base \(1\), fare \(0^0\).
         </li>
@@ -139,10 +114,12 @@
         </li>
     </ul>
     
-    <h2>Funzione inversa</h2>
+    <h1>Funzione inversa</h1>
     
-    Data una espressione \(f(x)\):
     <ul>
+        <p>
+            Data una espressione \(f(x)\):
+        </p>
         <li>
             è possibile determinare il dominio naturale di \(f\) imponendo le condizioni di esistenza.
         </li>
@@ -160,87 +137,102 @@
             \end{split}$$
             se \(f\) è iniettiva, in tal caso \(g\) ha come dominio l'immagine di \(f\) e viceversa.
         </li>
-        <li>
+        <p>
             altrimenti si può ottenere \(x \in \{g_0(y), \dots, g_k(y)\}\). In tal caso:
-            <ul>
-                <li>
-                    si restringe il dominio di \(g_h\) all'insieme \(\{f (g_h (y)) = y\}\)
-                </li>
-                <li>
-                    l'unione dei domini di \(g_0, \dots, g_k\) è l'immagine di \(f\).
-                </li>
-                <li>
-                    l'immagine di \(g_h\) è \(\{x = g_h (f (x))\}\) per \(x\) nel dominio di \(f\).
-                </li>
-                <li>
-                    le immagini di \(g_0, \dots, g_k\) sono una partizione del dominio di \(f\).
-                </li>
-                <li>
-                    restringendo il dominio di \(f\) all'immagine di \(g_h\), \(f\) risulta bigettiva sul dominio di \(g_h\).
-                </li>
-            </ul>
+        </p>
+        <li>
+            si restringe il dominio di \(g_h\) all'insieme \(\{f (g_h (y)) = y\}\)
+        </li>
+        <li>
+            l'unione dei domini di \(g_0, \dots, g_k\) è l'immagine di \(f\).
+        </li>
+        <li>
+            l'immagine di \(g_h\) è \(\{x = g_h (f (x))\}\) per \(x\) nel dominio di \(f\).
+        </li>
+        <li>
+            le immagini di \(g_0, \dots, g_k\) sono una partizione del dominio di \(f\).
+        </li>
+        <li>
+            restringendo il dominio di \(f\) all'immagine di \(g_h\), \(f\) risulta bigettiva sul dominio di \(g_h\).
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            $$\begin{split}
+            f(x) = \sqrt{(x - a_0)(x - a_1)}
+            \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+                <div id="bottone0" class="hidden">
+                    ha come dominio \((\infty, \min(a_0, a_1)] \cup [\max(a_0, a_1), \infty)\).
+                    $$\begin{split}
+                    x^2 - (a_0 + a_1) x + a_0 a_1 - y^2 = 0
+                    \end{split}$$
+                    ha come soluzioni:
+                    $$\begin{split}
+                    g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2}\\
+                    g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2.}
+                    \end{split}$$
+                    <ul>
+                    <li>
+                        Entrambe ammettono come dominio \(\mathbb R\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([0, \infty)\).
+                    </li>
+                    <li>
+                        L'immagine di \(g_0\) è \((\infty, \min(a_0, a_1)]\), mentre quella di \(g_1\) è \([\max(a_0, a_1), \infty)\).
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            $$\begin{split}
+            f(x) = \sqrt{- (x - a_0)(x - a_1)}
+            \end{split}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+                <div id="bottone1" class="hidden">
+                    ha come dominio \([\min(a_0, a_1), \max(a_0, a_1)]\).
+                    $$\begin{split}
+                    x^2 - (a_0 + a_1) x + a_0 a_1 + y^2 = 0
+                    \end{split}$$
+                    ha come soluzioni
+                    $$\begin{split}
+                    g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2}\\
+                    g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2.}
+                    \end{split}$$
+                    <ul>
+                        <li>
+                            Entrambe ammettono come dominio
+                            $$\left[0, \frac{|a_0 - a_1|}{2}\right]$$.
+                        </li>
+                        <li>
+                            L'immagine di \(g_0\) è \( \left[\min(a_0, a_1), \frac{a_0 + a_1}{2}\right]\), mentre quella di \(g_1\) è \(\left[\frac{a_0 + a_1}{2}, \max(a_0, a_1)\right]\).
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li>
+            $$f(x) = \sqrt{(x - a)^2 + b^2}$$
+            <div class="divrow">
+                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+                <div id="bottone2" class="hidden">
+                    ha come dominio \(\mathbb R\).
+                    $$\begin{split}
+                    g_0(y) = a - \sqrt{y^2 - b^2}\\
+                    g_1(y) = a + \sqrt{y^2 - b^2.}
+                    \end{split}$$
+                    <ul>
+                        <li>
+                            Entrambe ammettono come dominio \((\infty, |b|] \cup [|b|, \infty)\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([|b|, \infty)\).
+                        </li>
+                        <li>
+                            L'immagine di \(g_0\) è \((\infty, a]\), mentre quella di \(g_1\) è \([a, \infty)\).
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </li>
     </ul>
     
-    <h2>Esempio:</h2>
-    $$\begin{split}
-    f(x) = \sqrt{(x - a_0)(x - a_1)}
-    \end{split}$$
-    ha come dominio \((\infty, \min(a_0, a_1)] \cup [\max(a_0, a_1), \infty)\).
-    $$\begin{split}
-    x^2 - (a_0 + a_1) x + a_0 a_1 - y^2 = 0
-    \end{split}$$
-    ha come soluzioni:
-    $$\begin{split}
-    g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2}\\
-    g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2.}
-    \end{split}$$
-    <ul>
-        <li>
-            Entrambe ammettono come dominio \(\mathbb R\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([0, \infty)\).
-        </li>
-        <li>
-            L'immagine di \(g_0\) è \((\infty, \min(a_0, a_1)]\), mentre quella di \(g_1\) è \([\max(a_0, a_1), \infty)\).
-        </li>
-    </ul>
-
-    <h2>Esempio:</h2>
-    $$\begin{split}
-    f(x) = \sqrt{- (x - a_0)(x - a_1)}
-    \end{split}$$
-    ha come dominio \([\min(a_0, a_1), \max(a_0, a_1)]\).
-    $$\begin{split}
-    x^2 - (a_0 + a_1) x + a_0 a_1 + y^2 = 0
-    \end{split}$$
-    ha come soluzioni
-    $$\begin{split}
-    g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2}\\
-    g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2.}
-    \end{split}$$
-    <ul>
-        <li>
-            Entrambe ammettono come dominio
-            $$\left[0, \frac{|a_0 - a_1|}{2}\right]$$.
-        </li>
-        <li>
-            L'immagine di \(g_0\) è \( \left[\min(a_0, a_1), \frac{a_0 + a_1}{2}\right]\), mentre quella di \(g_1\) è \(\left[\frac{a_0 + a_1}{2}, \max(a_0, a_1)\right]\).
-        </li>
-    </ul>
-    
-    <h2>Esempio:</h2>
-    $$f(x) = \sqrt{(x - a)^2 + b^2}$$
-    ha come dominio \(\mathbb R\).
-    $$\begin{split}
-    g_0(y) = a - \sqrt{y^2 - b^2}\\
-    g_1(y) = a + \sqrt{y^2 - b^2.}
-    \end{split}$$
-    <ul>
-        <li>
-            Entrambe ammettono come dominio \((\infty, |b|] \cup [|b|, \infty)\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([|b|, \infty)\).
-        </li>
-        <li>
-            L'immagine di \(g_0\) è \((\infty, a]\), mentre quella di \(g_1\) è \([a, \infty)\).
-        </li>
-    </ul>
-
 </body>

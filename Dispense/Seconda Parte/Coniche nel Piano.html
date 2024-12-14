@@ -25,28 +25,39 @@
     <div class="navbar">
         <button onclick="location.href='Rotazioni del Piano.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
-        <button onclick="location.href='La goniometria.html'">Prossima Lezione</button>
+        <button onclick="location.href='../Terza Parte/Grafici e funzioni inverse.html'">Prossima Lezione</button>
     </div>
 
     <h1>Circonferenze</h1>
-
-    L'equazione di una circonferenza di centro \((\alpha, \beta)\) e raggio \(\rho\) è:
     
     <ul>
+        <p>
+            Consideriamo una circonferenza \({\mathcal C}\) di centro \((\alpha, \beta)\) e raggio \(\rho\).
+        </p>
         <li>
-            Per i punti esterni vale \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) > 0\) e passano \(2\) rette tangenti.
+            Per i punti esterni a \({\mathcal C}\) vale \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) > 0\) e passano \(2\) rette tangenti.
         </li>
         <li>
-            Per i punti appartenenti \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) = 0\) e passa una sola retta tangente.
+            Per i punti giacenti su \({\mathcal C}\) vale \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) = 0\) e passa una sola retta tangente.
         </li>
         <li>
-            Per i punti interni vale \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) < 0\) e non passano rette tangenti.
+            Per i punti interni a \({\mathcal C}\) vale \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) < 0\) e non passano rette tangenti.
         </li>
-    </ul>
-    
-    Due circonferenze di raggi \(\rho_1, \rho_0\) e centri distanti \(\delta\) possono essere:
-    
-    <ul>
+        <p>
+            Data una retta generica \(r = \{a x + b y + c = 0\}\):
+        </p>
+        <li>
+            \(r\) è secante ad una circonferenza se \((a \cdot \alpha + b \cdot \beta + c)^2 < \rho^2 (a^2 + b^2)\).
+        </li>
+        <li>
+            \(r\) è tangente ad una circonferenza se \((a \cdot \alpha + b \cdot \beta + c)^2 = \rho^2 (a^2 + b^2)\).
+        </li>
+        <li>
+            \(r\) è disgiunta da una circonferenza se \((a \cdot \alpha + b \cdot \beta + c)^2 > \rho^2 (a^2 + b^2)\).
+        </li>
+        <p>
+            Due circonferenze di raggi \(\rho_1, \rho_0\) e centri distanti \(\delta\) possono essere:
+        </p>
         <li>
             Esterne se \(\delta > \rho_1 + \rho_0\) (intersezione vuota).
         </li>
@@ -62,52 +73,52 @@
         <li>
             Interne se \(\delta < |\rho_1 - \rho_0|\) (intersezione vuota).
         </li>
-    </ul>
-    
-    I punti di intersezione si trovano intersecando una delle due circonferenze con la retta di equazione
-    
-    $$\begin{split}
-    2 (\alpha_1 - \alpha_0) x + 2 (\beta_1 - \beta_0) y = (\alpha_1^2 + \beta_1^2 - \rho_1^2) - (\alpha_0^2 + \beta_0^2 - \rho_0^2)
-    \end{split}$$
-    
-    Data una retta generica \(r = \{y = m x + q\}\):
-    <ul><li>\(r\) è secante ad una circonferenza se \((m \alpha + q - \beta)^2 < \rho^2 (m^2 + 1)\).</li>
-    <li>\(r\) è tangente ad una circonferenza se \((m \alpha + q - \beta)^2 = \rho^2 (m^2 + 1)\).</li>
-    <li>\(r\) è disgiunta da una circonferenza se \((m \alpha + q - \beta)^2 > \rho^2 (m^2 + 1)\).</li></ul>
-    
-    <h2>Esercizi:</h2>
-    Data l'equazione di una circonferenza \(\cal C\):
-    <ul>
+        <li>
+            <div class="divrow">
+                <div>
+                    I punti di intersezione si trovano intersecando una delle due circonferenze con l'asse radicale di equazione
+                    $$\begin{split}
+                    2 (\alpha_1 - \alpha_0) x + 2 (\beta_1 - \beta_0) y = (\alpha_1^2 + \beta_1^2 - \rho_1^2) - (\alpha_0^2 + \beta_0^2 - \rho_0^2).
+                    \end{split}$$
+                    Le tangenti comuni alle circonferenze si trovano invece individuando il punto di proiezione (NO, sbagliato, ci sono due punti)
+                    $$\begin{split}
+                    \left(\frac{\rho_1 \cdot \alpha_0 + \rho_0 \cdot \alpha_1}{\rho_0 + \rho_1}, \frac{\rho_1 \cdot \beta_0 + \rho_0 \cdot \beta_1}{\rho_0 + \rho_1}\right).
+                    \end{split}$$
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 232 162">
+                    <circle cx="80" cy="80" r="80" stroke="red" fill="none"/>
+                    <circle cx="80" cy="80" r="1" stroke="red" fill="none"/>
+                    <circle cx="150" cy="80" r="60" stroke="red" fill="none"/>
+                    <circle cx="150" cy="80" r="1" stroke="red" fill="none"/>
+                    <line x1="135" y1="0" x2="135" y2="160" stroke="red" fill="none"/>
+                    <circle cx="120" cy="80" r="1" stroke="red" fill="none"/>
+                </svg>
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <p>
+            Data l'equazione di una circonferenza \(\cal C\):
+        </p>
         <li>
             Determina il centro \((\alpha, \beta)\) ed il raggio \(\rho\) di \(\cal C\).
         </li>
         <li>
-            Dato un punto \(\rm P\), determina se \(\rm P\) appartiene a \(\cal C\), se è interno o esterno. Se \(\rm P\) è esterno:
-        <ul>
-            <li>
-                determina le tangenti a \(\cal C\) passanti per \(\rm P\)
-            </li>
-            <li>
-                queste intersecano \(\cal C\) in in punto ciascuna, determina le loro coordinate</li>
-            <li>
-                determina l'equazione della retta passante per i due punti trovati.
-            </li>
-        </ul>
-        <li>
-            Data una retta \(r\), determina se \(r\) è disgiunta, secante o tangente a \(\cal C\). Se \(r\) è secante:
-            <ul>
-                <li>
-                    determina i punti di intersezione di \(r\) con \(\cal C\)
-                </li>
-                <li>
-                    per ciascuno di questi punti passa una retta tangente a \(\cal C\), determina le loro equazioni</li>
-                <li>
-                    determina le coordinate del punto di intersezione delle rette trovate.
-                </li>
-            </ul>
-        <li>
-            Dati \(a, b, c\) determinare se la circonferenza \(\{x^2 + y^2 + a x + b y + c = 0\}\) e \(\cal C\) sono interne, esterne o secanti.
+            Dato un punto \(\rm P\), determina se \(\rm P\) appartiene a \(\cal C\), se è interno o esterno.
         </li>
+        <li>
+            Se \(\rm P\) è esterno determina le tangenti a \(\cal C\) passanti per \(\rm P\). Queste intersecano \(\cal C\) in in punto ciascuna, determina le loro coordinate e l'equazione della retta passante per entrambi.
+        </li>
+        <li>
+            Data una retta \(r\), determina se \(r\) è disgiunta, secante o tangente a \(\cal C\).
+        </li>
+        <li>
+            Se \(r\) è secante determina i punti di intersezione di \(r\) con \(\cal C\). Per ciascuno di questi punti passa una retta tangente a \(\cal C\), determina le loro equazioni le coordinate del loro punto di intersezione.
+        </li>
+        <p>
+            Dati \(a, b, c\) determinare se la circonferenza \(\{x^2 + y^2 + a x + b y + c = 0\}\) e \(\cal C\) sono interne, esterne o secanti.
+        </p>
     </ul>
     
     <h1>Coniche</h1>
@@ -118,14 +129,12 @@
             $$\begin{split}
             \frac{(x + m y)^2}{m^2 + 1} - 2 \left(\alpha + \frac{m q}{m^2 + 1}\right) x - 2 \left(\beta - \frac{q}{m^2 + 1}\right) y + \left(\alpha^2 + \beta^2 - \frac{q^2}{m^2 + 1}\right) = 0.
             \end{split}$$
-            Per i punti esterni vale \(>\) e per i punti interni vale \(<\).
         </li>
         <li>
             L'equazione di una conica di fuoco \((\alpha, \beta)\), direttrice \(\{y = m x + q\}\), ed eccentricità \(\varepsilon\) è:
             $$\begin{split}
             x^2 + y^2 - \frac{\varepsilon (m x - y)^2}{m^2 + 1} - 2 \left(\alpha + \frac{\varepsilon m q}{m^2 + 1}\right) x - 2 \left(\beta - \frac{\varepsilon q}{m^2 + 1}\right) y + \left(\alpha^2 + \beta^2 - \frac{\varepsilon q^2}{m^2 + 1}\right) = 0.
             \end{split}$$
-            Per i punti esterni vale \(>\) e per i punti interni vale \(<\).
         </li>
         <li>
             Dati due punti \((\alpha_0, \beta_0), (\alpha_1, \beta_1)\), diciamo \(4 c^2 = (\alpha_0 - \alpha_1)^2 + (\beta_0 - \beta_1)^2\), l'equazione di un'ellisse di asse \(a > c\) o di un'iperbole di asse \(a < c\) è
@@ -133,14 +142,9 @@
             4 a^2 \left((x - \alpha)^2 + (y - \beta)^2 + c^2 - a^2\right) = ((x - \alpha) (\alpha_1 - \alpha_0) + (y - \beta) (\beta_1 - \beta_0))^2.
             \end{split}$$
         </li>
-        <li>
-            Per i punti esterni vale \(>\) e per i punti interni vale \(<\).
-        </li>
-    </ul>
-            
-    Nel caso \(a = c\) l'equazione si riduce a quella di una retta passante per i due fuochi.
-    
-    <ul>
+        <p>        
+        Nel caso \(a = c\) l'equazione si riduce a quella di una retta passante per i due fuochi.
+        </p>
         <li>
             Se \(\beta_1, \beta_0, \alpha = 0\) abbiamo
             $$\frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} = 1$$
@@ -150,5 +154,17 @@
             $$\frac{x^2}{a^2 - c^2} + \frac{y^2}{a^2} = 1$$.
         </li>
     </ul>
-            
+
+    <ul>
+        <h3>
+            Teorema di Brianchon
+        </h3>
+        <h3>
+            Teorema di Pascal
+        </h3>
+        <h3>
+            Teorema di Pappo
+        </h3>
+    </ul>
+
 </body>

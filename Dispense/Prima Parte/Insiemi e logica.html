@@ -163,7 +163,7 @@
         </li>
         <li>
             <h3>
-                Associatività e transitività:
+                Associatività e distributività:
             </h3>
             Dimostra ciascuna delle seguenti utilizzando le altre
             $$\begin{split}
@@ -415,10 +415,10 @@
             Ad esempio la veridicità della frase "il giorno \(x\) nevica" dipende da \(x\) e la verifica di tale veridicità è disponibile solo per alcuni valori di \(x\).
         </li>
         <li>
-            Se \({\mathcal C} (x)\) è un predicato nella variabile \(x\), si scrive \(\forall x\,, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
+            Se \({\mathcal C} (x)\) è un predicato nella variabile \(x\), si scrive \(\forall x \,, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
         </li>
         <li>
-            Se \({\mathcal C}\) è un predicato nella variabile \(x\), si scrive \(\exists x\!: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
+            Se \({\mathcal C}\) è un predicato nella variabile \(x\), si scrive \(\exists x \!: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
         </li>
         <h2>
             Esercizi:
@@ -426,8 +426,8 @@
         <li>
             Si possono scrivere i quantificatori l'uno in termini dell'altro come segue:
             $$\begin{split}
-            (\exists x\!: {\mathcal C}(x)) &\longleftrightarrow \lnot (\forall x\,, \lnot {\mathcal C} (x))\\
-            (\forall x\,, {\mathcal C}(x)) &\longleftrightarrow \lnot (\exists x\!: \lnot {\mathcal C} (x))
+            (\exists x \!: {\mathcal C}(x)) &\longleftrightarrow \lnot (\forall x \,, \lnot {\mathcal C} (x))\\
+            (\forall x \,, {\mathcal C}(x)) &\longleftrightarrow \lnot (\exists x \!: \lnot {\mathcal C} (x))
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone32')">Dimostrazione:</button>
@@ -439,8 +439,8 @@
         <li>
             Notiamo che se \({\mathcal A}, {\mathcal B}\) sono predicati,
             $$\begin{split}
-            (\forall x\,, {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftrightarrow (\forall x\,, {\mathcal A}(x)) \land (\forall x\,, {\mathcal B}(x))\\
-            (\exists x\!: {\mathcal A}(x) \lor {\mathcal B}(x)) &\longleftrightarrow (\exists x\!: {\mathcal A}(x)) \lor (\exists x\!: {\mathcal B}(x)).
+            (\forall x \,, {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftrightarrow (\forall x \,, {\mathcal A}(x)) \land (\forall x \,, {\mathcal B}(x))\\
+            (\exists x \!: {\mathcal A}(x) \lor {\mathcal B}(x)) &\longleftrightarrow (\exists x \!: {\mathcal A}(x)) \lor (\exists x \!: {\mathcal B}(x)).
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone33')">Dimostrazione:</button>
@@ -452,8 +452,8 @@
         <li>
             In un certo senso \(\forall\) è come una congiunzione, mentre \(\exists\) è come una disgiunzione:
             $$\begin{split}
-            (\forall x \in {\rm A} \cup {\rm B}\,, {\mathcal C}(x)) &\longleftrightarrow (\forall x \in {\rm A}\,, {\mathcal C}(x)) \land (\forall x \in {\rm B}\,, {\mathcal C}(x))\\
-            (\exists x \in {\rm A} \cup {\rm B}\!: {\mathcal C}(x)) &\longleftrightarrow (\exists x \in {\rm A}\!: {\mathcal C}(x)) \lor (\exists x \in {\rm B}\!: {\mathcal C}(x)).
+            (\forall x \in {\rm A} \cup {\rm B} \,, {\mathcal C}(x)) &\longleftrightarrow (\forall x \in {\rm A} \,, {\mathcal C}(x)) \land (\forall x \in {\rm B} \,, {\mathcal C}(x))\\
+            (\exists x \in {\rm A} \cup {\rm B} \!: {\mathcal C}(x)) &\longleftrightarrow (\exists x \in {\rm A} \!: {\mathcal C}(x)) \lor (\exists x \in {\rm B} \!: {\mathcal C}(x)).
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone34')">Dimostrazione:</button>
@@ -474,8 +474,8 @@
         <li>
             Valgono inoltre le proprietà:
             $$\begin{split}
-            (\exists x\!: {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftarrow (\exists x\!: {\mathcal A}(x)) \land (\forall x\,, {\mathcal B}(x))\\
-            (\forall x\,, {\mathcal A}(x) \lor {\mathcal B}(x)) &\longrightarrow (\forall x\,, {\mathcal A}(x)) \lor (\exists x\!: {\mathcal B}(x)).
+            (\exists x \!: {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftarrow (\exists x \!: {\mathcal A}(x)) \land (\forall x \,, {\mathcal B}(x))\\
+            (\forall x \,, {\mathcal A}(x) \lor {\mathcal B}(x)) &\longrightarrow (\forall x \,, {\mathcal A}(x)) \lor (\exists x \!: {\mathcal B}(x)).
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone35')">Dimostrazione:</button>

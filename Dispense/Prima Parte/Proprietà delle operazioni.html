@@ -119,8 +119,8 @@
         <p>
             Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
             $$\begin{split}
-            {\rm A} + ({\rm B} + {\rm C}) &= ({\rm A} + {\rm B}) + {\rm C}\\
-            {\rm A} \cdot ({\rm B} \cdot {\rm C}) &= ({\rm A} \cdot {\rm B}) \cdot {\rm C}.
+            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} + ({\rm B} + {\rm C}) &= ({\rm A} + {\rm B}) + {\rm C}\\
+            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} \cdot ({\rm B} \cdot {\rm C}) &= ({\rm A} \cdot {\rm B}) \cdot {\rm C}.
             \end{split}$$
         </p>
         <h2>
@@ -189,10 +189,9 @@
 
     <ul>
         <p>
-        Dati due numeri \({\rm A}, {\rm B}\) (che siano o meno interi)
         $$\begin{split}
-        {\rm A} + {\rm B} &= {\rm B} + {\rm A}\\
-        {\rm A} \cdot {\rm B} &= {\rm B} \cdot {\rm A}.
+        \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} + {\rm B} &= {\rm B} + {\rm A}\\
+        \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} \cdot {\rm B} &= {\rm B} \cdot {\rm A}.
         \end{split}$$
         </p>
         <h2>
@@ -224,9 +223,9 @@
         <li>
             $$\begin{split}
             a \cdot b \cdot c &= a \cdot c \cdot b\\
-            a \cdot b \cdot c &= c \cdot a \cdot b\\
             a \cdot b \cdot c &= b \cdot a \cdot c\\
-            a \cdot b \cdot c &= b \cdot c \cdot a.
+            a \cdot b \cdot c &= b \cdot c \cdot a\\
+            a \cdot b \cdot c &= c \cdot a \cdot b.
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone03')">Soluzione:</button>
@@ -257,9 +256,8 @@
 
     <ul>
         <p>
-            Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
             $$\begin{split}
-            {\rm A} \cdot ({\rm B} + {\rm C}) &= {\rm A} \cdot {\rm B} + {\rm A} \cdot {\rm C}.
+            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} \cdot ({\rm B} + {\rm C}) = {\rm A} \cdot {\rm B} + {\rm A} \cdot {\rm C}.
             \end{split}$$
         </p>
         <h2>
@@ -308,11 +306,10 @@
 
     <ul>
         <p>
-            Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi) (ATTENZIONE ALLE CONDIZIONI DI ESISTENZA)
             $$\begin{split}
-            {\rm A}^{{\rm B} + {\rm C}} &= {\rm A}^{\rm B} \cdot {\rm A}^{\rm C}\\
-            \left({\rm A}^{\rm B}\right)^{\rm C} &= {\rm A}^{{\rm B} \cdot {\rm C}}\\
-            ({\rm A} \cdot {\rm B})^{\rm C} &= {\rm A}^{\rm C} \cdot {\rm B}^{\rm C}.
+            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} \ge 0 \,, \qquad {\rm A}^{{\rm B} + {\rm C}} &= {\rm A}^{\rm B} \cdot {\rm A}^{\rm C}\\
+            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad \forall {\rm A} \ge 0 \,, \qquad \left({\rm A}^{\rm B}\right)^{\rm C} &= {\rm A}^{{\rm B} \cdot {\rm C}}\\
+            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad \forall {\rm A} \cdot {\rm B} \ge 0 \,, \qquad ({\rm A} \cdot {\rm B})^{\rm C} &= |{\rm A}|^{\rm C} \cdot |{\rm B}|^{\rm C}.
             \end{split}$$
         </p>
         <h2>
@@ -329,10 +326,10 @@
         <li>
             Correggi l'errore:
             $$\begin{split}
-            a = b &\longleftrightarrow a^c = b^c\\
-            a = b &\longleftrightarrow c^a = c^b\\
-            a < b &\longleftrightarrow a^c < b^c\\
-            a < b &\longleftrightarrow c^a < c^b.
+            \forall a, b > 0\,, \qquad a = b &\longleftrightarrow a^c = b^c\\
+            \forall c > 0\,, \qquad a = b &\longleftrightarrow c^a = c^b\\
+            \forall a, b > 0\,, \qquad a < b &\longleftrightarrow a^c < b^c\\
+            \forall c > 0\,, \qquad a < b &\longleftrightarrow c^a < c^b.
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone05')">Soluzione:</button>
@@ -411,10 +408,10 @@
         </li>
         <li>
             $$\begin{split}
-            a = b &\longleftrightarrow a / c = b / c\\
-            a = b &\longleftrightarrow c / a = c / b\\
-            a < b &\longleftrightarrow a / c < b / c\\
-            a < b &\longleftrightarrow c / a < c / b.
+            \forall c \ne 0\,, \qquad a = b &\longleftrightarrow a / c = b / c\\
+            \forall a, b \ne 0\,, \qquad a = b &\longleftrightarrow c / a = c / b\\
+            \forall c \ne 0\,, \qquad a < b &\longleftrightarrow a / c < b / c\\
+            \forall a, b \ne 0\,, \qquad a < b &\longleftrightarrow c / a < c / b.
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone11')">Soluzione:</button>
@@ -478,10 +475,10 @@
         </p>
         <li>
             $$\begin{split}
-            a = b &\longleftrightarrow \sqrt[c]{a} = \sqrt[c]{b}\\
-            a = b &\longleftrightarrow \sqrt[a]{c} = \sqrt[b]{c}\\
-            a < b &\longleftrightarrow \sqrt[c]{a} < \sqrt[c]{b}\\
-            a < b &\longleftrightarrow \sqrt[a]{c} < \sqrt[b]{c}
+            \forall a, b \ge 0\,, \qquad a = b &\longleftrightarrow \sqrt[c]{a} = \sqrt[c]{b}\\
+            \forall c \ge 0\,, \qquad a = b &\longleftrightarrow \sqrt[a]{c} = \sqrt[b]{c}\\
+            \forall a, b \ge 0\,, \qquad a < b &\longleftrightarrow \sqrt[c]{a} < \sqrt[c]{b}\\
+            \forall c \ge 0\,, \qquad a < b &\longleftrightarrow \sqrt[a]{c} < \sqrt[b]{c}
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone12')">Soluzione:</button>
@@ -497,10 +494,10 @@
         </li>
         <li>
             $$\begin{split}
-            a = b &\longleftrightarrow \log_c(a) = \log_c(b)\\
-            a = b &\longleftrightarrow \log_a(c) = \log_b(c)\\
-            a < b &\longleftrightarrow \log_c(a) < \log_c(b)\\
-            a < b &\longleftrightarrow \log_a(c) < \log_b(c)
+            \forall a, b, c \ge 0\,, \qquad a = b &\longleftrightarrow \log_c(a) = \log_c(b)\\
+            \forall a, b, c \ge 0\,, \qquad a = b &\longleftrightarrow \log_a(c) = \log_b(c)\\
+            \forall a, b, c \ge 0\,, \qquad a < b &\longleftrightarrow \log_c(a) < \log_c(b)\\
+            \forall a, b, c \ge 0\,, \qquad a < b &\longleftrightarrow \log_a(c) < \log_b(c)
             \end{split}$$
             <div class="divrow">
                 <button onclick="toggleTesto('bottone13')">Soluzione:</button>

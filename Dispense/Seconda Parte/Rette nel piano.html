@@ -9,32 +9,24 @@
     </script>
     <link rel="stylesheet" href="../../style.css">
 </head>
+
 <body>
 
-    <script>
-        function toggleTesto(SECTION) {
-            var testo = document.getElementById(SECTION);
-            if (testo.style.display === "none") {
-                testo.style.display = "block";
-            } else {
-                testo.style.display = "none";
-            }
-        }
-    </script>
-
     <div class="navbar">
-        <button onclick="location.href='../Prima Parte/Polinomi in una variabile.html'">Lezione Precedente</button>
+        <button onclick="location.href='Polinomi in una variabile.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
         <button onclick="location.href='Rotazioni del piano.html'">Prossima Lezione</button>
     </div>
 
-    <h1>Le Rette</h1>
-
+    <h1>I triangoli</h1>
     <ul>
         <li>
+            <h3>
+                Teorema di Pitagora
+            </h3>
             <div class="divrow">
                 <div>
-                    Il teorema di pitagora afferma che, dato un triangolo rettangolo di cateti ed ipotenusa \(x, y, z\)
+                    Dato un triangolo rettangolo di cateti ed ipotenusa \(x, y, z\)
                     $$\begin{split}
                     4 x y + (x - y)^2 &= 2 x y + z^2
                     \end{split}$$
@@ -48,18 +40,17 @@
                     \end{split}$$
                     è la distanza tra i punti \({\rm A}\) e \(\rm B\).
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70"  style="width: 256px; flex-shrink: 0;">
-                    <polygon points="40,0 0,0 0,30" stroke="red", fill="none"/>
-                    <polygon points="40,0 0,0 0,30 40,30" stroke="red", fill="none"/>
-                    <polygon points="0,30 0,70 30,70" stroke="red", fill="none"/>
-                    <polygon points="0,30 0,70 30,70 30,30" stroke="red", fill="none"/>
-                    <polygon points="30,70 70,70 70,40" stroke="red", fill="none"/>
-                    <polygon points="30,70 70,70 70,40 30,40" stroke="red", fill="none"/>
-                    <polygon points="70,40 70,0 40,0" stroke="red", fill="none"/>
-                    <polygon points="70,40 70,0 40,0 40,40" stroke="red", fill="none"/>
-                </svg>
+                <canvas id="canvas0" width="256" height="256"></canvas>
             </div>
         </li>
+        <h3>Teorema di Ceva</h3>
+        <h3>Teorema di Menelao</h3>
+        <h3>Teorema di Feuerbach</h3>
+    </ul>
+
+    <h1>Le Rette</h1>
+
+    <ul>
         <li>
             <div class="divrow">
                 <div>
@@ -97,11 +88,17 @@
                 </svg>
             </div>
         </li>
+        <p>
+            Data una retta di equazione
+            $$\begin{split}
+            b x - a y = b x_{\rm A} - a y_{\rm A},
+            \end{split}$$
+        </p>
         <li>
-            Si dice coefficiente angolare \(m\) il valore \(-\frac{b}{a.}\)
+            Si dice coefficiente angolare \(m\) il valore \(-\frac{a}{b.}\)
         </li>
         <li>
-            Si dice intercetta sull'asse \(m\) \(y\) il valore \(-\frac{c}{a.}\)
+            Si dice intercetta sull'asse \(m\) \(y\) il valore \(-\frac{c}{b.}\)
         </li>
         <li>
             <div class="divrow">
@@ -132,6 +129,22 @@
             </div>
         </li>
         <li>
+            Si dice mediana il luogo dei punti equidistanti da due punti dati, questa è ortogonale alla retta passante per i punti in questione e passa per il loro punto medio.
+            $$\begin{split}
+            (x - x_0)^2 + (y - y_0)^2 = (x - x_1)^2 + (y - y_1)^2\\
+            2 (x_0 - x_1) x + 2 (y_0 - y_1) y = x_0^2 + y_0^2 - x_1^2 - y_1^2.
+            \end{split}$$
+            Come previsto \(m = - \frac{x_0 - x_1}{y_0 - y_1.}\)
+        </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento0')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento0" class="hidden">
+                <h3>
+                    Il circocentro di un triangolo:
+                </h3>
+            </div>
+        </div>
+        <li>
             Si dice bisettrice il luogo dei punti equidistanti da due rette, questa è l'unione di
             $$\begin{split}
             \frac{a_0 x + b_0 y + c_0}{\sqrt{a_0^2 + b_0^2}} - \frac{a_1 x + b_1 y + c_1}{\sqrt{a_1^2 + b_1^2}} &= 0\\
@@ -142,14 +155,14 @@
             m_- = - \frac{a_0 \sqrt{a_1^2 + b_1^2} - a_1 \sqrt{a_0^2 + b_0^2}}{b_0 \sqrt{a_1^2 + b_1^2} - b_1 \sqrt{a_0^2 + b_0^2}} \qquad m_+ = - \frac{a_0 \sqrt{a_1^2 + b_1^2} + a_1 \sqrt{a_0^2 + b_0^2}}{b_0 \sqrt{a_1^2 + b_1^2} + b_1 \sqrt{a_0^2 + b_0^2.}}
             \end{split}$$
         </li>
-        <li>
-            Si dice mediana il luogo dei punti equidistanti da due punti dati, questa è ortogonale alla retta passante per i punti in questione e passa per il loro punto medio.
-            $$\begin{split}
-            (x - x_0)^2 + (y - y_0)^2 = (x - x_1)^2 + (y - y_1)^2\\
-            2 (x_0 - x_1) x + 2 (y_0 - y_1) y = x_0^2 + y_0^2 - x_1^2 - y_1^2.
-            \end{split}$$
-            Come previsto \(m = - \frac{x_0 - x_1}{y_0 - y_1.}\)
-        </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento1')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento1" class="hidden">
+                <h3>
+                    Gli incentri di un triangolo:
+                </h3>
+            </div>
+        </div>
     </ul>
 
     <h1>Le trasformazioni</h1>
@@ -237,13 +250,48 @@
         </li>
     </ul>
 
-    <ul>
-        <li>
-            <a href="../../Fondamenti/Algebra Lineare/Gli spazi vettoriali.html">Gli spazi vettoriali</a>.
-        </li>
-        <li>
-            <a href="../../Fondamenti/Algebra Lineare/La geometria proiettiva.html">La geometria proiettiva</a>.
-        </li>
-    </ul>
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+        var count = 0;
+        var side = 1024;
+        var canvas0 = document.getElementById("canvas0");
+        var ctx0 = canvas0.getContext("2d");
+        function gameLoop() {
+            ctx0.clearRect(0, 0, canvas0.width, canvas0.height);
+            count += 1;
+            if (count == side) {
+                count = 0;
+            }
+			ctx0.strokeStyle = "#0095DD";
+            ctx0.beginPath();
+            ctx0.rect(0, 0, count * (canvas0.width / side), (side - count) * (canvas0.height/ side))
+			ctx0.stroke();
+            ctx0.beginPath();
+			ctx0.rect(count * (canvas0.width / side), 0, (side - count) * (canvas0.width / side), count * (canvas0.height/ side))
+			ctx0.stroke();
+            ctx0.beginPath();
+			ctx0.rect((side - count) * (canvas0.width / side), count * (canvas0.height/ side), count * (canvas0.width / side), (side - count) * (canvas0.height/ side))
+			ctx0.stroke();
+            ctx0.beginPath();
+			ctx0.rect(0, (side - count) * (canvas0.height/ side), (side - count) * (canvas0.width / side), count * (canvas0.height/ side))
+			ctx0.stroke();
+            ctx0.beginPath();
+            ctx0.moveTo(count * (canvas0.width / side), 0);
+			ctx0.lineTo(canvas0.width, count * (canvas0.height / side));
+			ctx0.lineTo((side - count) * (canvas0.width / side), canvas0.height);
+			ctx0.lineTo(0, (side - count) * (canvas0.height / side));
+            ctx0.lineTo(count * (canvas0.width / side), 0);
+			ctx0.stroke();
+            requestAnimationFrame(gameLoop);
+        }
+        gameLoop();
+    </script>
 
 </body>

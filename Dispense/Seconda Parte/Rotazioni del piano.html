@@ -39,16 +39,10 @@
             tale che \({\rm A} + u = {\rm B}\).
         </li>
         <li>
-            Dati due vettori \(u, v\) di stesso modulo, esiste un solo angolo \(\alpha\) per cui \(v = r_\alpha (u)\). Cioè detta \({\rm O}\) l'origine e \({\rm U} = {\rm O} + u, {\rm V} = {\rm O} + v\), una rotazione attorno ad \(\rm O\) di angolo \(\alpha = \hat{{\rm U}{\rm O}{\rm V}}\) manda \(\rm U\) in \(\rm V\).
+            Dati due vettori \(u, v\) di stesso modulo, esiste un solo angolo \(\alpha\) per cui \(v = r_\alpha (u)\). Cioè detta \({\rm O}\) l'origine e \({\rm U} = {\rm O} + u, {\rm V} = {\rm O} + v\), una rotazione attorno ad \(\rm O\) di angolo \(\alpha = {\rm U} \hat{\rm O} {\rm V}\) manda \(\rm U\) in \(\rm V\).
         </li>
         <li>
             Diciamo \(\pi\) l'angolo formato da tre punti allineati, cioè tale che \(r_\pi (u) = - u\).
-        </li>
-        <li>
-            Dati due vettori \(u, v\), esistono unici \(a, b\) tali che
-            $$\begin{split}
-            v = a \cdot u + b \cdot r_\frac{\pi}{2} (u).
-            \end{split}$$
         </li>
         <li>
             $$\begin{split}
@@ -62,14 +56,29 @@
             |x \cdot u| &= |x| \cdot |u|.
             \end{split}$$
         </li>
-    </ul>
-    
-    <h2>Esercizi:</h2>
-
-    <ul>
-        <p>
-            Mostra che:
-        </p>
+        <li>
+            Dati \(n\) punti nel piano
+            $$\begin{split}
+            {\rm A}_n = {\rm A}_0, \dots {\rm A}_k, {\rm A}_n = {\rm A}_0
+            \end{split}$$
+            e consideriamo gli angoli
+            $$\begin{split}
+            \theta_k &= ({\rm A}_k - 2 \cdot {\rm A}_{k - 1}) \hat{\rm A}_k {\rm A}_{k + 1}\\
+            r_{\theta_k} ({\rm A}_k - {\rm A}_{k - 1}) &= {\rm A}_{k + 1} - {\rm A}_k
+            \end{split}$$
+            da cui otteniamo
+            $$\begin{split}
+            r_{\theta_{n - 1}} \circ \dots \circ r_{\theta_k} \circ \dots \circ r_{\theta_0} = r_0.
+            \end{split}$$
+            Se i segmenti non si intersecano, allora (PERCHè???)
+            $$\begin{split}
+            \theta_{n - 1} + \dots + \theta_k + \dots + \theta_0 = 2 \pi.
+            \end{split}$$
+            Se il poligono identificato da tali punti è convesso, allora \(\theta_k > 0\) (PERCHè???).
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
             Una traslazione composta una rotazione è una rotazione composta una traslazione.
         </li>
@@ -89,13 +98,13 @@
             Le rotazioni conservano le distanze.
         </li>
         <li>
-            Le dilatazioni mandano rette in rette parallele.
+            Le dilatazioni isotrope mandano rette in rette parallele.
         </li>
         <li>
-            Le dilatazioni moltiplicano le distanze per una costante.
+            Le dilatazioni isotrope moltiplicano le distanze per una costante.
         </li>
         <li>
-            Dati due segmenti orientati esiste una unica trasformazione conforme che manda l'uno nell'altro.
+            Dati due segmenti orientati, esiste una unica trasformazione conforme che manda l'uno nell'altro.
         </li>
     </ul>
     
@@ -103,9 +112,9 @@
     
     <ul>
         <p>
-            Siano
+            Dati due vettori \(u, v\), esistono unici \(a, b\) tali che
             $$\begin{split}
-            v = a \cdot u + b \cdot r_\frac{\pi}{2} \cdot u:
+            v = a \cdot u + b \cdot r_\frac{\pi}{2} (u).
             \end{split}$$
         </p>
         <li>
@@ -114,29 +123,61 @@
         <li>
             Si dice prodotto vettoriale \(u \times v = b \cdot |u|^2\).
         </li>
-    </ul>
-    
-    <h2>Esercizi:</h2>
-
-    <ul>
-        <p>
-            Mostra che:
-        </p>
+        <h2>
+            Esercizi:
+        </h2>
         <li>
             $$\begin{split}
             u \cdot u = |u|^2 &\qquad u \times u = 0\\
             u \cdot v = v \cdot u &\qquad u \times v + v \times u = 0\\
-            u \cdot (r_\frac{\pi}{2} \cdot u) = 0 &\qquad u \times (r_\frac{\pi}{2} \cdot u) = |u|^2\\
-            (r_\alpha \cdot u) \cdot (r_\alpha \cdot v) = u \cdot v &\qquad (r_\alpha \cdot u) \times (r_\alpha \cdot v) = u \times v\\
+            u \cdot (r_\frac{\pi}{2} (u)) = 0 &\qquad u \times (r_\frac{\pi}{2} (u)) = |u|^2\\
+            (r_\alpha (u)) \cdot (r_\alpha (v)) = u \cdot v &\qquad (r_\alpha (u)) \times (r_\alpha (v)) = u \times v\\
             u \cdot (x \cdot v + w) = x \cdot (u \cdot v) + (u \cdot w) &\qquad u \times (x \cdot v + w) = x \cdot (u \times v) + (u \times w).
             \end{split}$$
         </li>
         <li>
             $$\begin{split}
-            u \times v &= (r_\frac{\pi}{2} \cdot u) \cdot v\\
+            u \times v &= (r_\frac{\pi}{2} (u))^\star \cdot v\\
             |u \cdot v|^2 + |u \times v|^2 &= |u|^2 \cdot |v|^2.    
             \end{split}$$
         </li>
     </ul>
     
+    <h1>Goniometria</h1>
+    
+    <ul>
+        <p>
+            Siano
+            $$\begin{split}
+            r_\alpha \cdot u = a \cdot u + b \cdot (r_\frac{\pi}{2} \cdot u).
+            \end{split}$$
+        </p>
+        <li>
+            Si dice coseno di \(\alpha\) il valore \(a := \cos(\alpha)\).
+        </li>
+        <li>
+            Si dice seno di \(\alpha\) il valore \(b := \sin(\alpha)\).
+        </li>
+        <li>
+            $$\begin{split}
+            \cos(\alpha + \beta) &= \cos(\alpha) \cdot \cos(\beta) - \sin(\alpha) \cdot \sin(\beta)\\
+            \sin(\alpha + \beta) &= \sin(\alpha) \cdot \cos(\beta) + \cos(\alpha) \cdot \sin(\beta).
+            \end{split}$$
+        </li>
+        <li>
+            $$\begin{split}
+            \cos(\alpha) \cdot \cos(\beta) &= \frac{\cos(\alpha + \beta) + \cos(\alpha - \beta)}{2}\\
+            \sin(\alpha) \cdot \cos(\beta) &= \frac{\sin(\alpha + \beta) + \sin(\alpha - \beta)}{2}\\
+            \sin(\alpha) \cdot \sin(\beta) &= \frac{\cos(\alpha - \beta) - \cos(\alpha + \beta)}{2.}
+            \end{split}$$
+        </li>
+        <li>
+            $$\begin{split}
+            \cos(\alpha) + \cos(\beta) &= 2 \cdot \left(\cos\left(\frac{\alpha + \beta}{2}\right) \cdot \cos\left(\frac{\alpha - \beta}{2}\right)\right)\\
+            \cos(\alpha) - \cos(\beta) &= 2 \cdot \left(\sin\left(\frac{\alpha + \beta}{2}\right) \cdot \sin\left(\frac{\alpha - \beta}{2}\right)\right)\\
+            \sin(\alpha) + \sin(\beta) &= 2 \cdot \left(\sin\left(\frac{\alpha + \beta}{2}\right) \cdot \cos\left(\frac{\alpha - \beta}{2}\right)\right).
+            \end{split}$$
+        </li>
+    </ul>
+
 </body>

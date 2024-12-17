@@ -67,20 +67,39 @@
             c \le \min(a, b) &\longleftrightarrow (c \le a) \land (c \le b)\\
             \max(a, b) \le c &\longleftrightarrow (a \le c) \land (b \le c)\\
             c \le \max(a, b) &\longleftrightarrow (c \le a) \lor (c \le b)\\
-            \min(a, b) \le c&\longleftrightarrow (a \le c) \lor (b \le c).
+            \min(a, b) \le c &\longleftrightarrow (a \le c) \lor (b \le c).
             \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+            <div id="bottone0" class="hidden">
+                Trattare separatamente i casi \(a < b\), \(a = b\), \(a > b\).
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento0')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento0" class="hidden">
+                Questa proprietà si estende per induzione a
+                $$\begin{split}
+                c \le \min(a_k: k \in n) &\longleftrightarrow \forall k \in n\,, (c \le a_k)\\
+                c \ge \max(a_k: k \in n) &\longleftrightarrow \forall k \in n\,, (c \ge a_k)\\
+                c \le \max(a_k: k \in n) &\longleftrightarrow \exists k \in n\,, (c \le a_k)\\
+                c \ge \min(a_k: k \in n) &\longleftrightarrow \exists k \in n\,, (c \ge a_k).
+                \end{split}$$
+            </div>
+        </div>
         <li>
             $$\begin{split}
-            a \subseteq b &\longrightarrow \min(a) > \min(b)\\
-            a \subseteq b &\longrightarrow \max(a) < \max(b).
+            \{a, b\} &= \{\min (a, b), \max (a, b)\}\\
+            \max(a, b) + \min(a, b) &= a + b.
             \end{split}$$
         </li>
-        <li>
-            $$\begin{split}
-            \max(a, b) + \min(a, b) = a + b.
-            \end{split}$$
-        </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+            <div id="bottone1" class="hidden">
+                Trattare separatamente i casi \(a < b\), \(a = b\), \(a > b\).
+            </div>
+        </div>
     </ul>
 
     <h1>Divisione Euclidea</h1>
@@ -144,6 +163,14 @@
             (b \cdot c \% a \cdot c) &= (b \% a) \cdot c.
             \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+            <div id="bottone2" class="hidden">
+                $$\begin{split}
+                b + c = a \cdot (b /\!/ a + c /\!/ a) + (b \% a + b \% a)\\
+                \end{split}$$
+            </div>
+        </div>
         <li>
             Se \(b | a\), allora:
             $$\begin{split}
@@ -164,8 +191,13 @@
             \end{split}\right.$$
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento0')" class="bottone"><img src="../../advanced.webp"></button>
-            <div id="approfondimento0" class="hidden">
+            <button onclick="toggleTesto('bottone3')">Soluzione</button>
+            <div id="bottone3" class="hidden">
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento1')" class="bottone"><img src="../../advanced.webp"></button>
+            <div id="approfondimento1" class="hidden">
                 Questa proprietà si estende per induzione alla scrittura in una base (CONTINUA QUI).
             </div>
         </div>
@@ -199,51 +231,49 @@
             c | \operatorname{gcd}(a, b) &\longleftrightarrow c | a \land c | b\\
             \operatorname{lcm}(a, b) | c &\longleftrightarrow a | c \land b | c.
             \end{split}$$
-            <div class="divcol">
-                <div class="divrow">
-                    <button onclick="toggleTesto('prima')">Dimostrazione della prima</button>
-                    <div id="prima" class="hidden">
-                        Dimostriamo qui l'identità di Bézout. Notare che, se \(c | a\), allora
-                        $$\begin{split}
-                        c | b \longleftrightarrow c | (b % a).
-                        \end{split}$$
-                        Senza perdita di generalità \(a \le b\), per induzione si può scrivere
-                        $$\begin{split}
-                        \operatorname{gcd}(a, b) &= \operatorname{gcd}(a, b \% a)\\
-                        &= x \cdot a + y \cdot (b \% a)\\
-                        &= (x - b /\!/ a) \cdot a + (y + 1) \cdot b.
-                        \end{split}$$
-                        Da cui, se
-                        $$\begin{split}
-                        \alpha \cdot c = a\\
-                        \beta \cdot c = b,
-                        \end{split}$$
-                        allora
-                        $$\begin{split}
-                        \operatorname{gcd}(a, b) = x \cdot a + y \cdot b = (x \cdot \alpha + y \cdot \beta) \cdot c.
-                        \end{split}$$
-                    </div>
-                </div>
-                <div class="divrow">
-                    <button onclick="toggleTesto('seconda')">Dimostrazione della seconda</button>
-                    <div id="seconda" class="hidden">
-                        Siano
-                        $$\begin{split}
-                        \alpha \cdot a &= \operatorname{lcm}(a, b)\\
-                        \beta \cdot b &= \operatorname{lcm}(a, b)\\
-                        x \cdot a &= c\\
-                        y \cdot b &= c,
-                        \end{split}$$
-                        allora si ha che
-                        $$\begin{split}
-                        c \% \operatorname{lcm}(a, b) &= (x \% \alpha) \cdot a\\
-                        c \% \operatorname{lcm}(a, b) &= (x \% \beta) \cdot b,
-                        \end{split}$$
-                        il che ne fa un multiplo comune di \(a, b\), minore di \(\operatorname{lcm}(a, b)\), cioè \(0\).
-                    </div>
-                </div>
-            </div>
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('prima')">Dimostrazione della prima</button>
+            <div id="prima" class="hidden">
+                Dimostriamo qui l'identità di Bézout. Notare che, se \(c | a\), allora
+                $$\begin{split}
+                c | b \longleftrightarrow c | (b % a).
+                \end{split}$$
+                Senza perdita di generalità \(a \le b\), per induzione si può scrivere
+                $$\begin{split}
+                \operatorname{gcd}(a, b) &= \operatorname{gcd}(a, b \% a)\\
+                &= x \cdot a + y \cdot (b \% a)\\
+                &= (x - b /\!/ a) \cdot a + (y + 1) \cdot b.
+                \end{split}$$
+                Da cui, se
+                $$\begin{split}
+                \alpha \cdot c = a\\
+                \beta \cdot c = b,
+                \end{split}$$
+                allora
+                $$\begin{split}
+                \operatorname{gcd}(a, b) = x \cdot a + y \cdot b = (x \cdot \alpha + y \cdot \beta) \cdot c.
+                \end{split}$$
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('seconda')">Dimostrazione della seconda</button>
+            <div id="seconda" class="hidden">
+                Siano
+                $$\begin{split}
+                \alpha \cdot a &= \operatorname{lcm}(a, b)\\
+                \beta \cdot b &= \operatorname{lcm}(a, b)\\
+                x \cdot a &= c\\
+                y \cdot b &= c,
+                \end{split}$$
+                allora si ha che
+                $$\begin{split}
+                c \% \operatorname{lcm}(a, b) &= (x \% \alpha) \cdot a\\
+                c \% \operatorname{lcm}(a, b) &= (x \% \beta) \cdot b,
+                \end{split}$$
+                il che ne fa un multiplo comune di \(a, b\), minore di \(\operatorname{lcm}(a, b)\), cioè \(0\).
+            </div>
+        </div>
         <li>
             Definiamo 
             $$\begin{split}
@@ -251,33 +281,33 @@
             \end{split}$$
         </li>
         <li>
-            Fattorizzazione unica: se per qualunque primo \(p\) vale \(a \| p = b \| p\), allora \(a = b\).
-            <div class="divrow">
-                <button onclick="toggleTesto('terza')">Dimostrazione</button>
-                <div id="terza" class="hidden">
-                    Dimostriamo che se \(p\) è irriducibile, allora è anche primo. Questo perchè se \(p\) è irriducibile e non divide \(a, b\), allora
-                    $$\begin{split}
-                    x \cdot p + u \cdot a = 1\\
-                    y \cdot p + v \cdot b = 1.
-                    \end{split}$$
-                    Da cui
-                    $$\begin{split}
-                    \operatorname{gcd}(p, a \cdot b) | (x \cdot y \cdot p + u \cdot a \cdot y + v \cdot b \cdot x) \cdot p + (u \cdot v) \cdot a \cdot b = 1.
-                    \end{split}$$
-                    <ul>
-                        <li>
-                            Se \(a \| p = 0\) per ogni \(p < a\) primo, allora \(a\) deve essere primo:
-                        </li>
-                        <li>
-                            Se altrimenti fosse \(b | a\) allora sarebbe \(b = a\), oppure per induzione \(b\) primo o multiplo di un primo o \(b = 1\).
-                        </li>
-                        <li>
-                            Da cui \(a\) è irriducibile, quindi è primo.
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            Fattorizzazione unica: se per qualunque primo \(p\) vale \(a \| p = b \| p\), allora \(a = b\). ATTENTO QUI CHE OVERFLOW HA FATTO BRUTTO
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('terza')">Dimostrazione</button>
+            <div id="terza" class="hidden">
+                Dimostriamo che se \(p\) è irriducibile, allora è anche primo. Questo perchè se \(p\) è irriducibile e non divide \(a, b\), allora
+                $$\begin{split}
+                x \cdot p + u \cdot a = 1\\
+                y \cdot p + v \cdot b = 1.
+                \end{split}$$
+                Da cui
+                $$\begin{split}
+                \operatorname{gcd}(p, a \cdot b) | (x \cdot y \cdot p + u \cdot a \cdot y + v \cdot b \cdot x) \cdot p + (u \cdot v) \cdot a \cdot b = 1.
+                \end{split}$$
+                <ul>
+                    <li>
+                        Se \(a \| p = 0\) per ogni \(p < a\) primo, allora \(a\) deve essere primo:
+                    </li>
+                    <li>
+                        Se altrimenti fosse \(b | a\) allora sarebbe \(b = a\), oppure per induzione \(b\) primo o multiplo di un primo o \(b = 1\).
+                    </li>
+                    <li>
+                        Da cui \(a\) è irriducibile, quindi è primo.
+                    </li>
+                </ul>
+            </div>
+        </div>
         <h2>
             Esercizi:
         </h2>
@@ -291,40 +321,40 @@
             \operatorname{lcm}(a, b) \| p &= \max(a \| p, b \| p)\\
             \operatorname{gcd}(a, b) \| p &= \min(a \| p, b \| p).
             \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('quarta')">Soluzione</button>
-                <div id="quarta" class="hidden">
-                    Scriviamo
-                    $$\begin{split}
-                    a = p^{a \| p} \cdot \alpha\\
-                    b = p^{b \| p} \cdot \beta\\
-                    \operatorname{lcm}(a, b) = p^{\operatorname{lcm}(a, b) \| p} \cdot m\\
-                    \operatorname{gcd}(a, b) = p^{\operatorname{gcd}(a, b) \| p} \cdot d,
-                    \end{split}$$
-                    allora
-                    $$\begin{split}
-                    a \cdot b = p^{(a \| p) + (b \| p)} \cdot \alpha \cdot \beta.
-                    \end{split}$$
-                    Siccome si vede che
-                    $$\begin{split}
-                    \max(a \| p, b \| p) \le \operatorname{lcm}(a, b) \| p\\
-                    \operatorname{gcd}(a, b) \| p \le \min(a \| p, b \| p),
-                    \end{split}$$
-                    osserviamo che
-                    $$\begin{split}
-                    \alpha &| p^{(\operatorname{lcm}(a, b) \| p) - (a \| p)} \cdot m\\
-                    \beta &| p^{(\operatorname{lcm}(a, b) \| p) - (b \| p)} \cdot m\\
-                    d &| p^{(a \| p) - (\operatorname{gcd}(a, b) \| p)} \cdot \alpha\\
-                    d &| p^{(b \| p) - (\operatorname{gcd}(a, b) \| p)} \cdot \beta,
-                    \end{split}$$
-                    da cui, a meno di combinazioni lineari, per Bezout, \(\alpha, \beta | m\) e \(d | \alpha, \beta\). Infine concludiamo perché
-                    $$\begin{split}
-                    \operatorname{lcm}(a, b) | p^{\max(a \| p, b \| p)} \cdot m\\
-                    p^{\min(a \| p, b \| p)} \cdot d | \operatorname{gcd}(a, b).
-                    \end{split}$$
-                </div>
-            </div>
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('quarta')">Soluzione</button>
+            <div id="quarta" class="hidden">
+                Scriviamo
+                $$\begin{split}
+                a = p^{a \| p} \cdot \alpha\\
+                b = p^{b \| p} \cdot \beta\\
+                \operatorname{lcm}(a, b) = p^{\operatorname{lcm}(a, b) \| p} \cdot m\\
+                \operatorname{gcd}(a, b) = p^{\operatorname{gcd}(a, b) \| p} \cdot d,
+                \end{split}$$
+                allora
+                $$\begin{split}
+                a \cdot b = p^{(a \| p) + (b \| p)} \cdot \alpha \cdot \beta.
+                \end{split}$$
+                Siccome si vede che
+                $$\begin{split}
+                \max(a \| p, b \| p) \le \operatorname{lcm}(a, b) \| p\\
+                \operatorname{gcd}(a, b) \| p \le \min(a \| p, b \| p),
+                \end{split}$$
+                osserviamo che
+                $$\begin{split}
+                \alpha &| p^{(\operatorname{lcm}(a, b) \| p) - (a \| p)} \cdot m\\
+                \beta &| p^{(\operatorname{lcm}(a, b) \| p) - (b \| p)} \cdot m\\
+                d &| p^{(a \| p) - (\operatorname{gcd}(a, b) \| p)} \cdot \alpha\\
+                d &| p^{(b \| p) - (\operatorname{gcd}(a, b) \| p)} \cdot \beta,
+                \end{split}$$
+                da cui, a meno di combinazioni lineari, per Bezout, \(\alpha, \beta | m\) e \(d | \alpha, \beta\). Infine concludiamo perché
+                $$\begin{split}
+                \operatorname{lcm}(a, b) | p^{\max(a \| p, b \| p)} \cdot m\\
+                p^{\min(a \| p, b \| p)} \cdot d | \operatorname{gcd}(a, b).
+                \end{split}$$
+            </div>
+        </div>
         <li>
             $$\begin{split}
             \operatorname{lcm}(a, b) \cdot \operatorname{gcd}(a, b) = a \cdot b.

@@ -25,18 +25,68 @@
     <div class="navbar">
         <button onclick="location.href='Derivate in una variabile.html'">Lezione Precedente</button>
         <button onclick="location.href='../main.html'">Indice</button>
-        <button onclick="location.href='../Terza Parte/Limiti notevoli.html'">Prossima Lezione</button>
     </div>
 
     <h1>Integrali</h1>
 
     <ul>
-        L'integrale è il contrario della derivata, per cui:
-        $$\begin{split}
-        \int_a^b (\partial f (x) g (x)) d x + \int_a^b (f (x) \partial g (x)) d x + &= f (b) g (b) - f (a) g (a)\\
-        \int_{g(a)}^{g(b)} f (y) d y &= \int_a^b (f \circ g) (x) d x\\
-        \int_a^b (\partial f (f^{- 1} (x)))^{- 1} d x &= f^{- 1} (b) - f^{- 1} (a).
-        \end{split}$$
+        <li>
+            L'integrale è il contrario della derivata, per cui:
+            $$\begin{split}
+            \int_a^b (\partial f (x) g (x)) d x + \int_a^b (f (x) \partial g (x)) d x + &= f (b) g (b) - f (a) g (a)\\
+            \int_{g(a)}^{g(b)} f (y) d y &= \int_a^b (f \circ g) (x) d x\\
+            \int_a^b (\partial f (f^{- 1} (x)))^{- 1} d x &= f^{- 1} (b) - f^{- 1} (a).
+            \end{split}$$
+        </li>
+        <li>
+            <h3>
+                Fubini-Tonelli:
+            </h3>
+        </li>
+        <li>
+            <h3>
+                Integrali notevoli:
+            </h3>
+            Si riesce a calcolare che:
+            $$\begin{split}
+            \sin (x) &= \int_0^x \cos (t) d t = x - \int_0^x (x - t) \cdot \sin (t) d t\\
+            &= x + \dots + \frac{(- 1)^k x^{2 \cdot k + 1}}{(2 \cdot k + 1)!} + \dots + \frac{(- 1)^n \cdot x^{2 \cdot n + 1}}{(2 \cdot n + 1)!} + \int_0^x \frac{(- 1)^n \cdot (x - t)^{2 \cdot n + 1}}{(2 \cdot n + 1)!} \cdot \sin (t) d t\\
+            &= x + \dots + \frac{(- 1)^k \cdot x^{2 \cdot k + 1}}{(2 \cdot k + 1)!} + \dots + \frac{(- 1)^n \cdot x^{2 \cdot n + 1}}{(2 \cdot n + 1)!} + \int_0^x \frac{(- 1)^n \cdot (x - t)^{2 \cdot n + 2}}{(2 \cdot n + 2)!} \cdot \cos (t) d t\\
+            \cos (x) &= 1 - \int_0^x \sin (t) d t = 1 - \int_0^x (x - t) \cdot \cos (t) d t\\
+            &= 1 + \dots + \frac{(- 1)^k x^{2 \cdot k}}{(2 \cdot k)!} + \dots + \frac{(- 1)^n x^{2 \cdot n}}{(2 \cdot n)!} + \int_0^x \frac{(- 1)^{n + 1} \cdot (x - t)^{2 \cdot n}}{(2 \cdot n)!} \cdot \sin (t) d t\\
+            &= 1 + \dots + \frac{(- 1)^k x^{2 \cdot k}}{(2 \cdot k)!} + \dots + \frac{(- 1)^n x^{2 \cdot n}}{(2 \cdot n)!} + \int_0^x \frac{(- 1)^{n + 1} \cdot (x - t)^{2 \cdot n + 1}}{(2 \cdot n + 1)!} \cdot \cos (t) d t\\
+            \exp (x) &= 1 + \int_0^x \exp (t) d t = 1 + \dots + \frac{x^k}{k!} + \dots + \frac{x^n}{n!} + \int_0^x \frac{(x - t)^{n + 1} \cdot \exp (t)}{(n + 1)!} d t\\
+            \log (1 + x) &= \int_0^x \frac{d t}{1 + t} = \sum_{n \in {\mathbb N}} \int_0^x (- t)^n d t = \sum_{n \in {\mathbb N}} \frac{(- 1)^n x^{n + 1}}{n + 1}\\
+            \arctan (x) &= \int_0^x (1 + t^2) d t = \sum_{n \in {\mathbb N}} \int_0^x (- t^2)^n = \sum_{n \in {\mathbb N}} \frac{(- 1)^n x^{2 \cdot n + 2}}{n + 1}
+            \end{split}$$
+        </li>
+        <li>
+            Sia
+            $$\begin{split}
+            p_0 &= x\\
+            p_{n + 1} (x) &= \frac{\partial p_n (y)}{\partial y} (x) \cdot (1 + x^2).
+            \end{split}$$
+            allora
+            $$\begin{split}
+            \frac{\partial^n \tan (y)}{(\partial y)^n} (x) &= p_n (\tan (x))\\
+            \int_0^x p_n (t) d t &= p_{n - 1} (x) - p_{n - 1} (0).
+            \end{split}$$
+        </li>
     </ul>
-        
+
+    <h1>Le funzioni integrali di Eulero:</h1>
+
+    <ul>
+        <li>
+            LA BETA NON ME LA RICORDO
+            $$\begin{split}
+            \int_{\mathbb R} \exp \left(- \frac{x^2}{2}\right) d x &= \sqrt{2 \pi}\\
+            |{\mathbb S}_{n - 1}| &= \frac{2 \pi^\frac{n}{2}}{\Gamma \left(\frac{n}{2}\right)}\\
+            \beta_{a, b} &= \int_0^1 x^a (1 - x)^b d x\\
+            &= 2 \int_0^\frac{\pi}{2} \sin (x)^{2 \cdot a + 1} \cos (x)^{2 \cdot b + 1} d x\\
+            &= \frac{\Gamma (a + 1) \cdot \Gamma (b + 1)}{\Gamma (a + b + 2).}
+            \end{split}$$
+        </li>
+    </ul>
+
 </body>

@@ -162,19 +162,20 @@
             $$\begin{split}
             f(x) = \sqrt{(x - a_0)(x - a_1)}
             \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
-                <div id="bottone0" class="hidden">
-                    ha come dominio \((\infty, \min(a_0, a_1)] \cup [\max(a_0, a_1), \infty)\).
-                    $$\begin{split}
-                    x^2 - (a_0 + a_1) x + a_0 a_1 - y^2 = 0
-                    \end{split}$$
-                    ha come soluzioni:
-                    $$\begin{split}
-                    g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2}\\
-                    g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2.}
-                    \end{split}$$
-                    <ul>
+        </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+            <div id="bottone0" class="hidden">
+                ha come dominio \((\infty, \min(a_0, a_1)] \cup [\max(a_0, a_1), \infty)\).
+                $$\begin{split}
+                x^2 - (a_0 + a_1) x + a_0 a_1 - y^2 = 0
+                \end{split}$$
+                ha come soluzioni:
+                $$\begin{split}
+                g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2}\\
+                g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2.}
+                \end{split}$$
+                <ul>
                     <li>
                         Entrambe ammettono come dominio \(\mathbb R\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([0, \infty)\).
                     </li>
@@ -183,56 +184,56 @@
                     </li>
                 </ul>
             </div>
-        </li>
+        </div>
         <li>
             $$\begin{split}
             f(x) = \sqrt{- (x - a_0)(x - a_1)}
             \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
-                <div id="bottone1" class="hidden">
-                    ha come dominio \([\min(a_0, a_1), \max(a_0, a_1)]\).
-                    $$\begin{split}
-                    x^2 - (a_0 + a_1) x + a_0 a_1 + y^2 = 0
-                    \end{split}$$
-                    ha come soluzioni
-                    $$\begin{split}
-                    g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2}\\
-                    g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2.}
-                    \end{split}$$
-                    <ul>
-                        <li>
-                            Entrambe ammettono come dominio
-                            $$\left[0, \frac{|a_0 - a_1|}{2}\right]$$.
-                        </li>
-                        <li>
-                            L'immagine di \(g_0\) è \( \left[\min(a_0, a_1), \frac{a_0 + a_1}{2}\right]\), mentre quella di \(g_1\) è \(\left[\frac{a_0 + a_1}{2}, \max(a_0, a_1)\right]\).
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+            <div id="bottone1" class="hidden">
+                ha come dominio \([\min(a_0, a_1), \max(a_0, a_1)]\).
+                $$\begin{split}
+                x^2 - (a_0 + a_1) x + a_0 a_1 + y^2 = 0
+                \end{split}$$
+                ha come soluzioni
+                $$\begin{split}
+                g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2}\\
+                g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2.}
+                \end{split}$$
+                <ul>
+                    <li>
+                        Entrambe ammettono come dominio
+                        $$\left[0, \frac{|a_0 - a_1|}{2}\right]$$.
+                    </li>
+                    <li>
+                        L'immagine di \(g_0\) è \( \left[\min(a_0, a_1), \frac{a_0 + a_1}{2}\right]\), mentre quella di \(g_1\) è \(\left[\frac{a_0 + a_1}{2}, \max(a_0, a_1)\right]\).
+                    </li>
+                </ul>
+            </div>
+        </div>
         <li>
             $$f(x) = \sqrt{(x - a)^2 + b^2}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
-                <div id="bottone2" class="hidden">
-                    ha come dominio \(\mathbb R\).
-                    $$\begin{split}
-                    g_0(y) = a - \sqrt{y^2 - b^2}\\
-                    g_1(y) = a + \sqrt{y^2 - b^2.}
-                    \end{split}$$
-                    <ul>
-                        <li>
-                            Entrambe ammettono come dominio \((\infty, |b|] \cup [|b|, \infty)\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([|b|, \infty)\).
-                        </li>
-                        <li>
-                            L'immagine di \(g_0\) è \((\infty, a]\), mentre quella di \(g_1\) è \([a, \infty)\).
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+            <div id="bottone2" class="hidden">
+                ha come dominio \(\mathbb R\).
+                $$\begin{split}
+                g_0(y) = a - \sqrt{y^2 - b^2}\\
+                g_1(y) = a + \sqrt{y^2 - b^2.}
+                \end{split}$$
+                <ul>
+                    <li>
+                        Entrambe ammettono come dominio \((\infty, |b|] \cup [|b|, \infty)\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([|b|, \infty)\).
+                    </li>
+                    <li>
+                        L'immagine di \(g_0\) è \((\infty, a]\), mentre quella di \(g_1\) è \([a, \infty)\).
+                    </li>
+                </ul>
+            </div>
+        </div>
     </ul>
     
 </body>

@@ -40,8 +40,8 @@
         <li>
             Si può mostrare che:
             $$\begin{split}
-            \partial (f g) &= (\partial f) g + f (\partial g)\\
-            \partial (f \circ g) &= ((\partial f) \circ g) \partial g\\
+            \partial (f \cdot g) &= (\partial f) \cdot g + f \cdot (\partial g)\\
+            \partial (f \circ g) &= ((\partial f) \circ g) \cdot \partial g\\
             \partial (f^{- 1}) &= 1 / ((\partial f) \circ (f^{- 1})).
             \end{split}$$
         </li>
@@ -63,7 +63,7 @@
         <li>
             Mostra che una funzione \(f\) crescente se e solo se
             $$\begin{split}
-            \forall x < y, \quad \frac{f(y) - f(x)}{y - x} > 0.
+            \forall x < y, \quad (f(y) - f(x)) \cdot (y - x) > 0.
             \end{split}$$
         </li>
         <li>
@@ -83,6 +83,98 @@
         </li>
         <li>
             Mostra che una funzione è convessa se e solo se il suo rapporto incrementale è monotono.
+        </li>
+    </ul>
+
+    <h1>Derivate notevoli</h1>
+
+    <ul>
+        <li>
+            Si riesce a calcolare che:
+            $$\begin{split}
+            \frac{\partial \sin(y)}{\partial y}(x) &= \cos(x)\\
+            \frac{\partial \cos(y)}{\partial y}(x) &= - \sin(x)\\
+            \frac{\partial \exp(y)}{\partial y}(x) &= \exp(x)\\
+            \frac{\partial \log(1 + y)}{\partial y}(x) &= \frac{1}{1 + x}\\
+            \frac{\partial y^a}{\partial y}(x) &= a \cdot x^{a - 1}.
+            \end{split}$$
+        </li>
+        <li>
+            Continuando per induzione:
+            $$\begin{split}
+            \frac{\partial^{2 \cdot n} \sin(y)}{(\partial y)^{2 \cdot n}}(x) &= (- 1)^n \sin(x)\\
+            \frac{\partial^{2 \cdot n} \cos(y)}{(\partial y)^{2 \cdot n}}(x) &= (- 1)^n \cos(x)\\
+            \frac{\partial^n \exp(y)}{(\partial y)^n}(x) &= \exp(x)\\
+            \frac{\partial^n \log(1 + y)}{(\partial y)^n}(x) &= \frac{(- 1)^{n - 1} (n - 1)!}{(1 + x)^n}\\
+            \frac{\partial^n y^a}{(\partial y)^n}(x) &= a \cdot (a - k + 1) \cdot (a - n + 1) \cdot x^{a - n}.
+            \end{split}$$
+        </li>
+    </ul>
+
+    <h1>Studio di funzione</h1>
+
+    <ul>
+        <li>
+            Si definiscono:
+            $$\begin{split}
+            \tan(x) &= \frac{\sin(x)}{\cos(x)}\\
+            \cot(x) &= \frac{\cos(x)}{\sin(x).}
+            \end{split}$$
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            Mostra che sono bigettive:
+            $$\begin{split}
+            \cos:& [0, \pi] \rightarrow [- 1, 1]\\
+            \sin:& \left[- \frac{\pi}{2}, \frac{\pi}{2}\right] \rightarrow [- 1, 1]\\
+            \tan:& \left(- \frac{\pi}{2}, \frac{\pi}{2}\right) \rightarrow {\mathbb R}\\
+            \cot:& (0, \pi) \rightarrow {\mathbb R}
+            \end{split}$$
+        </li>
+        <li>
+            Determina poi se sono pari, dispari, periodiche, monotone.
+        </li>
+        <li>
+            Determina poi se le loro inverse sono pari, dispari, periodiche, monotone.
+        </li>
+    </ul>
+
+    <h1>Funzioni iperboliche</h1>
+
+    <ul>
+        <li>
+            Si definiscono:
+            $$\begin{split}
+            \cosh(x) &= \frac{\exp(x) + \exp(- x)}{2}\\
+            \sinh(x) &= \frac{\exp(x) - \exp(- x)}{2.}
+            \end{split}$$
+        </li>
+        <li>
+            Si definiscono:
+            $$\begin{split}
+            \tanh(x) &= \frac{\sinh(x)}{\cosh(x)}\\
+            \coth(x) &= \frac{\cosh(x)}{\sinh(x).}
+            \end{split}$$
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            Mostra che sono bigettive:
+            $$\begin{split}
+            \cosh:& {\mathbb R} \rightarrow {\mathbb R}_+\\
+            \sinh:& {\mathbb R} \rightarrow {\mathbb R}\\
+            \tanh:& {\mathbb R} \rightarrow [- 1, 1]\\
+            \coth:& {\mathbb R} \setminus \{0\} \rightarrow {\mathbb R} \setminus [-1, 1].
+            \end{split}$$
+        </li>
+        <li>
+            Determina poi se sono pari, dispari, periodiche, monotone.
+        </li>
+        <li>
+            Calcola le loro inverse e determina se sono pari, dispari, periodiche, monotone.
         </li>
     </ul>
 

@@ -39,42 +39,38 @@
             con tutti i coefficienti \(a_n, \dots, a_k, \dots, a_0\) costanti.
         </li>
         <li>
-            <p>
-                Se \(a_n = 0\) si può scrivere
-                $$\begin{split}
-                a (x) = a_{n - 1} \cdot x^{n - 1} + \dots + a_k \cdot x^k + \dots + a_0,
-                \end{split}$$
-                altrimenti si dice che \(n = \deg (a)\) è il grado del polinomio.
-            </p>
+            Se \(a_n = 0\) si può scrivere
+            $$\begin{split}
+            a (x) = a_{n - 1} \cdot x^{n - 1} + \dots + a_k \cdot x^k + \dots + a_0,
+            \end{split}$$
+            altrimenti si dice che \(n = \deg (a)\) è il grado del polinomio.
         </li>
         <li>
             Se \(a, b\) sono due polinomi, si può sempre scrivere \(a = q \cdot b + r\) con \(\deg (r) < \deg (b)\).
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
-                <div id="bottone0" class="hidden">
-                    Basta notare che, se \(\deg (b) \le \deg (a)\), detto
-                    $$\begin{split}
-                    c (x) = a (x) - \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}} \cdot b (x),
-                    \end{split}$$
-                    si ha \(\deg (c) < \deg (a)\) e quindi, per induzione
-                    $$\begin{split}
-                    a (x) &= c (x) + \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}} \cdot b (x)\\
-                    &= \left(q (x) + \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}}\right) \cdot b (x) + r (x).
-                    \end{split}$$
-                </div>
-            </div>
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+            <div id="bottone0" class="hidden">
+                Basta notare che, se \(\deg (b) \le \deg (a)\), detto
+                $$\begin{split}
+                c (x) = a (x) - \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}} \cdot b (x),
+                \end{split}$$
+                si ha \(\deg (c) < \deg (a)\) e quindi, per induzione
+                $$\begin{split}
+                a (x) &= c (x) + \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}} \cdot b (x)\\
+                &= \left(q (x) + \frac{a_{\deg (a)}}{b_{\deg (b)}} \cdot x^{{\deg (a)} - b_{\deg (b)}}\right) \cdot b (x) + r (x).
+                \end{split}$$
+            </div>
+        </div>
         <li>
-            <p>
-                Il teorema di Ruffini afferma che un polinomio \(p\) è multiplo di \(x - \alpha\) se e solo se \(p (\alpha) = 0\).
-            </p>
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone1')">Dimostrazione:</button>
-                <div id="bottone1" class="hidden">
-                    Infatti si può scrivere \(p (x) = q (x) \cdot (x - \alpha) + p (\alpha)\). 
-                </div>
-            </div>
+            Il teorema di Ruffini afferma che un polinomio \(p\) è multiplo di \(x - \alpha\) se e solo se \(p (\alpha) = 0\).
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone1')">Dimostrazione:</button>
+            <div id="bottone1" class="hidden">
+                Infatti si può scrivere \(p (x) = q (x) \cdot (x - \alpha) + p (\alpha)\). 
+            </div>
+        </div>
     </ul>
 
     <h1>Fattoriale</h1>
@@ -90,22 +86,22 @@
             $$\begin{split}
             \frac{(a + b - 1)!}{(a - 1)! \cdot b!} + \frac{(a + b - 1)!}{a! \cdot (b - 1)!} = \frac{(a + b)!}{a! \cdot b!}
             \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone2')">Dimostrazione:</button>
-                <div id="bottone2" class="hidden">
-                </div>
-            </div>
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone2')">Dimostrazione:</button>
+            <div id="bottone2" class="hidden">
+            </div>
+        </div>
         <li>
             $$\begin{split}
             (x + 1)^n = x^n + \dots + \frac{n!}{(n - k)! \cdot k!} \cdot x^k + \dots + 1
             \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone3')">Dimostrazione:</button>
-                <div id="bottone3" class="hidden">
-                </div>
-            </div>
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone3')">Dimostrazione:</button>
+            <div id="bottone3" class="hidden">
+            </div>
+        </div>
         <div class="divrow">
             <button onclick="toggleTesto('approfondimento0')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
             <div id="approfondimento0" class="hidden">
@@ -114,38 +110,28 @@
                 &= 1 + \dots + \frac{(k + m - 1)!}{k! \cdot (m - 1)!} + \dots + \frac{(n + m - 1)!}{n! \cdot (m - 1)!}\\
                 &= \frac{(n + d - 1)!}{n! \cdot (d - 1)!} + \dots + \frac{(k + m - d)!}{k! \cdot (m - d)!} \cdot \frac{(n - k + d - 1)!}{(n - k)! \cdot (d - 1)!} + \dots + \frac{(n + m - d)!}{n! \cdot (m - d)!}\\
                 \end{split}$$        
-                <div class="divrow">
-                    <button onclick="toggleTesto('bottone4')">Dimostrazione:</button>
-                    <div id="bottone4" class="hidden">
-                    </div>
-                </div>
             </div>
         </div>
         <li>
             $$\begin{split}
             (x^n + \dots + x^k + \dots + 1) \cdot (x - 1) = x^{n + 1} - 1
             \end{split}$$
-            <div class="divrow">
-                <button onclick="toggleTesto('bottone5')">Dimostrazione:</button>
-                <div id="bottone5" class="hidden">
-                </div>
-            </div>
         </li>
-            <div class="divrow">
-                <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-                <div id="approfondimento1" class="hidden">
-                    $$\begin{split}
-                    (x^n + \dots + x^k + \dots + 1) \cdot (1 - x) + x^{n + 1} &= 1\\
-                    \left(\frac{(n + m)!}{n! \cdot m!} \cdot x^n + \dots + \frac{(k + m)!}{k! \cdot m!} \cdot x^k + \dots + 1\right) \cdot (1 - x)^{d + 1} + x^{n + 1} \left(\frac{(n + m)!}{n! \cdot m!} (1 - x)^d + \dots + \frac{(n + k)!}{n! \cdot k!} (1 - x)^{k + d - m} + \dots + \frac{(n + m - d)!}{n! \cdot (m - d)!}\right) &= 1\\
-                    \left(\frac{(n + m)!}{n! \cdot m!} \cdot x^n + \dots + \frac{(k + m)!}{k! \cdot m!} \cdot x^k + \dots + 1\right) \cdot (1 - x)^{m + 1} + x^{n + 1} \left(\frac{(n + m)!}{n! \cdot m!} (1 - x)^m + \dots + \frac{(n + k)!}{n! \cdot k!} (1 - x)^k + \dots + 1\right) &= 1.
-                    \end{split}$$
-                    <div class="divrow">
-                        <button onclick="toggleTesto('bottone6')">Dimostrazione:</button>
-                        <div id="bottone6" class="hidden">
-                        </div>
-                    </div>
-                </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone5')">Dimostrazione:</button>
+            <div id="bottone5" class="hidden">
             </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento1" class="hidden">
+                $$\begin{split}
+                (x^n + \dots + x^k + \dots + 1) \cdot (1 - x) + x^{n + 1} &= 1\\
+                \left(\frac{(n + m)!}{n! \cdot m!} \cdot x^n + \dots + \frac{(k + m)!}{k! \cdot m!} \cdot x^k + \dots + 1\right) \cdot (1 - x)^{d + 1} + x^{n + 1} \left(\frac{(n + m)!}{n! \cdot m!} (1 - x)^d + \dots + \frac{(n + k)!}{n! \cdot k!} (1 - x)^{k + d - m} + \dots + \frac{(n + m - d)!}{n! \cdot (m - d)!}\right) &= 1\\
+                \left(\frac{(n + m)!}{n! \cdot m!} \cdot x^n + \dots + \frac{(k + m)!}{k! \cdot m!} \cdot x^k + \dots + 1\right) \cdot (1 - x)^{m + 1} + x^{n + 1} \left(\frac{(n + m)!}{n! \cdot m!} (1 - x)^m + \dots + \frac{(n + k)!}{n! \cdot k!} (1 - x)^k + \dots + 1\right) &= 1.
+                \end{split}$$
+            </div>
+        </div>
     </ul>
 
     <h1>Fattorizazione</h1>

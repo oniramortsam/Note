@@ -1,174 +1,130 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #404080;
-    margin: 32px;
-    padding: 32px;
-    color: #333;
-}
-
-h1 {
-    color: #c0c080;
-}
-
-h2 {
-    color: #a060a0;
-}
-
-h3 {
-    color: #408080;
-}
-
-ul {
-    background-color: #b0d0b0;
-    border: 2px solid #303030;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 16px;
-    width: auto;
-}
-
-li {
-    list-style-type: square;
-    background-color: #e0f0e0;
-    padding: 8px;
-    border-radius: 8px;
-    width: auto;
-    text-wrap: nowrap;
-    overflow-x: auto;
-}
-
-.navbar {
-    background-color: #a0a0f0;
-    border: 1px solid #303030;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    padding: 4px;
-}
-
 .hidden {
-    border-radius: 8px;
-    background-color: #b0d0b0;
-    color: #804040;
-    width: 100%;
     display: none;
     padding: 8px;
-    text-align: center;
-    align-items: center;
-}
-
-.hidden ul {
-    color: #804040;
-    background-color: #b0d0b0;
-    border: none;
-    border-radius: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    padding: 0px;
-    width: auto;
-}
-
-.hidden li {
-    color: #804040;
-    list-style-type: none;
-    background-color: #b0d0b0;
-    padding: 0px;
-    width: auto;
-    text-wrap: nowrap;
-    overflow-x: auto;
-}
-
-.divrow {
-    overflow-x: auto;
-    display: flex;
-    flex-direction: row;
-    border-radius: 8px;
-    gap: 16px;
-    padding: 16px;
-    width: auto;
-    text-wrap: nowrap;
-    overflow-x: auto;
-}
-
-.divcol {
-    overflow-x: auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    gap: 16px;
-    padding: 16px;
-    width: auto;
-    text-wrap: nowrap;
-    overflow-x: auto;
-}
-
-ul .divrow {
-    background-color: #b0d0b0;
-}
-
-ul .divcol {
-    background-color: #b0d0b0;
-}
-
-li .divrow {
-    background-color: #e0f0e0;
-}
-
-li .divcol {
-    background-color: #e0f0e0;
-}
-
-.hidden .divrow {
-    background-color: #b0d0b0;
-}
-
-.hidden .divcol {
-    background-color: #b0d0b0;
-}
-
-svg {
-    width: 256px;
-    flex-shrink: 0;
+    margin: 8px;
 }
 
 button {
-    width: 128px;
-    flex-shrink: 0;
-    text-wrap: stable;
-    color: #804040;
-    background-color: #d0d080;
-    border: 1px solid #303030;
-    padding: 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 8px;
     cursor: pointer;
-    border-radius: 8px;
+    text-wrap: stable;
+    width: 128px;
+    height: 100%;
+    padding: 4px;
+    margin: 4px;
+    border-style: hidden;
+    border: solid 2px black;
+    border-radius: 4px;
+    text-align: center;
+    background-color: #aa4444;
+    color: #222222;
+    flex-shrink: 0;
 }
 
-.bottone {
-    background: none;
-    border: none;
-    padding: 0;
-    display: inline-block;
-    border-radius: 8px;
-}
-  
-.bottone img {
+button > img {
     width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: 8px;
+    height: auto;
+    padding: none;
+    margin: none;
 }
-  
+
+.navbar {
+    border: solid 2px black;
+    border-radius: 4px;
+    background-color: #6666aa;
+    text-align: center;
+    width: auto;
+}
+
+.divrow {
+    display: flex;
+    flex-direction: row;
+    background-color: #444488;
+    color: #cccccc;
+    border: solid 2px black;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 8px;
+}
+
+.divcol {
+    display: flex;
+    flex-direction: column;
+    background-color: #444488;
+    color: #cccccc;
+    border: solid 2px black;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 8px;
+}
+
+.divrow > * {
+    padding: 8px;
+    margin: 8px;
+}
+
+.divcol > * {
+    padding: 8px;
+    margin: 8px;
+}
+
+ul {
+    background-color: #448866;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+    overflow-y: auto;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 4px;
+}
+
+ul > * {
+    border: solid 2px black;
+    text-wrap: nowrap;
+    overflow-x: auto;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 4px;
+}
+
+li {
+    background-color: #cc6644;
+    color: #222222;
+}
+
+li > * {
+    border: none;
+    color: #222222;
+}
+
+p {
+    background-color: #6688cc;
+}
+
+h1, h2, h3 {
+    color: #ffeedd;
+    border: none;
+}
+
+.divrow > h3 {
+    color: #aa8822;
+}
+
+.divcol > h3 {
+    color: #aa8822;
+}
+
+canvas {
+    padding: 16px;
+    margin: 16px;
+}
+
+body {
+    padding: 32px;
+    margin: 32px;
+    background-color: #cc8822;
+}
+
+a {
+    color: #aa8822;
+}

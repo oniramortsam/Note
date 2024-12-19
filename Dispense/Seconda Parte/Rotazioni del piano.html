@@ -68,14 +68,29 @@
             \end{split}$$
             da cui otteniamo
             $$\begin{split}
-            r_{\theta_{n - 1}} \circ \dots \circ r_{\theta_k} \circ \dots \circ r_{\theta_0} = r_0.
+            r_{\theta_{n - 1}} \circ \dots \circ r_{\theta_k} \circ \dots \circ r_{\theta_0} &= r_0\\
+            \theta_{n - 1} + \dots + \theta_k + \dots + \theta_0 &= 2 \cdot \lambda \cdot \pi.
             \end{split}$$
-            Se i segmenti non si intersecano, allora (PERCHè???)
+            Diciamo che il poligono \(({\rm A}_k\!: k \in n)\) è convesso se:
             $$\begin{split}
-            \theta_{n - 1} + \dots + \theta_k + \dots + \theta_0 = 2 \pi.
+            \forall h \in n\,, \quad (y_{k + 1} - y_k) \cdot x_h + y_h \cdot (x_k - x_{k + 1}) \le y_{k + 1} \cdot x_k - y_k \cdot x_{k + 1},
             \end{split}$$
-            Se il poligono identificato da tali punti è convesso, allora \(\theta_k > 0\) (PERCHè???).
+            o equivalentemente, se
+            $$\begin{split}
+            \forall h \in n\,, \quad ({\rm A}_{k + 1} - {\rm A}_k) \times ({\rm A}_h - {\rm A}_k) \ge 0.
+            \end{split}$$
+            In tal caso abbiamo necessariamente
+            $$\left\{\begin{split}
+            \forall k \in n\,, \theta_k &> 0\\
+            \lambda &= 1.
+            \end{split}\right.$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+            <div id="bottone0" class="hidden">
+                Boh, questa è impegnativa.
+            </div>
+        </div>
         <h2>
             Esercizi:
         </h2>
@@ -106,6 +121,11 @@
         <li>
             Dati due segmenti orientati, esiste una unica trasformazione conforme che manda l'uno nell'altro.
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone1')">Soluzioni:</button>
+            <div id="bottone1" class="hidden">
+            </div>
+        </div>
     </ul>
     
     <h1>Prodotto scalare e vettoriale</h1>
@@ -135,12 +155,22 @@
             u \cdot (x \cdot v + w) = x \cdot (u \cdot v) + (u \cdot w) &\qquad u \times (x \cdot v + w) = x \cdot (u \times v) + (u \times w).
             \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone2')">Soluzioni:</button>
+            <div id="bottone2" class="hidden">
+            </div>
+        </div>
         <li>
             $$\begin{split}
             u \times v &= (r_\frac{\pi}{2} (u))^\star \cdot v\\
             |u \cdot v|^2 + |u \times v|^2 &= |u|^2 \cdot |v|^2.    
             \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone3')">Soluzioni:</button>
+            <div id="bottone3" class="hidden">
+            </div>
+        </div>
     </ul>
     
     <h1>Goniometria</h1>
@@ -164,6 +194,11 @@
             \sin(\alpha + \beta) &= \sin(\alpha) \cdot \cos(\beta) + \cos(\alpha) \cdot \sin(\beta).
             \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone4')">Dimostrazione:</button>
+            <div id="bottone4" class="hidden">
+            </div>
+        </div>
         <li>
             $$\begin{split}
             \cos(\alpha) \cdot \cos(\beta) &= \frac{\cos(\alpha + \beta) + \cos(\alpha - \beta)}{2}\\
@@ -171,6 +206,11 @@
             \sin(\alpha) \cdot \sin(\beta) &= \frac{\cos(\alpha - \beta) - \cos(\alpha + \beta)}{2.}
             \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone5')">Dimostrazione:</button>
+            <div id="bottone5" class="hidden">
+            </div>
+        </div>
         <li>
             $$\begin{split}
             \cos(\alpha) + \cos(\beta) &= 2 \cdot \left(\cos\left(\frac{\alpha + \beta}{2}\right) \cdot \cos\left(\frac{\alpha - \beta}{2}\right)\right)\\
@@ -178,6 +218,11 @@
             \sin(\alpha) + \sin(\beta) &= 2 \cdot \left(\sin\left(\frac{\alpha + \beta}{2}\right) \cdot \cos\left(\frac{\alpha - \beta}{2}\right)\right).
             \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone6')">Dimostrazione:</button>
+            <div id="bottone6" class="hidden">
+            </div>
+        </div>
     </ul>
 
 </body>

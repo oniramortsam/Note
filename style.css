@@ -11,17 +11,17 @@
     --palette-celes-D: #1B98E0;
     --palette-celes-E: #E8F1F2;
 
+    --palette-green-A: #4F9D69;
+    --palette-green-B: #68D89B;
+    --palette-green-C: #8DFFCD;
+    --palette-green-D: #BCFFDB;
+    --palette-green-E: #BEE6CE;
+
     --palette-color-A: #513B56;
     --palette-color-B: #525174;
     --palette-color-C: #348AA7;
     --palette-color-D: #5DD39E;
     --palette-color-E: #BCE784;
-}
-
-.hidden {
-    display: none;
-    padding: 8px;
-    margin: 8px;
 }
 
 button {
@@ -88,7 +88,7 @@ button > img {
     margin: 8px;
 }
 
-ul {
+body > ul {
     background-color: var(--palette-color-B);
     border: solid 2px var(--palette-brown-A);
     display: flex;
@@ -99,12 +99,12 @@ ul {
     border-radius: 4px;
 }
 
-ul > * {
+body > ul > * {
     text-wrap: nowrap;
-    overflow-x: auto;
     padding: 8px;
     margin: 8px;
     border-radius: 4px;
+    overflow-x: auto;
 }
 
 li {
@@ -119,9 +119,33 @@ li > * {
     color: var(--palette-brown-A);
 }
 
-p {
+ul > p {
     border: none;
     color: var(--palette-brown-E);
+}
+
+.hidden {
+    display: none;
+    padding: 8px;
+    margin: 8px;
+}
+
+.hidden > ul {
+    border: none;
+    background-color: var(--palette-brown-D);
+    color: var(--palette-brown-A);
+}
+
+.hidden > ul > li {
+    border: none;
+    background-color: var(--palette-brown-D);
+    color: var(--palette-brown-A);
+}
+
+.hidden > ul > li > * {
+    border: none;
+    background-color: var(--palette-brown-D);
+    color: var(--palette-brown-A);
 }
 
 h1 {

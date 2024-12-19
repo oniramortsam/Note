@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento0')" class="bottone"><img src="../../advanced.webp"></button>
+            <button onclick="toggleTesto('approfondimento0')"><img src="../../advanced.webp"></button>
             <div id="approfondimento0" class="hidden">
                 Questa proprietà si estende per induzione a
                 $$\begin{split}
@@ -232,16 +232,20 @@
             </div>
         </div>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento1')" class="bottone"><img src="../../advanced.webp"></button>
+            <button onclick="toggleTesto('approfondimento1')"><img src="../../advanced.webp"></button>
             <div id="approfondimento1" class="hidden">
                 Questa proprietà si estende per induzione alla scrittura in una base, supponiamo
                 $$\begin{split}
                 \forall n \in \mathbb N, \quad a_n | a_{n + 1},
                 \end{split}$$
                 allora, \(x \in \mathbb N\) si scrive in modo unico come
-                $$\begin{split}
+                $$\left\{\begin{split}
                 x = \sum_{n \in \mathbb N} a_n \cdot x_n\\
                 x_n < a_{n + 1} /\!/ a_n.
+                \end{split}\right.$$
+                Ed in particolare si ha
+                $$\begin{split}
+                x_n = (x \% a_{n + 1}) /\!/ a_n.
                 \end{split}$$
             </div>
         </div>
@@ -277,8 +281,8 @@
             \end{split}$$
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('prima')">Dimostrazione della prima</button>
-            <div id="prima" class="hidden">
+            <button onclick="toggleTesto('bottone4')">Dimostrazione della prima</button>
+            <div id="bottone4" class="hidden">
                 Dimostriamo qui l'identità di Bézout. Notare che, se \(c | a\), allora
                 $$\begin{split}
                 c | b \longleftrightarrow c | (b % a).
@@ -301,8 +305,8 @@
             </div>
         </div>
         <div class="divrow">
-            <button onclick="toggleTesto('seconda')">Dimostrazione della seconda</button>
-            <div id="seconda" class="hidden">
+            <button onclick="toggleTesto('bottone5')">Dimostrazione della seconda</button>
+            <div id="bottone5" class="hidden">
                 Siano
                 $$\begin{split}
                 \alpha \cdot a &= \operatorname{lcm}(a, b)\\
@@ -328,8 +332,8 @@
             Fattorizzazione unica: se per qualunque primo \(p\) vale \(a \| p = b \| p\), allora \(a = b\). ATTENTO QUI CHE OVERFLOW HA FATTO BRUTTO
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('terza')">Dimostrazione</button>
-            <div id="terza" class="hidden">
+            <button onclick="toggleTesto('bottone6')">Dimostrazione</button>
+            <div id="bottone6" class="hidden">
                 Dimostriamo che se \(p\) è irriducibile, allora è anche primo. Questo perchè se \(p\) è irriducibile e non divide \(a, b\), allora
                 $$\begin{split}
                 x \cdot p + u \cdot a = 1\\
@@ -367,8 +371,8 @@
             \end{split}$$
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('quarta')">Soluzione</button>
-            <div id="quarta" class="hidden">
+            <button onclick="toggleTesto('bottone7')">Soluzione</button>
+            <div id="bottone7" class="hidden">
                 Scriviamo
                 $$\begin{split}
                 a = p^{a \| p} \cdot \alpha\\
@@ -404,6 +408,12 @@
             \operatorname{lcm}(a, b) \cdot \operatorname{gcd}(a, b) = a \cdot b.
             \end{split}$$
         </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone8')">Soluzione</button>
+            <div id="bottone8" class="hidden">
+                Segue dall'esercizio precedente e dalla Fattorizzazione unica.
+            </div>
+        </div>
     </ul>
 
 </body>

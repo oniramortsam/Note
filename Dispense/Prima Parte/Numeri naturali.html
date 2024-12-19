@@ -159,15 +159,22 @@
             $$\begin{split}
             ((b \% a) + (c \% a)) \% a &= (b + c) \% a\\
             ((b \% a) \cdot (c \% a)) \% a &= (b \cdot c) \% a\\
-            (b \cdot c /\!/ a \cdot c) &= (b \% a) \cdot c\\
-            (b \cdot c \% a \cdot c) &= (b \% a) \cdot c.
+            (b \cdot c) /\!/ (a \cdot c) &= (b /\!/ a) \cdot c\\
+            (b \cdot c) \% (a \cdot c) &= (b \% a) \cdot c.
             \end{split}$$
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone2')">Soluzione:</button>
             <div id="bottone2" class="hidden">
+                Per il primo ed il secondo notiamo che:
                 $$\begin{split}
-                b + c = a \cdot (b /\!/ a + c /\!/ a) + (b \% a + b \% a)\\
+                b + c &= a \cdot (b /\!/ a + c /\!/ a) + (b \% a + b \% a)\\
+                b \cdot c &= a \cdot (a \cdot b /\!/ a \cdot c /\!/ a + b \% a \cdot c /\!/ a + b /\!/ a \cdot c \% a) + (b \% a \cdot b \% a).
+                \end{split}$$
+                Per il terzo ed il quarto notiamo che:
+                $$\begin{split}
+                (b \cdot c) &= (b /\!/ a) \cdot (a \cdot c) + (b \% a) \cdot c\\
+                (b \% a) \cdot c &< a \cdot c.
                 \end{split}$$
             </div>
         </div>
@@ -191,14 +198,51 @@
             \end{split}\right.$$
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('bottone3')">Soluzione</button>
+            <button onclick="toggleTesto('bottone3')">Soluzione:</button>
             <div id="bottone3" class="hidden">
+                Notiamo che, usando l'esercizio precedente,
+                $$\begin{split}
+                c \% b &= (a \cdot (c /\!/ a) + (c \% a)) \% b =\\
+                &= (a \cdot (c /\!/ a)) \% b + (c \% a) \% b =\\
+                &= (c \% a) \% b.
+                \end{split}$$
+                Da cui:
+                $$\begin{split}
+                c = a \cdot (c /\!/ a) + b \cdot ((c \% a) /\!/ b) + c \% b.
+                \end{split}$$
+                Viceversa, se
+                $$\begin{split}
+                a \cdot x + b \cdot y + z = a \cdot (c /\!/ a) + b \cdot ((c \% a) /\!/ b) + c \% b,
+                \end{split}$$
+                allora da \(z < b\) segue \(z = c \% b\) e
+                $$\begin{split}
+                (a /\!/ b) \cdot x + y = (a /\!/ b) \cdot (c /\!/ a) + ((c \% a) /\!/ b).
+                \end{split}$$
+                Per concludere è sufficiente notare che
+                $$\begin{split}
+                y &< a /\!/ b\\
+                (c \% a) /\!/ b &< a /\!/ b,
+                \end{split}$$
+                da cui
+                $$\begin{split}
+                y &= ((a /\!/ b) \cdot x + y) \% (a /\!/ b)\\
+                &= ((a /\!/ b) \cdot (c /\!/ a) + ((c \% a) /\!/ b)) \% (a /\!/ b)\\
+                &= (c \% a) /\!/ b.
+                \end{split}$$
             </div>
         </div>
         <div class="divrow">
             <button onclick="toggleTesto('approfondimento1')" class="bottone"><img src="../../advanced.webp"></button>
             <div id="approfondimento1" class="hidden">
-                Questa proprietà si estende per induzione alla scrittura in una base (CONTINUA QUI).
+                Questa proprietà si estende per induzione alla scrittura in una base, supponiamo
+                $$\begin{split}
+                \forall n \in \mathbb N, \quad a_n | a_{n + 1},
+                \end{split}$$
+                allora, \(x \in \mathbb N\) si scrive in modo unico come
+                $$\begin{split}
+                x = \sum_{n \in \mathbb N} a_n \cdot x_n\\
+                x_n < a_{n + 1} /\!/ a_n.
+                \end{split}$$
             </div>
         </div>
     </ul>

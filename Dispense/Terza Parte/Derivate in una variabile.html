@@ -32,39 +32,41 @@
 
     <ul>
         <li>
-            Si dice che una funzione \(f\) è derivabile in \(x\) se esiste il limite del rapporto incrementale
-            $$\begin{split}
-            \frac{\partial f(y)}{\partial y}(x) = \lim_{y \rightarrow x} \frac{f(y) - f(x)}{y - x.}
-            \end{split}$$
+            Si dice che una funzione \({\rm f}\) è derivabile su \({\rm x}\) se esiste il limite del rapporto incrementale
+            \begin{split}
+            \frac{\partial{\rm f}({\rm y})}{\partial{\rm y}}({\rm x})=\lim_{{\rm y}\rightarrow{\rm x}}\frac{{\rm f}({\rm y})-{\rm f}({\rm x})}{{\rm y}-{\rm x}.}
+            \end{split}
+            In tal caso diciamo che \({\rm x}\) è nel dominio di \(\nabla{\rm f}\)
+            \begin{split}
+            \nabla{\rm f}({\rm x})=\frac{\partial{\rm f}({\rm y})}{\partial{\rm y}}({\rm x}).
+            \end{split}
         </li>
         <li>
             Si può mostrare che:
-            $$\begin{split}
-            \partial (f \cdot g) &= (\partial f) \cdot g + f \cdot (\partial g)\\
-            \partial (f \circ g) &= ((\partial f) \circ g) \cdot \partial g\\
-            \partial (f^{- 1}) &= 1 / ((\partial f) \circ (f^{- 1})).
-            \end{split}$$
+            \begin{split}
+            \nabla({\rm f}\cdot{\rm g})&=(\nabla{\rm f})\cdot{\rm g}+{\rm f}\cdot(\nabla{\rm g})\\
+            \nabla({\rm f}\circ{\rm g})&=((\nabla{\rm f})\circ{\rm g})\cdot\nabla{\rm g}\\
+            \nabla({\rm f}^{-1}) &=1/((\nabla{\rm f})\circ({\rm f}^{-1})).
+            \end{split}
         </li>
         <li>
-            Si dice che una funzione \(f\) è crescente se
-            $$\begin{split}
-            \forall x < y, \quad f(x) < f(y).
-            \end{split}$$
+            Si dice che una funzione \({\rm f}\) è crescente se
+            \begin{split}
+            \forall{\rm x}<{\rm y}\,,\quad{\rm f}({\rm x})<{\rm f}({\rm y}).
+            \end{split}
         </li>
         <li>
-            Si dice che una funzione \(f\) è convessa se
-            $$\begin{split}
-            \forall x < y < z, \quad f(y) < \left(\frac{z - y}{z - x}\right) f(x) + \left(\frac{y - x}{z - x}\right) f(z).
-            \end{split}$$
+            Si dice che una funzione \({\rm f}\) è convessa se
+            \begin{split}
+            \forall{\rm x}<{\rm y}<{\rm z}\,,\quad{\rm f}({\rm y})<\left(\frac{{\rm z}-{\rm y}}{{\rm z}-{\rm x}}\right){\rm f}({\rm x})+\left(\frac{{\rm y}-{\rm x}}{{\rm z}-{\rm x}}\right){\rm f}({\rm z}).
+            \end{split}
         </li>
-        <h2>
-            Esercizi:
-        </h2>
+        <h2>Esercizi:</h2>
         <li>
-            Mostra che una funzione \(f\) crescente se e solo se
-            $$\begin{split}
-            \forall x < y, \quad (f(y) - f(x)) \cdot (y - x) > 0.
-            \end{split}$$
+            Mostra che una funzione \({\rm f}\) crescente se e solo se
+            \begin{split}
+            \forall{\rm x}<{\rm y}\,,\quad({\rm f}({\rm y})-{\rm f}({\rm x}))\cdot({\rm y}-{\rm x})>0.
+            \end{split}
         </li>
         <li>
             Mostra che una funzione è crescente se e solo se il suo rapporto incrementale è positivo.
@@ -73,10 +75,10 @@
             Mostra che una funzione è crescente se e solo se la sua derivata è positiva.
         </li>
         <li>
-            Mostra che una funzione \(f\) è convessa se e solo se
-            $$\begin{split}
-            \forall x < y < z, \quad \frac{f(y) - f(x)}{y - x} < \frac{f(z) - f(y)}{z - y.}
-            \end{split}$$
+            Mostra che una funzione \({\rm f}\) è convessa se e solo se
+            \begin{split}
+            \forall{\rm x}<{\rm y}<{\rm z}\,,\quad\frac{{\rm f}({\rm y})-{\rm f}({\rm x})}{{\rm y}-{\rm x}}<\frac{{\rm f}({\rm z})-{\rm f}({\rm y})}{{\rm z}-{\rm y}.}
+            \end{split}
         </li>
         <li>
             Mostra che una funzione è convessa se e solo se la sua derivata è crescente.
@@ -91,23 +93,23 @@
     <ul>
         <li>
             Si riesce a calcolare che:
-            $$\begin{split}
-            \frac{\partial \sin(y)}{\partial y}(x) &= \cos(x)\\
-            \frac{\partial \cos(y)}{\partial y}(x) &= - \sin(x)\\
-            \frac{\partial \exp(y)}{\partial y}(x) &= \exp(x)\\
-            \frac{\partial \log(1 + y)}{\partial y}(x) &= \frac{1}{1 + x}\\
-            \frac{\partial y^a}{\partial y}(x) &= a \cdot x^{a - 1}.
-            \end{split}$$
+            \begin{split}
+            \frac{\partial\sin({\rm y})}{\partial y}({\rm x})&=\cos({\rm x})\\
+            \frac{\partial\cos({\rm y})}{\partial y}({\rm x})&=-\sin({\rm x})\\
+            \frac{\partial\exp({\rm y})}{\partial y}({\rm x})&=\exp({\rm x})\\
+            \frac{\partial\log({\rm y})}{\partial{\rm y}}({\rm x})&=\frac{1}{\rm x}\\
+            \frac{\partial{\rm y}^a}{\partial{\rm y}}({\rm x})&={\rm a}\cdot{\rm x}^{{\rm a}-1}.
+            \end{split}
         </li>
         <li>
             Continuando per induzione:
-            $$\begin{split}
-            \frac{\partial^{2 \cdot n} \sin(y)}{(\partial y)^{2 \cdot n}}(x) &= (- 1)^n \sin(x)\\
-            \frac{\partial^{2 \cdot n} \cos(y)}{(\partial y)^{2 \cdot n}}(x) &= (- 1)^n \cos(x)\\
-            \frac{\partial^n \exp(y)}{(\partial y)^n}(x) &= \exp(x)\\
-            \frac{\partial^n \log(1 + y)}{(\partial y)^n}(x) &= \frac{(- 1)^{n - 1} (n - 1)!}{(1 + x)^n}\\
-            \frac{\partial^n y^a}{(\partial y)^n}(x) &= a \cdot (a - k + 1) \cdot (a - n + 1) \cdot x^{a - n}.
-            \end{split}$$
+            \begin{split}
+            \frac{\partial^{2{\rm n}}\sin({\rm y})}{(\partial{\rm y})^{2{\rm n}}}({\rm x})&=(-1)^{\rm n}\cdot\sin({\rm x})\\
+            \frac{\partial^{2{\rm n}}\cos({\rm y})}{(\partial{\rm y})^{2{\rm n}}}({\rm x})&=(-1)^{\rm n}\cdot\cos({\rm x})\\
+            \frac{\partial^{\rm n}\exp({\rm y})}{(\partial{\rm y})^n}({\rm x})&=\exp({\rm x})\\
+            \frac{\partial^{\rm n}\log({\rm y})}{(\partial{\rm y})^{\rm n}}({\rm x})&=\frac{(- 1)^{{\rm n}-1}\cdot({\rm n}-1)!}{{\rm x}^{\rm n}}\\
+            \frac{\partial^{\rm n}{\rm y}^{\rm a}}{(\partial{\rm y})^{\rm n}}({\rm x})&=\left(\prod_{{\rm k}\in{\rm n}}({\rm a}-{\rm k})\right)\cdot{\rm x}^{{\rm a}-{\rm n}}.
+            \end{split}
         </li>
     </ul>
 
@@ -115,23 +117,53 @@
 
     <ul>
         <li>
-            Si definiscono:
-            $$\begin{split}
-            \tan(x) &= \frac{\sin(x)}{\cos(x)}\\
-            \cot(x) &= \frac{\cos(x)}{\sin(x).}
-            \end{split}$$
+            <h3>Cauchy:</h3>
+            \begin{split}
+            0>{\rm f}({\rm x})\cdot{\rm f}({\rm y})\longrightarrow\exists\theta\in(0,1)\!:\quad{\rm f}(\theta\cdot{\rm x}+(1-\theta)\cdot{\rm y})=0.
+            \end{split}
+            <h3>Rolle:</h3>
+            \begin{split}
+            \exists\theta\in(0,1)\!:\quad\frac{{\rm f}({\rm x})-{\rm f}({\rm y})}{{\rm g}({\rm x})-{\rm g}({\rm y})}=\frac{\nabla{\rm f}(\theta\cdot{\rm x}+(1-\theta)\cdot{\rm y})}{\nabla{\rm g}(\theta\cdot{\rm x}+(1-\theta)\cdot{\rm y})}.
+            \end{split}
+            Basta valutare
+            \begin{split}
+            {\rm z}={\rm x}\longrightarrow({\rm f}({\rm x})-{\rm f}({\rm y}))\cdot\nabla{\rm g}({\rm z})-({\rm g}({\rm x})-{\rm g}({\rm y}))\cdot\nabla{\rm f}({\rm z})&=\nabla{\rm f}({\rm x})\cdot{\rm g}({\rm y})-\nabla{\rm g}({\rm x})\cdot{\rm f}({\rm y})\\
+            {\rm z}={\rm y}\longrightarrow({\rm f}({\rm x})-{\rm f}({\rm y}))\cdot\nabla{\rm g}({\rm z})-({\rm g}({\rm x})-{\rm g}({\rm y}))\cdot\nabla{\rm f}({\rm z})&={\rm g}({\rm x})\cdot\nabla{\rm f}({\rm y})-{\rm f}({\rm x})\cdot\nabla{\rm g}({\rm y}),
+            \end{split}
+            ed applicare Cauchy.
+            <h3>Lagrange:</h3>
+            \begin{split}
+            \exists\theta\in(0,1)\!:\quad\frac{{\rm f}({\rm x})-{\rm f}({\rm y})}{{\rm x}-{\rm y}}=\nabla{\rm f}(\theta\cdot x+(1-\theta)\cdot{\rm y}).
+            \end{split}
         </li>
-        <h2>
-            Esercizi:
-        </h2>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento0')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento0" class="hidden">
+                <h3>Teoremi di de l'Hopital:</h3>
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento1" class="hidden">
+                <h3>Sviluppo di Taylor:</h3>
+            </div>
+        </div>
+        <h2>Esercizi:</h2>
+        <p>
+            Si definiscono:
+            \begin{split}
+            \tan({\rm x})&=\frac{\sin({\rm x})}{\cos({\rm x})}\\
+            \cot({\rm x})&=\frac{\cos({\rm x})}{\sin({\rm x}).}
+            \end{split}
+        </p>
         <li>
             Mostra che sono bigettive:
-            $$\begin{split}
-            \cos:& [0, \pi] \rightarrow [- 1, 1]\\
-            \sin:& \left[- \frac{\pi}{2}, \frac{\pi}{2}\right] \rightarrow [- 1, 1]\\
-            \tan:& \left(- \frac{\pi}{2}, \frac{\pi}{2}\right) \rightarrow {\mathbb R}\\
-            \cot:& (0, \pi) \rightarrow {\mathbb R}
-            \end{split}$$
+            \begin{split}
+            \cos\!:&[0,\pi]\rightarrow[-1,1]\\
+            \sin\!:&\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\rightarrow[-1,1]\\
+            \tan\!:&\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\rightarrow{\mathbb R}\\
+            \cot\!:&(0,\pi)\rightarrow{\mathbb R}
+            \end{split}
         </li>
         <li>
             Determina poi se sono pari, dispari, periodiche, monotone.
@@ -139,36 +171,23 @@
         <li>
             Determina poi se le loro inverse sono pari, dispari, periodiche, monotone.
         </li>
-    </ul>
-
-    <h1>Funzioni iperboliche</h1>
-
-    <ul>
-        <li>
+        <p>
             Si definiscono:
-            $$\begin{split}
-            \cosh(x) &= \frac{\exp(x) + \exp(- x)}{2}\\
-            \sinh(x) &= \frac{\exp(x) - \exp(- x)}{2.}
-            \end{split}$$
-        </li>
-        <li>
-            Si definiscono:
-            $$\begin{split}
-            \tanh(x) &= \frac{\sinh(x)}{\cosh(x)}\\
-            \coth(x) &= \frac{\cosh(x)}{\sinh(x).}
-            \end{split}$$
-        </li>
-        <h2>
-            Esercizi:
-        </h2>
+            \begin{split}
+            \cosh({\rm x})&=\frac{\exp({\rm x})+\exp(-{\rm x})}{2}\\
+            \sinh({\rm x})&=\frac{\exp({\rm x})-\exp(-{\rm x})}{2}\\
+            \tanh({\rm x})&=\frac{\sinh({\rm x})}{\cosh({\rm x})}\\
+            \coth({\rm x})&=\frac{\cosh({\rm x})}{\sinh({\rm x}).}
+            \end{split}
+        </p>
         <li>
             Mostra che sono bigettive:
-            $$\begin{split}
-            \cosh:& {\mathbb R} \rightarrow {\mathbb R}_+\\
-            \sinh:& {\mathbb R} \rightarrow {\mathbb R}\\
-            \tanh:& {\mathbb R} \rightarrow [- 1, 1]\\
-            \coth:& {\mathbb R} \setminus \{0\} \rightarrow {\mathbb R} \setminus [-1, 1].
-            \end{split}$$
+            \begin{split}
+            \cosh\!:&{\mathbb R}\rightarrow{\mathbb R}_+\\
+            \sinh\!:&{\mathbb R}\rightarrow{\mathbb R}\\
+            \tanh\!:&{\mathbb R}\rightarrow[-1,1]\\
+            \coth\!:&{\mathbb R}\setminus\{0\}\rightarrow{\mathbb R}\setminus[-1,1].
+            \end{split}
         </li>
         <li>
             Determina poi se sono pari, dispari, periodiche, monotone.

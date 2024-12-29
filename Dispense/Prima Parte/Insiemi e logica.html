@@ -35,28 +35,28 @@
         </p>
         <li>
             Scriviamo \(\lnot\) per intendere la negazione "non". La negazione di una frase è vera se la frase è falsa e viceversa:
-            $$\begin{split}
-            \lnot 0 &= 1\\
-            \lnot 1 &= 0.
-            \end{split}$$
+            \begin{split}
+            \lnot0&=1\\
+            \lnot1&=0.
+            \end{split}
         </li>
         <li>
             Scriviamo \(\land\) per intendere la congiunzione "e". La congiunzione di due frasi è vera solo se lo sono entrambe:
-            $$\begin{split}
-            1 \land 1 &= 1\\
-            1 \land 0 &= 0\\
-            0 \land 1 &= 0\\
-            0 \land 0 &= 0.
-            \end{split}$$
+            \begin{split}
+            1\land1&=1\\
+            1\land0&=0\\
+            0\land1&=0\\
+            0\land0&=0.
+            \end{split}
         </li>
         <li>
             Scriviamo \(\lor\) per intendere la disgiunzione "o". La disgiunzione di due frasi è vera se almeno una delle due lo è:
-            $$\begin{split}
-            1 \lor 1 &= 1\\
-            1 \lor 0 &= 1\\
-            0 \lor 1 &= 1\\
-            0 \lor 0 &= 0.
-            \end{split}$$
+            \begin{split}
+            1\lor1&=1\\
+            1\lor0&=1\\
+            0\lor1&=1\\
+            0\lor0&=0.
+            \end{split}
         </li>
         <h2>
             Esercizi:
@@ -66,231 +66,195 @@
                 Leggi di De Morgan:
             </h3>
             Dimostra ciascuna delle seguenti utilizzando le altre
-            $$\begin{split}
-            a &= \lnot (\lnot a)\\
-            a &= a \land a\\
-            a &= a \lor a\\
-            \lnot ((\lnot a) \lor (\lnot b)) &= a \land b\\
-            \lnot ((\lnot a) \land (\lnot b)) &= a \lor b\\
-            \end{split}$$
+            \begin{split}
+            {\rm a}&=\lnot(\lnot{\rm a})\\
+            {\rm a}&={\rm a}\land{\rm a}\\
+            {\rm a}&={\rm a}\lor{\rm a}\\
+            \lnot((\lnot{\rm a})\lor(\lnot{\rm b}))&={\rm a}\land{\rm b}\\
+            \lnot((\lnot{\rm a})\land(\lnot{\rm b}))&={\rm a}\lor{\rm b}\\
+            \end{split}
         </li>
         <div class="divcol">
             <button onclick="toggleTesto('bottone00')">Soluzioni:</button>
             <div id="bottone00" class="hidden">
-                <h3>
-                    Soluzione della prima con la quarta:
-                </h3>
+                <h3>Soluzione della prima con la quarta:</h3>
                 Usando la terza si ha
-                $$\begin{split}
-                \lnot a = (\lnot a) \lor (\lnot a),
-                \end{split}$$
+                \begin{split}
+                \lnot{\rm a}=(\lnot{\rm a})\lor(\lnot{\rm a}),
+                \end{split}
                 mentre usando la quarta,
-                $$\begin{split}
-                \lnot ((\lnot a) \lor (\lnot a)) = a \land a,
-                \end{split}$$
+                \begin{split}
+                \lnot((\lnot{\rm a})\lor(\lnot{\rm a}))={\rm a}\land{\rm a},
+                \end{split}
                 usando la seconda si conclude.
-                <h3>
-                    Soluzione della prima con la quinta:
-                </h3>
+                <h3>Soluzione della prima con la quinta:</h3>
                 Usando la seconda si ha
-                $$\begin{split}
-                \lnot a = (\lnot a) \land (\lnot a),
-                \end{split}$$
+                \begin{split}
+                \lnot{\rm a}=(\lnot{\rm a})\land(\lnot{\rm a}),
+                \end{split}
                 mentre usando la quinta,
-                $$\begin{split}
-                \lnot ((\lnot a) \land (\lnot a)) = a \lor a,
-                \end{split}$$
+                \begin{split}
+                \lnot((\lnot{\rm a})\land(\lnot{\rm a}))={\rm a}\lor{\rm a},
+                \end{split}
                 usando la terza si conclude.
-                <h3>
-                    Soluzione della seconda con la terza:
-                </h3>
+                <h3>Soluzione della seconda con la terza:</h3>
                 Usando la prima
-                $$\begin{split}
-                a \land a = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a)))),
-                \end{split}$$
+                \begin{split}
+                {\rm a}\land{\rm a}=\lnot(\lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm a})))),
+                \end{split}
                 mentre usando la quinta e poi la terza,
-                $$\begin{split}
-                \lnot ((\lnot (\lnot a)) \land (\lnot (\lnot a))) = (\lnot a) \lor (\lnot a) = \lnot a.
-                \end{split}$$
+                \begin{split}
+                \lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm a})))=(\lnot{\rm a})\lor(\lnot{\rm a})=\lnot{\rm a}.
+                \end{split}
                 Infine, usando la prima si conclude.
-                <h3>
-                    Soluzione della terza con la seconda:
-                </h3>
+                <h3>Soluzione della terza con la seconda:</h3>
                 Usando la prima
-                $$\begin{split}
-                a \lor a = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a)))),
-                \end{split}$$
+                \begin{split}
+                {\rm a}\lor{\rm a}=\lnot(\lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm a})))),
+                \end{split}
                 mentre usando la quarta e poi la seconda,
-                $$\begin{split}
-                \lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot a))) = (\lnot a) \land (\lnot a) = \lnot a.
-                \end{split}$$
+                \begin{split}
+                \lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm a})))=(\lnot{\rm a})\land(\lnot{\rm a})=\lnot{\rm a}.
+                \end{split}
                 Infine, usando la prima, si conclude.
-                <h3>
-                    Soluzione della quarta con la quinta:
-                </h3>
+                <h3>Soluzione della quarta con la quinta:</h3>
                 Usando la prima
-                $$\begin{split}
-                a \land b = \lnot (\lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b)))),
-                \end{split}$$
+                \begin{split}
+                {\rm a}\land{\rm b}=\lnot(\lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm b})))),
+                \end{split}
                 mentre usando la quinta,
-                $$\begin{split}
-                \lnot ((\lnot (\lnot a)) \land (\lnot (\lnot b))) = (\lnot a) \lor (\lnot b).
-                \end{split}$$
-                <h3>
-                    Soluzione della quinta con la quarta:
-                </h3>
+                \begin{split}
+                \lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm b})))=(\lnot{\rm a})\lor(\lnot{\rm b}).
+                \end{split}
+                <h3>Soluzione della quinta con la quarta:</h3>
                 Usando la prima
-                $$\begin{split}
-                a \lor b = \lnot (\lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b)))),
-                \end{split}$$
+                \begin{split}
+                {\rm a}\lor{\rm b}=\lnot(\lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm b})))),
+                \end{split}
                 mentre usando la quarta,
-                $$\begin{split}
-                \lnot ((\lnot (\lnot a)) \lor (\lnot (\lnot b))) = (\lnot a) \land (\lnot b).
-                \end{split}$$
+                \begin{split}
+                \lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm b})))=(\lnot{\rm a})\land(\lnot{\rm b}).
+                \end{split}
             </div>
         </div>
         <li>
-            <h3>
-                Associatività e distributività:
-            </h3>
+            <h3>Associatività e distributività:</h3>
             Dimostra ciascuna delle seguenti utilizzando le altre
-            $$\begin{split}
-            a \land (b \land c) &= (a \land b) \land c\\
-            a \lor (b \lor c) &= (a \lor b) \lor c\\
-            a \land (b \lor c) &= (a \land b) \lor (a \land c)\\
-            a \lor (b \land c) &= (a \lor b) \land (a \lor c).
-            \end{split}$$
+            \begin{split}
+            {\rm a}\land({\rm b}\land{\rm c})&= ({\rm a}\land{\rm b})\land{\rm c}\\
+            {\rm a}\lor({\rm b}\lor{\rm c})&=({\rm a}\lor{\rm b})\lor{\rm c}\\
+            {\rm a}\land({\rm b}\lor{\rm c})&=({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
+            {\rm a}\lor({\rm b}\land{\rm c})&=({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c}).
+            \end{split}
         </li>
         <div class="divcol">
             <button onclick="toggleTesto('bottone1')">Soluzioni:</button>
             <div id="bottone1" class="hidden">
-                <h3>
-                    Soluzione della prima con la seconda:
-                </h3>                            
+                <h3>Soluzione della prima con la seconda:</h3>                            
                 Usando De Morgan
-                $$\begin{split}
-                a \land (b \land c) = \lnot ((\lnot a) \lor (\lnot (b \land c)))\\
-                \lnot (b \land c) = (\lnot b) \lor (\lnot c)\\
-                \lnot ((\lnot (a \land b)) \lor (\lnot c)) = (a \land b) \land c\\
-                (\lnot a) \lor (\lnot b) = \lnot (a \land b).
-                \end{split}$$
+                \begin{split}
+                {\rm a}\land({\rm b}\land{\rm c})=\lnot((\lnot{\rm a})\lor(\lnot({\rm b}\land{\rm c})))\\
+                \lnot(b\land{\rm c})=(\lnot{\rm b})\lor(\lnot{\rm c})\\
+                \lnot((\lnot({\rm a}\land{\rm b}))\lor(\lnot{\rm c}))=({\rm a}\land{\rm b})\land{\rm c}\\
+                (\lnot{\rm a})\lor(\lnot{\rm b})=\lnot({\rm a}\land{\rm b}).
+                \end{split}
                 invece usando la seconda
-                $$\begin{split}
-                (\lnot a) \lor ((\lnot b) \lor (\lnot c)) = ((\lnot a) \lor (\lnot b)) \lor (\lnot c).
-                \end{split}$$
-                <h3>
-                    Soluzione della seconda con la prima
-                </h3>
+                \begin{split}
+                (\lnot{\rm a})\lor((\lnot{\rm b})\lor(\lnot{\rm c}))=((\lnot{\rm a})\lor(\lnot{\rm b}))\lor(\lnot{\rm c}).
+                \end{split}
+                <h3>Soluzione della seconda con la prima:</h3>
                 Usando De Morgan
-                $$\begin{split}
-                a \lor (b \lor c) = \lnot ((\lnot a) \land (\lnot (b \lor c)))\\
-                \lnot (b \lor c) = (\lnot b) \land (\lnot c)\\
-                \lnot ((\lnot (a \lor b)) \land (\lnot c)) = (a \lor b) \lor c\\
-                (\lnot a) \land (\lnot b) = \lnot (a \lor b).
-                \end{split}$$
+                \begin{split}
+                {\rm a}\lor({\rm b}\lor{\rm c})=\lnot((\lnota)\land(\lnot({\rm b}\lor{\rm c})))\\
+                \lnot({\rm b}\lor{\rm c})=(\lnot{\rm b})\land(\lnot{\rm c})\\
+                \lnot((\lnot({\rm a}\lor{\rm b}))\land(\lnot{\rm c}))=({\rm a}\lor{\rm b})\lor{\rm c}\\
+                (\lnot{\rm a})\land(\lnot{\rm b})=\lnot({\rm a}\lor{\rm b}).
+                \end{split}
                 invece usando la prima
-                $$\begin{split}
-                (\lnot a) \land ((\lnot b) \land (\lnot c)) = ((\lnot a) \land (\lnot b)) \land (\lnot c).
-                \end{split}$$
-                <h3>
-                    Soluzione della terza con la quarta
-                </h3>
+                \begin{split}
+                (\lnot{\rm a})\land((\lnot{\rm b})\land(\lnot{\rm c}))=((\lnot{\rm a})\land(\lnot{\rm b}))\land(\lnot{\rm c}).
+                \end{split}
+                <h3>Soluzione della terza con la quarta:</h3>
                 Usando De Morgan
-                $$\begin{split}
-                a \land (b \lor c) = \lnot ((\lnot a) \lor (\lnot (b \lor c)))\\
-                \lnot ((\lnot (a \land b)) \land (\lnot (a \land c))) = (a \land b) \lor (a \land c)\\
-                \lnot (b \lor c) = (\lnot b) \land (\lnot c)\\
-                (\lnot a) \lor (\lnot b) = \lnot (a \land b)\\
-                (\lnot a) \lor (\lnot c) = \lnot (a \land c).
-                \end{split}$$
+                \begin{split}
+                {\rm a}\land({\rm b}\lor{\rm c})=\lnot((\lnot{\rm a})\lor(\lnot({\rm b}\lor{\rm c})))\\
+                \lnot((\lnot({\rm a}\land{\rm b}))\land(\lnot({\rm a}\land{\rm c})))=({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
+                \lnot({\rm b}\lor{\rm c})=(\lnot{\rm b})\land(\lnot{\rm c})\\
+                (\lnot{\rm a})\lor(\lnot{\rm b})=\lnot({\rm a}\land{\rm b})\\
+                (\lnot{\rm a})\lor(\lnot{\rm c})=\lnot({\rm a}\land{\rm c}).
+                \end{split}
                 Invece usando la quarta
-                $$\begin{split}
-                (\lnot a) \lor ((\lnot b) \land (\lnot c)) = ((\lnot a) \lor (\lnot b)) \land ((\lnot a) \lor (\lnot c)).
-                \end{split}$$
-                <h3>
-                    Soluzione della quarta con la terza:
-                </h3>
+                \begin{split}
+                (\lnot{\rm a})\lor((\lnot{\rm b})\land(\lnot{\rm c}))=((\lnot{\rm a})\lor(\lnot{\rm b}))\land((\lnot{\rm a})\lor(\lnot{\rm c})).
+                \end{split}
+                <h3>Soluzione della quarta con la terza:</h3>
                 Usando De Morgan
-                $$\begin{split}
-                a \lor (b \land c) = \lnot ((\lnot a) \land (\lnot (b \land c)))\\
-                \lnot ((\lnot (a \lor b)) \lor (\lnot (a \lor c))) = (a \lor b) \land (a \lor c)\\
-                \lnot (b \land c) = (\lnot b) \lor (\lnot c)\\
-                (\lnot a) \land (\lnot b) = \lnot (a \lor b)\\
-                (\lnot a) \land (\lnot c) = \lnot (a \lor c).
-                \end{split}$$
+                \begin{split}
+                {\rm a}\lor({\rm b}\land{\rm c})=\lnot((\lnot{\rm a})\land(\lnot({\rm b}\land{\rm c})))\\
+                \lnot((\lnot({\rm a}\lor{\rm b}))\lor(\lnot({\rm a}\lor{\rm c})))=({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c})\\
+                \lnot({\rm b}\land{\rm c})=(\lnot{\rm b})\lor(\lnot{\rm c})\\
+                (\lnot{\rm a})\land(\lnot{\rm b})=\lnot({\rm a}\lor{\rm b})\\
+                (\lnot{\rm a})\land(\lnot{\rm c})=\lnot({\rm a}\lor{\rm c}).
+                \end{split}
                 Invece usando la terza
-                $$\begin{split}
-                (\lnot a) \land ((\lnot b) \lor (\lnot c)) = ((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land (\lnot c)).
-                \end{split}$$
+                \begin{split}
+                (\lnot{\rm a})\land((\lnot{\rm b})\lor(\lnot{\rm c}))=((\lnot{\rm a})\land(\lnot{\rm b}))\lor((\lnot{\rm a})\land(\lnot{\rm c})).
+                \end{split}
             </div>
         </div>
         <li>
-            <h3>
-                Tautologie:
-            </h3>
+            <h3>Tautologie:</h3>
             Dimostra ciascuna delle seguenti utilizzando le altre
-            $$\begin{split}
-            a \land ((\lnot b) \lor b) &= a\\
-            a \lor ((\lnot b) \land b) &= a\\
-            a \land (a \lor b) &= a\\
-            a \lor (a \land b) &= a\\
-            a \land b &= a \land ((\lnot a) \lor b)\\
-            a \lor b &= a \lor ((\lnot a) \land b).
-            \end{split}$$
+            \begin{split}
+            {\rm a}\land((\lnot{\rm b})\lor{\rm b})&={\rm a}\\
+            {\rm a}\lor((\lnot{\rm b})\land{\rm b})&={\rm a}\\
+            {\rm a}\land({\rm a}\lor{\rm b})&={\rm a}\\
+            {\rm a}\lor({\rm a}\land{\rm b})&={\rm a}\\
+            {\rm a}\land{\rm b}&={\rm a}\land((\lnot{\rm a})\lor{\rm b})\\
+            {\rm a}\lor{\rm b}&={\rm a}\lor((\lnot{\rm a})\land{\rm b}).
+            \end{split}
         </li>
         <div class="divcol">
             <button onclick="toggleTesto('bottone2')">Soluzioni:</button>
             <div id="bottone2" class="hidden">
-                <h3>
-                    Soluzione della prima con la seconda:
-                </h3>
+                <h3>Soluzione della prima con la seconda:</h3>
                 Usando De Morgan
-                $$\begin{split}
-                a \land ((\lnot b) \lor b) = \lnot ((\lnot a) \lor ((\lnot b) \land b))
-                \end{split}$$
+                \begin{split}
+                {\rm a}\land((\lnot{\rm b})\lor{\rm b})=\lnot((\lnot{\rm a})\lor((\lnot{\rm b})\land{\rm b}))
+                \end{split}
                 Invece usando la seconda
-                $$\begin{split}
-                (\lnot a) \lor ((\lnot b) \land b) = \lnot a.
-                \end{split}$$
-                <h3>
-                    Soluzione della seconda con la prima
-                </h3>
+                \begin{split}
+                (\lnot{\rm a})\lor((\lnot{\rm b})\land{\rm b})=\lnot{\rm a}.
+                \end{split}
+                <h3>Soluzione della seconda con la prima:</h3>
                 Usando De Morgan
-                $$\begin{split}
-                a \lor ((\lnot b) \land b) = \lnot ((\lnot a) \land ((\lnot b) \lor b))
-                \end{split}$$
+                \begin{split}
+                {\rm a}\lor((\lnot{\rm b})\land{\rm b})=\lnot((\lnot{\rm a})\land((\lnot{\rm b})\lor{\rm b}))
+                \end{split}
                 Invece usando la prima
-                $$\begin{split}
-                (\lnot a) \land ((\lnot b) \lor b) = \lnot a.
-                \end{split}$$
-                <h3>
-                    Soluzione della terza con la quarta
-                </h3>
+                \begin{split}
+                (\lnot{\rm a})\land((\lnot{\rm b})\lor{\rm b})=\lnot{\rm a}.
+                \end{split}
+                <h3>Soluzione della terza con la quarta:</h3>
                 Usando De Morgan
-                $$\begin{split}
-                a \land (a \lor b) = \lnot ((\lnot a) \lor ((\lnot a) \land (\lnot a)))
-                \end{split}$$
+                \begin{split}
+                {\rm a}\land({\rm a}\lor{\rm b})=\lnot((\lnot{\rm a})\lor((\lnot{\rm a})\land(\lnot{\rm a})))
+                \end{split}
                 Invece usando la quarta
-                $$\begin{split}
-                (\lnot a) \lor ((\lnot a) \land (\lnot a)) = \lnot a.
-                \end{split}$$
-                <h3>
-                    Soluzione della quarta con la terza
-                </h3>
+                \begin{split}
+                (\lnot{\rm a})\lor((\lnot{\rm a})\land(\lnot{\rm a}))=\lnot{\rm a}.
+                \end{split}
+                <h3>Soluzione della quarta con la terza:</h3>
                 Usando De Morgan
-                $$\begin{split}
-                a \lor (a \land b) = \lnot ((\lnot a) \land ((\lnot a) \lor (\lnot a)))
-                \end{split}$$
+                \begin{split}
+                {\rm a}\lor({\rm a}\land{\rm b})=\lnot((\lnot{\rm a})\land((\lnot{\rm a})\lor(\lnot{\rm a})))
+                \end{split}
                 Invece usando la terza
-                $$\begin{split}
-                (\lnot a) \land ((\lnot a) \lor (\lnot a)) = \lnot a.
-                \end{split}$$
-                <h3>
-                    Soluzione della quinta
-                </h3>
-                <h3>
-                    Soluzione della sesta
-                </h3>
+                \begin{split}
+                (\lnot{\rm a})\land((\lnot{\rm a})\lor(\lnot{\rm a}))=\lnot{\rm a}.
+                \end{split}
+                <h3>Soluzione della quinta:</h3>
+                <h3>Soluzione della sesta:</h3>
             </div>
         </div>
     </ul>
@@ -299,76 +263,79 @@
 
     <ul>
         <li>
-            Si scrive \({\mathcal A} \longrightarrow {\mathcal B}\) per dire "se \({\mathcal A}\), allora \({\mathcal B}\)".
+            Si scrive \({\mathcal A}\longrightarrow{\mathcal B}\) per dire "se \({\mathcal A}\), allora \({\mathcal B}\)".
         </li>
         <li>
             Si scrive \({\mathcal A} \longleftarrow {\mathcal B}\) per dire "se \({\mathcal B}\), allora \({\mathcal A}\)".
         </li>
         <li>
-            Se \({\mathcal A} \longrightarrow {\mathcal B}\) si può dire che \((\lnot {\mathcal B}) \longrightarrow (\lnot {\mathcal A})\) e viceversa.
+            Se \({\mathcal A}\longrightarrow{\mathcal B}\) si può dire che \((\lnot{\mathcal B})\longrightarrow(\lnot{\mathcal A})\) e viceversa.
         </li>
         <li>
-            Se \({\mathcal A} \longrightarrow {\mathcal B} \longrightarrow {\mathcal A}\) si può dire che \({\mathcal A} \longleftrightarrow {\mathcal B}\) oppure \({\mathcal A} = {\mathcal B}\) come fatto fino ad ora.
+            Se \({\mathcal A}\longrightarrow{\mathcal B}\longrightarrow{\mathcal A}\) si può dire che \({\mathcal A}\longleftrightarrow{\mathcal B}\) oppure \({\mathcal A}={\mathcal B}\) come fatto fino ad ora
+        </li>
+        <li>
+            Con la differenza che l'eguaglianza non è un'operazione tra predicati e viene usata solo a scopo euristico, quindi se si legge \({\mathcal A}={\mathcal B}\) ci si sta riferendo ad uno dei due dando per scontato che sono equivalenti.
         </li>
         <li>
             Valgono sempre le tautologie:
-            $$\begin{split}
-            {\rm A} \land {\rm B} \longrightarrow {\rm A} \longrightarrow {\rm A} \lor {\rm B}
-            \end{split}$$
+            \begin{split}
+            {\rm A}\land{\rm B}\longrightarrow{\rm A}\longrightarrow{\rm A}\lor{\rm B}
+            \end{split}
         </li>
         <li>
             Sono fatti equivalenti:
-            $$\begin{split}
-            {\rm A} &\longrightarrow {\rm B}\\
-            {\rm A} \lor {\rm B} &= {\rm B}\\
-            {\rm A} \land {\rm B} &= {\rm A}\\
-            {\rm A} \lor {\rm B} &\longrightarrow {\rm B}\\
-            {\rm A} &\longrightarrow {\rm A} \land {\rm B}.
-            \end{split}$$
+            \begin{split}
+            {\rm A} &\longrightarrow{\rm B}\\
+            {\rm A}\lor{\rm B}&={\rm B}\\
+            {\rm A}\land{\rm B}&={\rm A}\\
+            {\rm A}\lor {\rm B}&\longrightarrow{\rm B}\\
+            {\rm A}&\longrightarrow{\rm A}\land{\rm B}.
+            \end{split}
         </li>
         <li>
-            Per dimostrare che \({\mathcal A} \longrightarrow {\mathcal B}\) si parte generalmente dall'ipotesi \(\mathcal A\) e si arriva alla tesi \(\mathcal B\). Questo procedimento richiede la transitività dell'implicazione che noi vedremo tra poco.
+            Per dimostrare che \({\mathcal A}\longrightarrow{\mathcal B}\) si parte generalmente dall'ipotesi \({\mathcal A}\) e si arriva alla tesi \({\mathcal B}\). Questo procedimento richiede la transitività dell'implicazione che noi vedremo tra poco.
         </li>
         <li>
-            Negli esercisi useremo uno strumento diverso, cioè riduciamo l'implicazione ad un connettivo logico \(({\rm A} \longrightarrow {\rm B}) = (\lnot (\rm A)) \lor {\rm B}\).
+            Negli esercisi useremo uno strumento diverso, cioè riduciamo l'implicazione ad un connettivo logico \(({\rm A}\longrightarrow{\rm B})=(\lnot(\rm A))\lor{\rm B}\).
         </li>
         <h2>
             Esercizi:
         </h2>
         <li>
-            Se \(a \longrightarrow b\) si può dire che, qualunque sia \(c\):
-            $$\begin{split}
-            a \land c &\longrightarrow b \land c\\
-            a \lor c &\longrightarrow b \lor c\\
-            c &\longrightarrow (\lnot a) \lor b\\
-            a \land (\lnot b) &\longrightarrow c.
-            \end{split}$$
+            Se \({\rm a}\longrightarrow{\rm b}\) si può dire che, qualunque sia \(c\):
+            \begin{split}
+            {\rm a}\land{\rm c}&\longrightarrow{\rm b}\land{\rm c}\\
+            {\rm a}\lor{\rm c}&\longrightarrow{\rm b}\lor{\rm c}\\
+            {\rm c}&\longrightarrow(\lnot{\rm a})\lor{\rm b}\\
+            {\rm a}\land(\lnot{\rm b})&\longrightarrow{\rm c}.
+            \end{split}
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('bottone30')">Soluzione:</button>
-            <div id="bottone30" class="hidden">
+            <button onclick="toggleTesto('bottone3')">Soluzione:</button>
+            <div id="bottone3" class="hidden">
                 Usando le proprietà dimostrate negli esercizi precedenti:
-                $$\begin{split}
-                (\lnot (a \land c)) \lor (b \land c) = (\lnot a) \lor (\lnot c) \lor (b \land c) = (\lnot a) \lor (\lnot c) \lor b &\longleftarrow (\lnot a) \lor b\\
-                (\lnot (a \lor c)) \lor (b \lor c) = ((\lnot a) \land (\lnot c)) \lor b \lor c = (\lnot a) \lor b \lor c &\longleftarrow (\lnot a) \lor b\\
-                (\lnot c) \lor ((\lnot a) \lor b) &\longleftarrow (\lnot a) \lor b\\
-                (\lnot (a \land (\lnot b))) \lor c = ((\lnot a) \lor b) \lor c &\longleftarrow (\lnot a) \lor b.
-                \end{split}$$
+                \begin{split}
+                (\lnot({\rm a}\land{\rm c}))\lor({\rm b}\land{\rm c})=(\lnot{\rm a})\lor(\lnot{\rm c})\lor({\rm b}\land{\rm c})=(\lnot{\rm a})\lor(\lnot{\rm c})\lor{\rm b}&\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
+                (\lnot({\rm a}\lor{\rm c}))\lor({\rm b}\lor{\rm c})=((\lnot{\rm a})\land(\lnot{\rm c}))\lor{\rm b}\lor{\rm c}=(\lnot{\rm a})\lor{\rm b}\lor{\rm c}&\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
+                (\lnot{\rm c})\lor((\lnot{\rm a})\lor{\rm b})&\longleftarrow(\lnota)\lor{\rm b}\\
+                (\lnot({\rm a}\land(\lnot{\rm b})))\lor{\rm c}=((\lnot{\rm a})\lor{\rm b})\lor{\rm c}&\longleftarrow(\lnot{\rm a})\lor{\rm b}.
+                \end{split}
             </div>
         </div>
         <li>
-            Se \(a \longrightarrow b \longrightarrow c\) si può dire che \(a \longrightarrow c\).
+            Se \({\rm a}\longrightarrow{\rm b}\longrightarrow{\rm c}\) si può dire che \({\rm a}\longrightarrow{\rm c}\).
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('bottone31')">Soluzione:</button>
-            <div id="bottone31" class="hidden">
+            <button onclick="toggleTesto('bottone4')">Soluzione:</button>
+            <div id="bottone4" class="hidden">
                 Usando le proprietà dimostrate negli esercizi precedenti:
-                $$\begin{split}
-                ((\lnot a) \lor b) \land ((\lnot b) \lor c) &= ((\lnot a) \land (\lnot b)) \lor ((\lnot a) \land c) \lor (b \land c)\\
-                &= (((\lnot a) \lor b) \land ((\lnot a) \lor c) \land ((\lnot b) \lor c)) \lor ((\lnot a) \land c)\\
-                &\longrightarrow ((\lnot a) \lor c) \lor ((\lnot a) \land c)\\
-                &= ((\lnot a) \lor c) \land ((\lnot a) \lor c) = ((\lnot a) \lor c).
-                \end{split}$$
+                \begin{split}
+                ((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm b})\lor{\rm c})&=((\lnot{\rm a})\land(\lnot{\rm b}))\lor((\lnot{\rm a})\land{\rm c})\lor({\rm b}\land{\rm c})\\
+                &=(((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm b})\lor{\rm c}))\lor((\lnot{\rm a})\land{\rm c})\\
+                &\longrightarrow((\lnot{\rm a})\lor{\rm c})\lor((\lnot{\rm a})\land{\rm c})\\
+                &=((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm a})\lor{\rm c})=((\lnot{\rm a})\lor{\rm c}).
+                \end{split}
             </div>
         </div>
     </ul>
@@ -380,75 +347,75 @@
             Un predicato è una frase che può assumere significati diversi, cioè essere vera o falsa, a seconda del valore che assumono le sue variabili.
         </li>
         <li>
-            Ad esempio la veridicità della frase "il giorno \(x\) nevica" dipende da \(x\) e la verifica di tale veridicità è disponibile solo per alcuni valori di \(x\).
+            Ad esempio la veridicità della frase "il giorno \({\rm x}\) nevica" dipende da \({\rm x}\) e la verifica di tale veridicità è disponibile solo per alcuni valori di \({\rm x}\).
         </li>
         <li>
-            Se \({\mathcal C} (x)\) è un predicato nella variabile \(x\), si scrive \(\forall x \,, {\mathcal C} (x)\) per dire "per ogni \(x\) si ha \({\mathcal C} (x)\)".
+            Se \({\mathcal C}({\rm x})\) è un predicato nella variabile \({\rm x}\), si scrive \(\forall{\rm x}\,,{\mathcal C}({\rm x})\) per dire "per ogni \({\rm x}\) si ha \({\mathcal C}({\rm x})\)".
         </li>
         <li>
-            Se \({\mathcal C}\) è un predicato nella variabile \(x\), si scrive \(\exists x \!: {\mathcal C} (x)\) per dire "esiste \(x\) tale che \({\mathcal C} (x)\)".
+            Se \({\mathcal C}\) è un predicato nella variabile \({\rm x}\), si scrive \(\exists{\rm x}\!:{\mathcal C}({\rm x})\) per dire "esiste \({\rm x}\) tale che \({\mathcal C}({\rm x})\)".
         </li>
         <h2>
             Esercizi:
         </h2>
         <li>
             Si possono scrivere i quantificatori l'uno in termini dell'altro come segue:
-            $$\begin{split}
-            (\exists x \!: {\mathcal C}(x)) &\longleftrightarrow \lnot (\forall x \,, \lnot {\mathcal C} (x))\\
-            (\forall x \,, {\mathcal C}(x)) &\longleftrightarrow \lnot (\exists x \!: \lnot {\mathcal C} (x))
-            \end{split}$$
+            \begin{split}
+            (\exists{\rm x}\!:\quad{\mathcal C}({\rm x}))&\longleftrightarrow\lnot(\forall{\rm x}\,,\quad\lnot{\mathcal C}({\rm x}))\\
+            (\forall{\rm x}\,,\quad{\mathcal C}({\rm x}))&\longleftrightarrow\lnot(\exists{\rm x}\!:\quad\lnot{\mathcal C}({\rm x}))
+            \end{split}
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('bottone32')">Dimostrazione:</button>
-            <div id="bottone32" class="hidden">
+            <button onclick="toggleTesto('bottone5')">Dimostrazione:</button>
+            <div id="bottone5" class="hidden">
                 NON LO SO.
             </div>
         </div>
         <li>
-            Notiamo che se \({\mathcal A}, {\mathcal B}\) sono predicati,
-            $$\begin{split}
-            (\forall x \,, {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftrightarrow (\forall x \,, {\mathcal A}(x)) \land (\forall x \,, {\mathcal B}(x))\\
-            (\exists x \!: {\mathcal A}(x) \lor {\mathcal B}(x)) &\longleftrightarrow (\exists x \!: {\mathcal A}(x)) \lor (\exists x \!: {\mathcal B}(x)).
-            \end{split}$$
+            Notiamo che se \({\mathcal A},{\mathcal B}\) sono predicati,
+            \begin{split}
+            (\forall{\rm x}\,,\quad{\mathcal A}({\rm x})\land{\mathcal B}({\rm x}))&\longleftrightarrow((\forall{\rm x}\,,\quad{\mathcal A}({\rm x}))\land(\forall{\rm x}\,,\quad{\mathcal B}({\rm x})))\\
+            (\exists{\rm x}\!:\quad{\mathcal A}({\rm x})\lor{\mathcal B}({\rm x}))&\longleftrightarrow((\exists{\rm x}\!:\quad{\mathcal A}({\rm x}))\lor(\exists{\rm x}\!:\quad{\mathcal B}({\rm x}))).
+            \end{split}
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('bottone33')">Dimostrazione:</button>
-            <div id="bottone33" class="hidden">
+            <button onclick="toggleTesto('bottone6')">Dimostrazione:</button>
+            <div id="bottone6" class="hidden">
                 NON LO SO.
             </div>
         </div>
         <li>
             In un certo senso \(\forall\) è come una congiunzione, mentre \(\exists\) è come una disgiunzione:
-            $$\begin{split}
-            (\forall x \in {\rm A} \cup {\rm B} \,, {\mathcal C}(x)) &\longleftrightarrow (\forall x \in {\rm A} \,, {\mathcal C}(x)) \land (\forall x \in {\rm B} \,, {\mathcal C}(x))\\
-            (\exists x \in {\rm A} \cup {\rm B} \!: {\mathcal C}(x)) &\longleftrightarrow (\exists x \in {\rm A} \!: {\mathcal C}(x)) \lor (\exists x \in {\rm B} \!: {\mathcal C}(x)).
-            \end{split}$$
+            \begin{split}
+            (\forall{\rm x}\in{\rm A}\cup{\rm B}\,,\quad{\mathcal C}({\rm x}))&\longleftrightarrow((\forall{\rm x}\in{\rm A}\,,\quad{\mathcal C}({\rm x}))\land(\forall{\rm x}\in{\rm B}\,,\quad{\mathcal C}({\rm x})))\\
+            (\exists{\rm x}\in{\rm A}\cup{\rm B}\!:\quad{\mathcal C}({\rm x}))&\longleftrightarrow((\exists{\rm x}\in{\rm A}\!:\quad{\mathcal C}({\rm x}))\lor(\exists{\rm x}\in{\rm B}\!:\quad{\mathcal C}({\rm x}))).
+            \end{split}
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('bottone34')">Dimostrazione:</button>
-            <div id="bottone34" class="hidden">
+            <button onclick="toggleTesto('bottone7')">Dimostrazione:</button>
+            <div id="bottone7" class="hidden">
                 Per la prima usare
-                $$\begin{split}
-                {\mathcal A} (x) &= ``x \notin {\rm A} \lor {\mathcal C} (x)"\\
-                {\mathcal B} (x) &= ``x \notin {\rm B} \lor {\mathcal C} (x)".
-                \end{split}$$
+                \begin{split}
+                {\mathcal A}({\rm x})&=``{\rm x}\notin{\rm A}\lor{\mathcal C}({\rm x})"\\
+                {\mathcal B}({\rm x})&=``{\rm x}\notin{\rm B}\lor{\mathcal C}({\rm x})".
+                \end{split}
                 Per la seconda usare
-                $$\begin{split}
-                {\mathcal A} (x) &= ``x \in {\rm A} \land {\mathcal C} (x)"\\
-                {\mathcal B} (x) &= ``x \in {\rm B} \land {\mathcal C} (x)".
-                \end{split}$$
+                \begin{split}
+                {\mathcal A}({\rm x})&=``{\rm x}\in{\rm A}\land{\mathcal C}({\rm x})"\\
+                {\mathcal B}({\rm x})&=``{\rm x}\in{\rm B}\land{\mathcal C}({\rm x})".
+                \end{split}
             </div>
         </div>
         <li>
             Valgono inoltre le proprietà:
-            $$\begin{split}
-            (\exists x \!: {\mathcal A}(x) \land {\mathcal B}(x)) &\longleftarrow (\exists x \!: {\mathcal A}(x)) \land (\forall x \,, {\mathcal B}(x))\\
-            (\forall x \,, {\mathcal A}(x) \lor {\mathcal B}(x)) &\longrightarrow (\forall x \,, {\mathcal A}(x)) \lor (\exists x \!: {\mathcal B}(x)).
-            \end{split}$$
+            \begin{split}
+            (\exists{\rm x}\!:\quad{\mathcal A}({\rm x})\land{\mathcal B}({\rm x}))&\longleftarrow((\exists{\rm x}\!:\quad{\mathcal A}({\rm x}))\land(\forall{\rm x}\,,\quad{\mathcal B}({\rm x})))\\
+            (\forall{\rm x}\,,\quad{\mathcal A}({\rm x})\lor{\mathcal B}({\rm x}))&\longrightarrow((\forall{\rm x}\,,\quad{\mathcal A}({\rm x}))\lor(\exists{\rm x}\!:\quad{\mathcal B}({\rm x}))).
+            \end{split}
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('bottone35')">Dimostrazione:</button>
-            <div id="bottone35" class="hidden">
+            <button onclick="toggleTesto('bottone8')">Dimostrazione:</button>
+            <div id="bottone8" class="hidden">
                 NON LO SO.
             </div>
         </div>

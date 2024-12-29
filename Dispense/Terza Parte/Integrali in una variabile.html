@@ -30,62 +30,87 @@
     <h1>Integrali</h1>
 
     <ul>
+        <p>
+            L'integrale è il contrario della derivata.
+        </p>
         <li>
-            L'integrale è il contrario della derivata, per cui:
-            $$\begin{split}
-            \int_a^b (\partial f (x) g (x)) d x + \int_a^b (f (x) \partial g (x)) d x + &= f (b) g (b) - f (a) g (a)\\
-            \int_{g(a)}^{g(b)} f (y) d y &= \int_a^b (f \circ g) (x) d x\\
-            \int_a^b (\partial f (f^{- 1} (x)))^{- 1} d x &= f^{- 1} (b) - f^{- 1} (a).
-            \end{split}$$
+            <h3>Integrazione per parti:</h3>
+            \begin{split}
+            \int_{\rm a}^{\rm b}\nabla{\rm f}({\rm x})\cdot{\rm g}({\rm x})\cdot\partial{\rm x}+\int_{\rm a}^{\rm b}{\rm f}({\rm x})\cdot\nabla{\rm g}({\rm x})\cdot\partial{\rm x}&={\rm f}({\rm b})\cdot{\rm g}({\rm b})-{\rm f}({\rm a})\cdot{\rm g}({\rm a})\\
+            \end{split}
         </li>
         <li>
-            <h3>
-                Fubini-Tonelli:
-            </h3>
+            <h3>Integrazione per sostituzione:</h3>
+            \begin{split}
+            \int_{{\rm g}({\rm a})}^{{\rm g}({\rm b})}{\rm f}({\rm y})\partial{\rm y}=\int_{\rm a}^{\rm b}{\rm f}({\rm g}({\rm x}))\partial{\rm g}({\rm x})&=\int_{\rm a}^{\rm b}({\rm f}\circ{\rm g})({\rm x})\partial{\rm x}\\
+            \end{split}
         </li>
         <li>
-            <h3>
-                Integrali notevoli:
-            </h3>
-            Si riesce a calcolare che:
-            $$\begin{split}
-            \sin (x) &= \int_0^x \cos (t) d t = x - \int_0^x (x - t) \cdot \sin (t) d t\\
-            &= x + \dots + \frac{(- 1)^k x^{2 \cdot k + 1}}{(2 \cdot k + 1)!} + \dots + \frac{(- 1)^n \cdot x^{2 \cdot n + 1}}{(2 \cdot n + 1)!} + \int_0^x \frac{(- 1)^n \cdot (x - t)^{2 \cdot n + 1}}{(2 \cdot n + 1)!} \cdot \sin (t) d t\\
-            &= x + \dots + \frac{(- 1)^k \cdot x^{2 \cdot k + 1}}{(2 \cdot k + 1)!} + \dots + \frac{(- 1)^n \cdot x^{2 \cdot n + 1}}{(2 \cdot n + 1)!} + \int_0^x \frac{(- 1)^n \cdot (x - t)^{2 \cdot n + 2}}{(2 \cdot n + 2)!} \cdot \cos (t) d t\\
-            \cos (x) &= 1 - \int_0^x \sin (t) d t = 1 - \int_0^x (x - t) \cdot \cos (t) d t\\
-            &= 1 + \dots + \frac{(- 1)^k x^{2 \cdot k}}{(2 \cdot k)!} + \dots + \frac{(- 1)^n x^{2 \cdot n}}{(2 \cdot n)!} + \int_0^x \frac{(- 1)^{n + 1} \cdot (x - t)^{2 \cdot n}}{(2 \cdot n)!} \cdot \sin (t) d t\\
-            &= 1 + \dots + \frac{(- 1)^k x^{2 \cdot k}}{(2 \cdot k)!} + \dots + \frac{(- 1)^n x^{2 \cdot n}}{(2 \cdot n)!} + \int_0^x \frac{(- 1)^{n + 1} \cdot (x - t)^{2 \cdot n + 1}}{(2 \cdot n + 1)!} \cdot \cos (t) d t\\
-            \exp (x) &= 1 + \int_0^x \exp (t) d t = 1 + \dots + \frac{x^k}{k!} + \dots + \frac{x^n}{n!} + \int_0^x \frac{(x - t)^{n + 1} \cdot \exp (t)}{(n + 1)!} d t\\
-            \log (1 + x) &= \int_0^x \frac{d t}{1 + t} = \sum_{n \in {\mathbb N}} \int_0^x (- t)^n d t = \sum_{n \in {\mathbb N}} \frac{(- 1)^n x^{n + 1}}{n + 1}\\
-            \arctan (x) &= \int_0^x (1 + t^2) d t = \sum_{n \in {\mathbb N}} \int_0^x (- t^2)^n = \sum_{n \in {\mathbb N}} \frac{(- 1)^n x^{2 \cdot n + 2}}{n + 1}
-            \end{split}$$
+            <h3>Fubini-Tonelli:</h3>
+        </li>
+        <li>
+            <h3>Integrali notevoli:</h3>
+            \begin{split}
+            \sin({\rm x})&=\int_0^{\rm x}\cos({\rm t})\partial{\rm t}={\rm x}-\int_0^{\rm x}({\rm x}-{\rm t})\cdot\sin({\rm t})\cdot\partial{\rm t}\\
+            &=\sum_{{\rm k}\in{\rm n}}\frac{(-1)^{\rm k}\cdot{\rm x}^{2{\rm k}+1}}{(2{\rm k}+1)!}+\frac{(-1)^{\rm n}}{(2{\rm n}-1)!}\int_0^{\rm x}({\rm x}-{\rm t})^{2{\rm n}-1}\cdot\sin({\rm t})\cdot\partial{\rm t}\\
+            &=\sum_{{\rm k}\in{\rm n}}\frac{(-1)^{\rm k}\cdot{\rm x}^{2{\rm k}+1}}{(2{\rm k}+1)!}+\frac{(-1)^{\rm n}}{(2{\rm n})!}\int_0^{\rm x}({\rm x}-{\rm t})^{2{\rm n}}\cdot\cos({\rm t})\cdot\partial{\rm t}\\
+            \cos({\rm x})&=1-\int_0^{\rm x}\sin({\rm t})\partial{\rm t}=1-\int_0^{\rm x}({\rm x}-{\rm t})\cdot\cos({\rm t})\partial{\rm t}\\
+            &=\sum_{{\rm k}\in{\rm n}}\frac{(-1)^k\cdot{\rm x}^{2{\rm k}}}{(2 \cdot k)!}+\int_0^x \frac{(- 1)^{\rm n}\cdot({\rm x}-{\rm t})^{2n-2}}{(2{\rm n}-2)!}\cdot\sin({\rm t})\partial{\rm t}\\
+            &=\sum_{{\rm k}\in{\rm n}}\frac{(-1)^k\cdot{\rm x}^{2{\rm k}}}{(2 \cdot k)!}+\int_0^x \frac{(- 1)^{\rm n}\cdot({\rm x}-{\rm t})^{2n-1}}{(2{\rm n}-1)!}\cdot\cos({\rm t})\partial{\rm t}\\
+            \exp({\rm x})&=1+\int_0^{\rm x}\exp({\rm t})\partial{\rm t}=\sum_{{\rm k}\in{\rm n}}\frac{x^k}{k!}+\int_0^{\rm x}\frac{({\rm x}-{\rm t})^{{\rm n}-1}\cdot\exp({\rm t})}{({\rm n}-1)!}\partial{\rm t}\\
+            \log(1+{\rm x})&=\int_0^{\rm x}\frac{\partial{\rm t}}{1+{\rm t}}=\sum_{{\rm n}\in{\mathbb N}}\int_0^{\rm x}(-{\rm t})^{\rm n}\cdot\partial{\rm t}=\sum_{{\rm n}\in{\mathbb N}}\frac{(-1)^{\rm n}\cdot{\rm x}^{{\rm n}+1}}{n + 1}\\
+            \arctan({\rm x})&=\int_0^{\rm x}\frac{\partial{\rm t}}{1+{\rm t}^2}=\sum_{{\rm n}\in{\mathbb N}}\int_0^{\rm x}(-{\rm t}^2)^{\rm n}\cdot\partial{\rm t}=\sum_{{\rm n}\in{\mathbb N}}\frac{(-1)^{\rm n}\cdot{\rm x}^{2{\rm n}+1}}{2{\rm n}+1}
+            \end{split}
         </li>
         <li>
             Sia
-            $$\begin{split}
-            p_0 &= x\\
-            p_{n + 1} (x) &= \frac{\partial p_n (y)}{\partial y} (x) \cdot (1 + x^2).
-            \end{split}$$
+            \begin{split}
+            {\rm p}_0&={\rm x}\\
+            {\rm p}_{{\rm n}+1}({\rm x})&=\frac{\partial{\rm p}_{\rm n}({\rm y})}{\partial{\rm y}}({\rm x})\cdot(1+{\rm x}^2).
+            \end{split}
             allora
-            $$\begin{split}
-            \frac{\partial^n \tan (y)}{(\partial y)^n} (x) &= p_n (\tan (x))\\
-            \int_0^x p_n (t) d t &= p_{n - 1} (x) - p_{n - 1} (0).
-            \end{split}$$
+            \begin{split}
+            \frac{\partial^{\rm n}\tan({\rm y})}{(\partial{\rm y})^{\rm n}}({\rm x})&={\rm p}_{\rm n}(\tan({\rm x}))\\
+            \int_0^{\rm x}{\rm p}_{\rm n}(\tan({\rm t}))\partial{\rm t}&={\rm p}_{{\rm n}-1}(\tan({\rm x}))-{\rm p}_{{\rm n}-1}(0).
+            \end{split}
         </li>
     </ul>
 
-    <h1>Le funzioni integrali di Eulero:</h1>
+    <h1>Integrali notevoli:</h1>
 
     <ul>
         <li>
-            LA BETA NON ME LA RICORDO
-            $$\begin{split}
-            \int_{\mathbb R} \exp \left(- \frac{x^2}{2}\right) d x &= \sqrt{2 \pi}\\
-            |{\mathbb S}_{n - 1}| &= \frac{2 \pi^\frac{n}{2}}{\Gamma \left(\frac{n}{2}\right)}\\
-            \beta_{a, b} &= \int_0^1 x^a (1 - x)^b d x\\
-            &= 2 \int_0^\frac{\pi}{2} \sin (x)^{2 \cdot a + 1} \cos (x)^{2 \cdot b + 1} d x\\
-            &= \frac{\Gamma (a + 1) \cdot \Gamma (b + 1)}{\Gamma (a + b + 2).}
-            \end{split}$$
+            <h3>Beta di Eulero:</h3>
+            \begin{split}
+            \Gamma({\rm n})=\int_0^\infty{\rm x}^{\rm n}\exp(-{\rm x})={\rm n}!
+            \end{split}
+        </li>
+        <li>
+            <h3>Gaussiana:</h3>
+            \begin{split}
+            \int_{\mathbb R}\exp\left(-\frac{{\rm x}^2}{2}\right)\partial{\rm x}=\sqrt{2\pi.}
+            \end{split}
+        </li>
+        <li>
+            <h3>Ipersfera:</h3>
+            \begin{split}
+            \int_{{\mathbb R}_{\rm n}}{\rm f}\left(|{\rm x}|\right)\prod_{{\rm k}\in{\rm n}}(\partial{\rm x}_{\rm k})=\frac{2\pi^\frac{n}{2}}{\Gamma\left(\frac{n}{2}\right)}\int_0^\infty{\rm f}({\rm x}){\rm x}^{{\rm n}-1}\partial{\rm x}
+            \end{split}
+        </li>
+        <li>
+            <h3>Beta di Eulero:</h3>
+            \begin{split}
+            \beta_{{\rm a},{\rm b}}&=\int_0^1{\rm x}^{{\rm a}-1} (1-{\rm x})^{{\rm b}-1}\partial{\rm x}\\
+            &=2\int_0^\frac{\pi}{2}\sin({\rm x})^{2{\rm a}-1}\cos({\rm x})^{2{\rm b}-1}\partial{\rm x}\\
+            &=2\left(\int_0^\infty{\rm x}^{2{\rm a}-1}\cdot\exp\left(-\frac{{\rm x}^2}{2}\right)\cdot\partial{\rm x}\right)\cdot\left(\int_0^\infty{\rm x}^{2{\rm b}-1}\exp\left(-\frac{{\rm x}^2}{2}\right)\cdot\partial{\rm x}\right)\cdot\left(\int_0^\infty{\rm x}^{2({\rm a}+{\rm b})-1}\exp\left(-\frac{{\rm x}^2}{2}\right)\cdot\partial{\rm x}\right)^{- 1}\\\\
+            &=\frac{\Gamma({\rm a})\cdot\Gamma({\rm b})}{\Gamma({\rm a}+{\rm b}).}
+            \end{split}
+        </li>
+        <li>
+            <h3>Stirling:</h3>
+            \begin{split}
+            {\rm n}!=\int_0^\infty{\rm x}^{\rm n}\exp(-{\rm x})\partial{\rm x}=\int_0^\infty\exp({\rm n}\cdot\log({\rm x})-{\rm x})\cdot\partial{\rm x}\simeq\left(\frac{\rm n}{\it e}\right)^{\rm n}\cdot\int_{\mathbb R}\exp\left(-\frac{{\rm x}^2}{2{\rm n}}\right)\cdot\partial{\rm x}=\left(\frac{\rm n}{\it e}\right)^{\rm n}\cdot\sqrt{2\pi{\rm n}}
+            \end{split}
         </li>
     </ul>
 

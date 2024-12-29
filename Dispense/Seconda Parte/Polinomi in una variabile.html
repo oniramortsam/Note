@@ -107,9 +107,34 @@
             <div id="approfondimento0" class="hidden">
                 $$\begin{split}
                 \frac{(n + m)!}{n! \cdot m!} &= \frac{(n + m - 1)!}{(n - 1)! \cdot m!} + \frac{(n + m - 1)!}{n! \cdot (m - 1)!}\\
-                &= 1 + \dots + \frac{(k + m - 1)!}{k! \cdot (m - 1)!} + \dots + \frac{(n + m - 1)!}{n! \cdot (m - 1)!}\\
-                &= \frac{(n + d - 1)!}{n! \cdot (d - 1)!} + \dots + \frac{(k + m - d)!}{k! \cdot (m - d)!} \cdot \frac{(n - k + d - 1)!}{(n - k)! \cdot (d - 1)!} + \dots + \frac{(n + m - d)!}{n! \cdot (m - d)!}\\
-                \end{split}$$        
+                &= \sum_{k \in n + 1} \frac{(k + m - 1)!}{k! \cdot (m - 1)!}\\
+                &= \sum_{k \in n + 1} \left(\frac{(k + m - d)!}{k! \cdot (m - d)!} \cdot \frac{(n - k + d - 1)!}{(n - k)! \cdot (d - 1)!}\right).\\
+                \end{split}$$
+                Inoltre (PICCOLO ERRORE)
+                $$\begin{split}
+                \frac{(n + m)!}{n! \cdot m!} = \sum_{k \in a} \left(\frac{(k + b - 1)!}{k! \cdot (b - 1)!} \cdot \frac{(n + m - b - k + 1)!}{(n - b + 1)! \cdot (m - k)!}\right) + \sum_{k \in b} \left(\frac{(k + a - 1)!}{k! \cdot (a - 1)!} \cdot \frac{(n + m - a - k + 1)!}{(m - a + 1)! \cdot (n - k)!}\right)
+                \end{split}$$
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento1" class="hidden">
+                $$\begin{split}
+                \frac{(n + m)!}{n! \cdot m!} &= \frac{(n + m - 1)!}{(n - 1)! \cdot m!} + \frac{(n + m - 1)!}{n! \cdot (m - 1)!}\\
+                &= \sum_{k \in d + 1} \left(\frac{d!}{k! (d - k)!} \cdot \frac{(n + m - d)!}{(n - k)! \cdot (m - d + k)!}\right).\\
+                \end{split}$$
+                ECCO A CHE SERVE QUANTIFICARE
+            </div>
+        </div>
+        <div class="divrow">
+            <button onclick="toggleTesto('approfondimento2')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento2" class="hidden">
+                CONTINUA, è INTERESSANTE
+                $$\begin{split}
+                x^m &= \sum_{k \in m} \frac{(m - 1)!}{(m - k - 1)! k!} x (x - 1)^k\\
+                &= \sum_{k \in m} \frac{(m - 1)!}{(m - k - 1)! k!} \cdot \sum_{h \in k} \frac{a_{k, h} \cdot x!}{(x - h - 2)!}\\
+                a_{m, h + 1} &= \sum_{h \in k \in m} \frac{a_{k, h} \cdot (m - 1)!}{(m - k - 1)! k!}
+                \end{split}$$
             </div>
         </div>
         <li>
@@ -123,8 +148,8 @@
             </div>
         </div>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento1" class="hidden">
+            <button onclick="toggleTesto('approfondimento2')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento2" class="hidden">
                 $$\begin{split}
                 (x^n + \dots + x^k + \dots + 1) \cdot (1 - x) + x^{n + 1} &= 1\\
                 \left(\frac{(n + m)!}{n! \cdot m!} \cdot x^n + \dots + \frac{(k + m)!}{k! \cdot m!} \cdot x^k + \dots + 1\right) \cdot (1 - x)^{d + 1} + x^{n + 1} \left(\frac{(n + m)!}{n! \cdot m!} (1 - x)^d + \dots + \frac{(n + k)!}{n! \cdot k!} (1 - x)^{k + d - m} + \dots + \frac{(n + m - d)!}{n! \cdot (m - d)!}\right) &= 1\\
@@ -163,8 +188,8 @@
             \end{split}$$
         </li>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento2')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento2" class="hidden">
+            <button onclick="toggleTesto('approfondimento3')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento3" class="hidden">
                 Nel caso \(\deg (p) = 3\), sostituiamo:
                 $$\begin{split}
                 u &= \alpha + \beta\\
@@ -189,8 +214,8 @@
             </div>
         </div>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento3')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento3" class="hidden">
+            <button onclick="toggleTesto('approfondimento4')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento4" class="hidden">
                 Nel caso \(\deg (p) = 4\), risolviamo:
                 $$\begin{split}
                 q (u) = (u^2 - \gamma \cdot u + \alpha) \cdot (u^2 + \gamma \cdot u + \beta),
@@ -214,8 +239,8 @@
             </div>
         </div>
         <div class="divrow">
-            <button onclick="toggleTesto('approfondimento4')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
-            <div id="approfondimento4" class="hidden">
+            <button onclick="toggleTesto('approfondimento5')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+            <div id="approfondimento5" class="hidden">
             Dal caso \(\deg (p) = 5\) non c'è una formula risolutiva (vedi <a href="../../Fondamenti/Teoria dei Gruppi/La Teoria Di Galois.html">La Teoria Di Galois</a>).
             </div>
         </div>

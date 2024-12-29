@@ -32,41 +32,41 @@
 
     <ul>
         <li>
-            I numeri interi \(x \in {\mathbb Z}\) si possono scrivere come \(x = \pm a\) (cioè \(+ a\) o \(- a\)), concatenando: il segno \(\pm\) ed il modulo naturale \(a \in {\mathbb N}\). Si conviene che \(+ 0 = - 0\), mentre se il modulo \(a > 0\) è non nullo, vale la diseguaglianza \(- a < 0 < + a\).
+            I numeri interi \({\rm x}\in{\mathbb Z}\) si possono scrivere come \({\rm x}=\pm{\rm a}\) (cioè \(+{\rm a}\) o \(-{\rm a}\)), concatenando: il segno \(\pm\) ed il modulo naturale \({\rm a}\in{\mathbb N}\). Si conviene che \(+0=-0\), in generale vale la diseguaglianza \(-{\rm a}\le0\le+{\rm a}\).
         </li>
         <li>
-            I numeri razionali \(x \in {\mathbb Q}\) si possono scrivere come \(x = \pm a.b\overline{c}\) concatenando: il segno \(\pm\), la parte intera \(a\) naturale, la mantissa non periodica \(b\) (una sequenza di \(\beta\) cifre) e la mantissa periodica \(c\) (una sequenza di \(\gamma\) cifre).
+            I numeri razionali \({\rm x}\in{\mathbb Q}\) si possono scrivere come \(x = \pm a.b\overline{c}\) concatenando: il segno \(\pm\), la parte intera \(a\) naturale, la mantissa non periodica \(b\) (una sequenza di \(\beta\) cifre) e la mantissa periodica \(c\) (una sequenza di \(\gamma\) cifre).
         </li>
         <li>
-            Si conviene che se la mantissa periodica è la ripetizione della stessa sequenza di cifre, può essere sostituita con tale sequenza (ad esempio \(0.\overline{66} = 0.\overline{6}\)). Inoltre se la mantissa periodica è sottosequenza terminale della mantissa non periodica, quest'ultima può essere ignorata (ad esempio \(0.6\overline{6} = 0.\overline{6}\)). Si conviene che se la mantissa periodica è \(9\), questa si rimuove e si aggiunge \(1\) alla mantissa non periodica se presente, altrimenti alla parte intera (ad esempio \(0.\overline{9} = 1\)).
+            Si conviene che se la mantissa periodica è la ripetizione della stessa sequenza di cifre, può essere sostituita con tale sequenza (ad esempio \(0.\overline{66} = 0.\overline{6}\)). Inoltre se la mantissa periodica è sottosequenza terminale della mantissa non periodica, quest'ultima può essere ignorata (ad esempio \(0.6\overline{6} = 0.\overline{6}\)). Si conviene che se la mantissa periodica è \(9\), questa si rimuove e si aggiunge \(1\) alla mantissa non periodica se presente, altrimenti alla parte intera (ad esempio \(0.\overline{9}=1\)).
         </li>
         <li>
-            Se si considerano le mantisse \(b, c\) come numeri naturali \(b, c \in {\mathbb N}\) bisogna specificare il numero di cifre \(\beta, \gamma\) ed aggiungere eventualmente gli zeri a sinistra (ad esempio \(``01"\) è \(1\), ma scritto con due cifre, mentre \(10\) è il primo naturale che non può essere scritto con una sola cifra, cioè per qualunque sequenza di cifre si avrà \(b < 10^\beta\) e \(c < 10^\gamma\)).
+            Se si considerano le mantisse \({\rm b},{\rm c}\) come numeri naturali \({\rm b},{\rm c}\in{\mathbb N}\) bisogna specificare il numero di cifre \(\beta, \gamma\) ed aggiungere eventualmente gli zeri a sinistra (ad esempio \(``01"\) è \(1\), ma scritto con due cifre, mentre \(10\) è il primo naturale che non può essere scritto con una sola cifra, cioè per qualunque sequenza di cifre si avrà \(b\le10^\beta-1\) e \(c\le10^\gamma-1\)).
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('approfondimento1')" class="bottone"><img src="../../advanced.webp"></button>
             <div id="approfondimento1" class="hidden">
                 <ul>
                     <li>
-                        Si può scrivere un numero razionale come frazione \(\pm \frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
+                        Si può scrivere un numero razionale come frazione \(\pm\frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
                     </li>
                     <li>
                         Per dimostralo usiamo un risultato da <a href="Polinomi in una variabile.html">Polinomi in una variabile</a>:
                     </li>
                 </ul>
-                $$\begin{split}
-                (x^n + \dots + x^k + \dots + 1) \cdot (x - 1) = x^{n + 1} - 1.
-                \end{split}$$
-                Come conseguenza, per \(x = 10^{-\gamma}\)
-                $$\begin{split}
-                (c \cdot 10^{- \beta - \gamma} + \dots + c \cdot 10^{- \beta - k \cdot \gamma} + \dots) \cdot (1 - 10^{- \gamma}) = c \cdot 10^{- \beta - \gamma}.
-                \end{split}$$
+                \begin{split}
+                \left(\sum_{{\rm k}\in{\rm n}}{\rm x}^{\rm k}\right)\cdot({\rm x}-1)={\rm x}^{\rm n}-1.
+                \end{split}
+                Come conseguenza, per \({\rm x}=10^{-\gamma}\)
+                \begin{split}
+                \left(\sum_{{\rm k}\in{\mathbb N}}10^{-{\rm k}\cdot\gamma}\right)\cdot(1-10^{-\gamma})=10^{-\gamma}.
+                \end{split}
                 Da cui,
-                $$\begin{split}
-                a.b\overline{c} &= a + \frac{b}{10^\beta} + c \cdot 10^{- \beta - \gamma} + \dots + c \cdot 10^{- \beta - k \cdot \gamma} + \dots\\
-                &= a + \frac{b}{10^\beta} + \frac{c \cdot 10^{- \beta - \gamma}}{1 - 10^{- \gamma}}\\
-                &= a + \frac{b \cdot (10^\gamma - 1) + c}{10^\beta \cdot (10^\gamma - 1).}
-                \end{split}$$
+                \begin{split}
+                {\rm a}.{\rm b}\overline{\rm c}&={\rm a}+\frac{\rm b}{10^\beta}+{\rm c}\cdot10^{-\beta}\cdot\left(\sum_{{\rm k}\in{\mathbb N}}10^{-{\rm k}\cdot\gamma}\right)\\
+                &={\rm a}+\frac{\rm b}{10^\beta}+\frac{c\cdot10^{-\beta-\gamma}}{1-10^{-\gamma}}\\
+                &={\rm a}+\frac{{\rm b}\cdot(10^\gamma-1)+c}{10^\beta\cdot(10^\gamma-1).}
+                \end{split}
             </div>
         </div>
         <div class="divrow">
@@ -74,29 +74,29 @@
             <div id="approfondimento2" class="hidden">
                 <ul>
                     <li>
-                        Viceversa si può scrivere in forma decimale una frazione \(\pm \frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
+                        Viceversa si può scrivere in forma decimale una frazione \(\pm\frac{\rm N}{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
                     </li>
                     <li>
-                        Per dimostralo usiamo un risultato da <a href="Numeri naturali.html">Numeri naturali</a>: Sia \({\rm D} = 2^{{\rm D} \| 2} \cdot 5^{{\rm D} \| 5} \cdot m\). Poiché
+                        Per dimostralo usiamo un risultato da <a href="Numeri naturali.html">Numeri naturali</a>: Sia \({\rm D}=2^{{\rm D}\|2}\cdot5^{{\rm D}\|5}\cdot{\rm m}\). Poiché
                     </li>
                 </ul>
                 $$\begin{split}
-                \{10^k \% m\!: k = 0, \dots, m - 1\} \subseteq \{1, \dots, m - 1\}
+                \{10^k\%{\rm m}\!:{\rm k}\in{\rm m}\}\subseteq{\rm m}\setminus\{0\}
                 \end{split}$$
-                è un insieme di cardinalità \(< m\), quindi per il teorema dei piccioni (QUAL'è?) deve esserci una ridondanza
-                $$\begin{split}
-                \exists k_0 < k_1 < m\!: 10^k_0 \% m = 10^k_1 % m.
-                \end{split}$$
-                Allora scegliendo \(\beta = \max ({\rm D} \| 2, {\rm D} \| 5)\) ed \(\gamma = k_1 - k_0\) si ottiene
-                $$\begin{split}
-                \frac{\rm N}{\rm D} = ({\rm N} /\!/ {\rm D}) + \frac{({\rm N} \% {\rm D}) \cdot (10^\beta \cdot (10^\gamma - 1) /\!/ {\rm D})}{10^\beta \cdot (10^\gamma - 1)}
-                \end{split}$$
+                è un insieme di cardinalità \(< m\), quindi per il teorema dei piccioni deve esserci una ridondanza
+                \begin{split}
+                \exists{\rm k}_0<{\rm k}_1\le{\rm m}\!:\quad10^{{\rm k}_0}\%{\rm m}=10^{{\rm k}_1}\%{\rm m}.
+                \end{split}
+                Allora scegliendo \(\beta=\max({\rm D}\|2,{\rm D}\|5)\) ed \(\gamma={\rm k}_1-{\rm k}_0\) si ottiene
+                \begin{split}
+                \frac{\rm N}{\rm D}=({\rm N}/\!/{\rm D})+\frac{({\rm N} \% {\rm D}) \cdot (10^\beta \cdot (10^\gamma - 1) /\!/ {\rm D})}{10^\beta\cdot(10^\gamma-1)}
+                \end{split}
                 che scrivendo
-                $$\begin{split}
-                a &= ({\rm N} /\!/ {\rm D})\\
-                b &= (({\rm N} \% {\rm D}) \cdot (10^\beta \cdot (10^\gamma - 1) /\!/ {\rm D})) /\!/ (10^\gamma - 1)\\
-                c &= (({\rm N} \% {\rm D}) \cdot (10^\beta \cdot (10^\gamma - 1) /\!/ {\rm D})) \% (10^\gamma - 1)
-                \end{split}$$
+                \begin{split}
+                {\rm a}&=({\rm N}/\!/{\rm D})\\
+                {\rm b}&=(({\rm N}\%{\rm D})\cdot(10^\beta\cdot(10^\gamma-1)/\!/{\rm D}))/\!/(10^\gamma-1)\\
+                {\rm c}&=(({\rm N}\%{\rm D})\cdot(10^\beta\cdot(10^\gamma-1)/\!/{\rm D}))\%(10^\gamma-1),
+                \end{split}
                 permette la scrittura decimale di \(\frac{\rm D}{\rm N}\).
             </div>
         </div>
@@ -104,11 +104,11 @@
             <button onclick="toggleTesto('approfondimento3')" class="bottone"><img src="../../advanced.webp"></button>
             <div id="approfondimento3" class="hidden">
                 Si possono dimostrare le proprietà delle operazioni a partire dalle definizioni per ricorrenza:
-                $$\begin{split}
-                a + (b + 1) &= (a + b) + 1\\
-                a \cdot (b + 1) &= (a \cdot b) + b\\
-                a^{b + 1} &= a^b \cdot b
-                \end{split}$$
+                \begin{split}
+                {\rm a}+({\rm b}+1)&=({\rm a}+{\rm b})+{\rm 1}\\
+                {\rm a}\cdot({\rm b}+1)&=({\rm a}\cdot{\rm b})+{\rm b}\\
+                {\rm a}^{{\rm b}+1}&={\rm a}^{\rm b}\cdot{\rm b}.
+                \end{split}
             </div>
         </div>
     </ul>
@@ -117,11 +117,11 @@
 
     <ul>
         <p>
-            Dati tre numeri \({\rm A}, {\rm B}, {\rm C}\) (che siano o meno interi)
-            $$\begin{split}
-            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} + ({\rm B} + {\rm C}) &= ({\rm A} + {\rm B}) + {\rm C}\\
-            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} \cdot ({\rm B} \cdot {\rm C}) &= ({\rm A} \cdot {\rm B}) \cdot {\rm C}.
-            \end{split}$$
+            Dati tre numeri \({\rm A},{\rm B},{\rm C}\) (che siano o meno interi)
+            \begin{split}
+            \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}+({\rm B}+{\rm C})&=({\rm A}+{\rm B})+{\rm C}\\
+            \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}\cdot({\rm B}\cdot{\rm C})&=({\rm A}\cdot{\rm B})\cdot{\rm C}.
+            \end{split}
         </p>
         <h2>
             Esercizi:
@@ -130,34 +130,34 @@
             Mostra che sono uguali:
         </p>
         <li>
-            $$\begin{split}
-            a + (b + (c + d)) &= (a + b) + (c + d)\\
-            (a + b) + (c + d) &= ((a + b) + c) + d\\
-            ((a + b) + c) + d &= (a + (b + c)) + d\\
-            (a + (b + c)) + d &= a + ((b + c) + d)\\
-            a + ((b + c) + d) &= a + (b + (c + d)).
-            \end{split}$$
+            \begin{split}
+            {\rm a}+({\rm b}+({\rm c}+{\rm d}))&=({\rm a}+{\rm b})+({\rm c}+{\rm d})\\
+            ({\rm a}+{\rm b})+({\rm c}+{\rm d})&=(({\rm a}+{\rm b})+{\rm c})+{\rm d}\\
+            (({\rm a}+{\rm b})+{\rm c})+{\rm d}&=({\rm a}+({\rm b}+{\rm c}))+{\rm d}\\
+            ({\rm a}+({\rm b}+{\rm c}))+{\rm d}&={\rm a}+(({\rm b}+{\rm c})+{\rm d})\\
+            {\rm a}+(({\rm b}+{\rm c})+{\rm d})&={\rm a}+({\rm b}+({\rm c}+{\rm d})).
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone0')">Soluzione:</button>
             <div id="bottone0" class="hidden">
                 Basta applicare la proprietà associativa con:
                 $$\begin{split}
-                {\rm A}, {\rm B}, {\rm C} &= a, b, c + d\\
-                {\rm A}, {\rm B}, {\rm C} &= a + b, c, d\\
-                {\rm A}, {\rm B}, {\rm C} &= a, b, c\\
-                {\rm A}, {\rm B}, {\rm C} &= a, b + c, d\\
-                {\rm A}, {\rm B}, {\rm C} &= b, c, d.
+                {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b},{\rm c}+{\rm d}\\
+                {\rm A},{\rm B},{\rm C}&={\rm a}+{\rm b},{\rm c},{\rm d}\\
+                {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b},{\rm c}\\
+                {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b}+{\rm c},{\rm d}\\
+                {\rm A},{\rm B},{\rm C}&={\rm b},{\rm c},{\rm d}.
                 \end{split}$$        
             </div>
         </div>
         <li>
             $$\begin{split}
-            a \cdot (b \cdot (c \cdot d)) &= (a \cdot b) \cdot (c \cdot d)\\
-            (a \cdot b) \cdot (c \cdot d) &= ((a \cdot b) \cdot c) \cdot d\\
-            ((a \cdot b) \cdot c) \cdot d &= (a \cdot (b \cdot c)) \cdot d\\
-            (a \cdot (b \cdot c)) \cdot d &= a \cdot ((b \cdot c) \cdot d)\\
-            a \cdot ((b \cdot c) \cdot d) &= a \cdot (b \cdot (c \cdot d)).
+            {\rm a}\cdot({\rm b}\cdot({\rm c}\cdot{\rm d}))&=({\rm a}\cdot{\rm b})\cdot({\rm c}\cdot{\rm d})\\
+            ({\rm a}\cdot{\rm b})\cdot({\rm c}\cdot{\rm d})&=(({\rm a}\cdot{\rm b})\cdot{\rm c})\cdot{\rm d}\\
+            (({\rm a}\cdot{\rm b})\cdot{\rm c})\cdot{\rm d}&=({\rm a}\cdot({\rm b}\cdot{\rm c}))\cdot{\rm d}\\
+            ({\rm a}\cdot({\rm b}\cdot{\rm c}))\cdot{\rm d}&={\rm a}\cdot(({\rm b}\cdot{\rm c})\cdot{\rm d})\\
+            {\rm a}\cdot(({\rm b}\cdot{\rm c})\cdot{\rm d})&={\rm a}\cdot({\rm b}\cdot({\rm c}\cdot{\rm d})).
             \end{split}$$
         </li>
         <div class="divrow">
@@ -165,11 +165,11 @@
             <div id="bottone1" class="hidden">
                 Basta applicare la proprietà associativa con:
                 $$\begin{split}
-                {\rm A}, {\rm B}, {\rm C} &= a, b, c \cdot d\\
-                {\rm A}, {\rm B}, {\rm C} &= a \cdot b, c, d\\
-                {\rm A}, {\rm B}, {\rm C} &= a, b, c\\
-                {\rm A}, {\rm B}, {\rm C} &= a, b \cdot c, d\\
-                {\rm A}, {\rm B}, {\rm C} &= b, c, d.
+                {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b},{\rm c}\cdot{\rm d}\\
+                {\rm A},{\rm B},{\rm C}&={\rm a}\cdot{\rm b},{\rm c},{\rm d}\\
+                {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b},{\rm c}\\
+                {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b}\cdot{\rm c},{\rm d}\\
+                {\rm A},{\rm B},{\rm C}&={\rm b},{\rm c},{\rm d}.
                 \end{split}$$
             </div>
         </div>
@@ -177,10 +177,10 @@
             <button onclick="toggleTesto('approfondimento4')" class="bottone"><img src="../../advanced.webp"></button>
             <div id="approfondimento4" class="hidden">
                 La proprietà associativa si estende per induzione a:
-                $$\begin{split}
-                \sum_{k \in m} \left(\sum_{h \in m_k} a_{h + \sum_{j \in k} m_j}\right) = \sum_{h \in \sum_{j \in m} m_j} a_h\\
-                \prod_{k \in m} \left(\prod_{h \in m_k} a_{h + \sum_{j \in k} m_j}\right) = \prod_{h \in \sum_{j \in m} m_j} a_h
-                \end{split}$$
+                \begin{split}
+                \sum_{{\rm k}\in{\rm m}}\left(\sum_{{\rm h}\in{\rm m}_{\rm k}}{\rm a}_{{\rm h}+\sum_{{\rm j}\in{\rm k}}{\rm m}_{\rm j}}\right)=\sum_{{\rm h}\in\sum_{{\rm j}\in{\rm m}}{\rm m}_{\rm j}}{\rm a}_{\rm h}\\
+                \prod_{{\rm k}\in{\rm m}}\left(\prod_{{\rm h}\in{\rm m}_{\rm k}}{\rm a}_{{\rm h}+\sum_{{\rm j}\in{\rm k}}{\rm m}_{\rm j}}\right)=\prod_{{\rm h}\in\sum_{{\rm j}\in{\rm m}}{\rm m}_{\rm j}}{\rm a}_{\rm h}.
+                \end{split}
             </div>
         </div>
     </ul>
@@ -190,8 +190,8 @@
     <ul>
         <p>
         $$\begin{split}
-        \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} + {\rm B} &= {\rm B} + {\rm A}\\
-        \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} \cdot {\rm B} &= {\rm B} \cdot {\rm A}.
+        \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}+{\rm B}&={\rm B}+{\rm A}\\
+        \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}\cdot{\rm B}&={\rm B}\cdot{\rm A}.
         \end{split}$$
         </p>
         <h2>
@@ -202,10 +202,10 @@
         </p>
         <li>
             $$\begin{split}
-            a + b + c &= a + c + b\\
-            a + b + c &= b + a + c\\
-            a + b + c &= b + c + a\\
-            a + b + c &= c + a + b.
+            {\rm a}+{\rm b}+{\rm c}&={\rm a}+{\rm c}+{\rm b}\\
+            {\rm a}+{\rm b}+{\rm c}&={\rm b}+{\rm a}+{\rm c}\\
+            {\rm a}+{\rm b}+{\rm c}&={\rm b}+{\rm c}+{\rm a}\\
+            {\rm a}+{\rm b}+{\rm c}&={\rm c}+{\rm a}+{\rm b}.
             \end{split}$$
         </li>
         <div class="divrow">
@@ -213,41 +213,41 @@
             <div id="bottone2" class="hidden">
                 Basta applicare la proprietà commutativa con:
                 $$\begin{split}
-                {\rm A}, {\rm B} &= b, c\\
-                {\rm A}, {\rm B} &= a, b\\
-                {\rm A}, {\rm B} &= a, b + c\\
-                {\rm A}, {\rm B} &= a + b, c.
+                {\rm A},{\rm B}&={\rm b},{\rm c}\\
+                {\rm A},{\rm B}&={\rm a},{\rm b}\\
+                {\rm A},{\rm B}&={\rm a},{\rm b}+{\rm c}\\
+                {\rm A},{\rm B}&={\rm a}+{\rm b},{\rm c}.
                 \end{split}$$
             </div>
         </div>
         <li>
             $$\begin{split}
-            a \cdot b \cdot c &= a \cdot c \cdot b\\
-            a \cdot b \cdot c &= b \cdot a \cdot c\\
-            a \cdot b \cdot c &= b \cdot c \cdot a\\
-            a \cdot b \cdot c &= c \cdot a \cdot b.
+            {\rm a}\cdot{\rm b}\cdot{\rm c}&={\rm a}\cdot{\rm c}\cdot{\rm b}\\
+            {\rm a}\cdot{\rm b}\cdot{\rm c}&={\rm b}\cdot{\rm a}\cdot{\rm c}\\
+            {\rm a}\cdot{\rm b}\cdot{\rm c}&={\rm b}\cdot{\rm c}\cdot{\rm a}\\
+            {\rm a}\cdot{\rm b}\cdot{\rm c}&={\rm c}\cdot{\rm a}\cdot{\rm b}.
             \end{split}$$
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone3')">Soluzione:</button>
             <div id="bottone3" class="hidden">
                 Basta applicare la proprietà commutativa con:
-                $$\begin{split}
-                {\rm A}, {\rm B} &= b, c\\
-                {\rm A}, {\rm B} &= a, b\\
-                {\rm A}, {\rm B} &= a, b \cdot c\\
-                {\rm A}, {\rm B} &= a \cdot b, c.
-                \end{split}$$
+                \begin{split}
+                {\rm A},{\rm B}&={\rm b},{\rm c}\\
+                {\rm A},{\rm B}&={\rm a},{\rm b}\\
+                {\rm A},{\rm B}&={\rm a},{\rm b}\cdot{\rm c}\\
+                {\rm A},{\rm B}&={\rm a}\cdot{\rm b},{\rm c}.
+                \end{split}
             </div>
         </div>
         <div class="divrow">
             <button onclick="toggleTesto('approfondimento5')" class="bottone"><img src="../../advanced.webp"></button>
             <div id="approfondimento5" class="hidden">
                 Dato \(\sigma\) un elemento de <a href="Il Gruppo Simmetrico.html">Il Gruppo Simmetrico</a>, la proprietà commutativa si estende per induzione a:
-                $$\begin{split}
-                \sum_{k \in n} a_k = \sum_{k \in n} a_{\sigma (k)}\\
-                \prod_{k \in n} a_k = \prod_{k \in n} a_{\sigma (k).}
-                \end{split}$$
+                \begin{split}
+                \sum_{{\rm k}\in{\rm n}}{\rm a}_{\rm k}=\sum_{{\rm k}\in{\rm n}}{\rm a}_{\sigma({\rm k})}\\
+                \prod_{{\rm k}\in{\rm n}}{\rm a}_{\rm k}=\prod_{{\rm k}\in{\rm n}}{\rm a}_{\sigma({\rm k}).}
+                \end{split}
             </div>
         </div>
     </ul>
@@ -256,37 +256,37 @@
 
     <ul>
         <p>
-            $$\begin{split}
-            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} \cdot ({\rm B} + {\rm C}) = {\rm A} \cdot {\rm B} + {\rm A} \cdot {\rm C}.
-            \end{split}$$
+            \begin{split}
+            \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}\cdot({\rm B}+{\rm C})={\rm A}\cdot{\rm B}+{\rm A}\cdot{\rm C}.
+            \end{split}
         </p>
         <h2>
             Esercizi:
         </h2>
         <li>
             Mostra che:
-            $$\begin{split}
-            a \cdot (b + c + d) &= a \cdot b + a \cdot c + a \cdot d.
-            \end{split}$$
+            \begin{split}
+            {\rm a}\cdot({\rm b}+{\rm c}+{\rm d})&={\rm a}\cdot{\rm b}+{\rm a}\cdot{\rm c}+{\rm a}\cdot{\rm d}.
+            \end{split}
         </li>
         <li>
             Correggi l'errore:
-            $$\begin{split}
-            a = b &\longleftrightarrow a + c = b + c\\
-            a = b &\longleftrightarrow a \cdot c = b \cdot c\\
-            a < b &\longleftrightarrow a + c < b + c\\
-            a < b &\longleftrightarrow a \cdot c < b \cdot c.
-            \end{split}$$
+            \begin{split}
+            {\rm a}={\rm b}&\longleftrightarrow{\rm a}+{\rm c}={\rm b}+{\rm c}\\
+            {\rm a}={\rm b}&\longleftrightarrow{\rm a}\cdot{\rm c}={\rm b}\cdot{\rm c}\\
+            {\rm a}<{\rm b}&\longleftrightarrow{\rm a}+{\rm c}<{\rm b}+{\rm c}\\
+            {\rm a}<{\rm b}&\longleftrightarrow{\rm a}\cdot{\rm c}<{\rm b}\cdot{\rm c}.
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone4')">Soluzione:</button>
             <div id="bottone4" class="hidden">
                 <ul>
                     <li>
-                        La seconda vale se \(c \ne 0\).
+                        La seconda vale se \({\rm c}\ne0\).
                     </li>
                     <li>
-                        La quarta vale se \(c > 0\).
+                        La quarta vale se \({\rm c}>0\).
                     </li>
                 </ul>
             </div>
@@ -295,11 +295,11 @@
             <button onclick="toggleTesto('approfondimento6')" class="bottone"><img src="../../advanced.webp"></button>
             <div id="approfondimento6" class="hidden">
                 La proprietà distributiva si estende per induzione a:
-                $$\begin{split}
-                b \cdot \sum_{j \in n} a_k &= \sum_{j \in n} b \cdot a_k\\
-                b^{\sum_{k \in n} a_k} &= \prod_{j \in n} b^{a_k}\\
-                \left(\prod_{j \in n} a_k\right)^b &= \prod_{k \in n} a_k^b.
-                \end{split}$$
+                \begin{split}
+                {\rm b} \cdot \sum_{{\rm j}\in{\rm n}}{\rm a}_{\rm k}&=\sum_{{\rm j}\in{\rm n}}{\rm b}\cdot{\rm a}_{\rm k}\\
+                {\rm b}^{\sum_{{\rm k}\in{\rm n}}{\rm a}_{\rm k}}&=\prod_{{\rm j}\in{\rm n}}{\rm b}^{{\rm a}_{\rm k}}\\
+                \left(\prod_{{\rm j}\in{\rm n}} a_k\right)^{\rm b}&=\prod_{{\rm k}\in{\rm n}}{\rm a}_{\rm k}^{\rm b}.
+                \end{split}
             </div>
         </div>
     </ul>
@@ -308,47 +308,47 @@
 
     <ul>
         <p>
-            $$\begin{split}
-            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad {\rm A} \ge 0 \,, \qquad {\rm A}^{{\rm B} + {\rm C}} &= {\rm A}^{\rm B} \cdot {\rm A}^{\rm C}\\
-            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad \forall {\rm A} \ge 0 \,, \qquad \left({\rm A}^{\rm B}\right)^{\rm C} &= {\rm A}^{{\rm B} \cdot {\rm C}}\\
-            \forall {\rm A}, {\rm B}, {\rm C} \in {\mathbb R} \!: \qquad \forall {\rm A} \cdot {\rm B} \ge 0 \,, \qquad ({\rm A} \cdot {\rm B})^{\rm C} &= |{\rm A}|^{\rm C} \cdot |{\rm B}|^{\rm C}.
-            \end{split}$$
+            \begin{split}
+            \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}\ge0\,,\quad{\rm A}^{{\rm B}+{\rm C}}&={\rm A}^{\rm B}\cdot{\rm A}^{\rm C}\\
+            \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad\forall{\rm A}\ge0\,,\quad\left({\rm A}^{\rm B}\right)^{\rm C}&={\rm A}^{{\rm B}\cdot{\rm C}}\\
+            \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad\forall{\rm A}\cdot{\rm B}\ge0\,,\quad({\rm A}\cdot{\rm B})^{\rm C}&=|{\rm A}|^{\rm C}\cdot|{\rm B}|^{\rm C}.
+            \end{split}
         </p>
         <h2>
             Esercizi:
         </h2>
         <li>
             Mostra che:
-            $$\begin{split}
-            a^{b + c + d} &= a^b \cdot a^c \cdot a^d\\
-            \left(\left(a^b\right)^c\right)^d &= a^{b \cdot c \cdot d}\\
-            (a \cdot b \cdot c)^d &= a^d \cdot b^d \cdot c^d.
-            \end{split}$$
+            \begin{split}
+            {\rm a}^{{\rm b}+{\rm c}+{\rm d}}&={\rm a}^{\rm b}\cdot{\rm a}^{\rm c}\cdot{\rm a}^{\rm d}\\
+            \left(\left({\rm a}^{\rm b}\right)^{\rm c}\right)^{\rm d}&={\rm a}^{{\rm b}\cdot{\rm c}\cdot{\rm d}}\\
+            ({\rm a}\cdot{\rm b}\cdot{\rm c})^{\rm d}&={\rm a}^{\rm d}\cdot{\rm b}^{\rm d}\cdot{\rm c}^{\rm d}.
+            \end{split}
         </li>
         <li>
             Correggi l'errore:
-            $$\begin{split}
-            \forall a, b > 0\,, \qquad a = b &\longleftrightarrow a^c = b^c\\
-            \forall c > 0\,, \qquad a = b &\longleftrightarrow c^a = c^b\\
-            \forall a, b > 0\,, \qquad a < b &\longleftrightarrow a^c < b^c\\
-            \forall c > 0\,, \qquad a < b &\longleftrightarrow c^a < c^b.
-            \end{split}$$
+            \begin{split}
+            \forall{\rm a},{\rm b}>0\,,\quad{\rm a}={\rm b}&\longleftrightarrow{\rm a}^{\rm c}={\rm b}^{\rm c}\\
+            \forall{\rm c}>0\,,\quad{\rm a}={\rm b}&\longleftrightarrow{\rm c}^{\rm a}={\rm c}^{\rm b}\\
+            \forall{\rm a},{\rm b}>0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow{\rm a}^{\rm c}<{\rm b}^{\rm c}\\
+            \forall{\rm c}> 0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow{\rm c}^{\rm a}<{\rm c}^{\rm b}.
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone5')">Soluzione:</button>
             <div id="bottone5" class="hidden">
                 <ul>
                     <li>
-                        La prima vale se \(c \ne 0\).
+                        La prima vale se \({\rm c}\ne0\).
                     </li>
                     <li>
-                        La seconda vale se \(c \ne 1\).
+                        La seconda vale se \({\rm c}\ne1\).
                     </li>
                     <li>
-                        La terza vale se \(c > 0\).
+                        La terza vale se \({\rm c}>0\).
                     </li>
                     <li>
-                        La quarta vale se \(c > 1\).
+                        La quarta vale se \({\rm c}>1\).
                     </li>
                 </ul>
             </div>
@@ -360,47 +360,47 @@
     <ul>
         <p>
             La differenza e la divisione sono le inverse di somma e moltiplicazione, per cui sono definite come segue:
-            $$\begin{split}
-            {\rm A} - {\rm B} = {\rm C} &\longleftrightarrow {\rm A} = {\rm B} + {\rm C}\\
-            {\rm A} / {\rm B} = {\rm C} &\longleftrightarrow {\rm A} = {\rm B} \cdot {\rm C}.
-            \end{split}$$
+            \begin{split}
+            {\rm A}-{\rm B}={\rm C}&\longleftrightarrow{\rm A}={\rm B}+{\rm C}\\
+            {\rm A}/{\rm B}={\rm C}&\longleftrightarrow{\rm A}={\rm B}\cdot{\rm C}.
+            \end{split}
         </p>
         <li>
             Per cui, ad esempio:
-            $$\begin{split}
-            {\rm A} = {\rm B} + ({\rm A} - {\rm B}) &\qquad {\rm C} = ({\rm B} + {\rm C}) - {\rm B}\\
-            {\rm A} = {\rm B} \cdot ({\rm A} / {\rm B}) &\qquad {\rm C} = ({\rm B} \cdot {\rm C}) / {\rm B}.
-            \end{split}$$
+            \begin{split}
+            {\rm A}={\rm B}+({\rm A}-{\rm B})&\quad{\rm C}=({\rm B}+{\rm C})-{\rm B}\\
+            {\rm A}={\rm B}\cdot({\rm A}/{\rm B})&\quad{\rm C}=({\rm B}\cdot{\rm C})/{\rm B}.
+            \end{split}
         </li>
         <h2>
             Esercizi:
         </h2>
         <li>
             Mostra che:
-            $$\begin{split}
-            (a - c) + b &= (a + b) - c\\ 
-            a + (b - c) &= (a + b) - c\\
-            a - (c - b) &= (a + b) - c\\
-            (a - b) - c &= a - (b + c)\\
-            (a / c) \cdot b &= (a \cdot b) / c\\ 
-            a \cdot (b / c) &= (a \cdot b) / c\\
-            a / (c / b) &= (a \cdot b) / c\\
-            (a / b) / c &= a / (b \cdot c)\\
-            (a - b) \cdot c &= a \cdot c - b \cdot c\\
-            (a + b) / c &= (a / c) + (b / c)\\
-            (a - b) / c &= (a / c) - (b / c).
-            \end{split}$$
+            \begin{split}
+            ({\rm a}-{\rm c})+{\rm b}&=({\rm a}+{\rm b})-{\rm c}\\ 
+            {\rm a}+({\rm b}-{\rm c})&=({\rm a}+{\rm b})-{\rm c}\\
+            {\rm a}-({\rm c}-{\rm b})&=({\rm a}+{\rm b})-{\rm c}\\
+            ({\rm a}-{\rm b})-{\rm c}&={\rm a}-({\rm b}+{\rm c})\\
+            ({\rm a}/{ c})\cdot{\rm b}&=({\rm a}\cdot{\rm b})/{\rm c}\\ 
+            {\rm a}\cdot({ b}/{\rm c})&=({\rm a}\cdot{\rm b})/{\rm c}\\
+            {\rm a}/({\rm c}/{\rm b})&=({\rm a}\cdot{\rm b})/{\rm c}\\
+            ({\rm a}/{\rm b})/{\rm c}&={ a}/({\rm b}\cdot{\rm c})\\
+            ({\rm a}-{\rm b})\cdot{\rm c}&={\rm a}\cdot{\rm c}-{\rm b}\cdot{\rm c}\\
+            ({\rm a}+{\rm b})/{\rm c}&=({\rm a}/{\rm c})+({\rm b}/{\rm c})\\
+            ({\rm a}-{\rm b})/{\rm c}&=({\rm a}/{\rm c})-({\rm b}/{\rm c}).
+            \end{split}
         </li>
         <p>
             Correggi l'errore:
         </p>
         <li>
-            $$\begin{split}
-            a = b &\longleftrightarrow a - c = b - c\\
-            a = b &\longleftrightarrow c - a = c - b\\
-            a < b &\longleftrightarrow a - c < b - c\\
-            a < b &\longleftrightarrow c - a < c - b.
-            \end{split}$$
+            \begin{split}
+            {\rm a}={\rm b}&\longleftrightarrow{\rm a}-{\rm c}={\rm b}-{\rm c}\\
+            {\rm a}={\rm b}&\longleftrightarrow{\rm c}-{\rm a}={\rm c}-{\rm b}\\
+            {\rm a}<{\rm b}&\longleftrightarrow{\rm a}-{\rm c}<{\rm b}-{\rm c}\\
+            {\rm a}<{\rm b}&\longleftrightarrow{\rm c}-{\rm a}<{\rm c}-{\rm b}.
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone6')">Soluzione:</button>
@@ -413,22 +413,22 @@
             </div>
         </div>
         <li>
-            $$\begin{split}
-            \forall c \ne 0\,, \qquad a = b &\longleftrightarrow a / c = b / c\\
-            \forall a, b \ne 0\,, \qquad a = b &\longleftrightarrow c / a = c / b\\
-            \forall c \ne 0\,, \qquad a < b &\longleftrightarrow a / c < b / c\\
-            \forall a, b \ne 0\,, \qquad a < b &\longleftrightarrow c / a < c / b.
-            \end{split}$$
+            \begin{split}
+            \forall{\rm c}\ne0\,,\quad{\rm a}={\rm b}&\longleftrightarrow{\rm a}/{\rm c}={\rm b}/{\rm c}\\
+            \forall{\rm a},{\rm b}\ne0\,,\quad{\rm a}={\rm b}&\longleftrightarrow{\rm c}/{\rm a}={\rm c}/{\rm b}\\
+            \forall{\rm c}\ne0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow{\rm a}/{\rm c}<{\rm b}/{\rm c}\\
+            \forall{\rm a},{\rm b}\ne0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow{\rm c}/{\rm a}<{\rm c}/{\rm b}.
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone7')">Soluzione:</button>
             <div id="bottone7" class="hidden">
                 <ul>
                     <li>
-                        La terza vale per \(c > 0\).
+                        La terza vale per \({\rm c}>0\).
                     </li>
                     <li>
-                        La quarta vale per \(c < 0\).
+                        La quarta vale per \(0>{\rm c}\).
                     </li>
                 </ul>
             </div>
@@ -440,17 +440,17 @@
     <ul>
         <p>
             Invece radicali e logaritmi sono le inverse di potenza ed esponenziale, per cui sono definite come segue:
-            $$\begin{split}
-            \sqrt[{\rm B}]{\rm A} = {\rm C} &\longleftrightarrow {\rm A} = {\rm C}^{\rm B}\\
-            \log_{\rm B}({\rm A}) = {\rm C} &\longleftrightarrow {\rm A} = {\rm B}^{\rm C}.
-            \end{split}$$
+            \begin{split}
+            \sqrt[{\rm B}]{\rm A}={\rm C}&\longleftrightarrow{\rm A}={\rm C}^{\rm B}\\
+            \log_{\rm B}({\rm A})={\rm C}&\longleftrightarrow{\rm A}={\rm B}^{\rm C}.
+            \end{split}
         </p>
         <li>
             Per cui, ad esempio:
-            $$\begin{split}
-            {\rm A} = \left(\sqrt[{\rm B}]{\rm A}\right)^{\rm B} &\qquad {\rm C} = \sqrt[{\rm B}]{{\rm C}^{\rm B}}\\
-            {\rm A} = {\rm B}^{\log_{\rm B}({\rm A})} &\qquad {\rm C} = \log_{\rm B}\left({\rm B}^{\rm C}\right).
-            \end{split}$$
+            \begin{split}
+            {\rm A}=\left(\sqrt[{\rm B}]{\rm A}\right)^{\rm B}&\quad{\rm C}=\sqrt[{\rm B}]{{\rm C}^{\rm B}}\\
+            {\rm A}={\rm B}^{\log_{\rm B}({\rm A})}&\quad{\rm C}=\log_{\rm B}\left({\rm B}^{\rm C}\right).
+            \end{split}
         </li>
         <h2>
             Esercizi:
@@ -459,66 +459,66 @@
             Mostra che:
         </p>
         <li>
-            $$\begin{split}
-            a^{b - c} &= a^b / a^c\\
-            a^{b / c} &= \sqrt[c]{(a^b)}\\
-            a^{b / c} &= (\sqrt[c]{a})^b\\
-            \sqrt[c]{a \cdot b} &= \sqrt[c]{a} \cdot \sqrt[c]{b}\\
-            (a / b)^c &= a^c / b^c\\
-            \sqrt[c]{(a / b)} &= \sqrt[c]{a} / \sqrt[c]{b.}
-            \end{split}$$
+            \begin{split}
+            {\rm a}^{{\rm b}-{\rm c}}&={\rm a}^{\rm b}/{\rm a}^{\rm c}\\
+            {\rm a}^{{\rm b}/{\rm c}}&=\sqrt[{\rm c}]{({\rm a}^{\rm b})}\\
+            {\rm a}^{{\rm b}/{\rm c}}&= (\sqrt[{\rm c}]{\rm a})^{\rm b}\\
+            \sqrt[c]{a \cdot b}&=\sqrt[c]{\rm a}\cdot\sqrt[{\rm c}]{\rm b}\\
+            ({\rm a}/{\rm b})^{\rm c}&={\rm a}^{\rm c}/{\rm b}^{\rm c}\\
+            \sqrt[{\rm c}]{({\rm a}/{\rm b})}&=\sqrt[{\rm c}]{\rm a}/\sqrt[{\rm c}]{{\rm b}.}
+            \end{split}
         </li>
         <li>
-            $$\begin{split}
-            \log_a(b \cdot c) &= \log_a(b) + \log_a(c)\\
-            \log_a(b / c) &= \log_a(b) - \log_a(c)\\
-            \log_a(b^c) &= c \cdot \log_a(b)\\
-            \log_a(\sqrt[c]{b}) &= \log_a(b) / c\\
-            \log_a(b) \cdot \log_b(c) &= \log_a(c)\\
-            \log_a(b) &= \log_c(b) / \log_c(a)
-            \end{split}$$
+            \begin{split}
+            \log_{\rm a}({\rm b}\cdot{\rm c})&=\log_{\rm a}({\rm b})+\log_{\rm a}({\rm c})\\
+            \log_{\rm a}({\rm b}/{\rm c})&=\log_{\rm a}({\rm b})-\log_{\rm a}({\rm c})\\
+            \log_{\rm a}({\rm b}^{\rm c})&={\rm c}\cdot\log_{\rm a}({\rm b})\\
+            \log_{\rm a}(\sqrt[{\rm c}]{\rm b})&=\log_{\rm a}({\rm b})/{\rm c}\\
+            \log_{\rm a}({\rm b})\cdot\log_{\rm b}({\rm c})&=\log_{\rm a}({\rm c})\\
+            \log_{\rm a}({\rm b})&=\log_{\rm c}({\rm b})/\log_{\rm c}({\rm a})
+            \end{split}
         </li>
         <p>
             Correggi l'errore:
         </p>
         <li>
-            $$\begin{split}
-            \forall a, b \ge 0\,, \qquad a = b &\longleftrightarrow \sqrt[c]{a} = \sqrt[c]{b}\\
-            \forall c \ge 0\,, \qquad a = b &\longleftrightarrow \sqrt[a]{c} = \sqrt[b]{c}\\
-            \forall a, b \ge 0\,, \qquad a < b &\longleftrightarrow \sqrt[c]{a} < \sqrt[c]{b}\\
-            \forall c \ge 0\,, \qquad a < b &\longleftrightarrow \sqrt[a]{c} < \sqrt[b]{c}
-            \end{split}$$
+            \begin{split}
+            \forall{\rm a},{\rm b}\ge0\,,\quad{\rm a}={\rm b}&\longleftrightarrow\sqrt[{\rm c}]{\rm a}=\sqrt[{\rm c}]{\rm b}\\
+            \forall{\rm c}\ge0\,,\quad{\rm a}={\rm b}&\longleftrightarrow\sqrt[{\rm a}]{\rm c}=\sqrt[{\rm b}]{\rm c}\\
+            \forall{\rm a},{\rm b}\ge0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow\sqrt[{\rm c}]{\rm a}<\sqrt[{\rm c}]{\rm b}\\
+            \forall{\rm c}\ge0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow\sqrt[{\rm a}]{\rm c}<\sqrt[{\rm b}]{\rm c}
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone8')">Soluzione:</button>
             <div id="bottone8" class="hidden">
                 <p>
-                    La seconda vale per \(c \ne 1\).
+                    La seconda vale per \({\rm c}\ne1\).
                 </p>
                 <p>
-                    La quarta vale per \(c > 1\).
+                    La quarta vale per \({\rm c}>1\).
                 </p>
             </div>
         </div>
         <li>
-            $$\begin{split}
-            \forall a, b, c \ge 0\,, \qquad a = b &\longleftrightarrow \log_c(a) = \log_c(b)\\
-            \forall a, b, c \ge 0\,, \qquad a = b &\longleftrightarrow \log_a(c) = \log_b(c)\\
-            \forall a, b, c \ge 0\,, \qquad a < b &\longleftrightarrow \log_c(a) < \log_c(b)\\
-            \forall a, b, c \ge 0\,, \qquad a < b &\longleftrightarrow \log_a(c) < \log_b(c)
-            \end{split}$$
+            \begin{split}
+            \forall{\rm a},{\rm b},{\rm c}\ge 0\,,\quad{\rm a}={\rm b}&\longleftrightarrow\log_{\rm c}({\rm a})=\log_{\rm c}({\rm b})\\
+            \forall{\rm a},{\rm b},{\rm c}\ge 0\,,\quad{\rm a}={\rm b}&\longleftrightarrow\log_{\rm a}({\rm c})=\log_{\rm b}({\rm c})\\
+            \forall{\rm a},{\rm b},{\rm c}\ge 0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow\log_{\rm c}({\rm a})<\log_{\rm c}({\rm b})\\
+            \forall{\rm a},{\rm b},{\rm c}\ge 0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow\log_{\rm a}({\rm c})<\log_{\rm b}({\rm c}).
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone9')">Soluzione:</button>
             <div id="bottone9" class="hidden">
                 <p>
-                    La seconda vale per \(c \ne 1\).
+                    La seconda vale per \({\rm c}\ne1\).
                 </p>
                 <p>
-                    La terza vale per \(c > 1\).
+                    La terza vale per \({\rm c}>1\).
                 </p>
                 <p>
-                    La quarta vale per \(c < 1\).
+                    La quarta vale per \(1>{\rm c}\).
                 </p>
             </div>
         </div>

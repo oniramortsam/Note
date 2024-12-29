@@ -32,16 +32,16 @@
 
     <ul>
         <li>
-            Si dice che \(\lim_{n \to \infty} a_n = x \) se
-            $$\begin{split}
-            \forall \varepsilon > 0, \quad \exists n \in \mathbb N, \quad \forall m > n, \quad |a_n - x| < \varepsilon.
-            \end{split}$$
+            Si dice che \(\lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}={\rm x}\) se
+            \begin{split}
+            \forall\varepsilon>0\,,\quad\exists{\rm n}\in{\mathbb N}\,,\quad\forall{\rm m}>{\rm n}\,,\quad|{\rm a}_{\rm n}-{\rm x}|<\varepsilon.
+            \end{split}
         </li>
         <li>
-            Si dice che \(\lim_{y \rightarrow x} f(y) = z\) se
-            $$\begin{split}
-            \forall \lim_{n \rightarrow \infty} a_n = x, \quad \lim_{n \rightarrow \infty} f(a_n) = z.
-            \end{split}$$
+            Si dice che \(\lim_{{\rm y}\rightarrow{\rm x}}{\rm f}({\rm y})={\rm z}\) se
+            \begin{split}
+            \forall\lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}={\rm x}\,,\quad\lim_{{\rm n}\rightarrow\infty}{\rm f}({\rm a}_{\rm n})={\rm z}.
+            \end{split}
         </li>
         <li>
             La chiusura di un insieme consiste dei limiti di successioni a valori in quell'insieme.
@@ -50,7 +50,7 @@
             Un insieme si dice aperto se ogni successione che non lo interseca non ci converge.
         </li>
         <li>
-            Si dice che una funzione \(f\) è continua in \(x\) se \(\lim_{y \rightarrow x} f(y) = f(x)\).
+            Si dice che una funzione \({\rm f}\) è continua in \({\rm x}\) se \(\lim_{{\rm y}\rightarrow{\rm x}}{\rm f}({\rm y})={\rm f}({\rm x})\).
         </li>
         <li>
             Una funzione continua manda intervalli in intervalli.
@@ -58,44 +58,42 @@
         <li>
             Una funzione continua manda chiusi limitati in chiusi limitati.
         </li>
-        <h2>
-            Esercizi:
-        </h2>
+        <h2>Esercizi:</h2>
         <li>
-            Sia \(a_n\) una successione crescente, mostra che
-            $$\begin{split}
-            \lim_{n \to \infty} a_n = \sup_{n \in {\mathbb N}} a_n.
-            \end{split}$$
+            Sia \({\rm a}_{\rm n}\) una successione crescente, mostra che
+            \begin{split}
+            \lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}=\sup_{{\rm n}\in{\mathbb N}}{\rm a}_{\rm n}.
+            \end{split}
         </li>
         <li>
-            Sia \(a_n\) una successione decrescente, mostra che
-            $$\begin{split}
-            \lim_{n \to \infty} a_n = \inf_{n \in {\mathbb N}} a_n.
-            \end{split}$$
+            Sia \({\rm a}_{\rm n}\) una successione decrescente, mostra che
+            \begin{split}
+            \lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}=\inf_{{\rm n}\in{\mathbb N}}{\rm a}_{\rm n}.
+            \end{split}
         </li>
         <li>
-            Sia \(a_n\) una successione, mostra che sono monotone
-            $$\begin{split}
-            \left(\sup_{m > n} a_m\right)_{n \in {\mathbb N}} \qquad \left(\inf_{m > n} a_m\right)_{n \in {\mathbb N}.}
-            \end{split}$$
+            Sia \({\rm a}_{\rm n}\) una successione, mostra che sono monotone
+            \begin{split}
+            \left(\sup_{{\rm m}>{\rm n}}{\rm a}_{\rm m}\right)_{{\rm n}\in{\mathbb N}}\qquad\left(\inf_{{\rm m}>{\rm n}}{\rm a}_{\rm m}\right)_{{\rm n}\in{\mathbb N}.}
+            \end{split}
         </li>
         <li>
-            Mostra che \(a_n\) è una successione convergente se e solo se
-            $$\begin{split}
-            \inf_{n \in {\mathbb N}}\left(\sup_{m > n} a_m\right) = \lim_{n \to \infty} a_n = \sup_{n \in {\mathbb N}}\left(\inf_{m > n} a_m\right).
-            \end{split}$$
+            Mostra che \({\rm a}_{\rm n}\) è una successione convergente se e solo se
+            \begin{split}
+            \inf_{{\rm n}\in{\mathbb N}}\left(\sup_{{\rm m}>{\rm n}}{\rm a}_{\rm m}\right)=\lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}=\sup_{{\rm n}\in{\mathbb N}}\left(\inf_{{\rm m}>{\rm n}}{\rm a}_{\rm m}\right).
+            \end{split}
         </li>
         <li>
-            Mostra che $$\lim_{y \rightarrow x} f(y) = z$$ se e solo se
-            $$\begin{split}
-            \forall \varepsilon > 0, \quad \exists \delta > 0, \quad \forall |y - x| < \delta, \quad |f(y) - z| < \varepsilon.
-            \end{split}$$
+            Mostra che \(\lim_{{\rm y}\rightarrow{\rm x}}{\rm f}({\rm y})={\rm z}\) se e solo se
+            \begin{split}
+            \forall\varepsilon>0\,,\quad\exists\delta>0\,,\quad\forall|{\rm y}-{\rm x}|<\delta\,,\quad|{\rm f}({\rm y})-{\rm z}|<\varepsilon.
+            \end{split}
         </li>
         <li>
-            Mostra che \(f\) è una funzione continua in \(x\) se e solo se
-            $$\begin{split}
-            \lim_{n \to \infty} a_n = x \longrightarrow \lim_{n \to \infty} f(a_n) = f(x).
-            \end{split}$$
+            Mostra che \({\rm f}\) è una funzione continua in \({\rm x}\) se e solo se
+            \begin{split}
+            \lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}={\rm x}\longrightarrow\lim_{{\rm n}\rightarrow\infty}{\rm f}({\rm a}_{\rm n})={\rm f}({\rm x}).
+            \end{split}
         </li>
         <li>
             Mostra che una funzione è continua se e solo se la chiusura di una sua immagine contiene l'immagine della chusura.
@@ -110,39 +108,30 @@
 
     <ul>
         <li>
-            <h3>
-                Il numero di Nepero:
-            </h3>
-            $$\begin{split}
-            \lim_{n \to \infty} \left(1 + \frac{x}{n}\right)^n &= \sum_{n \in \mathbb N} \frac{x^n}{n!}\\
-            e &= \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n\\
-            \exp (x) &= e^x\\
-            \log (x) &= \log_e (x).
-            \end{split}$$
+            <h3>Il numero di Nepero:</h3>
+            \begin{split}
+            \lim_{{\rm n}\rightarrow\infty}\left(1+\frac{\rm x}{\rm n}\right)^{\rm n}&=\sum_{{\rm n}\in{\mathbb N}}\frac{{\rm x}^{\rm n}}{{\rm n}!}\\
+            {\it e}&=\lim_{{\rm n}\rightarrow\infty}\left(1+\frac{1}{\rm n}\right)^{\rm n}\\
+            \exp({\rm x}) &={\it e}^{\rm x}\\
+            \log({\rm x})&=\log_{\it e}({\rm x}).
+            \end{split}
         </li>
         <li>
-            <h3>
-                Il Pi greco:
-            </h3>
-            $$\begin{split}
-            a_0 &= 1\\
-            a_{n + 1} &= \sqrt{2 + a_n}\\
-            \pi &= \prod_{n \in {\mathbb N}} \frac{2}{a_n.}
-            \end{split}$$
+            <h3>Il Pi greco:</h3>
+            \begin{split}
+            {\rm a}_0&=1\\
+            {\rm a}_{{\rm n}+1}&=\sqrt{2+{\rm a}_{\rm n}}\\
+            \pi&=\prod_{{\rm n}\in{\mathbb N}}\frac{2}{{\rm a}_{\rm n}.}
+            \end{split}
         </li>
         <li>
             Si riesce a calcolare che:
-            $$\begin{split}
-            \lim_{x \rightarrow 0}\frac{\sin(x)}{x} &= 1\\
-            \lim_{x \rightarrow 0}\frac{\cos(x) - 1}{x^2} &= \frac{1}{2}\\
-            \lim_{x \rightarrow 0}\frac{\exp(x) - 1}{x} &= 1\\
-            \lim_{x \rightarrow 0}\frac{\log(x + 1)}{x} &= 1
-            \end{split}$$
-        </li>
-        <li>
-            <h3>
-                Stirling:
-            </h3>
+            \begin{split}
+            \lim_{{\rm x}\rightarrow0}\frac{\sin({\rm x})}{\rm x}&=1\\
+            \lim_{{\rm x}\rightarrow0}\frac{\cos({\rm x})-1}{{\rm x}^2}&=\frac{1}{2}\\
+            \lim_{{\rm x}\rightarrow0}\frac{\exp({\rm x})-1}{\rm x}&=1\\
+            \lim_{{\rm x}\rightarrow0}\frac{\log({\rm x}+1)}{\rm x}&=1.
+            \end{split}
         </li>
     </ul>
 

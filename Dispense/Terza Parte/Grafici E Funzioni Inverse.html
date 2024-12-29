@@ -32,21 +32,16 @@
 
     <ul>
         <p>
-            Una funzione
-            $$f: {\rm A} \rightarrow {\rm B}$$
-            si dice:
+            Una funzione \({\rm f}\!:{\rm A}\rightarrow{\rm B}\) si dice:
         </p>
         <li>
-            Di periodo \(a\), se
-            $$f(x + a) = f(x).$$
+            Di periodo \({\rm a}\), se \({\rm f}({\rm x}+{\rm a})={\rm f}({\rm x})\).
         </li>
         <li>
-            Pari se
-            $$f(- x) = f(x).$$
+            Pari se \({\rm f}(-{\rm x}) ={\rm f}({\rm x})\).
         </li>
         <li>
-            Dispari se
-            $$f(- x) = - f(x).$$
+            Dispari se \({\rm f}(-{\rm x})=-{\rm f}({\rm x})\).
         </li>
         <h2>
             Esercizi:
@@ -64,10 +59,10 @@
             Composizione di una funzione dispari e di una pari è dispari.
         </li>
         <li>
-            Se \(g\) è di periodo \(a\), \(f \circ g\) è di periodo \(a\).
+            Se \({\rm g}\) è di periodo \({\rm a}\), \({\rm f}\circ{\rm g}\) è di periodo \(a\).
         </li>
         <li>
-            Se \(f\) è di periodo \(a\) e \(b\), allora è di periodo \(c \cdot \gcd(a, b)\).
+            Se \({\rm f}\) è di periodo \({\rm a}\) e \({\rm b}\), allora è di periodo \({\rm c}\cdot\operatorname{gcd}({\rm a},{\rm b})\).
         </li>
         <li>
             Una potenza con base positiva è positiva e monotona nella base e nell'esponente.
@@ -77,19 +72,20 @@
         </li>
         <li>
             Determina dominio ed immagine delle seguenti funzioni
-            $$\begin{split}
-            x + a \qquad a + x \qquad x - a \qquad a - x \qquad x \cdot a \qquad a \cdot x \qquad x / a\\
-            a / x \qquad x^a \qquad a^x \qquad \sqrt[a]{x} \qquad \sqrt[x]{a} \qquad \log_a(x) \qquad \log_x(a).
-            \end{split}$$
+            \begin{split}
+            {\rm x}+{\rm a}\qquad{\rm a}+{\rm x}\qquad{\rm x}-{\rm a}\qquad{\rm a}-{\rm x}\qquad{\rm x}\cdot{\rm a}\qquad{\rm a}\cdot{\rm x}\qquad{\rm x}/{\rm a}\qquad{\rm a}/{\rm x}\qquad{\rm x}^{\rm a}\qquad{\rm a}^{\rm x}\qquad\sqrt[{\rm a}]{\rm x}\qquad\sqrt[{\rm x}]{\rm a}\qquad\log_{\rm a}({\rm x})\qquad\log_{\rm x}({\rm a}).
+            \end{split}
         </li>
         <li>
             Determina poi se sono pari, dispari, periodiche, monotone, iniettive, surgettive.
         </li>
-        <h3>
-            Condizioni di esistenza:
-        </h3>
+    </ul>
+    
+    <h1>Funzione inversa</h1>
+    
+    <ul>
         <p>
-            Non si fa mai:
+            Non si fa mai, a costo di violare le condizioni di esistenza:
         </p>
         <li>
             Dividere per \(0\), fare il logaritmo in base \(1\), fare \(0^0\).
@@ -112,124 +108,118 @@
         <li>
             Il logaritmo con argomento negativo.
         </li>
-    </ul>
-    
-    <h1>Funzione inversa</h1>
-    
-    <ul>
         <p>
-            Data una espressione \(f(x)\):
+            Data una espressione \({\rm f}({\rm x})\):
         </p>
         <li>
-            è possibile determinare il dominio naturale di \(f\) imponendo le condizioni di esistenza.
+            Si può determinare il dominio naturale di \({\rm f}\) imponendo le condizioni di esistenza.
         </li>
         <li>
-            è possibile risolvere
-            $$\begin{split}
-            f(x) = y
-            \end{split}$$
-            per alcuni \(y\), tali valori sono detti immagine di \(f\).
+            Per alcuni \({\rm y}\), è possibile risolvere
+            \begin{split}
+            {\rm f}({\rm x})={\rm y},
+            \end{split}
+            tali valori sono detti l'immagine di \({\rm f}\).
         </li>
         <li>
-            si ottiene poi come soluzione
-            $$\begin{split}
-            x = g(y)
-            \end{split}$$
-            se \(f\) è iniettiva, in tal caso \(g\) ha come dominio l'immagine di \(f\) e viceversa.
+            Se \({\rm f}\) è iniettiva, si ottiene come soluzione
+            \begin{split}
+            {\rm x}={\rm g}({\rm y}),
+            \end{split}
+            in tal caso \({\rm g}\) ha come dominio l'immagine di \({\rm f}\) e viceversa.
         </li>
         <p>
-            altrimenti si può ottenere \(x \in \{g_0(y), \dots, g_k(y)\}\). In tal caso:
+            Altrimenti si può ottenere \({\rm x}\in\{{\rm g}_0({\rm y}),\dots,{\rm g}_{\rm n}({\rm y})\}\). In tal caso:
         </p>
         <li>
-            si restringe il dominio di \(g_h\) all'insieme \(\{f (g_h (y)) = y\}\)
+            Si restringe il dominio di \({\rm g}_{\rm k}\) all'insieme \(\{{\rm f}({\rm g}_{\rm k}({\rm y}))={\rm y}\}\)
         </li>
         <li>
-            l'unione dei domini di \(g_0, \dots, g_k\) è l'immagine di \(f\).
+            L'unione dei domini di \({\rm g}_0,\dots,{\rm g}_{\rm n}\) è l'immagine di \({\rm f}\).
         </li>
         <li>
-            l'immagine di \(g_h\) è \(\{x = g_h (f (x))\}\) per \(x\) nel dominio di \(f\).
+            L'immagine di \({\rm g}_{\rm k}\) è \(\{{\rm x}={\rm g}_{\rm k}({\rm f}({\rm x}))\}\) per \({\rm x}\) nel dominio di \({\rm f}\).
         </li>
         <li>
-            le immagini di \(g_0, \dots, g_k\) sono una partizione del dominio di \(f\).
+            Le immagini di \({\rm g}_0,\dots,{\rm g}_{\rm k}\) sono una partizione del dominio di \({\rm f}\).
         </li>
         <li>
-            restringendo il dominio di \(f\) all'immagine di \(g_h\), \(f\) risulta bigettiva sul dominio di \(g_h\).
+            Restringendo il dominio di \({\rm f}\) all'immagine di \({\rm g}_{\rm k}\), la restrizione di \({\rm f}\) risulta bigettiva sul dominio di \({\rm g}_{\rm k}\).
         </li>
-        <h2>
-            Esercizi:
-        </h2>
+        <h2>Esercizi:</h2>
         <li>
-            $$\begin{split}
-            f(x) = \sqrt{(x - a_0)(x - a_1)}
-            \end{split}$$
+            \begin{split}
+            {\rm f}({\rm x})=\sqrt{({\rm x}-{\rm a}_0)({\rm x}-{\rm a}_1)}
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone0')">Soluzione:</button>
             <div id="bottone0" class="hidden">
-                ha come dominio \((\infty, \min(a_0, a_1)] \cup [\max(a_0, a_1), \infty)\).
-                $$\begin{split}
-                x^2 - (a_0 + a_1) x + a_0 a_1 - y^2 = 0
-                \end{split}$$
+                ha come dominio \((\infty,\min({\rm a}_0,{\rm a}_1)]\cup[\max({\rm a}_0,{\rm a}_1),\infty)\).
+                \begin{split}
+                {\rm x}^2-({\rm a}_0+{\rm a}_1)\cdot{\rm x}+{\rm a}_0\cdot{\rm a}_1-{\rm y}^2=0
+                \end{split}
                 ha come soluzioni:
-                $$\begin{split}
-                g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2}\\
-                g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} + y^2.}
-                \end{split}$$
+                \begin{split}
+                {\rm g}_0({\rm y})=\frac{{\rm a}_0 + a_1}{2}-\sqrt{\frac{({\rm a}_0-{\rm a}_1)^2}{4}+{\rm y}^2}\\
+                {\rm g}_1({\rm y})=\frac{{\rm a}_0+{\rm a}_1}{2}+\sqrt{\frac{({\rm a}_0-{\rm a}_1)^2}{4}+{\rm y}^2.}
+                \end{split}
                 <ul>
                     <li>
-                        Entrambe ammettono come dominio \(\mathbb R\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([0, \infty)\).
+                        Entrambe ammettono come dominio \({\mathbb R}\), ma ristretto a \(\sqrt{{\rm y}^2}={\rm y}\), cioé \([0,\infty)\).
                     </li>
                     <li>
-                        L'immagine di \(g_0\) è \((\infty, \min(a_0, a_1)]\), mentre quella di \(g_1\) è \([\max(a_0, a_1), \infty)\).
+                        L'immagine di \({\rm g}_0\) è \((\infty, \min({\rm a}_0,{\rm a}_1)]\), mentre quella di \({\rm g}_1\) è \([\max({\rm a}_0,{\rm a}_1),\infty)\).
                     </li>
                 </ul>
             </div>
         </div>
         <li>
-            $$\begin{split}
-            f(x) = \sqrt{- (x - a_0)(x - a_1)}
-            \end{split}$$
+            \begin{split}
+            {\rm f}({\rm x})=\sqrt{-({\rm x}-{\rm a}_0)({\rm x}-{\rm a}_1)}
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone1')">Soluzione:</button>
             <div id="bottone1" class="hidden">
-                ha come dominio \([\min(a_0, a_1), \max(a_0, a_1)]\).
-                $$\begin{split}
-                x^2 - (a_0 + a_1) x + a_0 a_1 + y^2 = 0
-                \end{split}$$
+                ha come dominio \([\min({\rm a}_0,{\rm a}_1), \max({\rm a}_0,{\rm a}_1)]\).
+                \begin{split}
+                {\rm x}^2-({\rm a}_0+{\rm a}_1){\rm x}+{\rm a}_0\cdot{\rm a}_1+{\rm y}^2=0
+                \end{split}
                 ha come soluzioni
-                $$\begin{split}
-                g_0(y) = \frac{a_0 + a_1}{2} - \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2}\\
-                g_1(y) = \frac{a_0 + a_1}{2} + \sqrt{\frac{(a_0 - a_1)^2}{4} - y^2.}
-                \end{split}$$
+                \begin{split}
+                {\rm g}_0({\rm y})=\frac{{\rm a}_0+{\rm a}_1}{2}-\sqrt{\frac{({\rm a}_0-{\rm a}_1)^2}{4}-{\rm y}^2}\\
+                {\rm g}_1({\rm y})=\frac{{\rm a}_0+{\rm a}_1}{2}+\sqrt{\frac{({\rm a}_0-{\rm a}_1)^2}{4}-{\rm y}^2.}
+                \end{split}
                 <ul>
                     <li>
-                        Entrambe ammettono come dominio
-                        $$\left[0, \frac{|a_0 - a_1|}{2}\right]$$.
+                        Entrambe ammettono come dominio \(\left[0,\frac{|{\rm a}_0-{\rm a}_1|}{2}\right]\).
                     </li>
                     <li>
-                        L'immagine di \(g_0\) è \( \left[\min(a_0, a_1), \frac{a_0 + a_1}{2}\right]\), mentre quella di \(g_1\) è \(\left[\frac{a_0 + a_1}{2}, \max(a_0, a_1)\right]\).
+                        L'immagine di \({\rm g}_0\) è \(\left[\min({\rm a}_0,{\rm a}_1),\frac{{\rm a}_0+{\rm a}_1}{2}\right]\), mentre quella di \({\rm g}_1\) è \(\left[\frac{{\rm a}_0+{\rm a}_1}{2},\max({\rm a}_0,{\rm a}_1)\right]\).
                     </li>
                 </ul>
             </div>
         </div>
         <li>
-            $$f(x) = \sqrt{(x - a)^2 + b^2}$$
+            \begin{split}
+            {\rm f}({\rm x})=\sqrt{({\rm x}-{\rm a})^2+{\rm b}^2}
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone2')">Soluzione:</button>
             <div id="bottone2" class="hidden">
-                ha come dominio \(\mathbb R\).
-                $$\begin{split}
-                g_0(y) = a - \sqrt{y^2 - b^2}\\
-                g_1(y) = a + \sqrt{y^2 - b^2.}
-                \end{split}$$
+                ha come dominio \({\mathbb R}\).
+                \begin{split}
+                {\rm g}_0({\rm y})={\rm a}-\sqrt{{\rm y}^2-{\rm b}^2}\\
+                {\rm g}_1({\rm y})={\rm a}+\sqrt{{\rm y}^2-{\rm b}^2.}
+                \end{split}
                 <ul>
                     <li>
-                        Entrambe ammettono come dominio \((\infty, |b|] \cup [|b|, \infty)\), ma ristretto a \(\sqrt{y^2} = y\), cioé \([|b|, \infty)\).
+                        Entrambe ammettono come dominio \((\infty,|{\rm b}|]\cup[|{\rm b}|,\infty)\), ma ristretto a \(\sqrt{{\rm y}^2}={\rm y}\), cioé \([|{\rm b}|,\infty)\).
                     </li>
                     <li>
-                        L'immagine di \(g_0\) è \((\infty, a]\), mentre quella di \(g_1\) è \([a, \infty)\).
+                        L'immagine di \({\rm g}_0\) è \((\infty,{\rm a}]\), mentre quella di \({\rm g}_1\) è \([{\rm a},\infty)\).
                     </li>
                 </ul>
             </div>

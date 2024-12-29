@@ -379,7 +379,7 @@
         for (var blo = 0; blo < anydigits_blos.length; blo++) {
             let k = anydigits_blos[blo];
             let ms = [...Array(9).keys()].filter(m => anydigits[I(k, m)][J(k, m)]);
-            nondig.map(d => ms.filter(i => possible[I(k, m)][J(k, m)].includes(d)).map(m => remove(I(k, m), J(k, m), d)));
+            nondig.map(d => ms.filter(m => possible[I(k, m)][J(k, m)].includes(d)).map(m => remove(I(k, m), J(k, m), d)));
         }
         for (var blo = 0; blo < onlydigit_blos.length; blo++) {
             let k = onlydigit_blos[blo];

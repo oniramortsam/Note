@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gli Spazi Vettoriali</title>
+    <title>Gli spazi vettoriali</title>
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
@@ -26,49 +26,318 @@
         <button onclick="location.href='../main.html'">Indice</button>
     </div>
     
+    <ul>
+        <p>
+            Sia \({\rm A}\in{\mathbb R}^{{\rm d}\cdot{\rm d}}\) e \({\rm v}_{\rm k}\!:{\rm k}\in{\rm d}\) la base canonica.
+        </p>
+        <h3>prodotto di Kronecker</h3>
+    </ul>
+
+    <h1>Decomposizione di Gauss</h1>
+
+    <ul>
+        <li>
+            Sono fatti equivalenti:
+            \begin{split}
+            \left(\forall{\rm k}<{\rm d}\,,\quad{\rm U} \cdot v_k = \sum_{l \le k} v_l \cdot {\rm U}_{l, k}\right) &\longleftrightarrow \left(\forall k < d \,, \quad v_k^\star \cdot {\rm U} = \sum_{l \ge k} {\rm U}_{k, l} \cdot v_l^\star\right)\\
+            \left(\forall{\rm k}<{\rm d}\,,\quad{\rm L} \cdot v_k = \sum_{l \ge k} v_l \cdot {\rm L}_{l, k}\right) &\longleftrightarrow \left(\forall k < d \,, \quad v_k^\star \cdot {\rm L} = \sum_{l \le k} {\rm L}_{k, l} \cdot v_l^\star\right).
+            \end{split}
+            e si dice in tal caso che \({\rm L}, {\rm U}\) triangolare inferiore e superiore rispettivamente.
+        </li>
+        <li>
+            Sono fatti equivalenti, \(\forall k < d\):
+            \begin{split}
+            {\rm U} \cdot v_k = \sum_{l \le k} v_l \cdot {\rm U}_{l, k} \longleftrightarrow \forall j > k\,, \quad v_j^\star \cdot {\rm U} \cdot v_k = 0.
+            \end{split}
+            \begin{split}
+            v_k^\star \cdot {\rm U} = \sum_{l \ge k} {\rm U}_{k, l} \cdot v_l^\star \longleftrightarrow \forall j < k\,, \quad v_k^\star \cdot {\rm U} \cdot v_j = 0.
+            \end{split}
+            \begin{split}
+            {\rm L} \cdot v_k = \sum_{l \ge k} v_l \cdot {\rm L}_{l, k} \longleftrightarrow \forall j > k\,, \quad v_j^\star \cdot {\rm L} \cdot v_k = 0.
+            \end{split}
+            \begin{split}
+            v_k^\star \cdot {\rm L} = \sum_{l \le k} {\rm L}_{k, l} \cdot v_l^\star \longleftrightarrow \forall j > k\,, \quad v_k^\star \cdot {\rm L} \cdot v_j = 0.
+            \end{split}
+        </li>
+        <li>
+            Sia \({\rm A}\) una matrice, allora è possibile scrivere
+            \begin{split}
+            \exists {\rm L}, {\rm U} \!: &\quad {\rm U} \cdot {\rm A} = {\rm L}\\
+            \exists {\rm L}, {\rm U} \!: &\quad {\rm A} \cdot {\rm L} = {\rm U}\\
+            \exists {\rm L}, {\rm U} \!: &\quad {\rm L} \cdot {\rm A} = {\rm U}\\
+            \exists {\rm L}, {\rm U} \!: &\quad {\rm A} \cdot {\rm U} = {\rm L}.
+            \end{split}
+            Dove si intende \({\rm L}, {\rm U}\) triangolare inferiore e superiore rispettivamente.
+        </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+            <div id="bottone0" class="hidden">
+                <h3>
+                    Decomposizione UL da sinistra:
+                </h3>
+                Vogliamo trovare
+                \begin{split}
+                {\rm U} \cdot {\rm A} = {\rm L}.
+                \end{split}
+                Supponiamo che
+                \begin{split}
+                \forall j > k\,, \quad {\rm A} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm A}_{l, j}).
+                \end{split}
+                Allora scegliamo
+                \begin{split}
+                {\rm U} = 1_{\mathbb R^d} - \sum_{l < k} \frac{{\rm A}_{l, k} \cdot (v_l \cdot v_k^\star)}{{\rm A}_{k, k}},
+                \end{split}
+                in questo modo
+                \begin{split}
+                \forall j > k\,, \quad {\rm U} \cdot {\rm A} \cdot v_j = {\rm A} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm A}_{l, j}).
+                \end{split}
+                ed inoltre
+                \begin{split}
+                \forall j < k\,, \quad v_j^\star \cdot {\rm U} \cdot {\rm A} \cdot v_k = {\rm A}_{j, k} - \frac{{\rm A}_{j, k} \cdot {\rm A}_{k, k}}{{\rm A}_{k, k}} = 0.
+                \end{split}
+                Cioè, sia \({\rm B} = {\rm U} \cdot {\rm A}\),
+                \begin{split}
+                \forall j \ge k\,, \quad {\rm B} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm B}_{l, j}).
+                \end{split}            
+                <h3>
+                    Decomposizione UL da destra:
+                </h3>
+                Vogliamo trovare
+                \begin{split}
+                {\rm A} \cdot {\rm L} = {\rm U}.
+                \end{split}
+                \begin{split}
+                \forall j > k\,, \quad v_j^\star \cdot {\rm A} = \sum_{l \ge j} ({\rm A}_{j, l} \cdot v_l^\star).
+                \end{split}
+                Allora scegliamo
+                \begin{split}
+                {\rm L} = 1_{\mathbb R^d} - \sum_{l < k} \frac{{\rm A}_{k, l} \cdot (v_k \cdot v_l^\star)}{{\rm A}_{k, k}},
+                \end{split}
+                in questo modo
+                \begin{split}
+                \forall j > k\,, \quad v_j^\star \cdot {\rm A} \cdot {\rm L} = v_j^\star \cdot {\rm A} = \sum_{l \ge j} ({\rm A}_{j, l} \cdot v_l^\star).
+                \end{split}
+                ed inoltre
+                \begin{split}
+                \forall j < k\,, \quad v_k^\star \cdot {\rm A} \cdot {\rm L} \cdot v_j = {\rm A}_{k, j} - \frac{{\rm A}_{k, k}  \cdot {\rm A}_{k, j}}{{\rm A}_{k, k}} = 0.
+                \end{split}
+                Cioè, sia \({\rm B} = {\rm A} \cdot {\rm L}\),
+                \begin{split}
+                \forall j \ge k\,, \quad v_j^\star \cdot {\rm B} = \sum_{l \ge j} ({\rm B}_{l, j} \cdot v_l^\star).
+                \end{split}
+                <h3>
+                    Decomposizione LU da sinistra:
+                </h3>
+                Vogliamo trovare
+                \begin{split}
+                {\rm L} \cdot {\rm A} = {\rm U}.
+                \end{split}
+                Supponiamo che
+                \begin{split}
+                \forall j < k\,, \quad {\rm A} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm A}_{l, j}).
+                \end{split}
+                Allora scegliamo
+                \begin{split}
+                {\rm L} = 1_{\mathbb R^d} - \sum_{l > k} \frac{{\rm A}_{l, k} \cdot (v_l \cdot v_k^\star)}{{\rm A}_{k, k}},
+                \end{split}
+                in questo modo
+                \begin{split}
+                \forall j < k\,, \quad {\rm L} \cdot {\rm A} \cdot v_j = {\rm A} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm A}_{l, j}).
+                \end{split}
+                ed inoltre
+                \begin{split}
+                \forall j > k\,, \quad v_j^\star \cdot {\rm L} \cdot {\rm A} \cdot v_k = {\rm A}_{j, k} - \frac{{\rm A}_{j, k} \cdot {\rm A}_{k, k}}{{\rm A}_{k, k}} = 0.
+                \end{split}
+                Cioè, sia \({\rm B} = {\rm L} \cdot {\rm A}\),
+                \begin{split}
+                \forall j \le k\,, \quad {\rm B} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm B}_{l, j}).
+                \end{split}            
+                <h3>
+                    Decomposizione LU da destra:
+                </h3>
+                Vogliamo trovare
+                \begin{split}
+                {\rm A} \cdot {\rm U} = {\rm L}.
+                \end{split}
+                Supponiamo che
+                \begin{split}
+                \forall j < k\,, \quad v_j^\star \cdot {\rm A} = \sum_{l \le j} ({\rm A}_{j, l} \cdot v_l^\star).
+                \end{split}
+                Allora scegliamo
+                \begin{split}
+                {\rm U} = 1_{\mathbb R^d} - \sum_{l > k} \frac{{\rm A}_{k, l} \cdot (v_k \cdot v_l^\star)}{{\rm A}_{k, k}},
+                \end{split}
+                in questo modo
+                \begin{split}
+                \forall j < k\,, \quad v_j^\star \cdot {\rm A} \cdot {\rm U} = v_j^\star \cdot {\rm A} = \sum_{l \le j} ({\rm A}_{j, l} \cdot v_l^\star).
+                \end{split}
+                ed inoltre
+                \begin{split}
+                \forall j > k\,, \quad v_k^\star \cdot {\rm A} \cdot {\rm U} \cdot v_j = {\rm A}_{k, j} - \frac{{\rm A}_{k, k}  \cdot {\rm A}_{k, j}}{{\rm A}_{k, k}} = 0.
+                \end{split}
+                Cioè, sia \({\rm B} = {\rm A} \cdot {\rm U}\),
+                \begin{split}
+                \forall j \le k\,, \quad v_j^\star \cdot {\rm B} = \sum_{l \le j} ({\rm B}_{l, j} \cdot v_l^\star).
+                \end{split}
+            </div>
+        </div>
+    </ul>    
+    
+    <h1>Decomposizione di Householder</h1>
+
+    <ul>
+        <li>
+            La riflessione \(\sigma_v\) rispetto al vettore \(v\) con \(|v| = 1\) è \(1_{\mathbb R^d} - 2 (v \cdot v^\star)\).
+        </li>
+        <li>
+            Una isometria si può scrivere come composizione di \(d\) o \(d - 1\) riflessioni.
+        </li>
+        <li>
+            La composizione di \(k\) riflessioni stabilizza almeno uno spazio di dimensione \(d - k\).
+        </li>
+        <li>
+            <h3>
+                Ortogonalizzazione di Gram-Schmidt
+            </h3>
+            Esiste \(\rm H\) tale che \({\rm H} \cdot {\rm A} \cdot {\rm H}^{- 1}\) sia triangolare.
+        </li>
+        <li>
+            Sia \({\rm A}\) una matrice, allora è possibile scrivere
+            \begin{split}
+            \exists {\rm H}, {\rm L} \!: &\quad {\rm H} \cdot {\rm A} = {\rm L}\\
+            \exists {\rm H}, {\rm U} \!: &\quad {\rm A} \cdot {\rm H} = {\rm U}\\
+            \exists {\rm H}, {\rm U} \!: &\quad {\rm H} \cdot {\rm A} = {\rm U}\\
+            \exists {\rm H}, {\rm L} \!: &\quad {\rm A} \cdot {\rm H} = {\rm L}.
+            \end{split}
+            Dove si intende \({\rm L}, {\rm U}\) triangolare inferiore e superiore rispettivamente ed \({\rm H}\) ortogonale.
+        </li>
+        <div class="divrow">
+            <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+            <div id="bottone1" class="hidden">
+                <h3>Decomposizione HL:</h3>
+                Cerchiamo una riflessione \(\sigma \in {\mathbb R}^{(k + 1) \cdot (k + 1)}\) tale che
+                \begin{split}
+                (1 + \sigma) \cdot (1_{{\mathbb R}^{k+1}}|0) \cdot {\rm A} \cdot v_k) = |(1_{{\mathbb R}^{k+1}}|0) \cdot {\rm A} \cdot v_k| v_k
+                \end{split}
+                così che, se:
+                \begin{split}
+                \forall j > k\,, \quad {\rm A} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm A}_{l, j}),
+                \end{split}
+                e sia
+                \begin{split}
+                {\rm B} = (1 + (1_{{\mathbb R}^{k+1}}|0)^\star \sigma \cdot (1_{{\mathbb R}^{k+1}}|0)) \cdot {\rm A},
+                \end{split}
+                allora
+                \begin{split}
+                \forall j \ge k\,, \quad {\rm B} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm B}_{l, j}).
+                \end{split}
+                Cioè abbiamo trovato
+                \begin{split}
+                {\rm H} \cdot {\rm A} = {\rm L}.
+                \end{split}
+                <h3>Decomposizione UH:</h3>
+                Cerchiamo una riflessione \(\sigma \in {\mathbb R}^{(k + 1) \cdot (k + 1)}\) tale che
+                \begin{split}
+                (v_k^\star \cdot {\rm A} \cdot (1_{{\mathbb R}^{k+1}}|0)^\star) \cdot (1 + \sigma) = |v_k^\star \cdot {\rm A} \cdot (1_{{\mathbb R}^{k+1}}|0)^\star| v_k^\star
+                \end{split}
+                così che, se:
+                \begin{split}
+                \forall j > k\,, \quad v_j^\star \cdot {\rm A} = \sum_{l \ge j} ({\rm A}_{j, l} \cdot v_l^\star),
+                \end{split}
+                e sia
+                \begin{split}
+                {\rm B} = {\rm A} \cdot (1 + (1_{{\mathbb R}^{k+1}}|0)^\star \sigma \cdot (1_{{\mathbb R}^{k+1}}|0)),
+                \end{split}
+                allora
+                \begin{split}
+                \forall j \ge k\,, \quad v_j^\star \cdot {\rm B} = \sum_{l \ge j} ({\rm B}_{j, l} \cdot v_l^\star).
+                \end{split}
+                Cioè abbiamo trovato
+                \begin{split}
+                {\rm A} \cdot {\rm H} = {\rm U}.
+                \end{split}
+                <h3>Decomposizione HU:</h3>
+                Cerchiamo una riflessione \(\sigma \in {\mathbb R}^{(d - k) \cdot (d - k)}\) tale che
+                \begin{split}
+                (1 + \sigma) \cdot ((0|1_{{\mathbb R}^{d-k}}) \cdot {\rm A} \cdot v_k) = |(0|1_{{\mathbb R}^{d-k}}) \cdot {\rm A} \cdot v_k| v_k
+                \end{split}
+                così che, se
+                \begin{split}
+                \forall j < k\,, \quad {\rm A} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm A}_{l, j}),
+                \end{split}
+                e sia
+                \begin{split}
+                {\rm B} = (1 + (0|1_{{\mathbb R}^{d-k}})^\star \sigma \cdot (0|1_{{\mathbb R}^{d-k}})) \cdot {\rm A},
+                \end{split}
+                allora
+                \begin{split}
+                \forall j \le k\,, \quad {\rm B} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm B}_{l, j}).
+                \end{split}
+                Cioè abbiamo trovato
+                \begin{split}
+                {\rm H} \cdot {\rm A} = {\rm U}.
+                \end{split}
+                <h3>Decomposizione LH:</h3>
+                Cerchiamo una riflessione \(\sigma \in {\mathbb R}^{(d - k) \cdot (d - k)}\) tale che
+                \begin{split}
+                (v_k^\star \cdot {\rm A} \cdot (0|1_{{\mathbb R}^{d-k}})^\star) \cdot (1 + \sigma) = |v_k^\star \cdot {\rm A} \cdot (0|1_{{\mathbb R}^{d-k}})^\star| v_k^\star
+                \end{split}
+                così che, se
+                \begin{split}
+                \forall j < k\,, \quad v_j^\star \cdot {\rm A} = \sum_{l \ge j} ({\rm A}_{j, l} \cdot v_l^\star),
+                \end{split}
+                e sia
+                \begin{split}
+                {\rm B} = {\rm A} \cdot (1 + (0|1_{{\mathbb R}^{d-k}})^\star \sigma \cdot (0|1_{{\mathbb R}^{d-k}})),
+                \end{split}
+                allora
+                \begin{split}
+                \forall j \le k\,, \quad v_j^\star \cdot {\rm B} = \sum_{l \ge j} ({\rm B}_{j, l} \cdot v_l^\star).
+                \end{split}
+                Cioè abbiamo trovato
+                \begin{split}
+                {\rm A} \cdot {\rm H} = {\rm L}.
+                \end{split}
+            </div>
+        </div>
+    </ul>
+
     <h1>Matrici Simmetriche</h1>
 
-    Consideriamo una matrice simmetrica e semidefinita positiva \(\rm S\) e definiamo per ricorrenza
-
-    $$\begin{split}
-    \lambda_{k, n} x_{k, n} = {\rm S} \cdot x_{k, n - 1} - \sum_{h \in k} (x_{k, n - 1}^\star \cdot {\rm S} \cdot x_{h, n}) x_{h, n}\\
-    \end{split}$$
-
-    con \(|x_{k, n}| = 1\), allora
-    
-    $$\begin{split}
-    {\rm S} = \sum_{k \in d} \lambda_k (x_k \cdot x_k^\star)
-    \end{split}$$
-
-    <h1>Matrici Ortogonali</h1>
-
-    La riflessione \(\sigma_v\) rispetto al vettore \(v\) con \(|v| = 1\) è \(1_{\mathbb V} - 2 (v \cdot v^\star)\).
-    Una isometria si può scrivere come composizione di \(d\) o \(d - 1\) riflessioni.
-    La composizione di \(k\) riflessioni stabilizza almeno uno spazio di dimensione \(d - k\).    
+    <ul>
+        <li>
+            Consideriamo una matrice simmetrica e semidefinita positiva \(\rm S\) e definiamo per ricorrenza
+            \begin{split}
+            \lambda_{k, n} x_{k, n} = {\rm S} \cdot x_{k, n - 1} - \sum_{h \in k} (x_{k, n - 1}^\star \cdot {\rm S} \cdot x_{h, n}) x_{h, n}\\
+            \end{split}
+            con \(|x_{k, n}| = 1\), allora
+            \begin{split}
+            {\rm S} = \sum_{k \in d} \lambda_k (x_k \cdot x_k^\star)
+            \end{split}
+        </li>
+    </ul>
 
     <h1>Determinante</h1>
 
-    Consideriamo invece una mappa lineare \(\rm A\) e
-
-    $$\begin{split}
-    {\rm A}^\star \cdot {\rm A} = \sum_{k \in d} \lambda_k^2 (x_k \cdot x_k^\star)\\
-    {\rm A} \cdot {\rm A}^\star = \sum_{k \in d} \lambda_k^2 (y_k \cdot y_k^\star)
-    \end{split}$$
-
-    allora possiamo scegliere \(y_k\) di modo che \(\lambda_k > 0\)
-
-    $$\begin{split}
-    ({\rm A} \cdot {\rm A}^\star)^{- \frac{1}{2}} \cdot {\rm A} = \sum_{k \in d} (y_k \cdot x_k^\star) = {\rm H}\\
-    {\rm A} \cdot ({\rm A}^\star \cdot {\rm A})^{- \frac{1}{2}} = \sum_{k \in d} (y_k \cdot x_k^\star) = {\rm H}.
-    \end{split}$$
-
-    Il determinante di una mappa è il volume dell'immagine di un insieme di volume unitario \(\prod_{k \in d} \lambda_k\) , ma con segno negativo se \({\rm H}\) si scrive come un numero dispari di riflessioni.
-
-    $$\begin{split}
-    {\rm det} (\sigma_v) = - 1
-    {\rm det} ({\rm A} \cdot {\rm B}) = {\rm det} ({\rm A}) {\rm det} ({\rm B})
-    \end{split}$$
-
-    Per il principio di cavalieri il determinante di una matrice triangolare è il prodotto degli elementi sulla diagonale. Come conseguenza, il metodo di Gauss preserva il determinante. In termini di forme differenziali si possono ricavare la formula di Laplace e di Lebesgue (COME ?).
+    <ul>
+        <li>
+            Consideriamo invece una mappa lineare \(\rm A\) e
+            \begin{split}
+            {\rm A}^\star \cdot {\rm A} = \sum_{k \in d} \lambda_k^2 (x_k \cdot x_k^\star)\\
+            {\rm A} \cdot {\rm A}^\star = \sum_{k \in d} \lambda_k^2 (y_k \cdot y_k^\star)
+            \end{split}
+            allora possiamo scegliere \(y_k\) di modo che \(\lambda_k > 0\)
+            \begin{split}
+            ({\rm A} \cdot {\rm A}^\star)^{- \frac{1}{2}} \cdot {\rm A} = \sum_{k \in d} (y_k \cdot x_k^\star) = {\rm H}\\
+            {\rm A} \cdot ({\rm A}^\star \cdot {\rm A})^{- \frac{1}{2}} = \sum_{k \in d} (y_k \cdot x_k^\star) = {\rm H}.
+            \end{split}
+            Il determinante di una mappa è il volume dell'immagine di un insieme di volume unitario \(\prod_{k \in d} \lambda_k\) , ma con segno negativo se \({\rm H}\) si scrive come un numero dispari di riflessioni.
+            \begin{split}
+            {\rm det} (\sigma_v) = - 1
+            {\rm det} ({\rm A} \cdot {\rm B}) = {\rm det} ({\rm A}) {\rm det} ({\rm B})
+            \end{split}
+            Per il principio di cavalieri il determinante di una matrice triangolare è il prodotto degli elementi sulla diagonale. Come conseguenza, il metodo di Gauss preserva il determinante. In termini di forme differenziali si possono ricavare la formula di Laplace e di Lebesgue (COME ?).
+        </li>
+    </ul>
 
 </body>

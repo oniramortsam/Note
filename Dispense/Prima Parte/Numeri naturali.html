@@ -32,29 +32,29 @@
 
     <ul>
         <li>
-            Scriviamo \({\rm A} < {\rm B}\) e diciamo che "\({\rm A}\) è minore di \({\rm B}\)".
+            Scriviamo \({\rm A}<{\rm B}\) e diciamo che "\({\rm A}\) è minore di \({\rm B}\)".
         </li>
         <li>
-            Scriviamo \({\rm A} \le {\rm B}\) e diciamo che "\({\rm A}\) è minore o uguale a \({\rm B}\)".
-        </li>
-        <li>
-            Insomma
-            $$\begin{split}
-            {\rm A} \le {\rm B} &\longleftrightarrow ({\rm A} < {\rm B}) \lor ({\rm A} = {\rm B})\\
-            {\rm A} < {\rm B} &\longleftrightarrow ({\rm A} \le {\rm B}) \land ({\rm A} \ne {\rm B}).
-            \end{split}$$
-        </li>
-        <li>
-            Scriviamo \(\min ({\rm A}, {\rm B})\) per intendere il "minimo" dell'insieme \(\{{\rm A}, {\rm B}\}\).
-        </li>
-        <li>
-            Scriviamo \(\max ({\rm A}, {\rm B})\) per intendere il "massimo" dell'insieme \(\{{\rm A}, {\rm B}\}\).
+            Scriviamo \({\rm A}\le{\rm B}\) e diciamo che "\({\rm A}\) è minore o uguale a \({\rm B}\)".
         </li>
         <li>
             Insomma
-            $$\begin{split}
-            \min ({\rm A}, {\rm B}) = {\rm A} \longleftrightarrow {\rm A} \le {\rm B} \longleftrightarrow \max ({\rm A}, {\rm B}) = {\rm B}
-            \end{split}$$
+            \begin{split}
+            {\rm A}\le{\rm B}&\longleftrightarrow({\rm A}<{\rm B})\lor({\rm A}={\rm B})\\
+            {\rm A}<{\rm B}&\longleftrightarrow({\rm A}\le{\rm B})\land ({\rm A} \ne {\rm B}).
+            \end{split}
+        </li>
+        <li>
+            Scriviamo \(\min({\rm A},{\rm B})\) per intendere il "minimo" dell'insieme \(\{{\rm A},{\rm B}\}\).
+        </li>
+        <li>
+            Scriviamo \(\max({\rm A},{\rm B})\) per intendere il "massimo" dell'insieme \(\{{\rm A},{\rm B}\}\).
+        </li>
+        <li>
+            Insomma
+            \begin{split}
+            \min({\rm A},{\rm B})={\rm A}\longleftrightarrow{\rm A}\le{\rm B}\longleftrightarrow\max({\rm A},{\rm B})={\rm B}
+            \end{split}
         </li>
         <h2>
             Esercizi:
@@ -63,41 +63,41 @@
             Mostra che:
         </p>
         <li>
-            $$\begin{split}
-            c \le \min(a, b) &\longleftrightarrow (c \le a) \land (c \le b)\\
-            \max(a, b) \le c &\longleftrightarrow (a \le c) \land (b \le c)\\
-            c \le \max(a, b) &\longleftrightarrow (c \le a) \lor (c \le b)\\
-            \min(a, b) \le c &\longleftrightarrow (a \le c) \lor (b \le c).
-            \end{split}$$
+            \begin{split}
+            {\rm c}\le\min({\rm a},{\rm b})&\longleftrightarrow({\rm c}\le{\rm a})\land({\rm c}\le{\rm b})\\
+            \max({\rm a},{\rm b})\le{\rm c}&\longleftrightarrow({\rm a}\le{\rm c})\land({\rm b}\le{\rm c})\\
+            {\rm c} \le \max({\rm a},{\rm b})&\longleftrightarrow({\rm c}\le{\rm a})\lor({\rm c}\le{\rm b})\\
+            \min({\rm a},{\rm b})\le{\rm c}&\longleftrightarrow({\rm a}\le{\rm c})\lor({\rm b}\le{\rm c}).
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone0')">Soluzione:</button>
             <div id="bottone0" class="hidden">
-                Trattare separatamente i casi \(a < b\), \(a = b\), \(a > b\).
+                Trattare separatamente i casi \(a < b\), \(a=b\), \(a > b\).
             </div>
         </div>
         <div class="divrow">
             <button onclick="toggleTesto('approfondimento0')"><img src="../../advanced.webp"></button>
             <div id="approfondimento0" class="hidden">
                 Questa proprietà si estende per induzione a
-                $$\begin{split}
-                c \le \min(a_k: k \in n) &\longleftrightarrow \forall k \in n\,, (c \le a_k)\\
-                c \ge \max(a_k: k \in n) &\longleftrightarrow \forall k \in n\,, (c \ge a_k)\\
-                c \le \max(a_k: k \in n) &\longleftrightarrow \exists k \in n\,, (c \le a_k)\\
-                c \ge \min(a_k: k \in n) &\longleftrightarrow \exists k \in n\,, (c \ge a_k).
-                \end{split}$$
+                \begin{split}
+                {\rm c}\le\min({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\forall{\rm k}\in{\rm n}\,,({\rm c}\le{\rm a}_{\rm k})\\
+                {\rm c}\ge\max({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\forall{\rm k}\in{\rm n}\,,({\rm c}\ge{\rm a}_{\rm k})\\
+                {\rm c}\le\max({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\exists{\rm k}\in{\rm n}\,,({\rm c}\le{\rm a}_{\rm k})\\
+                {\rm c}\ge\min({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\exists{\rm k}\in{\rm n}\,,({\rm c}\ge{\rm a}_{\rm k}).
+                \end{split}
             </div>
         </div>
         <li>
-            $$\begin{split}
-            \{a, b\} &= \{\min (a, b), \max (a, b)\}\\
-            \max(a, b) + \min(a, b) &= a + b.
-            \end{split}$$
+            \begin{split}
+            \{{\rm a},{\rm b}\}&=\{\min({\rm a},{\rm b}),\max({\rm a},{\rm b})\}\\
+            \max({\rm a},{\rm b})+\min({\rm a},{\rm b})&={\rm a}+{\rm b}.
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone1')">Soluzione:</button>
             <div id="bottone1" class="hidden">
-                Trattare separatamente i casi \(a < b\), \(a = b\), \(a > b\).
+                Trattare separatamente i casi \({\rm a}<{\rm b}\),\(a={\rm b}\),\({\rm a}>{\rm b}\).
             </div>
         </div>
     </ul>
@@ -106,48 +106,48 @@
 
     <ul>
         <p>
-            Definiamo per due numeri interi (\(\forall a, b \in {\mathbb Z}\))
-            $$\begin{split}
-            a /\!/ b &:= \max(d: d \cdot b \le a)\\
-            a \% b &:= a - (a /\!/ b) \cdot b.
-            \end{split}$$
-            Cioè \((a /\!/ b) \cdot b\) è il più grande multiplo di \(b\) che non superi \(a\).
+            Definiamo per due numeri interi (\(\forall{\rm a},{\rm b}\in{\mathbb Z}\))
+            \begin{split}
+            {\rm a}/\!/{\rm b}&:=\max({\rm d}\!:{\rm d}\cdot{\rm b}\le{\rm a})\\
+            {\rm a}\%{\rm b}&:={\rm a}-({\rm a}/\!/{\rm b})\cdot{\rm b}.
+            \end{split}
+            Cioè \(({\rm a}/\!/{\rm b})\cdot{\rm b}\) è il più grande multiplo di \({\rm b}\) che non superi \({\rm a}\).
         </p>
         <li>
-            Si dice \(a /\!/ b \in {\mathbb Z}\) la divisione intera di \(a\) per \(b\).
+            Si dice \({\rm a}/\!/ b \in {\mathbb Z}\) la divisione intera di \({\rm a}\) per \({\rm b}\).
         </li>
         <li>
-            Si dice \(a \% b \in {\mathbb N}\) il resto della divisione di \(a\) per \(b\).
+            Si dice \({\rm a}\%{\rm b}\in{\mathbb N}\) il resto della divisione di \({\rm a}\) per \({\rm b}\).
         </li>
         <li>
             Allora
-            $$\left\{\begin{split}
-            a \% b &< b\\
-            a &= (a /\!/ b) \cdot b + a \% b.
-            \end{split}\right.$$
+            \begin{cases}
+            {\rm a}\%{\rm b}<{\rm b}\\
+            {\rm a}=({\rm a}/\!/{\rm b})\cdot{\rm b}+{\rm a}\%{\rm b}.
+            \end{cases}
             Viceversa, se per una coppia \(x \in {\mathbb N}, y \in {\mathbb Z}\) vale
-            $$\left\{\begin{split}
-            x &< b\\
-            a &= x \cdot b + y,
-            \end{split}\right.$$
+            \begin{cases}
+            {\rm x}<{\rm b}\\
+            {\rm a}={\rm x}\cdot{\rm b}+{\rm y},
+            \end{cases}
             allora
-            $$\left\{\begin{split}
-            x &= a /\!/ b\\
-            y &= a \% b.
-            \end{split}\right.$$
-            Cioè tali proprietà caratterizzano \(a /\!/ b, a \% b\).
+            \begin{cases}
+            {\rm x}={\rm a}/\!/{\rm b}\\
+            {\rm y}={\rm a}\%{\rm b}.
+            \end{cases}
+            Cioè tali proprietà caratterizzano \({\rm a}/\!/{\rm b},{\rm a}\%{\rm b}\).
         </li>
         <li>
             Sono quindi fatti equivalenti:
-            $$\left\{\begin{split}
-            a \% b = 0\\
-            a = (a /\!/ b) \cdot b\\
-            \exists x\!: a = x \cdot b.
-            \end{split}\right.$$
-            Se questo vale diciamo che \(b\) divide \(a\) o che \(a\) è un multiplo di \(b\) e scriviamo \(b | a\). Definiamo
-            $$\begin{split}
-            b {\mathbb Z} = \{b \cdot x\!: x \in \mathbb Z\} = \{a \in \mathbb Z\,, b | a\}.
-            \end{split}$$
+            \begin{split}
+            {\rm a}\%{\rm b}&=0\\
+            {\rm a}&=({\rm a}/\!/{\rm b})\cdot{\rm b}\\
+            \exists{\rm x}\!:\quad{\rm a}&={\rm x}\cdot{\rm b}.
+            \end{split}
+            Se questo vale diciamo che \({\rm b}\) divide \({\rm a}\) o che \({\rm a}\) è un multiplo di \({\rm b}\) e scriviamo \({\rm b}|{\rm a}\). Definiamo
+            \begin{split}
+            {\rm b}\cdot{\mathbb Z}=\{{\rm b}\cdot{\rm x}\!:{\rm x}\in{\mathbb Z}\}=\{{\rm a}\in{\mathbb Z}\,,{\rm b}|{\rm a}\}.
+            \end{split}
         </li>
         <h2>
             Esercizi:
@@ -156,97 +156,97 @@
             Mostra che:
         </p>
         <li>
-            $$\begin{split}
-            ((b \% a) + (c \% a)) \% a &= (b + c) \% a\\
-            ((b \% a) \cdot (c \% a)) \% a &= (b \cdot c) \% a\\
-            (b \cdot c) /\!/ (a \cdot c) &= (b /\!/ a) \cdot c\\
-            (b \cdot c) \% (a \cdot c) &= (b \% a) \cdot c.
-            \end{split}$$
+            \begin{split}
+            (({\rm b}\%{\rm a})+({\rm c}\%{\rm a}))\%{\rm a}&=({\rm b}+{\rm c})\%{\rm a}\\
+            (({\rm b}\%{\rm a})\cdot({\rm c}\%{\rm a}))\%{\rm a}&=({\rm b}\cdot{\rm c})\%{\rm a}\\
+            ({\rm b}\cdot{\rm c})/\!/({\rm a}\cdot{\rm c})&=({\rm b}/\!/{\rm a})\cdot{\rm c}\\
+            ({\rm b}\cdot{\rm c})\%({\rm a}\cdot{\rm c})&=({\rm b}\%{\rm a})\cdot{\rm c}.
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone2')">Soluzione:</button>
             <div id="bottone2" class="hidden">
                 Per il primo ed il secondo notiamo che:
-                $$\begin{split}
-                b + c &= a \cdot (b /\!/ a + c /\!/ a) + (b \% a + b \% a)\\
-                b \cdot c &= a \cdot (a \cdot b /\!/ a \cdot c /\!/ a + b \% a \cdot c /\!/ a + b /\!/ a \cdot c \% a) + (b \% a \cdot b \% a).
-                \end{split}$$
+                \begin{split}
+                {\rm b}+{\rm c}&={\rm a}\cdot({\rm b}/\!/{\rm a}+{\rm c}/\!/{\rm a})+({\rm b}\%{\rm a}+{\rm b}\%{\rm a})\\
+                {\rm b}\cdot{\rm c}&={\rm a}\cdot({\rm a}\cdot{\rm b}/\!/{\rm a}\cdot{\rm c}/\!/{\rm a}+{\rm b}\%{\rm a}\cdot{\rm c}/\!/{\rm a}+{\rm b}/\!/{\rm a}\cdot{\rm c}\%{\rm a})+({\rm b}\%{\rm a}\cdot{\rm b}\%{\rm a}).
+                \end{split}
                 Per il terzo ed il quarto notiamo che:
-                $$\begin{split}
-                (b \cdot c) &= (b /\!/ a) \cdot (a \cdot c) + (b \% a) \cdot c\\
-                (b \% a) \cdot c &< a \cdot c.
-                \end{split}$$
+                \begin{split}
+                ({\rm b}\cdot{\rm c})&=({\rm b}/\!/{\rm a})\cdot({\rm a}\cdot{\rm c})+({\rm b}\%{\rm a})\cdot{\rm c}\\
+                ({\rm b}\%{\rm a})\cdot{\rm c}&<{\rm a}\cdot{\rm c}.
+                \end{split}
             </div>
         </div>
         <li>
-            Se \(b | a\), allora:
-            $$\begin{split}
-            (c \% a) \% b &= c \% b\\
-            c /\!/ b &= (c /\!/ a) \cdot (a /\!/ b) + ((c \% a) /\!/ b).
-            \end{split}$$
-            Viceversa, per una tripla \(x \in \mathbb Z, y, z \in \mathbb N\) tale che
-            $$\left\{\begin{split}
-            y &< a /\!/ b\\
-            z &< b\\
-            c &= x \cdot a + y \cdot b + z,
-            \end{split}\right.$$
+            Se \({\rm b}|{\rm a}\), allora:
+            \begin{split}
+            ({\rm c}\%{\rm a})\%{\rm b}&={\rm c}\%{\rm b}\\
+            {\rm c}/\!/{\rm b}&=({\rm c}/\!/{\rm a})\cdot({\rm a}/\!/{\rm b})+(({\rm c}\%{\rm a})/\!/{\rm b}).
+            \end{split}
+            Viceversa, per una tripla \({\rm x}\in{\mathbb Z},{\rm y},{\rm z}\in{\mathbb N}\) tale che
+            \begin{cases}
+            {\rm y}<{\rm a}/\!/{\rm b}\\
+            {\rm z}<{\rm b}\\
+            {\rm c}={\rm x}\cdot{\rm a}+{\rm y}\cdot{\rm b}+{\rm z},
+            \end{cases}
             deve valere
-            $$\left\{\begin{split}
-            x &= c /\!/ a\\
-            y &= (c \% a) /\!/ b\\
-            z &= c \% b.
-            \end{split}\right.$$
+            \begin{cases}
+            {\rm x}={\rm c}/\!/{\rm a}\\
+            {\rm y}=({\rm c}\%{\rm a})/\!/{\rm b}\\
+            {\rm z}={\rm c}\%{\rm b}.
+            \end{cases}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone3')">Soluzione:</button>
             <div id="bottone3" class="hidden">
                 Notiamo che, usando l'esercizio precedente,
-                $$\begin{split}
-                c \% b &= (a \cdot (c /\!/ a) + (c \% a)) \% b =\\
-                &= (a \cdot (c /\!/ a)) \% b + (c \% a) \% b =\\
-                &= (c \% a) \% b.
-                \end{split}$$
+                \begin{split}
+                {\rm c}\%{\rm b}&=({\rm a}\cdot({\rm c}/\!/{\rm a})+({\rm c}\%{\rm a}))\%{\rm b}=\\
+                &=({\rm a}\cdot({\rm c}/\!/{\rm a}))\%{\rm b}+({\rm c}\%{\rm a})\%{\rm b}=\\
+                &=({\rm c}\%{\rm a})\%{\rm b}.
+                \end{split}
                 Da cui:
-                $$\begin{split}
-                c = a \cdot (c /\!/ a) + b \cdot ((c \% a) /\!/ b) + c \% b.
-                \end{split}$$
+                \begin{split}
+                {\rm c}={\rm a}\cdot({\rm c}/\!/{\rm a})+{\rm b}\cdot(({\rm c}\%{\rm a})/\!/{\rm b})+{\rm c}\%{\rm b}.
+                \end{split}
                 Viceversa, se
-                $$\begin{split}
-                a \cdot x + b \cdot y + z = a \cdot (c /\!/ a) + b \cdot ((c \% a) /\!/ b) + c \% b,
-                \end{split}$$
-                allora da \(z < b\) segue \(z = c \% b\) e
-                $$\begin{split}
-                (a /\!/ b) \cdot x + y = (a /\!/ b) \cdot (c /\!/ a) + ((c \% a) /\!/ b).
-                \end{split}$$
+                \begin{split}
+                {\rm a}\cdot{\rm x}+{\rm b}\cdot{\rm y}+{\rm z}={\rm a}\cdot({\rm c}/\!/{\rm a})+{\rm b}\cdot(({\rm c}\%{\rm a})/\!/{\rm b})+{\rm c}\%{\rm b},
+                \end{split}
+                allora da \({\rm z}<{\rm b}\) segue \({\rm z}={\rm c}\%{\rm b}\) e
+                \begin{split}
+                ({\rm a}/\!/{\rm b})\cdot{\rm x}+{\rm y}=({\rm a}/\!/{\rm b})\cdot({\rm c}/\!/{\rm a})+(({\rm c}\%{\rm a})/\!/{\rm b}).
+                \end{split}
                 Per concludere è sufficiente notare che
-                $$\begin{split}
-                y &< a /\!/ b\\
-                (c \% a) /\!/ b &< a /\!/ b,
-                \end{split}$$
+                \begin{split}
+                {\rm y}&<{\rm a}/\!/{\rm b}\\
+                ({\rm c}\%{\rm a})/\!/{\rm b}&<{\rm a}/\!/{\rm b},
+                \end{split}
                 da cui
-                $$\begin{split}
-                y &= ((a /\!/ b) \cdot x + y) \% (a /\!/ b)\\
-                &= ((a /\!/ b) \cdot (c /\!/ a) + ((c \% a) /\!/ b)) \% (a /\!/ b)\\
-                &= (c \% a) /\!/ b.
-                \end{split}$$
+                \begin{split}
+                {\rm y}&=(({\rm a}/\!/{\rm b})\cdot{\rm x}+{\rm y})\%({\rm a}/\!/{\rm b})\\
+                &=(({\rm a}/\!/{\rm b})\cdot({\rm c}/\!/{\rm a})+(({\rm c}\%{\rm a})/\!/{\rm b}))\%({\rm a}/\!/{\rm b})\\
+                &=({\rm c}\%{\rm a})/\!/{\rm b}.
+                \end{split}
             </div>
         </div>
         <div class="divrow">
             <button onclick="toggleTesto('approfondimento1')"><img src="../../advanced.webp"></button>
             <div id="approfondimento1" class="hidden">
                 Questa proprietà si estende per induzione alla scrittura in una base, supponiamo
-                $$\begin{split}
-                \forall n \in \mathbb N, \quad a_n | a_{n + 1},
-                \end{split}$$
-                allora, \(x \in \mathbb N\) si scrive in modo unico come
-                $$\left\{\begin{split}
-                x = \sum_{n \in \mathbb N} a_n \cdot x_n\\
-                x_n < a_{n + 1} /\!/ a_n.
-                \end{split}\right.$$
+                \begin{split}
+                \forall{\rm n}\in{\mathbb N}\,,\quad{\rm a}_{\rm n}|{\rm a}_{{\rm n}+1},
+                \end{split}
+                allora, \(\forall{\rm x}\in{\mathbb N}\) si scrive in modo unico come
+                \begin{cases}
+                {\rm x}=\sum_{{\rm n}\in{\mathbb N}}{\rm a}_{\rm n}\cdot{\rm x}_{\rm n}\\
+                {\rm x}_{\rm n}<{\rm a}_{{\rm n}+1}/\!/{\rm a}_{\rm n}.
+                \end{cases}
                 Ed in particolare si ha
-                $$\begin{split}
-                x_n = (x \% a_{n + 1}) /\!/ a_n.
-                \end{split}$$
+                \begin{split}
+                {\rm x}_{\rm n}=({\rm x}\%{\rm a}_{{\rm n}+1})/\!/{\rm a}_{\rm n}.
+                \end{split}
             </div>
         </div>
     </ul>
@@ -255,103 +255,103 @@
     
     <ul>
         <li>
-            Un numero \(p \in \mathbb Z\) si dice irriducibile se \(\forall a, b \in \mathbb Z\)
-            $$\begin{split}
-            p = a \cdot b \longrightarrow (p | a) \lor (p | b).
-            \end{split}$$
+            Un numero \({\rm p}\in{\mathbb Z}\) si dice irriducibile se \(\forall{\rm a},{\rm b}\in{\mathbb Z}\)
+            \begin{split}
+            {\rm p}={\rm a}\cdot{\rm b}\longrightarrow({\rm p}|{\rm a})\lor({\rm p}|{\rm b}).
+            \end{split}
         </li>
         <li>
-            Un numero \(p \in \mathbb Z\) si dice primo se \(\forall a, b \in \mathbb Z\)
-            $$\begin{split}
-            p | (a \cdot b) \longrightarrow (p | a) \lor (p | b).
-            \end{split}$$
+            Un numero \({\rm p}\in{\mathbb Z}\) si dice primo se \(\forall{\rm a},{\rm b}\in{\mathbb Z}\)
+            \begin{split}
+            {\rm p}|({\rm a}\cdot{\rm b})\longrightarrow({\rm p}|{\rm a})\lor({\rm p}|{\rm b}).
+            \end{split}
         </li>
         <li>
             Il massimo comun divisore ed il minimo comune multiplo tra due interi \(a, b \in {\mathbb Z}\) sono definiti come
-            $$\begin{split}
-            \operatorname{gcd}(a, b) &:= \max(c \in {\mathbb N}\!: c | a \land c | b)\\
-            \operatorname{gcd}(a, b) &:= \min(c \in {\mathbb N} \setminus \{0\}\!: a | c \land b | c).
-            \end{split}$$
+            \begin{split}
+            \operatorname{gcd}({\rm a},{\rm b})&:=\max({\rm c}\in{\mathbb N}\!:{\rm c}|{\rm a}\land{\rm c}|{\rm b})\\
+            \operatorname{gcd}({\rm a},{\rm b})&:=\min({\rm c}\in{\mathbb N}\setminus\{0\}\!:{\rm a}|{\rm c}\land{\rm b}|{\rm c}).
+            \end{split}
         </li>
         <li>
             Valgono le proprietà:
-            $$\begin{split}
-            c | \operatorname{gcd}(a, b) &\longleftrightarrow c | a \land c | b\\
-            \operatorname{lcm}(a, b) | c &\longleftrightarrow a | c \land b | c.
-            \end{split}$$
+            \begin{split}
+            {\rm c}|\operatorname{gcd}({\rm a},{\rm b})&\longleftrightarrow{\rm c}|{\rm a}\land{\rm c}|{\rm b}\\
+            \operatorname{lcm}({\rm a},{\rm b})|{\rm c}&\longleftrightarrow{\rm a}|{\rm c}\land{\rm b}|{\rm c}.
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone4')">Dimostrazione della prima</button>
             <div id="bottone4" class="hidden">
-                Dimostriamo qui l'identità di Bézout. Notare che, se \(c | a\), allora
-                $$\begin{split}
-                c | b \longleftrightarrow c | (b % a).
-                \end{split}$$
-                Senza perdita di generalità \(a \le b\), per induzione si può scrivere
-                $$\begin{split}
-                \operatorname{gcd}(a, b) &= \operatorname{gcd}(a, b \% a)\\
-                &= x \cdot a + y \cdot (b \% a)\\
-                &= (x - b /\!/ a) \cdot a + (y + 1) \cdot b.
-                \end{split}$$
+                Dimostriamo qui l'identità di Bézout. Notare che, se \({\rm c}|{\rm a}\), allora
+                \begin{split}
+                {\rm c}|{\rm b}\longleftrightarrow{\rm c}|({\rm b}%{\rm a}).
+                \end{split}
+                Senza perdita di generalità \({\rm a}\le{\rm b}\), per induzione si può scrivere
+                \begin{split}
+                \operatorname{gcd}({\rm a},{\rm b})&=\operatorname{gcd}({\rm a},{\rm b}\%{\rm a})\\
+                &={\rm x}\cdot{\rm a}+{\rm y}\cdot({\rm b}\%{\rm a})\\
+                &=({\rm x}-{\rm b}/\!/{\rm a})\cdot{\rm a}+({\rm y}+1)\cdot{\rm b}.
+                \end{split}
                 Da cui, se
-                $$\begin{split}
-                \alpha \cdot c = a\\
-                \beta \cdot c = b,
-                \end{split}$$
+                \begin{split}
+                \alpha\cdot{\rm c}={\rm a}\\
+                \beta\cdot{\rm c}={\rm b},
+                \end{split}
                 allora
-                $$\begin{split}
-                \operatorname{gcd}(a, b) = x \cdot a + y \cdot b = (x \cdot \alpha + y \cdot \beta) \cdot c.
-                \end{split}$$
+                \begin{split}
+                \operatorname{gcd}({\rm a},{\rm b})={\rm x}\cdot{\rm a}+{\rm y}\cdot{\rm b}=({\rm x}\cdot\alpha+{\rm y}\cdot\beta)\cdot{\rm c}.
+                \end{split}
             </div>
         </div>
         <div class="divrow">
             <button onclick="toggleTesto('bottone5')">Dimostrazione della seconda</button>
             <div id="bottone5" class="hidden">
                 Siano
-                $$\begin{split}
-                \alpha \cdot a &= \operatorname{lcm}(a, b)\\
-                \beta \cdot b &= \operatorname{lcm}(a, b)\\
-                x \cdot a &= c\\
-                y \cdot b &= c,
-                \end{split}$$
+                \begin{split}
+                \alpha\cdot{\rm a}&=\operatorname{lcm}({\rm a},{\rm b})\\
+                \beta\cdot{\rm b}&=\operatorname{lcm}({\rm a},{\rm b})\\
+                {\rm x}\cdot{\rm a}&={\rm c}\\
+                {\rm y}\cdot{\rm b}&={\rm c},
+                \end{split}
                 allora si ha che
-                $$\begin{split}
-                c \% \operatorname{lcm}(a, b) &= (x \% \alpha) \cdot a\\
-                c \% \operatorname{lcm}(a, b) &= (x \% \beta) \cdot b,
-                \end{split}$$
+                \begin{split}
+                {\rm c}\%\operatorname{lcm}({\rm a},{\rm b})&=({\rm x}\%\alpha)\cdot{\rm a}\\
+                {\rm c}\%\operatorname{lcm}({\rm a},{\rm b})&=({\rm x}\%\beta)\cdot{\rm b},
+                \end{split}
                 il che ne fa un multiplo comune di \(a, b\), minore di \(\operatorname{lcm}(a, b)\), cioè \(0\).
             </div>
         </div>
         <li>
             Definiamo 
-            $$\begin{split}
-            a \| b := \max(d \in {\mathbb N}\!: b^d | a)
-            \end{split}$$
+            \begin{split}
+            {\rm a}\|{\rm b}:=\max({\rm d}\in{\mathbb N}\!:{\rm b}^{\rm d}|{\rm a})
+            \end{split}
         </li>
         <li>
-            Fattorizzazione unica: se per qualunque primo \(p\) vale \(a \| p = b \| p\), allora \(a = b\). ATTENTO QUI CHE OVERFLOW HA FATTO BRUTTO
+            Fattorizzazione unica: se per qualunque primo \(p\) vale \(a \| p=b \| p\), allora \(a=b\). ATTENTO QUI CHE OVERFLOW HA FATTO BRUTTO
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone6')">Dimostrazione</button>
             <div id="bottone6" class="hidden">
                 Dimostriamo che se \(p\) è irriducibile, allora è anche primo. Questo perchè se \(p\) è irriducibile e non divide \(a, b\), allora
-                $$\begin{split}
-                x \cdot p + u \cdot a = 1\\
-                y \cdot p + v \cdot b = 1.
-                \end{split}$$
+                \begin{split}
+                {\rm x}\cdot{\rm p}+{\rm u}\cdot{\rm a}=1\\
+                {\rm y}\cdot{\rm p}+{\rm v}\cdot{\rm b}=1.
+                \end{split}
                 Da cui
-                $$\begin{split}
-                \operatorname{gcd}(p, a \cdot b) | (x \cdot y \cdot p + u \cdot a \cdot y + v \cdot b \cdot x) \cdot p + (u \cdot v) \cdot a \cdot b = 1.
-                \end{split}$$
+                \begin{split}
+                \operatorname{gcd}({\rm p},{\rm a}\cdot{\rm b})|({\rm x}\cdot{\rm y}\cdot{\rm p}+{\rm u}\cdot{\rm a}\cdot{\rm y}+{\rm v}\cdot{\rm b}\cdot{\rm x})\cdot{\rm p}+({\rm u}\cdot{\rm v})\cdot{\rm a}\cdot{\rm b}=1.
+                \end{split}
                 <ul>
                     <li>
-                        Se \(a \| p = 0\) per ogni \(p < a\) primo, allora \(a\) deve essere primo:
+                        Se \({\rm a}\|{\rm p}=0\) per ogni \({\rm p}<{\rm a}\) primo, allora \({\rm a}\) deve essere primo:
                     </li>
                     <li>
-                        Se altrimenti fosse \(b | a\) allora sarebbe \(b = a\), oppure per induzione \(b\) primo o multiplo di un primo o \(b = 1\).
+                        Se altrimenti fosse \({\rm b}|{\rm a}\) allora sarebbe \({\rm b}={\rm a}\), oppure per induzione \({\rm b}\) primo o multiplo di un primo o \({\rm b}=1\).
                     </li>
                     <li>
-                        Da cui \(a\) è irriducibile, quindi è primo.
+                        Da cui \({\rm a}\) è irriducibile, e quindi primo.
                     </li>
                 </ul>
             </div>
@@ -363,50 +363,50 @@
             Mostra che:
         </p>
         <li>
-            Per \(p\) primo:
-            $$\begin{split}
-            (a \cdot b) \| p &= (a \| p) + (b \| p)\\
-            \operatorname{lcm}(a, b) \| p &= \max(a \| p, b \| p)\\
-            \operatorname{gcd}(a, b) \| p &= \min(a \| p, b \| p).
-            \end{split}$$
+            Per \({\rm p}\) primo:
+            \begin{split}
+            ({\rm a}\cdot{\rm b})\|{\rm p}&=({\rm a}\|{\rm p})+({\rm b}\|{\rm p})\\
+            \operatorname{lcm}({\rm a},{\rm b})\|{\rm p}&=\max({\rm a}\|{\rm p},{\rm b}\|{\rm p})\\
+            \operatorname{gcd}({\rm a},{\rm b})\|{\rm p}&=\min({\rm a}\|{\rm p},{\rm b}\|{\rm p}).
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone7')">Soluzione</button>
             <div id="bottone7" class="hidden">
                 Scriviamo
-                $$\begin{split}
-                a = p^{a \| p} \cdot \alpha\\
-                b = p^{b \| p} \cdot \beta\\
-                \operatorname{lcm}(a, b) = p^{\operatorname{lcm}(a, b) \| p} \cdot m\\
-                \operatorname{gcd}(a, b) = p^{\operatorname{gcd}(a, b) \| p} \cdot d,
-                \end{split}$$
+                \begin{split}
+                {\rm a}={\rm p}^{{\rm a}\|{\rm p}}\cdot\alpha\\
+                {\rm b}={\rm p}^{{\rm b}\|{\rm p}}\cdot\beta\\
+                \operatorname{lcm}({\rm a},{\rm b})={\rm p}^{\operatorname{lcm}({\rm a},{\rm b})\|{\rm p}}\cdot{\rm m}\\
+                \operatorname{gcd}({\rm a},{\rm b})={\rm p}^{\operatorname{gcd}({\rm a},{\rm b})\|{\rm p}}\cdot{\rm d},
+                \end{split}
                 allora
-                $$\begin{split}
-                a \cdot b = p^{(a \| p) + (b \| p)} \cdot \alpha \cdot \beta.
-                \end{split}$$
+                \begin{split}
+                {\rm a}\cdot{\rm b}={\rm p}^{({\rm a}\|{\rm p})+({\rm b}\|{\rm p})}\cdot\alpha\cdot\beta.
+                \end{split}
                 Siccome si vede che
-                $$\begin{split}
-                \max(a \| p, b \| p) \le \operatorname{lcm}(a, b) \| p\\
-                \operatorname{gcd}(a, b) \| p \le \min(a \| p, b \| p),
-                \end{split}$$
+                \begin{split}
+                \max({\rm a}\|{\rm p},{\rm b}\|{\rm p})\le\operatorname{lcm}({\rm a},{\rm b})\|{\rm p}\\
+                \operatorname{gcd}({\rm a},{\rm b})\|{\rm p}\le\min({\rm a}\|{\rm p},{\rm b}\|{\rm p}),
+                \end{split}
                 osserviamo che
-                $$\begin{split}
-                \alpha &| p^{(\operatorname{lcm}(a, b) \| p) - (a \| p)} \cdot m\\
-                \beta &| p^{(\operatorname{lcm}(a, b) \| p) - (b \| p)} \cdot m\\
-                d &| p^{(a \| p) - (\operatorname{gcd}(a, b) \| p)} \cdot \alpha\\
-                d &| p^{(b \| p) - (\operatorname{gcd}(a, b) \| p)} \cdot \beta,
-                \end{split}$$
-                da cui, a meno di combinazioni lineari, per Bezout, \(\alpha, \beta | m\) e \(d | \alpha, \beta\). Infine concludiamo perché
-                $$\begin{split}
-                \operatorname{lcm}(a, b) | p^{\max(a \| p, b \| p)} \cdot m\\
-                p^{\min(a \| p, b \| p)} \cdot d | \operatorname{gcd}(a, b).
-                \end{split}$$
+                \begin{split}
+                \alpha&|{\rm p}^{(\operatorname{lcm}({\rm a},{\rm b})\|{\rm p})-({\rm a}\|{\rm p})}\cdot{\rm m}\\
+                \beta&|{\rm p}^{(\operatorname{lcm}({\rm a},{\rm b})\|{\rm p})-({\rm b}\|{\rm p})}\cdot{\rm m}\\
+                {\rm d}&|{\rm p}^{({\rm a}\|{\rm p})-(\operatorname{gcd}({\rm a},{\rm b})\|{\rm p})}\cdot\alpha\\
+                {\rm d}&|{\rm p}^{({\rm b}\|{\rm p})-(\operatorname{gcd}({\rm a},{\rm b})\|{\rm p})}\cdot\beta,
+                \end{split}
+                da cui, a meno di combinazioni lineari, per Bezout, \(\alpha,\beta|{\rm m}\) e \({\rm d}|\alpha,\beta\). Infine concludiamo perché
+                \begin{split}
+                \operatorname{lcm}({\rm a},{\rm b})|{\rm p}^{\max({\rm a}\|{\rm p},{\rm b}\|{\rm p})}\cdot{\rm m}\\
+                {\rm p}^{\min({\rm a}\|{\rm p},{\rm b}\|{\rm p})}\cdot{\rm d}|\operatorname{gcd}({\rm a},{\rm b}).
+                \end{split}
             </div>
         </div>
         <li>
-            $$\begin{split}
-            \operatorname{lcm}(a, b) \cdot \operatorname{gcd}(a, b) = a \cdot b.
-            \end{split}$$
+            \begin{split}
+            \operatorname{lcm}({\rm a},{\rm b})\cdot\operatorname{gcd}({\rm a},{\rm b})={\rm a}\cdot{\rm b}.
+            \end{split}
         </li>
         <div class="divrow">
             <button onclick="toggleTesto('bottone8')">Soluzione</button>

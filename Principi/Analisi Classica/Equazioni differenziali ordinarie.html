@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equazioni differenziali ordinarie</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Derivate in più variabili.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Varietà Riemaniane.html'">Successiva</button>
+    </div>
+
+    <h1>Teorema Di Esistenza Di Picard</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Il problema di Cauchy
+                \begin{cases}
+                {\rm x}(0)={\rm a}\\
+                \frac{\partial{\rm x}({\rm s})}{\partial{\rm s}}({\rm t})={\rm f}\circ{\rm x}
+                \end{cases}
+                si riduce alla forma di Volterra
+                \begin{split}
+                {\rm x}({\rm t})={\rm a}+\int_0^{\rm t}{\rm x}({\rm s})\partial{\rm s}.
+                \end{split}
+                Questa identifica un metodo iterativo
+                \begin{split}
+                {\rm x}_{{\rm n}+1}({\rm t})={\rm a}+\int_0^{\rm t}{\rm f}({\rm x}_{\rm n}({\rm s}))\partial{\rm s}.
+                \end{split}
+                Tale metodo è convergente se la funzione \(f\) è Lipshitziana, infatti
+                \begin{split}
+                \int_0^{\rm t}{\it e}^{({\rm L}+\varepsilon)({\rm t}-{\rm s})}|{\rm u}_{{\rm n}+1}({\rm s})-{\rm v}_{{\rm n}+1}({\rm s})|\partial{\rm s}\le\frac{\rm L}{{\rm L}+\varepsilon}\int_0^{\rm t}\left({\it e}^{{\rm L}({\rm t}-{\rm s})}-1\right)|{\rm u}_{\rm n}({\rm s})-{\rm v}_{\rm n}({\rm s})|\partial{\rm s},
+                \end{split}
+                quindi, per il teorema delle contrazioni, \({\rm x}_{\rm n}\) converge in norma \({\cal L}_1\) all'unica soluzione del problema di Cauchy.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Funzioni Di Lyapunov</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Consideriamo una funzione \(\lambda\) che soddisfi \(\nabla\lambda({\rm x})\cdot{\rm f}({\rm x})\le0\). Allora Gli spazi del tipo \(\{{\rm x}\!:\lambda({\rm x})\le{\rm c}\}\) al variare di \({\rm c}\), sono invarianti per il sistema. Similmente supponiamo che valga
+                \begin{split}
+                \mu({\rm x})\ge\nu({\rm y})\rightarrow\nabla\mu({\rm x})\cdot{\rm f}({\rm x})\le\nabla\nu({\rm y})\cdot{\rm g}({\rm y}),
+                \end{split}
+                allora \(\mu({\rm x}(0))\le\nu({\rm y}(0))\rightarrow\mu({\rm x}({\rm t}))\le\nu({\rm y}({\rm t}))\).
+            </div>
+        </li>
+    </ul>
+
+    <h1>Il Problema Lineare</h1>
+
+    <h1>Equazione di Fokker-Planck</h1>
+
+    <h1>Biforcazioni</h1>
+
+</body>

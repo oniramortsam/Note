@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topologia generale</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+  
+    <div class="navbar">
+        <button onclick="location.href='../Algebra Lineare/Matrici positive.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Derivate in più variabili.html'">Successiva</button>
+    </div>
+    
+    <h1>Reti e filtri</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Sia \({\mathbb X}\) un insieme e consideriamo un sottoinsieme di \({\cal P}({\mathbb X})\) che diciamo gli aperti di \({\mathbb X}\), tale per cui intersezione finita di aperi è aperta, unione di aperti è aperta, \(\emptyset,{\mathbb X}\) sono aperti. Allora si dice \({\mathbb X}\) uno spazio topologico.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice chiusura di \({\rm A}\subseteq{\mathbb X}\) l'intersezione dei complementari degli aperti di \({\mathbb X}\) che sono disgiunti da \({\rm A}\).
+                <br>
+                Equivalemtemente la chiusura di \({\rm A}\) è l'insieme dei punti \({\rm x}\in{\mathbb X}\) tali per cui ogni intorno di \({\rm x}\) interseca \({\rm A}\).
+                <br>
+                La chiusura di una unione finita è l'unione delle chiusure. Inoltre un \({\rm A}\subseteq{\mathbb X}\) è aperto se è il complementare di un chiuso.
+                <br>
+                Data inoltre una nozione di chiusura che soddisfi la proprietà precedente, allora questa induce univocamente una nozione di aperto.
+            </div>
+        </li>
+        <li>
+            <h3>
+                Continuità:
+            </h3>
+            <div class="overflow">
+                Sia \({\rm f}:{\mathbb X}\rightarrow{\mathbb Y}\) una funzione tra spazi topologici, questa si dice continua se vale uno dei seguenti:
+                <br>
+                la controimmagine di ogni aperto di \({\mathbb Y}\) è un aperto di \({\mathbb X}\).
+                <br>
+                la chiusura dell'immagine di \({\rm A}\subseteq{\mathbb X}\) contiene l'immagine della chiusura di \({\rm A}\).
+                <br>
+                il push forward di una successione convergente ad \({\rm x}\in{\mathbb X}\) converge ad \({\rm f}({\rm x})\in{\mathbb Y}\).
+                <br>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Compattezza:
+                </h3>
+                Uno spazio si dice compatto se ogni suo ricoprimento aperto ammette sottoricoprimento finito.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Connessione:
+                </h3>
+                Uno spazio si dice connesso se un suo aperto che sia anche chiuso è banale.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                L'immagine continua di un compatto è compatta.
+                <br>
+                L'immagine continua di un connesso è connessa.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Teorema di Tyconoff</h1>
+
+    <h1>Paracompattezza</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Uno spazio si dice paracompatto se ogni suo ricoprimento aperto ammette raffinamento localmente finito.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di restringimento:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di Stone:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Lemma di Urysohn:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di estensione di Tietze:
+                </h3>
+                QUESTO NON LO DARE PER BUONO!
+            </div>
+        </li>
+    </ul>
+
+    <h1>Teorema di Baire</h1>
+
+    <h1>ALCOLI-ARZELA</h1>
+
+</body>

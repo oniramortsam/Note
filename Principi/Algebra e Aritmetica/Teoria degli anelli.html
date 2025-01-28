@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria degli anelli</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Teoria di Galois.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Algebra computazionale.html'">Successiva</button>
+    </div>
+
+    <h1>Domini d'Integrità</h1>
+
+    <ul>
+        <li class="outside"><div class="overflow">
+            Cos'è un anello?<br>
+            Cos'è un dominio d'integrità?<br>
+            Cos'è un anello Noetheriano?
+        </div></li>
+        <li class="outside"><div class="overflow">
+            Si dice che \({\frak I}\subseteq{\mathbb A}\) è un ideale se
+            \begin{split}
+            \forall{\rm a},{\rm b}\in{\frak I}\,,\quad{\rm a}+{\rm b}&\in{\frak I}\\
+            \forall{\rm a}\in{\mathbb A}\,,\quad{\rm b}\in{\frak I}\,,\quad{\rm a}\cdot{\rm b}&\in{\frak I}.
+            \end{split}
+            Cos'è un primo?
+        </div></li>
+        <li><div class="overflow">
+            \begin{split}
+            {\frak I}+{\frak J}={\mathbb A}\longrightarrow{\frak I}\cdot{\frak J}&={\frak I}\cap{\frak J}\\
+            ({\frak I}+{\frak J})\cap({\frak I}+{\frak L})&={\frak I}+({\frak J}\cap({\frak I}+{\frak L})).
+            \end{split}
+        </div></li>
+        <li><div class="overflow">
+            <h3>Ideali primari</h3>
+            Si dice \({\frak q}\) primario se
+            \begin{split}
+            \forall{\rm a}\in{\mathbb A}\setminus{\frak q}\,,\quad\forall{\rm b}\in{\mathbb A}\setminus\sqrt{\frak q}\,,\quad{\rm a}\cdot{\rm b}\in{\mathbb A}\setminus{\frak q}.
+            \end{split}
+            In tal caso \({\frak p}=\sqrt{\frak q}\) è primo, cioè
+            \begin{split}
+            \forall{\rm a},{\rm b}\in{\mathbb A}\setminus{\frak p}\,,\quad{\rm a}\cdot{\rm b}\in{\mathbb A}\setminus{\frak p}.
+            \end{split}
+        </div></li>
+        <li><div class="overflow">
+            <h3>Decomposizione primaria</h3>
+            Sia \({\mathbb A}\) un anello Noetheriano e sia \({\frak I}\subseteq{\mathbb A}\) un ideale non primario, allora \({\frak I}\) si scrive come intersezione non banale di due ideali.<br>
+            I radicali dei primari della decomposizione di \({\frak I}\) sono i primi del tipo \(\sqrt{{\frak I}\!:{\rm a}}\), anzi \({\frak I}\!:{\rm a}\). Tali primi sono detti associati di \({\frak I}\).<br>
+            I primari \({\frak q}\) della decomposizione di \({\frak I}\) con radicale \({\frak p}=\sqrt{\frak q}\) minimale tra i primi associati di \({\frak I}\) sono le contrazioni di \({\frak I}\cdot{\mathbb A}_{\frak p}\).<br>
+            <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+            <div id="bottone0" class="hidden"><div class="overflow">
+                DA SCRIVERE
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            <h3>Teorema di Cayley-Hamilton</h3>
+        </div></li>
+        <li><div class="overflow">
+            <h3>Lemma di Nakayama</h3>
+        </div></li>
+    </ul>
+
+</body>

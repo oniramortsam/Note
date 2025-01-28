@@ -47,26 +47,23 @@ button {
     background-color: var(--palette-celes-B);
     color: var(--palette-celes-E);
     cursor: pointer;
-    text-wrap: stable;
     width: 128px;
-    height: 100%;
-    padding: 4px;
-    margin: 4px;
+    height: auto;
+    padding: 8px;
+    margin: 8px;
     border-radius: 4px;
     text-align: center;
     flex-shrink: 0;
+    text-wrap: auto;
 }
 
 button > img {
-    border: solid 2px var(--palette-celes-A);
-    border-radius: 4px;
     width: 100%;
     height: auto;
-    padding: none;
-    margin: none;
 }
 
 .navbar {
+    padding: 8px;
     border: solid 2px var(--palette-brown-A);
     border-radius: 4px;
     background-color: var(--palette-brown-B);
@@ -74,95 +71,9 @@ button > img {
     width: auto;
 }
 
-.divrow {
-    border: solid 2px var(--palette-brown-A);
-    background-color: var(--palette-brown-D);
-    color: var(--palette-brown-A);
-    display: flex;
-    flex-direction: row;
-    border-radius: 4px;
-    padding: 8px;
-    margin: 8px;
-}
-
-.divcol {
-    border: solid 2px var(--palette-brown-A);
-    background-color: var(--palette-brown-D);
-    color: var(--palette-brown-A);
-    display: flex;
-    flex-direction: column;
-    border-radius: 4px;
-    padding: 8px;
-    margin: 8px;
-}
-
-.divrow > * {
-    padding: 8px;
-    margin: 8px;
-}
-
-.divcol > * {
-    padding: 8px;
-    margin: 8px;
-}
-
-body > ul {
-    background-color: var(--palette-viola-B);
-    border: solid 2px var(--palette-brown-A);
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
-    margin: 8px;
-    border-radius: 4px;
-}
-
-body > ul > * {
-    text-wrap: nowrap;
-    padding: 8px;
-    margin: 8px;
-    border-radius: 4px;
-    overflow-x: auto;
-}
-
-li {
-    border: solid 2px var(--palette-brown-A);
-    background-color: var(--palette-brown-C);
-    color: var(--palette-brown-A);
-}
-
-li > * {
-    border: none;
-    background-color: var(--palette-brown-C);
-    color: var(--palette-brown-A);
-}
-
-ul > p {
-    border: none;
-    color: var(--palette-brown-E);
-}
-
-.hidden {
-    display: none;
-    padding: 8px;
-    margin: 8px;
-}
-
-.hidden > ul {
-    border: none;
-    background-color: var(--palette-brown-D);
-    color: var(--palette-brown-A);
-}
-
-.hidden > ul > li {
-    border: none;
-    background-color: var(--palette-brown-D);
-    color: var(--palette-brown-A);
-}
-
-.hidden > ul > li > * {
-    border: none;
-    background-color: var(--palette-brown-D);
-    color: var(--palette-brown-A);
+.navbar > button {
+    width: 25%;
+    height: auto;
 }
 
 h1 {
@@ -181,16 +92,78 @@ h3 {
 }
 
 canvas {
-    padding: 16px;
-    margin: 16px;
-}
-
-body {
-    padding: 32px;
+    height: 256px;
+    width: 256px;
+    border: solid 2px var(--palette-brown-B);
+    justify-self: center;
+    align-self: center;
     margin: 32px;
-    background-color: var(--palette-celes-C);
 }
 
 a {
-    color: var(--palette-rosso-B);
+    color: var(--palette-rosso-A);
+}
+
+.outside a {
+    padding: 4px;
+    margin: 4px;
+    border-radius: 4px;
+    border: solid 2px var(--palette-brown-A);
+    background-color: var(--palette-brown-C);
+}
+
+li {
+    list-style: none;
+    margin: 4px;
+    border-radius: 4px;
+    color: var(--palette-brown-A);
+    border: solid 2px var(--palette-brown-A);
+    background-color: var(--palette-brown-C);
+    padding: 0px 8px 0px 8px;
+}
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.outside {
+    color: var(--palette-viola-E);
+    background-color: var(--palette-viola-B);
+    border: none;
+}
+
+.hidden {
+    border: solid 2px var(--palette-brown-A);
+    background-color: var(--palette-brown-D);
+    color: var(--palette-brown-A);
+    display: none;
+    padding: 0px 8px 0px 8px;
+    margin: 16px;
+}
+
+.overflow {
+    text-wrap: nowrap;
+    overflow-x: auto;
+    padding: 8px 0px 16px 0px;
+}
+
+.textwrap {
+    word-break: break-all;
+    overflow-x: none;
+    padding: 8px 0px 8px 0px;
+}
+
+ul {
+    padding: 16px;
+    background-color: var(--palette-viola-B);
+    border: solid 2px var(--palette-viola-A);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+body {
+    padding: 16px;
+    background-color: var(--palette-celes-C);
 }

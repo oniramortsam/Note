@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementi finiti</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Gli spazi vettoriali.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Geometria proiettiva.html'">Successiva</button>
+    </div>
+
+    <h1>La Matrice Di Vandermonde</h1>
+
+    <h1>Ruffini Generalizzato</h1>
+
+    <h1>Curva di Bézier</h1>
+
+    <h1>Simplesso</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Siano \({\rm A}_0,\dots,{\rm A}_{\rm d}\in{\mathbb R}^{\rm d}\) e siano \(\lambda_0,\dots,\lambda_{\rm d}\in{\mathbb N}\) con \(\lambda_0+\dots+\lambda_{\rm d}={\rm n}\). Allora
+                \begin{split}
+                \{{\rm k}\in{\mathbb N}^{{\rm d}+1}\!:\sum_{{\rm i}\in{\rm d}+1}{\rm k}_{\rm i}={\rm n}\,,{\rm k}\ne\lambda\}=\bigcup_{{\rm j}\in{\rm d}+1}\{{\rm k}\in{\mathbb N}^{{\rm d}+1}\!:\sum_{{\rm i}\in{\rm d}+1}{\rm k}_{\rm i}={\rm n}\,,{\rm k}_{\rm j}<\lambda_{\rm j}\}.
+                \end{split}
+                Da cui definendo
+                \begin{split}
+                {\rm f}_\lambda({\rm x})=\prod_{{\rm i}\in{\rm d}+1}\prod_{{\rm j}\in\lambda_{\rm i}}\frac{{\rm n}{\rm x}_{\rm i}-{\rm j}}{\lambda_{\rm i}-{\rm j}}
+                \end{split}
+                Si ottiene l'interpolazione di Lagrange
+                \begin{split}
+                {\cal L}{\rm f}({\rm x})=\sum_\lambda{\rm A}_\lambda\cdot{\rm f}_\lambda({\rm x})
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+</body>

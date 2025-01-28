@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varietà Riemaniane</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Equazioni differenziali ordinarie.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Controllo ottimo.html'">Successiva</button>
+    </div>
+
+    <h1>Varietà differenziali</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                COSè una Varietà
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Siano \(\phi,\psi\!:{\mathbb X}\rightarrow{\mathbb R}^{\rm d}\) e siano \(\alpha,\beta\!:{\mathbb R}\rightarrow{\mathbb X}\), allora
+                \begin{split}
+                \frac{\partial\phi(\alpha({\rm s}))}{\partial{\rm s}}({\rm t})=\frac{\partial\phi(\beta({\rm s}))}{\partial{\rm s}}({\rm t})\longleftrightarrow\frac{\partial\psi(\alpha({\rm s}))}{\partial{\rm s}}({\rm t})=\frac{\partial\psi(\beta({\rm s}))}{\partial{\rm s}}({\rm t}).
+                \end{split}
+                Se questo accade diciamo che
+                \begin{split}
+                \frac{\partial\alpha({\rm s})}{\partial{\rm s}}({\rm t})=\frac{\partial\beta({\rm s})}{\partial{\rm s}}({\rm t}).
+                \end{split}
+                Questo identifica, \(\forall{\rm x}\in{\mathbb X}\) uno spazio vettoriale di dimensione \({\rm d}\) che chiamiamo \({\cal T}_{\mathbb X}({\rm x})\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sia \({\rm f}\!:{\mathbb X}\rightarrow{\mathbb Y}\), allora è ben definito:
+                \begin{split}
+                \forall{\rm x}\in{\mathbb X}\,,\quad{\rm f}({\rm x})_\star\!:{\cal T}_{\mathbb X}\rightarrow{\cal T}_{\mathbb Y}
+                \end{split}
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Si dice metrica su \({\mathbb X}\) una nozione di prodotto scalare su ogni \({\cal T}_{\mathbb X}({\rm x})\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                COS'è un fibrato, COS'è una sezione. Un campo vettoriale è una sezione del fibrato tangente.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sia \({\rm u}:{\mathbb X}\!:\rightarrow\{{\cal T}_{\mathbb X}(x)\!:{\rm x}\in{\mathbb X}\}\) con
+                \begin{split}
+                \forall{\rm x}\in{\mathbb X}\,,\quad{\rm u}({\rm x})\in{\cal T}_{\mathbb X}({\rm x}),
+                \end{split}
+                allora si dice che \({\rm u}\) è un campo vettoriale e che \(\Phi_{\rm u}\!:{\mathbb X}\times{\mathbb R}\rightarrow{\mathbb X}\) è il flusso di \(\rm u\) se
+                \begin{split}
+                \frac{\partial\Phi({\rm x},{\rm s})}{\partial{\rm s}}({\rm t})={\rm u}(\Phi({\rm x},{\rm t})).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Dati due campi vettoriali \({\rm u},{\rm v}\) diciamo derivata di Lie
+                \begin{split}
+                ({\cal D}_{\rm v}{\rm u})(\rm x)=\lim_{{\rm s}\rightarrow0}\frac{\Phi_{\rm v}({\rm x},-{\rm s})_\star({\rm u}(\Phi_{\rm v}({\rm x},{\rm s})))-{\rm u}({\rm x})}{{\rm s}.}
+                \end{split}
+                Data una carta
+                \begin{split}
+                ({\cal D}_{\rm v}{\rm u})(\rm x)=\sum_{{\rm i}\in{\rm d}}\nabla_{\rm v}{\rm u}_{\rm i}({\rm x})\phi_{\rm i}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Data una nozione di gradiente ed una carta si dicono simboli di Christoffel
+                \begin{split}
+                \nabla_{\phi_{\rm i}}\phi_{\rm j}&=\sum_{{\rm k}\in{\rm d}}\Gamma_{{\rm i},{\rm j}}^{\rm k}\phi_{\rm k}\\
+                \nabla_{\rm u}{\rm v}&=\sum_{{\rm j}\in{\rm d}}(\nabla_{\rm u}{\rm v}_{\rm j})\phi_{\rm j}+\sum_{{\rm i},{\rm j},{\rm k}\in{\rm d}}\Gamma_{{\rm i},{\rm j}}^{\rm k}{\rm u}_{\rm i}{\rm v}_{\rm j}\phi_{\rm k}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Compatibilità
+                </h3>
+                Una nozione di gradiente si dice compatibile con la metrica se, per una carta
+                \begin{split}
+                \frac{\partial{\rm g}_{{\rm i},{\rm j}}}{\partial{\rm x}_{\rm k}}=\sum_{{\rm l}\in{\rm d}}\Gamma_{{\rm k},{\rm i}}^{\rm l}{\rm g}_{{\rm l},{\rm j}}+\Gamma_{{\rm k},{\rm j}}^{\rm l}{\rm g}_{{\rm l},{\rm i}}.
+                \end{split}
+                Equivalentemente, se
+                \begin{split}
+                (\nabla_{\gamma}{\rm u})\cdot{\rm v}+{\rm u}\cdot(\nabla_{\gamma}{\rm v})&=\sum_{{\rm i},{\rm j}\in{\rm d}}\left((\nabla_{\gamma}{\rm u}_{\rm i}){\rm g}_{{\rm i},{\rm j}}{\rm v}_{\rm j}+{\rm u}_{\rm i}{\rm g}_{{\rm i},{\rm j}}(\nabla_{\gamma}{\rm v}_{\rm j})+{\rm u}_{\rm i}\left(\sum_{{\rm k},{\rm l}\in{\rm d}}\Gamma_{{\rm k},{\rm i}}^{\rm l}\gamma_{\rm k}{\rm g}_{{\rm l},{\rm j}}+\Gamma_{{\rm k},{\rm j}}^{\rm l}\gamma_{\rm k}{\rm g}_{{\rm l},{\rm i}}\right){\rm v}_{\rm j}\right)\\
+                &=\sum_{{\rm i},{\rm j}\in{\rm d}}((\nabla_{\gamma}{\rm u}_{\rm i}){\rm g}_{{\rm i},{\rm j}}{\rm v}_{\rm j}+{\rm u}_{\rm i}{\rm g}_{{\rm i},{\rm j}}(\nabla_{\gamma}{\rm v}_{\rm j})+{\rm u}_{\rm i}(\nabla_\gamma{\rm g}_{{\rm i},{\rm j}}){\rm v}_{\rm j})=\nabla_\gamma({\rm u}\cdot{\rm v}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Simmetria
+                </h3>
+                Una nozione di gradiente si dice simmetrica se, per una carta
+                \begin{split}
+                \Gamma_{{\rm k},{\rm j}}^{\rm l}=\Gamma_{{\rm j},{\rm k}}^{\rm l}.
+                \end{split}
+                Equivalentemente, se
+                \begin{split}
+                (\nabla_{\rm u}{\rm v})-(\nabla_{\rm v}{\rm u})=({\cal D}_{\rm u}{\rm v}-{\cal D}_{\rm v}{\rm u}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Levi-Civita
+                </h3>
+                Se una nozione di gradiente è sia simmetrica che compatibile deve valere, per ogni carta
+                \begin{split}
+                \frac{\partial{\rm g}_{{\rm i},{\rm j}}}{\partial{\rm x}_{\rm k}}&=\sum_{{\rm l}\in{\rm d}}\Gamma_{{\rm k},{\rm i}}^{\rm l}{\rm g}_{{\rm l},{\rm j}}+\Gamma_{{\rm k},{\rm j}}^{\rm l}{\rm g}_{{\rm l},{\rm i}}\\
+                \frac{\partial{\rm g}_{{\rm k},{\rm j}}}{\partial{\rm x}_{\rm i}}&=\sum_{{\rm l}\in{\rm d}}\Gamma_{{\rm i},{\rm k}}^{\rm l}{\rm g}_{{\rm l},{\rm j}}+\Gamma_{{\rm i},{\rm j}}^{\rm l}{\rm g}_{{\rm l},{\rm k}}\\
+                \frac{\partial{\rm g}_{{\rm i},{\rm k}}}{\partial{\rm x}_{\rm j}}&=\sum_{{\rm l}\in{\rm d}}\Gamma_{{\rm j},{\rm i}}^{\rm l}{\rm g}_{{\rm l},{\rm k}}+\Gamma_{{\rm j},{\rm k}}^{\rm l}{\rm g}_{{\rm l},{\rm i}}\\
+                \frac{\partial{\rm g}_{{\rm i},{\rm k}}}{\partial{\rm x}_{\rm j}}+\frac{\partial{\rm g}_{{\rm k},{\rm j}}}{\partial{\rm x}_{\rm i}}-\frac{\partial{\rm g}_{{\rm i},{\rm j}}}{\partial{\rm x}_{\rm k}}&=\sum_{{\rm l}\in{\rm d}}(\Gamma_{{\rm i},{\rm j}}^{\rm l}+\Gamma_{{\rm j},{\rm i}}^{\rm l}){\rm g}_{{\rm l},{\rm k}}\\
+                &=\sum_{{\rm l}\in{\rm d}}\Gamma_{{\rm i},{\rm j}}^{\rm l}({\rm g}_{{\rm l},{\rm k}}+{\rm g}_{{\rm k},{\rm l}}).
+                \end{split}
+                Questo identifica tale nozione di gradiente in modo univoco.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice tensore di Riemann
+                \begin{split}
+                {\rm R}({\rm u},{\rm v},{\rm w})=\nabla_{\rm u}\nabla_{\rm v}{\rm w}-\nabla_{\rm v}\nabla_{\rm u}{\rm w}-\nabla_{[{\rm u},{\rm v}]}{\rm w}.
+                \end{split}
+                questo non dipende da come si estendono \({\rm u},{\rm v},{\rm w}\), infatti
+                \begin{split}
+                \nabla_{\rm u}\nabla_{\rm v}{\rm w}&={\rm u}_{\rm i}(\nabla_{\phi_{\rm i}}{\rm v}_{\rm j})(\nabla_{\phi_{\rm j}}{\rm w}_{\rm k})\phi_{\rm k}\\
+                &+{\rm u}_{\rm i}{\rm v}_{\rm j}(\nabla_{\phi_{\rm i}}\nabla_{\phi_{\rm j}}{\rm w}_{\rm k})\phi_{\rm k}\\
+                &+{\rm u}_{\rm i}{\rm v}_{\rm j}(\nabla_{\phi_{\rm j}}{\rm w}_{\rm k})\Gamma_{{\rm i},{\rm k}}^{\rm l}\phi_{\rm l}\\
+                &+{\rm u}_{\rm i}(\nabla_{\phi_{\rm i}}{\rm v}_{\rm j}){\rm w}_{\rm k}\Gamma_{{\rm j},{\rm k}}^{\rm l}\phi_{\rm l}\\
+                &+{\rm u}_{\rm i}{\rm v}_{\rm j}(\nabla_{\phi_{\rm i}}{\rm w}_{\rm k})\Gamma_{{\rm j},{\rm k}}^{\rm l}\phi_{\rm l}\\
+                &+{\rm u}_{\rm i}{\rm v}_{\rm j}{\rm w}_{\rm k}(\nabla_{\phi_{\rm i}}\Gamma_{{\rm j},{\rm k}}^{\rm l})\phi_{\rm l}\\
+                &+{\rm u}_{\rm i}{\rm v}_{\rm j}{\rm w}_{\rm k}\Gamma_{{\rm j},{\rm k}}^{\rm l}\Gamma_{{\rm i},{\rm l}}^{\rm m}\phi_{\rm m}.
+                \end{split}
+                Da cui
+                \begin{split}
+                {\rm R}({\rm u},{\rm v},{\rm w})&=\sum_{{\rm i},{\rm j},{\rm k},{\rm m}\in{\rm d}}{\rm u}_{\rm i}{\rm v}_{\rm j}{\rm w}_{\rm k}\left(\nabla_{\phi_{\rm i}}\Gamma_{{\rm j},{\rm k}}^{\rm m}-\nabla_{\phi_{\rm j}}\Gamma_{{\rm i},{\rm k}}^{\rm m}+\sum_{{\rm l}\in{\rm d}}(\Gamma_{{\rm j},{\rm k}}^{\rm l}\Gamma_{{\rm i},{\rm l}}^{\rm m}-\Gamma_{{\rm i},{\rm k}}^{\rm l}\Gamma_{{\rm j},{\rm l}}^{\rm m})\right)\phi_{\rm m}.
+                \end{split}
+                Che poi sarebbe il rotore (???) di
+                \begin{split}
+                \sum_{{\rm i},{\rm k},{\rm m}\in{\rm d}}{\rm u}_{\rm i}{\rm v}_{\rm k}\Gamma_{{\rm i},{\rm k}}^{\rm m}\phi_{\rm m}.
+                \end{split}
+                Cioè il trasporto parallelo lungo \(\partial\Sigma\) è in coordinate (???)
+                \begin{split}
+                \exp\left(\int_{\Sigma}{\rm R}({\rm d}{\rm u},{\rm d}{\rm v})\right).
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+</body>

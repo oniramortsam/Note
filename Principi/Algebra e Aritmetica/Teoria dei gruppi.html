@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria dei gruppi</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Teoria degli insiemi.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Teoria di Galois.html'">Successiva</button>
+    </div>
+
+    <h1>Teoremi di Sylow</h1>
+
+    <ul>
+        <li><div class="overflow">
+            Sia \(\rm G\) un gruppo finito di cardinalità \(n\), allora la cardinalità di ogni suo sottogruppo divide \(n\).
+        </div></li>
+        <li><div class="overflow">
+            Sia \(p\) un primo che divide \(n\). Allora esiste almeno un elemento ordine \(p\).<br>
+            <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+            <div id="bottone0" class="hidden"><div class="overflow">
+                Infatti facendo agire \(\rm G\) per coniugio su sé stesso si hanno tre possibilità:
+                <ul>
+                    <li>
+                        Il gruppo è commutativo ed il suo ordine divide il prodotto dell'ordine dei suoi generatori.
+                    </li>
+                    <li>
+                        Il suo centralizzatore ha cardinalità multipla di \(p\) ed è proprio. Per induzione su \(n\), si ha la tesi.
+                    </li>
+                    <li>
+                        Lo stabilizzatore di un elemento ha cardinalità multipla di \(p\) ed è proprio. Per induzione su \(n\), si ha la tesi.
+                    </li>
+                </ul>
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            Sia \(n = p^r m\) con \(p\) che non divide \(m\).<br>
+            <button onclick="toggleTesto('bottone1')">Dimostrazione:</button>
+            <div id="bottone1" class="hidden"><div class="overflow">
+                Sia \(\rm H\) un sottogruppo di cadinalità \(p^k\) con \(k < r\).<br>
+                Allora esiste almeno un sottogruppo di cardinalità \(p^{k + 1}\) che contiene \(\rm H\).<br>
+                Infatti facendo agire \(\rm G\) per coniugio sui coniugati di \(\rm H\) si hanno due possibilità.<br>
+                Nel primo caso \(p^r\) divide la cardinalità di \(\rm N\), il normalizzatore di \(\rm H\).<br>
+                Senza perdita di generalità \(\rm H\) è normale e ci si riduce a \(k = 0\).<br>
+                Oppure \(p\) divide la cardinalità dell'orbita di \(\rm H\).<br>
+                Allora visto che \(\rm H\) normalizza sé stesso, deve normalizzare almeno altri \(p - 1\) suoi coniugati.<br>
+                A meno di automorfismo allora, \({\rm N}/{\rm H}\) avrebbe un elemento di ordine positivo che divide \(p^k\).<br>
+                Cioè \(p^{k + 1}\) deve dividere la cardinalità di \(\rm N\).
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            Sia \(\rm S\), un sottogruppo di ordine \(p^r\). Allora facendo agire \(\rm S\) per coniugio sui suoi coniugati, notiamo che questi sono in numero congrui a \(1\) modulo \(p\). Similmente facendo agire \(\rm S\) per coniugio sui coniugati di un altro sottogruppo dello stesso ordine, si nota che \(\rm S\) deve essere tra questi. Quindi i sottogruppi di ordine \(p^r\) sono coniugati tra loro.
+        </div></li>
+    </ul>
+
+    <h1 id="gruppo simmetrico">Il gruppo simmetrico</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Il gruppo simmetrico \({\cal S}_{\rm d}\) è l'insieme delle funzioni bigettive \(\myin{\sigma}{\myfunc{\rm d}{\rm d}}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Dato \(\myin{\sigma}{\cal S}_{\rm d}\) è possibile determinare una partizione di \({\rm d}\) in cicli disgiunti di \(\sigma\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Nell'episodio <a href='https://it.wikipedia.org/wiki/Episodi_di_Futurama_(sesta_stagione)'>Il prigioniero di Benda</a> viene proposto un problema sul gruppo simmetrico.<br>
+                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+                <div id="bottone2" class="hidden"><div class="overflow">
+                    <div class="overflow">
+                        Formuliamo il problema come segue, si cercano \(\myin{\rm n}{\mathbb N}\) e
+                        \begin{split}
+                        \myforall{\myin{\rm k}{\rm n}}{\myin{{\rm a}_{\rm k}}{\rm d}}
+                        \myforall{\myin{\rm k}{\rm n}}{\myin{{\rm b}_{\rm k}}{2}}
+                        \end{split}
+                        tali che \(\myin{\myomult{\rm a}{\rm b}}{\myfunc{\MyMult{\rm d}{2}}{\rm n}}\) sia iniettiva e che definendo
+                        \begin{split}
+                        \ifthen{\myeq{{\rm x}_{\rm k}}{{\rm a}_{\rm k}}}{{\rm x}_{{\rm k}+1}={\rm d}+{\rm b}_{\rm k}}\\
+                        \ifthen{{\rm x}_{\rm k}={\rm d}+{\rm b}_{\rm k}}{\myeq{{\rm x}_{{\rm k}+1}}{{\rm a}_{\rm k}}}\\
+                        \end{split}
+                        ed \({\rm x}_{{\rm k}+1}={\rm x}_{\rm k}\) altrimenti, allora si ha \({\rm x}_{\rm n}=\sigma\Parenth{{\rm x}_0}\) per ogni \(\myin{{\rm x}_0}{\rm d}\). Senza perdita di generalità supponiamo
+                        \begin{split}
+                        \sigma\Parenth{\rm x}=({\rm x}+1)\%{\rm d}
+                        \end{split}
+                        che si risolve con
+                        \begin{split}
+                        {\rm a}_0,{\rm b}_0={\rm d},1\\
+                        {\rm a}_{{\rm x}+1},{\rm b}_{{\rm x}+1}={\rm x},0\\
+                        {\rm a}_{{\rm d}+1},{\rm b}_{{\rm d}+1}=0,1
+                        \end{split}
+                        nel peggiore dei casi \({\rm n}=2+{\rm d}\), mentre nel peggiore dei casi ci sono solo trasposizioni ed \({\rm n}=2\cdot{\rm d}\).
+                    </div>
+                </div>
+            </div>
+        <li>
+        <li><div class="overflow">    
+            Un'elemento di \({\cal S}_n\) si riduce alla composizione di una trasposizione e di un elemento di \({\cal S}_{n - 1}\).
+        </div><li>
+        <li><div class="overflow">    
+            Una semplice numerazione di \({\cal S}_n\) è
+            \begin{split}
+            j = \sum_{h \in n} a_h \cdot (n - 1 - h)! \longrightarrow
+            \begin{cases}
+            \sigma_j (1)= a_1\\
+            \sigma_j (k) = |\{h: a_h < \sigma_j (k)\}| + a_k
+            \end{cases}
+            \end{split}
+        </did></li>
+    </ul>
+
+    <h1>I Campi Finiti</h1>
+
+    <ul>
+        <li><div class="overflow">    
+            Sia \({\mathbb F}_p \subseteq {\mathbb F}\) un campo finito di cardinalità \(p n\). Allora \({\mathbb F}^\star\) è ciclico. Come corollario \({\mathbb F}_p^\star\) è ciclico.
+        </div><li>
+        <li><div class="overflow">    
+            In generale, \({\mathbb Z}_n^\star\) è ciclico se e solo se \(n\) è \(2, 4, p^k, 2 p^k\) con \(p\) primo dispari. (PERCHè?)
+        </div></li>
+    </ul>
+
+</body>

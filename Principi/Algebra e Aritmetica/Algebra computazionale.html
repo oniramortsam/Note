@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra computazionale</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Teoria degli anelli.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='../Algebra Lineare/Gli spazi vettoriali.html'">Successiva</button>
+    </div>
+
+    <h1>Crittografia RSA</h1>
+
+    <h1>Algoritmo di Buchberger</h1>
+
+    <h1>Teorema degli zeri di Hilbert</h1>
+
+    <ul>
+        <li><div class="overflow">
+            <h3>Proprietà del risultante:</h3>
+            <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+            <div id="bottone0" class="hidden"><div class="overflow">
+                DA SCRIVERE
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            <h3>Teorema di estensione:</h3>
+            Sia \({\frak I}\) un ideale di \({\mathbb A}={\mathbb K}[{\rm x}_0,\dots{\rm x}_{\rm d}]\) e sia \(\alpha\in{\cal V}({\frak I}\cap{\mathbb K}[{\rm x}_1,\dots{\rm x}_{{\rm d}-1}])\). Se inoltre (???)<br>
+            <button onclick="toggleTesto('bottone1')">Dimostrazione:</button>
+            <div id="bottone1" class="hidden"><div class="overflow">
+                DA SCRIVERE
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            <h3>Nullstellensatz debole:</h3>
+            Sia \({\frak I}\) un ideale di \({\mathbb A}={\mathbb K}[{\rm x}_0,\dots{\rm x}_{{\rm d}-1}]\), allora
+            \begin{split}
+            {\cal V}({\frak I})=\emptyset\longleftrightarrow{\frak I}={\mathbb A}
+            \end{split}
+            <button onclick="toggleTesto('bottone2')">Dimostrazione:</button>
+            <div id="bottone2" class="hidden"><div class="overflow">
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            <h3>Appartenenza al radicale:</h3>
+            Sia \({\frak I}\) un ideale di \({\mathbb A}={\mathbb K}[{\rm x}_0,\dots{\rm x}_{{\rm d}-1}]\), allora
+            \begin{split}
+            \forall{\rm f}({\rm x})\in{\mathbb A}\,,\quad{\rm f}({\rm x})\in\sqrt{\frak I}\longleftrightarrow{\frak I}[{\rm t}]+(1-{\rm t}\cdot{\rm f}({\rm x}))={\mathbb A}[{\rm t}]
+            \end{split}
+            <button onclick="toggleTesto('bottone3')">Dimostrazione:</button>
+            <div id="bottone3" class="hidden"><div class="overflow">
+                DA SCRIVERE
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            <h3>Nullstellensatz forte:</h3>
+            Sia \({\frak I}\) un ideale di \({\mathbb A}={\mathbb K}[{\rm x}_0,\dots{\rm x}_{{\rm d}-1}]\), allora
+            \begin{split}
+            \sqrt{\frak I}={\cal I}({\cal V}({\frak I}))
+            \end{split}
+            <button onclick="toggleTesto('bottone4')">Dimostrazione:</button>
+            <div id="bottone4" class="hidden"><div class="overflow">
+                DA SCRIVERE
+            </div></div>
+        </div></li>
+    </ul>
+
+</body>

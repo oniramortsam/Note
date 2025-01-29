@@ -61,7 +61,7 @@
                 \left(\frac{\rm a}{\rm b}\right)^{-{\rm n}}=\left(\frac{{\rm b}^{\rm n}}{{\rm a}^{\rm n}}\right)\\
                 \left(-\frac{\rm a}{\rm b}\right)^{-{\rm n}}=\left(-\frac{{\rm b}^{\rm n}}{{\rm a}^{\rm n}}\right)
                 \end{split}
-                Non calcolare le potenze in questa fase può essere una buona abitudine.
+                Non calcolare le potenze in questa fase può essere una buona abitudine. Se dopo c'è da fare un prodotto, si può iniziare a fattorizzare le basi e distribuire gli esponenti.
             </div>
         </li>
         <li>
@@ -84,6 +84,8 @@
                 Sarebbe da sinistra verso destra ma se sono solo prodotti, quindi si può usare la commutativa senza riguardi. Anzi, se si hanno solo prodotti il risultato ha come numeratore il prodotto dei numeratori e come denominatore il prodotto dei denominatori.
                 <br>
                 Prima di calcolare i prodotti ricordati di semplificare i termini comuni tra numeratore e denominatore. Anzi, non calcolare i prodotti in questa fase può essere una buona abitudine, per semplificare il più possibile.
+                <br>
+                Per semplificare: se una base si fattorizza, distribuire l'esponente sui fattori, se numeratore e denominatore hanno fattori con la stessa base semplificare quello con esponente più piccolo.
             </div>
         </li>
         <li>
@@ -129,9 +131,9 @@
                 \end{split}
                 e di semplificare prima di andare avanti:
                 \begin{split}
-                \frac{\rm a}{\rm b}=\frac{{\rm a}:\operatorname{gcd}(a,b)}{{\rm b}:\operatorname{gcd}(a,b)}
+                \frac{\rm a}{\rm b}=\frac{{\rm a}:\operatorname{gcd}(a,b)}{{\rm b}:\operatorname{gcd}(a,b)}=\frac{\operatorname{lcm}(a,b):{\rm b}}{\operatorname{lcm}(a,b):{\rm a}}
                 \end{split}
-                <br>
+                Dove \(\operatorname{gcd}(a,b),\operatorname{lcm}(a,b)\) sono il massimo comun divisore ed il minimo comune multiplo, rispettivamente.
             </div>
         </li>
         <li>
@@ -144,6 +146,39 @@
                 \frac{\text{Roba brutta che chiamo }{\rm N}}{\text{Roba brutta che chiamo }{\rm D}}
                 \end{split}
                 Usare comunque diviede and conquer, anche se non ci sono parentesi: risolvere a parte il numeratore ed il denominatore e poi fare \(\left({\rm N}\right):\left({\rm D}\right)\) dove le parentesi tonde sono state aggiunte in caso \({\rm N},{\rm D}\) non fossero interi.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Come calcolare il massimo comun divisore ed il minimo comune multiplo</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Per controllare la divisibilità:
+                </h3>
+                Fai la divisione col resto e vedi se il resto è \(0\).
+            </div>
+            <div class="overflow">
+                <h3>
+                    Per fattorizzare un numero:
+                </h3>
+                Se devo fattorizzare \({\rm n}\) conto fino ad \({\rm n}\) segnando su un foglio tutti i numeri primi. Riconosco se un numero è primo controllando se uno di quelli che ho già segnato lo divide.
+                <br>
+                Ogni volta che trovo un nuovo primo \({\rm p}\) controllo se divide \({\rm n}\), in tal caso scrivo \({\rm n}={\rm p}\cdot{\rm n}:{\rm p}\) e continuo cercando di fattorizzare il secondo fattore.
+                 <br>
+                Se contando mi rendo conto che i fattori sono tutti primi mi fermo.
+            </div>
+            <div class="overflow">
+                <h3>
+                    Per calcolare il massimo comun divisore:
+                </h3>
+                Si considerano solo le basi in comune con esponente minimo.
+                <h3>
+                    Per calcolare il minimo comune multiplo:
+                </h3>
+                Si considerano tutte le basi presenti con esponente massimo.
             </div>
         </li>
     </ul>

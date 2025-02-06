@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limiti e continuità</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Grafici e funzioni inverse.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Derivate in una variabile.html'">Successiva</button>
+    </div>
+
+    <h1>Limiti e continuità</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Si dice che \(\lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}={\rm x}\) se
+                \begin{split}
+                \forall\varepsilon>0\,,\quad\exists{\rm n}\in{\mathbb N}\,,\quad\forall{\rm m}>{\rm n}\,,\quad|{\rm a}_{\rm n}-{\rm x}|<\varepsilon.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice che \(\lim_{{\rm y}\rightarrow{\rm x}}{\rm f}({\rm y})={\rm z}\) se
+                \begin{split}
+                \forall\lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}={\rm x}\,,\quad\lim_{{\rm n}\rightarrow\infty}{\rm f}({\rm a}_{\rm n})={\rm z}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice che una funzione \({\rm f}\) è continua in \({\rm x}\) se \(\lim_{{\rm y}\rightarrow{\rm x}}{\rm f}({\rm y})={\rm f}({\rm x})\).
+            </div>
+        </li>
+        <h2>Esercizi:</h2>
+        <li>
+            <div class="overflow">
+                Sia \({\rm a}_{\rm n}\) una successione crescente, mostra che
+                \begin{split}
+                \lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}=\sup_{{\rm n}\in{\mathbb N}}{\rm a}_{\rm n}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sia \({\rm a}_{\rm n}\) una successione decrescente, mostra che
+                \begin{split}
+                \lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}=\inf_{{\rm n}\in{\mathbb N}}{\rm a}_{\rm n}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sia \({\rm a}_{\rm n}\) una successione, mostra che sono monotone
+                \begin{split}
+                \left(\sup_{{\rm m}>{\rm n}}{\rm a}_{\rm m}\right)_{{\rm n}\in{\mathbb N}}\qquad\left(\inf_{{\rm m}>{\rm n}}{\rm a}_{\rm m}\right)_{{\rm n}\in{\mathbb N}.}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che \({\rm a}_{\rm n}\) è una successione convergente se e solo se
+                \begin{split}
+                \inf_{{\rm n}\in{\mathbb N}}\left(\sup_{{\rm m}>{\rm n}}{\rm a}_{\rm m}\right)=\lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}=\sup_{{\rm n}\in{\mathbb N}}\left(\inf_{{\rm m}>{\rm n}}{\rm a}_{\rm m}\right).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che \(\lim_{{\rm y}\rightarrow{\rm x}}{\rm f}({\rm y})={\rm z}\) se e solo se
+                \begin{split}
+                \forall\varepsilon>0\,,\quad\exists\delta>0\,,\quad\forall|{\rm y}-{\rm x}|<\delta\,,\quad|{\rm f}({\rm y})-{\rm z}|<\varepsilon.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che \({\rm f}\) è una funzione continua in \({\rm x}\) se e solo se
+                \begin{split}
+                \lim_{{\rm n}\rightarrow\infty}{\rm a}_{\rm n}={\rm x}\longrightarrow\lim_{{\rm n}\rightarrow\infty}{\rm f}({\rm a}_{\rm n})={\rm f}({\rm x}).
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+
+    <h1>Limiti notevoli</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Si riesce a calcolare che:
+                \begin{split}
+                \lim_{{\rm x}\rightarrow0}\frac{\sin({\rm x})}{\rm x}&=1\\
+                \lim_{{\rm x}\rightarrow0}\frac{\cos({\rm x})-1}{{\rm x}^2}&=\frac{1}{2}\\
+                \lim_{{\rm x}\rightarrow0}\frac{\exp({\rm x})-1}{\rm x}&=1\\
+                \lim_{{\rm x}\rightarrow0}\frac{\log({\rm x}+1)}{\rm x}&=1.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Il numero di Nepero:
+                </h3>
+                \begin{split}
+                \lim_{{\rm n}\rightarrow\infty}\left(1+\frac{\rm x}{\rm n}\right)^{\rm n}&=\sum_{{\rm n}\in{\mathbb N}}\frac{{\rm x}^{\rm n}}{{\rm n}!}\\
+                {\it e}&=\lim_{{\rm n}\rightarrow\infty}\left(1+\frac{1}{\rm n}\right)^{\rm n}\\
+                \exp({\rm x}) &={\it e}^{\rm x}\\
+                \log({\rm x})&=\log_{\it e}({\rm x}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Il Pi greco:
+                </h3>
+                \begin{split}
+                {\rm a}_0&=1\\
+                {\rm a}_{{\rm n}+1}&=\sqrt{2+{\rm a}_{\rm n}}\\
+                \pi&=\prod_{{\rm n}\in{\mathbb N}}\frac{2}{{\rm a}_{\rm n}.}
+                \end{split}
+            </div>
+        </li>
+    </ul>

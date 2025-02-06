@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria degli insiemi</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Teoria dei gruppi.html'">Successiva</button>
+    </div>
+
+    <h1>Premessa</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="textwrap">
+                Agli inizi del XX secolo molti matematici erano interessati a dare un nuovo fondamento alle discipline matematiche. Anzichè pensare i numeri come lunghezze di segmenti, ha più senso pensare a numeri, operazioni, funzioni come insiemi. Da cui l'interesse per la logica e la teoria degli insiemi. L'idea iniziale è di descrivere un insieme come la classe di oggetti che verifica una condizione qualunque (principio di comprensione). Dal principio di comprensione sarebbe possibile definire l'insieme di tutti gli insiemi che non appartengono a se stessi. Ora la domanda è se tale insieme appartienga o meno a se stesso. Dal paradosso di Russell segue l'inconsistenza di una teoria degli insiemi basata sul principio di comprensione. Si rende dunque necessario elencare principi più deboli (Zermelo-Fraenkel) che non portino a conclusioni assurde.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Principio di Estensionalità</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \myforall{{\rm A},{\rm B}}{\sameas{\myeq{\rm A}{\rm B}}{{\rm A}\subseteq{\rm B}\subseteq{\rm A}}}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Questo garantisce l'unicità di un insieme finito
+                \begin{split}
+                \Replace{{\rm a}_{\rm k}}{\rm k}{\rm n}
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+    <h1>Principio della Coppia</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \myforall{{\rm a},{\rm b}}{\myexists{\myeq{\rm A}{\Curlies{{\rm a},{\rm b}}}}{\myforall{\rm c}{\sameas{\myin{\rm c}{\rm A}}{\MyLor{\myeq{\rm c}{\rm a}}{\myeq{\rm c}{\rm b}}}}}}
+                \end{split}
+                L'unicità segue dal principio di estensionalità.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Questo garantisce l'esistenza della coppia \(({\rm a},{\rm b})=\{\{{\rm a}\},\{{\rm a},{\rm b}\}\}\).
+            </div>
+        </li>
+    </ul>
+
+    <h1>Principio delle Parti</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \myforall{\rm A}{\myexists{\myeq{\rm B}{{\cal P}\Parenth{\rm A}}}{\myforall{\rm x}{\sameas{\myin{\rm x}{\rm B}}{{\rm x}\subseteq{\rm A}}}}}
+                \end{split}
+                L'unicità segue dal principio di estensionalità.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Principio dell'Unione</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \myforall{\rm A}{\myexists{\myeq{\rm B}{\mybigcup{\rm a}{\rm A}{\rm a}}}{\sameas{\MyIn{\rm x}{\mybigcup{\rm a}{\rm A}{\rm a}}}{\MyExists{\myin{\rm a}{\rm A}}{\myin{\rm x}{\rm a}}}}}
+                \end{split}
+                L'unicità segue dal principio di estensionalità.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Questo garantisce l'esistenza di un insieme finito
+                \begin{split}
+                \Replace{{\rm a}_{\rm k}}{\rm k}{\rm n}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che
+                \begin{split}
+                \sameas{\mybigcup{\rm a}{\rm A}{\rm a}\subseteq{\rm B}}{{\rm A}\subseteq{\cal P}\Parenth{\rm B}}
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+    <h1>Principio di Separazione e Rimpiazzamento</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Siano \({\cal C}\) un predicato ed \({\cal E}\) una espressione,
+                \begin{split}
+                \myforall{\rm A}{\myexists{\myeq{\rm B}{\Defined{{\cal E}({\rm a})}{\rm a}{\rm A}{{\cal C}({\rm a})}}}{\myforall{\rm x}{\sameas{\myin{\rm x}{\rm B}}{\myexists{{\rm a}\in{\rm A}}{\myeq{\rm x}{{\cal E}\Parenth{\rm a}}\land{\cal C}\Parenth{\rm a}}}}}}
+                \end{split}
+                L'unicità segue dal principio di estensionalità.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Questo garantisce l'esistenza di
+                \begin{split}
+                \mymult{\rm A}{\rm B}=\Separat{\rm c}{{\cal P}({\cal P}({\rm A}\cup{\rm B}))}{\myexists{\myin{\rm a}{\rm A}}{\myexists{\myin{\rm b}{\rm B}}{\myeq{\rm c}{\Parenth{{\rm a},{\rm b}}}}}}\\
+                \myfunc{\rm B}{\rm A}=\Separat{\rm f}{{\cal P}({\rm A}\times{\rm B})}{\myforall{{\rm a}\in{\rm A}}{\myexists{{\rm b}\in{\rm B}}{\Curlies{\rm b}=\Separat{\rm c}{\rm B}{({\rm a},{\rm c})\in{\rm f}}}}}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                In particolare le definizioni
+                \begin{split}
+                \myeqq{0}{\emptyset}{\Curlies{}}\\
+                \myeq{1}{\Curlies{0}}\\
+                \myeq{2}{\Curlies{0,1}}
+                \end{split}
+                sono ben poste.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Principio di Fondazione</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \myforall{{\rm A}\ne\emptyset}{\myexists{\myin{\rm a}{\rm A}}{\myeq{{\rm a}\cap{\rm A}}{\emptyset}}}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Questo permette di definire
+                \begin{split}
+                \myeq{{\rm A}+{\rm B}}{\mycup{\rm A}{\Replace{{\rm A}+{\rm b}}{\rm b}{\rm B}}}
+                \end{split}
+                di modo tale che
+                \begin{split}
+                \ifthen{\MyEq{{\rm A}+{\rm B}}{{\rm A}+{\rm C}}}{\MyEq{\rm B}{\rm C}}
+                \end{split}
+                <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        Definiamo l'albero di un insieme come
+                        \begin{split}
+                        \myeq{\operatorname{Tree}\Parenth{\rm A}}{\Separat{\DoubleP{{\rm a}_{\rm k}}{\rm k}{{\rm n}+1}}{\MyFunc{\operatorname{Clos}\Parenth{\rm A}}{\rm n}}{\myin{\rm n}{\mathbb N}\land\myforall{\myin{\rm k}{\rm n}}{\MyIn{{\rm a}_{{\rm k}+1}}{{\rm a}_{\rm k}}\land\MyEq{{\rm a}_0}{\rm A}\land\MyEq{{\rm a}_{\rm n}}{\rm x}}}}
+                        \end{split}
+                        Grazie al principio di fondazione, \(\operatorname{Clos}\Parenth{\rm A}\) è un insieme, altrimenti si costruisce una successione di elementi che contraddice il principio di fondazione. La condizione \({\rm x}\in{\rm A}+{\rm B}\) si traduce nell'esistenza di una mappa
+                        \begin{split}
+                        \myexists{\myin{\rm f}{\myfunc{\Separat{\DoubleP{{\rm x}_{\rm k}}{\rm k}{{\rm n}+1}}{\operatorname{Tree}\Parenth{\rm x}}{\myforall{\myin{\rm k}{\rm n}}{\myni{{\rm x}_{\rm k}}{\rm A}}}}{\operatorname{Tree}\Parenth{\rm B}}}}{\DoubleP{{\rm f}\DoubleP{{\rm x}_{\rm k}}{\rm k}{{\rm n}+1}_{\rm k}}{\rm k}{\rm n}={\rm f}\DoubleP{{\rm x}_{\rm k}}{\rm k}{\rm n}}.
+                        \end{split}
+                        E poichè
+                        \begin{split}
+                        \ifthen{{\rm A}+{\rm C}\subseteq{\rm A}+{\rm B}}{\MyForall{{\rm c}\in{\rm C}}{\myexists{{\rm b}\in{\rm B}}{{\rm A}+{\rm c}={\rm A}+{\rm b}}}},
+                        \end{split}
+                        se fosse \({\rm A}+{\rm C}={\rm A}+{\rm B}\) con \({\rm C}\ne{\rm B}\), si troverebbero due successioni
+                        \begin{split}
+                        \myin{{\rm b}_{{\rm n}+1}}{{\rm b}_{\rm n}\setminus{\rm A}}\\
+                        \myin{{\rm c}_{{\rm n}+1}}{{\rm c}_{\rm n}\setminus{\rm A}},
+                        \end{split}
+                        che non stazionano. Allora
+                        \begin{split}
+                        \Replace{{\rm b}_{\rm n}}{\rm n}{\mathbb N}\\
+                        \Replace{{\rm c}_{\rm n}}{\rm n}{\mathbb N}
+                        \end{split}
+                        contraddicono il principio di fondazione.
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Gerarchia degli insiemi di Von Neumann
+                </h3>
+                Definendo \({\cal V}_{\alpha\cup\Curlies{\alpha}}={\cal P}\Parenth{{\cal V}_\alpha}\) si ottiene una successione crescente di insiemi tale che per ogni \({\rm A}\) esiste \(\alpha\) per cui \({\rm A}\in{\cal V}_\alpha\). Altrimenti si avrebbe \({\rm a}\in{\rm A}\) con la stessa proprietà, che permette di definire una successione che contraddice il principio di fondazione.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Principio di Infinito</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \myexists{\myeq{\rm N}{\mathbb N}}{\myeq{\Curlies{\emptyset}\cup\Replace{{\rm n}\cup\{n\}}{\rm n}{\rm N}}{\rm N}}
+                \end{split}
+                L'unicità di \({\mathbb N}\) segue dal principio di fondazione.
+                <br>
+                <button onclick="toggleTesto('bottone1')">Dimostrazione:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        Sia infatti
+                        \begin{split}
+                        \Curlies{\emptyset}\cup\Replace{{\rm n}\cup\Curlies{\rm n}}{\rm n}{\rm N}={\rm N}
+                        \end{split}
+                        allora, senza perdita di generalità \({\rm N}\subseteq{\mathbb N}\). Applichiamo principio di fondazione a
+                        \begin{split}
+                        \Replace{{\rm n}\cup\Curlies{\rm n}}{\rm n}{{\mathbb N}\setminus{\rm N}}={\mathbb N}\setminus{\rm N}
+                        \end{split}
+                        ottenendo, se \({\rm N}\ne{\mathbb N}\)
+                        \begin{split}
+                        \myexists{\myin{\rm n}{\MySetminus{\mathbb N}{\rm N}}}{\mycap{\MyCup{\rm n}{\Curlies{\rm n}}}{{\MySetminus{\mathbb N}{\rm N}}}=\emptyset}
+                        \end{split}
+                        questo è assurdo.
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3 id="principio di induzione">Principio di induzione:</h3>
+                \begin{split}
+                \myforall{\rm N}{\ifthen{\Curlies{\emptyset}\cup\Replace{{\rm n}\cup\Curlies{\rm n}}{\rm n}{\rm N}\subseteq{\rm N}}{{\mathbb N}\subseteq{\rm N}}}.
+                \end{split}
+                Vedi anche il <a href="../../Elementi/Prima Parte/Insiemi e funzioni.html#principio di induzione">principio di induzione</a>.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Assioma di Scelta</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Definiamo
+                \begin{split}
+                \myeq{\mybigprod{\rm a}{\rm A}{{\cal E}\Parenth{\rm a}}}{\Separat{\rm f}{\MyFunc{\bigcup_{{\rm a}\in{\rm A}}{\cal E}({\rm a})}{\rm A}}{\myforall{{\rm a}\in{\rm A}}{{\rm f}({\rm a})\in{\cal E}({\rm a})}}}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Allora
+                \begin{split}
+                \ifthen{\MyEq{\mybigprod{\rm a}{\rm A}{{\cal E}\Parenth{\rm a}}}{\emptyset}}{\MyIn{\emptyset}{\Replace{{\cal E}({\rm a})}{\rm a}{\rm A}}}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\rm B}\subseteq{\rm A}\), sono ben definite
+                \begin{split}
+                \myin{1_{{\rm A},{\rm B}}}{\myfunc{\rm A}{\rm B}}\\
+                \myforall{\rm C}{\myin{\DoubleB{1_{{\rm A},{\rm B}}\circ\Sharp}}{\myfunc{\MyFunc{\rm A}{\rm C}}{\MyFunc{\rm B}{\rm C}}}}\\
+                \myforall{\rm C}{\myin{\DoubleB{\Sharp\circ1_{{\rm A},{\rm B}}}}{\myfunc{\MyFunc{\rm C}{\rm B}}{\MyFunc{\rm C}{\rm A}}}}
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+    <h1>Tuple e Prodotto Cartesiano</h1>
+        
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Sia data una espressione di un numero arbitrario di variabili per cui
+                \begin{split}
+                \myeq{{\cal E}\DoubleP{\rm a}{\rm k}{\rm n}}{\rm a}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                ad esempio una tra
+                \begin{split}
+                \myeq{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}}{\Quote{\mybigcap{\rm k}{\rm n}{{\rm a}_{\rm k}}}}\\
+                \myeq{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}}{\Quote{\mybigcup{\rm k}{\rm n}{{\rm a}_{\rm k}}}}.
+                \end{split}
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Allora si definisce la tupla
+                \begin{split}
+                \myeq{\DoubleP{{\rm a}_{\rm k}}{\rm k}{{\rm n}+1}}{\Curlies{\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n},\DoubleP{\Curlies{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm n},{\rm a}_{\rm n}}}{\rm k}{{\rm n}-1}}}.
+                \end{split}
+                Questa identifica univocamente ogni \({\rm a}_{\rm k}\) per \({\rm k}\in{\rm n}\).
+                <br>
+                <button onclick="toggleTesto('bottone2')">Dimostrazione:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                        Se ha cardinalità \(1\), allora
+                        \begin{split}
+                        \myeq{\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}}{\DoubleP{\Curlies{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n},{\rm a}_{\rm n}}}{\rm k}{{\rm n}-1}}
+                        \end{split}
+                        è una tupla di cardinalità \(1\), cioè
+                        \begin{split}
+                        \myforall{{\rm k}\in{\rm n}}{\myeqqq{{\rm a}_{\rm n}}{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}}{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}}{{\rm a}_{\rm k}}}
+                        \end{split}
+                        Se invece
+                        \begin{split}
+                        \DoubleP{\Curlies{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n},{\rm a}_{\rm n}}}{\rm k}{{\rm n}-1}
+                        \end{split}
+                        è una tupla, allora
+                        \begin{split}
+                        \myeq{{\rm a}_{\rm n}}{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}}
+                        \end{split}
+                        e visto che
+                        \begin{split}
+                        \myne{\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}}{\DoubleP{{\rm a}_{\rm n}}{\rm k}{\rm n}}
+                        \end{split}
+                        la prima non può non può avere cardinalità \(1\).
+                        Se invece
+                        \begin{split}
+                        \DoubleP{\Curlies{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n},{\rm a}_{\rm n}}}{\rm k}{{\rm n}-1}
+                        \end{split}
+                        non è una tupla, allora si può determinare \(\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}\) per ipotesi induttiva ed infine
+                        \begin{split}
+                        \myne{{\rm a}_{\rm n}}{{\cal E}\DoubleP{{\rm a}_{\rm k}}{\rm k}{\rm n}}
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Questo permette di definire
+                \begin{split}
+                \mybigmult{\rm k}{\rm n}{{\rm A}_{\rm k}}
+                \end{split}
+                anche se in più di un modo a seconda di \(\cal E\).
+            </div>
+        </li>
+    </ul>
+
+    <h1>Relazioni d'ordine</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Una relazione d'ordine è un predicato \({\cal R}\) tale per cui
+                \begin{split}
+                \ifthen{{\cal R}\Parenth{{\rm a},{\rm b}}\land{\cal R}({\rm b},{\rm c})}{{\cal R}\Parenth{{\rm a},{\rm c}}}\\
+                \ifthen{{\cal R}\Parenth{{\rm a},{\rm b}}\land{\cal R}({\rm b},{\rm a})}{{\rm a}={\rm b}}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice che un insieme \({\rm A}\) ammette minimo o massimo, se
+                \begin{split}
+                \myexists{\min_{\cal R}\Parenth{\rm A}\in{\rm A}}{\myforall{{\rm a}\in{\rm A}}{{\cal R}\Parenth{\min_{\cal R}\Parenth{\rm A},{\rm a}}}}\\
+                \myexists{\max_{\cal R}\Parenth{\rm A}\in{\rm A}}{\myforall{{\rm a}\in{\rm A}}{{\cal R}\Parenth{{\rm a},\max_{\cal R}\Parenth{\rm A}}}}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Vale che se \({\rm A}\subseteq{\rm B}\):
+                \begin{split}
+                {\cal R}\Parenth{\min_{\cal R}\Parenth{\rm B},\min_{\cal R}\Parenth{\rm A}}\\
+                {\cal R}\Parenth{\min_{\cal R}\Parenth{\rm A},\min_{\cal R}\Parenth{\rm B}}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice che \({\cal R}\) è totale su un'insieme \({\rm A}\) se
+                \begin{split}
+                \myforall{{\rm a},{\rm b}\in{\rm A}}{\cal R}\Parenth{{\rm a},{\rm b}}\lor{\rm a}={\rm b}\lor{\cal R}\Parenth{{\rm b},{\rm a}}.
+                \end{split}
+                Si dice che \({\cal R}\) è ben fondata su un'insieme \({\rm A}\) se ogni \({\rm B}\subseteq{\rm A}\) ammette un elemento minimale.
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Un Ordinale è un insieme \(\alpha\) per cui: \(\alpha\subseteq{\cal P}(\alpha)\) e la relazione \({\cal R}(\beta,\gamma)=\Quote{\beta\in\gamma}\) è totale su \(\alpha\).
+            </div>
+        </li>
+        <li>
+            <div class="textwrap">
+                Ogni elemento di un ordinale è un ordinale. L'intersezione di ordinali è un ordinale. Per il Principio di Fondazione, ogni sottoinsieme di un ordinale ammette minimo. Se un elemento di un ordinale non è il massimo, allora il suo successore è quello canonico. Dati due ordinali, uno deve appartenere all'altro. Un ordinale è il successivo del suo massimo, oppure è l'unione di tutti i suoi elementi.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Cardinalità</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>Argomento diagonale di Cantor</h3>
+                Sia \({\rm f}\in{\cal P}\Parenth{\rm A}^{\rm A}\), consideriamo che l'insieme
+                \begin{split}
+                \Separat{\rm a}{\rm A}{{\rm a}\notin{\rm f}\Parenth{\rm a}}\notin\Replace{{\rm f}\Parenth{\rm a}}{\rm a}{\rm A}
+                \end{split}
+                Da cui \(\Modulus{\rm A}<\Modulus{{\cal P}\Parenth{\rm A}}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>Lemma di Zorn</h3>    
+                Sia \({\rm A}\) un insieme e sia \({\cal R}\) una relazione d'ordine tale che per ogni \({\rm B} \subseteq {\rm A}\) tale per cui \({\cal R}\) è totale su \(\rm B\)
+                \begin{split}
+                \myexists{\myin{\rm a}{\rm A}}{\myforall{\myin{\rm b}{\rm B}}{{\cal R}\Parenth{{\rm a},{\rm b}}\lor{\rm a}={\rm b}}}.
+                \end{split}
+                Allora
+                \begin{split}
+                \myexists{\myin{\rm a}{\rm A}}{\Separat{\rm b}{\rm A}{{\cal R}\Parenth{{\rm b},{\rm a}}}\subseteq\Curlies{\rm a}}.
+                \end{split}
+                Se infatti non fosse così, potremmo trovare una \({\rm B} \subseteq {\rm A}\) di ogni cardinalità, contraddicendo l'Argomento Diagonale di Cantor.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Principio di ordinabilità di Zermelo
+                </h3>
+                Per ogni \({\rm A}\) esiste un ordinale \(\alpha\) tale che \(|\alpha| = |{\rm A}|\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di Cantor-Schröder-Bernstein
+                </h3>
+                Siano \(\myin{\rm f}\myfunc{\rm A}{\rm B},\myin{\rm g}{\myfunc{\rm B}{\rm A}}\) iniettive e si considerino \({\rm A}_0,{\rm B}_0={\rm A},{\rm B}\)
+                \begin{split}
+                \myeq{{\rm A}_{{\rm n}+1}}{\Replace{{\rm f}\Parenth{\rm b}}{\rm b}{{\rm B}_{\rm n}}\setminus{\rm A}_{\rm n}}\\
+                \myeq{{\rm B}_{{\rm n}+1}}{\Replace{{\rm g}\Parenth{\rm a}}{\rm a}{{\rm A}_{\rm n}}\setminus{\rm B}_{\rm n}}
+                \end{split}
+                Allora
+                \begin{split}
+                \myin{{\rm f}\circ1_{{\rm B},{\rm B}_{\rm n}}}{\myfunc{{\rm A}_{{\rm n}+1}}{{\rm B}_{\rm n}}}\\
+                \myin{{\rm g}\circ1_{{\rm A},{\rm A}_{\rm n}}}{\myfunc{{\rm B}_{{\rm n}+1}}{{\rm A}_{\rm n}}}
+                \end{split}
+                sono bigettive. Invece
+                \begin{split}
+                \myin{{\rm f}\circ1_{{\rm B},{\rm B}_0\cup{\rm B}_1}}{\myfunc{\MyCup{{\rm A}_0}{{\rm A}_1}}{\MyCup{{\rm B}_0}{{\rm B}_1}}}\\
+                \myin{{\rm g}\circ1_{{\rm A},{\rm A}_0\cup{\rm A}_1}}{\myfunc{\MyCup{{\rm B}_0}{{\rm B}_1}}{\MyCup{{\rm A}_0}{{\rm A}_1}}}
+                \end{split}
+                sono iniettive. Dal Lemma di Zorn si conclude che \(\myeq{\Modulus{\rm A}}{\Modulus{\rm B}}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Un grande cardinale \({\rm k}\) soddisfa \(\Modulus{{\cal V}_{\rm k}}={\rm k}\) e tale che se \(k = \bigcup_{\alpha \in {\rm A}} \alpha\), allora \(k \in \alpha\). In tal caso si ha \({\cal V}_k\) come possibile modello della teoria degli insiemi.
+            </div>
+        </li>
+    </ul>
+
+</body>

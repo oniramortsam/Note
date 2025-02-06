@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivate in una variabile</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Limiti e continuità.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Integrali in una variabile.html'">Successiva</button>
+    </div>
+
+    <h1>Derivate</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Si dice che una funzione \({\rm f}\) è derivabile su \({\rm x}\) se esiste il limite del rapporto incrementale
+                \begin{split}
+                \myeq{\frac{\partial{\rm f}\Parenth{\rm y}}{\partial{\rm y}}\Parenth{\rm x}}{\mylim{\rm y}{\rm x}{\frac{\mydiff{{\rm f}\Parenth{\rm y}}{{\rm f}\Parenth{\rm x}}}{\mydiff{\rm y}{\rm x}}}}
+                \end{split}
+                In tal caso diciamo che \({\rm x}\) è nel dominio di \(\nabla{\rm f}\) e che
+                \begin{split}
+                \myeq{\nabla{\rm f}}{\frac{\partial{\rm f}\Parenth{\rm y}}{\partial{\rm y}}}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si può mostrare che:
+                \begin{split}
+                \myeq{\nabla(\myprod{\rm f}{\rm g})}{\myplus{\myprod{\MyNabla{\rm f}}{\rm g}}{\myprod{\rm f}{\MyNabla{\rm g}}}}\\
+                \myeq{\nabla(\mycirc{\rm f}{\rm g})}{\myprod{\MyCirc{\MyNabla{\rm f}}{\rm g}}{\mynabla{\rm g}}}\\
+                \myeq{\mynabla{\Parenth{{\rm f}^{-1}}}}{\myquotient{1}{\MyCirc{\MyNabla{\rm f}}{({\rm f}^{-1})}}}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice che una funzione \({\rm f}\) è crescente se
+                \begin{split}
+                \forall{\rm x}<{\rm y}\,,\quad{\rm f}({\rm x})<{\rm f}({\rm y}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice che una funzione \({\rm f}\) è convessa se
+                \begin{split}
+                \forall{\rm x}<{\rm y}<{\rm z}\,,\quad{\rm f}({\rm y})<\left(\frac{{\rm z}-{\rm y}}{{\rm z}-{\rm x}}\right){\rm f}({\rm x})+\left(\frac{{\rm y}-{\rm x}}{{\rm z}-{\rm x}}\right){\rm f}({\rm z}).
+                \end{split}
+            </div>
+        </li>
+        <h2>Esercizi:</h2>
+        <li>
+            <div class="overflow">
+                Mostra che una funzione \({\rm f}\) crescente se e solo se
+                \begin{split}
+                \forall{\rm x}<{\rm y}\,,\quad({\rm f}({\rm y})-{\rm f}({\rm x}))\cdot({\rm y}-{\rm x})>0.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che una funzione è crescente se e solo se il suo rapporto incrementale è positivo.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che una funzione è crescente se e solo se la sua derivata è positiva.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che una funzione \({\rm f}\) è convessa se e solo se
+                \begin{split}
+                \forall{\rm x}<{\rm y}<{\rm z}\,,\quad\frac{{\rm f}({\rm y})-{\rm f}({\rm x})}{{\rm y}-{\rm x}}<\frac{{\rm f}({\rm z})-{\rm f}({\rm y})}{{\rm z}-{\rm y}.}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che una funzione è convessa se e solo se la sua derivata è crescente.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che una funzione è convessa se e solo se il suo rapporto incrementale è monotono.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Derivate notevoli</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Si riesce a calcolare che:
+                \begin{split}
+                \frac{\partial\sin({\rm y})}{\partial y}({\rm x})&=\cos({\rm x})\\
+                \frac{\partial\cos({\rm y})}{\partial y}({\rm x})&=-\sin({\rm x})\\
+                \frac{\partial\exp({\rm y})}{\partial y}({\rm x})&=\exp({\rm x})\\
+                \frac{\partial\log({\rm y})}{\partial{\rm y}}({\rm x})&=\frac{1}{\rm x}\\
+                \frac{\partial{\rm y}^a}{\partial{\rm y}}({\rm x})&={\rm a}\cdot{\rm x}^{{\rm a}-1}.
+                \end{split}
+                <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento1" class="hidden">
+                    <div class="overflow">
+                        Continuando con il <a href="../Prima Parte/Insiemi e funzioni.html#principio di induzione">principio di induzione</a>:
+                        \begin{split}
+                        \frac{\partial^{2{\rm n}}\sin({\rm y})}{(\partial{\rm y})^{2{\rm n}}}({\rm x})&=(-1)^{\rm n}\cdot\sin({\rm x})\\
+                        \frac{\partial^{2{\rm n}}\cos({\rm y})}{(\partial{\rm y})^{2{\rm n}}}({\rm x})&=(-1)^{\rm n}\cdot\cos({\rm x})\\
+                        \frac{\partial^{\rm n}\exp({\rm y})}{(\partial{\rm y})^n}({\rm x})&=\exp({\rm x})\\
+                        \frac{\partial^{\rm n}\log({\rm y})}{(\partial{\rm y})^{\rm n}}({\rm x})&=\frac{(- 1)^{{\rm n}-1}\cdot({\rm n}-1)!}{{\rm x}^{\rm n}}\\
+                        \frac{\partial^{\rm n}{\rm y}^{\rm a}}{(\partial{\rm y})^{\rm n}}({\rm x})&=\left(\prod_{{\rm k}\in{\rm n}}({\rm a}-{\rm k})\right)\cdot{\rm x}^{{\rm a}-{\rm n}}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Studio di funzione</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Cauchy:
+                </h3>
+                \begin{split}
+                0>{\rm f}({\rm x})\cdot{\rm f}({\rm y})\longrightarrow\exists\theta\in(0,1)\!:\quad{\rm f}(\theta\cdot{\rm x}+(1-\theta)\cdot{\rm y})=0.
+                \end{split}
+            </div>
+            <br>
+            <div class="overflow">
+                <h3>
+                    Rolle:
+                </h3>
+                \begin{split}
+                \exists\theta\in(0,1)\!:\quad\frac{{\rm f}({\rm x})-{\rm f}({\rm y})}{{\rm g}({\rm x})-{\rm g}({\rm y})}=\frac{\nabla{\rm f}(\theta\cdot{\rm x}+(1-\theta)\cdot{\rm y})}{\nabla{\rm g}(\theta\cdot{\rm x}+(1-\theta)\cdot{\rm y})}.
+                \end{split}
+                Basta valutare
+                \begin{split}
+                {\rm z}={\rm x}\longrightarrow({\rm f}({\rm x})-{\rm f}({\rm y}))\cdot\nabla{\rm g}({\rm z})-({\rm g}({\rm x})-{\rm g}({\rm y}))\cdot\nabla{\rm f}({\rm z})&=\nabla{\rm f}({\rm x})\cdot{\rm g}({\rm y})-\nabla{\rm g}({\rm x})\cdot{\rm f}({\rm y})\\
+                {\rm z}={\rm y}\longrightarrow({\rm f}({\rm x})-{\rm f}({\rm y}))\cdot\nabla{\rm g}({\rm z})-({\rm g}({\rm x})-{\rm g}({\rm y}))\cdot\nabla{\rm f}({\rm z})&={\rm g}({\rm x})\cdot\nabla{\rm f}({\rm y})-{\rm f}({\rm x})\cdot\nabla{\rm g}({\rm y}),
+                \end{split}
+                ed applicare Cauchy.
+            </div>
+            <br>
+            <div class="overflow">
+                <h3>
+                    Lagrange:
+                </h3>
+                \begin{split}
+                \exists\theta\in(0,1)\!:\quad\frac{{\rm f}({\rm x})-{\rm f}({\rm y})}{{\rm x}-{\rm y}}=\nabla{\rm f}(\theta\cdot x+(1-\theta)\cdot{\rm y}).
+                \end{split}
+            </div>
+            <br>
+            <div class="overflow">
+            <button onclick="toggleTesto('approfondimento0')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento0" class="hidden">
+                    <div class="overflow">
+                        <h3>Teoremi di de l'Hopital:</h3>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="overflow">
+                <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento1" class="hidden">
+                    <div class="overflow">
+                        <h3>Sviluppo di Taylor:</h3>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <h2>Esercizi:</h2>
+        <li class="outside">
+            <div class="overflow">
+                Si definiscono:
+                \begin{split}
+                \tan({\rm x})&=\frac{\sin({\rm x})}{\cos({\rm x})}\\
+                \cot({\rm x})&=\frac{\cos({\rm x})}{\sin({\rm x}).}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che sono bigettive:
+                \begin{split}
+                \cos\!:&[0,\pi]\rightarrow[-1,1]\\
+                \sin\!:&\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\rightarrow[-1,1]\\
+                \tan\!:&\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\rightarrow{\mathbb R}\\
+                \cot\!:&(0,\pi)\rightarrow{\mathbb R}
+                \end{split}
+                Determina poi se sono pari, dispari, periodiche, monotone.
+                <br>
+                Determina poi se le loro inverse sono pari, dispari, periodiche, monotone.
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Si definiscono:
+                \begin{split}
+                \cosh({\rm x})&=\frac{\exp({\rm x})+\exp(-{\rm x})}{2}\\
+                \sinh({\rm x})&=\frac{\exp({\rm x})-\exp(-{\rm x})}{2}\\
+                \tanh({\rm x})&=\frac{\sinh({\rm x})}{\cosh({\rm x})}\\
+                \coth({\rm x})&=\frac{\cosh({\rm x})}{\sinh({\rm x}).}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che sono bigettive:
+                \begin{split}
+                \cosh\!:&{\mathbb R}\rightarrow{\mathbb R}_+\\
+                \sinh\!:&{\mathbb R}\rightarrow{\mathbb R}\\
+                \tanh\!:&{\mathbb R}\rightarrow[-1,1]\\
+                \coth\!:&{\mathbb R}\setminus\{0\}\rightarrow{\mathbb R}\setminus[-1,1].
+                \end{split}
+                Determina poi se sono pari, dispari, periodiche, monotone.
+                <br>
+                Calcola le loro inverse e determina se sono pari, dispari, periodiche, monotone.
+            </div>
+        </li>
+    </ul>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coniche nel piano</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Rotazioni del Piano.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='../Terza Parte/Grafici e funzioni inverse.html'">Successiva</button>
+    </div>
+
+    <h1>Circonferenze</h1>
+    
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Consideriamo una circonferenza \({\cal C}\) di centro \((\alpha, \beta)\) e raggio \(\rho\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Per i punti esterni a \({\cal C}\) vale \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) > 0\) e passano \(2\) rette tangenti.
+                <br>
+                Per i punti giacenti su \({\cal C}\) vale \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) = 0\) e passa una sola retta tangente.
+                <br>
+                Per i punti interni a \({\cal C}\) vale \(x^2 + y^2 - 2 \alpha x - 2 \beta y + (\alpha^2 + \beta^2 - \rho^2) < 0\) e non passano rette tangenti.
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Data una retta generica \(r = \{a x + b y + c = 0\}\):
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \(r\) è secante ad una circonferenza se \((a \cdot \alpha + b \cdot \beta + c)^2 < \rho^2 (a^2 + b^2)\).
+                <br>
+                \(r\) è tangente ad una circonferenza se \((a \cdot \alpha + b \cdot \beta + c)^2 = \rho^2 (a^2 + b^2)\).
+                <br>
+                \(r\) è disgiunta da una circonferenza se \((a \cdot \alpha + b \cdot \beta + c)^2 > \rho^2 (a^2 + b^2)\).
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Due circonferenze di raggi \(\rho_1, \rho_0\) e centri distanti \(\delta\) possono essere:
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Esterne se \(\delta > \rho_1 + \rho_0\) (intersezione vuota).
+                <br>
+                Tangenti esternamente se \(\delta = \rho_1 + \rho_0\) (un punto di intersezione).
+                <br>
+                Secanti se \(|\rho_1 - \rho_0| < \delta < \rho_1 + \rho_0\) (due punti di intersezione).
+                <br>    
+                Tangenti internamente se \(\delta = |\rho_1 - \rho_0|\) (un punto di intersezione).
+                <br>
+                Interne se \(\delta < |\rho_1 - \rho_0|\) (intersezione vuota).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                I punti di intersezione si trovano intersecando una delle due circonferenze con l'asse radicale di equazione
+                \begin{split}
+                2 (\alpha_1 - \alpha_0) x + 2 (\beta_1 - \beta_0) y = (\alpha_1^2 + \beta_1^2 - \rho_1^2) - (\alpha_0^2 + \beta_0^2 - \rho_0^2).
+                \end{split}
+                Le tangenti comuni alle circonferenze si trovano invece individuando il punto di proiezione (NO, sbagliato, ci sono due punti)
+                \begin{split}
+                \left(\frac{\rho_1 \cdot \alpha_0 + \rho_0 \cdot \alpha_1}{\rho_0 + \rho_1}, \frac{\rho_1 \cdot \beta_0 + \rho_0 \cdot \beta_1}{\rho_0 + \rho_1}\right).
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li class="outside">
+            <div class="overflow">
+                Data l'equazione di una circonferenza \(\cal C\):
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Determina il centro \((\alpha, \beta)\) ed il raggio \(\rho\) di \(\cal C\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Dato un punto \(\rm P\), determina se \(\rm P\) appartiene a \(\cal C\), se è interno o esterno.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \(\rm P\) è esterno determina le tangenti a \(\cal C\) passanti per \(\rm P\). Queste intersecano \(\cal C\) in in punto ciascuna, determina le loro coordinate e l'equazione della retta passante per entrambi.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Data una retta \(r\), determina se \(r\) è disgiunta, secante o tangente a \(\cal C\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \(r\) è secante determina i punti di intersezione di \(r\) con \(\cal C\). Per ciascuno di questi punti passa una retta tangente a \(\cal C\), determina le loro equazioni le coordinate del loro punto di intersezione.
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Dati \(a, b, c\) determinare se la circonferenza \(\{x^2 + y^2 + a x + b y + c = 0\}\) e \(\cal C\) sono interne, esterne o secanti.
+            </div>
+        </li>
+    </ul>
+    
+    <h1>Coniche</h1>
+    
+    <ul>
+        <li>
+            <div class="overflow">
+                L'equazione di una parabola di fuoco \((\alpha, \beta)\) e direttrice \(\{y = m x + q\}\) è:
+                \begin{split}
+                \frac{(x + m y)^2}{m^2 + 1} - 2 \left(\alpha + \frac{m q}{m^2 + 1}\right) x - 2 \left(\beta - \frac{q}{m^2 + 1}\right) y + \left(\alpha^2 + \beta^2 - \frac{q^2}{m^2 + 1}\right) = 0.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                L'equazione di una conica di fuoco \((\alpha, \beta)\), direttrice \(\{y = m x + q\}\), ed eccentricità \(\varepsilon\) è:
+                \begin{split}
+                x^2 + y^2 - \frac{\varepsilon (m x - y)^2}{m^2 + 1} - 2 \left(\alpha + \frac{\varepsilon m q}{m^2 + 1}\right) x - 2 \left(\beta - \frac{\varepsilon q}{m^2 + 1}\right) y + \left(\alpha^2 + \beta^2 - \frac{\varepsilon q^2}{m^2 + 1}\right) = 0.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Dati due punti \((\alpha_0, \beta_0), (\alpha_1, \beta_1)\), diciamo \(4 c^2 = (\alpha_0 - \alpha_1)^2 + (\beta_0 - \beta_1)^2\), l'equazione di un'ellisse di asse \(a > c\) o di un'iperbole di asse \(a < c\) è
+                \begin{split}
+                4 a^2 \left((x - \alpha)^2 + (y - \beta)^2 + c^2 - a^2\right) = ((x - \alpha) (\alpha_1 - \alpha_0) + (y - \beta) (\beta_1 - \beta_0))^2.
+                \end{split}
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Nel caso \(a = c\) l'equazione si riduce a quella di una retta passante per i due fuochi.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \(\beta_1, \beta_0, \alpha = 0\) abbiamo
+                \begin{split}
+                \frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} = 1
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \(\alpha_1, \alpha_0, \beta = 0\) abbiamo
+                \begin{split}
+                \frac{x^2}{a^2 - c^2} + \frac{y^2}{a^2} = 1.
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di Brianchon
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di Pascal
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                Teorema di Pappo
+                </h3>
+            </div>
+        </li>
+    </ul>

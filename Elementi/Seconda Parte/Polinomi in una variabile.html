@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polinomi in una variabile</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+  
+    <div class="navbar">
+        <button onclick="location.href='../Prima Parte/Numeri naturali.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Rette nel piano.html'">Successiva</button>
+    </div>
+
+    <h1>Polinomi</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Un polinomio è una espressione del tipo
+                \begin{split}
+                {\rm a}({\rm x})={\rm a}_{\rm n}\cdot{\rm x}^{\rm n}+\dots+{\rm a}_{\rm k}\cdot{\rm x}^{\rm k}+\dots+{\rm a}_0
+                \end{split}
+                con tutti i coefficienti \({\rm a}_{\rm n},\dots,{\rm a}_{\rm k},\dots,{\rm a}_0\) costanti.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\rm a}_{\rm n}=0\) si può scrivere
+                \begin{split}
+                {\rm a}({\rm x})={\rm a}_{{\rm n}-{\rm 1}}\cdot{\rm x}^{{\rm n}-1}+\dots+{\rm a}_{\rm k}\cdot{\rm x}^{\rm k}+\dots+{\rm a}_0
+                \end{split}
+                altrimenti si dice che \({\rm n}=\deg({\rm a})\) è il grado del polinomio.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\rm a}({\rm x}),{\rm b}({\rm x})\) sono due polinomi, si può sempre scrivere \({\rm a}({\rm x})={\rm q}({\rm x})\cdot{\rm b}({\rm x})+{\rm r}({\rm x})\) con \(\deg({\rm r})<\deg({\rm b})\).
+                <br>
+                <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        Basta notare che, se \(\deg({\rm b}({\rm x}))\le\deg({\rm a}({\rm x}))\), detto
+                        \begin{split}
+                        {\rm c}({\rm x})={\rm a}({\rm x})-\frac{{\rm a}_{\deg({\rm a})}}{{\rm b}_{\deg({\rm b})}}\cdot{\rm x}^{{\deg({\rm a})}-{\rm b}_{\deg({\rm b})}}\cdot{\rm b}({\rm x})
+                        \end{split}
+                        si ha \(\deg({\rm c})<\deg({\rm a})\) e quindi, per il <a href="Insiemi e funzioni.html#principio di induzione">principio di induzione</a>
+                        \begin{split}
+                        {\rm a}({\rm x})&={\rm c}({\rm x})+\frac{{\rm a}_{\deg({\rm a})}}{{\rm b}_{\deg({\rm b})}}\cdot{\rm x}^{{\deg({\rm a})}-{\rm b}_{\deg({\rm b})}}\cdot{\rm b}({\rm x})\\
+                        &=\left({\rm q}({\rm x})+\frac{{\rm a}_{\deg({\rm a})}}{{\rm b}_{\deg({\rm b})}}\cdot{\rm x}^{{\deg({\rm a})}-{\rm b}_{\deg({\rm b})}}\right)\cdot{\rm b}({\rm x})+{\rm r}({\rm x})
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3 id="teorema di Ruffini">Teorema di Ruffini</h3>
+                Un polinomio \({\rm p}({\rm x})\) è multiplo di \({\rm x}-\alpha\) se e solo se \({\rm p}(\alpha)=0\).
+                <br>
+                <button onclick="toggleTesto('bottone1')">Dimostrazione:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        Infatti si può scrivere \({\rm p}({\rm x})={\rm q}({\rm x})\cdot({\rm x}-\alpha)+{\rm p}(\alpha)\). 
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('approfondimento0')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento0" class="hidden">
+                    <div class="overflow">
+                        <h3>Ruffini generalizzato:</h3>
+                        Un polinomio \({\rm p}({\rm x})\) è multiplo di \(({\rm x}-\alpha)^{\rm n}\) se e solo se \({\rm p}(\alpha)=0\) e \(\nabla{\rm p}({\rm x})\) è multiplo di \(({\rm x}-\alpha)^{{\rm n}-1}\).
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Fattoriale</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Si dice fattoriale di un numero naturale \({\rm n}\) il prodotto dei numeri minori o uguali ad \({\rm n}\):
+                \begin{split}
+                ({\rm n}+1)!=({\rm n}+1)\cdot\dots\cdot k\cdot\dots\cdot1
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                \frac{({\rm a}+{\rm b}-1)!}{({\rm a}-1)!\cdot{\rm b}!}+\frac{({\rm a}+{\rm b}-1)!}{{\rm a}!\cdot({\rm b}-1)!}=\frac{({\rm a}+{\rm b})!}{{\rm a}!\cdot{\rm b}!}
+                \end{split}
+                <button onclick="toggleTesto('bottone2')">Dimostrazione:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                ({\rm x}+1)^{\rm n}={\rm x}^{\rm n}+\dots+\frac{{\rm n}!}{({\rm n}-{\rm k})!\cdot{\rm k}!}\cdot{\rm x}^{\rm k}+\dots+1
+                \end{split}
+                <button onclick="toggleTesto('bottone3')">Dimostrazione:</button>
+                <div id="bottone3" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <button onclick="toggleTesto('approfondimento1')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento1" class="hidden">
+                    <div class="overflow">
+                        \begin{split}
+                        \frac{({\rm n}+{\rm m})!}{{\rm n}!\cdot{\rm m}!}&=\frac{({\rm n}+{\rm m}-1)!}{({\rm n}-1)!\cdot{\rm m}!}+\frac{(n+m - 1)!}{n!\cdot(m - 1)!}\\
+                        &=\sum_{{\rm k}\in{\rm n}+1}\frac{({\rm k}+{\rm m}-1)!}{{\rm k}!\cdot({\rm m}-1)!}\\
+                        &=\sum_{{\rm k}\in{\rm n}+1}\left(\frac{({\rm k}+{\rm m}-{\rm d})!}{{\rm k}!\cdot({\rm m}-{\rm d})!}\cdot\frac{({\rm n}-{\rm k}+{\rm d}-1)!}{({\rm n}-{\rm k})!\cdot({\rm d}-1)!}\right)
+                        \end{split}
+                        Inoltre
+                        \begin{split}
+                        \frac{({\rm n}+{\rm m})!}{{\rm n}!\cdot{\rm m}!}&=\sum_{{\rm k}\in{\rm a}+1}\frac{({\rm n}+{\rm m}+{\rm k}-{\rm a}-1)!}{({\rm n}+{\rm k}-{\rm a})!\cdot({\rm m}-1)!}+\frac{({\rm n}+{\rm m}-{\rm a}-1)!}{({\rm n}-{\rm a}-1)!\cdot{\rm m}!}\\
+                        &=\sum_{{\rm k}\in{\rm a}+1}\left(\frac{({\rm n}+{\rm m}+{\rm k}-{\rm a}-{\rm b}-1)!}{({\rm n}+{\rm k}-{\rm a})!\cdot({\rm m}-{\rm b}-1)!}\cdot\frac{({\rm a}+{\rm b}-{\rm k})!}{({\rm a}-{\rm k})!\cdot{\rm b}!}\right)+\sum_{{\rm k}\in{\rm b}+1}\left(\frac{({\rm n}+{\rm m}+{\rm k}-{\rm a}-{\rm b}-1)!}{({\rm n}-{\rm a}-1)!\cdot({\rm m}+{\rm k}-{\rm b})!}\cdot\frac{({\rm a}+{\rm b}-{\rm k})!}{{\rm a}!\cdot({\rm b}-{\rm k})!}\right)
+                        \end{split}
+                        In modo simile
+                        \begin{split}
+                        \frac{({\rm n}+{\rm m})!}{{\rm n}!\cdot{\rm m}!}&=\frac{({\rm n}+{\rm m}-1)!}{({\rm n}-1)!\cdot{\rm m}!}+\frac{({\rm n}+{\rm m}-1)!}{{\rm n}!\cdot({\rm m}-1)!}\\
+                        &=\sum_{{\rm k}\in{\rm d}+1}\left(\frac{{\rm d}!}{{\rm k}!({\rm d}-{\rm k})!}\cdot\frac{({\rm n}+{\rm m}-{\rm d})!}{({\rm n}-{\rm k})!\cdot({\rm m}-{\rm d}+{\rm k})!}\right)
+                        \end{split}
+                        In generale (C'è un errore?)
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('approfondimento2')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento2" class="hidden">
+                    <div class="overflow">
+                        CONTINUA, è INTERESSANTE
+                        \begin{split}
+                        {\rm x}^{\rm m}&=\sum_{{\rm k}\in{\rm m}}\frac{({\rm m}-1)!}{({\rm m}-{\rm k}-1)!{\rm k}!}\cdot{\rm x}\cdot({\rm x}-1)^{\rm k}\\
+                        &=\sum_{{\rm k}\in{\rm m}}\frac{({\rm m}-1)!}{({\rm m}-{\rm k}-1)!{\rm k}!}\cdot\sum_{h \in k} \frac{a_{{\rm k},{\rm h}}\cdot{\rm x}!}{({\rm x}-{\rm h}-2)!}\\
+                        {\rm a}_{{\rm m},{\rm h}+1}&=\sum_{{\rm h}\in{\rm k}\in{\rm m}}\frac{{\rm a}_{{\rm k},{\rm h}}\cdot({\rm m}-1)!}{({\rm m}-{\rm k}-1)!{\rm k}!}
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3 id="serie geometrica">Serie geometrica</h3>
+                \begin{split}
+                ({\rm x}^{\rm n}+\dots+{\rm x}^{\rm k}+\dots+1)\cdot({\rm x}-1)={\rm x}^{{\rm n}+1}-1
+                \end{split}
+                <button onclick="toggleTesto('bottone5')">Dimostrazione:</button>
+                <div id="bottone5" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('approfondimento3')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento3" class="hidden">
+                    <div class="overflow">
+                        \begin{split}
+                        ({\rm x}^{\rm n}+\dots+{\rm x}^{\rm k}+\dots+1)\cdot(1-{\rm x})+{\rm x}^{{\rm n}+1}&=1\\
+                        \left(\frac{({\rm n}+{\rm m})!}{{\rm n}!\cdot{\rm m}!}\cdot{\rm x}^{\rm n}+\dots+\frac{({\rm k}+{\rm m})!}{{\rm k}!\cdot{\rm m}!}\cdot{\rm x}^{\rm k}+\dots+1\right)\cdot(1-{\rm x})^{{\rm d}+1}+{\rm x}^{{\rm n}+1}\left(\frac{({\rm n}+{\rm m})!}{{\rm n}!\cdot{\rm m}!}(1-{\rm x})^{\rm d}+\dots+\frac{({\rm n}+{\rm k})!}{{\rm n}!\cdot{\rm k}!}(1-{\rm x})^{{\rm k}+{\rm d}-{\rm m}}+\dots+\frac{({\rm n}+{\rm m}-{\rm d})!}{{\rm n}!\cdot({\rm m}-{\rm d})!}\right)&=1\\
+                        \left(\frac{({\rm n}+{\rm m})!}{{\rm n}!\cdot{\rm m}!}\cdot{\rm x}^{\rm n}+\dots+\frac{({\rm k}+{\rm m})!}{{\rm k}!\cdot{\rm m}!}\cdot{\rm x}^{\rm k}+\dots+1\right)\cdot(1-{\rm x})^{{\rm m}+1}+{\rm x}^{{\rm n}+1}\left(\frac{({\rm n}+{\rm m})!}{{\rm n}!\cdot{\rm m}!}(1-{\rm x})^{\rm m}+\dots+\frac{({\rm n}+{\rm k})!}{{\rm n}!\cdot{\rm k}!}(1-{\rm x})^{\rm k}+\dots+1\right)&=1
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Fattorizazione</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Come conseguenza del <a href="#teorema di Ruffini">teorema di Ruffini</a>, la fattorizazione un polinomio \({\rm p}({\rm x})\) è collegata alla ricerca delle soluzioni dell'equazione \({\rm p}({\rm x})=0\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Supponiamo di avere \({\rm p}_{\deg({\rm p})}=1\) (altrimenti raccogliamo \({\rm p}_{\deg({\rm p})}\)) e facciamo la sostituzione
+                \begin{split}
+                {\rm x}&={\rm u}-\frac{{\rm p}_{\deg({\rm p})-1}}{\deg({\rm p})}\\
+                {\rm p}({\rm x})&={\rm q}({\rm u})
+                \end{split}
+                e otteniamo
+                \begin{split}
+                \deg({\rm q})&=\deg({\rm p})\\
+                {\rm q}_{\deg({\rm q})}&=1\\
+                {\rm q}_{\deg({\rm q})-1}&=0
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Nel caso \(\deg({\rm p})=2\) questo si riduce a:
+                \begin{split}
+                {\rm q}_0&=\left(\frac{{\rm p}_1}{2{\rm p}_2}\right)-\frac{{\rm p}_1}{{\rm p}_2}\left(\frac{{\rm p}_1}{2{\rm p}_2}\right)+\frac{{\rm p}_0}{{\rm p}_2}\\
+                &=\frac{{\rm p}_1^2-4{\rm p}_2{\rm p}_0}{4{\rm p}_2^2}\\
+                {\rm u}&=\pm\sqrt{{\rm q}_0}=\pm\frac{\sqrt{{\rm p}_1^2-4{\rm p}_2{\rm p}_0}}{2{\rm p}_2}\\
+                {\rm x}&=\frac{-{\rm p}_1\pm\sqrt{{\rm p}_1^2-4{\rm p}_2{\rm p}_0}}{2{\rm p}_2}
+                \end{split}
+                <button onclick="toggleTesto('approfondimento4')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento4" class="hidden">
+                    <div class="overflow">
+                        Nel caso \(\deg({\rm p})=3\), sostituiamo:
+                        \begin{split}
+                        {\rm u}&=\alpha+\beta\\
+                        {\rm u}^3&=\alpha^3+\beta^3+3\cdot\alpha\cdot\beta\cdot{\rm u}\\
+                        {\rm u}^3+{\rm q}_1{\rm u}+{\rm q}_0&=(\alpha^3+\beta^3+{\rm q}_0)+(3\cdot\alpha\cdot\beta+{\rm q}_1)\cdot{\rm u}
+                        \end{split}
+                        Ci si riduce così a risolvere
+                        \begin{split}
+                        \alpha^3+\beta^3+{\rm q}_0&=0\\
+                        3\cdot\alpha\cdot\beta+{\rm q}_1&=0
+                        \end{split}
+                        e questa equivale a
+                        \begin{split}
+                        \alpha^6+{\rm q}_0\cdot\alpha^3-\left(\frac{{\rm q}_1}{3}\right)^3&=0\\
+                        \beta^6+{\rm q}_0\cdot\beta^3-\left(\frac{{\rm q}_1}{3}\right)^3&=0
+                        \end{split}
+                        Infine
+                        \begin{split}
+                        \alpha=-\sqrt[3]{\frac{{\rm q}_0-\sqrt{{\rm q}_0^2+\frac{4}{27}\cdot{\rm q}_1^3}}{2}}\\
+                        \beta=-\sqrt[3]{\frac{{\rm q}_0+\sqrt{{\rm q}_0^2+\frac{4}{27}\cdot{\rm q}_1^3}}{2}}
+                        \end{split}
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('approfondimento5')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento5" class="hidden">
+                    <div class="overflow">
+                        Nel caso \(\deg({\rm p})=4\), risolviamo:
+                        \begin{split}
+                        {\rm q}({\rm u})=({\rm u}^2-\gamma\cdot{\rm u}+\alpha)\cdot({\rm u}^2+\gamma\cdot{\rm u}+\beta)
+                        \end{split}
+                        che sarebbe:
+                        \begin{split}
+                        \myeq{{\rm q}_2}{\mydiff{\MyPlus{\alpha}{\beta}}{\gamma^2}}\\
+                        \myeq{{\rm q}_1}{\myprod{\MyDiff{\alpha}{\beta}}{\gamma}}\\
+                        \myeq{{\rm q}_0}{\myprod{\alpha}{\beta}}
+                        \end{split}
+                        Allora otteniamo
+                        \begin{split}
+                        \alpha&=\frac{1}{2}\cdot\left({\rm p}_2+\gamma^2+\frac{{\rm p}_1}{\gamma}\right)\\
+                        \beta&=\frac{1}{2}\cdot\left({\rm p}_2+\gamma^2-\frac{{\rm p}_1}{\gamma}\right)\\
+                        4\cdot{\rm p}_0&=({\rm p}_2+\gamma^2)^2-\frac{{\rm p}_1^2}{\gamma^2}
+                        \end{split}
+                        che si riduce a
+                        \begin{split}
+                        \gamma^6+2\cdot{\rm p}_2\cdot\gamma^4+({\rm p}_2^2-4\cdot{\rm p}_0)\cdot\gamma^2-{\rm p}_1^2=0
+                        \end{split}
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('approfondimento6')" style="padding: 2px; border-radius: 0;"><img src="../../advanced.webp" style="width: 100%;"></button>
+                <div id="approfondimento6" class="hidden">
+                    <div class="overflow">
+                        Dal caso \(\deg({\rm p})=5\) in poi esistono <a href="../../Principi/Algebra e Aritmetica/Teoria di Galois.html#polinomi non risolubili">polinomi non risolubili</a>.
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>

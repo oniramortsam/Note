@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria Di Galois</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Teoria dei gruppi.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Teoria degli anelli.html'">Successiva</button>
+    </div>
+
+    <h1>Estensione di Campi</h1>
+
+    <ul>
+        <li><div class="overflow">
+            Sia \({\rm f}\in{\mathbb K}[{\rm x}]\) un polinomio a coefficienti in un campo \({\mathbb K}\). Supponiamo che \({\rm f}\) sia irriducibile. Allora è possibile aggiungere una radice di \({\rm f}({\rm x})\) ad \({\mathbb K}\)
+            \begin{split}
+            \frac{{\mathbb K}[{\rm x}]}{({\rm f}({\rm x}))}
+            \end{split}
+            tale quoziente risulta un campo. Iterando questa procedura si ottiene, attraverso il <a href="../../Elementi/Prima Parte/Insiemi e funzioni.html#principio di induzione>">principio di induzione</a> una estensione di \({\mathbb K}\) in cui si può scrivere
+            \begin{split}
+            {\rm f}({\rm x})=\prod_{{\rm k}\in\deg({\rm f})}({\rm x}-\alpha_{\rm k}).
+            \end{split}
+            A causa di <a href="../../Elementi/Seconda Parte/Polinomi in una variabile.html#teorema di Ruffini">teorema di Ruffini</a> se le radici di \({\rm f}({\rm x})\) fossero multiple, \(\partial{\rm f}({\rm x})=0\) da cui \({\rm f}({\rm x})={\rm g}({\rm x}^{\rm p})\) con \({\rm p}\) la caratteristica di \({\mathbb K}\).<br>
+            Essendo in tal caso \({\rm g}\) irriducibile, tale procedura si itera attraverso il <a href="../../Elementi/Prima Parte/Insiemi e funzioni.html#principio di induzione>">principio di induzione</a> ottenendo \({\rm f}({\rm x})={\rm g}({\rm x}^{{\rm p}^{\rm r}})\) con \({\rm g}\) separabile, cioè senza radici multiple.
+        </div></li>
+        <li><div class="overflow">
+            Sia \({\mathbb K}_0\subseteq{\mathbb K}_1\) un'estensione di campi, allora diciamo
+            \begin{split}
+            \operatorname{Gal}({\mathbb K}_0,{\mathbb K}_1)=\{{\rm f}\!:{\rm f}\in\operatorname{Aut}({\mathbb K}_1)\,,(1_{{\mathbb K}_0\rightarrow{\mathbb K}_1})^\star({\rm f})=1_{{\mathbb K}_0\rightarrow{\mathbb K}_1}\}.
+            \end{split}
+        </div></li>
+        <li><div class="overflow">
+            Assumendo \({\mathbb K}_0\subseteq{\mathbb K}_1\) semplice e separabile, allora \(\operatorname{Gal}({\mathbb K}_0,{\mathbb K}_1)\) agisce in modo libero e transitivo sui coniugati del suo generatore.
+        </div></li>
+        <li><div class="overflow">
+            Assumendo \({\mathbb K}_0\subseteq{\mathbb K}_1\) finita e separabile, allora il suo grado coincide con \(|\operatorname{Gal}({\mathbb K}_0,{\mathbb K}_1)|\). Esiste allora un polinomio \({\rm f}({\rm x})\) irriducibile in \({\mathbb K}_0\) tale per cui
+            \begin{split}
+            {\mathbb K}_1=\frac{{\mathbb K}_0[{\rm x}]}{({\rm f}({\rm x}))}.
+            \end{split}            
+            <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+            <div id="bottone0" class="hidden"><div class="overflow">
+                Assumiamo che \(\{\alpha_{\rm k}\}_{{\rm k}\in{\rm d}}\) generino \({\mathbb K}_1\) e consideriamo
+                \begin{split}
+                \alpha(\lambda)=\sum_{{\rm k}\in{\rm d}}\lambda_{\rm k}\cdot\alpha_{\rm k}
+                \end{split}
+                ci basta mostrare che
+                \begin{split}
+                \prod_{\phi\in\operatorname{Gal}({\mathbb K}_0,{\mathbb K}_1)\setminus1_{{\mathbb K}_1}}(\phi(\alpha(\lambda))-\alpha(\lambda))\ne0
+                \end{split}
+                infatti questo implica l'esistenza di un elemento primitivo \(\lambda\) con polinomio minimo \({\rm f}({\rm x})\) di grado \(|\operatorname{Gal}({\mathbb K}_0,{\mathbb K}_1)|\).
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            <h3>Primo teorema di Galois:</h3>
+            Assumendo \({\mathbb K}_0\subseteq{\mathbb K}_1\) finita e separabile, sia \({\rm G}\subseteq\operatorname{Gal}({\mathbb K}_0,{\mathbb K}_1)\) un sottogruppo, allora esiste una bigezione
+            \begin{split}
+            {\rm G}&=\operatorname{Gal}({\mathbb K},{\mathbb K}_1)\\
+            \operatorname{Fix}({\rm G})&={\mathbb K}.
+            \end{split}
+            <button onclick="toggleTesto('bottone1')">Dimostrazione:</button>
+            <div id="bottone1" class="hidden"><div class="overflow">
+                Sia \(\alpha\in{\mathbb K}_1\) un elemento primitivo e consideriamo
+                \begin{split}
+                \beta=\sum_{\phi\in{\rm G}}\phi(\alpha).
+                \end{split}
+                Allora \(\beta\) genera un'estensione \({\mathbb K}\) con
+                \begin{split}
+                |{\rm G}|&=|\operatorname{Gal}({\mathbb K},{\mathbb K}_1)|\\
+                \operatorname{Fix}({\rm G})&\subseteq{\mathbb K}.
+                \end{split}
+            </div></div>
+        </div></li>
+        <li><div class="overflow">
+            <h3>Secondo teorema di Galois:</h3>
+            Nelle ipotesi del primo teorema, \(\forall\phi\in\operatorname{Gal}({\mathbb K}_0,{\mathbb K}_1)\)
+            \begin{split}
+            \phi\cdot\operatorname{Gal}({\mathbb K},{\mathbb K}_1)\cdot\phi^{-1}&=\operatorname{Gal}(\phi({\mathbb K}),{\mathbb K}_1)\\
+            \phi(\operatorname{Fix}({\rm G}))&=\operatorname{Fix}(\phi\cdot{\rm G}\cdot\phi^{-1}).
+            \end{split}
+            <button onclick="toggleTesto('bottone2')">Dimostrazione:</button>
+            <div id="bottone2" class="hidden"><div class="overflow">
+            </div></div>
+        </div></li>
+    </ul>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3 id="polinomi non risolubili">Polinomi non risolubili</h3>
+            </div>
+        </li>
+    </ul>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spazi di Sobolev</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Analisi di Fourier.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Integrali singolari.html'">Successiva</button>
+    </div>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Applicando Gagliardo (METTI LABEL) a:
+                \begin{split}
+                |{\rm f}({\rm x})|^\frac{\rm d}{{\rm d}-1}\le\prod_{{\rm i}\in{\rm d}}\left(\int|\nabla_{\rm i}{\rm f}({\rm x})|\partial{\rm x}_{\rm i}\right)^\frac{1}{{\rm d}-1},\\
+                \end{split}
+                si ottiene:
+                \begin{split}
+                \left(\int|{\rm f}({\rm x})|^\frac{\rm d}{{\rm d}-1}\partial{\rm x}\right)^\frac{{\rm d}-1}{\rm d}&\le\left(\prod_{{\rm i}\in{\rm d}}\left(\int|\nabla_{\rm i}{\rm f}({\rm x})|\partial{\rm x}_{\rm i}\right)\right)^\frac{1}{\rm d}\le\int\left(\frac{1}{\rm d}\sum_{{\rm i}\in{\rm d}}|\nabla_{\rm i}{\rm f}({\rm x})|\partial{\rm x}_{\rm i}\right).
+                \end{split}
+                Che significa
+                \begin{split}
+                \Vert{\rm f}\Vert_{{\cal L}\left(\frac{\rm d}{{\rm d}-1},{\mathbb R}^{\rm d}\right)}&\le\frac{1}{\rm d}\Vert\nabla{\rm f}\Vert_{{\cal L}\left(1,{\mathbb R}^{\rm d}\right)}\\
+                \Vert{\rm f}\Vert_{{\cal L}\left(\frac{{\rm d}\cdot{\rm p}}{{\rm d}-1},{\mathbb R}^{\rm d}\right)}&\le\left(\frac{\rm p}{\rm d}\Vert{\rm f}^{{\rm p}-1}\nabla{\rm f}\Vert_{{\cal L}\left(1,{\mathbb R}^{\rm d}\right)}\right)^\frac{1}{\rm p}\\
+                &\le\left(\frac{\rm p}{\rm d}\Vert{\rm f}\Vert_{{\cal L}\left(\frac{{\rm d}\cdot{\rm p}}{({\rm d}-1)},{\mathbb R}^{\rm d}\right)}^{{\rm p}-1}\Vert\nabla{\rm f}\Vert_{{\cal L}\left(\frac{{\rm d}\cdot{\rm p}}{{\rm d}+{\rm p}-1},{\mathbb R}^{\rm d}\right)}\right)^\frac{1}{\rm p}\\
+                \Vert{\rm f}\Vert_{{\cal L}\left(\frac{{\rm d}\cdot{\rm p}}{{\rm d}-1},{\mathbb R}^{\rm d}\right)}&\le\left(\frac{\rm p}{\rm d}\Vert\nabla{\rm f}\Vert_{{\cal L}\left(\frac{{\rm d}\cdot{\rm p}}{{\rm d}+{\rm p}-1},{\mathbb R}^{\rm d}\right)}\right).
+                \end{split}
+                Cioè, se \({\rm p}<{\rm d}\)
+                \begin{split}
+                \Vert{\rm f}\Vert_{{\cal L}\left(\frac{{\rm d}\cdot{\rm p}}{{\rm d}-{\rm p}},{\mathbb R}^{\rm d}\right)}&\le\frac{{\rm p}\cdot({\rm d}-1)}{{\rm d}\cdot({\rm d}-{\rm p})}\Vert\nabla{\rm f}\Vert_{{\cal L}\left({\rm p},{\mathbb R}^{\rm d}\right)}.
+                \end{split}
+                Se invece \({\rm p}>{\rm d}\)
+                \begin{split}
+                \Vert{\rm f}\Vert_{{\cal H}\left(1-\frac{{\rm d}}{\rm p},{\mathbb R}^{\rm d}\right)}&\le2^\frac{\rm d}\cdot{\rm p}\cdot\left(\frac{{\rm p}-1}{{\rm p}-{\rm d}}\right)^\frac{{\rm p}-1}{\rm p}\cdot\Vert\nabla{\rm f}\Vert_{{\cal L}\left(p,{\mathbb R}^{\rm d}\right)}.
+                \end{split}
+            </div>
+            CHE SUCCEDE SE TOGLI UN PEZZO?
+        </li>
+    </ul>
+
+    <h1>RELLICH KONDRACHOV</h1>
+
+    <ul>
+        <li>
+           <div class="overflow">
+                Supponiamo che (CONTUNAU QUANDO TI SARAI DECISO SULLE NOTAZIONI)
+                \begin{split}
+                \Vert\nabla{\rm f}\Vert_{{\cal L}\left(p,\Omega\right)}\le{\rm L}
+                \end{split}
+           </div>
+        </li>
+    </ul>
+
+    <h1>Teorema della traccia</h1>
+
+    <ul>
+        <li>
+           <div class="overflow">
+            
+           </div> 
+        </li>
+    </ul>
+
+</body>

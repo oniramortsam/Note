@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafici e funzioni inverse</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='../Seconda Parte/Coniche nel piano.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Limiti e continuità.html'">Successiva</button>
+    </div>
+
+    <h1>Funzioni</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Una funzione \({\rm f}\!:{\rm A}\rightarrow{\rm B}\) si dice:
+                <br>
+                di periodo \({\rm a}\), se \({\rm f}({\rm x}+{\rm a})={\rm f}({\rm x})\).
+                <br>
+                pari se \({\rm f}(-{\rm x}) ={\rm f}({\rm x})\).
+                <br>
+                dispari se \({\rm f}(-{\rm x})=-{\rm f}({\rm x})\).
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Composizione di funzioni pari è pari.
+                <br>
+                Composizione di funzioni dispari è pari.
+                <br>
+                Composizione di una funzione pari e di una dispari è dispari.
+                <br>
+                Composizione di una funzione dispari e di una pari è dispari.
+                <br>
+                Se \({\rm g}\) è di periodo \({\rm a}\), \({\rm f}\circ{\rm g}\) è di periodo \(a\).
+                <br>
+                Se \({\rm f}\) è di periodo \({\rm a}\) e \({\rm b}\), allora è di periodo \({\rm c}\cdot\operatorname{gcd}({\rm a},{\rm b})\).
+                <br>
+                Una potenza con base positiva è positiva e monotona nella base e nell'esponente.
+                <br>
+                Un logaritmo con base ed argomento positivi è monotono nella base e nell'argomento.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Determina dominio ed immagine delle seguenti funzioni
+                \begin{split}
+                {\rm x}+{\rm a}\qquad{\rm a}+{\rm x}\qquad{\rm x}-{\rm a}\qquad{\rm a}-{\rm x}\qquad{\rm x}\cdot{\rm a}\qquad{\rm a}\cdot{\rm x}\qquad{\rm x}/{\rm a}\qquad{\rm a}/{\rm x}\qquad{\rm x}^{\rm a}\qquad{\rm a}^{\rm x}\qquad\sqrt[{\rm a}]{\rm x}\qquad\sqrt[{\rm x}]{\rm a}\qquad\log_{\rm a}({\rm x})\qquad\log_{\rm x}({\rm a}).
+                \end{split}
+                Determina poi se sono pari, dispari, periodiche, monotone, iniettive, surgettive.
+            </div>
+        </li>
+    </ul>
+    
+    <h1>Funzione inversa</h1>
+    
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Non si fa mai, a costo di violare le condizioni di esistenza:
+                <br>
+                dividere per \(0\), fare il logaritmo in base \(1\), fare \(0^0\).
+                <br>
+                fare la radice pari di un numero negativo.
+                <br>
+                elevare ad un esponente denominatore pari un numero negativo.
+                <br>
+                elevare ad un esponente irrazionale un numero negativo.
+                <br>
+                l'esponenziale con base negativa.
+                <br>
+                il logaritmo con base negativa.
+                <br>
+                il logaritmo con argomento negativo.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Data una espressione \({\rm f}({\rm x})\) si può determinare il dominio naturale di \({\rm f}\) imponendo le condizioni di esistenza. Per alcuni \({\rm y}\), è possibile risolvere
+                \begin{split}
+                {\rm f}({\rm x})={\rm y},
+                \end{split}
+                tali valori sono detti l'immagine di \({\rm f}\). Se \({\rm f}\) è iniettiva, si ottiene come soluzione
+                \begin{split}
+                {\rm x}={\rm g}({\rm y}),
+                \end{split}
+                in tal caso \({\rm g}\) ha come dominio l'immagine di \({\rm f}\) e viceversa.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Altrimenti si può ottenere \({\rm x}\in\{{\rm g}_0({\rm y}),\dots,{\rm g}_{\rm n}({\rm y})\}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                In tal caso si restringe il dominio di \({\rm g}_{\rm k}\) all'insieme \(\{{\rm f}({\rm g}_{\rm k}({\rm y}))={\rm y}\}\)
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                L'unione dei domini di \({\rm g}_0,\dots,{\rm g}_{\rm n}\) è l'immagine di \({\rm f}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                L'immagine di \({\rm g}_{\rm k}\) è \(\{{\rm x}={\rm g}_{\rm k}({\rm f}({\rm x}))\}\) per \({\rm x}\) nel dominio di \({\rm f}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Le immagini di \({\rm g}_0,\dots,{\rm g}_{\rm k}\) sono una partizione del dominio di \({\rm f}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Restringendo il dominio di \({\rm f}\) all'immagine di \({\rm g}_{\rm k}\), la restrizione risulta iniettiva.
+            </div>
+        </li>
+        <h2>Esercizi:</h2>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\rm f}({\rm x})=\sqrt{({\rm x}-{\rm a}_0)({\rm x}-{\rm a}_1)}
+                \end{split}
+                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        ha come dominio \((\infty,\min({\rm a}_0,{\rm a}_1)]\cup[\max({\rm a}_0,{\rm a}_1),\infty)\).
+                        \begin{split}
+                        {\rm x}^2-({\rm a}_0+{\rm a}_1)\cdot{\rm x}+{\rm a}_0\cdot{\rm a}_1-{\rm y}^2=0
+                        \end{split}
+                        ha come soluzioni:
+                        \begin{split}
+                        {\rm g}_0({\rm y})=\frac{{\rm a}_0 + a_1}{2}-\sqrt{\frac{({\rm a}_0-{\rm a}_1)^2}{4}+{\rm y}^2}\\
+                        {\rm g}_1({\rm y})=\frac{{\rm a}_0+{\rm a}_1}{2}+\sqrt{\frac{({\rm a}_0-{\rm a}_1)^2}{4}+{\rm y}^2.}
+                        \end{split}
+                        Entrambe ammettono come dominio \({\mathbb R}\), ma ristretto a \(\sqrt{{\rm y}^2}={\rm y}\), cioé \([0,\infty)\).
+                        <br>
+                        L'immagine di \({\rm g}_0\) è \((\infty, \min({\rm a}_0,{\rm a}_1)]\), mentre quella di \({\rm g}_1\) è \([\max({\rm a}_0,{\rm a}_1),\infty)\).
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+            \begin{split}
+            {\rm f}({\rm x})=\sqrt{-({\rm x}-{\rm a}_0)({\rm x}-{\rm a}_1)}
+            \end{split}
+                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        ha come dominio \([\min({\rm a}_0,{\rm a}_1), \max({\rm a}_0,{\rm a}_1)]\).
+                        \begin{split}
+                        {\rm x}^2-({\rm a}_0+{\rm a}_1){\rm x}+{\rm a}_0\cdot{\rm a}_1+{\rm y}^2=0
+                        \end{split}
+                        ha come soluzioni
+                        \begin{split}
+                        {\rm g}_0({\rm y})=\frac{{\rm a}_0+{\rm a}_1}{2}-\sqrt{\frac{({\rm a}_0-{\rm a}_1)^2}{4}-{\rm y}^2}\\
+                        {\rm g}_1({\rm y})=\frac{{\rm a}_0+{\rm a}_1}{2}+\sqrt{\frac{({\rm a}_0-{\rm a}_1)^2}{4}-{\rm y}^2.}
+                        \end{split}
+                        Entrambe ammettono come dominio \(\left[0,\frac{|{\rm a}_0-{\rm a}_1|}{2}\right]\).
+                        <br>
+                        L'immagine di \({\rm g}_0\) è \(\left[\min({\rm a}_0,{\rm a}_1),\frac{{\rm a}_0+{\rm a}_1}{2}\right]\), mentre quella di \({\rm g}_1\) è \(\left[\frac{{\rm a}_0+{\rm a}_1}{2},\max({\rm a}_0,{\rm a}_1)\right]\).
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\rm f}({\rm x})=\sqrt{({\rm x}-{\rm a})^2+{\rm b}^2}
+                \end{split}
+                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                        ha come dominio \({\mathbb R}\).
+                        \begin{split}
+                        {\rm g}_0({\rm y})={\rm a}-\sqrt{{\rm y}^2-{\rm b}^2}\\
+                        {\rm g}_1({\rm y})={\rm a}+\sqrt{{\rm y}^2-{\rm b}^2.}
+                        \end{split}
+                        Entrambe ammettono come dominio \((\infty,|{\rm b}|]\cup[|{\rm b}|,\infty)\), ma ristretto a \(\sqrt{{\rm y}^2}={\rm y}\), cioé \([|{\rm b}|,\infty)\).
+                        <br>
+                        L'immagine di \({\rm g}_0\) è \((\infty,{\rm a}]\), mentre quella di \({\rm g}_1\) è \([{\rm a},\infty)\).
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>

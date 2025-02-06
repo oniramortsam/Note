@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rette nel piano</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <button onclick="location.href='Polinomi in una variabile.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Rotazioni del piano.html'">Successiva</button>
+    </div>
+
+    <h1>I triangoli</h1>
+
+    <ul>
+        <li class="flexrow">
+            <div class="overflow">
+                <h3>
+                    Teorema di Pitagora
+                </h3>
+                Dato un triangolo rettangolo di cateti ed ipotenusa \(x, y, z\)
+                \begin{split}
+                4 x y + (x - y)^2 &= 2 x y + z^2
+                \end{split}
+                da cui
+                \begin{split}
+                z^2 &= x^2 + y^2
+                \end{split}
+                applicando tale principio ad un vettore \(u = (x_u, y_u)\), il modulo
+                \begin{split}
+                |u| = \sqrt{x_u^2 + y_u^2}
+                \end{split}
+                è la distanza tra i punti \({\rm A}\) e \(\rm B\).
+            </div>
+            <canvas id="canvas0"></canvas>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>Teorema di Ceva</h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>Teorema di Menelao</h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>Teorema di Feuerbach</h3>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Le Rette</h1>
+
+    <ul>
+        <li class="flexrow">
+            <div class="overflow">
+                Dati due punti \({\rm A} = (x_{\rm A}, y_{\rm A})\) e \({\rm B} = (x_{\rm B}, y_{\rm B})\), questi identificano la retta formata dai punti
+                \begin{split}
+                {\rm A} + t u = ((1 - t) x_{\rm A} + t x_{\rm B}, (1 - t) y_{\rm A} + t y_{\rm B}) = {\rm B} + (1 - t) u
+                \end{split}
+                al variare di \(t\). Cioè quella che chiamiamo retta parametrica
+                \begin{split}
+                x (t) &= (1 - t) x_{\rm A} + t x_{\rm B}\\
+                y (t) &= (1 - t) y_{\rm A} + t y_{\rm B}.
+                \end{split}
+                L'equazione cartesiana che identifica tale retta è una qualunque di:
+                \begin{split}
+                (x - x_{\rm A})(y_{\rm A} - y_{\rm B}) &= (x_{\rm A} - x_{\rm B})(y - y_{\rm A})\\
+                (x - x_{\rm A})(y - y_{\rm B}) &= (x - x_{\rm B})(y - y_{\rm A})\\
+                (x - x_{\rm B})(y_{\rm A} - y_{\rm B}) &= (x_{\rm A} - x_{\rm B})(y - y_{\rm B})
+                \end{split}
+                Che sarebbe a dire
+                \begin{split}
+                x (y_{\rm A} - y_{\rm B}) + (x_{\rm B} - x_{\rm A}) y + (x_{\rm A} y_{\rm B} - x_{\rm B} y_{\rm A}) = 0.
+                \end{split}
+                In tal caso si ha
+                \begin{split}
+                \frac{x - x_{\rm A}}{x_{\rm B} - x_{\rm A}} = t = \frac{y - y_{\rm A}}{y_{\rm B} - y_{\rm A}} \qquad \frac{x - x_{\rm B}}{x_{\rm B} - x_{\rm A}} = t - 1 = \frac{y - y_{\rm B}}{y_{\rm B} - y_{\rm A}.}
+                \end{split}
+            </div>
+            <canvas id="canvas1"></canvas>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Data una retta di equazione
+                \begin{split}
+                b x - a y = b x_{\rm A} - a y_{\rm A},
+                \end{split}
+                Si dice coefficiente angolare il valore \({\rm m}=-\frac{\rm a}{\rm b}\).
+                <br>
+                Si dice intercetta sull'asse il valore \({\rm q}=-\frac{\rm c}{\rm b}\).
+            </div>
+        </li>
+        <li class="flexrow">
+            <div class="overflow">
+                Date due rette di coefficienti angolari \(m_0, m_1\), queste sono parallele se \(m_0 = m_1\) e sono ortogonali se \(m_0 m_1 + 1 = 0\). In particolare, data una retta
+                \begin{split}
+                a x + b y + c = 0
+                \end{split}
+                ed un punto \({\rm A}\), la retta ortogonale passante per \({\rm A}\) ha equazione
+                \begin{split}
+                b x - a y = b x_{\rm A} - a y_{\rm A}.
+                \end{split}
+                L'intersezione di queste rette è quindi
+                \begin{split}
+                \left(\frac{b^2 x_{\rm A} - a b y_{\rm A} - a c}{a^2 + b^2}, \frac{a^2 y_{\rm A} - a b x_{\rm A} - b c}{a^2 + b^2}\right).
+                \end{split}
+                La distanza della retta da \({\rm A}\) è dunque
+                \begin{split}
+                \sqrt{\left(\frac{a^2 x_{\rm A} + a b y_{\rm A} + a c}{a^2 + b^2}\right)^2 + \left(\frac{b^2 y_{\rm A} + a b x_{\rm A} + b c}{a^2 + b^2}\right)^2} = \frac{|a x_{\rm A} + b y_{\rm A} + c|}{\sqrt{a^2 + b^2.}}
+                \end{split}
+            </div>
+            <canvas id="canvas2"></canvas>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice mediana il luogo dei punti equidistanti da due punti dati, questa è ortogonale alla retta passante per i punti in questione e passa per il loro punto medio.
+                \begin{split}
+                (x - x_0)^2 + (y - y_0)^2 = (x - x_1)^2 + (y - y_1)^2\\
+                2 (x_0 - x_1) x + 2 (y_0 - y_1) y = x_0^2 + y_0^2 - x_1^2 - y_1^2.
+                \end{split}
+                Come previsto \(m = - \frac{x_0 - x_1}{y_0 - y_1}\).
+                <br>
+                <button onclick="toggleTesto('approfondimento0')" class="bottone"><img src="../../advanced.webp"></button>
+                <div id="approfondimento0" class="hidden">
+                    <div class="overflow">
+                        <h3>
+                            Il circocentro di un triangolo:
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice bisettrice il luogo dei punti equidistanti da due rette, questa è l'unione di
+                \begin{split}
+                \frac{a_0 x + b_0 y + c_0}{\sqrt{a_0^2 + b_0^2}} - \frac{a_1 x + b_1 y + c_1}{\sqrt{a_1^2 + b_1^2}} &= 0\\
+                \frac{a_0 x + b_0 y + c_0}{\sqrt{a_0^2 + b_0^2}} + \frac{a_1 x + b_1 y + c_1}{\sqrt{a_1^2 + b_1^2}} &= 0.
+                \end{split}
+                Insomma due rette concorrenti con le rette date, di coefficienti angolari
+                \begin{split}
+                m_- = - \frac{a_0 \sqrt{a_1^2 + b_1^2} - a_1 \sqrt{a_0^2 + b_0^2}}{b_0 \sqrt{a_1^2 + b_1^2} - b_1 \sqrt{a_0^2 + b_0^2}} \qquad m_+ = - \frac{a_0 \sqrt{a_1^2 + b_1^2} + a_1 \sqrt{a_0^2 + b_0^2}}{b_0 \sqrt{a_1^2 + b_1^2} + b_1 \sqrt{a_0^2 + b_0^2.}}
+                \end{split}
+                <button onclick="toggleTesto('approfondimento1')" class="bottone"><img src="../../advanced.webp"></button>
+                <div id="approfondimento1" class="hidden">
+                    <div class="overflow">
+                        <h3>
+                            Gli incentri di un triangolo:
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Le trasformazioni</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Trasformazione inversa
+                </h3>
+                Consideriamo una trasformazione
+                \begin{split}
+                u (x, y) = a_u x + b_u y + c_u\\
+                v (x, y) = a_v x + b_v y + c_v,
+                \end{split}
+                Questa identifica un cambio di variabili
+                \begin{split}
+                x &= x (u, v)\\
+                y &= y (u, v),
+                \end{split}
+                dove:
+                \begin{split}
+                u &= a_u x (u, v) + b_u y (u, v) + c_u\\
+                v &= a_v x (u, v) + b_v y (u, v) + c_v.
+                \end{split}
+                Per risolvere scriviamo
+                \begin{split}
+                a_v u &= a_v a_u x (u, v) + a_v b_u y (u, v) + a_v c_u\\
+                b_v u &= b_v a_u x (u, v) + b_v b_u y (u, v) + b_v c_u\\
+                a_u v &= a_u a_v x (u, v) + a_u b_v y (u, v) + a_u c_v\\
+                b_u v &= b_u a_v x (u, v) + b_u b_v y (u, v) + b_u c_v,
+                \end{split}
+                e semplifichiamo i termini uguali
+                \begin{split}
+                b_v u - b_u v &= b_v a_u x (u, v) + b_v c_u -  b_u a_v x (u, v) - b_u c_v\\
+                a_v u - a_u v &= a_v b_u y (u, v) + a_v c_u - a_u b_v y (u, v) - a_u c_v,
+                \end{split}
+                che sarebbe
+                \begin{split}
+                x (u, v) &= \left(\frac{b_v}{b_v a_u -  b_u a_v}\right) u - \left(\frac{b_u}{b_v a_u -  b_u a_v}\right) v + \left(\frac{b_u c_v - b_v c_u}{b_v a_u -  b_u a_v}\right)\\
+                y (u, v) &= \left(\frac{a_u}{b_v a_u -  b_u a_v}\right) v - \left(\frac{a_v}{b_v a_u -  b_u a_v}\right) u + \left(\frac{a_v c_u - a_u c_v}{b_v a_u -  b_u a_v}\right).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Data una retta di equazione
+                \begin{split}
+                a x + b y + c = 0.
+                \end{split}
+                nelle variabili \(x, y\), si dice il push-forward della retta il luogo geometrico identificato dall'equazione:
+                \begin{split}
+                a x (u, v) + b y (u, v) + c = 0
+                \end{split}
+                nelle variabili \(u, v\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Data una retta di equazione
+                \begin{split}
+                a u + b v + c = 0,
+                \end{split}
+                nelle variabili \(u, v\), si dice il pull-back della retta il luogo geometrico identificato dall'equazione:
+                \begin{split}
+                a u (x, y) + b v (x, y) + c = 0
+                \end{split}
+                nelle variabili \(x, y\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Data invece una retta parametrica
+                \begin{split}
+                x (t) &= a t + x_0\\
+                y (t) &= b t + y_0,
+                \end{split}
+                il suo push-forward è
+                \begin{split}
+                u (t) &= u (a t + x_0, b t + y_0)\\
+                v (t) &= v (a t + x_0, b t + y_0).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Data invece una retta parametrica
+                \begin{split}
+                u (t) &= a t + u_0\\
+                v (t) &= b t + v_0,
+                \end{split}
+                il suo pull-back è
+                \begin{split}
+                x (t) &= x (a t + u_0, b t + v_0)\\
+                y (t) &= y (a t + u_0, b t + v_0).
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+        var count0 = 0;
+        var count1 = 0;
+        var count2 = 0;
+        var period0 = 1024;
+        var period1 = 729;
+        var period = period0 * period1;
+        var canvas0 = document.getElementById("canvas0");
+        var ctx0 = canvas0.getContext("2d");
+        var canvas1 = document.getElementById("canvas1");
+        var ctx1 = canvas1.getContext("2d");
+        var canvas2 = document.getElementById("canvas2");
+        var ctx2 = canvas2.getContext("2d");
+        canvas0.width = 256;
+        canvas0.height = 256;
+        canvas1.width = 256;
+        canvas1.height = 256;
+        canvas2.width = 256;
+        canvas2.height = 256;
+        function Draw0() {
+            ctx0.clearRect(0, 0, canvas0.width, canvas0.height);
+			ctx0.strokeStyle = "#0095DD";
+            ctx0.lineWidth = 1;
+            ctx0.beginPath();
+            ctx0.rect(0, 0, count0 * (canvas0.width / period0), (period0 - count0) * (canvas0.height/ period0))
+			ctx0.stroke();
+            ctx0.beginPath();
+			ctx0.rect(count0 * (canvas0.width / period0), 0, (period0 - count0) * (canvas0.width / period0), count0 * (canvas0.height/ period0))
+			ctx0.stroke();
+            ctx0.beginPath();
+			ctx0.rect((period0 - count0) * (canvas0.width / period0), count0 * (canvas0.height/ period0), count0 * (canvas0.width / period0), (period0 - count0) * (canvas0.height/ period0))
+			ctx0.stroke();
+            ctx0.beginPath();
+			ctx0.rect(0, (period0 - count0) * (canvas0.height/ period0), (period0 - count0) * (canvas0.width / period0), count0 * (canvas0.height/ period0))
+			ctx0.stroke();
+            ctx0.beginPath();
+            ctx0.moveTo(count0 * (canvas0.width / period0), 0);
+			ctx0.lineTo(canvas0.width, count0 * (canvas0.height / period0));
+			ctx0.lineTo((period0 - count0) * (canvas0.width / period0), canvas0.height);
+			ctx0.lineTo(0, (period0 - count0) * (canvas0.height / period0));
+            ctx0.lineTo(count0 * (canvas0.width / period0), 0);
+			ctx0.stroke();
+        }
+        function Draw1() {
+            ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
+			ctx1.strokeStyle = "#0095DD";
+            ctx1.lineWidth = 1;
+            var a = (1 + Math.cos(2 * (count1 / period0) * Math.PI)) / 2;
+            var b = (1 + Math.cos(2 * (count1 / period0 + 1 / 3) * Math.PI)) / 2;
+            var c = (1 + Math.cos(2 * (count1 / period0 + 2 / 3) * Math.PI)) / 2;
+            var h = 1 + Math.cos(count1 / period1);
+            var w = 1 - Math.cos(count1 / period1);
+            if (h > 1) {
+                h = 1;
+            }
+            if (w > 1) {
+                w = 1;
+            }
+            ctx1.beginPath();
+            ctx1.moveTo(a * w * canvas1.width, a * h * canvas1.height);
+            if (b < a) {
+                ctx1.lineTo(b * w * canvas1.width, a * h * canvas1.height);
+            } else {
+                ctx1.lineTo(a * w * canvas1.width, b * h * canvas1.height);
+            }
+            ctx1.lineTo(b * w * canvas1.width, b * h * canvas1.height);
+            if (c < b) {
+                ctx1.lineTo(c * w * canvas1.width, b * h * canvas1.height);
+            } else {
+                ctx1.lineTo(b * w * canvas1.width, c * h * canvas1.height);
+            }
+            ctx1.lineTo(c * w * canvas1.width, c * h * canvas1.height);
+            ctx1.lineTo(a * w * canvas1.width, a * h * canvas1.height);
+            ctx1.lineTo(b * w * canvas1.width, b * h * canvas1.height);
+			ctx1.stroke();
+        }
+        function Draw2() {
+            if (2 * count0 > period0) {
+                count2 = 2 * (period0 - count0);
+            } else {
+                count2 = 2 * count0;
+            }
+            ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+			ctx2.strokeStyle = "#0095DD";
+            ctx2.lineWidth = 1;
+            ctx2.beginPath();
+            ctx2.rect(0, 0, count2 * (canvas2.width / period0), (period0 - count2) * (canvas2.height/ period0))
+			ctx2.stroke();
+            ctx2.beginPath();
+			ctx2.stroke();
+            ctx2.beginPath();
+			ctx2.stroke();
+            ctx2.beginPath();
+			ctx2.rect(0, (period0 - count2) * (canvas2.height/ period0), (period0 - count2) * (canvas2.width / period0), count2 * (canvas2.height/ period0))
+			ctx2.stroke();
+            ctx2.beginPath();
+            ctx2.moveTo((period0 - count2) * (canvas2.width / period0), canvas2.height);
+			ctx2.lineTo(0, (period0 - count2) * (canvas2.height / period0));
+            ctx2.lineTo(count2 * (canvas2.width / period0), 0);
+			ctx2.stroke();
+        }
+        function gameLoop() {
+            count0 += 1;
+            count1 += 1;
+            if (count1 == period) {
+                count1 = 0;
+            }
+            if (count0 == period0) {
+                count0 = 0;
+            }
+            Draw0();
+            Draw1();
+            Draw2();
+            requestAnimationFrame(gameLoop);
+        }
+        gameLoop();
+    </script>

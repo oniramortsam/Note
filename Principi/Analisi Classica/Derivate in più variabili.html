@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivate in più variabili</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Topologia generale.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Equazioni differenziali ordinarie.html'">Successiva</button>
+    </div>
+
+    <h1>Derivate parziali</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Diciamo
+                \begin{split}
+                \nabla_{\rm k}{\rm f}({\rm x})=\frac{\partial{\rm f}({\rm x}+\theta\cdot{\rm v}_{\rm k})}{\theta}(0)
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di Schwarz:
+                </h3>
+                Assumiamo che \({\rm f}\) sia derivabile nella prima e nella seconda variabile, allora        
+                \begin{split}
+                \frac{{\rm f}({\rm x}_0+{\rm a}_0,{\rm x}_1+{\rm a}_1)-{\rm f}({\rm x}_0,{\rm x}_1+{\rm a}_1)-{\rm f}({\rm x}_0+{\rm a}_0,{\rm x}_1)+{\rm f}({\rm x}_0,{\rm x}_1)}{{\rm a}_0\cdot{\rm a}_1}&=\frac{\nabla_0{\rm f}({\rm x}_0+\varepsilon_0,{\rm x}_1+{\rm a}_1)-\nabla_0{\rm f}({\rm x}_0+\varepsilon_0,{\rm x}_1)}{{\rm a}_1}\\
+                \frac{{\rm f}({\rm x}_0+{\rm a}_0,{\rm x}_1+{\rm a}_1)-{\rm f}({\rm x}_0,{\rm x}_1+{\rm a}_1)-{\rm f}({\rm x}_0+{\rm a}_0,{\rm x}_1)+{\rm f}({\rm x}_0,{\rm x}_1)}{{\rm a}_0\cdot{\rm a}_1}&=\frac{\nabla_1{\rm f}({\rm x}_0+{\rm a}_0,{\rm x}_1+\varepsilon_1)-\nabla_1{\rm f}({\rm x}_0,{\rm x}_1+\varepsilon_1)}{{\rm a}_0}.
+                \end{split}
+                Assumiamo che \(\nabla_0{\rm f}\) sia continua nella prima variabile e che \(\nabla_1{\rm f}\) sia derivabile nella prima variabile sulla retta identificata da \({\rm x}_0\), allora
+                \begin{split}
+                \frac{\nabla_0{\rm f}({\rm x}_0,{\rm x}_1+{\rm a}_1)-\nabla_0{\rm f}({\rm x}_0,{\rm x}_1)}{{\rm a}_1}=\nabla_0\nabla_1{\rm f}({\rm x}_0,{\rm x}_1+\varepsilon_1).
+                \end{split}
+                Assumiamo che \(\nabla_0{\rm f}\) sia derivabile nella seconda variabile sul punto \({\rm x}_0,{\rm x}_1\) e che \(\nabla_0\nabla_1{\rm f}\) sia continua nella seconda variabile sul punto \({\rm x}_0,{\rm x}_1\), allora
+                \begin{split}
+                \nabla_1\nabla_0{\rm f}({\rm x}_0,{\rm x}_1)=\nabla_0\nabla_1{\rm f}({\rm x}_0,{\rm x}_1).
+                \end{split}
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                Sotto oppurtune ipotesi (quali?), diciamo
+                \begin{split}
+                \nabla^{{\rm v}_{\rm k}}{\rm f}&=\nabla_{\rm k}{\rm f}\\
+                \nabla^{{\rm p}_0+{\rm p}_1}{\rm f}&=\nabla^{{\rm p}_0}\nabla^{{\rm p}_1}{\rm f}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Chain rule:
+                </h3>
+                \begin{split}
+                \nabla({\rm f}\circ{\rm g})=((\nabla{\rm f})\circ{\rm g})\cdot\nabla{\rm g}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Sviluppo di Taylor:
+                </h3>
+                Rolle, Cauchy e Lagrange si estendono alle funzioni di più variabili considerando \({\rm f}(\theta\cdot{\rm x})\) con \(\theta \in [0, 1]\) come funzione di una variabile. Si ha inoltre lo sviluppo di Taylor
+                \begin{split}
+                {\rm f}({\rm x}+{\rm a})=\sum_{{\rm k}\in{\rm n}}\sum_{{\rm p}\in{\mathbb N}^{\rm d}\!:|{\rm p}|={\rm k}}\left(\frac{\nabla^{\rm p}{\rm f}({\rm x})}{{\rm p}!}\cdot{\rm a}^{\rm p}\right)+\sum_{{\rm p}\in{\mathbb N}^{\rm d}\!:|{\rm p}|={\rm n}}\left(\frac{\nabla^{\rm p}{\rm f}({\rm x}+\theta\cdot{\rm a})}{{\rm p}!}\cdot{\rm a}^{\rm p}\right).
+                \end{split}
+                Basta falro in una variabile applicando Rolle iterativamente con \({\rm g}(\theta)=\theta^{\rm n}\).
+            </div>
+        </li>
+    </ul>
+
+    <h1>Varietà differenziali</h1>
+    
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema delle contrazioni:
+                </h3>
+                Assumiamo \({\rm L}\in(0,1)\) e
+                \begin{split}
+                |{\rm f}({\rm x})-{\rm f}({\rm y})|\le{\rm L}\cdot|{\rm x}-{\rm y}|.
+                \end{split}
+                Un metodo iterativo \({\rm x}_{{\rm n}+1}={\rm f}({\rm x}_{\rm n})\) converge all'unico punto fisso di \({\rm f}\). (ENUNCIA ANCHE CONTRAZIONI DEBOLI).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema della funzione implicita:
+                </h3>
+                Sia \({\rm d}={\rm n}+{\rm m}\) ed \({\rm f}\!:{\mathbb R}^{\rm d}\rightarrow{\mathbb R}^{\rm m}\) ed \({\rm f}({\rm a}_0,{\rm a}_1)=0\). Supponiamo che \(\det(\nabla_0{\rm f}({\rm a}_0,{\rm a}_1))\ne0\), allora
+                \begin{split}
+                {\rm f}({\rm x}_0,{\rm x}_1)=\nabla_0{\rm f}({\rm a})\cdot({\rm x}_0-{\rm a}_0)+\nabla_1{\rm f}({\rm a})\cdot({\rm x}_1-{\rm a}_1)+{\cal O}({\rm x}).
+                \end{split}
+                Per \({\rm x}-{\rm a}\) abbastanza piccolo si può trovare \({\rm x}_1\) tale che \({\rm f}({\rm x}_0,{\rm x}_1)=0\) come funzione di \({\rm x}_0\) usando un metodo iterativo,
+                \begin{split}
+                {\rm x}_1={\rm a}_1-\nabla_1{\rm f}({\rm a})^{-1}\cdot\nabla_0{\rm f}({\rm a})\cdot({\rm x}_0-{\rm a}_0)-{\cal O}({\rm x}).
+                \end{split}
+                Infatti \({\cal O}({\rm x}),\nabla{\cal O}({\rm x})\) sono piccoli a piacere, quindi si applica il teorema delle contrazioni.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema dell'intorno tubulare:
+                </h3>
+                Si cerca \(\delta>0\) tale che per ogni \({\rm a},{\rm b}\) sulla varietà, i dischi di centri \({\rm a},{\rm b}\) e raggio \(\delta\), ortogonali alla varietà non si intersecano. Notare che
+                \begin{split}
+                \nabla^2{\rm g}=-\nabla_2{\rm f}^{-1}(\nabla_1^2{\rm f}+2\nabla_2\nabla_1{\rm f}\nabla{\rm g}+\nabla_2^2{\rm f}\nabla{\rm g}\nabla{\rm g}).
+                \end{split}
+                Da questo si riesce a dire che la varietà non oltrepassa la parabola
+                \begin{split}
+                |{\rm x}_1-{\rm a}_1-\nabla{\rm g}({\rm a}_0)\cdot({\rm x}_0-{\rm a}_0)|\le\frac{\lambda}{2}|{\rm x}_0-{\rm a}_0|^2
+                \end{split}
+                la quale è contenuta in
+                \begin{split}
+                ?\ge\lambda.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Moltiplicatori di Lagrange:
+                </h3>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Forme differenziali</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                L'integrale di una forma differenziale di grado \({\rm k}\)
+                \begin{split}
+                \int_\Sigma{\rm f}({\rm x})\cdot(\otimes\partial{\rm x})^{{\rm k}}
+                \end{split}
+                è definibile in due modi equivalenti
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Chain rule:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di Stokes:
+                </h3>
+            </div>
+        </li>
+    </ul>
+
+</body>

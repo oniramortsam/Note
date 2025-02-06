@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeri naturali</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+    
+    <div class="navbar">
+        <button onclick="location.href='Proprietà delle operazioni.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='../Seconda Parte/Polinomi in una variabile.html'">Successiva</button>
+    </div>
+
+    <h1>Massimi e Minimi</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Scriviamo \({\rm A}<{\rm B}\) e diciamo che "\({\rm A}\) è minore di \({\rm B}\)".
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Scriviamo \({\rm A}\le{\rm B}\) e diciamo che "\({\rm A}\) è minore o uguale a \({\rm B}\)".
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Insomma
+                \begin{split}
+                {\rm A}\le{\rm B}&\longleftrightarrow({\rm A}<{\rm B})\lor({\rm A}={\rm B})\\
+                {\rm A}<{\rm B}&\longleftrightarrow({\rm A}\le{\rm B})\land ({\rm A} \ne {\rm B}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Scriviamo \(\min({\rm A},{\rm B})\) per intendere il "minimo" dell'insieme \(\{{\rm A},{\rm B}\}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Scriviamo \(\max({\rm A},{\rm B})\) per intendere il "massimo" dell'insieme \(\{{\rm A},{\rm B}\}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Insomma
+                \begin{split}
+                \min({\rm A},{\rm B})={\rm A}\longleftrightarrow{\rm A}\le{\rm B}\longleftrightarrow\max({\rm A},{\rm B})={\rm B}
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm c}\le\min({\rm a},{\rm b})&\longleftrightarrow({\rm c}\le{\rm a})\land({\rm c}\le{\rm b})\\
+                \max({\rm a},{\rm b})\le{\rm c}&\longleftrightarrow({\rm a}\le{\rm c})\land({\rm b}\le{\rm c})\\
+                {\rm c} \le \max({\rm a},{\rm b})&\longleftrightarrow({\rm c}\le{\rm a})\lor({\rm c}\le{\rm b})\\
+                \min({\rm a},{\rm b})\le{\rm c}&\longleftrightarrow({\rm a}\le{\rm c})\lor({\rm b}\le{\rm c}).
+                \end{split}
+                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        Trattare separatamente i casi \({\rm a}<{\rm b}\),\({\rm a}={\rm b}\),\({\rm a}>{\rm b}\).
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('approfondimento0')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento0" class="hidden">
+                    <div class="overflow">
+                        Questa proprietà si estende per induzione a
+                        \begin{split}
+                        {\rm c}\le\min({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\forall{\rm k}\in{\rm n}\,,({\rm c}\le{\rm a}_{\rm k})\\
+                        {\rm c}\ge\max({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\forall{\rm k}\in{\rm n}\,,({\rm c}\ge{\rm a}_{\rm k})\\
+                        {\rm c}\le\max({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\exists{\rm k}\in{\rm n}\,,({\rm c}\le{\rm a}_{\rm k})\\
+                        {\rm c}\ge\min({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\exists{\rm k}\in{\rm n}\,,({\rm c}\ge{\rm a}_{\rm k}).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                \{{\rm a},{\rm b}\}&=\{\min({\rm a},{\rm b}),\max({\rm a},{\rm b})\}\\
+                \max({\rm a},{\rm b})+\min({\rm a},{\rm b})&={\rm a}+{\rm b}.
+                \end{split}
+                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        Trattare separatamente i casi \({\rm a}<{\rm b}\),\(a={\rm b}\),\({\rm a}>{\rm b}\).
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Divisione Euclidea</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Definiamo per due numeri interi (\(\forall{\rm a},{\rm b}\in{\mathbb Z}\))
+                \begin{split}
+                {\rm a}/\!/{\rm b}&:=\max({\rm d}\!:{\rm d}\cdot{\rm b}\le{\rm a})\\
+                {\rm a}\%{\rm b}&:={\rm a}-({\rm a}/\!/{\rm b})\cdot{\rm b}.
+                \end{split}
+                Cioè \(({\rm a}/\!/{\rm b})\cdot{\rm b}\) è il più grande multiplo di \({\rm b}\) che non superi \({\rm a}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice \({\rm a}/\!/ b \in {\mathbb Z}\) la divisione intera di \({\rm a}\) per \({\rm b}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice \({\rm a}\%{\rm b}\in{\mathbb N}\) il resto della divisione di \({\rm a}\) per \({\rm b}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Allora
+                \begin{cases}
+                {\rm a}\%{\rm b}<{\rm b}\\
+                {\rm a}=({\rm a}/\!/{\rm b})\cdot{\rm b}+{\rm a}\%{\rm b}.
+                \end{cases}
+                Viceversa, se per una coppia \(x \in {\mathbb N}, y \in {\mathbb Z}\) vale
+                \begin{cases}
+                {\rm x}<{\rm b}\\
+                {\rm a}={\rm x}\cdot{\rm b}+{\rm y},
+                \end{cases}
+                allora
+                \begin{cases}
+                {\rm x}={\rm a}/\!/{\rm b}\\
+                {\rm y}={\rm a}\%{\rm b}.
+                \end{cases}
+                Cioè tali proprietà caratterizzano \({\rm a}/\!/{\rm b},{\rm a}\%{\rm b}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sono quindi fatti equivalenti:
+                \begin{split}
+                {\rm a}\%{\rm b}&=0\\
+                {\rm a}&=({\rm a}/\!/{\rm b})\cdot{\rm b}\\
+                \exists{\rm x}\!:\quad{\rm a}&={\rm x}\cdot{\rm b}.
+                \end{split}
+                Se questo vale diciamo che \({\rm b}\) divide \({\rm a}\) o che \({\rm a}\) è un multiplo di \({\rm b}\) e scriviamo \({\rm b}|{\rm a}\). Definiamo
+                \begin{split}
+                {\rm b}\cdot{\mathbb Z}=\{{\rm b}\cdot{\rm x}\!:{\rm x}\in{\mathbb Z}\}=\{{\rm a}\in{\mathbb Z}\,,{\rm b}|{\rm a}\}.
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                (({\rm b}\%{\rm a})+({\rm c}\%{\rm a}))\%{\rm a}&=({\rm b}+{\rm c})\%{\rm a}\\
+                (({\rm b}\%{\rm a})\cdot({\rm c}\%{\rm a}))\%{\rm a}&=({\rm b}\cdot{\rm c})\%{\rm a}\\
+                ({\rm b}\cdot{\rm c})/\!/({\rm a}\cdot{\rm c})&=({\rm b}/\!/{\rm a})\cdot{\rm c}\\
+                ({\rm b}\cdot{\rm c})\%({\rm a}\cdot{\rm c})&=({\rm b}\%{\rm a})\cdot{\rm c}.
+                \end{split}
+                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                        Per il primo ed il secondo notiamo che:
+                        \begin{split}
+                        {\rm b}+{\rm c}&={\rm a}\cdot({\rm b}/\!/{\rm a}+{\rm c}/\!/{\rm a})+({\rm b}\%{\rm a}+{\rm b}\%{\rm a})\\
+                        {\rm b}\cdot{\rm c}&={\rm a}\cdot({\rm a}\cdot{\rm b}/\!/{\rm a}\cdot{\rm c}/\!/{\rm a}+{\rm b}\%{\rm a}\cdot{\rm c}/\!/{\rm a}+{\rm b}/\!/{\rm a}\cdot{\rm c}\%{\rm a})+({\rm b}\%{\rm a}\cdot{\rm b}\%{\rm a}).
+                        \end{split}
+                        Per il terzo ed il quarto notiamo che:
+                        \begin{split}
+                        ({\rm b}\cdot{\rm c})&=({\rm b}/\!/{\rm a})\cdot({\rm a}\cdot{\rm c})+({\rm b}\%{\rm a})\cdot{\rm c}\\
+                        ({\rm b}\%{\rm a})\cdot{\rm c}&<{\rm a}\cdot{\rm c}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\rm b}|{\rm a}\), allora:
+                \begin{split}
+                {\rm c}/\!/{\rm b}&=({\rm c}/\!/{\rm a})\cdot({\rm a}/\!/{\rm b})+(({\rm c}\%{\rm a})/\!/{\rm b})\\
+                {\rm c}\%{\rm b}&=({\rm c}\%{\rm a})\%{\rm b}.
+                \end{split}
+                Viceversa, per una tripla \({\rm x}\in{\mathbb Z},{\rm y},{\rm z}\in{\mathbb N}\) tale che
+                \begin{cases}
+                {\rm y}<{\rm a}/\!/{\rm b}\\
+                {\rm z}<{\rm b}\\
+                {\rm c}={\rm x}\cdot{\rm a}+{\rm y}\cdot{\rm b}+{\rm z},
+                \end{cases}
+                deve valere
+                \begin{cases}
+                {\rm x}={\rm c}/\!/{\rm a}\\
+                {\rm y}=({\rm c}\%{\rm a})/\!/{\rm b}\\
+                {\rm z}={\rm c}\%{\rm b}.
+                \end{cases}
+                <button onclick="toggleTesto('bottone3')">Soluzione:</button>
+                <div id="bottone3" class="hidden">
+                    <div class="overflow">
+                        Notiamo che,
+                        \begin{split}
+                        {\rm c}&={\rm a}\cdot({\rm c}/\!/{\rm a})+{\rm b}\cdot(({\rm c}\%{\rm a})/\!/{\rm b})+({\rm c}\%{\rm a})\%{\rm b}\\
+                        {\rm c}&={\rm a}\cdot(({\rm c}/\!/{\rm b})/\!/({\rm a}/\!/{\rm b}))+{\rm b}\cdot(({\rm c}/\!/{\rm b})\%({\rm a}/\!/{\rm b}))+{\rm c}\%{\rm b}.
+                        \end{split}
+                        Viceversa, se
+                        \begin{split}
+                        {\rm a}\cdot{\rm x}+{\rm b}\cdot{\rm y}+{\rm z}={\rm c},
+                        \end{split}
+                        allora
+                        \begin{split}
+                        {\rm b}\cdot{\rm y}+{\rm z}<{\rm a}&\longrightarrow{\rm x}={\rm c}/\!/{\rm a}\\
+                        {\rm z}<{\rm b}&\longrightarrow{\rm z}={\rm c}\%{\rm b}.
+                        \end{split}
+                        Otteniamo quindi
+                        \begin{split}
+                        {\rm c}/\!/{\rm a}&=({\rm c}/\!/{\rm b})/\!/({\rm a}/\!/{\rm b})\\
+                        ({\rm c}\%{\rm a})/\!/{\rm b}&=({\rm c}/\!/{\rm b})\%({\rm a}/\!/{\rm b})\\
+                        ({\rm c}\%{\rm a})\%{\rm b}&={\rm c}\%{\rm b}.
+                        \end{split}
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('approfondimento1')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento1" class="hidden">
+                    <div class="overflow">
+                        <h3 id="scrittura in base">Scrittura in base:</h3>
+                        Questa proprietà si estende con il <a href="Insiemi e funzioni.html#principio di induzione">principio di induzione</a>, supponiamo
+                        \begin{split}
+                        \forall{\rm n}\in{\mathbb N}\,,\quad{\rm a}_{\rm n}|{\rm a}_{{\rm n}+1},
+                        \end{split}
+                        allora, \(\forall{\rm x}\in{\mathbb N}\) si scrive in modo unico come
+                        \begin{cases}
+                        {\rm x}=\sum_{{\rm n}\in{\mathbb N}}{\rm a}_{\rm n}\cdot{\rm x}_{\rm n}\\
+                        {\rm x}_{\rm n}<{\rm a}_{{\rm n}+1}/\!/{\rm a}_{\rm n}.
+                        \end{cases}
+                        Ed in particolare si ha
+                        \begin{split}
+                        {\rm x}_{\rm n}=({\rm x}\%{\rm a}_{{\rm n}+1})/\!/{\rm a}_{\rm n}=(({\rm x}/\!/{\rm a}_{\rm k})\%({\rm a}_{{\rm n}+1}/\!/{\rm a}_{\rm k}))/\!/({\rm a}_{\rm n}/\!/{\rm a}_{\rm k}).
+                        \end{split}
+                        Come corollario, se \({\rm c}|{\rm b}|{\rm a}\), allora
+                        \begin{split}
+                        ({\rm x}\%{\rm a})/\!/{\rm b}=(({\rm x}/\!/{\rm c})\%({\rm a}/\!/{\rm c}))/\!/({\rm b}/\!/{\rm c}).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+    <h1>Fattorizzazione unica</h1>
+    
+    <ul>
+        <li>
+            <div class="overflow">
+                Un numero \({\rm p}\in{\mathbb Z}\) si dice irriducibile se \(\forall{\rm a},{\rm b}\in{\mathbb Z}\)
+                \begin{split}
+                {\rm p}={\rm a}\cdot{\rm b}\longrightarrow({\rm p}|{\rm a})\lor({\rm p}|{\rm b}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Un numero \({\rm p}\in{\mathbb Z}\) si dice primo se \(\forall{\rm a},{\rm b}\in{\mathbb Z}\)
+                \begin{split}
+                {\rm p}|({\rm a}\cdot{\rm b})\longrightarrow({\rm p}|{\rm a})\lor({\rm p}|{\rm b}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Il massimo comun divisore ed il minimo comune multiplo tra due interi \(a, b \in {\mathbb Z}\) sono definiti come
+                \begin{split}
+                \operatorname{gcd}({\rm a},{\rm b})&:=\max({\rm c}\in{\mathbb N}\!:{\rm c}|{\rm a}\land{\rm c}|{\rm b})\\
+                \operatorname{gcd}({\rm a},{\rm b})&:=\min({\rm c}\in{\mathbb N}\setminus\{0\}\!:{\rm a}|{\rm c}\land{\rm b}|{\rm c}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Valgono le proprietà:
+                \begin{split}
+                {\rm c}|\operatorname{gcd}({\rm a},{\rm b})&\longleftrightarrow{\rm c}|{\rm a}\land{\rm c}|{\rm b}\\
+                \operatorname{lcm}({\rm a},{\rm b})|{\rm c}&\longleftrightarrow{\rm a}|{\rm c}\land{\rm b}|{\rm c}.
+                \end{split}
+                <button onclick="toggleTesto('bottone4')">Dimostrazione della prima</button>
+                <div id="bottone4" class="hidden">
+                    <div class="overflow">
+                        Dimostriamo qui l'identità di Bézout. Notare che, se \({\rm c}|{\rm a}\), allora
+                        \begin{split}
+                        {\rm c}|{\rm b}\longleftrightarrow{\rm c}|({\rm b}%{\rm a}).
+                        \end{split}
+                        Senza perdita di generalità \({\rm a}\le{\rm b}\), per induzione si può scrivere
+                        \begin{split}
+                        \operatorname{gcd}({\rm a},{\rm b})&=\operatorname{gcd}({\rm a},{\rm b}\%{\rm a})\\
+                        &={\rm x}\cdot{\rm a}+{\rm y}\cdot({\rm b}\%{\rm a})\\
+                        &=({\rm x}-{\rm b}/\!/{\rm a})\cdot{\rm a}+({\rm y}+1)\cdot{\rm b}.
+                        \end{split}
+                        Da cui, se
+                        \begin{split}
+                        \alpha\cdot{\rm c}={\rm a}\\
+                        \beta\cdot{\rm c}={\rm b},
+                        \end{split}
+                        allora
+                        \begin{split}
+                        \operatorname{gcd}({\rm a},{\rm b})={\rm x}\cdot{\rm a}+{\rm y}\cdot{\rm b}=({\rm x}\cdot\alpha+{\rm y}\cdot\beta)\cdot{\rm c}.
+                        \end{split}
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('bottone5')">Dimostrazione della seconda</button>
+                <div id="bottone5" class="hidden">
+                    <div class="overflow">
+                        Siano
+                        \begin{split}
+                        \alpha\cdot{\rm a}&=\operatorname{lcm}({\rm a},{\rm b})\\
+                        \beta\cdot{\rm b}&=\operatorname{lcm}({\rm a},{\rm b})\\
+                        {\rm x}\cdot{\rm a}&={\rm c}\\
+                        {\rm y}\cdot{\rm b}&={\rm c},
+                        \end{split}
+                        allora si ha che
+                        \begin{split}
+                        {\rm c}\%\operatorname{lcm}({\rm a},{\rm b})&=({\rm x}\%\alpha)\cdot{\rm a}\\
+                        {\rm c}\%\operatorname{lcm}({\rm a},{\rm b})&=({\rm x}\%\beta)\cdot{\rm b},
+                        \end{split}
+                        il che ne fa un multiplo comune di \(a, b\), minore di \(\operatorname{lcm}(a, b)\), cioè \(0\).
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Definiamo 
+                \begin{split}
+                {\rm a}\|{\rm b}:=\max({\rm d}\in{\mathbb N}\!:{\rm b}^{\rm d}|{\rm a})
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Fattorizzazione unica: se per qualunque primo \(p\) vale \(a \| p=b \| p\), allora \(a=b\).
+                <button onclick="toggleTesto('bottone6')">Dimostrazione</button>
+                <div id="bottone6" class="hidden">
+                    <div class="overflow">
+                        Dimostriamo che se \(p\) è irriducibile, allora è anche primo. Questo perchè se \(p\) è irriducibile e non divide \(a, b\), allora
+                        \begin{split}
+                        {\rm x}\cdot{\rm p}+{\rm u}\cdot{\rm a}=1\\
+                        {\rm y}\cdot{\rm p}+{\rm v}\cdot{\rm b}=1.
+                        \end{split}
+                        Da cui
+                        \begin{split}
+                        \operatorname{gcd}({\rm p},{\rm a}\cdot{\rm b})|({\rm x}\cdot{\rm y}\cdot{\rm p}+{\rm u}\cdot{\rm a}\cdot{\rm y}+{\rm v}\cdot{\rm b}\cdot{\rm x})\cdot{\rm p}+({\rm u}\cdot{\rm v})\cdot{\rm a}\cdot{\rm b}=1.
+                        \end{split}
+                        Se \({\rm a}\|{\rm p}=0\) per ogni \({\rm p}<{\rm a}\) primo, allora \({\rm a}\) deve essere primo:<br>
+                        Se altrimenti fosse \({\rm b}|{\rm a}\) allora sarebbe \({\rm b}={\rm a}\), oppure per induzione \({\rm b}\) primo o multiplo di un primo o \({\rm b}=1\).<br>
+                        Da cui \({\rm a}\) è irriducibile, e quindi primo.
+                    </div>
+                </div>
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                Per \({\rm p}\) primo:
+                \begin{split}
+                ({\rm a}\cdot{\rm b})\|{\rm p}&=({\rm a}\|{\rm p})+({\rm b}\|{\rm p})\\
+                \operatorname{lcm}({\rm a},{\rm b})\|{\rm p}&=\max({\rm a}\|{\rm p},{\rm b}\|{\rm p})\\
+                \operatorname{gcd}({\rm a},{\rm b})\|{\rm p}&=\min({\rm a}\|{\rm p},{\rm b}\|{\rm p}).
+                \end{split}
+                <button onclick="toggleTesto('bottone7')">Soluzione</button>
+                <div id="bottone7" class="hidden">
+                    <div class="overflow">
+                        Scriviamo
+                        \begin{split}
+                        {\rm a}={\rm p}^{{\rm a}\|{\rm p}}\cdot\alpha\\
+                        {\rm b}={\rm p}^{{\rm b}\|{\rm p}}\cdot\beta\\
+                        \operatorname{lcm}({\rm a},{\rm b})={\rm p}^{\operatorname{lcm}({\rm a},{\rm b})\|{\rm p}}\cdot{\rm m}\\
+                        \operatorname{gcd}({\rm a},{\rm b})={\rm p}^{\operatorname{gcd}({\rm a},{\rm b})\|{\rm p}}\cdot{\rm d},
+                        \end{split}
+                        allora
+                        \begin{split}
+                        {\rm a}\cdot{\rm b}={\rm p}^{({\rm a}\|{\rm p})+({\rm b}\|{\rm p})}\cdot\alpha\cdot\beta.
+                        \end{split}
+                        Siccome si vede che
+                        \begin{split}
+                        \max({\rm a}\|{\rm p},{\rm b}\|{\rm p})\le\operatorname{lcm}({\rm a},{\rm b})\|{\rm p}\\
+                        \operatorname{gcd}({\rm a},{\rm b})\|{\rm p}\le\min({\rm a}\|{\rm p},{\rm b}\|{\rm p}),
+                        \end{split}
+                        osserviamo che
+                        \begin{split}
+                        \alpha&|{\rm p}^{(\operatorname{lcm}({\rm a},{\rm b})\|{\rm p})-({\rm a}\|{\rm p})}\cdot{\rm m}\\
+                        \beta&|{\rm p}^{(\operatorname{lcm}({\rm a},{\rm b})\|{\rm p})-({\rm b}\|{\rm p})}\cdot{\rm m}\\
+                        {\rm d}&|{\rm p}^{({\rm a}\|{\rm p})-(\operatorname{gcd}({\rm a},{\rm b})\|{\rm p})}\cdot\alpha\\
+                        {\rm d}&|{\rm p}^{({\rm b}\|{\rm p})-(\operatorname{gcd}({\rm a},{\rm b})\|{\rm p})}\cdot\beta,
+                        \end{split}
+                        da cui, a meno di combinazioni lineari, per Bezout, \(\alpha,\beta|{\rm m}\) e \({\rm d}|\alpha,\beta\). Infine concludiamo perché
+                        \begin{split}
+                        \operatorname{lcm}({\rm a},{\rm b})|{\rm p}^{\max({\rm a}\|{\rm p},{\rm b}\|{\rm p})}\cdot{\rm m}\\
+                        {\rm p}^{\min({\rm a}\|{\rm p},{\rm b}\|{\rm p})}\cdot{\rm d}|\operatorname{gcd}({\rm a},{\rm b}).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                \operatorname{lcm}({\rm a},{\rm b})\cdot\operatorname{gcd}({\rm a},{\rm b})={\rm a}\cdot{\rm b}.
+                \end{split}
+                <button onclick="toggleTesto('bottone8')">Soluzione</button>
+                <div id="bottone8" class="hidden">
+                    <div class="overflow">
+                        Segue dall'esercizio precedente e dalla Fattorizzazione unica.
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>

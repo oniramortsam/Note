@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi complessa</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='../Analisi classica/Controllo ottimo.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Analisi di Fourier.html'">Successiva</button>
+    </div>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Sia \(\Omega\subseteq{\mathbb C}\) e sia \({\rm f}:\Omega\rightarrow{\mathbb C}\) allora questa è olomorfa se è differenziabile con
+                \begin{split}
+                \nabla_0{\rm f}_0-\nabla_1{\rm f}_1=\nabla_0{\rm f}_1+\nabla_1{\rm f}_0=0\\
+                \dot{\rm f}=\nabla_0{\rm f}_0+{\rm i}\cdot\nabla_0{\rm f}_1=\nabla_1{\rm f}_1-{\rm i}\cdot\nabla_1{\rm f}_0.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Tale condizione implica che le forme
+                \begin{split}
+                {\rm f}_0\cdot\partial{\rm x}_0&-{\rm f}_1\cdot\partial{\rm x}_1\\
+                {\rm f}_1\cdot\partial{\rm x}_0&+{\rm f}_0\cdot\partial{\rm x}_1
+                \end{split}
+                e quindi la forma
+                \begin{split}
+                {\rm f}\cdot\partial{\rm x}=({\rm f}_0+{\rm i}{\rm f}_1)\cdot(\partial{\rm x}_0+{\rm i}\partial{\rm x}_1)
+                \end{split}
+                sono chiuse, e che quindi se \(\Omega\) è semplicemente connesso, allora \({\rm f}\) è la derivata di una funzione olomorfa.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Valgono le formule di derivazione per parti e la chain rule, quindi prodotto e composizione di funzioni olomorfe sono olomorfe.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Inoltre i polinomi e le serie di polinomi convergenti sono olomorfe.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Il rapporto incrementale si estende ad una funzione olomorfa, quindi
+                \begin{split}
+                \int\frac{{\rm f}({\rm x})\cdot\partial{\rm x}}{{\rm x}-{\rm a}}=2\pi{\rm i}{\rm f}({\rm a}).
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Prova che
+                \begin{split}
+                \int\frac{{\rm f}({\rm x})\cdot\partial{\rm x}}{{\rm g}({\rm x})-{\rm g}({\rm a})}=2\pi{\rm i}\frac{{\rm f}({\rm a})}{\dot{\rm g}({\rm a}).}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Prova che
+                \begin{split}
+                \int_{\mathbb R} \frac{\exp({\rm i}{\rm x}\cdot{\rm y})\cdot\partial{\rm x}}{1+{\rm x}^2}=\pi\exp(-|{\rm y}|)
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Prova che
+                \begin{split}
+                \int_{\mathbb R}\exp\left(-\frac{{\rm x}^2}{2}right)\cdot\partial{\rm x}=\sqrt{2\pi}\exp\left(-\frac{{\rm y}^2}{2}right)
+            </div>
+        </li>
+    </ul>
+
+    <h1>Spazi di funzioni olomorfe</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema della mappa di Riemann:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teoremi di Runghe:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di fattorizzazione di Weierstrass:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Teorema di Mittag-Leffler
+                </h3>
+            </div>
+        </li>
+    </ul>
+
+</body>

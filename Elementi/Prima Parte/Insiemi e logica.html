@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insiemi e logica</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Insiemi e funzioni.html'">Successiva</button>
+    </div>
+
+    <h1>I Connettivi Logici</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Di seguito scriviamo \(0\) per intendere "falso" ed \(1\) per intendere "vero".
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Scriviamo \(\lnot\) per intendere la negazione "non". La negazione di una frase è vera se la frase è falsa e viceversa:
+                \begin{split}
+                \lnot{0}&={1}\\
+                \lnot{1}&={0}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Scriviamo \(\land\) per intendere la congiunzione "e". La congiunzione di due frasi è vera solo se lo sono entrambe:
+                \begin{split}
+                {1}\land{1}&={1}\\
+                {1}\land{0}&={0}\\
+                {0}\land{1}&={0}\\
+                {0}\land{0}&={0}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Scriviamo \(\lor\) per intendere la disgiunzione "o". La disgiunzione di due frasi è vera se almeno una delle due lo è:
+                \begin{split}
+                {1}\lor{1}&={1}\\
+                {1}\lor{0}&={1}\\
+                {0}\lor{1}&={1}\\
+                {0}\lor{0}&={0}.
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Leggi di De Morgan:
+                </h3>
+                Dimostra ciascuna delle seguenti utilizzando le altre
+                \begin{split}
+                {\rm a}&=\lnot(\lnot{\rm a})\\
+                {\rm a}&={\rm a}\land{\rm a}\\
+                {\rm a}&={\rm a}\lor{\rm a}\\
+                \lnot((\lnot{\rm a})\lor(\lnot{\rm b}))&={\rm a}\land{\rm b}\\
+                \lnot((\lnot{\rm a})\land(\lnot{\rm b}))&={\rm a}\lor{\rm b}
+                \end{split}
+                <button onclick="toggleTesto('bottone0')">Soluzioni:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        <h3>Soluzione della prima con la quarta:</h3>
+                        Usando la terza si ha
+                        \begin{split}
+                        \lnot{\rm a}=(\lnot{\rm a})\lor(\lnot{\rm a}),
+                        \end{split}
+                        mentre usando la quarta,
+                        \begin{split}
+                        \lnot((\lnot{\rm a})\lor(\lnot{\rm a}))={\rm a}\land{\rm a},
+                        \end{split}
+                        usando la seconda si conclude.
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della prima con la quinta:</h3>
+                        Usando la seconda si ha
+                        \begin{split}
+                        \lnot{\rm a}=(\lnot{\rm a})\land(\lnot{\rm a}),
+                        \end{split}
+                        mentre usando la quinta,
+                        \begin{split}
+                        \lnot((\lnot{\rm a})\land(\lnot{\rm a}))={\rm a}\lor{\rm a},
+                        \end{split}
+                        usando la terza si conclude.
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della seconda con la terza:</h3>
+                        Usando la prima
+                        \begin{split}
+                        {\rm a}\land{\rm a}=\lnot(\lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm a})))),
+                        \end{split}
+                        mentre usando la quinta e poi la terza,
+                        \begin{split}
+                        \lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm a})))=(\lnot{\rm a})\lor(\lnot{\rm a})=\lnot{\rm a}.
+                        \end{split}
+                        Infine, usando la prima si conclude.
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della terza con la seconda:</h3>
+                        Usando la prima
+                        \begin{split}
+                        {\rm a}\lor{\rm a}=\lnot(\lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm a})))),
+                        \end{split}
+                        mentre usando la quarta e poi la seconda,
+                        \begin{split}
+                        \lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm a})))=(\lnot{\rm a})\land(\lnot{\rm a})=\lnot{\rm a}.
+                        \end{split}
+                        Infine, usando la prima, si conclude.
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della quarta con la quinta:</h3>
+                        Usando la prima
+                        \begin{split}
+                        {\rm a}\land{\rm b}=\lnot(\lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm b})))),
+                        \end{split}
+                        mentre usando la quinta,
+                        \begin{split}
+                        \lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm b})))=(\lnot{\rm a})\lor(\lnot{\rm b}).
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della quinta con la quarta:</h3>
+                        Usando la prima
+                        \begin{split}
+                        {\rm a}\lor{\rm b}=\lnot(\lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm b})))),
+                        \end{split}
+                        mentre usando la quarta,
+                        \begin{split}
+                        \lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm b})))=(\lnot{\rm a})\land(\lnot{\rm b}).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>Associatività e distributività:</h3>
+                Dimostra ciascuna delle seguenti utilizzando le altre
+                \begin{split}
+                {\rm a}\land({\rm b}\land{\rm c})&= ({\rm a}\land{\rm b})\land{\rm c}\\
+                {\rm a}\lor({\rm b}\lor{\rm c})&=({\rm a}\lor{\rm b})\lor{\rm c}\\
+                {\rm a}\land({\rm b}\lor{\rm c})&=({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
+                {\rm a}\lor({\rm b}\land{\rm c})&=({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c}).
+                \end{split}
+                <button onclick="toggleTesto('bottone1')">Soluzioni:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        <h3>Soluzione della prima con la seconda:</h3>                            
+                        Usando De Morgan
+                        \begin{split}
+                        {\rm a}\land({\rm b}\land{\rm c})=\lnot((\lnot{\rm a})\lor(\lnot({\rm b}\land{\rm c})))\\
+                        \lnot(b\land{\rm c})=(\lnot{\rm b})\lor(\lnot{\rm c})\\
+                        \lnot((\lnot({\rm a}\land{\rm b}))\lor(\lnot{\rm c}))=({\rm a}\land{\rm b})\land{\rm c}\\
+                        (\lnot{\rm a})\lor(\lnot{\rm b})=\lnot({\rm a}\land{\rm b}).
+                        \end{split}
+                        invece usando la seconda
+                        \begin{split}
+                        (\lnot{\rm a})\lor((\lnot{\rm b})\lor(\lnot{\rm c}))=((\lnot{\rm a})\lor(\lnot{\rm b}))\lor(\lnot{\rm c}).
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della seconda con la prima:</h3>
+                        Usando De Morgan
+                        \begin{split}
+                        {\rm a}\lor({\rm b}\lor{\rm c})=\lnot((\lnot{\rm a})\land(\lnot({\rm b}\lor{\rm c})))\\
+                        \lnot({\rm b}\lor{\rm c})=(\lnot{\rm b})\land(\lnot{\rm c})\\
+                        \lnot((\lnot({\rm a}\lor{\rm b}))\land(\lnot{\rm c}))=({\rm a}\lor{\rm b})\lor{\rm c}\\
+                        (\lnot{\rm a})\land(\lnot{\rm b})=\lnot({\rm a}\lor{\rm b}).
+                        \end{split}
+                        invece usando la prima
+                        \begin{split}
+                        (\lnot{\rm a})\land((\lnot{\rm b})\land(\lnot{\rm c}))=((\lnot{\rm a})\land(\lnot{\rm b}))\land(\lnot{\rm c}).
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della terza con la quarta:</h3>
+                        Usando De Morgan
+                        \begin{split}
+                        {\rm a}\land({\rm b}\lor{\rm c})=\lnot((\lnot{\rm a})\lor(\lnot({\rm b}\lor{\rm c})))\\
+                        \lnot((\lnot({\rm a}\land{\rm b}))\land(\lnot({\rm a}\land{\rm c})))=({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
+                        \lnot({\rm b}\lor{\rm c})=(\lnot{\rm b})\land(\lnot{\rm c})\\
+                        (\lnot{\rm a})\lor(\lnot{\rm b})=\lnot({\rm a}\land{\rm b})\\
+                        (\lnot{\rm a})\lor(\lnot{\rm c})=\lnot({\rm a}\land{\rm c}).
+                        \end{split}
+                        Invece usando la quarta
+                        \begin{split}
+                        (\lnot{\rm a})\lor((\lnot{\rm b})\land(\lnot{\rm c}))=((\lnot{\rm a})\lor(\lnot{\rm b}))\land((\lnot{\rm a})\lor(\lnot{\rm c})).
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della quarta con la terza:</h3>
+                        Usando De Morgan
+                        \begin{split}
+                        {\rm a}\lor({\rm b}\land{\rm c})=\lnot((\lnot{\rm a})\land(\lnot({\rm b}\land{\rm c})))\\
+                        \lnot((\lnot({\rm a}\lor{\rm b}))\lor(\lnot({\rm a}\lor{\rm c})))=({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c})\\
+                        \lnot({\rm b}\land{\rm c})=(\lnot{\rm b})\lor(\lnot{\rm c})\\
+                        (\lnot{\rm a})\land(\lnot{\rm b})=\lnot({\rm a}\lor{\rm b})\\
+                        (\lnot{\rm a})\land(\lnot{\rm c})=\lnot({\rm a}\lor{\rm c}).
+                        \end{split}
+                        Invece usando la terza
+                        \begin{split}
+                        (\lnot{\rm a})\land((\lnot{\rm b})\lor(\lnot{\rm c}))=((\lnot{\rm a})\land(\lnot{\rm b}))\lor((\lnot{\rm a})\land(\lnot{\rm c})).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>Tautologie:</h3>
+                Dimostra ciascuna delle seguenti utilizzando le altre
+                \begin{split}
+                {\rm a}\land((\lnot{\rm b})\lor{\rm b})&={\rm a}\\
+                {\rm a}\lor((\lnot{\rm b})\land{\rm b})&={\rm a}\\
+                {\rm a}\land({\rm a}\lor{\rm b})&={\rm a}\\
+                {\rm a}\lor({\rm a}\land{\rm b})&={\rm a}\\
+                {\rm a}\land{\rm b}&={\rm a}\land((\lnot{\rm a})\lor{\rm b})\\
+                {\rm a}\lor{\rm b}&={\rm a}\lor((\lnot{\rm a})\land{\rm b}).
+                \end{split}
+                <button onclick="toggleTesto('bottone2')">Soluzioni:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                        <h3>Soluzione della prima con la seconda:</h3>
+                        Usando De Morgan
+                        \begin{split}
+                        {\rm a}\land((\lnot{\rm b})\lor{\rm b})=\lnot((\lnot{\rm a})\lor((\lnot{\rm b})\land{\rm b}))
+                        \end{split}
+                        Invece usando la seconda
+                        \begin{split}
+                        (\lnot{\rm a})\lor((\lnot{\rm b})\land{\rm b})=\lnot{\rm a}.
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della seconda con la prima:</h3>
+                        Usando De Morgan
+                        \begin{split}
+                        {\rm a}\lor((\lnot{\rm b})\land{\rm b})=\lnot((\lnot{\rm a})\land((\lnot{\rm b})\lor{\rm b}))
+                        \end{split}
+                        Invece usando la prima
+                        \begin{split}
+                        (\lnot{\rm a})\land((\lnot{\rm b})\lor{\rm b})=\lnot{\rm a}.
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della terza con la quarta:</h3>
+                        Usando De Morgan
+                        \begin{split}
+                        {\rm a}\land({\rm a}\lor{\rm b})=\lnot((\lnot{\rm a})\lor((\lnot{\rm a})\land(\lnot{\rm a})))
+                        \end{split}
+                        Invece usando la quarta
+                        \begin{split}
+                        (\lnot{\rm a})\lor((\lnot{\rm a})\land(\lnot{\rm a}))=\lnot{\rm a}.
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della quarta con la terza:</h3>
+                        Usando De Morgan
+                        \begin{split}
+                        {\rm a}\lor({\rm a}\land{\rm b})=\lnot((\lnot{\rm a})\land((\lnot{\rm a})\lor(\lnot{\rm a})))
+                        \end{split}
+                        Invece usando la terza
+                        \begin{split}
+                        (\lnot{\rm a})\land((\lnot{\rm a})\lor(\lnot{\rm a}))=\lnot{\rm a}.
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della quinta:</h3>
+                    </div>
+                    <div class="overflow">
+                        <h3>Soluzione della sesta:</h3>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Implicazioni</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Si scrive \({\cal A}\longrightarrow{\cal B}\) per dire "se \({\cal A}\), allora \({\cal B}\)".
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si scrive \({\cal A}\longleftarrow{\cal B}\) per dire "se \({\cal B}\), allora \({\cal A}\)".
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\cal A}\longrightarrow{\cal B}\) si può dire che \((\lnot{\cal B})\longrightarrow(\lnot{\cal A})\) e viceversa.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\cal A}\longrightarrow{\cal B}\longrightarrow{\cal A}\) si può dire che \({\cal A}\longleftrightarrow{\cal B}\) oppure \({\cal A}={\cal B}\) come fatto fino ad ora
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Con la differenza che l'eguaglianza non è un'operazione tra predicati e viene usata solo a scopo euristico, quindi se si legge \({\cal A}={\cal B}\) ci si sta riferendo ad uno dei due dando per scontato che sono equivalenti.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Valgono sempre le tautologie:
+                \begin{split}
+                {\rm A}\land{\rm B}\longrightarrow{\rm A}\longrightarrow{\rm A}\lor{\rm B}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sono fatti equivalenti:
+                \begin{split}
+                {\rm A} &\longrightarrow{\rm B}\\
+                {\rm A}\lor{\rm B}&={\rm B}\\
+                {\rm A}\land{\rm B}&={\rm A}\\
+                {\rm A}\lor {\rm B}&\longrightarrow{\rm B}\\
+                {\rm A}&\longrightarrow{\rm A}\land{\rm B}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Per dimostrare che \({\cal A}\longrightarrow{\cal B}\) si parte generalmente dall'ipotesi \({\cal A}\) e si arriva alla tesi \({\cal B}\). Questo procedimento richiede la transitività dell'implicazione che noi vedremo tra poco.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Negli esercisi useremo uno strumento diverso, cioè riduciamo l'implicazione ad un connettivo logico \(({\rm A}\longrightarrow{\rm B})=(\lnot(\rm A))\lor{\rm B}\).
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Se \({\rm a}\longrightarrow{\rm b}\) si può dire che, qualunque sia \(c\):
+                \begin{split}
+                {\rm a}\land{\rm c}&\longrightarrow{\rm b}\land{\rm c}\\
+                {\rm a}\lor{\rm c}&\longrightarrow{\rm b}\lor{\rm c}\\
+                {\rm c}&\longrightarrow(\lnot{\rm a})\lor{\rm b}\\
+                {\rm a}\land(\lnot{\rm b})&\longrightarrow{\rm c}.
+                \end{split}
+                <button onclick="toggleTesto('bottone3')">Soluzione:</button>
+                <div id="bottone3" class="hidden">
+                    <div class="overflow">
+                        Usando le proprietà dimostrate negli esercizi precedenti:
+                        \begin{split}
+                        (\lnot({\rm a}\land{\rm c}))\lor({\rm b}\land{\rm c})=(\lnot{\rm a})\lor(\lnot{\rm c})\lor({\rm b}\land{\rm c})=(\lnot{\rm a})\lor(\lnot{\rm c})\lor{\rm b}&\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
+                        (\lnot({\rm a}\lor{\rm c}))\lor({\rm b}\lor{\rm c})=((\lnot{\rm a})\land(\lnot{\rm c}))\lor{\rm b}\lor{\rm c}=(\lnot{\rm a})\lor{\rm b}\lor{\rm c}&\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
+                        (\lnot{\rm c})\lor((\lnot{\rm a})\lor{\rm b})&\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
+                        (\lnot({\rm a}\land(\lnot{\rm b})))\lor{\rm c}=((\lnot{\rm a})\lor{\rm b})\lor{\rm c}&\longleftarrow(\lnot{\rm a})\lor{\rm b}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\rm a}\longrightarrow{\rm b}\longrightarrow{\rm c}\) si può dire che \({\rm a}\longrightarrow{\rm c}\).<br>
+                <button onclick="toggleTesto('bottone4')">Soluzione:</button>
+                <div id="bottone4" class="hidden">
+                    <div class="overflow">
+                        Usando le proprietà dimostrate negli esercizi precedenti:
+                        \begin{split}
+                        ((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm b})\lor{\rm c})&=((\lnot{\rm a})\land(\lnot{\rm b}))\lor((\lnot{\rm a})\land{\rm c})\lor({\rm b}\land{\rm c})\\
+                        &=(((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm b})\lor{\rm c}))\lor((\lnot{\rm a})\land{\rm c})\\
+                        &\longrightarrow((\lnot{\rm a})\lor{\rm c})\lor((\lnot{\rm a})\land{\rm c})\\
+                        &=((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm a})\lor{\rm c})=((\lnot{\rm a})\lor{\rm c}).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Quantificatori</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Un predicato è una frase che può assumere significati diversi, cioè essere vera o falsa, a seconda del valore che assumono le sue variabili.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Ad esempio la veridicità della frase "il giorno \({\rm x}\) nevica" dipende da \({\rm x}\) e la verifica di tale veridicità è disponibile solo per alcuni valori di \({\rm x}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\cal C}({\rm x})\) è un predicato nella variabile \({\rm x}\), si scrive \(\forall{\rm x}\,,{\cal C}({\rm x})\) per dire "per ogni \({\rm x}\) si ha \({\cal C}({\rm x})\)".
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\cal C}\) è un predicato nella variabile \({\rm x}\), si scrive \(\exists{\rm x}\!:{\cal C}({\rm x})\) per dire "esiste \({\rm x}\) tale che \({\cal C}({\rm x})\)".
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Si possono scrivere i quantificatori l'uno in termini dell'altro come segue:
+                \begin{split}
+                (\exists{\rm x}\!:\quad{\cal C}({\rm x}))&\longleftrightarrow\lnot(\forall{\rm x}\,,\quad\lnot{\cal C}({\rm x}))\\
+                (\forall{\rm x}\,,\quad{\cal C}({\rm x}))&\longleftrightarrow\lnot(\exists{\rm x}\!:\quad\lnot{\cal C}({\rm x}))
+                \end{split}
+                <button onclick="toggleTesto('bottone5')">Dimostrazione:</button>
+                <div id="bottone5" class="hidden">
+                    <div class="overflow">
+                        NON LO SO.
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Notiamo che se \({\cal A},{\cal B}\) sono predicati,
+                \begin{split}
+                (\forall{\rm x}\,,\quad{\cal A}({\rm x})\land{\cal B}({\rm x}))&\longleftrightarrow((\forall{\rm x}\,,\quad{\cal A}({\rm x}))\land(\forall{\rm x}\,,\quad{\cal B}({\rm x})))\\
+                (\exists{\rm x}\!:\quad{\cal A}({\rm x})\lor{\cal B}({\rm x}))&\longleftrightarrow((\exists{\rm x}\!:\quad{\cal A}({\rm x}))\lor(\exists{\rm x}\!:\quad{\cal B}({\rm x}))).
+                \end{split}
+                <button onclick="toggleTesto('bottone6')">Dimostrazione:</button>
+                <div id="bottone6" class="hidden">
+                    <div class="overflow">
+                        NON LO SO.
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                In un certo senso \(\forall\) è come una congiunzione, mentre \(\exists\) è come una disgiunzione:
+                \begin{split}
+                (\forall{\rm x}\in{\rm A}\cup{\rm B}\,,\quad{\cal C}({\rm x}))&\longleftrightarrow((\forall{\rm x}\in{\rm A}\,,\quad{\cal C}({\rm x}))\land(\forall{\rm x}\in{\rm B}\,,\quad{\cal C}({\rm x})))\\
+                (\exists{\rm x}\in{\rm A}\cup{\rm B}\!:\quad{\cal C}({\rm x}))&\longleftrightarrow((\exists{\rm x}\in{\rm A}\!:\quad{\cal C}({\rm x}))\lor(\exists{\rm x}\in{\rm B}\!:\quad{\cal C}({\rm x}))).
+                \end{split}
+                <button onclick="toggleTesto('bottone7')">Dimostrazione:</button>
+                <div id="bottone7" class="hidden">
+                    <div class="overflow">
+                        Per la prima usare
+                        \begin{split}
+                        {\cal A}({\rm x})&=``{\rm x}\notin{\rm A}\lor{\cal C}({\rm x})"\\
+                        {\cal B}({\rm x})&=``{\rm x}\notin{\rm B}\lor{\cal C}({\rm x})".
+                        \end{split}
+                        Per la seconda usare
+                        \begin{split}
+                        {\cal A}({\rm x})&=``{\rm x}\in{\rm A}\land{\cal C}({\rm x})"\\
+                        {\cal B}({\rm x})&=``{\rm x}\in{\rm B}\land{\cal C}({\rm x})".
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Valgono inoltre le proprietà:
+                \begin{split}
+                (\exists{\rm x}\!:\quad{\cal A}({\rm x})\land{\cal B}({\rm x}))&\longleftarrow((\exists{\rm x}\!:\quad{\cal A}({\rm x}))\land(\forall{\rm x}\,,\quad{\cal B}({\rm x})))\\
+                (\forall{\rm x}\,,\quad{\cal A}({\rm x})\lor{\cal B}({\rm x}))&\longrightarrow((\forall{\rm x}\,,\quad{\cal A}({\rm x}))\lor(\exists{\rm x}\!:\quad{\cal B}({\rm x}))).
+                \end{split}
+                <button onclick="toggleTesto('bottone8')">Dimostrazione:</button>
+                <div id="bottone8" class="hidden">
+                    <div class="overflow">
+                        NON LO SO.
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli spazi vettoriali</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+  
+    <div class="navbar">
+        <button onclick="location.href='../Algebra e Aritmetica/Algebra computazionale.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Elementi finiti.html'">Successiva</button>
+    </div>
+    
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Sia \({\rm A}\in{\mathbb R}^{{\rm d}\cdot{\rm d}}\) e \({\rm v}_{\rm k}\!:{\rm k}\in{\rm d}\) la base canonica.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Prodotto di Kronecker:
+                </h3>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Decomposizione di Gauss</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Sono fatti equivalenti:
+                \begin{split}
+                \left(\forall{\rm k}<{\rm d}\,,\quad{\rm U} \cdot v_k = \sum_{l \le k} v_l \cdot {\rm U}_{l, k}\right) &\longleftrightarrow \left(\forall k < d \,, \quad v_k^\Aster \cdot {\rm U} = \sum_{l \ge k} {\rm U}_{k, l} \cdot v_l^\Aster\right)\\
+                \left(\forall{\rm k}<{\rm d}\,,\quad{\rm L} \cdot v_k = \sum_{l \ge k} v_l \cdot {\rm L}_{l, k}\right) &\longleftrightarrow \left(\forall k < d \,, \quad v_k^\Aster \cdot {\rm L} = \sum_{l \le k} {\rm L}_{k, l} \cdot v_l^\Aster\right).
+                \end{split}
+                e si dice in tal caso che \({\rm L}, {\rm U}\) triangolare inferiore e superiore rispettivamente.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sono fatti equivalenti, \(\forall k < d\):
+                \begin{split}
+                {\rm U} \cdot v_k = \sum_{l \le k} v_l \cdot {\rm U}_{l, k} \longleftrightarrow \forall j > k\,, \quad v_j^\Aster \cdot {\rm U} \cdot v_k = 0.
+                \end{split}
+                \begin{split}
+                v_k^\Aster \cdot {\rm U} = \sum_{l \ge k} {\rm U}_{k, l} \cdot v_l^\Aster \longleftrightarrow \forall j < k\,, \quad v_k^\Aster \cdot {\rm U} \cdot v_j = 0.
+                \end{split}
+                \begin{split}
+                {\rm L} \cdot v_k = \sum_{l \ge k} v_l \cdot {\rm L}_{l, k} \longleftrightarrow \forall j > k\,, \quad v_j^\Aster \cdot {\rm L} \cdot v_k = 0.
+                \end{split}
+                \begin{split}
+                v_k^\Aster \cdot {\rm L} = \sum_{l \le k} {\rm L}_{k, l} \cdot v_l^\Aster \longleftrightarrow \forall j > k\,, \quad v_k^\Aster \cdot {\rm L} \cdot v_j = 0.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sia \({\rm A}\) una matrice, allora è possibile scrivere
+                \begin{split}
+                \exists {\rm L}, {\rm U} \!: &\quad {\rm U} \cdot {\rm A} = {\rm L}\\
+                \exists {\rm L}, {\rm U} \!: &\quad {\rm A} \cdot {\rm L} = {\rm U}\\
+                \exists {\rm L}, {\rm U} \!: &\quad {\rm L} \cdot {\rm A} = {\rm U}\\
+                \exists {\rm L}, {\rm U} \!: &\quad {\rm A} \cdot {\rm U} = {\rm L}.
+                \end{split}
+                Dove si intende \({\rm L}, {\rm U}\) triangolare inferiore e superiore rispettivamente.
+                <br>
+                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        <h3>
+                            Decomposizione UL:
+                        </h3>
+                        Vogliamo trovare
+                        \begin{split}
+                        {\rm U} \cdot {\rm A} = {\rm L}.
+                        \end{split}
+                        Supponiamo che
+                        \begin{split}
+                        \forall j > k\,, \quad {\rm A} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm A}_{l, j}).
+                        \end{split}
+                        Allora scegliamo
+                        \begin{split}
+                        {\rm U} = 1_{\mathbb R^d} - \sum_{l < k} \frac{{\rm A}_{l, k} \cdot (v_l \cdot v_k^\Aster)}{{\rm A}_{k, k}},
+                        \end{split}
+                        in questo modo
+                        \begin{split}
+                        \forall j > k\,, \quad {\rm U} \cdot {\rm A} \cdot v_j = {\rm A} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm A}_{l, j}).
+                        \end{split}
+                        ed inoltre
+                        \begin{split}
+                        \forall j < k\,, \quad v_j^\Aster \cdot {\rm U} \cdot {\rm A} \cdot v_k = {\rm A}_{j, k} - \frac{{\rm A}_{j, k} \cdot {\rm A}_{k, k}}{{\rm A}_{k, k}} = 0.
+                        \end{split}
+                        Cioè, sia \({\rm B} = {\rm U} \cdot {\rm A}\),
+                        \begin{split}
+                        \forall j \ge k\,, \quad {\rm B} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm B}_{l, j}).
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>
+                            Decomposizione LU:
+                        </h3>
+                        Vogliamo trovare
+                        \begin{split}
+                        {\rm L} \cdot {\rm A} = {\rm U}.
+                        \end{split}
+                        Supponiamo che
+                        \begin{split}
+                        \forall j < k\,, \quad {\rm A} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm A}_{l, j}).
+                        \end{split}
+                        Allora scegliamo
+                        \begin{split}
+                        {\rm L} = 1_{\mathbb R^d} - \sum_{l > k} \frac{{\rm A}_{l, k} \cdot (v_l \cdot v_k^\Aster)}{{\rm A}_{k, k}},
+                        \end{split}
+                        in questo modo
+                        \begin{split}
+                        \forall j < k\,, \quad {\rm L} \cdot {\rm A} \cdot v_j = {\rm A} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm A}_{l, j}).
+                        \end{split}
+                        ed inoltre
+                        \begin{split}
+                        \forall j > k\,, \quad v_j^\Aster \cdot {\rm L} \cdot {\rm A} \cdot v_k = {\rm A}_{j, k} - \frac{{\rm A}_{j, k} \cdot {\rm A}_{k, k}}{{\rm A}_{k, k}} = 0.
+                        \end{split}
+                        Cioè, sia \({\rm B} = {\rm L} \cdot {\rm A}\),
+                        \begin{split}
+                        \forall j \le k\,, \quad {\rm B} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm B}_{l, j}).
+                        \end{split}            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>    
+    
+    <h1>Decomposizione di Householder</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                La riflessione \(\sigma_v\) rispetto al vettore \(v\) con \(|v| = 1\) è \(1_{\mathbb R^d} - 2 (v \cdot v^\Aster)\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Una isometria si può scrivere come composizione di \(d\) o \(d - 1\) riflessioni.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                La composizione di \(k\) riflessioni stabilizza almeno uno spazio di dimensione \(d - k\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Ortogonalizzazione di Gram-Schmidt
+                </h3>
+                Esiste \(\rm H\) tale che \({\rm H} \cdot {\rm A} \cdot {\rm H}^{- 1}\) sia triangolare.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sia \({\rm A}\) una matrice, allora è possibile scrivere
+                \begin{split}
+                \exists {\rm H}, {\rm L} \!: &\quad {\rm H} \cdot {\rm A} = {\rm L}\\
+                \exists {\rm H}, {\rm U} \!: &\quad {\rm A} \cdot {\rm H} = {\rm U}\\
+                \exists {\rm H}, {\rm U} \!: &\quad {\rm H} \cdot {\rm A} = {\rm U}\\
+                \exists {\rm H}, {\rm L} \!: &\quad {\rm A} \cdot {\rm H} = {\rm L}.
+                \end{split}
+                Dove si intende \({\rm L}, {\rm U}\) triangolare inferiore e superiore rispettivamente ed \({\rm H}\) ortogonale.
+                <br>
+                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        <h3>
+                            Decomposizione HL:
+                        </h3>
+                        Cerchiamo una riflessione \(\sigma \in {\mathbb R}^{(k + 1) \cdot (k + 1)}\) tale che
+                        \begin{split}
+                        (1 + \sigma) \cdot (1_{{\mathbb R}^{k+1}}|0) \cdot {\rm A} \cdot v_k) = |(1_{{\mathbb R}^{k+1}}|0) \cdot {\rm A} \cdot v_k| v_k
+                        \end{split}
+                        così che, se:
+                        \begin{split}
+                        \forall j > k\,, \quad {\rm A} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm A}_{l, j}),
+                        \end{split}
+                        e sia
+                        \begin{split}
+                        {\rm B} = (1 + (1_{{\mathbb R}^{k+1}}|0)^\Aster \sigma \cdot (1_{{\mathbb R}^{k+1}}|0)) \cdot {\rm A},
+                        \end{split}
+                        allora
+                        \begin{split}
+                        \forall j \ge k\,, \quad {\rm B} \cdot v_j = \sum_{l \ge j} (v_l \cdot {\rm B}_{l, j}).
+                        \end{split}
+                        Cioè abbiamo trovato
+                        \begin{split}
+                        {\rm H} \cdot {\rm A} = {\rm L}.
+                        \end{split}
+                    </div>
+                    <div class="overflow">
+                        <h3>
+                            Decomposizione HU:
+                        </h3>
+                        Cerchiamo una riflessione \(\sigma \in {\mathbb R}^{(d - k) \cdot (d - k)}\) tale che
+                        \begin{split}
+                        (1 + \sigma) \cdot ((0|1_{{\mathbb R}^{d-k}}) \cdot {\rm A} \cdot v_k) = |(0|1_{{\mathbb R}^{d-k}}) \cdot {\rm A} \cdot v_k| v_k
+                        \end{split}
+                        così che, se
+                        \begin{split}
+                        \forall j < k\,, \quad {\rm A} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm A}_{l, j}),
+                        \end{split}
+                        e sia
+                        \begin{split}
+                        {\rm B} = (1 + (0|1_{{\mathbb R}^{d-k}})^\Aster \sigma \cdot (0|1_{{\mathbb R}^{d-k}})) \cdot {\rm A},
+                        \end{split}
+                        allora
+                        \begin{split}
+                        \forall j \le k\,, \quad {\rm B} \cdot v_j = \sum_{l \le j} (v_l \cdot {\rm B}_{l, j}).
+                        \end{split}
+                        Cioè abbiamo trovato
+                        \begin{split}
+                        {\rm H} \cdot {\rm A} = {\rm U}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Matrici Simmetriche</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Consideriamo una matrice simmetrica e semidefinita positiva \(\rm S\) e definiamo per ricorrenza
+                \begin{split}
+                \lambda_{k, n} x_{k, n} = {\rm S} \cdot x_{k, n - 1} - \sum_{h \in k} (x_{k, n - 1}^\Aster \cdot {\rm S} \cdot x_{h, n}) x_{h, n}\\
+                \end{split}
+                con \(|x_{k, n}| = 1\), allora
+                \begin{split}
+                {\rm S} = \sum_{k \in d} \lambda_k (x_k \cdot x_k^\Aster)
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+    <h1>Determinante</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Consideriamo invece una mappa lineare \(\rm A\) e
+                \begin{split}
+                {\rm A}^\Aster \cdot {\rm A} = \sum_{k \in d} \lambda_k^2 (x_k \cdot x_k^\Aster)\\
+                {\rm A} \cdot {\rm A}^\Aster = \sum_{k \in d} \lambda_k^2 (y_k \cdot y_k^\Aster)
+                \end{split}
+                allora possiamo scegliere \(y_k\) di modo che \(\lambda_k > 0\)
+                \begin{split}
+                ({\rm A} \cdot {\rm A}^\Aster)^{- \frac{1}{2}} \cdot {\rm A} = \sum_{k \in d} (y_k \cdot x_k^\Aster) = {\rm H}\\
+                {\rm A} \cdot ({\rm A}^\Aster \cdot {\rm A})^{- \frac{1}{2}} = \sum_{k \in d} (y_k \cdot x_k^\Aster) = {\rm H}.
+                \end{split}
+                Il determinante di una mappa è il volume dell'immagine di un insieme di volume unitario \(\prod_{k \in d} \lambda_k\) , ma con segno negativo se \({\rm H}\) si scrive come un numero dispari di riflessioni.
+                \begin{split}
+                {\rm det} (\sigma_v) = - 1
+                {\rm det} ({\rm A} \cdot {\rm B}) = {\rm det} ({\rm A}) {\rm det} ({\rm B})
+                \end{split}
+                Per il principio di cavalieri il determinante di una matrice triangolare è il prodotto degli elementi sulla diagonale. Come conseguenza, il metodo di Gauss preserva il determinante. In termini di forme differenziali si possono ricavare la formula di Laplace e di Lebesgue (COME ?).
+            </div>
+        </li>
+    </ul>
+
+</body>

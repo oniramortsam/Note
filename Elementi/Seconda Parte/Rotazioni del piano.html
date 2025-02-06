@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotazioni del piano</title>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Rette nel piano.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Coniche nel piano.html'">Successiva</button>
+    </div>
+
+    <h1>Vettori e rotazioni</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Dati due punti \({\rm A} = (x_{\rm A}, y_{\rm A})\) e \({\rm B} = (x_{\rm B}, y_{\rm B})\), esiste un solo vettore
+                \begin{split}
+                u = (x_{\rm B} - x_{\rm A}, y_{\rm B} - y_{\rm A})
+                \end{split}
+                tale che \({\rm A} + u = {\rm B}\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Dati due vettori \(u, v\) di stesso modulo, esiste un solo angolo \(\alpha\) per cui \(v = r_\alpha (u)\). Cioè detta \({\rm O}\) l'origine e \({\rm U} = {\rm O} + u, {\rm V} = {\rm O} + v\), una rotazione attorno ad \(\rm O\) di angolo \(\alpha = {\rm U} \hat{\rm O} {\rm V}\) manda \(\rm U\) in \(\rm V\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Diciamo \(\pi\) l'angolo formato da tre punti allineati, cioè tale che \(r_\pi (u) = - u\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                ({\rm A} + u) + v &= {\rm A} + (u + v)\\
+                r_\alpha (r_\beta (u)) &= r_{\alpha + \beta} (u)\\
+                x \cdot (y \cdot u) &= (y \cdot x) \cdot u\\
+                r_\alpha (x \cdot u) &= x \cdot (r_\alpha (u))\\
+                r_\alpha (u + v) &= r_\alpha (u) + r_\alpha (v)\\
+                x \cdot (u + v) &= x \cdot u + x \cdot v\\
+                (x + y) \cdot u &= x \cdot u + y \cdot u\\
+                |x \cdot u| &= |x| \cdot |u|.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Dati \(n\) punti nel piano
+                \begin{split}
+                {\rm A}_n = {\rm A}_0, \dots {\rm A}_k, {\rm A}_n = {\rm A}_0
+                \end{split}
+                e consideriamo gli angoli
+                \begin{split}
+                \theta_k &= ({\rm A}_k - 2 \cdot {\rm A}_{k - 1}) \hat{\rm A}_k {\rm A}_{k + 1}\\
+                r_{\theta_k} ({\rm A}_k - {\rm A}_{k - 1}) &= {\rm A}_{k + 1} - {\rm A}_k
+                \end{split}
+                da cui otteniamo
+                \begin{split}
+                r_{\theta_{n - 1}} \circ \dots \circ r_{\theta_k} \circ \dots \circ r_{\theta_0} &= r_0\\
+                \theta_{n - 1} + \dots + \theta_k + \dots + \theta_0 &= 2 \cdot \lambda \cdot \pi.
+                \end{split}
+                Diciamo che il poligono \(({\rm A}_k\!: k \in n)\) è convesso se:
+                \begin{split}
+                \forall h \in n\,, \quad (y_{k + 1} - y_k) \cdot x_h + y_h \cdot (x_k - x_{k + 1}) \le y_{k + 1} \cdot x_k - y_k \cdot x_{k + 1},
+                \end{split}
+                o equivalentemente, se
+                \begin{split}
+                \forall h \in n\,, \quad ({\rm A}_{k + 1} - {\rm A}_k) \times ({\rm A}_h - {\rm A}_k) \ge 0.
+                \end{split}
+                In tal caso abbiamo necessariamente \(\lambda=1\) e
+                \begin{split}
+                \forall{\rm k}\in{\rm n}\,,\quad\theta_{\rm k}>0
+                \end{split}
+                <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        Boh, questa è impegnativa.
+                    </div>
+                </div>
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Una traslazione composta una rotazione è una rotazione composta una traslazione.
+                <br>
+                Una traslazione composta una dilatazione isotropa è una dilatazione isotropa composta una traslazione.
+                <br>
+                Le rotazioni commutano con le dilatazioni isotrope.
+                <br>
+                Le traslazioni mandano rette in rette parallele.
+                <br>
+                Le traslazioni conservano le distanze.
+                <br>
+                Le rotazioni conservano gli angoli.
+                <br>
+                Le rotazioni conservano le distanze.
+                <br>
+                Le dilatazioni isotrope mandano rette in rette parallele.
+                <br>
+                Le dilatazioni isotrope moltiplicano le distanze per una costante.
+                <br>
+                Dati due segmenti orientati, esiste una unica trasformazione conforme che manda l'uno nell'altro.
+                <br>
+                <button onclick="toggleTesto('bottone1')">Soluzioni:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+    <h1>Prodotto scalare e vettoriale</h1>
+    
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Dati due vettori \(u, v\), esistono unici \(a, b\) tali che
+                \begin{split}
+                v = a \cdot u + b \cdot r_\frac{\pi}{2} (u).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice prodotto scalare \(u^\star \cdot v = a \cdot |u|^2\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Si dice prodotto vettoriale \(u \times v = b \cdot |u|^2\).
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                u \cdot u = |u|^2 &\qquad u \times u = 0\\
+                u \cdot v = v \cdot u &\qquad u \times v + v \times u = 0\\
+                u \cdot (r_\frac{\pi}{2} (u)) = 0 &\qquad u \times (r_\frac{\pi}{2} (u)) = |u|^2\\
+                (r_\alpha (u)) \cdot (r_\alpha (v)) = u \cdot v &\qquad (r_\alpha (u)) \times (r_\alpha (v)) = u \times v\\
+                u \cdot (x \cdot v + w) = x \cdot (u \cdot v) + (u \cdot w) &\qquad u \times (x \cdot v + w) = x \cdot (u \times v) + (u \times w).
+                \end{split}
+                <button onclick="toggleTesto('bottone2')">Soluzioni:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                u \times v &= (r_\frac{\pi}{2} (u))^\star \cdot v\\
+                |u \cdot v|^2 + |u \times v|^2 &= |u|^2 \cdot |v|^2.    
+                \end{split}
+                <button onclick="toggleTesto('bottone3')">Soluzioni:</button>
+                <div id="bottone3" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+    <h1>Goniometria</h1>
+    
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Siano
+                \begin{split}
+                r_\alpha \cdot u = a \cdot u + b \cdot (r_\frac{\pi}{2} \cdot u).
+                \end{split}
+                <br>
+                Si dice coseno di \(\alpha\) il valore \(a := \cos(\alpha)\).
+                <br>
+                Si dice seno di \(\alpha\) il valore \(b := \sin(\alpha)\).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Formule di addizione:
+                </h3>
+                \begin{split}
+                \cos(\alpha + \beta) &= \cos(\alpha) \cdot \cos(\beta) - \sin(\alpha) \cdot \sin(\beta)\\
+                \sin(\alpha + \beta) &= \sin(\alpha) \cdot \cos(\beta) + \cos(\alpha) \cdot \sin(\beta).
+                \end{split}
+                <button onclick="toggleTesto('bottone4')">Dimostrazione:</button>
+                <div id="bottone4" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Formule di Werner:
+                </h3>
+                \begin{split}
+                \cos(\alpha) \cdot \cos(\beta) &= \frac{\cos(\alpha + \beta) + \cos(\alpha - \beta)}{2}\\
+                \sin(\alpha) \cdot \cos(\beta) &= \frac{\sin(\alpha + \beta) + \sin(\alpha - \beta)}{2}\\
+                \sin(\alpha) \cdot \sin(\beta) &= \frac{\cos(\alpha - \beta) - \cos(\alpha + \beta)}{2.}
+                \end{split}
+                <button onclick="toggleTesto('bottone5')">Dimostrazione:</button>
+                <div id="bottone5" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Formule di prostaferesi:
+                </h3>
+                \begin{split}
+                \cos(\alpha) + \cos(\beta) &= 2 \cdot \left(\cos\left(\frac{\alpha + \beta}{2}\right) \cdot \cos\left(\frac{\alpha - \beta}{2}\right)\right)\\
+                \cos(\alpha) - \cos(\beta) &= 2 \cdot \left(\sin\left(\frac{\alpha + \beta}{2}\right) \cdot \sin\left(\frac{\alpha - \beta}{2}\right)\right)\\
+                \sin(\alpha) + \sin(\beta) &= 2 \cdot \left(\sin\left(\frac{\alpha + \beta}{2}\right) \cdot \cos\left(\frac{\alpha - \beta}{2}\right)\right).
+                \end{split}
+                <button onclick="toggleTesto('bottone6')">Dimostrazione:</button>
+                <div id="bottone6" class="hidden">
+                    <div class="overflow">
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>

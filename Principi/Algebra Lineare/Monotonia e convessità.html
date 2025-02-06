@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monotonia e convessità</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+  
+    <div class="navbar">
+        <button onclick="location.href='Geometria proiettiva.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Matrici positive.html'">Successiva</button>
+    </div>
+    
+    <h1>Convessità</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianza Di Hölder-Riesz-Thorin:
+                </h3>
+                Dalla convessità di \(x^p\) per \(p \ge 1\) si ha:
+                \begin{split}
+                \frac{\sum_{k \in n} a_k \cdot b_k}{\sum_{k \in n} a_k} &\le \left(\frac{\sum_{k \in n} a_k \cdot b_k^p}{\sum_{k \in n} a_k}\right)^\frac{1}{p}\\
+                \sum_{k \in n} a_k \cdot b_k &\le \left(\sum_{k \in n} a_k \cdot b_k^p\right)^\frac{1}{p} \cdot \left(\sum_{k \in n} a_k\right)^\frac{p - 1}{p}\\
+                \sum_{k \in n} a_k \cdot b_k &\le \left(\sum_{k \in n} a_k^p\right)^\frac{1}{p} \cdot \left(\sum_{k \in n} b_k^\frac{p}{p - 1}\right)^\frac{p - 1}{p}.
+                \end{split}
+                Da cui otteniamo la diseguaglianza di Hölder. Da questa otteniamo quella di Riesz-Thorin semplicemente come (?)
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianze tra medie:
+                </h3>
+                Se \(0 < p \le q\), dalla convessità di \(x^\frac{q}{p}\) riscrivendo la prima si ottiene:
+                \begin{split}
+                \left(\frac{\sum_{k \in n} a_k \cdot b_k^p}{\sum_{k \in n} a_k}\right)^\frac{1}{p} &\le \left(\frac{\sum_{k \in n} a_k \cdot b_k^q}{\sum_{k \in n} a_k}\right)^\frac{1}{q}\\
+                \left(\frac{\sum_{k \in n} a_k \cdot b_k^{- q}}{\sum_{k \in n} a_k}\right)^\frac{1}{- q} &\le \left(\frac{\sum_{k \in n} a_k \cdot b_k^{- p}}{\sum_{k \in n} a_k}\right)^\frac{1}{- p}.
+                \end{split}
+                Dalla concavità di \(\log(x)\) si ha:
+                \begin{split}
+                \frac{\sum_{k \in n} a_k \cdot \log (b_k)}{\sum_{k \in n} a_k} &\le \log \left(\frac{\sum_{k \in n} a_k \cdot b_k}{\sum_{k \in n} a_k}\right)\\
+                \left(\prod_{k \in n} b_k^{a_k}\right)^\frac{1}{\sum_{k \in n} a_k} &\le \frac{\sum_{k \in n} a_k \cdot b_k}{\sum_{k \in n} a_k}\\
+                \left(\prod_{k \in n} b_k^{a_k}\right)^\frac{1}{\sum_{k \in n} a_k} &\le \left(\frac{\sum_{k \in n} a_k \cdot b_k^p}{\sum_{k \in n} a_k}\right)^\frac{1}{p}\\
+                \left(\frac{\sum_{k \in n} a_k \cdot b_k^{- p}}{\sum_{k \in n} a_k}\right)^\frac{1}{- p} &\le \left(\prod_{k \in n} b_k^{a_k}\right)^\frac{1}{\sum_{k \in n} a_k}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianza Di Young:
+                </h3>
+                Se
+                \begin{split}
+                \frac{1}{\alpha} + \frac{1}{\beta} + \frac{1}{\gamma} = 2,
+                \end{split}
+                allora (DIMOSTRAZIONE?)
+                \begin{split}
+                \sum_{k, h \in {\mathbb Z}} a_k b_h c_{k + h} \le \left(\sum_{k \in {\mathbb Z}} a_k^\alpha\right)^\frac{1}{\alpha} \cdot \left(\sum_{k \in {\mathbb Z}} b_k^\beta\right)^\frac{1}{\beta} \cdot \left(\sum_{k \in {\mathbb Z}} c_k^\gamma\right)^\frac{1}{\gamma}
+                \end{split}
+                Questa si generalizza al caso
+                \begin{split}
+                \sum_{i \in d} \frac{1}{\alpha_i} = d - 1,
+                \end{split}
+                come
+                \begin{split}
+                \sum_{k \in {\mathbb Z}^d \!: \sum_{i \in d} k_i = 0} \prod_{i \in d} a_{i, k_i} \le \prod_{i \in d} \left(\sum_{k \in {\mathbb Z}} a_{i, k_i}^{\alpha_i}\right)^\frac{1}{\alpha_i}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianza di Gagliardo:
+                </h3>
+                Sia \(\pi_i: {\mathbb Z}^d \rightarrow {\mathbb Z}^{d - 1}\), la proiezione canonica, allora
+                \begin{split}
+                \sum_{{\rm k}\in{\mathbb Z}^{\rm d}}\prod_{{\rm i}\in{\rm d}}{\rm a}_{{\rm i},\pi_{\rm i}\cdot{\rm k}}\le\prod_{{\rm i}\in{\rm d}}\left(\sum_{{\rm k}\in{\mathbb Z}^{{\rm d}-1}}{\rm a}_{{\rm i},{\rm k}}^{{\rm d}-1}\right)
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianza di Hardy-Littlewood-Pólya:
+                </h3>
+                La diseguaglianza di riarrangiamento afferma che se
+                \begin{split}
+                a_k \le a_{k + 1}\\
+                b_k \le b_{k + 1},
+                \end{split}
+                allora
+                \begin{split}
+                \sum_{k \le n} a_k b_{n - k} \le \sum_{k \le n} a_k b_{\sigma (k)} \le \sum_{k \le n} a_k b_k.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianza di Schur:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianza di Newton:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianza di MacLaurin:
+                </h3>    
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Diseguaglianza di Hardy:
+                </h3>    
+            </div>
+        </li>
+    </ul>
+
+</body>

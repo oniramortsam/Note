@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisi di Fourier</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Analisi complessa.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Spazi di Sobolev.html'">Successiva</button>
+    </div>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Per \({\rm f}\in{\cal L}({\mathbb R}^{\rm d})\) si definisce
+                \begin{split}
+                {\cal F}{\rm f}=\int\exp(-2\pi{\rm i}({\rm x}\cdot{\rm y})){\rm f}({\rm x})\cdot\partial{\rm x}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\cal F}\left({\rm f}({\rm x}+{\rm t})\right)&=\exp(2\pi{\rm i}{\rm a}\cdot{\rm y})\cdot{\cal F}{\rm f}\\
+                {\cal F}(\exp(2\pi{\rm i}{\rm a}\cdot{\rm x})\cdot{\rm f})&=({\cal F}{\rm f})({\rm y}-{rm a})\\
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\cal F}\left({\rm f}\left(\frac{\rm x}{\lambda}\right)\right)&=\lambda^{\rm d}({\cal F}{\rm f})(\lambda\cdot{\rm y})\\
+                ({\cal F}{\rm f})\left(\frac{\rm y}{\lambda}\right)&=\lambda^{\rm d}{\cal F}({\rm f}(\lambda\cdot{\rm x})).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                \nabla({\cal F}{\rm f})&=-2\pi{\rm i}{\cal F}({\rm x}\cdot{\rm f})\\
+                {\cal F}(\nabla{\rm f})&=2\pi{\rm i}{\rm y}\cdot({\cal F}{\rm f}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\cal F}({\rm f}\star{\rm g})&=({\cal F}{\rm f})\cdot({\cal F}{\rm g})\\
+                {\cal F}(({\cal F}{\rm f})\cdot{\rm g})&=({\rm f}\star({\cal F}{\rm g})(-{\rm y}))(-{\rm x}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\cal F}(\exp(-\pi{\rm x}^2))&=\exp(-\pi{\rm y}^2)\int\exp(-\pi{\rm x}^2)\partial{\rm x}\\
+                &=\exp(-\pi{\rm y}^2)\frac{1}{(2\pi)^\frac{{\rm d}}{2}}\int\exp\left(-\frac{{\rm x}^2}{2}\right)\partial{\rm x}\\
+                &=\exp(-\pi{\rm y}^2).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\cal F}({\cal F}{\rm f})={\rm f}(-{\rm x}).
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                \int({\cal F}{\rm f})\cdot({\cal F}{\rm g})\cdot\partial{\rm y}=({\rm f}\star{\rm g})(0).
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+    <ul>
+        \(\zeta(2\cdot{\rm n})=\frac{2^{2{\rm n}-1}\pi^{2{\rm n}}|{\rm B}_{2\cdot{\rm n}}|}{(2{\rm n})!}\)
+        numeri di Bernoulli!?!?
+    </ul>
+
+</body>

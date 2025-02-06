@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrali in una variabile</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Derivate in una variabile.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+
+    </div>
+
+    <h1>Integrali</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                L'integrale è il contrario della derivata.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Integrazione per parti:
+                </h3>
+                \begin{split}
+                \int_{\rm a}^{\rm b}\nabla{\rm f}({\rm x})\cdot{\rm g}({\rm x})\cdot\partial{\rm x}+\int_{\rm a}^{\rm b}{\rm f}({\rm x})\cdot\nabla{\rm g}({\rm x})\cdot\partial{\rm x}&={\rm f}({\rm b})\cdot{\rm g}({\rm b})-{\rm f}({\rm a})\cdot{\rm g}({\rm a})\\
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Integrazione per sostituzione:
+                </h3>
+                \begin{split}
+                \int_{{\rm g}({\rm a})}^{{\rm g}({\rm b})}{\rm f}({\rm y})\partial{\rm y}=\int_{\rm a}^{\rm b}{\rm f}({\rm g}({\rm x}))\partial{\rm g}({\rm x})&=\int_{\rm a}^{\rm b}({\rm f}\circ{\rm g})({\rm x})\partial{\rm x}\\
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Fubini-Tonelli:
+                </h3>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Integrali notevoli:
+                </h3>
+                \begin{split}
+                \sin({\rm x})&=\int_0^{\rm x}\cos({\rm t})\partial{\rm t}={\rm x}-\int_0^{\rm x}({\rm x}-{\rm t})\cdot\sin({\rm t})\cdot\partial{\rm t}\\
+                &=\sum_{{\rm k}\in{\rm n}}\frac{(-1)^{\rm k}\cdot{\rm x}^{2{\rm k}+1}}{(2{\rm k}+1)!}+\frac{(-1)^{\rm n}}{(2{\rm n}-1)!}\int_0^{\rm x}({\rm x}-{\rm t})^{2{\rm n}-1}\cdot\sin({\rm t})\cdot\partial{\rm t}\\
+                &=\sum_{{\rm k}\in{\rm n}}\frac{(-1)^{\rm k}\cdot{\rm x}^{2{\rm k}+1}}{(2{\rm k}+1)!}+\frac{(-1)^{\rm n}}{(2{\rm n})!}\int_0^{\rm x}({\rm x}-{\rm t})^{2{\rm n}}\cdot\cos({\rm t})\cdot\partial{\rm t}\\
+                \cos({\rm x})&=1-\int_0^{\rm x}\sin({\rm t})\partial{\rm t}=1-\int_0^{\rm x}({\rm x}-{\rm t})\cdot\cos({\rm t})\partial{\rm t}\\
+                &=\sum_{{\rm k}\in{\rm n}}\frac{(-1)^k\cdot{\rm x}^{2{\rm k}}}{(2 \cdot k)!}+\int_0^x \frac{(- 1)^{\rm n}\cdot({\rm x}-{\rm t})^{2n-2}}{(2{\rm n}-2)!}\cdot\sin({\rm t})\partial{\rm t}\\
+                &=\sum_{{\rm k}\in{\rm n}}\frac{(-1)^k\cdot{\rm x}^{2{\rm k}}}{(2 \cdot k)!}+\int_0^x \frac{(- 1)^{\rm n}\cdot({\rm x}-{\rm t})^{2n-1}}{(2{\rm n}-1)!}\cdot\cos({\rm t})\partial{\rm t}\\
+                \exp({\rm x})&=1+\int_0^{\rm x}\exp({\rm t})\partial{\rm t}=\sum_{{\rm k}\in{\rm n}}\frac{x^k}{k!}+\int_0^{\rm x}\frac{({\rm x}-{\rm t})^{{\rm n}-1}\cdot\exp({\rm t})}{({\rm n}-1)!}\partial{\rm t}\\
+                \log(1+{\rm x})&=\int_0^{\rm x}\frac{\partial{\rm t}}{1+{\rm t}}=\sum_{{\rm n}\in{\mathbb N}}\int_0^{\rm x}(-{\rm t})^{\rm n}\cdot\partial{\rm t}=\sum_{{\rm n}\in{\mathbb N}}\frac{(-1)^{\rm n}\cdot{\rm x}^{{\rm n}+1}}{n + 1}\\
+                \arctan({\rm x})&=\int_0^{\rm x}\frac{\partial{\rm t}}{1+{\rm t}^2}=\sum_{{\rm n}\in{\mathbb N}}\int_0^{\rm x}(-{\rm t}^2)^{\rm n}\cdot\partial{\rm t}=\sum_{{\rm n}\in{\mathbb N}}\frac{(-1)^{\rm n}\cdot{\rm x}^{2{\rm n}+1}}{2{\rm n}+1}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sia
+                \begin{split}
+                {\rm p}_0&={\rm x}\\
+                {\rm p}_{{\rm n}+1}({\rm x})&=\frac{\partial{\rm p}_{\rm n}({\rm y})}{\partial{\rm y}}({\rm x})\cdot(1+{\rm x}^2).
+                \end{split}
+                allora
+                \begin{split}
+                \frac{\partial^{\rm n}\tan({\rm y})}{(\partial{\rm y})^{\rm n}}({\rm x})&={\rm p}_{\rm n}(\tan({\rm x}))\\
+                \int_0^{\rm x}{\rm p}_{\rm n}(\tan({\rm t}))\partial{\rm t}&={\rm p}_{{\rm n}-1}(\tan({\rm x}))-{\rm p}_{{\rm n}-1}(0).
+                \end{split}
+            </div>
+        </li>
+    </ul>
+
+    <h1>Integrali notevoli:</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Beta di Eulero:
+                </h3>
+                \begin{split}
+                \Gamma({\rm n})=\int_0^\infty{\rm x}^{\rm n}\exp(-{\rm x})={\rm n}!
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Gaussiana:
+                </h3>
+                \begin{split}
+                \int_{\mathbb R}\exp\left(-\frac{{\rm x}^2}{2}\right)\partial{\rm x}=\sqrt{2\pi.}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Ipersfera:
+                </h3>
+                \begin{split}
+                \int_{{\mathbb R}^{\rm n}}{\rm f}\left(|{\rm x}|\right)\prod_{{\rm k}\in{\rm n}}(\partial{\rm x}_{\rm k})=\frac{2\pi^\frac{n}{2}}{\Gamma\left(\frac{n}{2}\right)}\int_0^\infty{\rm f}({\rm x}){\rm x}^{{\rm n}-1}\partial{\rm x}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Beta di Eulero:
+                </h3>
+                \begin{split}
+                \beta_{{\rm a},{\rm b}}&=\int_0^1{\rm x}^{{\rm a}-1} (1-{\rm x})^{{\rm b}-1}\partial{\rm x}\\
+                &=2\int_0^\frac{\pi}{2}\sin({\rm x})^{2{\rm a}-1}\cos({\rm x})^{2{\rm b}-1}\partial{\rm x}\\
+                &=2\left(\int_0^\infty{\rm x}^{2{\rm a}-1}\cdot\exp\left(-\frac{{\rm x}^2}{2}\right)\cdot\partial{\rm x}\right)\cdot\left(\int_0^\infty{\rm x}^{2{\rm b}-1}\exp\left(-\frac{{\rm x}^2}{2}\right)\cdot\partial{\rm x}\right)\cdot\left(\int_0^\infty{\rm x}^{2({\rm a}+{\rm b})-1}\exp\left(-\frac{{\rm x}^2}{2}\right)\cdot\partial{\rm x}\right)^{- 1}\\\\
+                &=\frac{\Gamma({\rm a})\cdot\Gamma({\rm b})}{\Gamma({\rm a}+{\rm b}).}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Stirling:
+                </h3>
+                \begin{split}
+                {\rm n}!=\int_0^\infty{\rm x}^{\rm n}\exp(-{\rm x})\partial{\rm x}=\int_0^\infty\exp({\rm n}\cdot\log({\rm x})-{\rm x})\cdot\partial{\rm x}\simeq\left(\frac{\rm n}{\it e}\right)^{\rm n}\cdot\int_{\mathbb R}\exp\left(-\frac{{\rm x}^2}{2{\rm n}}\right)\cdot\partial{\rm x}=\left(\frac{\rm n}{\it e}\right)^{\rm n}\cdot\sqrt{2\pi{\rm n}}
+                \end{split}
+            </div>
+        </li>
+    </ul>

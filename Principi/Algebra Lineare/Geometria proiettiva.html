@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometria proiettiva</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Elementi finiti.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Monotonia e convessità.html'">Successiva</button>
+    </div>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Consideriamo \(a + b = n\) e gli spazi di dimensione \(a \cdot b\)
+                \begin{split}
+                \frac{\{{\rm A} \in \mathbb R^{a \cdot n}, {\rm det} ({\rm A} \cdot {\rm A}^{\star}) \ne 0\}}{{\rm sx}({\cal GL} (a))} \qquad \frac{\{{\rm B} \in \mathbb R^{n \cdot b}, {\rm det} ({\rm B} \cdot {\rm B}^{\star}) \ne 0\}}{{\rm dx}({\cal GL} (b))}
+                \end{split}
+                Allora esiste una bigezione canonica \(\{{\rm Ker} ({\rm A}) = {\rm Imm} ({\rm B})\}\) tra i due.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Il coniugio tramite questa bigezione sull'azione di \({\cal GL} (n)\) è l'inversa.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                L'azione di \({\cal GL} (n)\) ha dimensione \(n^2 - 1 = a^2 + b^2 + 2 a \cdot b - 1\).
+            </div>
+        </li>
+    </ul>
+
+    <h1>Polinomi di più variabili</h1>
+    
+</body>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proprietà delle operazioni</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+  
+    <div class="navbar">
+        <button onclick="location.href='Insiemi e funzioni.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Numeri naturali.html'">Successiva</button>
+    </div>
+
+    <h1>I Numeri Interi e Razionali</h1>
+
+    <ul>
+        <li>
+            <div class="textwrap">
+                I numeri interi \({\mathbb Z}\) si possono scrivere come
+                \begin{split}
+                \myeq{\rm x}{\pm{\rm a}},
+                \end{split}
+                cioè concatenando il segno \(\pm\) ed il modulo naturale \({\rm a}\). In generale vale
+                \begin{split}
+                \myforall{{\rm a}\in{\mathbb N}}{\mylle{-{\rm a}}{0}{+{\rm a}}}
+                \end{split}
+                con uguaglianza se e solo se il modulo \({\rm a}\) è \(0\).
+            </div>
+        </li>
+        <li>
+            <div class="textwrap">
+                I numeri razionali \({\mathbb Q}\) si possono scrivere come
+                \begin{split}
+                \myeq{\rm x}{\pm{\rm a}.{\rm b}\overline{\rm c}}
+                \end{split}
+                concatenando il segno \(\pm\), la parte intera \({\rm a}\) naturale, la mantissa non periodica \({\rm b}\) (una sequenza di \(\beta\) cifre) e la mantissa periodica \({\rm c}\) (una sequenza di \(\gamma\) cifre).
+            </div>
+        </li>
+        <li>
+            <div class="textwrap">
+                Si conviene che se la mantissa periodica è la ripetizione della stessa sequenza di cifre, può essere sostituita con tale sequenza. Ad esempio
+                \begin{split}
+                0.\overline{66} = 0.\overline{6}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="textwrap">
+                Inoltre se la mantissa periodica è sottosequenza terminale della mantissa non periodica, quest'ultima può essere ignorata. Ad esempio
+                \begin{split}
+                \myeq{0.6\overline{6}}{0.\overline{6}}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="textwrap">
+                Si conviene che se la mantissa periodica è \(9\), questa si rimuove e si aggiunge \(1\) alla mantissa non periodica se presente, altrimenti alla parte intera. Ad esempio
+                \begin{split}
+                \myeq{0.\overline{9}}{1}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="textwrap">
+                Se si considerano le mantisse \({\rm b},{\rm c}\) come numeri naturali \({\rm b},{\rm c}\in{\mathbb N}\) bisogna specificare il numero di cifre \(\beta, \gamma\) ed aggiungere eventualmente gli zeri a sinistra (ad esempio \(``01"\) è \(1\), ma scritto con due cifre, mentre \(10\) è il primo naturale che non può essere scritto con una sola cifra. Cioè per qualunque sequenza di cifre si avrà
+                \begin{split}
+                \mylt{\rm b}{10^\beta}\\
+                \mylt{\rm c}{10^\gamma}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="textwrap">
+                Si può scrivere un numero razionale come frazione \(\pm{\rm N}/{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali.
+                <br>
+                <button onclick="toggleTesto('approfondimento1')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento1" class="hidden">
+                    <div class="overflow">
+                        Per dimostralo usiamo la <a href="../Seconda Parte/Polinomi in una variabile.html#serie geometrica">serie geometrica</a> con \({\rm x}=10^{-\gamma}\)
+                        \begin{split}
+                        \myeq{\myprod{\MyBigSumm{\rm k}{{\mathbb N}\setminus\{0\}}{10^{-{\rm k}}\cdot\gamma}}{\MyDiff{1}{10^{-\gamma}}}}{10^{-\gamma}}.
+                        \end{split}
+                        Da cui,
+                        \begin{split}
+                        {\rm a}.{\rm b}\overline{\rm c}&={\rm a}+\frac{\rm b}{10^\beta}+{\rm c}\cdot10^{-\beta}\cdot\left(\sum_{{\rm k}\in{\mathbb N}\setminus\{0\}}10^{-{\rm k}\cdot\gamma}\right)\\
+                        &={\rm a}+\frac{\rm b}{10^\beta}+\frac{c\cdot10^{-\beta-\gamma}}{1-10^{-\gamma}}\\
+                        &={\rm a}+\frac{{\rm b}\cdot(10^\gamma-1)+c}{10^\beta\cdot(10^\gamma-1).}
+                        \end{split}
+                    </div>
+                </div>
+                <br>
+                Viceversa una frazione \(\pm{\rm N}/{\rm D}\) con numeratore \({\rm N}\) e denominatore \({\rm D}\) naturali si può scrivere in forma decimale.
+                <br>
+                <button onclick="toggleTesto('approfondimento2')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento2" class="hidden">
+                    <div class="overflow">
+                        Sia \({\rm D}=2^{{\rm D}\|2}\cdot5^{{\rm D}\|5}\cdot{\rm m}\). Poiché
+                        \begin{split}
+                        \Replace{\myrest{10^k}{\rm m}}{\rm k}{\rm m}\subseteq{\rm m}\setminus\{0\}
+                        \end{split}
+                        è un insieme di cardinalità \(< m\), quindi per il teorema dei piccioni deve esserci una ridondanza
+                        \begin{split}
+                        \exists{\rm k}_0<{\rm k}_1\le{\rm m}\!:\quad10^{{\rm k}_0}\%{\rm m}=10^{{\rm k}_1}\%{\rm m}.
+                        \end{split}
+                        Allora scegliendo \(\beta=\max(\myinde{\rm D}{2},\myinde{\rm D}{5})\) e \(\gamma={\rm k}_1-{\rm k}_0\) si ottiene
+                        \begin{split}
+                        \frac{\rm N}{\rm D}=\MyQuot{\rm N}{\rm D}+\frac{\MyRest{\rm N}{\rm D}\cdot\MyQuot{\MyProd{10^\beta}{\MyDiff{10^\gamma}{1}}}{\rm D}}{10^\beta\cdot(10^\gamma-1)}
+                        \end{split}
+                        che scrivendo
+                        \begin{split}
+                        {\rm a}&=({\rm N}/\!/{\rm D})\\
+                        {\rm b}&=\MyQuot{\MyRest{\rm N}{\rm D}\cdot\MyQuot{\MyProd{10^\beta}{\MyDiff{10^\gamma}{1}}}{\rm D}}{\MyDiff{10^\gamma}{1}}\\
+                        {\rm c}&=\MyRest{\MyRest{\rm N}{\rm D}\cdot\MyQuot{\MyProd{10^\beta}{\MyDiff{10^\gamma}{1}}}{\rm D}}{\MyDiff{10^\gamma}{1}},
+                        \end{split}
+                        permette la <a href="Numeri naturali.html#scrittura in base">scrittura in base</a> decimale di \(\frac{\rm D}{\rm N}\).
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <button onclick="toggleTesto('approfondimento3')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento3" class="hidden">
+                    <div class="overflow">
+                        Grazie al <a href="Insiemi e funzioni.html#principio di induzione">principio di induzione</a> si possono dimostrare le proprietà delle operazioni a partire dalle definizioni per ricorrenza:
+                        \begin{split}
+                        {\rm a}+({\rm b}+1)&=({\rm a}+{\rm b})+{\rm 1}\\
+                        {\rm a}\cdot({\rm b}+1)&=({\rm a}\cdot{\rm b})+{\rm b}\\
+                        {\rm a}^{{\rm b}+1}&={\rm a}^{\rm b}\cdot{\rm b}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Proprietà associativa</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Dati tre numeri \({\rm A},{\rm B},{\rm C}\) (che siano o meno interi)
+                \begin{split}
+                \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}+({\rm B}+{\rm C})&=({\rm A}+{\rm B})+{\rm C}\\
+                \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}\cdot({\rm B}\cdot{\rm C})&=({\rm A}\cdot{\rm B})\cdot{\rm C}.
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm a}+({\rm b}+({\rm c}+{\rm d}))&=({\rm a}+{\rm b})+({\rm c}+{\rm d})\\
+                ({\rm a}+{\rm b})+({\rm c}+{\rm d})&=(({\rm a}+{\rm b})+{\rm c})+{\rm d}\\
+                (({\rm a}+{\rm b})+{\rm c})+{\rm d}&=({\rm a}+({\rm b}+{\rm c}))+{\rm d}\\
+                ({\rm a}+({\rm b}+{\rm c}))+{\rm d}&={\rm a}+(({\rm b}+{\rm c})+{\rm d})\\
+                {\rm a}+(({\rm b}+{\rm c})+{\rm d})&={\rm a}+({\rm b}+({\rm c}+{\rm d})).
+                \end{split}
+                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        Basta applicare la proprietà associativa con:
+                        \begin{split}
+                        {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b},{\rm c}+{\rm d}\\
+                        {\rm A},{\rm B},{\rm C}&={\rm a}+{\rm b},{\rm c},{\rm d}\\
+                        {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b},{\rm c}\\
+                        {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b}+{\rm c},{\rm d}\\
+                        {\rm A},{\rm B},{\rm C}&={\rm b},{\rm c},{\rm d}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm a}\cdot({\rm b}\cdot({\rm c}\cdot{\rm d}))&=({\rm a}\cdot{\rm b})\cdot({\rm c}\cdot{\rm d})\\
+                ({\rm a}\cdot{\rm b})\cdot({\rm c}\cdot{\rm d})&=(({\rm a}\cdot{\rm b})\cdot{\rm c})\cdot{\rm d}\\
+                (({\rm a}\cdot{\rm b})\cdot{\rm c})\cdot{\rm d}&=({\rm a}\cdot({\rm b}\cdot{\rm c}))\cdot{\rm d}\\
+                ({\rm a}\cdot({\rm b}\cdot{\rm c}))\cdot{\rm d}&={\rm a}\cdot(({\rm b}\cdot{\rm c})\cdot{\rm d})\\
+                {\rm a}\cdot(({\rm b}\cdot{\rm c})\cdot{\rm d})&={\rm a}\cdot({\rm b}\cdot({\rm c}\cdot{\rm d})).
+                \end{split}
+                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        Basta applicare la proprietà associativa con:
+                        \begin{split}
+                        {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b},{\rm c}\cdot{\rm d}\\
+                        {\rm A},{\rm B},{\rm C}&={\rm a}\cdot{\rm b},{\rm c},{\rm d}\\
+                        {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b},{\rm c}\\
+                        {\rm A},{\rm B},{\rm C}&={\rm a},{\rm b}\cdot{\rm c},{\rm d}\\
+                        {\rm A},{\rm B},{\rm C}&={\rm b},{\rm c},{\rm d}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <button onclick="toggleTesto('approfondimento4')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento4" class="hidden">
+                    <div class="overflow">
+                        La proprietà associativa si estende con il <a href="Insiemi e funzioni.html#principio di induzione">principio di induzione</a> a:
+                        \begin{split}
+                        \sum_{{\rm k}\in{\rm m}}\left(\sum_{{\rm h}\in{\rm m}_{\rm k}}{\rm a}_{{\rm h}+\sum_{{\rm j}\in{\rm k}}{\rm m}_{\rm j}}\right)=\sum_{{\rm h}\in\sum_{{\rm j}\in{\rm m}}{\rm m}_{\rm j}}{\rm a}_{\rm h}\\
+                        \prod_{{\rm k}\in{\rm m}}\left(\prod_{{\rm h}\in{\rm m}_{\rm k}}{\rm a}_{{\rm h}+\sum_{{\rm j}\in{\rm k}}{\rm m}_{\rm j}}\right)=\prod_{{\rm h}\in\sum_{{\rm j}\in{\rm m}}{\rm m}_{\rm j}}{\rm a}_{\rm h}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Proprietà commutativa</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}+{\rm B}&={\rm B}+{\rm A}\\
+                \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}\cdot{\rm B}&={\rm B}\cdot{\rm A}.
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm a}+{\rm b}+{\rm c}&={\rm a}+{\rm c}+{\rm b}\\
+                {\rm a}+{\rm b}+{\rm c}&={\rm b}+{\rm a}+{\rm c}\\
+                {\rm a}+{\rm b}+{\rm c}&={\rm b}+{\rm c}+{\rm a}\\
+                {\rm a}+{\rm b}+{\rm c}&={\rm c}+{\rm a}+{\rm b}.
+                \end{split}
+                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                        Basta applicare la proprietà commutativa con:
+                        \begin{split}
+                        {\rm A},{\rm B}&={\rm b},{\rm c}\\
+                        {\rm A},{\rm B}&={\rm a},{\rm b}\\
+                        {\rm A},{\rm B}&={\rm a},{\rm b}+{\rm c}\\
+                        {\rm A},{\rm B}&={\rm a}+{\rm b},{\rm c}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm a}\cdot{\rm b}\cdot{\rm c}&={\rm a}\cdot{\rm c}\cdot{\rm b}\\
+                {\rm a}\cdot{\rm b}\cdot{\rm c}&={\rm b}\cdot{\rm a}\cdot{\rm c}\\
+                {\rm a}\cdot{\rm b}\cdot{\rm c}&={\rm b}\cdot{\rm c}\cdot{\rm a}\\
+                {\rm a}\cdot{\rm b}\cdot{\rm c}&={\rm c}\cdot{\rm a}\cdot{\rm b}.
+                \end{split}
+                <button onclick="toggleTesto('bottone3')">Soluzione:</button>
+                <div id="bottone3" class="hidden">
+                    <div class="overflow">
+                        Basta applicare la proprietà commutativa con:
+                        \begin{split}
+                        {\rm A},{\rm B}&={\rm b},{\rm c}\\
+                        {\rm A},{\rm B}&={\rm a},{\rm b}\\
+                        {\rm A},{\rm B}&={\rm a},{\rm b}\cdot{\rm c}\\
+                        {\rm A},{\rm B}&={\rm a}\cdot{\rm b},{\rm c}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <button onclick="toggleTesto('approfondimento5')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento5" class="hidden">
+                    <div class="overflow">
+                        Dato \(\sigma\) un elemento del <a href="../../Principi/Algebra e Aritmetica/Teoria dei gruppi.html#gruppo simmetrico">gruppo simmetrico</a>, la proprietà commutativa si estende con il <a href="Insiemi e funzioni.html#principio di induzione">principio di induzione</a> a:
+                        \begin{split}
+                        \sum_{{\rm k}\in{\rm n}}{\rm a}_{\rm k}=\sum_{{\rm k}\in{\rm n}}{\rm a}_{\sigma({\rm k})}\\
+                        \prod_{{\rm k}\in{\rm n}}{\rm a}_{\rm k}=\prod_{{\rm k}\in{\rm n}}{\rm a}_{\sigma({\rm k}).}
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Proprietà distributiva</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}\cdot({\rm B}+{\rm C})={\rm A}\cdot{\rm B}+{\rm A}\cdot{\rm C}.
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm a}\cdot({\rm b}+{\rm c}+{\rm d})={\rm a}\cdot{\rm b}+{\rm a}\cdot{\rm c}+{\rm a}\cdot{\rm d}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Correggi l'errore:
+                \begin{split}
+                {\rm a}={\rm b}&\longleftrightarrow{\rm a}+{\rm c}={\rm b}+{\rm c}\\
+                {\rm a}={\rm b}&\longleftrightarrow{\rm a}\cdot{\rm c}={\rm b}\cdot{\rm c}\\
+                {\rm a}<{\rm b}&\longleftrightarrow{\rm a}+{\rm c}<{\rm b}+{\rm c}\\
+                {\rm a}<{\rm b}&\longleftrightarrow{\rm a}\cdot{\rm c}<{\rm b}\cdot{\rm c}.
+                \end{split}
+                <button onclick="toggleTesto('bottone4')">Soluzione:</button>
+                <div id="bottone4" class="hidden">
+                    <div class="overflow">
+                        La seconda vale se \({\rm c}\ne0\).<br>
+                        La quarta vale se \({\rm c}>0\).
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <button onclick="toggleTesto('approfondimento6')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento6" class="hidden">
+                    <div class="overflow">
+                        La proprietà distributiva si estende con il <a href="Insiemi e funzioni.html#principio di induzione">principio di induzione</a> a:
+                        \begin{split}
+                        {\rm b} \cdot \sum_{{\rm j}\in{\rm n}}{\rm a}_{\rm k}&=\sum_{{\rm j}\in{\rm n}}{\rm b}\cdot{\rm a}_{\rm k}\\
+                        {\rm b}^{\sum_{{\rm k}\in{\rm n}}{\rm a}_{\rm k}}&=\prod_{{\rm j}\in{\rm n}}{\rm b}^{{\rm a}_{\rm k}}\\
+                        \left(\prod_{{\rm j}\in{\rm n}} a_k\right)^{\rm b}&=\prod_{{\rm k}\in{\rm n}}{\rm a}_{\rm k}^{\rm b}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Proprietà delle potenze</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                \begin{split}
+                \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad{\rm A}\ge0\,,\quad{\rm A}^{{\rm B}+{\rm C}}&={\rm A}^{\rm B}\cdot{\rm A}^{\rm C}\\
+                \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad\forall{\rm A}\ge0\,,\quad\left({\rm A}^{\rm B}\right)^{\rm C}&={\rm A}^{{\rm B}\cdot{\rm C}}\\
+                \forall{\rm A},{\rm B},{\rm C}\in{\mathbb R}\!:\quad\forall{\rm A}\cdot{\rm B}\ge0\,,\quad({\rm A}\cdot{\rm B})^{\rm C}&=|{\rm A}|^{\rm C}\cdot|{\rm B}|^{\rm C}.
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm a}^{{\rm b}+{\rm c}+{\rm d}}&={\rm a}^{\rm b}\cdot{\rm a}^{\rm c}\cdot{\rm a}^{\rm d}\\
+                \left(\left({\rm a}^{\rm b}\right)^{\rm c}\right)^{\rm d}&={\rm a}^{{\rm b}\cdot{\rm c}\cdot{\rm d}}\\
+                ({\rm a}\cdot{\rm b}\cdot{\rm c})^{\rm d}&={\rm a}^{\rm d}\cdot{\rm b}^{\rm d}\cdot{\rm c}^{\rm d}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Correggi l'errore:
+                \begin{split}
+                \forall{\rm a},{\rm b}>0\,,\quad{\rm a}={\rm b}&\longleftrightarrow{\rm a}^{\rm c}={\rm b}^{\rm c}\\
+                \forall{\rm c}>0\,,\quad{\rm a}={\rm b}&\longleftrightarrow{\rm c}^{\rm a}={\rm c}^{\rm b}\\
+                \forall{\rm a},{\rm b}>0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow{\rm a}^{\rm c}<{\rm b}^{\rm c}\\
+                \forall{\rm c}> 0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow{\rm c}^{\rm a}<{\rm c}^{\rm b}.
+                \end{split}
+                <button onclick="toggleTesto('bottone5')">Soluzione:</button>
+                <div id="bottone5" class="hidden">
+                    <div class="overflow">
+                        La prima vale se \({\rm c}\ne0\).<br>
+                        La seconda vale se \({\rm c}\ne1\).<br>
+                        La terza vale se \({\rm c}>0\).<br>
+                        La quarta vale se \({\rm c}>1\).
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Differenza e Divisione</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                La differenza e la divisione sono le inverse di somma e moltiplicazione, per cui sono definite come segue:
+                \begin{split}
+                {\rm A}-{\rm B}={\rm C}&\longleftrightarrow{\rm A}={\rm B}+{\rm C}\\
+                {\rm A}/{\rm B}={\rm C}&\longleftrightarrow{\rm A}={\rm B}\cdot{\rm C}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Per cui, ad esempio:
+                \begin{split}
+                {\rm A}={\rm B}+({\rm A}-{\rm B})&\quad{\rm C}=({\rm B}+{\rm C})-{\rm B}\\
+                {\rm A}={\rm B}\cdot({\rm A}/{\rm B})&\quad{\rm C}=({\rm B}\cdot{\rm C})/{\rm B}.
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm a}+({\rm b}-{\rm c})&=({\rm a}+{\rm b})-{\rm c}=({\rm a}-{\rm c})+{\rm b}\\
+                {\rm a}-({\rm b}+{\rm c})&=({\rm a}-{\rm b})-{\rm c}=({\rm a}-{\rm c})-{\rm b}\\
+                {\rm a}-({\rm b}-{\rm c})&=({\rm a}-{\rm b})+{\rm c}=({\rm a}+{\rm c})-{\rm b}\\
+                {\rm a}\cdot({\rm b}/{\rm c})&=({\rm a}\cdot{\rm b})/{\rm c}=({\rm a}/{\rm c})\cdot{\rm b}\\
+                {\rm a}/({\rm b}/{\rm c})&=({\rm a}/{\rm b})\cdot{\rm c}=({\rm a}\cdot{\rm c})/{\rm b}\\
+                {\rm a}/({\rm b}\cdot{\rm c})&=({\rm a}/{\rm b})/{\rm c}=({\rm a}/{\rm c})/{\rm b}\\
+                ({\rm a}-{\rm b})\cdot{\rm c}&={\rm a}\cdot{\rm c}-{\rm b}\cdot{\rm c}\\
+                ({\rm a}+{\rm b})/{\rm c}&=({\rm a}/{\rm c})+({\rm b}/{\rm c})\\
+                ({\rm a}-{\rm b})/{\rm c}&=({\rm a}/{\rm c})-({\rm b}/{\rm c}).
+                \end{split}
+            </div>
+        </li>
+        <li class="outside">
+            <div class="textwrap">
+                La proprietà invariantiva segue da queste (SCRIVILA).
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Correggi l'errore:
+                \begin{split}
+                \sameas{\myeq{\rm a}{\rm b}}{\myeq{\mydiff{\rm a}{\rm c}}{\mydiff{\rm b}{\rm c}}}\\
+                \sameas{\myeq{\rm a}{\rm b}}{\myeq{\mydiff{\rm c}{\rm a}}{\mydiff{\rm c}{\rm b}}}\\
+                \sameas{\mylt{\rm a}{\rm b}}{\mylt{\mydiff{\rm a}{\rm c}}{\mydiff{\rm b}{\rm c}}}\\
+                \sameas{\mylt{\rm a}{\rm b}}{\mylt{\mydiff{\rm c}{\rm a}}{\mydiff{\rm c}{\rm b}}}
+                \end{split}
+                <button onclick="toggleTesto('bottone6')">Soluzione:</button>
+                <div id="bottone6" class="hidden">
+                    <div class="overflow">
+                        La quarta vale al contrario.
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Correggi l'errore:
+                \begin{split}
+                \forall{\rm c}\ne0\,,\quad{\rm a}={\rm b}&\longleftrightarrow{\rm a}/{\rm c}={\rm b}/{\rm c}\\
+                \forall{\rm a},{\rm b}\ne0\,,\quad{\rm a}={\rm b}&\longleftrightarrow{\rm c}/{\rm a}={\rm c}/{\rm b}\\
+                \forall{\rm c}\ne0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow{\rm a}/{\rm c}<{\rm b}/{\rm c}\\
+                \forall{\rm a},{\rm b}\ne0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow{\rm c}/{\rm a}<{\rm c}/{\rm b}.
+                \end{split}
+                <button onclick="toggleTesto('bottone7')">Soluzione:</button>
+                <div id="bottone7" class="hidden">
+                    <div class="overflow">
+                        La terza vale per \({\rm c}>0\).<br>
+                        La quarta vale per \(0>{\rm c}\).
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Radicali e Logaritmi</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Invece radicali e logaritmi sono le inverse di potenza ed esponenziale, per cui sono definite come segue:
+                \begin{split}
+                \sqrt[{\rm B}]{\rm A}={\rm C}&\longleftrightarrow{\rm A}={\rm C}^{\rm B}\\
+                \log_{\rm B}({\rm A})={\rm C}&\longleftrightarrow{\rm A}={\rm B}^{\rm C}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Per cui, ad esempio:
+                \begin{split}
+                {\rm A}=\left(\sqrt[{\rm B}]{\rm A}\right)^{\rm B}&\quad{\rm C}=\sqrt[{\rm B}]{{\rm C}^{\rm B}}\\
+                {\rm A}={\rm B}^{\log_{\rm B}({\rm A})}&\quad{\rm C}=\log_{\rm B}\left({\rm B}^{\rm C}\right).
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                {\rm a}^{{\rm b}-{\rm c}}&={\rm a}^{\rm b}/{\rm a}^{\rm c}\\
+                {\rm a}^{{\rm b}/{\rm c}}&=\sqrt[{\rm c}]{({\rm a}^{\rm b})}\\
+                {\rm a}^{{\rm b}/{\rm c}}&= (\sqrt[{\rm c}]{\rm a})^{\rm b}\\
+                \sqrt[c]{a \cdot b}&=\sqrt[c]{\rm a}\cdot\sqrt[{\rm c}]{\rm b}\\
+                ({\rm a}/{\rm b})^{\rm c}&={\rm a}^{\rm c}/{\rm b}^{\rm c}\\
+                \sqrt[{\rm c}]{({\rm a}/{\rm b})}&=\sqrt[{\rm c}]{\rm a}/\sqrt[{\rm c}]{{\rm b}.}
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Mostra che:
+                \begin{split}
+                \log_{\rm a}({\rm b}\cdot{\rm c})&=\log_{\rm a}({\rm b})+\log_{\rm a}({\rm c})\\
+                \log_{\rm a}({\rm b}/{\rm c})&=\log_{\rm a}({\rm b})-\log_{\rm a}({\rm c})\\
+                \log_{\rm a}({\rm b}^{\rm c})&={\rm c}\cdot\log_{\rm a}({\rm b})\\
+                \log_{\rm a}(\sqrt[{\rm c}]{\rm b})&=\log_{\rm a}({\rm b})/{\rm c}\\
+                \log_{\rm a}({\rm b})\cdot\log_{\rm b}({\rm c})&=\log_{\rm a}({\rm c})\\
+                \log_{\rm a}({\rm b})&=\log_{\rm c}({\rm b})/\log_{\rm c}({\rm a})
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Correggi l'errore:
+                \begin{split}
+                \forall{\rm a},{\rm b}\ge0\,,\quad{\rm a}={\rm b}&\longleftrightarrow\sqrt[{\rm c}]{\rm a}=\sqrt[{\rm c}]{\rm b}\\
+                \forall{\rm c}\ge0\,,\quad{\rm a}={\rm b}&\longleftrightarrow\sqrt[{\rm a}]{\rm c}=\sqrt[{\rm b}]{\rm c}\\
+                \forall{\rm a},{\rm b}\ge0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow\sqrt[{\rm c}]{\rm a}<\sqrt[{\rm c}]{\rm b}\\
+                \forall{\rm c}\ge0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow\sqrt[{\rm a}]{\rm c}<\sqrt[{\rm b}]{\rm c}
+                \end{split}
+                <button onclick="toggleTesto('bottone8')">Soluzione:</button>
+                <div id="bottone8" class="hidden">
+                    <div class="overflow">
+                        La seconda vale per \({\rm c}\ne1\).<br>
+                        La quarta vale per \({\rm c}>1\).
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Correggi l'errore:
+                \begin{split}
+                \forall{\rm a},{\rm b},{\rm c}\ge 0\,,\quad{\rm a}={\rm b}&\longleftrightarrow\log_{\rm c}({\rm a})=\log_{\rm c}({\rm b})\\
+                \forall{\rm a},{\rm b},{\rm c}\ge 0\,,\quad{\rm a}={\rm b}&\longleftrightarrow\log_{\rm a}({\rm c})=\log_{\rm b}({\rm c})\\
+                \forall{\rm a},{\rm b},{\rm c}\ge 0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow\log_{\rm c}({\rm a})<\log_{\rm c}({\rm b})\\
+                \forall{\rm a},{\rm b},{\rm c}\ge 0\,,\quad{\rm a}<{\rm b}&\longleftrightarrow\log_{\rm a}({\rm c})<\log_{\rm b}({\rm c}).
+                \end{split}
+                <button onclick="toggleTesto('bottone9')">Soluzione:</button>
+                <div id="bottone9" class="hidden">
+                    <div class="overflow">
+                        La seconda vale per \({\rm c}\ne1\).<br>
+                        La terza vale per \({\rm c}>1\).<br>
+                        La quarta vale per \(1>{\rm c}\).
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insiemi e funzioni</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="../../macros.js"></script>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <div class="navbar">
+        <button onclick="location.href='Insiemi e logica.html'">Precedente</button>
+        <button onclick="location.href='../main.html'">Indice</button>
+        <button onclick="location.href='Proprietà delle operazioni.html'">Successiva</button>
+    </div>
+
+    <h1>Insiemi</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Si scrive \({\rm a}\in{\rm A}\) per dire che \({\rm a}\) appartiene ad \({\rm A}\) ed \({\rm a}\notin{\rm A}\) per dire che non vi appartiene.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Siano \({\rm A}, {\rm B}\) due insiemi. Definiamo rispettivamente differenza "\(\setminus\)", intersezione "\(\cap\)", unione "\(\cup\)", come segue:
+                \begin{split}
+                {\rm A}\setminus{\rm B}&=\{{\rm a}\!:{\rm a}\in{\rm A}\land{\rm a}\notin{\rm B}\}\\
+                {\rm A}\cap{\rm B}&=\{{\rm a}\!:{\rm a}\in{\rm A}\land{\rm a}\in{\rm B}\}\\
+                {\rm A}\cup{\rm B}&=\{{\rm a}\!:{\rm a}\in{\rm A}\lor{\rm a}\in{\rm B}\}.
+                \end{split}
+                Scriviamo \({\rm A}\subseteq{\rm B}\) e diciamo che "\({\rm A}\) è contenuto in \({\rm B}\)" se \(\forall{\rm x}\in{\rm A}\,,{\rm x}\in{\rm B}\), cioè che ogni elemento di \({\rm A}\) appartiene a \({\rm B}\).
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Sono fatti equivalenti:
+                \begin{split}
+                {\rm A}&\subseteq{\rm B}\\
+                {\rm A}\setminus{\rm B}&=\emptyset\\
+                {\rm A}\cap{\rm B}&={\rm A}\\
+                {\rm A}\cup{\rm B}&={\rm B}.
+                \end{split}
+                <button onclick="toggleTesto('bottone0')">Dimostrazione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        Dobbiamo dire che sono fatti equivalenti:
+                        \begin{split}
+                        ({\rm x}\in{\rm A})&\longrightarrow({\rm x}\in{\rm B})\\
+                        ({\rm x}\in{\rm A})\land({\rm x}\in{\rm B})&\longleftrightarrow({\rm x}\in{\rm A})\\
+                        ({\rm x}\in{\rm A})\lor({\rm x}\in{\rm B})&\longleftrightarrow({\rm x}\in{\rm B}).
+                        \end{split}
+                        Infatti a loro volta, questi equivalgono a
+                        \begin{split}
+                        \lnot(({\rm x}\in{\rm A})\land({\rm x}\notin{\rm B}))=({\rm x}\notin{\rm A})\lor({\rm x}\in{\rm B})
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\rm A}\cap({\rm B}\cap{\rm C})&=({\rm A}\cap{\rm B})\cap{\rm C}\\
+                {\rm A}\cup({\rm B}\cup{\rm C})&=({\rm A}\cup{\rm B})\cup{\rm C}\\
+                {\rm A}\cap({\rm B}\cup{\rm C})&=({\rm A}\cap{\rm B})\cup({\rm A}\cap{\rm C})\\
+                {\rm A}\cup({\rm B}\cap{\rm C})&=({\rm A}\cup{\rm B})\cap({\rm A}\cup{\rm C}).
+                \end{split}
+                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        Bsata dire
+                        \begin{split}
+                        {\rm a}=``{\rm x}\in{\rm A}"\\
+                        {\rm b}=``{\rm x}\in{\rm B}"\\
+                        {\rm c}=``{\rm x}\in{\rm C}".
+                        \end{split}
+                        Il problema si riduce a:
+                        \begin{split}
+                        {\rm a}\land({\rm b}\land{\rm c})&\longleftrightarrow({\rm a}\land{\rm b})\land{\rm c}\\
+                        {\rm a}\lor({\rm b}\lor{\rm c})&\longleftrightarrow({\rm a}\lor{\rm b})\lor{\rm c}\\
+                        {\rm a}\land({\rm b}\lor{\rm c})&\longleftrightarrow({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
+                        {\rm a}\lor({\rm b}\land{\rm c})&\longleftrightarrow({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c}).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                ({\rm A}\setminus{\rm B})\setminus{\rm C}&=({\rm A}\setminus{\rm B})\cap({\rm A}\setminus{\rm C})\\
+                {\rm A}\setminus({\rm B}\cup{\rm C})&=({\rm A}\setminus{\rm B})\cap({\rm A}\setminus{\rm C})\\
+                {\rm A}\cap({\rm B}\setminus{\rm C})&=({\rm A}\cap{\rm B})\setminus({\rm A}\cap{\rm C})\\
+                ({\rm A}\cap{\rm B})\setminus{\rm C}&=({\rm A}\cap{\rm B})\setminus({\rm A}\cap{\rm C})\\
+                {\rm A}\setminus({\rm B}\setminus{\rm C})&=({\rm A}\cap{\rm C})\cup({\rm A}\setminus{\rm B})\\
+                {\rm A}\setminus({\rm B}\cap{\rm C})&=({\rm A}\setminus{\rm B})\cup({\rm A}\setminus{\rm C})\\
+                ({\rm A}\cup{\rm B})\setminus{\rm C}&=({\rm A}\setminus{\rm C})\cup({\rm B}\setminus{\rm C})\\
+                {\rm A}\cup({\rm B}\setminus{\rm C})&=({\rm A}\cup{\rm B})\setminus({\rm C}\setminus{\rm A}).
+                \end{split}
+                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                        Come prima, il problema si riduce a:
+                        \begin{split}
+                        ({\rm a}\land(\lnot{\rm b}))\land(\lnot{\rm c})&\longleftrightarrow({\rm a}\land(\lnot{\rm b}))\land({\rm a}\land(\lnot{\rm c}))\\
+                        {\rm a}\land(\lnot({\rm b}\lor{\rm c}))&\longleftrightarrow({\rm a}\land(\lnot{\rm b}))\land({\rm a}\land(\lnot{\rm c}))\\
+                        {\rm a}\land({\rm b}\land(\lnot{\rm c}))&\longleftrightarrow({\rm a}\land{\rm b})\land({\rm a}\land(\lnot{\rm c}))\\
+                        ({\rm a}\land{\rm b})\land(\lnot{\rm c})&\longleftrightarrow({\rm a}\land{\rm b})\land({\rm a}\land(\lnot{\rm c}))\\
+                        {\rm a}\land(\lnot({\rm b}\land(\lnot{\rm c})))&\longleftrightarrow({\rm a}\land{\rm c})\lor({\rm a}\land(\lnot{\rm b}))\\
+                        {\rm a}\land(\lnot({\rm b}\land{\rm c}))&\longleftrightarrow({\rm a}\land(\lnot{\rm c}))\lor({\rm a}\land(\lnot{\rm b}))\\
+                        ({\rm a}\lor{\rm b})\land(\lnot{\rm c})&\longleftrightarrow({\rm a}\land(\lnot{\rm c}))\lor({\rm b}\land(\lnot{\rm c}))\\
+                        {\rm a}\lor({\rm b}\land(\lnot{\rm c}))&\longleftrightarrow({\rm a}\lor{\rm b})\land(\lnot({\rm c}\land(\lnot{\rm a}))).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\rm A} \subseteq ({\rm B}\cap{\rm C})&\longleftrightarrow({\rm A} \subseteq {\rm B})\land({\rm A} \subseteq {\rm C})\\
+                ({\rm A}\cup{\rm B}) \subseteq {\rm C}&\longleftrightarrow({\rm A} \subseteq {\rm C})\land({\rm B} \subseteq {\rm C})\\
+                \end{split}
+                <button onclick="toggleTesto('bottone3')">Soluzione:</button>
+                <div id="bottone3" class="hidden">
+                    <div class="overflow">
+                        Come prima, il problema si riduce a:
+                        \begin{split}
+                        (\lnot{\rm a})\lor({\rm b}\land{\rm c})&\longleftrightarrow((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm a})\lor{\rm c})\\
+                        (\lnot({\rm a}\lor{\rm b}))\lor{\rm c}&\longleftrightarrow((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm b})\lor{\rm c}).
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\rm A} \subseteq {\rm B}\), allora:
+                \begin{split}
+                {\rm A}\cap{\rm C}&\subseteq{\rm B}\cap{\rm C}\\
+                {\rm A}\cup{\rm C}&\subseteq{\rm B}\cup{\rm C}\\
+                {\rm A}\setminus{\rm C}&\subseteq{\rm B}\setminus{\rm C}\\
+                {\rm C}\setminus{\rm B}&\subseteq{\rm C}\setminus{\rm A}.
+                \end{split}
+                <button onclick="toggleTesto('bottone4')">Soluzione:</button>
+                <div id="bottone4" class="hidden">
+                    <div class="overflow">
+                        Basta notare che
+                        \begin{split}
+                        ({\rm A}\cap{\rm C})\cup({\rm B}\cap{\rm C})&=({\rm A}\cup{\rm B})\cap{\rm C}={\rm B}\cap{\rm C}\\
+                        ({\rm A}\cup{\rm C})\cap({\rm B}\cup{\rm C})&=({\rm A}\cap{\rm B})\cup{\rm C}={\rm A}\cap{\rm C}\\
+                        ({\rm A}\setminus{\rm C})\cup({\rm B}\setminus{\rm C})&=({\rm A}\cup{\rm B})\setminus{\rm C}={\rm B}\setminus{\rm C}\\
+                        ({\rm C}\setminus{\rm B})\cap({\rm C}\setminus{\rm A})&={\rm C}\setminus({\rm A}\cup{\rm B})={\rm C}\setminus{\rm B}.
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Funzioni</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                Una funzione \({\rm f}\!:{\rm A}\rightarrow{\rm B}\) si dice:
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Sugettiva, se
+                \begin{split}
+                \forall{\rm b}\in{\rm B}\,,\quad\exists{\rm a}\in{\rm A}\!:\quad{\rm f}({\rm a})={\rm b}.
+                \end{split}
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Iniettiva, se
+                \begin{split}
+                \forall{\rm a}_0,{\rm a}_1\in{\rm A}\,,\quad{\rm f}({\rm a}_0)={\rm f}({\rm a}_1)\longleftrightarrow{\rm a}_0={\rm a}_1.
+                \end{split}
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Composizione di funzioni surgettive è surgettiva.
+                <br>
+                Composizione di funzioni iniettive è iniettiva.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\rm f}\circ{\rm g}\) è surgettiva, allora \({\rm f}\) è sugettiva.
+                <br>
+                Se \({\rm f}\circ{\rm g}\) è iniettiva, allora \({\rm g}\) è iniettiva.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Se \({\rm f}\circ{\rm g}\) è surgettiva con \({\rm f}\) iniettiva, \({\rm g}\) è surgettiva.
+                <br>
+                Se \({\rm f}\circ{\rm g}\) è iniettiva con \({\rm g}\) surgettiva, \({\rm f}\) è iniettiva.
+            </div>
+        </li>
+    </ul>
+
+    <h1>I Numeri Naturali</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Un insieme finito può essere rapprsentato elencando, eventualmente con ridondanza, gli elementi che vi appartengono. Ad esempio
+                \begin{split}
+                \{0,1\}=\{1,0\}=\{0,0,1\}=\{0,1,0\}=\{1,0,0\}=\{0,1,1\}=\{1,0,1\}=\{1,1,0\}
+                \end{split}
+                è un insieme di due elementi formato dai caratteri \(0\) e \(1\) e può essere rappresentato, senza ridondanza, in due modi.
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <button onclick="toggleTesto('approfondimento0')"><img src="../../advanced.webp"></button>
+                <div id="approfondimento0" class="hidden">
+                    <div class="overflow">
+                        Per approfondire il concetto di cardinalità vedi la <a href="../../Principi/Algebra e Aritmetica/Teoria degli insiemi.html">Teoria degli insiemi (AGGIUNGI LABEL)</a>.
+                        <h3>
+                            Principio della piccionaia:
+                        </h3>
+                        Un insieme \({\rm A}\) si dice finito se
+                        \begin{split}
+                        \forall{\rm B}\subseteq{\rm A}\,,\quad|{\rm A}|\le|{\rm B}|\longleftrightarrow{\rm B}={\rm A}.
+                        \end{split}
+                        Come conseguenza, sia \(f\!:{\rm A}\longrightarrow{\rm B}\) una funzione tra insiemi finiti:
+                        <br>
+                        Se \({\rm f}\) è iniettiva con \(|{\rm B}|\le|{\rm A}|\), allora è surgettiva (quindi \(|{\rm A}|=|{\rm B}|\)).
+                        <br>
+                        Se \({\rm f}\) è surgettiva con \(|{\rm A}|\le|{\rm B}|\), allora è iniettiva (quindi \(|{\rm A}|=|{\rm B}|\)).
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                I numeri narurali \({\mathbb N}\) sono le possibili cardinalità degli insiemi finiti. Ad esempio: \(0=|\{\}|\) la cardinalità dell'insieme vuoto, \(1=|\{0\}|\), la cardinalità di un singoletto, \(2=|\{0, 1\}|\), eccetera.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3 id="principio di induzione">Principio di induzione:</h3>
+                Sia \({\cal C}({\rm x})\) un predicato nella variabile \({\rm x}\), allora
+                \begin{split}
+                (\forall{\rm n}\in{\mathbb N}\,,\quad(\forall{\rm k}<{\rm n}\,,\quad{\cal C}({\rm k}))\longrightarrow{\cal C}({\rm n}))\longrightarrow(\forall{\rm n}\in{\mathbb N}\,,\quad{\cal C}({\rm n})).
+                \end{split}
+                Vedi anche il <a href="../../Principi/Algebra e Aritmetica/Teoria degli insiemi.html#principio di induzione">principio di induzione</a>.
+            </div>
+        </li>
+        <h2>
+            Esercizi:
+        </h2>
+        <li>
+            <div class="overflow">
+                Qual'è la cardinalità dell'insieme \(\{{\rm a},{\rm b}\}\)?
+                <br>
+                <button onclick="toggleTesto('bottone5')">Soluzione:</button>
+                <div id="bottone5" class="hidden">
+                    <div class="overflow">
+                        Gli elementi dell'insieme sono le variabili \({\rm a},{\rm b}\) (e non gli omonimi caratteri alfabetici). Per cui la cardinalità è \(2\) se \({\rm a}\ne{\rm b}\), ma è \(1\) se \({\rm a}={\rm b}\).
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>

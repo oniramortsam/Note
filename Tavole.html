@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Mio Sito Web</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script type="text/javascript" src="macros.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script>
+        function toggleTesto(SECTION) {
+            var testo = document.getElementById(SECTION);
+            if (testo.style.display === "none") {
+                testo.style.display = "block";
+            } else {
+                testo.style.display = "none";
+            }
+        }
+    </script>
+
+    <h1>Come fare le espressioni del compito senza ricordarsi le proprietà delle operazioni</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Come trattare le parentesi: divide and conquer
+                </h3>
+                Prima risolvere le tonde (eventualmente su un foglio a parte) finchè non sono del tipo
+                \begin{split}
+                \left(\pm\frac{\rm a}{\rm b}\right)
+                \end{split}
+                Poi risolvere le quadre (eventualmente su un foglio a parte) finchè non sono del tipo
+                \begin{split}
+                \left[\left(\pm\frac{\rm a}{\rm b}\right)\right]=\left[\pm\frac{\rm a}{\rm b}\right]
+                \end{split}
+                Ora che non ci sono più tonde, sostituire le quadre con le tonde e le graffe con le quadre e ripetere il passo recedente, infine risolvere l'espressione.
+                <br>
+                Quando scrivo risolvere intendo: <a href="#0">Si risolvono prima gli esponenti.</a> <a href="#1">Poi si passa ai prodotti.</a> <a href="#2">Poi si passa alle somme.</a>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3 id="0">
+                    Si risolvono prima gli esponenti:
+                </h3>
+                Se \({\rm n}\) è un intero positivo pari:
+                \begin{split}
+                \left(\frac{\rm a}{\rm b}\right)^{\rm n}=\left(\frac{{\rm a}^{\rm n}}{{\rm b}^{\rm n}}\right)\\
+                \left(-\frac{\rm a}{\rm b}\right)^{\rm n}=\left(\frac{{\rm a}^{\rm n}}{{\rm b}^{\rm n}}\right)\\
+                \left(\frac{\rm a}{\rm b}\right)^{-{\rm n}}=\left(\frac{{\rm b}^{\rm n}}{{\rm a}^{\rm n}}\right)\\
+                \left(-\frac{\rm a}{\rm b}\right)^{-{\rm n}}=\left(\frac{{\rm b}^{\rm n}}{{\rm a}^{\rm n}}\right)
+                \end{split}
+                Se \({\rm n}\) è un intero positivo dispari:
+                \begin{split}
+                \left(\frac{\rm a}{\rm b}\right)^{\rm n}=\left(\frac{{\rm a}^{\rm n}}{{\rm b}^{\rm n}}\right)\\
+                \left(-\frac{\rm a}{\rm b}\right)^{\rm n}=\left(-\frac{{\rm a}^{\rm n}}{{\rm b}^{\rm n}}\right)\\
+                \left(\frac{\rm a}{\rm b}\right)^{-{\rm n}}=\left(\frac{{\rm b}^{\rm n}}{{\rm a}^{\rm n}}\right)\\
+                \left(-\frac{\rm a}{\rm b}\right)^{-{\rm n}}=\left(-\frac{{\rm b}^{\rm n}}{{\rm a}^{\rm n}}\right)
+                \end{split}
+                Non calcolare le potenze in questa fase può essere una buona abitudine. Se dopo c'è da fare un prodotto, si può iniziare a fattorizzare le basi e distribuire gli esponenti.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3 id="1">
+                    Poi si passa ai prodotti:
+                </h3>
+                Prima di tutto sostituire
+                \begin{split}
+                :\left(\frac{\rm a}{\rm b}\right)=\cdot\left(\frac{\rm b}{\rm a}\right)\\
+                :\left(-\frac{\rm a}{\rm b}\right)=\cdot\left(-\frac{\rm b}{\rm a}\right).
+                \end{split}
+                poi procedere con:
+                \begin{split}
+                \left(\frac{\rm a}{\rm b}\right)\cdot\left(\frac{\rm c}{\rm d}\right)=\left(\frac{{\rm a}\cdot{\rm c}}{{\rm b}\cdot{\rm d}}\right)\\
+                \left(\frac{\rm a}{\rm b}\right)\cdot\left(-\frac{\rm c}{\rm d}\right)=\left(-\frac{{\rm a}\cdot{\rm c}}{{\rm b}\cdot{\rm d}}\right)\\
+                \left(-\frac{\rm a}{\rm b}\right)\cdot\left(\frac{\rm c}{\rm d}\right)=\left(-\frac{{\rm a}\cdot{\rm c}}{{\rm b}\cdot{\rm d}}\right)\\
+                \left(-\frac{\rm a}{\rm b}\right)\cdot\left(-\frac{\rm c}{\rm d}\right)=\left(\frac{{\rm a}\cdot{\rm c}}{{\rm b}\cdot{\rm d}}\right).
+                \end{split}
+                Sarebbe da sinistra verso destra ma se sono solo prodotti, quindi si può usare la commutativa senza riguardi. Anzi, se si hanno solo prodotti il risultato ha come numeratore il prodotto dei numeratori e come denominatore il prodotto dei denominatori.
+                <br>
+                Prima di calcolare i prodotti ricordati di semplificare i termini comuni tra numeratore e denominatore. Anzi, non calcolare i prodotti in questa fase può essere una buona abitudine, per semplificare il più possibile.
+                <br>
+                Per semplificare: se una base si fattorizza, distribuire l'esponente sui fattori, se numeratore e denominatore hanno fattori con la stessa base semplificare quello con esponente più piccolo.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3 id="2">
+                    Poi si passa alle somme:
+                </h3>
+                Prima di tutto sostituire
+                \begin{split}
+                -\left(\frac{\rm a}{\rm b}\right)=+\left(-\frac{\rm b}{\rm a}\right)\\
+                -\left(-\frac{\rm a}{\rm b}\right)=+\left(\frac{\rm b}{\rm a}\right).
+                \end{split}
+                poi procedere con:
+                \begin{split}
+                \left(\frac{\rm a}{\rm b}\right)+\left(\frac{\rm c}{\rm d}\right)=\left(\frac{{\rm a}\cdot{\rm d}+{\rm c}\cdot{\rm b}}{{\rm b}\cdot{\rm d}}\right)\\
+                \left(\frac{\rm a}{\rm b}\right)+\left(-\frac{\rm c}{\rm d}\right)=\left(\frac{{\rm a}\cdot{\rm d}-{\rm c}\cdot{\rm b}}{{\rm b}\cdot{\rm d}}\right)\\
+                \left(-\frac{\rm a}{\rm b}\right)+\left(\frac{\rm c}{\rm d}\right)=\left(-\frac{{\rm a}\cdot{\rm d}-{\rm c}\cdot{\rm b}}{{\rm b}\cdot{\rm d}}\right)\\
+                \left(-\frac{\rm a}{\rm b}\right)+\left(-\frac{\rm c}{\rm d}\right)=\left(-\frac{{\rm a}\cdot{\rm d}+{\rm c}\cdot{\rm b}}{{\rm b}\cdot{\rm d}}\right).
+                \end{split}
+                Sarebbe da sinistra verso destra, ma se sono solo somme si può usare la commutativa senza riguardi. Nota che se stavi tenendo \({\rm a},{\rm b},{\rm c},{\rm d}\) fattorizzati, adesso devi calcolare i prodotti.
+                <br>
+                <button onclick="toggleTesto('approfondimento0')"><img src="advanced.webp"></button>
+                <div id="approfondimento0" class="hidden">
+                    <div class="overflow">
+                        Se non si sono calcolati i prodotti nelle fasi precedenti risulta più semplice calcolare \(\operatorname{gcd},\operatorname{lcm}\)
+                        \begin{split}
+                        \frac{{\rm a}\cdot{\rm d}+{\rm c}\cdot{\rm b}}{{\rm b}\cdot{\rm d}}&=\frac{{\rm a}\cdot{\rm d}:\operatorname{gcd}({\rm b},{\rm d})+{\rm c}\cdot{\rm b}:\operatorname{gcd}({\rm b},{\rm d})}{\operatorname{lcm}({\rm b},{\rm d})}\\
+                        &=\frac{{\rm a}\cdot\operatorname{lcm}({\rm b},{\rm d}):{\rm b}+{\rm c}\cdot\operatorname{lcm}({\rm b},{\rm d}):{\rm d}}{\operatorname{lcm}({\rm b},{\rm d})}
+                        \end{split}
+                        Le divisioni sono senza resto perchè i divendi sono multipli dei i divisori. Si può fare di peggio:
+                        \begin{split}
+                        \frac{{\rm a}\cdot{\rm d}+{\rm c}\cdot{\rm b}}{{\rm b}\cdot{\rm d}}&=\frac{\operatorname{gcd}({\rm a},{\rm c})}{\operatorname{lcm}({\rm b},{\rm d})}\cdot({\rm a}:\operatorname{gcd}({\rm a},{\rm c})\cdot{\rm d}:\operatorname{gcd}({\rm b},{\rm d})+{\rm c}:\operatorname{gcd}({\rm a},{\rm c})\cdot{\rm b}:\operatorname{gcd}({\rm b},{\rm d}))\\
+                        &=\frac{\operatorname{gcd}({\rm a},{\rm c})}{\operatorname{lcm}({\rm b},{\rm d})}\cdot(\operatorname{lcm}({\rm a},{\rm c}):{\rm c}\cdot\operatorname{lcm}({\rm b},{\rm d}):{\rm b}+\operatorname{gcd}({\rm a},{\rm c}):{\rm a}\cdot\operatorname{gcd}({\rm b},{\rm d}):{\rm d})\\
+                        \end{split}
+                        Qui si è applicata la proprietà distributiva al numeratore. Raccogliere fattori comuni permette di avere i risultatii già fattorizzati per dopo. Così calcoli meno prodotti se stai tenendo \({\rm a},{\rm b},{\rm c},{\rm d}\) fattorizzati.
+                    </div>
+                </div>
+                <br>
+                A questo punto ricordarsi di scendere eventuali segni negativi:
+                \begin{split}
+                \left(\frac{-{\rm a}}{\rm b}\right)=\left(-\frac{{\rm a}}{\rm b}\right)\\
+                \left(-\frac{-{\rm a}}{\rm b}\right)=\left(\frac{{\rm a}}{\rm b}\right)
+                \end{split}
+                e di semplificare prima di andare avanti:
+                \begin{split}
+                \frac{\rm a}{\rm b}=\frac{{\rm a}:\operatorname{gcd}(a,b)}{{\rm b}:\operatorname{gcd}(a,b)}=\frac{\operatorname{lcm}(a,b):{\rm b}}{\operatorname{lcm}(a,b):{\rm a}}
+                \end{split}
+                Dove \(\operatorname{gcd}(a,b),\operatorname{lcm}(a,b)\) sono il massimo comun divisore ed il minimo comune multiplo, rispettivamente.
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Come gestire i segni di frazione in eccesso:
+                </h3>
+                Se capita
+                \begin{split}
+                \frac{\text{Roba brutta che chiamo }{\rm N}}{\text{Roba brutta che chiamo }{\rm D}}
+                \end{split}
+                Usare comunque diviede and conquer, anche se non ci sono parentesi: risolvere a parte il numeratore ed il denominatore e poi fare \(\left({\rm N}\right):\left({\rm D}\right)\) dove le parentesi tonde sono state aggiunte in caso \({\rm N},{\rm D}\) non fossero interi.
+            </div>
+        </li>
+    </ul>
+
+    <h1>Come calcolare il massimo comun divisore ed il minimo comune multiplo</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                <h3>
+                    Per controllare la divisibilità:
+                </h3>
+                Fai la divisione col resto e vedi se il resto è \(0\).
+            </div>
+            <div class="overflow">
+                <h3>
+                    Per fattorizzare un numero:
+                </h3>
+                Se devo fattorizzare \({\rm n}\) conto fino ad \({\rm n}\) segnando su un foglio tutti i numeri primi. Riconosco se un numero è primo controllando se uno di quelli che ho già segnato lo divide.
+                <br>
+                Ogni volta che trovo un nuovo primo \({\rm p}\) controllo se divide \({\rm n}\), in tal caso scrivo \({\rm n}={\rm p}\cdot{\rm n}:{\rm p}\) e continuo cercando di fattorizzare il secondo fattore.
+                 <br>
+                Se contando mi rendo conto che i fattori sono tutti primi mi fermo.
+            </div>
+            <div class="overflow">
+                <h3>
+                    Per calcolare il massimo comun divisore:
+                </h3>
+                Si considerano solo le basi in comune con esponente minimo.
+                <h3>
+                    Per calcolare il minimo comune multiplo:
+                </h3>
+                Si considerano tutte le basi presenti con esponente massimo.
+            </div>
+        </li>
+    </ul>
+
+    <h1><a href="Gobbino.pdf">Insiemi e Logica</a></h1>
+
+    <h1>Link esterni</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx2-uK3hYvGCqC_-alpgiibx&si=vn1COz0jXU-8JZFG">Frazioni, Potenze, Proporzioni e Percentuali - Prerequisiti di Base</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx0LEJW8B4XYJPkXK4rue3th&si=uQfYzinv9JLNHYcO"> Monomi e Polinomi: Calcolo Letterale</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx2wD-sNnKnXF9ioqNLz3EnH&si=lvH3wk-HSV4y6h6L">Radicali, radici n-esime ed Equazioni Irrazionali</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx0qzXCCJe4EaHu-eS-k4n3C&si=hZBUbf55uwfC9rj2">Esponenziali e Logaritmi</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PL84856B5CABD988D1&si=_WeSXVzrcl_r3t9P">Goniometria e Trigonometria</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx00lP1ul6ez4F5C_VCCRjos&si=xiFQLU0ednWjgv_N">Limiti di Funzioni</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx3cfwlkGty-daBIHvPj4OuW&si=QqOj6rvAS2Gq9MuS">Derivate</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLD65828BD6F3E86AA&si=5dTDA6MbMdHztwVN">Integrali: Tecniche di integrazione, Aree e Volumi</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLA3C7C80841C5C018&si=JrASs6KP1xND_LWF">Studio di Funzione</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx1s5nPN_FPRIzeuyTuW4bIR&si=cu4iAg7ErarX4gRd">Serie e Successioni Numeriche</a>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Video</h1>
+
+    <ul>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx2-uK3hYvGCqC_-alpgiibx&si=vn1COz0jXU-8JZFG">Frazioni, Potenze, Proporzioni e Percentuali - Prerequisiti di Base</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx0LEJW8B4XYJPkXK4rue3th&si=uQfYzinv9JLNHYcO"> Monomi e Polinomi: Calcolo Letterale</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx2wD-sNnKnXF9ioqNLz3EnH&si=lvH3wk-HSV4y6h6L">Radicali, radici n-esime ed Equazioni Irrazionali</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx0qzXCCJe4EaHu-eS-k4n3C&si=hZBUbf55uwfC9rj2">Esponenziali e Logaritmi</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PL84856B5CABD988D1&si=_WeSXVzrcl_r3t9P">Goniometria e Trigonometria</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx00lP1ul6ez4F5C_VCCRjos&si=xiFQLU0ednWjgv_N">Limiti di Funzioni</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx3cfwlkGty-daBIHvPj4OuW&si=QqOj6rvAS2Gq9MuS">Derivate</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLD65828BD6F3E86AA&si=5dTDA6MbMdHztwVN">Integrali: Tecniche di integrazione, Aree e Volumi</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLA3C7C80841C5C018&si=JrASs6KP1xND_LWF">Studio di Funzione</a>
+            </div>
+        </li>
+        <li class="outside">
+            <div class="overflow">
+                <a href="https://youtube.com/playlist?list=PLpkXLf6Zhdx1s5nPN_FPRIzeuyTuW4bIR&si=cu4iAg7ErarX4gRd">Serie e Successioni Numeriche</a>
+            </div>
+        </li>
+    </ul>
+
+    <h1><a href="home.html">Indietro</a></h1>

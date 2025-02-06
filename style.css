@@ -1,0 +1,169 @@
+:root {
+    --palette-brown-A: #353020;
+    --palette-brown-B: #605C4E;
+    --palette-brown-C: #A49966;
+    --palette-brown-D: #C7C7A6;
+    --palette-brown-E: #EAFFDA;
+
+    --palette-celes-A: #13293D;
+    --palette-celes-B: #006494;
+    --palette-celes-C: #247BA0;
+    --palette-celes-D: #1B98E0;
+    --palette-celes-E: #E8F1F2;
+
+    --palette-verde-A: #4F9D69;
+    --palette-verde-B: #68D89B;
+    --palette-verde-C: #8DFFCD;
+    --palette-verde-D: #BCFFDB;
+    --palette-verde-E: #BEE6CE;
+
+    --palette-green-A: #87A878;
+    --palette-green-B: #B0BC98;
+    --palette-green-C: #C7CCB9;
+    --palette-green-D: #CAE2BC;
+    --palette-green-E: #DBF9B8;
+
+    --palette-giall-A: #626267;
+    --palette-giall-B: #86836D;
+    --palette-giall-C: #A6A670;
+    --palette-giall-D: #E2DE84;
+    --palette-giall-E: #ECFEAA;
+
+    --palette-rosso-A: #551B14;
+    --palette-rosso-B: #6D3D14;
+    --palette-rosso-C: #85756E;
+    --palette-rosso-D: #B59DA4;
+    --palette-rosso-E: #CDC5B4;
+
+    --palette-viola-A: #0E273C;
+    --palette-viola-B: #4A306D;
+    --palette-viola-C: #A167A5;
+    --palette-viola-D: #D3BCCC;
+    --palette-viola-E: #E8D7F1;
+}
+
+button {
+    border: solid 2px var(--palette-celes-A);
+    background-color: var(--palette-celes-B);
+    color: var(--palette-celes-E);
+    cursor: pointer;
+    width: 128px;
+    height: auto;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 4px;
+    text-align: center;
+    flex-shrink: 0;
+    text-wrap: auto;
+}
+
+button > img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar {
+    padding: 8px;
+    border: solid 2px var(--palette-brown-A);
+    border-radius: 4px;
+    background-color: var(--palette-brown-B);
+    text-align: center;
+    width: auto;
+}
+
+.navbar > button {
+    width: 25%;
+    height: auto;
+}
+
+h1 {
+    color: var(--palette-brown-E);
+    border: none;
+}
+
+h2 {
+    color: var(--palette-viola-D);
+    border: none;
+}
+
+h3 {
+    color: var(--palette-brown-A);
+    border: none;
+}
+
+canvas {
+    height: 256px;
+    width: 256px;
+    border: solid 2px var(--palette-brown-B);
+    justify-self: center;
+    align-self: center;
+    margin: 32px;
+}
+
+a {
+    color: var(--palette-rosso-A);
+}
+
+.outside a {
+    padding: 4px;
+    margin: 4px;
+    border-radius: 4px;
+    border: solid 2px var(--palette-brown-A);
+    background-color: var(--palette-brown-C);
+}
+
+li {
+    list-style: none;
+    margin: 4px;
+    border-radius: 4px;
+    color: var(--palette-brown-A);
+    border: solid 2px var(--palette-brown-A);
+    background-color: var(--palette-brown-C);
+    padding: 0px 8px 0px 8px;
+}
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.outside {
+    color: var(--palette-viola-E);
+    background-color: var(--palette-viola-B);
+    border: none;
+}
+
+.hidden {
+    border: solid 2px var(--palette-brown-A);
+    background-color: var(--palette-brown-D);
+    color: var(--palette-brown-A);
+    display: none;
+    padding: 0px 8px 0px 8px;
+    margin: 16px;
+}
+
+.overflow {
+    text-wrap: nowrap;
+    overflow-x: auto;
+    padding: 8px 0px 16px 0px;
+}
+
+.textwrap {
+    word-break: break-all;
+    overflow-x: none;
+    padding: 8px 0px 8px 0px;
+}
+
+ul {
+    padding: 16px;
+    background-color: var(--palette-viola-B);
+    border: solid 2px var(--palette-viola-A);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+body {
+    padding: 16px;
+    background-color: var(--palette-celes-C);
+}

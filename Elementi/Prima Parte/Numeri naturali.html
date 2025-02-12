@@ -45,7 +45,7 @@
                 Insomma
                 \begin{split}
                 {\rm A}\le{\rm B}&\longleftrightarrow({\rm A}<{\rm B})\lor({\rm A}={\rm B})\\
-                {\rm A}<{\rm B}&\longleftrightarrow({\rm A}\le{\rm B})\land ({\rm A} \ne {\rm B}).
+                {\rm A}<{\rm B}&\longleftrightarrow({\rm A}\le{\rm B})\land({\rm A}\ne{\rm B}).
                 \end{split}
             </div>
         </li>
@@ -76,7 +76,7 @@
                 \begin{split}
                 {\rm c}\le\min({\rm a},{\rm b})&\longleftrightarrow({\rm c}\le{\rm a})\land({\rm c}\le{\rm b})\\
                 \max({\rm a},{\rm b})\le{\rm c}&\longleftrightarrow({\rm a}\le{\rm c})\land({\rm b}\le{\rm c})\\
-                {\rm c} \le \max({\rm a},{\rm b})&\longleftrightarrow({\rm c}\le{\rm a})\lor({\rm c}\le{\rm b})\\
+                {\rm c}\le\max({\rm a},{\rm b})&\longleftrightarrow({\rm c}\le{\rm a})\lor({\rm c}\le{\rm b})\\
                 \min({\rm a},{\rm b})\le{\rm c}&\longleftrightarrow({\rm a}\le{\rm c})\lor({\rm b}\le{\rm c}).
                 \end{split}
                 <button onclick="toggleTesto('bottone0')">Soluzione:</button>
@@ -91,10 +91,10 @@
                     <div class="overflow">
                         Questa proprietà si estende per induzione a
                         \begin{split}
-                        {\rm c}\le\min({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\forall{\rm k}\in{\rm n}\,,({\rm c}\le{\rm a}_{\rm k})\\
-                        {\rm c}\ge\max({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\forall{\rm k}\in{\rm n}\,,({\rm c}\ge{\rm a}_{\rm k})\\
-                        {\rm c}\le\max({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\exists{\rm k}\in{\rm n}\,,({\rm c}\le{\rm a}_{\rm k})\\
-                        {\rm c}\ge\min({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow\exists{\rm k}\in{\rm n}\,,({\rm c}\ge{\rm a}_{\rm k}).
+                        {\rm c}\le\min({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow(\forall{\rm k}\in{\rm n}\,,{\rm c}\le{\rm a}_{\rm k})\\
+                        {\rm c}\ge\max({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow(\forall{\rm k}\in{\rm n}\,,{\rm c}\ge{\rm a}_{\rm k})\\
+                        {\rm c}\le\max({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow(\exists{\rm k}\in{\rm n}\!:{\rm c}\le{\rm a}_{\rm k})\\
+                        {\rm c}\ge\min({\rm a}_{\rm k}\!:{\rm k}\in{\rm n})&\longleftrightarrow(\exists{\rm k}\in{\rm n}\!:{\rm c}\ge{\rm a}_{\rm k}).
                         \end{split}
                     </div>
                 </div>
@@ -124,8 +124,8 @@
             <div class="overflow">
                 Definiamo per due numeri interi (\(\forall{\rm a},{\rm b}\in{\mathbb Z}\))
                 \begin{split}
-                {\rm a}/\!/{\rm b}&:=\max({\rm d}\!:{\rm d}\cdot{\rm b}\le{\rm a})\\
-                {\rm a}\%{\rm b}&:={\rm a}-({\rm a}/\!/{\rm b})\cdot{\rm b}.
+                {\rm a}/\!/{\rm b}&=\max({\rm d}\in{\mathbb Z}\,,{\rm d}\cdot{\rm b}\le{\rm a})\\
+                {\rm a}\%{\rm b}&={\rm a}-({\rm a}/\!/{\rm b})\cdot{\rm b}.
                 \end{split}
                 Cioè \(({\rm a}/\!/{\rm b})\cdot{\rm b}\) è il più grande multiplo di \({\rm b}\) che non superi \({\rm a}\).
             </div>
@@ -191,8 +191,8 @@
                     <div class="overflow">
                         Per il primo ed il secondo notiamo che:
                         \begin{split}
-                        {\rm b}+{\rm c}&={\rm a}\cdot({\rm b}/\!/{\rm a}+{\rm c}/\!/{\rm a})+({\rm b}\%{\rm a}+{\rm b}\%{\rm a})\\
-                        {\rm b}\cdot{\rm c}&={\rm a}\cdot({\rm a}\cdot{\rm b}/\!/{\rm a}\cdot{\rm c}/\!/{\rm a}+{\rm b}\%{\rm a}\cdot{\rm c}/\!/{\rm a}+{\rm b}/\!/{\rm a}\cdot{\rm c}\%{\rm a})+({\rm b}\%{\rm a}\cdot{\rm b}\%{\rm a}).
+                        {\rm b}+{\rm c}&={\rm a}\cdot({\rm b}/\!/{\rm a}+{\rm c}/\!/{\rm a})+({\rm b}\%{\rm a}+{\rm c}\%{\rm a})\\
+                        {\rm b}\cdot{\rm c}&={\rm a}\cdot({\rm a}\cdot({\rm b}/\!/{\rm a})\cdot({\rm c}/\!/{\rm a})+({\rm b}\%{\rm a})\cdot({\rm c}/\!/{\rm a})+({\rm b}/\!/{\rm a})\cdot({\rm c}\%{\rm a}))+({\rm b}\%{\rm a})\cdot({\rm c}\%{\rm a}).
                         \end{split}
                         Per il terzo ed il quarto notiamo che:
                         \begin{split}
@@ -298,8 +298,8 @@
             <div class="overflow">
                 Il massimo comun divisore ed il minimo comune multiplo tra due interi \(a, b \in {\mathbb Z}\) sono definiti come
                 \begin{split}
-                \operatorname{gcd}({\rm a},{\rm b})&:=\max({\rm c}\in{\mathbb N}\!:{\rm c}|{\rm a}\land{\rm c}|{\rm b})\\
-                \operatorname{gcd}({\rm a},{\rm b})&:=\min({\rm c}\in{\mathbb N}\setminus\{0\}\!:{\rm a}|{\rm c}\land{\rm b}|{\rm c}).
+                \operatorname{gcd}({\rm a},{\rm b})&=\max({\rm c}\in{\mathbb N}\!:{\rm c}|{\rm a}\land{\rm c}|{\rm b})\\
+                \operatorname{gcd}({\rm a},{\rm b})&=\min({\rm c}\in{\mathbb N}\setminus\{0\}\!:{\rm a}|{\rm c}\land{\rm b}|{\rm c}).
                 \end{split}
             </div>
         </li>
@@ -359,7 +359,7 @@
             <div class="overflow">
                 Definiamo 
                 \begin{split}
-                {\rm a}\|{\rm b}:=\max({\rm d}\in{\mathbb N}\!:{\rm b}^{\rm d}|{\rm a})
+                {\rm a}\|{\rm b}=\max({\rm d}\in{\mathbb N}\!:{\rm b}^{\rm d}|{\rm a})
                 \end{split}
             </div>
         </li>

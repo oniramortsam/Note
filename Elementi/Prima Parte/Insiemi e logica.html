@@ -39,8 +39,8 @@
             <div class="overflow">
                 Scriviamo \(\lnot\) per intendere la negazione "non". La negazione di una frase è vera se la frase è falsa e viceversa:
                 \begin{split}
-                \lnot{0}&={1}\\
-                \lnot{1}&={0}.
+                \lnot{0}\longleftrightarrow{1}\\
+                \lnot{1}\longleftrightarrow{0}.
                 \end{split}
             </div>
         </li>
@@ -48,10 +48,10 @@
             <div class="overflow">
                 Scriviamo \(\land\) per intendere la congiunzione "e". La congiunzione di due frasi è vera solo se lo sono entrambe:
                 \begin{split}
-                {1}\land{1}&={1}\\
-                {1}\land{0}&={0}\\
-                {0}\land{1}&={0}\\
-                {0}\land{0}&={0}.
+                {1}\land{1}\longleftrightarrow{1}\\
+                {1}\land{0}\longleftrightarrow{0}\\
+                {0}\land{1}\longleftrightarrow{0}\\
+                {0}\land{0}\longleftrightarrow{0}.
                 \end{split}
             </div>
         </li>
@@ -59,10 +59,10 @@
             <div class="overflow">
                 Scriviamo \(\lor\) per intendere la disgiunzione "o". La disgiunzione di due frasi è vera se almeno una delle due lo è:
                 \begin{split}
-                {1}\lor{1}&={1}\\
-                {1}\lor{0}&={1}\\
-                {0}\lor{1}&={1}\\
-                {0}\lor{0}&={0}.
+                {1}\lor{1}\longleftrightarrow{1}\\
+                {1}\lor{0}\longleftrightarrow{1}\\
+                {0}\lor{1}\longleftrightarrow{1}\\
+                {0}\lor{0}\longleftrightarrow{0}.
                 \end{split}
             </div>
         </li>
@@ -76,11 +76,11 @@
                 </h3>
                 Dimostra ciascuna delle seguenti utilizzando le altre
                 \begin{split}
-                {\rm a}&=\lnot(\lnot{\rm a})\\
-                {\rm a}&={\rm a}\land{\rm a}\\
-                {\rm a}&={\rm a}\lor{\rm a}\\
-                \lnot((\lnot{\rm a})\lor(\lnot{\rm b}))&={\rm a}\land{\rm b}\\
-                \lnot((\lnot{\rm a})\land(\lnot{\rm b}))&={\rm a}\lor{\rm b}
+                {\rm a}\longleftrightarrow\lnot(\lnot{\rm a})\\
+                {\rm a}\longleftrightarrow{\rm a}\land{\rm a}\\
+                {\rm a}\longleftrightarrow{\rm a}\lor{\rm a}\\
+                \lnot((\lnot{\rm a})\lor(\lnot{\rm b}))\longleftrightarrow{\rm a}\land{\rm b}\\
+                \lnot((\lnot{\rm a})\land(\lnot{\rm b}))\longleftrightarrow{\rm a}\lor{\rm b}
                 \end{split}
                 <button onclick="toggleTesto('bottone0')">Soluzioni:</button>
                 <div id="bottone0" class="hidden">
@@ -88,11 +88,11 @@
                         <h3>Soluzione della prima con la quarta:</h3>
                         Usando la terza si ha
                         \begin{split}
-                        \lnot{\rm a}=(\lnot{\rm a})\lor(\lnot{\rm a}),
+                        \lnot{\rm a}\longleftrightarrow(\lnot{\rm a})\lor(\lnot{\rm a}),
                         \end{split}
                         mentre usando la quarta,
                         \begin{split}
-                        \lnot((\lnot{\rm a})\lor(\lnot{\rm a}))={\rm a}\land{\rm a},
+                        \lnot((\lnot{\rm a})\lor(\lnot{\rm a}))\longleftrightarrow{\rm a}\land{\rm a},
                         \end{split}
                         usando la seconda si conclude.
                     </div>
@@ -100,11 +100,11 @@
                         <h3>Soluzione della prima con la quinta:</h3>
                         Usando la seconda si ha
                         \begin{split}
-                        \lnot{\rm a}=(\lnot{\rm a})\land(\lnot{\rm a}),
+                        \lnot{\rm a}\longleftrightarrow(\lnot{\rm a})\land(\lnot{\rm a}),
                         \end{split}
                         mentre usando la quinta,
                         \begin{split}
-                        \lnot((\lnot{\rm a})\land(\lnot{\rm a}))={\rm a}\lor{\rm a},
+                        \lnot((\lnot{\rm a})\land(\lnot{\rm a}))\longleftrightarrow{\rm a}\lor{\rm a},
                         \end{split}
                         usando la terza si conclude.
                     </div>
@@ -112,11 +112,11 @@
                         <h3>Soluzione della seconda con la terza:</h3>
                         Usando la prima
                         \begin{split}
-                        {\rm a}\land{\rm a}=\lnot(\lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm a})))),
+                        {\rm a}\land{\rm a}\longleftrightarrow\lnot(\lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm a})))),
                         \end{split}
                         mentre usando la quinta e poi la terza,
                         \begin{split}
-                        \lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm a})))=(\lnot{\rm a})\lor(\lnot{\rm a})=\lnot{\rm a}.
+                        \lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm a})))\longleftrightarrow(\lnot{\rm a})\lor(\lnot{\rm a})\longleftrightarrow\lnot{\rm a}.
                         \end{split}
                         Infine, usando la prima si conclude.
                     </div>
@@ -124,11 +124,11 @@
                         <h3>Soluzione della terza con la seconda:</h3>
                         Usando la prima
                         \begin{split}
-                        {\rm a}\lor{\rm a}=\lnot(\lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm a})))),
+                        {\rm a}\lor{\rm a}\longleftrightarrow\lnot(\lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm a})))),
                         \end{split}
                         mentre usando la quarta e poi la seconda,
                         \begin{split}
-                        \lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm a})))=(\lnot{\rm a})\land(\lnot{\rm a})=\lnot{\rm a}.
+                        \lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm a})))\longleftrightarrow(\lnot{\rm a})\land(\lnot{\rm a})\longleftrightarrow\lnot{\rm a}.
                         \end{split}
                         Infine, usando la prima, si conclude.
                     </div>
@@ -136,22 +136,22 @@
                         <h3>Soluzione della quarta con la quinta:</h3>
                         Usando la prima
                         \begin{split}
-                        {\rm a}\land{\rm b}=\lnot(\lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm b})))),
+                        {\rm a}\land{\rm b}\longleftrightarrow\lnot(\lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm b})))),
                         \end{split}
                         mentre usando la quinta,
                         \begin{split}
-                        \lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm b})))=(\lnot{\rm a})\lor(\lnot{\rm b}).
+                        \lnot((\lnot(\lnot{\rm a}))\land(\lnot(\lnot{\rm b})))\longleftrightarrow(\lnot{\rm a})\lor(\lnot{\rm b}).
                         \end{split}
                     </div>
                     <div class="overflow">
                         <h3>Soluzione della quinta con la quarta:</h3>
                         Usando la prima
                         \begin{split}
-                        {\rm a}\lor{\rm b}=\lnot(\lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm b})))),
+                        {\rm a}\lor{\rm b}\longleftrightarrow\lnot(\lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm b})))),
                         \end{split}
                         mentre usando la quarta,
                         \begin{split}
-                        \lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm b})))=(\lnot{\rm a})\land(\lnot{\rm b}).
+                        \lnot((\lnot(\lnot{\rm a}))\lor(\lnot(\lnot{\rm b})))\longleftrightarrow(\lnot{\rm a})\land(\lnot{\rm b}).
                         \end{split}
                     </div>
                 </div>
@@ -162,10 +162,10 @@
                 <h3>Associatività e distributività:</h3>
                 Dimostra ciascuna delle seguenti utilizzando le altre
                 \begin{split}
-                {\rm a}\land({\rm b}\land{\rm c})&= ({\rm a}\land{\rm b})\land{\rm c}\\
-                {\rm a}\lor({\rm b}\lor{\rm c})&=({\rm a}\lor{\rm b})\lor{\rm c}\\
-                {\rm a}\land({\rm b}\lor{\rm c})&=({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
-                {\rm a}\lor({\rm b}\land{\rm c})&=({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c}).
+                {\rm a}\land({\rm b}\land{\rm c})\longleftrightarrow({\rm a}\land{\rm b})\land{\rm c}\\
+                {\rm a}\lor({\rm b}\lor{\rm c})\longleftrightarrow({\rm a}\lor{\rm b})\lor{\rm c}\\
+                {\rm a}\land({\rm b}\lor{\rm c})\longleftrightarrow({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
+                {\rm a}\lor({\rm b}\land{\rm c})\longleftrightarrow({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c}).
                 \end{split}
                 <button onclick="toggleTesto('bottone1')">Soluzioni:</button>
                 <div id="bottone1" class="hidden">
@@ -173,58 +173,58 @@
                         <h3>Soluzione della prima con la seconda:</h3>                            
                         Usando De Morgan
                         \begin{split}
-                        {\rm a}\land({\rm b}\land{\rm c})=\lnot((\lnot{\rm a})\lor(\lnot({\rm b}\land{\rm c})))\\
-                        \lnot(b\land{\rm c})=(\lnot{\rm b})\lor(\lnot{\rm c})\\
-                        \lnot((\lnot({\rm a}\land{\rm b}))\lor(\lnot{\rm c}))=({\rm a}\land{\rm b})\land{\rm c}\\
-                        (\lnot{\rm a})\lor(\lnot{\rm b})=\lnot({\rm a}\land{\rm b}).
+                        {\rm a}\land({\rm b}\land{\rm c})\longleftrightarrow\lnot((\lnot{\rm a})\lor(\lnot({\rm b}\land{\rm c})))\\
+                        \lnot({\rm b}\land{\rm c})\longleftrightarrow(\lnot{\rm b})\lor(\lnot{\rm c})\\
+                        \lnot((\lnot({\rm a}\land{\rm b}))\lor(\lnot{\rm c}))\longleftrightarrow({\rm a}\land{\rm b})\land{\rm c}\\
+                        (\lnot{\rm a})\lor(\lnot{\rm b})\longleftrightarrow\lnot({\rm a}\land{\rm b}).
                         \end{split}
                         invece usando la seconda
                         \begin{split}
-                        (\lnot{\rm a})\lor((\lnot{\rm b})\lor(\lnot{\rm c}))=((\lnot{\rm a})\lor(\lnot{\rm b}))\lor(\lnot{\rm c}).
+                        (\lnot{\rm a})\lor((\lnot{\rm b})\lor(\lnot{\rm c}))\longleftrightarrow((\lnot{\rm a})\lor(\lnot{\rm b}))\lor(\lnot{\rm c}).
                         \end{split}
                     </div>
                     <div class="overflow">
                         <h3>Soluzione della seconda con la prima:</h3>
                         Usando De Morgan
                         \begin{split}
-                        {\rm a}\lor({\rm b}\lor{\rm c})=\lnot((\lnot{\rm a})\land(\lnot({\rm b}\lor{\rm c})))\\
-                        \lnot({\rm b}\lor{\rm c})=(\lnot{\rm b})\land(\lnot{\rm c})\\
-                        \lnot((\lnot({\rm a}\lor{\rm b}))\land(\lnot{\rm c}))=({\rm a}\lor{\rm b})\lor{\rm c}\\
-                        (\lnot{\rm a})\land(\lnot{\rm b})=\lnot({\rm a}\lor{\rm b}).
+                        {\rm a}\lor({\rm b}\lor{\rm c})\longleftrightarrow\lnot((\lnot{\rm a})\land(\lnot({\rm b}\lor{\rm c})))\\
+                        \lnot({\rm b}\lor{\rm c})\longleftrightarrow(\lnot{\rm b})\land(\lnot{\rm c})\\
+                        \lnot((\lnot({\rm a}\lor{\rm b}))\land(\lnot{\rm c}))\longleftrightarrow({\rm a}\lor{\rm b})\lor{\rm c}\\
+                        (\lnot{\rm a})\land(\lnot{\rm b})\longleftrightarrow\lnot({\rm a}\lor{\rm b}).
                         \end{split}
                         invece usando la prima
                         \begin{split}
-                        (\lnot{\rm a})\land((\lnot{\rm b})\land(\lnot{\rm c}))=((\lnot{\rm a})\land(\lnot{\rm b}))\land(\lnot{\rm c}).
+                        (\lnot{\rm a})\land((\lnot{\rm b})\land(\lnot{\rm c}))\longleftrightarrow((\lnot{\rm a})\land(\lnot{\rm b}))\land(\lnot{\rm c}).
                         \end{split}
                     </div>
                     <div class="overflow">
                         <h3>Soluzione della terza con la quarta:</h3>
                         Usando De Morgan
                         \begin{split}
-                        {\rm a}\land({\rm b}\lor{\rm c})=\lnot((\lnot{\rm a})\lor(\lnot({\rm b}\lor{\rm c})))\\
-                        \lnot((\lnot({\rm a}\land{\rm b}))\land(\lnot({\rm a}\land{\rm c})))=({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
-                        \lnot({\rm b}\lor{\rm c})=(\lnot{\rm b})\land(\lnot{\rm c})\\
-                        (\lnot{\rm a})\lor(\lnot{\rm b})=\lnot({\rm a}\land{\rm b})\\
-                        (\lnot{\rm a})\lor(\lnot{\rm c})=\lnot({\rm a}\land{\rm c}).
+                        {\rm a}\land({\rm b}\lor{\rm c})\longleftrightarrow\lnot((\lnot{\rm a})\lor(\lnot({\rm b}\lor{\rm c})))\\
+                        \lnot((\lnot({\rm a}\land{\rm b}))\land(\lnot({\rm a}\land{\rm c})))\longleftrightarrow({\rm a}\land{\rm b})\lor({\rm a}\land{\rm c})\\
+                        \lnot({\rm b}\lor{\rm c})\longleftrightarrow(\lnot{\rm b})\land(\lnot{\rm c})\\
+                        (\lnot{\rm a})\lor(\lnot{\rm b})\longleftrightarrow\lnot({\rm a}\land{\rm b})\\
+                        (\lnot{\rm a})\lor(\lnot{\rm c})\longleftrightarrow\lnot({\rm a}\land{\rm c}).
                         \end{split}
                         Invece usando la quarta
                         \begin{split}
-                        (\lnot{\rm a})\lor((\lnot{\rm b})\land(\lnot{\rm c}))=((\lnot{\rm a})\lor(\lnot{\rm b}))\land((\lnot{\rm a})\lor(\lnot{\rm c})).
+                        (\lnot{\rm a})\lor((\lnot{\rm b})\land(\lnot{\rm c}))\longleftrightarrow((\lnot{\rm a})\lor(\lnot{\rm b}))\land((\lnot{\rm a})\lor(\lnot{\rm c})).
                         \end{split}
                     </div>
                     <div class="overflow">
                         <h3>Soluzione della quarta con la terza:</h3>
                         Usando De Morgan
                         \begin{split}
-                        {\rm a}\lor({\rm b}\land{\rm c})=\lnot((\lnot{\rm a})\land(\lnot({\rm b}\land{\rm c})))\\
-                        \lnot((\lnot({\rm a}\lor{\rm b}))\lor(\lnot({\rm a}\lor{\rm c})))=({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c})\\
-                        \lnot({\rm b}\land{\rm c})=(\lnot{\rm b})\lor(\lnot{\rm c})\\
-                        (\lnot{\rm a})\land(\lnot{\rm b})=\lnot({\rm a}\lor{\rm b})\\
-                        (\lnot{\rm a})\land(\lnot{\rm c})=\lnot({\rm a}\lor{\rm c}).
+                        {\rm a}\lor({\rm b}\land{\rm c})\longleftrightarrow\lnot((\lnot{\rm a})\land(\lnot({\rm b}\land{\rm c})))\\
+                        \lnot((\lnot({\rm a}\lor{\rm b}))\lor(\lnot({\rm a}\lor{\rm c})))\longleftrightarrow({\rm a}\lor{\rm b})\land({\rm a}\lor{\rm c})\\
+                        \lnot({\rm b}\land{\rm c})\longleftrightarrow(\lnot{\rm b})\lor(\lnot{\rm c})\\
+                        (\lnot{\rm a})\land(\lnot{\rm b})\longleftrightarrow\lnot({\rm a}\lor{\rm b})\\
+                        (\lnot{\rm a})\land(\lnot{\rm c})\longleftrightarrow\lnot({\rm a}\lor{\rm c}).
                         \end{split}
                         Invece usando la terza
                         \begin{split}
-                        (\lnot{\rm a})\land((\lnot{\rm b})\lor(\lnot{\rm c}))=((\lnot{\rm a})\land(\lnot{\rm b}))\lor((\lnot{\rm a})\land(\lnot{\rm c})).
+                        (\lnot{\rm a})\land((\lnot{\rm b})\lor(\lnot{\rm c}))\longleftrightarrow((\lnot{\rm a})\land(\lnot{\rm b}))\lor((\lnot{\rm a})\land(\lnot{\rm c})).
                         \end{split}
                     </div>
                 </div>
@@ -235,12 +235,12 @@
                 <h3>Tautologie:</h3>
                 Dimostra ciascuna delle seguenti utilizzando le altre
                 \begin{split}
-                {\rm a}\land((\lnot{\rm b})\lor{\rm b})&={\rm a}\\
-                {\rm a}\lor((\lnot{\rm b})\land{\rm b})&={\rm a}\\
-                {\rm a}\land({\rm a}\lor{\rm b})&={\rm a}\\
-                {\rm a}\lor({\rm a}\land{\rm b})&={\rm a}\\
-                {\rm a}\land{\rm b}&={\rm a}\land((\lnot{\rm a})\lor{\rm b})\\
-                {\rm a}\lor{\rm b}&={\rm a}\lor((\lnot{\rm a})\land{\rm b}).
+                {\rm a}\land((\lnot{\rm b})\lor{\rm b})\longleftrightarrow{\rm a}\\
+                {\rm a}\lor((\lnot{\rm b})\land{\rm b})\longleftrightarrow{\rm a}\\
+                {\rm a}\land({\rm a}\lor{\rm b})\longleftrightarrow{\rm a}\\
+                {\rm a}\lor({\rm a}\land{\rm b})\longleftrightarrow{\rm a}\\
+                {\rm a}\land{\rm b}\longleftrightarrow{\rm a}\land((\lnot{\rm a})\lor{\rm b})\\
+                {\rm a}\lor{\rm b}\longleftrightarrow{\rm a}\lor((\lnot{\rm a})\land{\rm b}).
                 \end{split}
                 <button onclick="toggleTesto('bottone2')">Soluzioni:</button>
                 <div id="bottone2" class="hidden">
@@ -248,44 +248,44 @@
                         <h3>Soluzione della prima con la seconda:</h3>
                         Usando De Morgan
                         \begin{split}
-                        {\rm a}\land((\lnot{\rm b})\lor{\rm b})=\lnot((\lnot{\rm a})\lor((\lnot{\rm b})\land{\rm b}))
+                        {\rm a}\land((\lnot{\rm b})\lor{\rm b})\longleftrightarrow\lnot((\lnot{\rm a})\lor((\lnot{\rm b})\land{\rm b}))
                         \end{split}
                         Invece usando la seconda
                         \begin{split}
-                        (\lnot{\rm a})\lor((\lnot{\rm b})\land{\rm b})=\lnot{\rm a}.
+                        (\lnot{\rm a})\lor((\lnot{\rm b})\land{\rm b})\longleftrightarrow\lnot{\rm a}.
                         \end{split}
                     </div>
                     <div class="overflow">
                         <h3>Soluzione della seconda con la prima:</h3>
                         Usando De Morgan
                         \begin{split}
-                        {\rm a}\lor((\lnot{\rm b})\land{\rm b})=\lnot((\lnot{\rm a})\land((\lnot{\rm b})\lor{\rm b}))
+                        {\rm a}\lor((\lnot{\rm b})\land{\rm b})\longleftrightarrow\lnot((\lnot{\rm a})\land((\lnot{\rm b})\lor{\rm b}))
                         \end{split}
                         Invece usando la prima
                         \begin{split}
-                        (\lnot{\rm a})\land((\lnot{\rm b})\lor{\rm b})=\lnot{\rm a}.
+                        (\lnot{\rm a})\land((\lnot{\rm b})\lor{\rm b})\longleftrightarrow\lnot{\rm a}.
                         \end{split}
                     </div>
                     <div class="overflow">
                         <h3>Soluzione della terza con la quarta:</h3>
                         Usando De Morgan
                         \begin{split}
-                        {\rm a}\land({\rm a}\lor{\rm b})=\lnot((\lnot{\rm a})\lor((\lnot{\rm a})\land(\lnot{\rm a})))
+                        {\rm a}\land({\rm a}\lor{\rm b})\longleftrightarrow\lnot((\lnot{\rm a})\lor((\lnot{\rm a})\land(\lnot{\rm a})))
                         \end{split}
                         Invece usando la quarta
                         \begin{split}
-                        (\lnot{\rm a})\lor((\lnot{\rm a})\land(\lnot{\rm a}))=\lnot{\rm a}.
+                        (\lnot{\rm a})\lor((\lnot{\rm a})\land(\lnot{\rm a}))\longleftrightarrow\lnot{\rm a}.
                         \end{split}
                     </div>
                     <div class="overflow">
                         <h3>Soluzione della quarta con la terza:</h3>
                         Usando De Morgan
                         \begin{split}
-                        {\rm a}\lor({\rm a}\land{\rm b})=\lnot((\lnot{\rm a})\land((\lnot{\rm a})\lor(\lnot{\rm a})))
+                        {\rm a}\lor({\rm a}\land{\rm b})\longleftrightarrow\lnot((\lnot{\rm a})\land((\lnot{\rm a})\lor(\lnot{\rm a})))
                         \end{split}
                         Invece usando la terza
                         \begin{split}
-                        (\lnot{\rm a})\land((\lnot{\rm a})\lor(\lnot{\rm a}))=\lnot{\rm a}.
+                        (\lnot{\rm a})\land((\lnot{\rm a})\lor(\lnot{\rm a}))\longleftrightarrow\lnot{\rm a}.
                         \end{split}
                     </div>
                     <div class="overflow">
@@ -339,11 +339,11 @@
             <div class="overflow">
                 Sono fatti equivalenti:
                 \begin{split}
-                {\rm A} &\longrightarrow{\rm B}\\
-                {\rm A}\lor{\rm B}&={\rm B}\\
-                {\rm A}\land{\rm B}&={\rm A}\\
-                {\rm A}\lor {\rm B}&\longrightarrow{\rm B}\\
-                {\rm A}&\longrightarrow{\rm A}\land{\rm B}.
+                {\rm A}\longrightarrow{\rm B}\\
+                {\rm A}\lor{\rm B}\longleftrightarrow{\rm B}\\
+                {\rm A}\land{\rm B}\longleftrightarrow{\rm A}\\
+                {\rm A}\lor{\rm B}\longrightarrow{\rm B}\\
+                {\rm A}\longrightarrow{\rm A}\land{\rm B}.
                 \end{split}
             </div>
         </li>
@@ -374,10 +374,10 @@
                     <div class="overflow">
                         Usando le proprietà dimostrate negli esercizi precedenti:
                         \begin{split}
-                        (\lnot({\rm a}\land{\rm c}))\lor({\rm b}\land{\rm c})=(\lnot{\rm a})\lor(\lnot{\rm c})\lor({\rm b}\land{\rm c})=(\lnot{\rm a})\lor(\lnot{\rm c})\lor{\rm b}&\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
-                        (\lnot({\rm a}\lor{\rm c}))\lor({\rm b}\lor{\rm c})=((\lnot{\rm a})\land(\lnot{\rm c}))\lor{\rm b}\lor{\rm c}=(\lnot{\rm a})\lor{\rm b}\lor{\rm c}&\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
-                        (\lnot{\rm c})\lor((\lnot{\rm a})\lor{\rm b})&\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
-                        (\lnot({\rm a}\land(\lnot{\rm b})))\lor{\rm c}=((\lnot{\rm a})\lor{\rm b})\lor{\rm c}&\longleftarrow(\lnot{\rm a})\lor{\rm b}.
+                        (\lnot({\rm a}\land{\rm c}))\lor({\rm b}\land{\rm c})\longleftarrow(\lnot{\rm a})\lor(\lnot{\rm c})\lor({\rm b}\land{\rm c})\longleftarrow(\lnot{\rm a})\lor(\lnot{\rm c})\lor{\rm b}\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
+                        (\lnot({\rm a}\lor{\rm c}))\lor({\rm b}\lor{\rm c})\longleftarrow((\lnot{\rm a})\land(\lnot{\rm c}))\lor{\rm b}\lor{\rm c}\longleftarrow(\lnot{\rm a})\lor{\rm b}\lor{\rm c}\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
+                        (\lnot{\rm c})\lor((\lnot{\rm a})\lor{\rm b})\longleftarrow(\lnot{\rm a})\lor{\rm b}\\
+                        (\lnot({\rm a}\land(\lnot{\rm b})))\lor{\rm c}\longleftarrow((\lnot{\rm a})\lor{\rm b})\lor{\rm c}\longleftarrow(\lnot{\rm a})\lor{\rm b}.
                         \end{split}
                     </div>
                 </div>
@@ -391,10 +391,11 @@
                     <div class="overflow">
                         Usando le proprietà dimostrate negli esercizi precedenti:
                         \begin{split}
-                        ((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm b})\lor{\rm c})&=((\lnot{\rm a})\land(\lnot{\rm b}))\lor((\lnot{\rm a})\land{\rm c})\lor({\rm b}\land{\rm c})\\
-                        &=(((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm b})\lor{\rm c}))\lor((\lnot{\rm a})\land{\rm c})\\
-                        &\longrightarrow((\lnot{\rm a})\lor{\rm c})\lor((\lnot{\rm a})\land{\rm c})\\
-                        &=((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm a})\lor{\rm c})=((\lnot{\rm a})\lor{\rm c}).
+                        ((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm b})\lor{\rm c})\longrightarrow⋄\\
+                        ⋄\longrightarrow((\lnot{\rm a})\land(\lnot{\rm b}))\lor((\lnot{\rm a})\land{\rm c})\lor({\rm b}\land{\rm c})\\
+                        ⋄\longrightarrow(((\lnot{\rm a})\lor{\rm b})\land((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm b})\lor{\rm c}))\lor((\lnot{\rm a})\land{\rm c})\\
+                        ⋄\longrightarrow((\lnot{\rm a})\lor{\rm c})\lor((\lnot{\rm a})\land{\rm c})\\
+                        ⋄\longrightarrow((\lnot{\rm a})\lor{\rm c})\land((\lnot{\rm a})\lor{\rm c})=((\lnot{\rm a})\lor{\rm c}).
                         \end{split}
                     </div>
                 </div>

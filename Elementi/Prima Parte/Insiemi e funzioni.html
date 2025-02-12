@@ -39,9 +39,9 @@
             <div class="overflow">
                 Siano \({\rm A}, {\rm B}\) due insiemi. Definiamo rispettivamente differenza "\(\setminus\)", intersezione "\(\cap\)", unione "\(\cup\)", come segue:
                 \begin{split}
-                {\rm A}\setminus{\rm B}&=\{{\rm a}\!:{\rm a}\in{\rm A}\land{\rm a}\notin{\rm B}\}\\
-                {\rm A}\cap{\rm B}&=\{{\rm a}\!:{\rm a}\in{\rm A}\land{\rm a}\in{\rm B}\}\\
-                {\rm A}\cup{\rm B}&=\{{\rm a}\!:{\rm a}\in{\rm A}\lor{\rm a}\in{\rm B}\}.
+                {\rm A}\setminus{\rm B}&=\{{\rm a}\,,{\rm a}\in{\rm A}\land{\rm a}\notin{\rm B}\}\\
+                {\rm A}\cap{\rm B}&=\{{\rm a}\,,{\rm a}\in{\rm A}\land{\rm a}\in{\rm B}\}\\
+                {\rm A}\cup{\rm B}&=\{{\rm a}\,,{\rm a}\in{\rm A}\lor{\rm a}\in{\rm B}\}.
                 \end{split}
                 Scriviamo \({\rm A}\subseteq{\rm B}\) e diciamo che "\({\rm A}\) è contenuto in \({\rm B}\)" se \(\forall{\rm x}\in{\rm A}\,,{\rm x}\in{\rm B}\), cioè che ogni elemento di \({\rm A}\) appartiene a \({\rm B}\).
             </div>
@@ -67,9 +67,10 @@
                         ({\rm x}\in{\rm A})\land({\rm x}\in{\rm B})&\longleftrightarrow({\rm x}\in{\rm A})\\
                         ({\rm x}\in{\rm A})\lor({\rm x}\in{\rm B})&\longleftrightarrow({\rm x}\in{\rm B}).
                         \end{split}
-                        Infatti a loro volta, questi equivalgono a
+                        Infatti a loro volta, questi equivalgono a uno tra
                         \begin{split}
-                        \lnot(({\rm x}\in{\rm A})\land({\rm x}\notin{\rm B}))=({\rm x}\notin{\rm A})\lor({\rm x}\in{\rm B})
+                        \lnot(({\rm x}\in{\rm A})\land({\rm x}\notin{\rm B}))\\
+                        ({\rm x}\notin{\rm A})\lor({\rm x}\in{\rm B})
                         \end{split}
                     </div>
                 </div>
@@ -136,8 +137,8 @@
         <li>
             <div class="overflow">
                 \begin{split}
-                {\rm A} \subseteq ({\rm B}\cap{\rm C})&\longleftrightarrow({\rm A} \subseteq {\rm B})\land({\rm A} \subseteq {\rm C})\\
-                ({\rm A}\cup{\rm B}) \subseteq {\rm C}&\longleftrightarrow({\rm A} \subseteq {\rm C})\land({\rm B} \subseteq {\rm C})\\
+                {\rm A}\subseteq({\rm B}\cap{\rm C})&\longleftrightarrow({\rm A}\subseteq{\rm B})\land({\rm A}\subseteq{\rm C})\\
+                ({\rm A}\cup{\rm B})\subseteq{\rm C}&\longleftrightarrow({\rm A}\subseteq{\rm C})\land({\rm B}\subseteq{\rm C})\\
                 \end{split}
                 <button onclick="toggleTesto('bottone3')">Soluzione:</button>
                 <div id="bottone3" class="hidden">
@@ -153,7 +154,7 @@
         </li>
         <li>
             <div class="overflow">
-                Se \({\rm A} \subseteq {\rm B}\), allora:
+                Se \({\rm A}\subseteq{\rm B}\), allora:
                 \begin{split}
                 {\rm A}\cap{\rm C}&\subseteq{\rm B}\cap{\rm C}\\
                 {\rm A}\cup{\rm C}&\subseteq{\rm B}\cup{\rm C}\\
@@ -249,20 +250,20 @@
                         </h3>
                         Un insieme \({\rm A}\) si dice finito se
                         \begin{split}
-                        \forall{\rm B}\subseteq{\rm A}\,,\quad|{\rm A}|\le|{\rm B}|\longleftrightarrow{\rm B}={\rm A}.
+                        \forall{\rm B}\subseteq{\rm A}\,,\quad\left|{\rm A}\right|\le\left|{\rm B}\right|\longleftrightarrow{\rm B}={\rm A}.
                         \end{split}
                         Come conseguenza, sia \(f\!:{\rm A}\longrightarrow{\rm B}\) una funzione tra insiemi finiti:
                         <br>
-                        Se \({\rm f}\) è iniettiva con \(|{\rm B}|\le|{\rm A}|\), allora è surgettiva (quindi \(|{\rm A}|=|{\rm B}|\)).
+                        Se \({\rm f}\) è iniettiva con \(\left|{\rm B}\right|\le\left|{\rm A}\right|\), allora è surgettiva (quindi \(\left|{\rm A}\right|=\left|{\rm B}\right|\)).
                         <br>
-                        Se \({\rm f}\) è surgettiva con \(|{\rm A}|\le|{\rm B}|\), allora è iniettiva (quindi \(|{\rm A}|=|{\rm B}|\)).
+                        Se \({\rm f}\) è surgettiva con \(\left|{\rm A}\right|\le\left|{\rm B}\right|\), allora è iniettiva (quindi \(\left|{\rm A}\right|=\left|{\rm B}\right|\)).
                     </div>
                 </div>
             </div>
         </li>
         <li>
             <div class="overflow">
-                I numeri narurali \({\mathbb N}\) sono le possibili cardinalità degli insiemi finiti. Ad esempio: \(0=|\{\}|\) la cardinalità dell'insieme vuoto, \(1=|\{0\}|\), la cardinalità di un singoletto, \(2=|\{0, 1\}|\), eccetera.
+                I numeri narurali \({\mathbb N}\) sono le possibili cardinalità degli insiemi finiti. Ad esempio: \(0=\left|\{\}\right|\) la cardinalità dell'insieme vuoto, \(1=\left|\{0\}\right|\), la cardinalità di un singoletto, \(2=\left|\{0, 1\}\right|\), eccetera.
             </div>
         </li>
         <li>

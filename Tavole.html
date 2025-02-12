@@ -183,6 +183,79 @@
         </li>
     </ul>
 
+    <h1>Esercizi svolti</h1>
+
+    <ul>
+        <li>
+            <div class="overflow">
+                Calcola \(({\rm x}^2+{\rm a}){\rm x}-{\rm x}({\rm x}-1):({\rm x}+1)+4{\rm a}\) per \({\rm x}=1,{\rm a}=-9\)
+                <br>
+                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        Le quadre diventano graffe, le tonde diventano quadre e si sostituisce il valore delle variabili tra parentesi:
+                        \begin{split}
+                        \ifthen{({\rm x}=1\land{\rm a}=-9)}{({\rm x}^2+{\rm a}){\rm x}-{\rm x}({\rm x}-1):({\rm x}+1)+4{\rm a}=[(1)^2+(-9)](1)-(1)[(1)-1]:[(1)+1]+4(-9)}
+                        \end{split}
+                        Poi si risolve
+                        \begin{split}
+                        [(1)^2+(-9)](1)-(1)[(1)-1]:[(1)+1]+4(-9)=(1-9)(1)-(1)(0):(2)+(-36)=(-8)(1)-(0):(2)+(-36)=(-8)-0+(-36)=(-8)+(-36)=(-44)
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Calcola \(\operatorname{gcd}\) ed \(\operatorname{lcm}\) tra \(2025\) e \(2304\) ed osserva che il loro prodotto è \(2025\cdot2304\).
+                <br>
+                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+                <div id="bottone1" class="hidden">
+                    <div class="overflow">
+                        Scomponiamo:
+                        \begin{split}
+                        2025&=5^2\cdot3^4\\
+                        2304&=2^8\cdot3^2\\
+                        \operatorname{gcd}(2025,2304)&=2^{\min(0,8)}\cdot3^{\min(4,2)}\cdot5^{\min(2,0)}=3^2\\
+                        \operatorname{lcm}(2025,2304)&=2^{\max(0,8)}\cdot3^{\max(4,2)}\cdot5^{\max(2,0)}=2^8\cdot3^4\cdot5^2
+                        \end{split}
+                        ed usando le proprietà associativa e commutativa della moltiplicazione,
+                        \begin{split}
+                        \operatorname{gcd}(2025,2304)\cdot\operatorname{lcm}(2025,2304)&=(3^2)\cdot(2^8\cdot3^4\cdot5^2)=(5^2\cdot3^4)\cdot(2^8\cdot3^2)
+                        \end{split}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="overflow">
+                Convincimi che vale la formula \(\max(a,b)+\min(a,b)=a+b\).
+                <br>
+                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+                <div id="bottone2" class="hidden">
+                    <div class="overflow">
+                        Separiamo due casi \({\rm a}\le{\rm b}\) e \({\rm a}\ge{\rm b}\):
+                        \begin{split}
+                        {\rm a}\le{\rm b}\Rightarrow\min({\rm a},{\rm b})={\rm a}\land\max({\rm a},{\rm b})={\rm b}\Rightarrow\min({\rm a},{\rm b})+\max({\rm a},{\rm b})={\rm a}+{\rm b}\\
+                        {\rm a}\ge{\rm b}\Rightarrow\min({\rm a},{\rm b})={\rm b}\land\max({\rm a},{\rm b})={\rm a}\Rightarrow\min({\rm a},{\rm b})+\max({\rm a},{\rm b})={\rm b}+{\rm a}
+                        \end{split}
+                    </div>
+                </div>
+                <br>
+                <button onclick="toggleTesto('approfondimento1')"><img src="advanced.webp"></button>
+                <div id="approfondimento1" class="hidden">
+                    <div class="overflow">
+                        Separare i due casi vuol dire usare la tautologia
+                        \begin{split}
+                        \ifthen{({\cal A}\lor{\cal B})\land(\ifthen{\cal A}{\cal C})\land(\ifthen{\cal B}{\cal C})}{\cal C}
+                        \end{split}
+                        Con \(\cal C\) la tesi e con \({\cal A},{\cal B}\) i due casi \({\rm a}\le{\rm b}\) e \({\rm a}\ge{\rm b}\) rispettivamente.
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
     <h1><a href="Gobbino.pdf">Insiemi e Logica</a></h1>
 
     <h1>Link esterni</h1>

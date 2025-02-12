@@ -159,6 +159,45 @@
                     Per controllare la divisibilità:
                 </h3>
                 Fai la divisione col resto e vedi se il resto è \(0\).
+                <br>
+                <button onclick="toggleTesto('approfondimento1')"><img src="advanced.webp"></button>
+                <div id="approfondimento1" class="hidden">
+                    <div class="overflow">
+                        Fare la divisione col resto tra due naturali \({\rm a}\) e \({\rm b}\ne0\) vuol dire trovare due naturali \({\rm q}\) e \({\rm r}<{\rm b}\) tali che
+                        \begin{split}
+                        {\rm a}={\rm q}\cdot{\rm b}+{\rm r}
+                        \end{split}
+                        Cioè tali che
+                        \begin{split}
+                        {\rm a}:{\rm b}={\rm q}+{\rm r}:{\rm b}
+                        \end{split}
+                        i numeri \({\rm q}\) ed \({\rm r}\) si chiamano quoziente e resto della divisione rispettivamente.
+                    </div>
+                    <div class="overflow">
+                        Il fatto che il resto si annulli vuol dire che
+                        \begin{split}
+                        \exists{\rm q}\in{\mathbb Z}\!:\quad{\rm a}={\rm q}\cdot{\rm b}
+                        \end{split}
+                        Cioè che \({\rm a}\) è multiplo di \({\rm b}\). Oppure che \({\rm a}:{\rm b}\in{\mathbb Z}\) cioè che \({\rm a}\) è divisibile per \({\rm b}\).
+                    </div>
+                    <div class="overflow">
+                        Se \({\rm d}=\operatorname{gcd}({\rm a},{\rm b})\ne1\), allora applicando la proprietà invariantiva
+                        \begin{split}
+                        ({\rm a}:{\rm d}):({\rm b}:{\rm d})={\rm q}+({\rm r}:{\rm d}):({\rm b}:{\rm d})
+                        \end{split}
+                        Cioè semplifcando \({\rm d}\), il quoziente della divisione rimane lo stesso, mentre il resto della divisione (che era anche multiplo di \({\rm d}\)) viene diviso per \({\rm d}\).
+                    </div>
+                </div>
+            </div>
+            <button onclick="toggleTesto('approfondimento2')"><img src="advanced.webp"></button>
+            <div id="approfondimento2" class="hidden">
+                <div class="overflow">
+                    Per vedere se un numero è divisibile per \(2\) si guarda l'ultima cifra.
+                    <br>
+                    Per vedere se un numero è divisibile per \(3\) si guarda la somma delle cifre.
+                    <br>
+                    Per vedere se un numero è divisibile per \(5\) si guarda l'ultima cifra.
+                </div>
             </div>
             <div class="overflow">
                 <h3>
@@ -167,8 +206,36 @@
                 Se devo fattorizzare \({\rm n}\) conto fino ad \({\rm n}\) segnando su un foglio tutti i numeri primi. Riconosco se un numero è primo controllando se uno di quelli che ho già segnato lo divide.
                 <br>
                 Ogni volta che trovo un nuovo primo \({\rm p}\) controllo se divide \({\rm n}\), in tal caso scrivo \({\rm n}={\rm p}\cdot{\rm n}:{\rm p}\) e continuo cercando di fattorizzare il secondo fattore.
-                 <br>
+                <br>
                 Se contando mi rendo conto che i fattori sono tutti primi mi fermo.
+                <br>
+                <button onclick="toggleTesto('bottone0')">Esempio:</button>
+                <div id="bottone0" class="hidden">
+                    <div class="overflow">
+                        Scomponiamo $2025$
+                        \begin{split}
+                        2025:5&=405\\
+                        405:5&=81\\
+                        81:3&=27\\
+                        27:3&=9\\
+                        9:3&=3\\
+                        3:3&=1
+                        \end{split}
+                        Scomponiamo $2304$
+                        \begin{split}
+                        2304:2&=1152\\
+                        1152:2&=576\\
+                        576:2&=288\\
+                        288:2&=144\\
+                        144:2&=72\\
+                        72:2&=36\\
+                        36:2&=18\\
+                        18:2&=9\\
+                        9:3&=3\\
+                        3:3&=1
+                        \end{split}
+                    </div>
+                </div>
             </div>
             <div class="overflow">
                 <h3>
@@ -190,12 +257,12 @@
             <div class="overflow">
                 Calcola \(({\rm x}^2+{\rm a}){\rm x}-{\rm x}({\rm x}-1):({\rm x}+1)+4{\rm a}\) per \({\rm x}=1,{\rm a}=-9\)
                 <br>
-                <button onclick="toggleTesto('bottone0')">Soluzione:</button>
-                <div id="bottone0" class="hidden">
+                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
+                <div id="bottone1" class="hidden">
                     <div class="overflow">
                         Le quadre diventano graffe, le tonde diventano quadre e si sostituisce il valore delle variabili tra parentesi:
                         \begin{split}
-                        \ifthen{({\rm x}=1\land{\rm a}=-9)}{({\rm x}^2+{\rm a}){\rm x}-{\rm x}({\rm x}-1):({\rm x}+1)+4{\rm a}=[(1)^2+(-9)](1)-(1)[(1)-1]:[(1)+1]+4(-9)}
+                        ({\rm x}=1\land{\rm a}=-9)\Rightarrow({\rm x}^2+{\rm a}){\rm x}-{\rm x}({\rm x}-1):({\rm x}+1)+4{\rm a}=[(1)^2+(-9)](1)-(1)[(1)-1]:[(1)+1]+4(-9)
                         \end{split}
                         Poi si risolve
                         \begin{split}
@@ -209,8 +276,8 @@
             <div class="overflow">
                 Calcola \(\operatorname{gcd}\) ed \(\operatorname{lcm}\) tra \(2025\) e \(2304\) ed osserva che il loro prodotto è \(2025\cdot2304\).
                 <br>
-                <button onclick="toggleTesto('bottone1')">Soluzione:</button>
-                <div id="bottone1" class="hidden">
+                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
+                <div id="bottone2" class="hidden">
                     <div class="overflow">
                         Scomponiamo:
                         \begin{split}
@@ -231,8 +298,8 @@
             <div class="overflow">
                 Convincimi che vale la formula \(\max(a,b)+\min(a,b)=a+b\).
                 <br>
-                <button onclick="toggleTesto('bottone2')">Soluzione:</button>
-                <div id="bottone2" class="hidden">
+                <button onclick="toggleTesto('bottone3')">Soluzione:</button>
+                <div id="bottone3" class="hidden">
                     <div class="overflow">
                         Separiamo due casi \({\rm a}\le{\rm b}\) e \({\rm a}\ge{\rm b}\):
                         \begin{split}
@@ -242,14 +309,27 @@
                     </div>
                 </div>
                 <br>
-                <button onclick="toggleTesto('approfondimento1')"><img src="advanced.webp"></button>
-                <div id="approfondimento1" class="hidden">
+                <button onclick="toggleTesto('approfondimento3')"><img src="advanced.webp"></button>
+                <div id="approfondimento3" class="hidden">
                     <div class="overflow">
                         Separare i due casi vuol dire usare la tautologia
                         \begin{split}
-                        \ifthen{({\cal A}\lor{\cal B})\land(\ifthen{\cal A}{\cal C})\land(\ifthen{\cal B}{\cal C})}{\cal C}
+                        ({\cal A}\lor{\cal B})\land({\cal A}\Rightarrow{\cal C})\land({\cal B}\Rightarrow{\cal C})\Rightarrow{\cal C}
                         \end{split}
-                        Con \(\cal C\) la tesi e con \({\cal A},{\cal B}\) i due casi \({\rm a}\le{\rm b}\) e \({\rm a}\ge{\rm b}\) rispettivamente.
+                        Con \(\cal C\) la tesi e con \({\cal A},{\cal B}\) i due casi \({\rm a}\le{\rm b}\) e \({\rm a}\ge{\rm b}\) rispettivamente. La tautologia si può verificare con le tavole di verità
+                        \begin{split}
+                        \begin{matrix}
+                        {\cal A} & {\cal B} & {\cal C} & {\cal A} \lor {\cal B} & {\cal A}\Rightarrow{\cal C} & {\cal B}\Rightarrow{\cal C} &\qquad\qquad ({\cal A}\lor{\cal B})\land({\cal A}\Rightarrow{\cal C})\land({\cal B}\Rightarrow{\cal C}) &\qquad\qquad ({\cal A}\lor{\cal B})\land({\cal A}\Rightarrow{\cal C})\land({\cal B}\Rightarrow{\cal C})\Rightarrow{\cal C}\\
+                        Vero & Vero & Vero & Vero & Vero & Vero & Vero & Vero\\
+                        Vero & Vero & Falso & Vero & Falso & Falso & Falso & Vero\\
+                        Vero & Falso & Vero & Vero & Vero & Vero & Vero & Vero\\
+                        Vero & Falso & Falso & Vero & Falso & Vero & Falso & Vero\\
+                        Falso & Vero & Vero & Vero & Vero & Vero & Vero & Vero\\
+                        Falso & Vero & Falso & Vero & Vero & Falso & Falso & Vero\\
+                        Falso & Falso & Vero & Falso & Vero & Vero & Falso & Vero\\
+                        Falso & Falso & Falso & Falso & Vero & Vero & Falso & Vero
+                        \end{matrix}
+                        \end{split}
                     </div>
                 </div>
             </div>

@@ -39,7 +39,7 @@
                 \end{split}
                 Ora che non ci sono più tonde, sostituisci le quadre con le tonde e le graffe con le quadre e ripeti il passo recedente, infine risolvi l'espressione.
                 <br>
-                Quando scrivo risolvi intendo: <a href="#0">risolvi prima gli esponenti</a> <a href="#1">poi passa ai prodotti.</a> <a href="#2">poi passa alle somme.</a>
+                Quando scrivo risolvi intendo: <a href="#0">risolvi prima gli esponenti</a>, <a href="#1">poi passa ai prodotti</a>, <a href="#2">poi passa alle somme.</a>
             </div>
         </li>
         <li>
@@ -336,7 +336,7 @@
                     <div class="overflow">
                         Separare i due casi vuol dire usare la tautologia
                         \begin{split}
-                        ({\cal A}\lor{\cal B})\land({\cal A}\Rightarrow{\cal C})\land({\cal B}\Rightarrow{\cal C})\Rightarrow{\cal C}
+                        {\cal A}\lor{\cal B}\land({\cal A}\Rightarrow{\cal C})\land({\cal B}\Rightarrow{\cal C})\Rightarrow{\cal C}
                         \end{split}
                         Con \(\cal C\) la tesi e con \({\cal A},{\cal B}\) i due casi \({\rm a}\le{\rm b}\) e \({\rm a}\ge{\rm b}\) rispettivamente. La tautologia si può verificare con le tavole di verità
                         \begin{split}
@@ -353,6 +353,33 @@
                         \end{matrix}
                         \end{split}
                     </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Parti e prodotto cartesiano</h1>
+    <ul>
+        <li>
+            <div class="overflow">
+                \begin{split}
+                {\cal P}(\{♤,♡,♧,♢\})=\{&\{\},\{♤\},\{♡\},\{♧\},\{♢\},\\
+                &\{♤,♡\},\{♤,♧\},\{♤,♢\},\{♡,♧\},\{♡,♢\},\{♧,♢\},\\
+                &\{♤,♡,♧\},\{♤,♡,♢\},\{♤,♧,♢\},\{♡,♧,♢\},\{♤,♡,♧,♢\}\}\\
+                \{♤,♡,♧,♢\}\times\{♤,♡,♧,♢\}=\{&(♤,♤),(♤,♡),(♤,♧),(♤,♢),\\
+                &(♡,♤),(♡,♡),(♡,♧),(♡,♢),\\
+                &(♧,♤),(♧,♡),(♧,♧),(♧,♢),\\
+                &(♢,♤),(♢,♡),(♢,♧),(♢,♢)\}\\
+                \end{split}
+            </div>
+            <button onclick="toggleTesto('approfondimento4')"><img src="advanced.webp"></button>
+            <div id="approfondimento4" class="hidden">
+                <div class="overflow">
+                    Convincimi che
+                    \begin{split}
+                    {\rm A}\subseteq{\rm B}\Rightarrow{\cal P}({\rm A})\subseteq{\cal P}({\rm B})\land{\rm A}\times{\rm C}\subseteq{\rm B}\times{\rm C}
+                    \end{split}
+                    Metti prima di tutto le parentesi che scritto così non si capisce niente.
                 </div>
             </div>
         </li>

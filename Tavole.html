@@ -284,7 +284,7 @@
                     <div class="overflow">
                         Le quadre diventano graffe, le tonde diventano quadre e si sostituisce il valore delle variabili tra parentesi:
                         \begin{split}
-                        ({\rm x}=1\land{\rm a}=-9)\Rightarrow({\rm x}^2+{\rm a}){\rm x}-{\rm x}({\rm x}-1):({\rm x}+1)+4{\rm a}=[(1)^2+(-9)](1)-(1)[(1)-1]:[(1)+1]+4(-9)
+                        ({\rm x}=1)\land({\rm a}=-9)\Rightarrow({\rm x}^2+{\rm a}){\rm x}-{\rm x}({\rm x}-1):({\rm x}+1)+4{\rm a}=[(1)^2+(-9)](1)-(1)[(1)-1]:[(1)+1]+4(-9)
                         \end{split}
                         Poi si risolve
                         \begin{split}
@@ -377,9 +377,18 @@
                 <div class="overflow">
                     Convincimi che
                     \begin{split}
-                    {\rm A}\subseteq{\rm B}\Rightarrow{\cal P}({\rm A})\subseteq{\cal P}({\rm B})\land{\rm A}\times{\rm C}\subseteq{\rm B}\times{\rm C}
+                    {\rm B}\subseteq{\rm C}\Rightarrow{\cal P}({\rm B})\subseteq{\cal P}({\rm C})
                     \end{split}
-                    Metti prima di tutto le parentesi che scritto così non si capisce niente.
+                </div>
+            </div>
+            <br>
+            <button onclick="toggleTesto('approfondimento5')"><img src="advanced.webp"></button>
+            <div id="approfondimento5" class="hidden">
+                <div class="overflow">
+                    Cosa c'entra questa tautologia col problema di prima?
+                    \begin{split}
+                    [({\cal A}\land{\cal B})\Rightarrow{\cal C}]\Rightarrow[{\cal B}\Rightarrow({\cal A}\Rightarrow{\cal C})]
+                    \end{split}
                 </div>
             </div>
         </li>
